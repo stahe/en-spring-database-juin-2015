@@ -921,10 +921,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#2023-the-web-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2.3. The [web] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2024-project-security-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         20.2.4. Project security configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2025-testing-the-secure-web-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2.5. Testing the secure web service
       
     </span>
   </a>
@@ -979,7 +1001,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="20.3.1. The [HTTP Client] layer">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2032-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.3.2. The [DAO] layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20.3.2. The [DAO] layer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1004,6 +1037,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#20323-the-daocategorie-daoproduit-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.3.2.3. The [DaoCategorie, DaoProduit] classes
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1018,7 +1062,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="20.3.3. The Spring Configuration">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2034-tests-for-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.3.4. Tests for the [DAO] layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20.3.4. Tests for the [DAO] layer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1066,10 +1121,54 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#2041-the-maven-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.4.1. The Maven project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2042-the-spring-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         20.4.2. The Spring configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2043-the-jpa-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.4.3. The JPA layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2044-the-repositories-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.4.4. The [repositories] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2045-the-dao2-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.4.5. The [DAO2] layer
       
     </span>
   </a>
@@ -1131,6 +1230,17 @@
     <span class="md-ellipsis">
       
         20.5.3. The [console] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2054-security-web-eclipselink-sql-server-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.5.4. [security / web / EclipseLink / SQL Server] architecture
       
     </span>
   </a>
@@ -1669,15 +1779,12 @@
       <li><span style="color: #000000">the user that was found;</span>
       </li>
       <li><span style="color: #000000">the [</span><span style="color: #0000c0">namedParameterJdbcTemplate</span><span style="color: #000000">] object that will allow the [AppUserDetails] class to query the database;</span>
-<a id="refheading1451291186279333"></a>
-
-### 20.2.3. <span style="color: #4f81bd">The [web] layer</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="refheading1451291186279333"></a></p>
+<h3 id="2023-the-web-layer">20.2.3. <span style="color: #4f81bd">The [web] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044C000001026E8B9324.png" style="display:inline-block; margin:4px;width:14.552cm;height:3.413cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000001026E8B9324.png" /></td></tr></table>
 
 <p>The [spring-security-server-jdbc-generic] project depends on the [spring-webjson-server-jdbc-generic] project:</p>
@@ -1827,13 +1934,10 @@
   <li><span style="color: #000000">Lines 47–49: indicate that all URLs of the web service are accessible to users with the [ROLE_ADMIN] role. This means that a user without this role cannot access the web service;</span>
   </li>
   <li><span style="color: #000000">Line 51: In [session] mode, a user who has authenticated once does not need to do so for subsequent accesses. This is the default setting for Spring Security. Line 51 disables this mode. If enabled, the user must authenticate with every access. Without a session, the secure web service is less responsive than with a session, so line 51 has been commented out;</span>
-<a id="refheading9353894989336"></a>
-
-### 20.2.5. <span style="color: #4f81bd">Testing the secure web service</span>
-
   </li>
 </ul>
-
+<p><a id="refheading9353894989336"></a></p>
+<h3 id="2025-testing-the-secure-web-service">20.2.5. <span style="color: #4f81bd">Testing the secure web service</span></h3>
 <p><span style="color: #000000">We will test the web service using the Chrome client [Advanced Rest Client]. We will need to specify the HTTP authentication header:</span></p>
 <p><a id="refheading1623951200878134"></a></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -2135,13 +2239,10 @@
   <li><span style="color: #000000">lines 33–35, 40–42: if the user [credentials] is not </span><b><span style="color: #000000">null</span></b><span style="color: #000000">, then the authentication header is added. The </span><i><span style="color: #000000">Base64</span></i><span style="color: #000000"> encoding of the username and password is handled by the [getBase64] method in lines 17–21. Note that this method uses a [Base64] class from JDK 1.8. Our HTTP client can work with an unsecured web service. Simply pass it a [credentials] equal to </span><i><span style="color: #000000">null</span></i><span style="color: #000000">;</span>
   </li>
   <li><span style="color: #000000">Apart from the preceding lines, the code remains unchanged;</span>
-<a id="refheading1451331186279333"></a>
-
-### 20.3.2. <span style="color: #4f81bd">The [DAO] layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1451331186279333"></a></p>
+<h3 id="2032-the-dao-layer">20.3.2. <span style="color: #4f81bd">The [DAO] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000424000000DA4AA5A50F.png" style="display:inline-block; margin:4px;width:14.023cm;height:2.884cm;" class="odt-zoomable" data-zoom-src="images/1000000000000424000000DA4AA5A50F.png" /></td></tr></table>
 
 <p><a id="refheading9361894989336"></a></p>
@@ -2324,13 +2425,10 @@
 
 <ul>
   <li><span style="color: #000000">Line 7: The task is delegated to the [authenticate] method of the [Authenticate] class. An exception will therefore be thrown if the user [Credentials </span><span style="color: #6a3e3e">credentials</span><span style="color: #000000">] is not accepted by the secure web service;</span>
-<a id="refheading1451351186279333"></a>
-
-#### 20.3.2.3. <span style="color: #4f81bd">The [DaoCategorie, DaoProduit] classes</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1451351186279333"></a></p>
+<h4 id="20323-the-daocategorie-daoproduit-classes">20.3.2.3. <span style="color: #4f81bd">The [DaoCategorie, DaoProduit] classes</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D3000000B4B1A2A758.png" style="display:inline-block; margin:4px;width:3.911cm;height:3.336cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D3000000B4B1A2A758.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The [DaoCategorie, DaoProduit] classes are those from the [spring-webjson-server-generic] project with the additional parameter [Credentials </span><span style="color: #6a3e3e">credentials</span><span style="color: #000000">]. Here is an example:</span></p>
@@ -2377,13 +2475,10 @@
 
 <ul>
   <li><span style="color: #000000">line 2: you must specify the package of the new [DAO] layer;</span>
-<a id="refheading9365894989336"></a>
-
-### 20.3.4. <span style="color: #4f81bd"><span style="color: #000000">Tests for the [DAO] layer</span></span>
-
   </li>
 </ul>
-
+<p><a id="refheading9365894989336"></a></p>
+<h3 id="2034-tests-for-the-dao-layer">20.3.4. <span style="color: #4f81bd"><span style="color: #000000">Tests for the [DAO] layer</span></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000442000000E4857FE39A.png" style="display:inline-block; margin:4px;width:14.42cm;height:3.016cm;" class="odt-zoomable" data-zoom-src="images/1000000000000442000000E4857FE39A.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010B000000B2846E1708.png" style="display:inline-block; margin:4px;width:4.941cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B000000B2846E1708.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -2614,13 +2709,10 @@
   <li>the package [spring.security.repositories] implements the [repositories] layer;
   </li>
   <li>the [spring.security.dao] package implements the [dao2] layer;
-<a id="refheading1451451186279333"></a>
-
-### 20.4.1. <span style="color: #4f81bd">The Maven project</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1451451186279333"></a></p>
+<h3 id="2041-the-maven-project">20.4.1. <span style="color: #4f81bd">The Maven project</span></h3>
 <p><span style="color: #000000">The project is a Maven project configured by the following [pom.xml] file:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
@@ -2701,13 +2793,10 @@
   <li><span style="color: #000000">line 4: the packages containing the Spring beans have the same name in the new project;</span>
   </li>
   <li><span style="color: #000000">line 5: in the previous project, the [spring.webjson.server.config.AppConfig] class was found in the [spring-webjson-server-jdbc-generic] dependency. Here, it will be found in the [spring-webjson-server-jpa-generic] dependency;</span>
-<a id="refheading1398331985289926"></a>
-
-### 20.4.3. <span style="color: #4f81bd">The JPA layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1398331985289926"></a></p>
+<h3 id="2043-the-jpa-layer">20.4.3. <span style="color: #4f81bd">The JPA layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044000000113360481E3.png" style="display:inline-block; margin:4px;width:14.393cm;height:3.637cm;" class="odt-zoomable" data-zoom-src="images/100000000000044000000113360481E3.png" /></td></tr></table>
 
 <p><span style="color: #000000">The JPA entities managed by the [JPA] layer are found in the [mysql-config-jpa-hibernate] project [2], which is a dependency of project [1]:</span></p>
@@ -3010,13 +3099,10 @@
   <li><span style="color: #000000">lines 34–36: implement the foreign key from the [USERS_ROLES] table to the [USERS] table;</span>
   </li>
   <li><span style="color: #000000">lines 38–41: implement the foreign key from the [USERS_ROLES] table to the [ROLES] table;</span>
-<a id="refheading1395931505509149"></a>
-
-### 20.4.4. <span style="color: #4f81bd">The [repositories] layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1395931505509149"></a></p>
+<h3 id="2044-the-repositories-layer">20.4.4. <span style="color: #4f81bd">The [repositories] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044F0000010405030433.png" style="display:inline-block; margin:4px;width:14.593cm;height:3.44cm;" class="odt-zoomable" data-zoom-src="images/100000000000044F0000010405030433.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F7000000BBCE8EB84A.png" style="display:inline-block; margin:4px;width:4.57cm;height:3.461cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BBCE8EB84A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -3095,13 +3181,10 @@
 
 <ul>
   <li><span style="color: #000000">Line 7: The [UserRoleRepository] interface simply extends the [CrudRepository] interface without adding any new methods;</span>
-<a id="refheading1451491186279333"></a>
-
-### 20.4.5. <span style="color: #4f81bd">The [DAO2] layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1451491186279333"></a></p>
+<h3 id="2045-the-dao2-layer">20.4.5. <span style="color: #4f81bd">The [DAO2] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000043D00000111BB1A84DC.png" style="display:inline-block; margin:4px;width:14.355cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000043D00000111BB1A84DC.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F600000124B17590C0.png" style="display:inline-block; margin:4px;width:4.56cm;height:5.413cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F600000124B17590C0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -3485,13 +3568,10 @@
   <li>a [security / web / EclipseLink / SQL Server 2014 Express] architecture;
   </li>
   <li>an architecture [security / web / OpenJpa / Oracle Express];
-<a id="refheading14539324987110"></a>
-
-### 20.5.4. <span style="color: #4f81bd">[security / web / EclipseLink / SQL Server] architecture</span>
-
   </li>
 </ul>
-
+<p><a id="refheading14539324987110"></a></p>
+<h3 id="2054-security-web-eclipselink-sql-server-architecture">20.5.4. <span style="color: #4f81bd">[security / web / EclipseLink / SQL Server] architecture</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046700000104F5BE091E.png" style="display:inline-block; margin:4px;width:14.91cm;height:3.44cm;" class="odt-zoomable" data-zoom-src="images/100000000000046700000104F5BE091E.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C40000018FC6335F1E.png" style="display:inline-block; margin:4px;width:5.98cm;height:5.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C40000018FC6335F1E.png" /></td></tr></table>

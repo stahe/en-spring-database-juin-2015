@@ -863,6 +863,45 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#17322-the-appconfig-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3.2.2. The [AppConfig] class
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1733-the-serverexception" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3.3. The [ServerException]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1734-the-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3.4. The controllers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.3.4. The controllers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#17341-the-urls-exposed-by-the-categorycontroller" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -912,10 +951,43 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#1737-handling-json-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3.7. Handling JSON filters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1738-the-productcontroller" class="md-nav__link">
     <span class="md-ellipsis">
       
         17.3.8. The [ProductController]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1739-the-web-service-json-execution-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3.9. The web service / JSON execution class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17310-testing-the-json-web-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.3.10. Testing the /jSON web service
       
     </span>
   </a>
@@ -1467,13 +1539,10 @@
   <li>lines [53-60]: define a filter called [<span style="color: #000000">jsonMapperShortProduct</span>] that provides the JSON representation of a product without its category;
   </li>
   <li>lines [62-70]: define a filter called [<span style="color: #000000">jsonMapperLongProduct</span>] that provides the JSON representation of a product with its category;
-<a id="refheading17990265679331"></a>
-
-#### 17.3.2.2. <span style="color: #4f81bd">The [AppConfig] class</span>
-
   </li>
 </ul>
-
+<p><a id="refheading17990265679331"></a></p>
+<h4 id="17322-the-appconfig-class">17.3.2.2. <span style="color: #4f81bd">The [AppConfig] class</span></h4>
 <p>The [AppConfig] class configures the entire application, i.e., the [web] and [DAO] layers:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.webjson.server.config;</span></span>
@@ -1496,13 +1565,10 @@
   <li>line 9: we import the beans from the [DAO / JDBC] layer as well as those defined by the [WebConfig] class. All beans from the [DAO] layer will therefore be available in the web/JSON application;
   </li>
   <li>line 8: specifies the packages where other Spring beans can be found;
-<a id="refheading1350601333600986"></a>
-
-### 17.3.3. <span style="color: #4f81bd">The [ServerException]</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1350601333600986"></a></p>
+<h3 id="1733-the-serverexception">17.3.3. <span style="color: #4f81bd">The [ServerException]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000111000000A1FC650B40.png" style="display:inline-block; margin:4px;width:5.05cm;height:2.977cm;" class="odt-zoomable" data-zoom-src="images/1000000000000111000000A1FC650B40.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>Just as in the previous chapters, where the [DAO] layer threw an uncaught [DaoException], the [web] layer will throw an uncaught [ServerException]:</p>
@@ -1528,13 +1594,10 @@
 
 <ul>
   <li>line 5: the [<span style="color: #000000">ServerException</span>] class extends the [<span style="color: #000000">UncheckedException</span>] class defined in the project configuring the JDBC layer (line 3);
-<a id="refheading480904986338762"></a>
-
-### 17.3.4. <span style="color: #4f81bd">The controllers</span>
-
   </li>
 </ul>
-
+<p><a id="refheading480904986338762"></a></p>
+<h3 id="1734-the-controllers">17.3.4. <span style="color: #4f81bd">The controllers</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048E000001789541AF0F.png" style="display:inline-block; margin:4px;width:15.425cm;height:4.974cm;" class="odt-zoomable" data-zoom-src="images/100000000000048E000001789541AF0F.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000130000001569BCFF097.png" style="display:inline-block; margin:4px;width:5.611cm;height:6.311cm;" class="odt-zoomable" data-zoom-src="images/1000000000000130000001569BCFF097.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -2485,13 +2548,10 @@
   <li><span style="color: #000000">lines 5–17: we build the list of [CoreCategory] objects that we will return to the remote client;</span>
   </li>
   <li><span style="color: #000000">line 19: the response is returned and serialized to JSON;</span>
-<a id="refheading1330861985289926"></a>
-
-### 17.3.7. <span style="color: #4f81bd">Handling JSON filters</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1330861985289926"></a></p>
+<h3 id="1737-handling-json-filters">17.3.7. <span style="color: #4f81bd">Handling JSON filters</span></h3>
 <p><span style="color: #000000">For each method of a controller, there are two points for JSON serialization/deserialization:</span></p>
 <ul>
   <li><span style="color: #000000">deserialization of the posted value: this is handled explicitly here;</span>
@@ -2749,13 +2809,10 @@
   <li><span style="color: #000000">lines 12–15: the list of [CoreProduct] objects to be returned is constructed;</span>
   </li>
   <li><span style="color: #000000">line 18: the response is returned, which will be serialized (implicit serialization performed by Spring MVC) by the mapper from line 7 before being sent to the remote client (see discussion in section</span><a href="#refheading1330861985289926"><u><span style="color: #0563c1"> 17.3.7</span></u></a><span style="color: #000000">);</span>
-<a id="refheading18002265679331"></a>
-
-### 17.3.9. <span style="color: #4f81bd"><span style="color: #000000">The web service / JSON execution class</span></span>
-
   </li>
 </ul>
-
+<p><a id="refheading18002265679331"></a></p>
+<h3 id="1739-the-web-service-json-execution-class">17.3.9. <span style="color: #4f81bd"><span style="color: #000000">The web service / JSON execution class</span></span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FC0000007FC2C0D589.png" style="display:inline-block; margin:4px;width:4.671cm;height:2.355cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FC0000007FC2C0D589.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The [Boot] class is the project’s executable class:</span></p>
@@ -2850,13 +2907,10 @@
   <li>Lines 19–21: The Spring MVC context is initialized;
   </li>
   <li>lines 24–43: The exposed URLs are discovered;
-<a id="refheading18004265679331"></a>
-
-### 17.3.10. <span style="color: #4f81bd">Testing the /jSON web service</span>
-
   </li>
 </ul>
-
+<p><a id="refheading18004265679331"></a></p>
+<h3 id="17310-testing-the-json-web-service">17.3.10. <span style="color: #4f81bd">Testing the /jSON web service</span></h3>
 <p>To perform the tests, we use the [Advanced Rest Client] (see section<a href="#refheading261317838046689"><u><span style="color: #0563c1"> 23.11</span></u></a>) to query the URLs exposed by the /jSON web service (the /jSON web service must be running, as well as the DBMS, of course). To populate the database, we run the execution configuration named [spring-jdbc-generic-04-fillDataBase], which populates the database with 5 categories and 10 products:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011D000000BE3E27A5B5.png" style="display:inline-block; margin:4px;width:5.279cm;height:3.519cm;" class="odt-zoomable" data-zoom-src="images/100000000000011D000000BE3E27A5B5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 

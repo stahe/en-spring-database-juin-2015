@@ -444,6 +444,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#41-setting-up-the-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Setting up the development environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-the-dbproduitscategories-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. The [dbproduitscategories] database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-the-eclipse-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. The Eclipse Project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#44-spring-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -452,7 +485,62 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4.4. Spring Configuration">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-project-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Project Exceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-project-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. Project Entities
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-the-idaot-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. The Idao&lt;T&gt; interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-implementation-of-the-idaot-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8. Implementation of the IDao&lt;T&gt; interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-the-daocategorie-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.9. The [DaoCategorie] class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.9. The [DaoCategorie] class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -721,6 +809,50 @@
     <span class="md-ellipsis">
       
         4.11.2.3. The [fillDataBase] method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#41124-the-getlongcategoriesbyname3-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.11.2.4. The [getLongCategoriesByName3] method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#41125-the-updatedatabase1-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.11.2.5. The [updateDataBase1] method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#41126-the-deleteproductsbyproduct1-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.11.2.6. The [deleteProductsByProduct1] method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#41127-the-getlongproductsbyid3-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.11.2.7. The [getLongProductsById3] method
       
     </span>
   </a>
@@ -1393,8 +1525,6 @@
 
 <p><a id="refheading1051982082896917"></a></p>
 <h1 id="4-introduction-to-spring-jdbc">4. <span style="color: #365f91">Introduction to Spring JDBC</span></h1>
-<p></li>
-</ul></p>
 <p>In this chapter, we will examine the following architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000043C000000F7BDC78FB1.png" style="display:inline-block; margin:4px;width:14.34cm;height:3.268cm;" class="odt-zoomable" data-zoom-src="images/100000000000043C000000F7BDC78FB1.png" /></td></tr></table>
 
@@ -1403,13 +1533,10 @@
   <li>the database will have two tables linked by a foreign key relationship;
   </li>
   <li>the [DAO] layer will be implemented using the [Spring JDBC] library, which simplifies the management of the JDBC API;
-<a id="refheading1052002082896917"></a>
-
-## 4.1. <span style="color: #4f81bd">Setting up the development environment</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052002082896917"></a></p>
+<h2 id="41-setting-up-the-development-environment">4.1. <span style="color: #4f81bd">Setting up the development environment</span></h2>
 <p>Using STS, import the [spring-jdbc-04] project located in the [&lt;examples&gt;/spring-database-generic/spring-jdbc] folder</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CE000001ABDBE1B138.png" style="display:inline-block; margin:4px;width:16.272cm;height:5.65cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CE000001ABDBE1B138.png" /></td></tr></table>
 
@@ -1450,13 +1577,10 @@
   <li>in [25], make sure you are in the [dbproduitscategories] database and not the [dbproduits] database;
   </li>
   <li>in [29], the SQL script has created five tables. The [ROLES, USERS, USERS_ROLES] tables will only be used when we address the security of the web service built to expose the [dbproduitscategories] database on the web;
-<a id="refheading1052022082896917"></a>
-
-## 4.2. <span style="color: #4f81bd">The [dbproduitscategories] database</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052022082896917"></a></p>
+<h2 id="42-the-dbproduitscategories-database">4.2. <span style="color: #4f81bd">The [dbproduitscategories] database</span></h2>
 <p>The [dbproduitscategories] database is an extension of the [dbproduits] database discussed earlier. Whereas in the [PRODUITS] table the product had a category identified by a number that had no particular meaning, here that number will be a foreign key in the [CATEGORIES] table.</p>
 <p>The [PRODUCTS] table is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000534000001691C3D8B51.png" style="display:inline-block; margin:4px;width:17.621cm;height:4.777cm;" class="odt-zoomable" data-zoom-src="images/1000000000000534000001691C3D8B51.png" /></td></tr></table>
@@ -1494,13 +1618,10 @@
   <li>[VERSIONING]: category version number;
   </li>
   <li>[NAME]: unique name of the category;
-<a id="refheading1052042082896917"></a>
-
-## 4.3. <span style="color: #4f81bd">The Eclipse Project</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052042082896917"></a></p>
+<h2 id="43-the-eclipse-project">4.3. <span style="color: #4f81bd">The Eclipse Project</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F200000103978867AE.png" style="display:inline-block; margin:4px;width:4.48cm;height:4.794cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F200000103978867AE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The [spring-jdbc-04] project implements the following architecture:</p>
@@ -1670,13 +1791,10 @@
     </ul>
   </li>
   <li>lines 58–62: the [<span style="color: #000000">simpleJdbcInsertCategorie</span>] bean will be used to insert a category into the [CATEGORIES] table and retrieve the generated primary key;
-<a id="refheading1052062082896917"></a>
-
-## 4.5. <span style="color: #4f81bd">Project Exceptions</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052062082896917"></a></p>
+<h2 id="45-project-exceptions">4.5. <span style="color: #4f81bd">Project Exceptions</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000121000000BC7074573C.png" style="display:inline-block; margin:4px;width:5.35cm;height:3.48cm;" class="odt-zoomable" data-zoom-src="images/1000000000000121000000BC7074573C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>We have already seen the classes [UncheckedException, DaoException, ShortException] in the [spring-jdbc-03] project. We are adding a new one:</p>
@@ -1701,13 +1819,10 @@
 
 <ul>
   <li>The [MyIllegalArgumentException] class derives from the [UncheckedException] class and is therefore an unchecked class. It will be used to signal a call with incorrect arguments to a method in the [DAO] layer. We did not name it [IllegalArgumentException] because this exception already exists in the JDK and this sometimes caused the compiler to generate an incorrect [import];
-<a id="refheading93205938270148"></a>
-
-## 4.6. <span style="color: #4f81bd">Project Entities</span>
-
   </li>
 </ul>
-
+<p><a id="refheading93205938270148"></a></p>
+<h2 id="46-project-entities">4.6. <span style="color: #4f81bd">Project Entities</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010D0000017740DC451D.png" style="display:inline-block; margin:4px;width:4.979cm;height:6.941cm;" class="odt-zoomable" data-zoom-src="images/100000000000010D0000017740DC451D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The classes in the [spring.jdbc.entities] package represent the rows in the [dbproduitscategories] database tables. For now, we will ignore the [USERS, ROLES, USERS_ROLE] tables.</p>
@@ -1893,13 +2008,10 @@
   <li>lines 32–44: the [addProduct] method allows you to add a product to the category (line 39) and set the category’s characteristics (categoryID and category) in the added product;
   </li>
   <li>line 8: a JSON filter. When the JSON library needs to serialize/deserialize a [Category] object, we must tell it how to handle the filter named [<span style="color: #2a00ff">jsonFilterCategory</span>];
-<a id="refheading1052082082896917"></a>
-
-## 4.7. <span style="color: #4f81bd">The Idao&lt;T&gt; interface</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052082082896917"></a></p>
+<h2 id="47-the-idaot-interface">4.7. <span style="color: #4f81bd">The Idao&lt;T&gt; interface</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000451000000EB3BC5FAFA.png" style="display:inline-block; margin:4px;width:14.619cm;height:3.11cm;" class="odt-zoomable" data-zoom-src="images/1000000000000451000000EB3BC5FAFA.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000C7690B2175.png" style="display:inline-block; margin:4px;width:4.41cm;height:3.687cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C7690B2175.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -2011,13 +2123,10 @@
   <li>IDao&lt;Product&gt; to access the [PRODUCTS] table;
   </li>
   <li>IDao&lt;Category&gt; to access the [CATEGORIES] table;
-<a id="refheading1052102082896917"></a>
-
-## 4.8. <span style="color: #4f81bd">Implementation of the IDao&lt;T&gt; interface</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052102082896917"></a></p>
+<h2 id="48-implementation-of-the-idaot-interface">4.8. <span style="color: #4f81bd">Implementation of the IDao&lt;T&gt; interface</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000C7690B2175.png" style="display:inline-block; margin:4px;width:4.41cm;height:3.687cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C7690B2175.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
@@ -2542,13 +2651,10 @@
   <li><span style="color: #000000">methods that modify the database are annotated with [</span><span style="color: #646464">@Transactional</span><span style="color: #000000">];</span>
   </li>
   <li><span style="color: #000000">[delete] methods are not annotated and </span><b><span style="color: #000000">therefore do not run within a transaction</span></b><span style="color: #000000">. The idea is that if a deletion fails, the user likely does not want to roll back all the successful ones that occurred previously;</span>
-<a id="refheading1052122082896917"></a>
-
-## 4.9. <span style="color: #4f81bd">The [DaoCategorie] class</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052122082896917"></a></p>
+<h2 id="49-the-daocategorie-class">4.9. <span style="color: #4f81bd">The [DaoCategorie] class</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000426000000FDF1819B0F.png" style="display:inline-block; margin:4px;width:14.049cm;height:3.348cm;" class="odt-zoomable" data-zoom-src="images/1000000000000426000000FDF1819B0F.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000C7690B2175.png" style="display:inline-block; margin:4px;width:4.41cm;height:3.687cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C7690B2175.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -4284,13 +4390,10 @@
   <li>line 4: we delete the entry found in the dictionary;
   </li>
   <li>lines 5-8: we verify that the two products have the same field values;
-<a id="refheading1052602082896917"></a>
-
-#### 4.11.2.4. <span style="color: #4f81bd">The [<span style="color: #000000">getLongCategoriesByName3</span>] method</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052602082896917"></a></p>
+<h4 id="41124-the-getlongcategoriesbyname3-method">4.11.2.4. <span style="color: #4f81bd">The [<span style="color: #000000">getLongCategoriesByName3</span>] method</span></h4>
 <p>This test is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span></span>
@@ -4337,13 +4440,10 @@
 
 <ul>
   <li>Line 6 verifies that the [products] field of the category is not <i>null</i>. This is because reading a category in long format always returns it with a <i>non-null</i> [products] field. If the category has no products, then the [products] field is an empty but existing list;
-<a id="refheading1052622082896917"></a>
-
-#### 4.11.2.5. <span style="color: #4f81bd">The [<span style="color: #000000">updateDataBase1</span>] method</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052622082896917"></a></p>
+<h4 id="41125-the-updatedatabase1-method">4.11.2.5. <span style="color: #4f81bd">The [<span style="color: #000000">updateDataBase1</span>] method</span></h4>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="color:#000000">@Test</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">updateDataBase1() {</span></span>
@@ -4402,13 +4502,10 @@
   <li>line 16: the products in the category named &#x27;category[1]&#x27; are retrieved from the database;
   </li>
   <li>lines 20–24: for all products in this category, we verify that the price has been updated (line 22) and that the version has been incremented by 1 (line 23);
-<a id="refheading1052642082896917"></a>
-
-#### 4.11.2.6. <span style="color: #4f81bd">The [<span style="color: #000000">deleteProductsByProduct1</span>] method</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052642082896917"></a></p>
+<h4 id="41126-the-deleteproductsbyproduct1-method">4.11.2.6. <span style="color: #4f81bd">The [<span style="color: #000000">deleteProductsByProduct1</span>] method</span></h4>
 <p>The [<span style="color: #000000">deleteProductsByProduct1</span>] method deletes products from the [PRODUCTS] table:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span></span>
@@ -4427,13 +4524,10 @@
   <li>line 6: we delete two products;
   </li>
   <li>lines 8-9: we verify that they are no longer in the database;
-<a id="refheading1052662082896917"></a>
-
-#### 4.11.2.7. <span style="color: #4f81bd">The [<span style="color: #000000">getLongProductsById3</span>] method</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1052662082896917"></a></p>
+<h4 id="41127-the-getlongproductsbyid3-method">4.11.2.7. <span style="color: #4f81bd">The [<span style="color: #000000">getLongProductsById3</span>] method</span></h4>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">getLongProductsById3() {</span></span>

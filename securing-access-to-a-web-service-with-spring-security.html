@@ -872,6 +872,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#1921-maven-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.1. Maven Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1922-thymeleaf-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.2. Thymeleaf views
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1923-spring-mvc-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -887,6 +909,28 @@
     <span class="md-ellipsis">
       
         19.2.4. Spring Security Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1925-executable-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.5. Executable class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1926-testing-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.6. Testing the Application
       
     </span>
   </a>
@@ -1071,13 +1115,10 @@
   <li>[MvcConfig]: is the Spring MVC configuration class;
   </li>
   <li>[WebSecurityConfig]: is the Spring Security configuration class;
-<a id="refheading9321894989336"></a>
-
-### 19.2.1. <span style="color: #4f81bd">Maven Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="refheading9321894989336"></a></p>
+<h3 id="1921-maven-configuration">19.2.1. <span style="color: #4f81bd">Maven Configuration</span></h3>
 <p><a id="refheading1623651200878134"></a>Project [3] is a Maven project. Let&#x27;s take a look at its [pom.xml] file to see its dependencies:</p>
 <p><a id="refheading570831429907001"></a></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1131,13 +1172,10 @@
   <li>lines 17–20: dependency on the [Thymeleaf] framework;
   </li>
   <li>lines 22–25: dependency on the Spring Security framework;
-<a id="refheading9323894989336"></a>
-
-### 19.2.2. <span style="color: #4f81bd">Thymeleaf views</span>
-
   </li>
 </ul>
-
+<p><a id="refheading9323894989336"></a></p>
+<h3 id="1922-thymeleaf-views">19.2.2. <span style="color: #4f81bd">Thymeleaf views</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B7000000654C02E8DD.png" style="display:inline-block; margin:4px;width:3.39cm;height:1.871cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B7000000654C02E8DD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1623671200878134"></a></p>
@@ -1439,13 +1477,10 @@
   <li>lines 19–21: redefine the method [<span style="color: #000000">configure(AuthenticationManagerBuilder auth)</span>] that manages users;
   </li>
   <li>line 20: authentication is performed using hard-coded users [<span style="color: #000000">auth.inMemoryAuthentication()</span>]. A user is defined here with the login [user], password [password], and role [USER]. Users with the same role can be granted the same permissions;
-<a id="refheading9329894989336"></a>
-
-### 19.2.5. <span style="color: #4f81bd">Executable class</span>
-
   </li>
 </ul>
-
+<p><a id="refheading9329894989336"></a></p>
+<h3 id="1925-executable-class">19.2.5. <span style="color: #4f81bd">Executable class</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000009A7B7CF92B.png" style="display:inline-block; margin:4px;width:4.57cm;height:2.849cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000009A7B7CF92B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading570911429907001"></a></p>
@@ -1480,13 +1515,10 @@
   <li><span style="color: #000000">line 13: the [main] method of the executable class;</span>
   </li>
   <li><span style="color: #000000">line 14: the static method [SpringApplication.run] is executed with the [Application] configuration class as a parameter. We have already encountered this process and know that the Tomcat server embedded in the project’s Maven dependencies will be launched and the project deployed on it. We saw that four URLs were handled [/, /home, /login, /hello] and that some were protected by access rights.</span>
-<a id="refheading9331894989336"></a>
-
-### 19.2.6. <span style="color: #4f81bd">Testing the Application</span>
-
   </li>
 </ul>
-
+<p><a id="refheading9331894989336"></a></p>
+<h3 id="1926-testing-the-application">19.2.6. <span style="color: #4f81bd">Testing the Application</span></h3>
 <p><a id="refheading1623751200878134"></a><span style="color: #000000">Let’s start by requesting the URL [/], which is one of the four accepted URLs. It is associated with the view [/templates/home.html]:</span></p>
 <p><a id="refheading570931429907001"></a></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000143000000DCD3E5FF81.png" style="display:inline-block; margin:4px;width:5.98cm;height:4.073cm;" class="odt-zoomable" data-zoom-src="images/1000000000000143000000DCD3E5FF81.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>

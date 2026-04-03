@@ -822,6 +822,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#181-the-eclipse-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1. The Eclipse project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#182-maven-configuration-of-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2. Maven configuration of the project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#183-spring-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3. Spring Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#184-implementation-of-the-http-client" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -900,6 +933,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#18524-the-saveentities-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.5.2.4. The [saveEntities] method
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -919,7 +963,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="18.6. The JUnit Test">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#187-web-service-json-jpa-hibernate-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.7. Web service / JSON / JPA / Hibernate implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18.7. Web service / JSON / JPA / Hibernate implementation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -946,6 +1001,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#188-web-service-json-jpa-eclipselink-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.8. Web Service / JSON / JPA / EclipseLink Implementation
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1143,13 +1209,10 @@
   <li>a [DAO] layer [2] that will present the same interface as the [DAO] layer [4];
   </li>
   <li>a JUnit testing layer [1] to verify that the client and server are functioning correctly;
-<a id="refheading17873265679331"></a>
-
-## 18.1. <span style="color: #4f81bd">The Eclipse project</span>
-
   </li>
 </ul>
-
+<p><a id="refheading17873265679331"></a></p>
+<h2 id="181-the-eclipse-project">18.1. <span style="color: #4f81bd">The Eclipse project</span></h2>
 <p>The client&#x27;s Eclipse project is as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004240000015EBDA930B8.png" style="display:inline-block; margin:4px;width:14.023cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000004240000015EBDA930B8.png" /></td></tr></table>
 
@@ -1165,13 +1228,10 @@
   <li>the [spring.webjson.client.entities] package contains the objects exchanged with the web service / JSON. We are familiar with all of them;
   </li>
   <li>the [spring.webjson.client.infrastructure] package contains the exception classes used by the project. We know them all;
-<a id="refheading17876265679331"></a>
-
-## 18.2. <span style="color: #4f81bd">Maven configuration of the project</span>
-
   </li>
 </ul>
-
+<p><a id="refheading17876265679331"></a></p>
+<h2 id="182-maven-configuration-of-the-project">18.2. <span style="color: #4f81bd">Maven configuration of the project</span></h2>
 <p>The project is a Maven project configured by the following [pom.xml] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
@@ -1267,13 +1327,10 @@
   <li>lines 50–53: the logging library;
   </li>
   <li>lines 54–64: the dependency for JUnit tests. It includes the JUnit 4 library required for testing. These dependencies have the [<span style="color: #008080">&lt;</span><span style="color: #3f7f7f">scope</span><span style="color: #008080">&gt;</span><span style="color: #000000">test</span><span style="color: #008080">&lt;</span><span style="color: #3f7f7f">/scope</span><span style="color: #008080">&gt;</span>] attribute, indicating that they are only needed for the testing phase. They are not included in the final project archive;
-<a id="refheading18010265679331"></a>
-
-## 18.3. <span style="color: #4f81bd">Spring Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="refheading18010265679331"></a></p>
+<h2 id="183-spring-configuration">18.3. <span style="color: #4f81bd">Spring Configuration</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010C000000807726F3DE.png" style="display:inline-block; margin:4px;width:4.96cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C000000807726F3DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The [AppConfig] class handles the Spring configuration for the HTTP client. Its code is as follows:</p>
@@ -2079,13 +2136,10 @@
   <li>Line 7: The result returned by the [getResponse] method is stored in an [Object] type;
   </li>
   <li>Line 9: The list of categories is returned. To do this, the [map] object [<span style="color: #6a3e3e">mapper</span><span style="color: #000000">.writeValueAsString(</span><span style="color: #6a3e3e">map</span><span style="color: #000000">)</span>] is serialized into a JSON string, which is then deserialized into a [List&lt;Category&gt;] type;
-<a id="refheading1350721333600986"></a>
-
-#### 18.5.2.4. <span style="color: #4f81bd">The [saveEntities] method</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1350721333600986"></a></p>
+<h4 id="18524-the-saveentities-method">18.5.2.4. <span style="color: #4f81bd">The [saveEntities] method</span></h4>
 <p>The [saveEntities] method persists categories to the database. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="color:#646464">@Override</span></span>
@@ -2179,13 +2233,10 @@
   <li>in [3], the [JUnitTestPushTheLimits] test executed on the client side (project [spring-webjson-client-generic]);
   </li>
   <li>in [3], the [JUnitTestPushTheLimits] test executed on the server side (project [spring-jdbc-generic-04]). We observe that the network layer causes very little slowdown compared to that caused by access to the DBMS;
-<a id="refheading1350741333600986"></a>
-
-## 18.7. <span style="color: #4f81bd">Web service / JSON / JPA / Hibernate implementation</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1350741333600986"></a></p>
+<h2 id="187-web-service-json-jpa-hibernate-implementation">18.7. <span style="color: #4f81bd">Web service / JSON / JPA / Hibernate implementation</span></h2>
 <p>We will now examine the following architecture:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CA00000305838B6B85.png" style="display:inline-block; margin:4px;width:16.219cm;height:10.225cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CA00000305838B6B85.png" /></td></tr></table>
 
@@ -2480,13 +2531,10 @@
   <li>line 5: we configure the JSON mapper of the [RestTemplate] object to handle the JSON filters [<span style="color: #2a00ff">jsonFilterCategorie</span>] of the [Category] object and the filter [<span style="color: #2a00ff">jsonFilterProduct</span>] of the [Product] object;
   </li>
   <li>line 7: the posted value (there isn’t one here) and the received value (List&lt;Category&gt;) are serialized/deserialized using this mapper. Note that the presence of the [entityType] field in the received JSON string—even though this field does not exist in the [Category] and [Product] entities on the client side—does not cause an error. It is ignored. If it had caused an error, we would have modified the client-side filters to ignore it.
-<a id="refheading1398191985289926"></a>
-
-## 18.8. <span style="color: #4f81bd">Web Service / JSON / JPA / EclipseLink Implementation</span>
-
   </li>
 </ul>
-
+<p><a id="refheading1398191985289926"></a></p>
+<h2 id="188-web-service-json-jpa-eclipselink-implementation">18.8. <span style="color: #4f81bd">Web Service / JSON / JPA / EclipseLink Implementation</span></h2>
 <p>To implement the web service / JSON / JPA / EclipseLink, simply change the JPA implementation:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB0000013B2FE3172A.png" style="display:inline-block; margin:4px;width:4.35cm;height:5.831cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB0000013B2FE3172A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 

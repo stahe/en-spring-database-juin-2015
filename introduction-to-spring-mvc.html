@@ -779,6 +779,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#162-the-spring-mvc-development-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2. The Spring MVC Development Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#163-a-webjson-project-with-spring-mvc" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -824,10 +835,43 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#1634-the-c-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3.4. The C controller
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1635-the-m-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3.5. The M model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1636-execution" class="md-nav__link">
     <span class="md-ellipsis">
       
         16.3.6. Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1637-creating-an-executable-archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3.7. Creating an executable archive
       
     </span>
   </a>
@@ -1090,13 +1134,10 @@
   <li>the [<b>DAO</b>] (Data Access Objects) layer, the [<b>ORM</b>] (Object Relational Mapper) layer, and the JDBC driver manage access to data in the DBMS. The [<b>ORM</b>] layer acts as a bridge between the objects handled by the [DAO] layer and the rows and columns of tables in a relational database. A specification called JPA (Java Persistence API) allows you to abstract away from the ORM being used if it implements these specifications. This will be the case in this tutorial, so from now on we will refer to the ORM layer as the JPA layer;
   </li>
   <li>The integration of these layers is handled by the Spring framework;
-<a id="refheading99531454977699"></a>
-
-## 16.2. <span style="color: #4f81bd">The Spring MVC Development Model</span>
-
   </li>
 </ul>
-
+<p><a id="refheading99531454977699"></a></p>
+<h2 id="162-the-spring-mvc-development-model">16.2. <span style="color: #4f81bd">The Spring MVC Development Model</span></h2>
 <p>Spring MVC implements the MVC (Model–View–Controller) architectural pattern as follows:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003E80000016495D2960D.png" style="display:inline-block; margin:4px;width:13.229cm;height:4.71cm;" class="odt-zoomable" data-zoom-src="images/10000000000003E80000016495D2960D.png" /></td></tr></table>
 
@@ -1284,13 +1325,10 @@
   <li>In [4a], the model—which is a Java class—is converted into a JSON string by a JSON library;
   </li>
   <li>in [4b], this JSON string is sent to the browser;
-<a id="refheading15920779844303"></a>
-
-### 16.3.4. <span style="color: #4f81bd">The C controller</span>
-
   </li>
 </ul>
-
+<p><a id="refheading15920779844303"></a></p>
+<h3 id="1634-the-c-controller">16.3.4. <span style="color: #4f81bd">The C controller</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED000000AB6C6D3DB3.png" style="display:inline-block; margin:4px;width:4.39cm;height:3.166cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000AB6C6D3DB3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading5702714299070011"></a></p>
@@ -1324,13 +1362,10 @@
   <li>line 15: we have already explained the [<span style="color: #646464">@RequestParam</span>] annotation. The result returned by the method is an object of type [Greeting].
   </li>
   <li>line 12: a long integer of atomic type. This means it supports concurrent access. Multiple threads may want to increment the [counter] variable at the same time. This will be handled properly. A thread can only read the counter’s value once the thread currently modifying it has finished its modification.
-<a id="refheading15922779844303"></a>
-
-### 16.3.5. <span style="color: #4f81bd">The M model</span>
-
   </li>
 </ul>
-
+<p><a id="refheading15922779844303"></a></p>
+<h3 id="1635-the-m-model">16.3.5. <span style="color: #4f81bd">The M model</span></h3>
 <p><a id="refheading570291429907001"></a>The M model produced by the previous method is the following [Greeting] object:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED000000ABFE40A4F7.png" style="display:inline-block; margin:4px;width:4.39cm;height:3.166cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED000000ABFE40A4F7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -1458,13 +1493,10 @@
   <li>in [8], the browser tells the server that it is sending [urlencoded] data;
   </li>
   <li>in [9], the server&#x27;s JSON response;
-<a id="refheading15928779844303"></a>
-
-### 16.3.7. <span style="color: #4f81bd">Creating an executable archive</span>
-
   </li>
 </ul>
-
+<p><a id="refheading15928779844303"></a></p>
+<h3 id="1637-creating-an-executable-archive">16.3.7. <span style="color: #4f81bd">Creating an executable archive</span></h3>
 <p><a id="refheading5703514299070011"></a>We will now create an executable archive:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002D80000015A2C4E28E1.png" style="display:inline-block; margin:4px;width:9.631cm;height:4.577cm;" class="odt-zoomable" data-zoom-src="images/10000000000002D80000015A2C4E28E1.png" /></td></tr></table>
 

@@ -612,6 +612,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#84-the-persistencexml-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. The [persistence.xml] file
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-the-test-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5. The test layer
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1236,13 +1258,10 @@
 <p>This configuration is similar to the one described in Section<a href="#refheading1052942082896917"><u><span style="color: #0563c1"> 6.3.2</span></u></a> for the Hibernate JPA implementation. We will only detail the differences:</p>
 <ul>
   <li>lines 23–30: the [jpaVendorAdapter] bean is now implemented using OpenJpa;
-<a id="refheading11083935254046"></a>
-
-## 8.4. <span style="color: #4f81bd">The [persistence.xml] file</span>
-
   </li>
 </ul>
-
+<p><a id="refheading11083935254046"></a></p>
+<h2 id="84-the-persistencexml-file">8.4. <span style="color: #4f81bd">The [persistence.xml] file</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000C8EA873F9B.png" style="display:inline-block; margin:4px;width:4.41cm;height:3.706cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C8EA873F9B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1272,13 +1291,10 @@
   <li>lines 6–10: the five JPA entities to be managed;
   </li>
   <li>lines 13–17: another persistence unit linked to the [dbproduitscategories] database. OpenJpa allows for a persistence file containing multiple persistence units. EclipseLink does not. Recall that with Hibernate, we did not use a persistence file;
-<a id="refheading11084135254046"></a>
-
-## 8.5. <span style="color: #4f81bd">The test layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading11084135254046"></a></p>
+<h2 id="85-the-test-layer">8.5. <span style="color: #4f81bd">The test layer</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049D000000EE65368E9E.png" style="display:inline-block; margin:4px;width:15.625cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/100000000000049D000000EE65368E9E.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010F000000D6F3BF1063.png" style="display:inline-block; margin:4px;width:5.02cm;height:3.963cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000D6F3BF1063.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>

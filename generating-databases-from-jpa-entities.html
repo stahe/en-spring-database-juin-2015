@@ -646,6 +646,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#925-generating-tables-with-eclipselink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2.5. Generating tables with EclipseLink
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#926-generating-tables-with-hibernate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -700,6 +711,28 @@
     <span class="md-ellipsis">
       
         9.3.2. The Spring configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#933-the-jpa-entity-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.3. The JPA entity [Product]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#934-the-executable-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3.4. The executable class
       
     </span>
   </a>
@@ -1338,13 +1371,10 @@
 
 <ul>
   <li>Line 11: We instantiate the Spring context and immediately close it. In this context, there is the [ProductsRepository] bean that references the JPA entity [Product]. This is sufficient to instantiate the JPA layer and thus generate the tables in the [productcategories] database. 
-<a id="refheading11084735254046"></a>
-
-### 9.2.5. <span style="color: #4f81bd">Generating tables with EclipseLink</span>
-
   </li>
 </ul>
-
+<p><a id="refheading11084735254046"></a></p>
+<h3 id="925-generating-tables-with-eclipselink">9.2.5. <span style="color: #4f81bd">Generating tables with EclipseLink</span></h3>
 <p>We are in the following configuration:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000103000000EB7F068553.png" style="display:inline-block; margin:4px;width:4.8cm;height:4.355cm;" class="odt-zoomable" data-zoom-src="images/1000000000000103000000EB7F068553.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -1851,13 +1881,10 @@
   <li><span style="color: #000000">line 6: the single JPA entity;</span>
   </li>
   <li><span style="color: #000000">line 4: the name of the persistence unit [generic-jpa-entities-dbproduits] referenced in the [entityManagerFactory] bean;</span>
-<a id="refheading118641630560624"></a>
-
-### 9.3.3. <span style="color: #4f81bd">The JPA entity [Product]</span>
-
   </li>
 </ul>
-
+<p><a id="refheading118641630560624"></a></p>
+<h3 id="933-the-jpa-entity-product">9.3.3. <span style="color: #4f81bd">The JPA entity [Product]</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012F000000900CCA377E.png" style="display:inline-block; margin:4px;width:5.609cm;height:2.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000012F000000900CCA377E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The JPA entity is defined in the [mysql-config-jpa-eclipselink] project as follows:</p>
@@ -1916,13 +1943,10 @@
   <li>line 24: the category here is simply a number;
   </li>
   <li>there are no inter-entity relationships. We therefore have a very simple situation;
-<a id="refheading118643630560624"></a>
-
-### 9.3.4. <span style="color: #4f81bd">The executable class</span>
-
   </li>
 </ul>
-
+<p><a id="refheading118643630560624"></a></p>
+<h3 id="934-the-executable-class">9.3.4. <span style="color: #4f81bd">The executable class</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011A000000CCEC88ADFC.png" style="display:inline-block; margin:4px;width:5.219cm;height:3.775cm;" class="odt-zoomable" data-zoom-src="images/100000000000011A000000CCEC88ADFC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The [CreateDatabase] class is as follows:</p>

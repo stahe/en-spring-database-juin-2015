@@ -603,6 +603,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#634-the-persistencexml-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3.4. The [persistence.xml] file
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -640,7 +651,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="6.4.2. Spring Configuration">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#643-the-spring-data-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.3. The [Spring Data] layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4.3. The [Spring Data] layer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -728,6 +750,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#645-the-test-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4.5. The test layer
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1924,13 +1957,10 @@
   <li>lines 73–76: To standardize proxy handling across different JPA implementations, we decided that products cannot be added to a [Category] entity of type PROXY;
   </li>
   <li>lines 92–112: two [Category] entities are considered equal if they have the same primary key [id];
-<a id="refheading107479995711268"></a>
-
-### 6.3.4. <span style="color: #4f81bd">The [persistence.xml] file</span>
-
   </li>
 </ul>
-
+<p><a id="refheading107479995711268"></a></p>
+<h3 id="634-the-persistencexml-file">6.3.4. <span style="color: #4f81bd">The [persistence.xml] file</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000DCC3B12641.png" style="display:inline-block; margin:4px;width:4.41cm;height:4.076cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000DCC3B12641.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>JPA applications must define certain properties of the JPA provider being used, as well as the JPA entities to be used, in a [META-INF/persistence.xml] file located in the application’s classpath. Above, it has been placed in the [src/main/resources] folder, which is effectively part of an Eclipse project’s classpath. When using JPA in conjunction with Spring, certain information that should be in the [persistence.xml] file is placed elsewhere in Spring configuration classes. In a Spring JPA application, Spring drives JPA. With Spring JPA Hibernate, the [persistence.xml] file can be reduced to its simplest form:</p>
@@ -2078,13 +2108,10 @@
   <li>line 12: the [<span style="color: #646464">@ComponentScan</span>] annotation indicates that the [<span style="color: #2a00ff">spring.data.dao</span>] package must be scanned for Spring components. The [DaoCategory] and [DaoProduct] components will be found;
   </li>
   <li>line 13: the beans from the [ConfigJpa] configuration class are imported. These include the bean for the JPA implementation being used (Hibernate, Eclipselink, OpenJpa), the data source to be used, the EntityManager that will handle JPA operations, and the transaction manager;
-<a id="refheading2192522014630537"></a>
-
-### 6.4.3. <span style="color: #4f81bd">The [Spring Data] layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading2192522014630537"></a></p>
+<h3 id="643-the-spring-data-layer">6.4.3. <span style="color: #4f81bd">The [Spring Data] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D60000010050035B88.png" style="display:inline-block; margin:4px;width:16.378cm;height:3.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D60000010050035B88.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F2000000B642B7A5FD.png" style="display:inline-block; margin:4px;width:4.48cm;height:3.369cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F2000000B642B7A5FD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -2662,13 +2689,10 @@
   <li>for the long versions of categories, tests show that the [idCategorie] field of products is not populated. The [<span style="color: #000000">linkLongProduitsToCategories</span>] method in lines 96–105 resolves this issue;
   </li>
   <li>the [saveEntities] method in lines 108–121 inserts new products or modifies existing ones. The JPA layer requires that each [Product] entity be linked to a [Category] entity. Since we don’t know if the user has done this, we do it ourselves in lines 110–113. All we need to do is link the [Product] to a [Category] entity whose primary key matches the [idCategory] field of the [Product]. During testing, we find that an error occurs if we set the category version to <i>null</i>. So here we set it to 0, but we can set it to whatever we want. Apart from the primary key, no fields of the [Category] entity are required by the JPA layer to insert or update a [Product] entity;
-<a id="refheading10881435254046"></a>
-
-### 6.4.5. <span style="color: #4f81bd">The test layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10881435254046"></a></p>
+<h3 id="645-the-test-layer">6.4.5. <span style="color: #4f81bd">The test layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BB000000EA81E2145A.png" style="display:inline-block; margin:4px;width:16.021cm;height:3.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BB000000EA81E2145A.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010F000000D6F3BF1063.png" style="display:inline-block; margin:4px;width:5.02cm;height:3.963cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000D6F3BF1063.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
