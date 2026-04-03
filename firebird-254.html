@@ -1,0 +1,1332 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Working with a relational database using the Spring ecosystem">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-spring-database-juin-2015/firebird-254.html">
+      
+      
+        <link rel="prev" href="sql-server-2014.html">
+      
+      
+        <link rel="next" href="performance.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>14. Firebird 2.5.4 - Working with a relational database using the Spring ecosystem</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Working with a relational database using the Spring ecosystem";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#14-firebird-254" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Working with a relational database using the Spring ecosystem" class="md-header__button md-logo" aria-label="Working with a relational database using the Spring ecosystem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Working with a relational database using the Spring ecosystem
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              14. Firebird 2.5.4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-spring-database-juin-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Working with a relational database using the Spring ecosystem" class="md-nav__button md-logo" aria-label="Working with a relational database using the Spring ecosystem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Working with a relational database using the Spring ecosystem
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-spring-database-juin-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-spring-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introduction to the Spring Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Introduction to the JDBC API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Introduction to Spring JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-data-jpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Introduction to Spring Data JPA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-hibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Spring Data JPA Hibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-eclipselink.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Spring Data JPA EclipseLink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-openjpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Spring Data JPA OpenJpa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="generating-databases-from-jpa-entities.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Generating Databases from JPA Entities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oracle-express-11g-release-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Oracle Express 11g Release 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="postgresql-94.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. PostgreSQL 9.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ibm-db2-express-c-105.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. IBM DB2 Express-C 10.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sql-server-2014.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. SQL Server 2014
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Firebird 2.5.4
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="firebird-254.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Firebird 2.5.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#141-setting-up-the-working-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1. Setting up the working environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="14.1. Setting up the working environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1411-eclipse-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1.1. Eclipse environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1412-generating-the-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.1.2. Generating the databases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-configuring-the-jdbc-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.2. Configuring the JDBC Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#143-configuring-the-openjpa-jpa-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.3. Configuring the OpenJPA JPA Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#144-configuring-the-hibernate-jpa-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.4. Configuring the Hibernate JPA layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#145-configuring-the-eclipselink-jpa-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14.5. Configuring the EclipseLink JPA layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="performance.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-mvc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Introduction to Spring MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exposing-a-database-on-the-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Exposing a Database on the Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. A client programmed for the /jSON web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="securing-access-to-a-web-service-with-spring-security.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Securing Access to a Web Service with Spring Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Securing the web service for accessing the [dbproduitscategories] database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cross-domain-access-management.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Cross-domain access management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Appendices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading12187047764300713"></a></p>
+<h1 id="14-firebird-254">14. <span style="color: #365f91">Firebird 2.5.4</span></h1>
+<p>We will now address the port to Firebird 2.5.4 of what was done with Oracle.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000045E000000E9ADEF96AF.png" style="display:inline-block; margin:4px;width:14.79cm;height:3.082cm;" class="odt-zoomable" data-zoom-src="images/100000000000045E000000E9ADEF96AF.png" /></td></tr></table>
+
+<p><a id="refheading11082535254046113"></a></p>
+<h2 id="141-setting-up-the-working-environment">14.1. <span style="color: #4f81bd">Setting up the working environment</span></h2>
+<p><a id="refheading12187247764300713"></a></p>
+<h3 id="1411-eclipse-environment">14.1.1. <span style="color: #4f81bd">Eclipse environment</span></h3>
+<p>We will be working with the following Eclipse environment:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FC000000E2961C6B12.png" style="display:inline-block; margin:4px;width:4.671cm;height:4.189cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FC000000E2961C6B12.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The Firebird projects listed above can be found in the folder [&lt;examples&gt;/spring-database-config\firebird\eclipse].</p>
+<p><strong>Note</strong>: Press [Alt-F5] to regenerate all Maven projects.</p>
+<p><a id="refheading1237324776430073"></a></p>
+<h3 id="1412-generating-the-databases">14.1.2. <span style="color: #4f81bd">Generating the databases</span></h3>
+<p>As we did with Oracle, DB2, and SQL Server, we will need to install the Firebird JDBC driver in the local Maven repository.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000008D0000005DF3F115D9.png" style="display:inline-block; margin:4px;width:2.611cm;height:1.722cm;" class="odt-zoomable" data-zoom-src="images/100000000000008D0000005DF3F115D9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The [install.bat] file contains the following code:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">&quot;%M2_HOME%\bin\mvn.bat&quot; install:install-file -Dfile=jaybird-2.2.7.jar -Dpackaging=jar -DgroupId=org.firebirdsql.jdbc -DartifactId=jaybird -Dversion=2.2.7</span></span>
+</code></pre></div>
+
+<p>where [%M2-HOME%] is the Maven installation directory (see section<a href="#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>). After this installation, the Firebird JDBC driver can be referenced in the [pom.xml] files using the following dependency:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.firebirdsql.jdbc</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">jaybird</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">2.2.7</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p>From here on, connections to Firebird databases are made using the credentials [sysdba / masterkey]. Start Firebird and its client [IBManager] (see section<a href="#refheading1255301068575470"><u><span style="color: #0563c1"> 23.10</span></u></a>). Firebird databases are unique in that they are encapsulated in a single file.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000009C0000009748DC745A.png" style="display:inline-block; margin:4px;width:2.889cm;height:2.796cm;" class="odt-zoomable" data-zoom-src="images/100000000000009C0000009748DC745A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001F80000019AA14751FE.png" style="display:inline-block; margin:4px;width:9.329cm;height:7.588cm;" class="odt-zoomable" data-zoom-src="images/10000000000001F80000019AA14751FE.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047A000002492EA94BD7.png" style="display:inline-block; margin:4px;width:15.161cm;height:7.738cm;" class="odt-zoomable" data-zoom-src="images/100000000000047A000002492EA94BD7.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], the file can be found at [&lt;examples&gt;\spring-database-config\firebird\databases\DBPRODUITS.GDB];
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000478000002327BA3F198.png" style="display:inline-block; margin:4px;width:15.134cm;height:7.435cm;" class="odt-zoomable" data-zoom-src="images/1000000000000478000002327BA3F198.png" /></td></tr></table>
+
+<ul>
+  <li>As with Oracle, primary keys are generated using sequences.
+  </li>
+</ul>
+
+<p>We proceed in the same way to load the [dbproduitscategories] database, which can be found in [&lt;examples&gt;\spring-database-config\firebird\databases\DBPRODUITSCATEGORIES.GDB]</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F100000230660F6DE4.png" style="display:inline-block; margin:4px;width:4.461cm;height:10.366cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F100000230660F6DE4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>Now, run the configurations:</p>
+<ul>
+  <li>[spring-jdbc-generic-01.IntroJdbc01];
+  </li>
+  <li>[spring-jdbc-generic-01.IntroJdbc02];
+  </li>
+  <li>[spring-jdbc-generic-03.JUnitTestDao1];
+  </li>
+  <li>[spring-jdbc-generic-03.JUnitTestDao2];
+  </li>
+  <li>[spring-jdbc-generic-04.JUnitTestDao];
+  </li>
+  <li>[spring-jpa-generic-JUnitTestDao-openjpa];
+  </li>
+</ul>
+
+<p>They must all pass.</p>
+<p><a id="refheading12188047764300713"></a></p>
+<h2 id="142-configuring-the-jdbc-layer">14.2. <span style="color: #4f81bd">Configuring the JDBC Layer</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F7000000F68CDEB52F.png" style="display:inline-block; margin:4px;width:4.57cm;height:4.551cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000F68CDEB52F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001440000018A058DDCB9.png" style="display:inline-block; margin:4px;width:6.001cm;height:7.297cm;" class="odt-zoomable" data-zoom-src="images/10000000000001440000018A058DDCB9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The [firebird-config-jdbc] project configures the [JDBC] layer of the following test architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000465000000FBBAB87526.png" style="display:inline-block; margin:4px;width:14.884cm;height:3.321cm;" class="odt-zoomable" data-zoom-src="images/1000000000000465000000FBBAB87526.png" /></td></tr></table>
+
+<p>The project is analogous to the [oracle-config-jdbc] configuration project for the JDBC layer of the MySQL DBMS (see Section<a href="#refheading121880477643007"><u><span style="color: #0563c1"> 10.2</span></u></a>). We present only the changes:</p>
+<p><span style="color: #000000">The [pom.xml] file imports the Firebird JDBC driver:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:</span><span style="color:#000000">schemaLocation=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/modelVersion</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">dvp.spring.database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">generic-config-jdbc</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.0.1-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">generic jdbc configuration</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-parent</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.2.3.RELEASE</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- variable dependencies ********************************************** --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- JDBC driver for the DBMS --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.firebirdsql.jdbc</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">jaybird</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">2.2.7</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- required for the Firebird driver --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">javax.resource</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">connector-api</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.5</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.antlr</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">antlr-runtime</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">3.5.2</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- constant dependencies ********************************************** --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">...</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">lines 18–22: the Firebird JDBC driver;</span>
+  </li>
+  <li><span style="color: #000000">lines 24–33: the dependencies required for the Firebird JDBC driver;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">The second change is in the [ConfigJdbc] class, which defines the database credentials:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// connection parameters</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">DRIVER_CLASSNAME </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;org.firebirdsql.jdbc.FBDriver&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">URL_DBPRODUITS </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;jdbc:firebirdsql:localhost/3050:&lt;examples&gt;/SPRING-DATABASE-CONFIG/FIREBIRD/DATABASES/DBPRODUITS.GDB&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">USER_DBPRODUITS </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;sysdba&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">PASSWD_DBPRODUCTS </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;masterkey&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">PRODUCT_CATEGORIES_DB_URL </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;jdbc:firebirdsql:localhost/3050:&lt;examples&gt;/SPRING-DATABASE-CONFIG/FIREBIRD/DATABASES/PRODUCT_CATEGORIES_DB.GDB&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">USER_DBPRODUCTSCATEGORIES </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;sysdba&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">PASSWD_DBPRODUITSCATEGORIES </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;masterkey&quot;</span><span style="color:#000000">;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">Lines 3 and 6: You must enter the exact paths for both databases;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">The third modification that can be made is to the maximum number of parameters that a [PreparedStatement] can support:</span></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// maximum number of parameters for a [PreparedStatement]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static int </span><span style="font-weight:bold;font-style:italic;color:#0000c0">MAX_PREPAREDSTATEMENT_PARAMETERS </span><span style="color:#000000">= 1000;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">The [JUnitTestPushTheLimits] test generates SQL statements for 5,000 products, which will generate [PreparedStatement] objects with 5,000 parameters. MySQL supported this value. Firebird did not.</span></p>
+<p><span style="color: #000000">The fourth change concerns a reserved word in Firebird-config-jdbc: PASSWORD. The [USERS.</span><strong>PASSWORD</strong><span style="color: #000000">] column has therefore been renamed [USERS.</span><strong>PASSWD</strong><span style="color: #000000">]:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_USERS_PASSWORD </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;</span><span style="background-color:#ff950e;color:#2a00ff">PASSWD</span><span style="color:#2a00ff">&quot;</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public static final </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">SELECT_USER_BYLOGIN </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;SELECT u.ID as u_ID, u.VERSIONING as u_VERSIONING, u.NAME as u_NAME, u.LOGIN as u_LOGIN, </span><span style="background-color:#ff950e;color:#2a00ff">u.PASSWD </span><span style="color:#2a00ff">as u_PASSWORD FROM USERS u WHERE u.LOGIN= :login&quot;</span><span style="color:#000000">;</span></span>
+</code></pre></div>
+
+<p><a id="refheading12216647764300713"></a></p>
+<h2 id="143-configuring-the-openjpa-jpa-layer">14.3. <span style="color: #4f81bd">Configuring the OpenJPA JPA Layer</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000119000000F479524E67.png" style="display:inline-block; margin:4px;width:5.2cm;height:4.516cm;" class="odt-zoomable" data-zoom-src="images/1000000000000119000000F479524E67.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001310000017A7D9DBF03.png" style="display:inline-block; margin:4px;width:5.611cm;height:6.953cm;" class="odt-zoomable" data-zoom-src="images/10000000000001310000017A7D9DBF03.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The [firebird-config-jpa-openjpa] project configures the [JPA] layer of the test architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CA000000ED2D288EFF.png" style="display:inline-block; margin:4px;width:16.219cm;height:3.134cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CA000000ED2D288EFF.png" /></td></tr></table>
+
+<p>This project is similar to the [firebird-config-jpa-openjpa] configuration project for the OpenJPA JPA layer of the Oracle DBMS (see Section<a href="#refheading122468477643007"><u><span style="color: #0563c1"> 10.5</span></u></a>). In fact, both DBMSs use sequences to generate primary keys. There is only one change to make. It is <span style="color: #000000">in the definition of the [jpaVendorAdapter] bean in the [ConfigJpa] class:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// the JPA provider</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">JpaVendorAdapter jpaVendorAdapter() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        OpenJpaVendorAdapter </span><span style="color:#6a3e3e">openJpaVendorAdapter </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">OpenJpaVendorAdapter();</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setShowSql(</span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setDatabase(</span><span style="background-color:#ff950e;color:#000000">Database.</span><span style="font-weight:bold;font-style:italic;background-color:#ff950e;color:#0000c0">DEFAULT</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Line 6: We tell the JPA implementation that it will be working with an unrecognized DBMS. The JPA implementation will then adopt standard SQL data types.
+  </li>
+</ul>
+
+<p>With these changes made, the execution of the [spring-jpa-generic-JUnitTestDao-openjpa] configuration should succeed.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000125000000B8A3BF793E.png" style="display:inline-block; margin:4px;width:5.42cm;height:3.404cm;" class="odt-zoomable" data-zoom-src="images/1000000000000125000000B8A3BF793E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B80000010A9E59544D.png" style="display:inline-block; margin:4px;width:8.149cm;height:4.927cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B80000010A9E59544D.png" /></td></tr></table>
+
+<p><a id="refheading12246647764300713"></a></p>
+<h2 id="144-configuring-the-hibernate-jpa-layer">14.4. <span style="color: #4f81bd">Configuring the Hibernate JPA layer</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000109000000EA90169013.png" style="display:inline-block; margin:4px;width:4.911cm;height:4.337cm;" class="odt-zoomable" data-zoom-src="images/1000000000000109000000EA90169013.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C0000017BF74FC959.png" style="display:inline-block; margin:4px;width:5.549cm;height:7.01cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C0000017BF74FC959.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><strong>Note</strong>: Press [Alt-F5] to regenerate all Maven projects.</p>
+<p>The [firebird-config-jpa-hibernate] project is analogous to the [oracle-config-jpa-hibernate] project (Section<a href="#refheading122466477643007"><u><span style="color: #0563c1"> 10.4</span></u></a>) with the same modifications that were used to port the [oracle-config-jpa-openjpa] project to the [firebird-config-jpa-openjpa] project (Section<a href="#refheading122466477643007"><u><span style="color: #0563c1"> 10.4</span></u></a>).</p>
+<p>With these modifications in place, running the [spring-jpa-generic-JUnitTestDao-hibernate-eclipselink] configuration should succeed.</p>
+<p><a id="refheading12246847764300713"></a></p>
+<h2 id="145-configuring-the-eclipselink-jpa-layer">14.5. <span style="color: #4f81bd">Configuring the EclipseLink JPA layer</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000136000000DFFF7C0FEC.png" style="display:inline-block; margin:4px;width:5.611cm;height:4.036cm;" class="odt-zoomable" data-zoom-src="images/1000000000000136000000DFFF7C0FEC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C0000017D8B1089F7.png" style="display:inline-block; margin:4px;width:5.549cm;height:7.047cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C0000017D8B1089F7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><strong>Note</strong>: Press [Alt-F5] to regenerate all Maven projects.</p>
+<p>The [firebird-config-jpa-eclipselink] project is analogous to the [oracle-config-jpa-eclipselink] (Section<a href="#refheading122166477643007"><u><span style="color: #0563c1"> 10.3</span></u></a>)  with the same modifications that were used to port the [oracle-config-jpa-openjpa] project to the [firebird-config-jpa-openjpa] project (Section<a href="#refheading122466477643007"><u><span style="color: #0563c1"> 10.4</span></u></a>).</p>
+<p>With these modifications in place, the execution of the [spring-jpa-generic-JUnitTestDao-hibernate-eclipselink] configuration should succeed.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

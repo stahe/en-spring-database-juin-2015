@@ -1,0 +1,2099 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Working with a relational database using the Spring ecosystem">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-spring-database-juin-2015/introduction-to-spring-data-jpa.html">
+      
+      
+        <link rel="prev" href="introduction-to-spring-jdbc.html">
+      
+      
+        <link rel="next" href="spring-data-jpa-hibernate.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>5. Introduction to Spring Data JPA - Working with a relational database using the Spring ecosystem</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Working with a relational database using the Spring ecosystem";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5-introduction-to-spring-data-jpa" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Working with a relational database using the Spring ecosystem" class="md-header__button md-logo" aria-label="Working with a relational database using the Spring ecosystem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Working with a relational database using the Spring ecosystem
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Introduction to Spring Data JPA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-spring-database-juin-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Working with a relational database using the Spring ecosystem" class="md-nav__button md-logo" aria-label="Working with a relational database using the Spring ecosystem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Working with a relational database using the Spring ecosystem
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-spring-database-juin-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-spring-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introduction to the Spring Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Introduction to the JDBC API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Introduction to Spring JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Introduction to Spring Data JPA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduction-to-spring-data-jpa.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Introduction to Spring Data JPA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-example-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Example-01
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1. Example-01">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#512-the-jpa-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.2. The [JPA] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#513-the-spring-data-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.3. The [Spring Data] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#514-the-console-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.4. The [console] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#516-creating-an-executable-archive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.6. Creating an executable archive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#517-creating-a-spring-data-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1.7. Creating a [Spring Data] Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-hibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Spring Data JPA Hibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-eclipselink.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Spring Data JPA EclipseLink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-openjpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Spring Data JPA OpenJpa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="generating-databases-from-jpa-entities.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Generating Databases from JPA Entities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oracle-express-11g-release-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Oracle Express 11g Release 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="postgresql-94.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. PostgreSQL 9.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ibm-db2-express-c-105.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. IBM DB2 Express-C 10.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sql-server-2014.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. SQL Server 2014
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="firebird-254.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Firebird 2.5.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="performance.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-mvc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Introduction to Spring MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exposing-a-database-on-the-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Exposing a Database on the Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. A client programmed for the /jSON web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="securing-access-to-a-web-service-with-spring-security.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Securing Access to a Web Service with Spring Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Securing the web service for accessing the [dbproduitscategories] database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cross-domain-access-management.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Cross-domain access management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Appendices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading2192282014630537"></a></p>
+<h1 id="5-introduction-to-spring-data-jpa">5. <span style="color: #365f91">Introduction to Spring Data JPA</span></h1>
+<p>In this chapter, we will examine the following architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A6000000F211E97FF2.png" style="display:inline-block; margin:4px;width:15.743cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A6000000F211E97FF2.png" /></td></tr></table>
+
+<p>We insert a [JPA] (Java Persistence API) layer between the [DAO] layer and the DBMS’s JDBC driver. From now on, the JPA layer issues the SQL commands intended for the DBMS. The [DAO] layer no longer handles SQL commands but only objects called JPA entities, which are representations of the various tables in the database being used. The fields of these entities are uniquely associated with table columns via Java annotations. This is what allows the JPA layer to translate the [DAO] layer’s operations on JPA entities into SQL.</p>
+<p>Spring Data is a branch of Spring focused on data access, whether the data is stored in a relational DBMS, a NoSQL database, or other types of storage. Here, we are only concerned with RDBMS and accessing them via JPA. Later on, we will sometimes write [Spring JPA] to actually refer to [Spring Data JPA]. In the architecture above, the [Spring Data] layer provides the [DAO] layer with tools to manage JPA entities.</p>
+<p>JPA is actually a specification. We will test three of its implementations: </p>
+<ul>
+  <li>Hibernate (<a href="http://hibernate.org/"><u><span style="color: #0563c1">http://hibernate.org/</span></u></a>);
+  </li>
+  <li>EclipseLink (<a href="http://www.eclipse.org/eclipselink/"><u><span style="color: #0563c1">http://www.eclipse.org/eclipselink/</span></u></a>);
+  </li>
+  <li>OpenJpa (<a href="http://openjpa.apache.org/"><u><span style="color: #0563c1">http://openjpa.apache.org/</span></u></a>);
+  </li>
+</ul>
+
+<p><a id="refheading2192302014630537"></a></p>
+<h2 id="51-example-01">5.1. <span style="color: #4f81bd">Example-01</span></h2>
+<p>The Spring website offers numerous tutorials to get started with Spring [<a href="http://spring.io/guides"><u><span style="color: #0563c1">http://spring.io/guides</span></u></a>]. We will use one of them to introduce Spring Data. For this, we will use Spring Tool Suite (STS).</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003840000014438DE608A.png" style="display:inline-block; margin:4px;width:11.906cm;height:4.286cm;" class="odt-zoomable" data-zoom-src="images/10000000000003840000014438DE608A.png" /></td></tr></table>
+
+<ul>
+  <li>In [1], we import one of the tutorials from [spring.io/guides];
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C4000002C96B0B451C.png" style="display:inline-block; margin:4px;width:16.14cm;height:9.433cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C4000002C96B0B451C.png" /></td></tr></table>
+
+<ul>
+  <li>In [2], we select the [Accessing Data Jpa] tutorial, which demonstrates how to access a database using Spring Data;
+  </li>
+  <li>In [3], we select a project configured by Maven;
+  </li>
+  <li>in [4], the tutorial is available in two forms: [initial], which is an empty version that you fill in by following the tutorial, or [complete], which is the final version of the tutorial. We choose the latter;
+  </li>
+  <li>In [5], you can choose to view the tutorial in a browser;
+  </li>
+  <li>In [6], the final project.
+<a id="refheading2192322014630537"></a>
+
+### 5.1.1. <span style="color: #4f81bd">The project’s Maven configuration</span>
+
+  </li>
+</ul>
+
+<p><a id="refheading1622671200878134"></a>The project’s Maven dependencies are configured in the [pom.xml] file:</p>
+<p><a id="refheading569851429907001"></a></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">gs-accessing-data-jpa</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.1.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-parent</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.2.3.RELEASE</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-data-jpa</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">com.h2database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">h2</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- use UTF-8 for everything --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project.build.sourceEncoding</span><span style="color:#008080">&gt;</span><span style="color:#000000">UTF-8</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project.build.sourceEncoding</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project.reporting.outputEncoding</span><span style="color:#008080">&gt;</span><span style="color:#000000">UTF-8</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project.reporting.outputEncoding</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">start-class</span><span style="color:#008080">&gt;</span><span style="color:#000000">hello.Application</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/start-class</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/properties</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 5–9: define a parent Maven project. This project defines most of the project’s dependencies. They may be sufficient, in which case no additional dependencies are added, or they may not be, in which case the missing dependencies are added;
+  </li>
+  <li>lines 12–15: define a dependency on [spring-boot-starter-data-jpa]. This artifact contains the Spring Data classes;
+  </li>
+  <li>Lines 16–19: define a dependency on the H2 DBMS, which allows you to create and manage in-memory databases.
+  </li>
+</ul>
+
+<p>Let’s look at the classes provided by these dependencies:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014F00000173C684B02E.png" style="display:inline-block; margin:4px;width:5.609cm;height:6.212cm;" class="odt-zoomable" data-zoom-src="images/100000000000014F00000173C684B02E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000010C4CA71FE9.png" style="display:inline-block; margin:4px;width:4.57cm;height:4.958cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000010C4CA71FE9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000114000000BD1D144A05.png" style="display:inline-block; margin:4px;width:5.11cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000114000000BD1D144A05.png" /></td></tr></table>
+
+<p>There are many of them:</p>
+<ul>
+  <li>some belong to the Spring ecosystem (those starting with spring);
+  </li>
+  <li>others belong to the Hibernate ecosystem (hibernate, jboss), whose JPA implementation we are using here;
+  </li>
+  <li>others are testing libraries (junit, hamcrest);
+  </li>
+  <li>others are logging libraries (log4j, logback, slf4j);
+  </li>
+</ul>
+
+<p>We will keep them all. For a production application, only the necessary ones should be kept.</p>
+<p>On line 26 of the [pom.xml] file, we find the line:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">start-class</span><span style="color:#008080">&gt;</span><span style="color:#000000">hello.Application</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/start-class</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p>This line is linked to the following lines:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt; </span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">maven-compiler-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-maven-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/build</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p>Lines 6–9: The [spring-boot-maven-plugin] allows you to generate the application’s executable JAR. Line 26 of the [pom.xml] file then specifies the executable class of this JAR.</p>
+<p><a id="refheading2192342014630537"></a></p>
+<h3 id="512-the-jpa-layer">5.1.2. <span style="color: #4f81bd">The [JPA] layer</span></h3>
+<p><a id="refheading1622691200878134"></a>Database access is handled through a [JPA] layer, the Java Persistence API:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042C0000011122622671.png" style="display:inline-block; margin:4px;width:14.129cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000042C0000011122622671.png" /></td></tr></table>
+
+<p><a id="refheading569871429907001"></a></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077D50ECFCE.png" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077D50ECFCE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The application is basic and manages [Customer] entities. The [Customer] class is part of the [JPA] layer and is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">hello;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.Entity;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.GeneratedValue;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.GenerationType;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.Id;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@Entity</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Customer {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Id</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@GeneratedValue</span><span style="color:#000000">(strategy = GenerationType.</span><span style="font-style:italic;color:#0000c0">AUTO</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private long </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String </span><span style="color:#0000c0">firstName</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String </span><span style="color:#0000c0">lastName</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">Customer() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Customer(String firstName, String lastName) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">firstName </span><span style="color:#000000">= firstName;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">lastName </span><span style="color:#000000">= lastName;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String toString() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">String</span><span style="font-style:italic;color:#000000">.format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;Customer[id=%d, firstName=&#x27;%s&#x27;, lastName=&#x27;%s&#x27;]&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">id</span><span style="color:#000000">, </span><span style="color:#0000c0">firstName</span><span style="color:#000000">, </span><span style="color:#0000c0">lastName</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<p>A customer has an ID [id], a first name [firstName], and a last name [lastName]. Each [Customer] instance represents a row in a database table.</p>
+<ul>
+  <li>line 8: JPA annotation that ensures the persistence of [Customer] instances (Create, Read, Update, Delete) will be managed by a JPA implementation. Based on the Maven dependencies, we can see that the JPA/Hibernate implementation is being used;
+  </li>
+  <li>Lines 11–12: JPA annotations that associate the [id] field with the primary key of the [Customer] table. Line 12 indicates that the JPA implementation will use the primary key generation method specific to the DBMS being used, in this case H2;
+  </li>
+</ul>
+
+<p>There are no other JPA annotations. Default values will therefore be used:</p>
+<ul>
+  <li>the [Customer] table will be named after the class, i.e., [Customer];
+  </li>
+  <li>the columns of this table will be named after the class fields: [id, firstName, lastName], noting that case is not taken into account in table column names;
+  </li>
+</ul>
+
+<p>Note that the JPA implementation used is never named.</p>
+<p><a id="refheading2192362014630537"></a></p>
+<h3 id="513-the-spring-data-layer">5.1.3. <span style="color: #4f81bd">The [Spring Data] layer</span></h3>
+<p><a id="refheading1622711200878134"></a>The [CustomerRepository] class implements the access layer for the [Customer] table. Its code is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004370000010E4AFAC61B.png" style="display:inline-block; margin:4px;width:14.275cm;height:3.572cm;" class="odt-zoomable" data-zoom-src="images/10000000000004370000010E4AFAC61B.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077BA57F747.png" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077BA57F747.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">hello;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.util.List;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.data.repository.CrudRepository;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">CustomerRepository </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">CrudRepository&lt;Customer, Long&gt; {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    List&lt;Customer&gt; findByLastName(String lastName);</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<p>This is therefore an <strong>interface</strong> and not a class (line 7). It extends the [CrudRepository] interface, a Spring Data interface (line 5). This interface is parameterized by two types: the first is the type of the managed elements, here the [Customer] type; the second is the type of the primary key of the managed elements, here a [Long] type. The [CrudRepository] interface is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">org.springframework.data.repository;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.io.Serializable;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@NoRepositoryBean</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface</span><a id="crudrepository"></a><span style="color:#000000"> CrudRepository&lt;T, ID </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">Serializable&gt; </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">Repository&lt;T, ID&gt; {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    &lt;S </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">T&gt; S save(S entity);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    &lt;S </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">T&gt; Iterable&lt;S&gt; save(Iterable&lt;S&gt; entities);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    T findOne(ID id);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">boolean </span><span style="color:#000000">exists(ID id);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    Iterable&lt;T&gt; findAll();</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    Iterable&lt;T&gt; findAll(Iterable&lt;ID&gt; ids);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">long </span><span style="color:#000000">count();</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">void </span><span style="color:#000000">delete(ID id);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">void </span><span style="color:#000000">delete(T entity);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">void </span><span style="color:#000000">delete(Iterable&lt;? </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">T&gt; entities);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">void </span><span style="color:#000000">deleteAll();</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<p>This interface defines the CRUD (Create – Read – Update – Delete) operations that can be performed on a JPA T type:</p>
+<ul>
+  <li>line 8: the <b>save</b> method allows an entity T to be persisted to the database. It persists the entity using the primary key assigned to it by the DBMS. It also allows an entity T identified by its primary key <i>id </i>to <b>be updated</b>. The choice between these two actions depends on the value of the primary key <i>id</i>: if it is <b>null</b>, the persistence operation occurs; otherwise, the update operation occurs;
+  </li>
+  <li>line 10: same as above, but for a list of entities;
+  </li>
+  <li>line 12: the <b>findOne</b> method retrieves an entity T identified by its primary key <i>id</i>;
+  </li>
+  <li>line 22: the <b>delete</b> method allows you to delete an entity T identified by its primary key <i>id</i>;
+  </li>
+  <li>lines 24–28: variations of the [delete] method;
+  </li>
+  <li>line 16: the [findAll] method retrieves all persisted T entities;
+  </li>
+  <li>line 18: same as above, but limited to entities for which a list of identifiers has been provided;
+  </li>
+</ul>
+
+<p>Let’s return to the [CustomerRepository] interface:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">hello;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.util.List;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.data.repository.CrudRepository;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">CustomerRepository </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">CrudRepository&lt;Customer, Long&gt; {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    List&lt;Customer&gt; findByLastName(String lastName);</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Line 9 allows you to retrieve a [Customer] by its [lastName];
+  </li>
+</ul>
+
+<p>And that’s it for the [DAO] layer. There is no implementation class for the previous interface. It is generated at runtime by [Spring Data]. The methods of the [CrudRepository] interface are automatically implemented. For the methods added to the [CustomerRepository] interface, it depends. Let’s go back to the definition of [Customer]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private long </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String </span><span style="color:#0000c0">firstName</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String </span><span style="color:#0000c0">lastName</span><span style="color:#000000">;</span></span>
+</code></pre></div>
+
+<p>The method on line 9 is automatically implemented by [Spring Data] because it references the [lastName] field (line 3) of [Customer]. When it encounters a [findBySomething] method in the interface to be implemented, Spring Data implements it using the following JPQL (Java Persistence Query Language) query:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span style="color:#000000">select t from T t where t.something=:value</span></span>
+</code></pre></div>
+
+<p>Therefore, the type T must have a field named [something]. Thus, the method</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">List&lt;Customer&gt; findByLastName(String lastName);</span></span>
+</code></pre></div>
+
+<p>will be implemented with code similar to the following:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span style="color:#000000">return [em].createQuery(&quot;select c from Customer c where c.lastName=:value&quot;).setParameter(&quot;value&quot;,lastName).getResultList()</span></span>
+</code></pre></div>
+
+<p>where [em] refers to the JPA persistence context. This is only possible if the [Customer] class has a field named [lastName], which is the case.</p>
+<p>In conclusion, in simple cases, Spring Data allows us to implement the [DAO] layer with a simple interface.</p>
+<p><a id="refheading2192382014630537"></a></p>
+<h3 id="514-the-console-layer">5.1.4. <span style="color: #4f81bd">The [console] layer</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004370000010DF24DDE9A.png" style="display:inline-block; margin:4px;width:14.275cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000004370000010DF24DDE9A.png" /></td></tr></table>
+
+<p><a id="refheading569911429907001"></a></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077E52D8FD9.png" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077E52D8FD9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The [Application] class is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">hello;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.CommandLineRunner;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.SpringApplication;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.autoconfigure.SpringBootApplication;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@SpringBootApplication</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Application </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">CommandLineRunner {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
+<span class="odt-code-line"><span style="color:#000000">    CustomerRepository </span><span style="color:#0000c0">repository</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        SpringApplication.</span><span style="font-style:italic;color:#000000">run</span><span style="color:#000000">(Application.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">run(String... </span><span style="color:#6a3e3e">strings</span><span style="color:#000000">) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">Exception {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// save a couple of customers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Jack&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Bauer&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Chloe&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;O&#x27;Brian&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Kim&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Bauer&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;David&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Palmer&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Michelle&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Dessler&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// fetch all customers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Customers found with findAll():&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;-------------------------------&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Customer </span><span style="color:#6a3e3e">customer </span><span style="color:#000000">: </span><span style="color:#0000c0">repository</span><span style="color:#000000">.findAll()) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#6a3e3e">customer</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println();</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// fetch an individual customer by ID</span></span>
+<span class="odt-code-line"><span style="color:#000000">        Customer </span><span style="color:#6a3e3e">customer </span><span style="color:#000000">= </span><span style="color:#0000c0">repository</span><span style="color:#000000">.findOne(1L);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Customer found with findOne(1L):&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;--------------------------------&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#6a3e3e">customer</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println();</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// fetch customers by last name</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Customer found with findByLastName(&#x27;Bauer&#x27;):&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;--------------------------------------------&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Customer </span><span style="color:#6a3e3e">bauer </span><span style="color:#000000">: </span><span style="color:#0000c0">repository</span><span style="color:#000000">.findByLastName(</span><span style="color:#2a00ff">&quot;Bauer&quot;</span><span style="color:#000000">)) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#6a3e3e">bauer</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 9: the class implements the [CommandLineRunner] interface, which is a [Spring Boot] interface (line 4). This interface has only one method, the one on line 19;
+  </li>
+  <li>line 8: <b>@SpringBootApplication </b>is an annotation that groups several [Spring Boot] annotations:
+    <ul>
+      <li><b>@Configuration</b>: indicates that the class is a configuration class;
+      </li>
+      <li><b>@EnableAutoConfiguration</b>: instructs [Spring Boot] to automatically create a number of beans based on various properties, particularly the contents of the project’s classpath. Because the Hibernate libraries are in the Classpath, the [entityManagerFactory] bean will be implemented using Hibernate. Because the H2 DBMS library is in the Classpath, the [dataSource] bean will be implemented using H2. In the [dataSource] bean, we must also define the username and password. Here, Spring Boot will use the default H2 administrator, <b>which </b>has no password. Because the [spring-tx] library is in the Classpath, Spring’s transaction manager will be used;
+      </li>
+      <li><b>@EnableWebMvc</b>: if the [spring-mvc] library is in the Classpath. In this case, auto-configuration is performed for the web application;
+      </li>
+      <li><b>@ComponentScan</b>: which tells Spring where to look for other beans, configurations, and services. Here, they are searched for by default in the package containing the annotated class, i.e., the [hello] package. Thus, the [Customer] and [CustomerRepository] classes will be found. Because the first has the [@Entity] annotation, it will be cataloged as an entity to be managed by Hibernate. Because the second extends the [CrudRepository] interface, it will be registered as a Spring bean;
+      </li>
+    </ul>
+  </li>
+  <li>lines 11–12: the [CustomerRepository] bean is injected into the main class’s code;
+  </li>
+  <li>line 15: the static [run] method of the [SpringApplication] class from the Spring Boot project is executed. Its parameter is the class that has a [Configuration] or [EnableAutoConfiguration] annotation. Everything explained previously will then take place. The result is a Spring application context, i.e., a set of beans managed by Spring;
+  </li>
+  <li>lines 19–48: the following operations simply use the methods of the bean implementing the [CustomerRepository] interface;
+  </li>
+</ul>
+
+<p>The console output is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#000000">.   ____          _            __ _ _</span></span>
+<span class="odt-code-line"><span style="color:#000000"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span></span>
+<span class="odt-code-line"><span style="color:#000000">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span></span>
+<span class="odt-code-line"><span style="color:#000000"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span></span>
+<span class="odt-code-line"><span style="color:#000000">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span></span>
+<span class="odt-code-line"><span style="color:#000000"> =========|_|==============|___/=/_/_/_/</span></span>
+<span class="odt-code-line"><span style="color:#000000"> :: Spring Boot ::        (v1.2.2.RELEASE)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:43.661  INFO 5784 --- [           main] hello.Application                        : Starting Application on Gportpers3 with PID 5784 (started by ST in C:\Users\Serge Tahé\Documents\workspace-sts-3.6.3.RELEASE\gs-accessing-data-jpa-complete)</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:43.708  INFO 5784 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.230  INFO 5784 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit &#x27;default&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.254  INFO 5784 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [</span></span>
+<span class="odt-code-line"><span style="color:#000000">    name: default</span></span>
+<span class="odt-code-line"><span style="color:#000000">    ...]</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.331  INFO 5784 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.8.Final}</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.332  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.334  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.651  INFO 5784 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.754  INFO 5784 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.877  INFO 5784 --- [           main] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:46.154  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:46.169  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:46.779  INFO 5784 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customers found with findAll():</span></span>
+<span class="odt-code-line"><span style="color:#000000">-------------------------------</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=2, firstName=&#x27;Chloe&#x27;, lastName=&#x27;O&#x27;Brian&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=4, firstName=&#x27;David&#x27;, lastName=&#x27;Palmer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=5, firstName=&#x27;Michelle&#x27;, lastName=&#x27;Dessler&#x27;]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">Customer found with findOne(1L):</span></span>
+<span class="odt-code-line"><span style="color:#000000">--------------------------------</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">Customer found with findByLastName(&#x27;Bauer&#x27;):</span></span>
+<span class="odt-code-line"><span style="color:#000000">--------------------------------------------</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.040  INFO 5784 --- [           main] hello.Application                        : Started Application in 3.623 seconds (JVM running for 4.324)</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.042  INFO 5784 --- [       Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.044  INFO 5784 --- [       Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.046  INFO 5784 --- [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit &#x27;default&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.047  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span></span>
+<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.051  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Lines 1-8: the Spring Boot project logo;
+  </li>
+  <li>line 9: the [hello.Application] class is executed;
+  </li>
+  <li>line 10: [AnnotationConfigApplicationContext] is a class implementing Spring’s [ApplicationContext] interface. It is a bean container;
+  </li>
+  <li>line 11: the [entityManagerFactory] bean is implemented with the [LocalContainerEntityManagerFactory] class, a Spring class. It manages the [JPA] layer;
+  </li>
+  <li>line 12: [Hibernate] appears. This is the chosen JPA implementation;
+  </li>
+  <li>line 19: a Hibernate dialect is the SQL variant to be used with the DBMS. Here, the [H2Dialect] dialect indicates that Hibernate will work with the H2 DBMS;
+  </li>
+  <li>lines 21–22: the database is created. The [CUSTOMER] table is created. This means that Hibernate has been configured to generate tables from JPA definitions, in this case the JPA definition of the [Customer] class;
+  </li>
+  <li>lines 26–30: result of the [findAll] method of the interface;
+  </li>
+  <li>line 34: result of the [findOne] method of the interface;
+  </li>
+  <li>lines 38–39: results of the [findByLastName] method;
+  </li>
+  <li>lines 41 and following: logs from the Spring context closure.
+<a id="refheading5939178138399"></a>
+
+### 5.1.5. <span style="color: #4f81bd">Manual configuration of the Spring Data project</span>
+
+  </li>
+</ul>
+
+<p><a id="refheading1622751200878134"></a>We duplicate the previous project into the [gs-accessing-data-jpa-02] project:</p>
+<p><a id="refheading569931429907001"></a></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F80000015BACE9B961.png" style="display:inline-block; margin:4px;width:4.59cm;height:6.422cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F80000015BACE9B961.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>In this new project, we will not rely on the automatic configuration provided by Spring Boot. We will configure it manually. This can be useful if the default configurations do not suit our needs.</p>
+<p>First, we will specify the necessary dependencies in the [pom.xml] file:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#000000">version=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot; </span><span style="color:#000000">encoding=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xsi:</span><span style="color:#000000">schemaLocation=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/modelVersion</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">gs-accessing-data-jpa-02</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.1.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-parent</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.2.3.RELEASE</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- Spring Data --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.data</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-data-jpa</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- Hibernate --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.hibernate</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">hibernate-entitymanager</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- H2 Database --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">com.h2database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">h2</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- Tomcat JDBC --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.apache.tomcat</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">tomcat-jdbc</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- use UTF-8 for everything --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project.build.sourceEncoding</span><span style="color:#008080">&gt;</span><span style="color:#000000">UTF-8</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project.build.sourceEncoding</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project.reporting.outputEncoding</span><span style="color:#008080">&gt;</span><span style="color:#000000">UTF-8</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project.reporting.outputEncoding</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-maven-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repositories</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-releases</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/id</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">Spring Releases</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">https://repo.spring.io/libs-release</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/url</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/repository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">repository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.jboss.repository.releases</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/id</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">JBoss Maven Release Repository</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">https://repository.jboss.org/nexus/content/repositories/releases</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/url</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/repository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/repositories</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pluginRepositories</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pluginRepository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">id</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-releases</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/id</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">Spring Releases</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">url</span><span style="color:#008080">&gt;</span><span style="color:#000000">https://repo.spring.io/libs-release</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/url</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/pluginRepository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/pluginRepositories</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 10–14: the parent Maven project whose libraries we will use;
+  </li>
+  <li>lines 18–21: Spring Data used to access the database;
+  </li>
+  <li>lines 23–26: the Hibernate implementation of the JPA specification;
+  </li>
+  <li>lines 28–31: the H2 DBMS;
+  </li>
+  <li>lines 33–36: Databases are often used with connection pools, which avoid repeatedly opening and closing connections. Here, the implementation used is [tomcat-jdbc];
+  </li>
+</ul>
+
+<p>In the new project, the [Customer] entity and the [CustomerRepository] interface remain unchanged. We will modify the [Application] class, which will be split into two classes: </p>
+<ul>
+  <li>[Config], which will be the configuration class;
+  </li>
+  <li>[Main], which will be the executable class;
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E80000009FB5A3B942.png" style="display:inline-block; margin:4px;width:4.3cm;height:2.947cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E80000009FB5A3B942.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The executable class [Application] is now as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">console;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.AnnotationConfigApplicationContext;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">repositories.CustomerRepository;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">config.AppConfig;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">entities.Customer;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Application {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Instantiate Spring context</span></span>
+<span class="odt-code-line"><span style="color:#000000">        AnnotationConfigApplicationContext </span><span style="color:#6a3e3e">context </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">AnnotationConfigApplicationContext(AppConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        CustomerRepository </span><span style="color:#6a3e3e">repository </span><span style="color:#000000">= </span><span style="color:#6a3e3e">context</span><span style="color:#000000">.getBean(CustomerRepository.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// save a couple of customers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Jack&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Bauer&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Chloe&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;O&#x27;Brian&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Kim&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Bauer&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;David&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Palmer&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">repository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Customer(</span><span style="color:#2a00ff">&quot;Michelle&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Dessler&quot;</span><span style="color:#000000">));</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">...</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// close context</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">context</span><span style="color:#000000">.close();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 9: the [Application] class no longer has any configuration annotations;
+  </li>
+  <li>lines 3–7: Note that there are no longer any [Spring Boot] package imports;
+  </li>
+  <li>line 12: We instantiate the Spring beans. We obtain the Spring context, which contains references to the beans created;
+  </li>
+  <li>line 13: we request a reference to the [<span style="color: #000000">CustomerRepository</span>] bean;
+  </li>
+</ul>
+
+<p>The [<a id="springdataconfig"></a> Config] class that configures the project is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">config;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.EntityManagerFactory;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.apache.tomcat.jdbc.pool.DataSource;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Bean;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Configuration;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.data.jpa.repository.config.EnableJpaRepositories;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.JpaTransactionManager;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.JpaVendorAdapter;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.vendor.Database;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.transaction.PlatformTransactionManager;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.transaction.annotation.EnableTransactionManagement;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@EnableTransactionManagement</span></span>
+<span class="odt-code-line"><span style="color:#646464">@EnableJpaRepositories</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;repositories&quot; </span><span style="color:#000000">})</span></span>
+<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line"><span style="color:#000000">// @ComponentScan(basePackages={&quot;package1&quot;,&quot;package2&quot;})</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// the H2 database</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">DataSource dataSource() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// TomcatJdbc data source</span></span>
+<span class="odt-code-line"><span style="color:#000000">        DataSource </span><span style="color:#6a3e3e">dataSource </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">DataSource();</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// JDBC access configuration</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setDriverClassName(</span><span style="color:#2a00ff">&quot;org.h2.Driver&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setUrl(</span><span style="color:#2a00ff">&quot;jdbc:h2:./demo&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setUsername(</span><span style="color:#2a00ff">&quot;sa&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setPassword(</span><span style="color:#2a00ff">&quot;&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// an initially open connection</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setInitialSize(1);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// the JPA provider</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">JpaVendorAdapter jpaVendorAdapter() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        HibernateJpaVendorAdapter </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">HibernateJpaVendorAdapter();</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter</span><span style="color:#000000">.setShowSql(</span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter</span><span style="color:#000000">.setDatabase(Database.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">H2</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// EntityManagerFactory</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">EntityManagerFactory entityManagerFactory(JpaVendorAdapter </span><span style="color:#6a3e3e">jpaVendorAdapter</span><span style="color:#000000">, DataSource </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        LocalContainerEntityManagerFactoryBean </span><span style="color:#6a3e3e">factory </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">LocalContainerEntityManagerFactoryBean();</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setJpaVendorAdapter(</span><span style="color:#6a3e3e">jpaVendorAdapter</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setPackagesToScan(</span><span style="color:#2a00ff">&quot;entities&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setDataSource(</span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.afterPropertiesSet();</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.getObject();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Transaction manager</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">PlatformTransactionManager transactionManager(EntityManagerFactory </span><span style="color:#6a3e3e">entityManagerFactory</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        JpaTransactionManager </span><span style="color:#6a3e3e">txManager </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">JpaTransactionManager();</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">txManager</span><span style="color:#000000">.setEntityManagerFactory(</span><span style="color:#6a3e3e">entityManagerFactory</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">txManager</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 17: the [@EnableTransactionManagement] annotation indicates that [@Transactional] annotations must be interpreted. The methods of the [CrudRepository] interfaces have these annotations. They therefore execute within a transaction;
+  </li>
+  <li>line 18: the [@EnableJpaRepositories] annotation specifies the directories where the Spring Data [CrudRepository] interfaces are located. These interfaces will become Spring components and be available in the Spring context;
+  </li>
+  <li>line 19: the [@Configuration] annotation makes the [Config] class a Spring configuration class;
+  </li>
+  <li>line 20: the [@ComponentScan] annotation lists the directories where Spring components should be searched for. Spring components are classes annotated with Spring annotations such as <b>@Service</b>, <b>@Component</b>, <b>@Controller</b>, etc. Here, there are no others besides those defined within the [AppConfig] class, so the annotation has been commented out;
+  </li>
+  <li>Lines 24–37: define the data source, the H2 database. It is the @Bean annotation on line 25 that makes the object created by this method a Spring-managed component. The method name can be anything here. However, it must be named [<b>dataSource</b>] if the EntityManagerFactory on line 51 is absent and defined via auto-configuration;
+  </li>
+  <li>line 30: the database will be named [demo] and will be generated in the project folder;
+  </li>
+  <li>Lines 40–47: define the JPA implementation used, in this case a Hibernate implementation. The method name can be anything here;
+  </li>
+  <li>line 43: no SQL logs;
+  </li>
+  <li>line 44: the database will be created if it does not exist;
+  </li>
+  <li>lines 50–58: define the EntityManagerFactory that will manage JPA persistence. The method must be named [<b>entityManagerFactory</b>];
+  </li>
+  <li>line 51: the method receives two parameters of the types of the two beans defined previously. These will then be constructed and injected by Spring as method parameters;
+  </li>
+  <li>line 53: sets the JPA implementation to be used;
+  </li>
+  <li>line 54: specifies the directories where the JPA entities can be found;
+  </li>
+  <li>line 55: sets the data source to be managed;
+  </li>
+  <li>lines 61–66: the transaction manager. The method must be named [<b>transactionManager</b>]. It receives the bean from lines 51–58 as a parameter;
+  </li>
+  <li>line 64: the transaction manager is associated with the EntityManagerFactory;
+  </li>
+</ul>
+
+<p>The preceding methods can be defined in any order.</p>
+<p>Running the project yields the same results. A new file appears in the project folder, the H2 database file:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F1000000D6F0EB16BE.png" style="display:inline-block; margin:4px;width:4.461cm;height:3.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F1000000D6F0EB16BE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><a id="refheading2192402014630537"></a></p>
+<h3 id="516-creating-an-executable-archive">5.1.6. <span style="color: #4f81bd">Creating an executable archive</span></h3>
+<p><a id="refheading1622771200878134"></a>To create an executable archive of the project, proceed as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005250000015D1252AADA.png" style="display:inline-block; margin:4px;width:17.424cm;height:4.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000005250000015D1252AADA.png" /></td></tr></table>
+
+<p><a id="refheading569951429907001"></a></p>
+<ul>
+  <li>in [1]: create a runtime configuration;
+  </li>
+  <li>in [2]: of type [Java Application]
+  </li>
+  <li>in [3]: specify the project to run (use the <i>Browse</i> button);
+  </li>
+  <li>in [4]: specify the class to run;
+  </li>
+  <li>in [5]: the name of the run configuration—can be anything;
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005200000027E5FBF588A.png" style="display:inline-block; margin:4px;width:17.357cm;height:8.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000005200000027E5FBF588A.png" /></td></tr></table>
+
+<ul>
+  <li>in [6]: export the project;
+  </li>
+  <li>in [7]: as an executable JAR archive;
+  </li>
+  <li>in [8]: specify the path and name of the executable file to be created;
+  </li>
+  <li>in [9]: the name of the run configuration created in [5];
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>10</b></div><img src="images/10000000000000F8000000FEA403558A.png" style="display:inline-block; margin:4px;width:4.59cm;height:4.701cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F8000000FEA403558A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>in [10], the created archive;
+  </li>
+</ul>
+
+<p>Once this is done, open a console in the folder containing the executable archive:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">.....\dist&gt;dir</span></span>
+<span class="odt-code-line"><span style="color:#000000">06/12/2014  09:11        15 104 869 gs-accessing-data-jpa-02.jar</span></span>
+</code></pre></div>
+
+<p>The archive is executed as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">.....\dist&gt;</span><span style="color:#ff3333">java -jar gs-accessing-data-jpa-02.jar</span></span>
+</code></pre></div>
+
+<p>The results displayed in the console are as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span style="color:#000000">SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.</span></span>
+<span class="odt-code-line"><span style="color:#000000">SLF4J: Defaulting to no-operation (NOP) logger implementation</span></span>
+<span class="odt-code-line"><span style="color:#000000">SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000204: Processing PersistenceUnitInfo [</span></span>
+<span class="odt-code-line"><span style="color:#000000">    name: default</span></span>
+<span class="odt-code-line"><span style="color:#000000">    ...]</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.Version logVersion</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000412: Hibernate Core {4.3.8.Final}</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.cfg.Environment &lt;clinit&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000206: hibernate.properties not found</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.cfg.Environment buildBytecodeProvider</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000021: Bytecode provider name: javassist</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.dialect.Dialect &lt;init&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000397: Using ASTQueryTranslatorFactory</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000228: Running hbm2ddl schema update</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000102: Fetching database metadata</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000396: Updating schema</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000262: Table not found: Customer</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000262: Table not found: Customer</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000262: Table not found: Customer</span></span>
+<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
+<span class="odt-code-line"><span style="color:#000000">INFO: HHH000232: Schema update complete</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customers found with findAll():</span></span>
+<span class="odt-code-line"><span style="color:#000000">-------------------------------</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=2, firstName=&#x27;Chloe&#x27;, lastName=&#x27;O&#x27;Brian&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=4, firstName=&#x27;David&#x27;, lastName=&#x27;Palmer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=5, firstName=&#x27;Michelle&#x27;, lastName=&#x27;Dessler&#x27;]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">Customer found with findOne(1L):</span></span>
+<span class="odt-code-line"><span style="color:#000000">--------------------------------</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">Customer found with findByLastName(&#x27;Bauer&#x27;):</span></span>
+<span class="odt-code-line"><span style="color:#000000">--------------------------------------------</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+</code></pre></div>
+
+<p><a id="refheading2192462014630537"></a></p>
+<h3 id="517-creating-a-spring-data-project">5.1.7. <span style="color: #4f81bd">Creating a [Spring Data] Project</span></h3>
+<p><a id="refheading1622791200878134"></a>To create a Spring Data project template, follow these steps:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C70000033133B70DDC.png" style="display:inline-block; margin:4px;width:16.18cm;height:10.809cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C70000033133B70DDC.png" /></td></tr></table>
+
+<p><a id="refheading569971429907001"></a></p>
+<ul>
+  <li>In [1], create a new project;
+  </li>
+  <li>in [2]: select [Spring Starter Project];
+  </li>
+  <li>The generated project will be a Maven project. In [3], specify the project group name;
+  </li>
+  <li>In [4], specify the name of the artifact (a JAR here) that will be created when the project is built;
+  </li>
+  <li>in [5]: the Eclipse name of the project—this can be anything (does not have to match [4]);
+  </li>
+  <li>in [7]: specify that you are creating a project with a [JPA] layer using the MySQL DBMS. The dependencies required for such a project will then be included in the [pom.xml] file;
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002F900000314D27B74C7.png" style="display:inline-block; margin:4px;width:10.068cm;height:10.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F900000314D27B74C7.png" /></td></tr></table>
+
+<ul>
+  <li>in [8], enter the name of the project folder;
+  </li>
+  <li>in [9], finish the wizard;
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000021400000160EFCDCF7B.png" style="display:inline-block; margin:4px;width:7.038cm;height:4.657cm;" class="odt-zoomable" data-zoom-src="images/100000000000021400000160EFCDCF7B.png" /></td></tr></table>
+
+<ul>
+  <li>in [10]: the created project;
+  </li>
+</ul>
+
+<p>The [pom.xml] file includes the dependencies required for a JPA project:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#000000">version=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot; </span><span style="color:#000000">encoding=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:</span><span style="color:#000000">schemaLocation=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/modelVersion</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">istia.st.springdata</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">intro-spring-data-01</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.0.1-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">packaging</span><span style="color:#008080">&gt;</span><span style="color:#000000">jar</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/packaging</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">intro-spring-data-01</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">description</span><span style="color:#008080">&gt;</span><span style="color:#000000">Spring Data demo with product table</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/description</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-parent</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.2.3.RELEASE</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;relativePath/&gt; </span><span style="color:#3f5fbf">&lt;!-- lookup parent from repository --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project.build.sourceEncoding</span><span style="color:#008080">&gt;</span><span style="color:#000000">UTF-8</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project.build.sourceEncoding</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">start-class</span><span style="color:#008080">&gt;</span><span style="color:#000000">demo.IntroSpringData01Application</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/start-class</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">java.version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.7</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/java.version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-data-jpa</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">mysql</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">mysql-connector-java</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">scope</span><span style="color:#008080">&gt;</span><span style="color:#000000">runtime</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/scope</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-test</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">scope</span><span style="color:#008080">&gt;</span><span style="color:#000000">test</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/scope</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-maven-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 14–19: the parent Maven project;
+  </li>
+  <li>lines 28–31: the dependency required for JPA – will include [Spring Data];
+  </li>
+  <li>lines 32–36: the dependency on the MySQL JDBC driver;
+  </li>
+  <li>lines 37–41: dependencies required for JUnit tests integrated with Spring;
+  </li>
+</ul>
+
+<p>The executable [Application] class does nothing but is preconfigured:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">demo;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.SpringApplication;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.autoconfigure.SpringBootApplication;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@SpringBootApplication</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">IntroSpringData01Application {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        SpringApplication.</span><span style="font-style:italic;color:#000000">run</span><span style="color:#000000">(IntroSpringData01Application.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">, </span><span style="color:#6a3e3e">args</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>The [@SpringBootApplication] annotation makes the class a project auto-configuration class;
+  </li>
+</ul>
+
+<p>The test class [ApplicationTests] does nothing but is pre-configured:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">demo;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.junit.Test;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.junit.runner.RunWith;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.test.SpringApplicationConfiguration;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#646464">@RunWith</span><span style="color:#000000">(SpringJUnit4ClassRunner.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#646464">@SpringApplicationConfiguration</span><span style="color:#000000">(classes = IntroSpringData01Application.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">IntroSpringData01ApplicationTests {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">contextLoads() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 9: the [<span style="color: #646464">@SpringApplicationConfiguration</span>] annotation allows the [<span style="color: #000000">IntroSpringData01Application</span>] configuration file to be used. The test class will thus benefit from all the beans defined by this file;
+  </li>
+  <li>line 8: the [<span style="color: #646464">@RunWith</span>] annotation enables the integration of Spring with JUnit: the class will be able to run as a JUnit test. [<span style="color: #646464">@RunWith</span>] is a JUnit annotation (line 4), whereas the [<span style="color: #000000">SpringJUnit4ClassRunner</span>] class is a Spring class (line 6);
+  </li>
+</ul>
+
+<p>Now that we have a JPA application skeleton, we can complete it.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

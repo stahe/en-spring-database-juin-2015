@@ -1,0 +1,2335 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Working with a relational database using the Spring ecosystem">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-spring-database-juin-2015/cross-domain-access-management.html">
+      
+      
+        <link rel="prev" href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html">
+      
+      
+        <link rel="next" href="conclusion.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>21. Cross-domain access management - Working with a relational database using the Spring ecosystem</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Working with a relational database using the Spring ecosystem";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#21-cross-domain-access-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Working with a relational database using the Spring ecosystem" class="md-header__button md-logo" aria-label="Working with a relational database using the Spring ecosystem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Working with a relational database using the Spring ecosystem
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              21. Cross-domain access management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-spring-database-juin-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Working with a relational database using the Spring ecosystem" class="md-nav__button md-logo" aria-label="Working with a relational database using the Spring ecosystem" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Working with a relational database using the Spring ecosystem
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-spring-database-juin-2015" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-spring-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Introduction to the Spring Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Introduction to the JDBC API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Introduction to Spring JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-data-jpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Introduction to Spring Data JPA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-hibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Spring Data JPA Hibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-eclipselink.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Spring Data JPA EclipseLink
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-data-jpa-openjpa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Spring Data JPA OpenJpa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="generating-databases-from-jpa-entities.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Generating Databases from JPA Entities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="oracle-express-11g-release-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Oracle Express 11g Release 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="postgresql-94.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. PostgreSQL 9.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ibm-db2-express-c-105.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. IBM DB2 Express-C 10.5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sql-server-2014.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. SQL Server 2014
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="firebird-254.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Firebird 2.5.4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="performance.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction-to-spring-mvc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Introduction to Spring MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exposing-a-database-on-the-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Exposing a Database on the Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. A client programmed for the /jSON web service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="securing-access-to-a-web-service-with-spring-security.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Securing Access to a Web Service with Spring Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Securing the web service for accessing the [dbproduitscategories] database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Cross-domain access management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="cross-domain-access-management.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Cross-domain access management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#211-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1. Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.1. Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2123-maven-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.3. Maven Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2125-the-applications-javascript-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.5. The application&#x27;s JavaScript code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2128-a-new-web-service-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.8. A new web service / JSON
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.2.8. A new web service / JSON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21292-the-controller-corscategoriecontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.9.2. The controller [CorsCategorieController]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21293-the-get-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.9.3. The [GET] URLs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21294-post-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.9.4. [POST] URLs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21210-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2.10. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#213-the-eclipse-project-spring-cors-server-jpa-generic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.3. The Eclipse project [spring-cors-server-jpa-generic]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#215-cors-jpa-openjpa-firebird-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.5. CORS / JPA OpenJPA / Firebird Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Appendices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading78461838046689"></a></p>
+<h1 id="21-cross-domain-access-management">21. <span style="color: #365f91">Cross-domain access management</span></h1>
+<p><a id="refheading14539724987110"></a></p>
+<h2 id="211-architecture">21.1. <span style="color: #4f81bd">Architecture</span></h2>
+<p>We will now examine the issue of cross-domain requests. In the <span style="color: #000000">document [</span><a href="http://tahe.developpez.com/angularjs-spring4"><u><span style="color: #0563c1">AngularJS / Spring 4 Tutorial</span></u></a><span style="color: #000000">], we develop a client/server application where the client is an AngularJS application:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000393000003667D7298AD.png" style="display:inline-block; margin:4px;width:12.106cm;height:11.511cm;" class="odt-zoomable" data-zoom-src="images/1000000000000393000003667D7298AD.png" /></td></tr></table>
+
+<ul>
+  <li>the HTML/CSS/JS pages of the Angular application come from the server [1];
+  </li>
+  <li>in [2], the [dao] service makes a request to another server, server [2]. Well, this is prohibited by the browser running the Angular application because it is a security vulnerability. The application can only query the server from which it originates, i.e., server [1];
+  </li>
+</ul>
+
+<p>In fact, it is inaccurate to say that the browser prevents the Angular application from querying server [2]. The browser actually queries server [2] to determine whether it allows a client that does not originate from its own domain to query it. This sharing technique is called <strong>CORS</strong> (Cross-Origin Resource Sharing). Server [2] grants permission by sending specific HTTP headers.</p>
+<p><span style="color: #000000">To demonstrate the issues that can arise, we will create a client/server application where:</span></p>
+<ul>
+  <li><span style="color: #000000">the server will be our secure web/JSON server;</span>
+  </li>
+  <li><span style="color: #000000">the client will be a simple HTML page equipped with JavaScript code that will make requests to the web/JSON server;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">We will implement the following architecture:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B00000027859C3C263.png" style="display:inline-block; margin:4px;width:15.875cm;height:8.361cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B00000027859C3C263.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">in [1], a web application delivers HTML/JS pages;</span>
+  </li>
+  <li><span style="color: #000000">in [2], the browser executes the JavaScript embedded in the HTML pages to query the secure web service [3];</span>
+<a id="refheading14680624987110"></a>
+
+## 21.2. <span style="color: #4f81bd">The [spring-cors-server-jdbc-generic] project</span>
+
+<a id="refheading14539924987110"></a>
+
+### 21.2.1. <span style="color: #4f81bd">Setting up the development environment</span>
+
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FF0000013F4246EBB9.png" style="display:inline-block; margin:4px;width:4.72cm;height:5.906cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF0000013F4246EBB9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">Download the projects listed above. The [spring-cors-*] projects can be found in the folder [&lt;examples&gt;\spring-database-generic\spring-cors];</span>
+  </li>
+  <li><span style="color: #000000">Press Alt-F5 and rebuild all Maven projects;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">Then run the run configuration named [spring-cors-server-jdbc-generic] (the MySQL database must be running), which starts a web service on port 8081:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000151000000F5EC5B5CFD.png" style="display:inline-block; margin:4px;width:6.241cm;height:4.537cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000F5EC5B5CFD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Populate the [dbproduitscategories] database using the runtime configuration named [spring-jdbc-generic-04-fillDataBase]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000133000000CE9DA8A3AF.png" style="display:inline-block; margin:4px;width:5.68cm;height:3.812cm;" class="odt-zoomable" data-zoom-src="images/1000000000000133000000CE9DA8A3AF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Run the runtime configuration named [spring-cors-client-generic], which launches a second web application (on another Tomcat instance) on port 8082:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E4000000C5F15CB77F.png" style="display:inline-block; margin:4px;width:4.219cm;height:3.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E4000000C5F15CB77F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Using a browser, request the URL [http://localhost:8082/client.html]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C0000021A55768DEE.png" style="display:inline-block; margin:4px;width:17.939cm;height:7.117cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C0000021A55768DEE.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">In [1], we request the short version of all categories;</span>
+  </li>
+  <li><span style="color: #000000">in [2], the server’s JSON response;</span>
+<a id="refheading196717811596012"></a>
+
+### 21.2.2. <span style="color: #4f81bd">The client project [spring-cors-client-generic]</span>
+
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044C000000D514A2B61F.png" style="display:inline-block; margin:4px;width:14.552cm;height:2.819cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000000D514A2B61F.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000111000001463655713A.png" style="display:inline-block; margin:4px;width:5.05cm;height:6.031cm;" class="odt-zoomable" data-zoom-src="images/1000000000000111000001463655713A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">The [application.properties] file allows us to set the port for the client web application. Its contents are as follows:</span></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">server.</span><span style="color:#2a00ff">port=8082</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">Thus:</span></p>
+<ul>
+  <li><span style="color: #000000">the client is a web application available at the URL [http://localhost:8082];</span>
+  </li>
+  <li><span style="color: #000000">the server is a web application available at the URL [http://localhost:8081];</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">Because the client is not accessed via the same port as the server, the issue of cross-domain requests arises. Indeed, [http://localhost:8081] and [http://localhost:8082] are two different domains.</span></p>
+<p><a id="refheading4845838046689"></a></p>
+<h3 id="2123-maven-configuration">21.2.3. <span style="color: #4f81bd">Maven Configuration</span></h3>
+<p><span style="color: #000000">The project is a Maven project with the following [pom.xml] file:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#000000">version=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot; </span><span style="color:#000000">encoding=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:</span><span style="color:#000000">schemaLocation=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/modelVersion</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">dvp.spring.database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-cors-client-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.0.1-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">packaging</span><span style="color:#008080">&gt;</span><span style="color:#000000">jar</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/packaging</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-cors-client-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">description</span><span style="color:#008080">&gt;</span><span style="color:#000000">CORS client for WebJSON server</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/description</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-parent</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.2.3.RELEASE</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">relativePath </span><span style="color:#008080">/&gt; </span><span style="color:#3f5fbf">&lt;!-- lookup parent from repository --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project.build.sourceEncoding</span><span style="color:#008080">&gt;</span><span style="color:#000000">UTF-8</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project.build.sourceEncoding</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">java.version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.7</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/java.version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/properties</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-web</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f5fbf">&lt;!-- plugins --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-maven-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">maven-assembly-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">configuration</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">descriptorRefs</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">descriptorRef</span><span style="color:#008080">&gt;</span><span style="color:#000000">jar-with-dependencies</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/descriptorRef</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/descriptorRefs</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/configuration</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.apache.maven.plugins</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">maven-surefire-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="text-decoration:underline;color:#008080">&lt;</span><span style="text-decoration:underline;color:#3f7f7f">version</span><span style="text-decoration:underline;color:#008080">&gt;</span><span style="text-decoration:underline;color:#000000">2.18.1</span><span style="text-decoration:underline;color:#008080">&lt;</span><span style="text-decoration:underline;color:#3f7f7f">/version</span><span style="text-decoration:underline;color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">lines 14–19: this is a Spring Boot project;</span>
+  </li>
+  <li><span style="color: #000000">lines 27–30: we use the [spring-boot-starter-web] dependency, which includes a Tomcat server and Spring MVC;</span>
+<a id="refheading4847838046689"></a>
+
+### 21.2.4. <span style="color: #4f81bd">Basics of jQuery and JavaScript</span>
+
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000403000000D2C959C0A6.png" style="display:inline-block; margin:4px;width:13.587cm;height:2.778cm;" class="odt-zoomable" data-zoom-src="images/1000000000000403000000D2C959C0A6.png" /></td></tr></table>
+
+<p><span style="color: #000000">The web application delivers the following single page:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CD00000163BAF6D1B4.png" style="display:inline-block; margin:4px;width:8.541cm;height:6.578cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000163BAF6D1B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">It includes JavaScript (JS) code that runs in the browser. We’ll cover some JavaScript basics to help us understand the code. The client will make HTTP requests using the jQuery library [</span><a href="https://jquery.com/"><u><span style="color: #0563c1">https://jquery.com/</span></u></a><span style="color: #000000">], which provides many functions that simplify JavaScript development. We create a static HTML file [jQuery.html] and place it in the [static] folder:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E7000000DBC1673E09.png" style="display:inline-block; margin:4px;width:4.279cm;height:4.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000DBC1673E09.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">This file will have the following content:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE </span><span style="color:#008080">html&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/1999/xhtml&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">meta </span><span style="color:#000000">http-equiv=</span><span style="font-style:italic;color:#2a00ff">&quot;Content-Type&quot; </span><span style="color:#000000">content=</span><span style="font-style:italic;color:#2a00ff">&quot;text/html; charset=utf-8&quot; </span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">JQuery-01</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/title</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;/js/jquery-2.1.3.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/head</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h3</span><span style="color:#008080">&gt;</span><span style="color:#000000">JQuery Basics</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/h3</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">div </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;element1&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    Element 1</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/div</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/body</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/html</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">line 6: importing jQuery;</span>
+  </li>
+  <li><span style="color: #000000">lines 10–12: a page element with </span><b>the ID </b><span style="color: #000000">[element1]. We’re going to work with this element.</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">We need to download the file [</span><em><span style="color: #2a00ff">jquery-2.1.3.min.js</span></em><span style="color: #000000">]. You can find the latest version of jQuery at the URL [</span><a href="http://jquery.com/download/"><u><span style="color: #0563c1">http://jquery.com/download/</span></u></a><span style="color: #000000">]:</span></p>
+<p><img src="images/10000000000003CC00000103F6C4BFF9.png" style="width:18cm;height:4.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003CC00000103F6C4BFF9.png" /></p>
+<p><span style="color: #000000">We’ll place the downloaded file in the [static/js] folder:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E7000000DBC1673E09.png" style="display:inline-block; margin:4px;width:4.279cm;height:4.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000DBC1673E09.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Once that’s done, open the static view [jQuery.html] in Chrome [1-2]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F6000000FCC825B17E.png" style="display:inline-block; margin:4px;width:16.801cm;height:3.334cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F6000000FCC825B17E.png" /></td></tr></table>
+
+<p><span style="color: #000000">In Google Chrome, press [Ctrl-Shift-I] to open the developer tools [3]. The [Console] tab [4] allows you to run JavaScript code. Below, we provide JavaScript commands to type and explain what they do.</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">JS</span></span>
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">result</span></span>
+</code></pre></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;)</span></span>
+</code></pre></div>
+<div style="margin:0 0 0.5em 0">: returns the collection of all elements with <b>the id</b></div><div style="margin:0 0 0.5em 0"> [element1], so normally a collection</div><div style="margin:0 0 0.5em 0"> of 0 or 1 element because you cannot have</div><div style="margin:0 0 0.5em 0"> two identical <b>IDs </b>on an HTML page.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).text(&quot;blah&quot;)</span></span>
+</code></pre></div>
+<div style="margin:0 0 0.5em 0">: assigns the text [blabla] to all elements in</div><div style="margin:0 0 0.5em 0"> the collection. This changes the</div><div style="margin:0 0 0.5em 0"> content displayed by the page</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).hide()</span></span>
+</code></pre></div>
+<div style="margin:0 0 0.5em 0">hides the elements in the collection. The text</div><div style="margin:0 0 0.5em 0"> [blabla] is no longer displayed.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;)</span></span>
+</code></pre></div>
+<div style="margin:0 0 0.5em 0">: displays the collection again. This</div><div style="margin:0 0 0.5em 0">allows us to see that the element with the ID [element1] has</div><div style="margin:0 0 0.5em 0">the CSS attribute <b>style=&#x27;display: none;&#x27;</b>, which</div><div style="margin:0 0 0.5em 0"> the element to be hidden.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).show()</span></span>
+</code></pre></div>
+<div style="margin:0 0 0.5em 0">: displays the elements in the collection. The text</div><div style="margin:0 0 0.5em 0">[blabla] appears again. It is the</div><div style="margin:0 0 0.5em 0"><b>style=&#x27;display: block;&#x27; </b>that ensures this</div><div style="margin:0 0 0.5em 0"> display.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).attr(&#x27;style&#x27;,&#x27;color: red&#x27;)</span></span>
+</code></pre></div>
+<div style="margin:0 0 0.5em 0">: sets an attribute on all elements in the</div><div style="margin:0 0 0.5em 0">collection. The attribute here is [style] and its value</div><div style="margin:0 0 0.5em 0"> [color: red]. The text [blabla] turns red.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">Array</span></span>
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE0000011645A3961D.png" style="display:inline-block; margin:4px;width:4.41cm;height:5.151cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE0000011645A3961D.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">Dictionary</span></span>
+</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A0000000F3CAFDC489.png" style="display:inline-block; margin:4px;width:7.699cm;height:4.496cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000F3CAFDC489.png" /></td></tr></table>
+
+<p><span style="color: #000000">Note that the browser&#x27;s URL did not change during all these operations. There was no communication with the web server. Everything happens within the browser. Now, let&#x27;s view the page&#x27;s source code:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE </span><span style="color:#008080">html&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/1999/xhtml&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">meta </span><span style="color:#000000">http-equiv=</span><span style="font-style:italic;color:#2a00ff">&quot;Content-Type&quot; </span><span style="color:#000000">content=</span><span style="font-style:italic;color:#2a00ff">&quot;text/html; charset=utf-8&quot; </span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">JQuery-01</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/title</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;/js/jquery-1.11.1.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/head</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h3</span><span style="color:#008080">&gt;</span><span style="color:#000000">JQuery Basics</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/h3</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">div </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;element1&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    Element 1</span></span>
+<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/div</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/body</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/html</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">This is the original text. It does not reflect the changes made to the element in lines 10–12. It is important to keep this in mind when debugging JavaScript. In such cases, it is often unnecessary to view the source code of the displayed page.</span></p>
+<p><a id="refheading4849838046689"></a></p>
+<h3 id="2125-the-applications-javascript-code">21.2.5. <span style="color: #4f81bd">The application&#x27;s JavaScript code</span></h3>
+<p><span style="color: #000000">Let’s return to the HTML code of the client application page that will query the web service / JSON:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CD00000163BAF6D1B4.png" style="display:inline-block; margin:4px;width:8.541cm;height:6.578cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000163BAF6D1B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE </span><span style="color:#008080">html&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">meta </span><span style="color:#000000">charset=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">Spring MVC</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/title</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;/js/jquery-2.1.1.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;/js/client.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/head</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span><span style="color:#000000">Web service client / JSON</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/h2</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;form&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- HTTP method --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        HTTP method:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!--  --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot; </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;get&quot; </span><span style="color:#000000">name=</span><span style="font-style:italic;color:#2a00ff">&quot;method&quot; </span><span style="color:#000000">value=</span><span style="font-style:italic;color:#2a00ff">&quot;get&quot; </span><span style="color:#000000">checked=</span><span style="font-style:italic;color:#2a00ff">&quot;checked&quot; </span><span style="color:#008080">/&gt;</span><span style="color:#000000">GET</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!--  --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot; </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;post&quot; </span><span style="color:#000000">name=</span><span style="font-style:italic;color:#2a00ff">&quot;method&quot; </span><span style="color:#000000">value=</span><span style="font-style:italic;color:#2a00ff">&quot;post&quot; </span><span style="color:#008080">/&gt;</span><span style="color:#000000">POST</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!--  URL --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">br </span><span style="color:#008080">/&gt; &lt;</span><span style="color:#3f7f7f">br </span><span style="color:#008080">/&gt;</span><span style="color:#000000">Target URL: </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text&quot; </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;url&quot; </span><span style="color:#000000">size=</span><span style="font-style:italic;color:#2a00ff">&quot;30&quot;</span><span style="color:#008080">&gt;&lt;br/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- posted value --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">br </span><span style="color:#008080">/&gt; </span><span style="color:#000000">JSON string to post: </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text&quot; </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;posted&quot; </span><span style="color:#000000">size=</span><span style="font-style:italic;color:#2a00ff">&quot;50&quot; </span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- Submit button --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">br </span><span style="color:#008080">/&gt; &lt;</span><span style="color:#3f7f7f">br </span><span style="color:#008080">/&gt; &lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;submit&quot; </span><span style="color:#000000">value=</span><span style="font-style:italic;color:#2a00ff">&quot;Submit&quot; </span><span style="color:#000000">onclick=</span><span style="color:#2a00ff">&quot;javascript:requestServer(); return false;&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/input</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/form</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">hr </span><span style="color:#008080">/&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span><span style="color:#000000">Server response</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/h2</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">div </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;response&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/div</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/body</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/html</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">line 6: we import the jQuery library;</span>
+  </li>
+  <li><span style="color: #000000">line 7: we import code that we will write;</span>
+  </li>
+  <li><span style="color: #000000">Lines 11, 15, 17, 21: Note the [id] identifiers of the page components. The JavaScript references these components via these identifiers;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">The [client.js] code is as follows:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#000000">// global variables</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">url;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">posted;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">response;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">method;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">function </span><span style="color:#000000">requestServer() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// retrieve the form data</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">urlValue = url.val();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">postedValue = posted.val();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    method = document.forms[0].elements[</span><span style="color:#2a00ff">&#x27;method&#x27;</span><span style="color:#000000">].value;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// make an Ajax call manually</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(method === </span><span style="color:#2a00ff">&quot;get&quot;</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        doGet(urlValue);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"><span style="color:#000000">        doPost(urlValue, postedValue);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">function </span><span style="color:#000000">doGet(url) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// make an Ajax call manually</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $.ajax({</span></span>
+<span class="odt-code-line"><span style="color:#000000">        headers: {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2a00ff">&#x27;Authorization&#x27; </span><span style="color:#000000">: </span><span style="color:#2a00ff">&#x27;Basic YWRtaW46YWRtaW4=&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        url: </span><span style="color:#2a00ff">&#x27;http://localhost:8081&#x27; </span><span style="color:#000000">+ url,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        type: </span><span style="color:#2a00ff">&#x27;GET&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        dataType: </span><span style="color:#2a00ff">&#x27;text/plain&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        beforeSend: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        success: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(data) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// text result</span></span>
+<span class="odt-code-line"><span style="color:#000000">            response.text(data);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        complete: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        error: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(jqXHR) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// system error</span></span>
+<span class="odt-code-line"><span style="color:#000000">            response.text(jqXHR.responseText);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line"><span style="color:#000000">    })</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">function </span><span style="color:#000000">doPost(url, posted) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// We make an Ajax call manually</span></span>
+<span class="odt-code-line"><span style="color:#000000">    $.ajax({</span></span>
+<span class="odt-code-line"><span style="color:#000000">        headers: {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2a00ff">&#x27;Authorization&#x27; </span><span style="color:#000000">: </span><span style="color:#2a00ff">&#x27;Basic YWRtaW46YWRtaW4=&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        url: </span><span style="color:#2a00ff">&#x27;http://localhost:8081    &#x27; </span><span style="color:#000000">+ url,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        type: </span><span style="color:#2a00ff">&#x27;POST&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        contentType: </span><span style="color:#2a00ff">&#x27;application/json&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        data: posted,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        dataType: </span><span style="color:#2a00ff">&#x27;text/plain&#x27;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        beforeSend: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        success: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(data) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// text result</span></span>
+<span class="odt-code-line"><span style="color:#000000">            response.text(data);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        complete: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        error: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(jqXHR) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// system error</span></span>
+<span class="odt-code-line"><span style="color:#000000">            response.text(jqXHR.responseText);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line"><span style="color:#000000">    })</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">// on document load</span></span>
+<span class="odt-code-line"><span style="color:#000000">$(document).ready(</span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// retrieve the references of the page components</span></span>
+<span class="odt-code-line"><span style="color:#000000">    url = $(</span><span style="color:#2a00ff">&quot;#url&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    posted = $(</span><span style="color:#2a00ff">&quot;#posted&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    response = $(</span><span style="color:#2a00ff">&quot;#response&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">});</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">lines 71–75: JavaScript code executed after the document has finished loading in the browser;</span>
+  </li>
+  <li><span style="color: #000000">lines 73-75: retrieves the references of three elements in the HTML document;</span>
+  </li>
+  <li><span style="color: #000000">lines 2-5: global variables known throughout all functions defined in the JavaScript file;</span>
+  </li>
+  <li><span style="color: #000000">line 9: retrieves the URL entered by the user;</span>
+  </li>
+  <li><span style="color: #000000">line 10: retrieves the value the user wants to post;</span>
+  </li>
+  <li><span style="color: #000000">line 11: retrieves the method [get] or [post] to use when requesting the URL from line 9:</span>
+    <ul>
+      <li><b>document </b><span style="color: #000000">refers to the document loaded by the browser, known as the DOM (Document Object Model),</span>
+      </li>
+      <li><b>document.forms[0] </b><span style="color: #000000">refers to the first form in the document; a document may contain multiple forms. Here, there is only one;</span>
+      </li>
+      <li><b>document.forms[0].elements[&#x27;method&#x27;</b><span style="color: #000000">] refers to the form element with the [name=&#x27;method&#x27;] attribute. There are two:</span>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot; </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;get&quot; </span><span style="background-color:#ff950e">name=</span><span style="font-style:italic;background-color:#ff950e;color:#2a00ff">&quot;method&quot; </span><span style="color:#000000">value=</span><span style="font-style:italic;color:#2a00ff">&quot;get&quot; </span><span style="color:#000000">checked=</span><span style="font-style:italic;color:#2a00ff">&quot;checked&quot; </span><span style="color:#008080">/&gt;</span><span style="color:#000000">GET</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot; </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;post&quot; </span><span style="background-color:#ff950e;color:#000000">name=</span><span style="font-style:italic;background-color:#ff950e;color:#2a00ff">&quot;method&quot; </span><span style="color:#000000">value=</span><span style="font-style:italic;color:#2a00ff">&quot;post&quot; </span><span style="color:#008080">/&gt;</span><span style="color:#000000">POST</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">(continued)</span>
+    <ul>
+      <li><b>document.forms[0].elements[&#x27;method&#x27;].value </b><span style="color: #000000">is the value that will be posted for the component with the [name=&#x27;method&#x27;] attribute. We know that the posted value is the value of the [value] attribute of the checked radio button. Here, it will therefore be one of the strings [&#x27;get&#x27;, &#x27;post&#x27;];</span>
+      </li>
+    </ul>
+  </li>
+  <li><span style="color: #000000">Lines 13–18: Depending on the HTTP method to be used, either the [doGet] or [doPost] method is executed;</span>
+  </li>
+  <li><span style="color: #000000">The jQuery method [$.ajax] makes an HTTP request;</span>
+  </li>
+  <li><span style="color: #000000">lines 23–25: We are communicating with a server that requires an HTTP header [Authorization: Basic code]. We create this header for the user [admin / admin], who is the only one authorized to query the server;</span>
+  </li>
+  <li><span style="color: #000000">line 26: the user will enter URLs of the form [/getAllLongCategories, /saveCategories, ...]. These URLs must therefore be completed;</span>
+  </li>
+  <li><span style="color: #000000">line 27: HTTP method to use;</span>
+  </li>
+  <li><span style="color: #000000">line 28: the server returns JSON. We specify the type [text/plain] as the response type so that it is displayed exactly as received;</span>
+  </li>
+  <li><span style="color: #000000">line 33: display the server&#x27;s text response;</span>
+  </li>
+  <li><span style="color: #000000">line 39: display any error message in text format;</span>
+  </li>
+  <li><span style="color: #000000">line 44: the [doPost] method receives a second parameter, which is the value to be posted;</span>
+  </li>
+  <li><span style="color: #000000">line 52: to indicate that the posted value will be in the form of a JSON string;</span>
+<a id="refheading4851838046689"></a>
+
+### 21.2.6. <span style="color: #4f81bd">Client Execution</span>
+
+  </li>
+</ul>
+
+<p><span style="color: #000000">The client application is a console application launched by the following executable [Client] class:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E60000008330350B48.png" style="display:inline-block; margin:4px;width:4.26cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E60000008330350B48.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.client;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.SpringApplication;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.autoconfigure.EnableAutoConfiguration;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@EnableAutoConfiguration</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Client {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        SpringApplication.</span><span style="font-style:italic;color:#000000">run</span><span style="color:#000000">(Client.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">, </span><span style="color:#6a3e3e">args</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">Line 6: The [@EnableAutoConfiguration] annotation is an annotation of the [Spring Boot] project (line 4). Spring Boot will inspect the archives present in the project&#x27;s classpath. In this case, these will be all the Maven dependencies provided by the single dependency in the [pom.xml] file:</span>
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-web</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<p><span style="color: #000000">This dependency includes a large number of libraries, notably Spring MVC and a Tomcat server. Because of these dependencies, Spring Boot will configure a Spring MVC project running on Tomcat using default values. The Tomcat server is then configured to run on port 8080. If you want to override the default values chosen by Spring Boot, you can use the [application.properties] file at the root of the classpath (everything in [src/main/resources] is at the root of the classpath):</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E800000080111EF42C.png" style="display:inline-block; margin:4px;width:4.3cm;height:2.372cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E800000080111EF42C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">We specify that the Tomcat server should run on port 8082 as follows:</span></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">server.</span><span style="color:#2a00ff">port=8082</span></span>
+</code></pre></div>
+
+<p>A list of parameters that can be used in [application.properties] is available at the URL (June 2015) [<a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html"><u><span style="color: #0563c1">http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html</span></u></a>];</p>
+<p><span style="color: #000000">Back to the code in [Client.java]:</span></p>
+<ul>
+  <li>line 10: the [SpringApplication.<i>run</i>] method will deploy the [client.html] page to the Tomcat server present in the project’s classpath;
+<a id="refheading196719811596012"></a>
+
+### 21.2.7. <span style="color: #4f81bd">The URL [/getAllShortCategories]</span>
+
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B5000002894EDC1A9D.png" style="display:inline-block; margin:4px;width:15.942cm;height:8.587cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B5000002894EDC1A9D.png" /></td></tr></table>
+
+<p><span style="color: #000000">We launch:</span></p>
+<ul>
+  <li><span style="color: #000000">the secure web/JSON server on port 8081 (configuration [spring-security-server-jdbc-generic]);</span>
+  </li>
+  <li><span style="color: #000000">the client for this server on port 8082 (configuration [spring-cors-client-generic]);</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">then we request the URL [http://localhost:8082/client.html] [1]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E100000227511AAF70.png" style="display:inline-block; margin:4px;width:16.524cm;height:7.29cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E100000227511AAF70.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">in [2], we perform a GET request on the URL [http://localhost:8081/getAllShortCategories];</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">We do not receive a response from the server. When we look at the Chrome developer console (Ctrl-Shift-I), we see an error:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FA000003E06222BA0A.png" style="display:inline-block; margin:4px;width:16.854cm;height:13.123cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FA000003E06222BA0A.png" /></td></tr></table>
+
+<ul>
+  <li><span style="color: #000000">in [1], we are in the [Network] tab;</span>
+  </li>
+  <li><span style="color: #000000">In [2], we see that the HTTP request made is not [GET] but [OPTIONS]. In the case of a cross-domain request, the browser checks with the server to ensure that certain conditions are met by sending an HTTP [OPTIONS] request. In this instance, the requests are those indicated by the dots [5-6];</span>
+  </li>
+  <li><span style="color: #000000">In [5], the browser asks whether the target URL can be reached with a GET. The [Access-Control-Request-Method] request asks for a response with an [Access-Control-Allow-Methods] HTTP header indicating that the requested method is accepted;</span>
+  </li>
+  <li><span style="color: #000000">in [6], the browser sends the HTTP header [Origin: http://localhost:8081]. This header requests a response in an HTTP header [Access-Control-Allow-Origin] indicating that the specified origin is accepted;</span>
+  </li>
+  <li><span style="color: #000000">In [7], the browser asks whether the HTTP headers [Accept] and [Authorization] are accepted. The [Access-Control-Request-Headers] request expects a response with an HTTP header [Access-Control-Allow-Headers] indicating that the requested headers are accepted;</span>
+  </li>
+  <li><span style="color: #000000">an error occurs in [3]. Clicking the icon results in error [4];</span>
+  </li>
+  <li><span style="color: #000000">In [4], the message indicates that the server did not send the [Access-Control-Allow-Origin] HTTP header, which specifies whether the origin of the request is accepted;</span>
+  </li>
+  <li><span style="color: #000000">in [8], we can see that the server did indeed not send this header. As a result, the browser refused to make the HTTP GET request that was initially requested;</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">We need to modify the web server / JSON.</span></p>
+<p><a id="refheading4853838046689"></a></p>
+<h3 id="2128-a-new-web-service-json">21.2.8. <span style="color: #4f81bd">A new web service / JSON</span></h3>
+<p>We are creating a new Maven project [spring-cors-server-jdbc-generic]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000119000001335B517914.png" style="display:inline-block; margin:4px;width:5.2cm;height:5.681cm;" class="odt-zoomable" data-zoom-src="images/1000000000000119000001335B517914.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The Maven configuration for the new web service is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:</span><span style="color:#000000">schemaLocation=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/modelVersion</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">dvp.spring.database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-cors-server-jdbc-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.0.1-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-cors-server-jdbc-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">description</span><span style="color:#008080">&gt;</span><span style="color:#000000">Spring CORS demo</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/description</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-parent</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.2.3.RELEASE</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f5fbf">&lt;!-- plugins --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.apache.maven.plugins</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">maven-surefire-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="text-decoration:underline;color:#008080">&lt;</span><span style="text-decoration:underline;color:#3f7f7f">version</span><span style="text-decoration:underline;color:#008080">&gt;</span><span style="text-decoration:underline;color:#000000">2.18.1</span><span style="text-decoration:underline;color:#008080">&lt;</span><span style="text-decoration:underline;color:#3f7f7f">/version</span><span style="text-decoration:underline;color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">dvp.spring.database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-security-server-jdbc-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.0.1-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Lines 30–32: We retrieve all the data from the work done so far by accessing the secure JSON archive on the web server;
+  </li>
+</ul>
+
+<p>In the end, the dependencies are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001010000006642972374.png" style="display:inline-block; margin:4px;width:4.761cm;height:1.889cm;" class="odt-zoomable" data-zoom-src="images/10000000000001010000006642972374.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The configuration class [AppConfig] is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EA000000B4DC98115A.png" style="display:inline-block; margin:4px;width:4.33cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000000B4DC98115A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.server.config;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.annotation.PostConstruct;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Bean;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.ComponentScan;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Configuration;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Import;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.servlet.DispatcherServlet;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.cors.server.service&quot; </span><span style="color:#000000">})</span></span>
+<span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ spring.security.config.AppConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// cross-domain requests</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isCorsEnabled() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 12: the class is a Spring configuration class;
+  </li>
+  <li>line 9: other Spring components can be found in the [<span style="color: #2a00ff">spring.cors.server.service</span>] package;
+  </li>
+  <li>line 14: we import the beans from the [spring-security-server-jdbc-generic] project;
+  </li>
+  <li>lines 18–21: we create a Spring component named [<span style="color: #000000">isCorsEnabled</span>] that indicates whether or not clients outside the server’s domain are accepted;
+<a id="refheading14540124987110"></a>
+
+### 21.2.9. <span style="color: #4f81bd">The controllers</span>
+
+  </li>
+</ul>
+
+<p>The new web service has four controllers:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000112000000A6A4CD6E3A.png" style="display:inline-block; margin:4px;width:5.069cm;height:3.071cm;" class="odt-zoomable" data-zoom-src="images/1000000000000112000000A6A4CD6E3A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>[CorsCategorieController] handles category processing URLs. It only manages CORS headers from web clients. Otherwise, it delegates the work to the [CategorieController] in the [spring-webjson-server-jdbc-generic] dependency;
+  </li>
+  <li>[CorsProductController] and [CorsAuthenticateController] do the same by delegating the work to the [ProductController] in the [spring-webjson-server-jdbc-generic] dependency and the [AuthenticateController] in the [spring-security-server-jdbc-generic] dependency;
+  </li>
+  <li>[CorsController] is used to factor out what is common to the three previous controllers;
+<a id="refheading14540324987110"></a>
+
+#### 21.2.9.1. <span style="color: #4f81bd">The [CorsController]</span>
+
+  </li>
+</ul>
+
+<p>The [CorsController] class is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.server.service;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.servlet.http.HttpServletResponse;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.stereotype.Component;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@Component</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">CorsController {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private boolean </span><span style="color:#0000c0">isCorsEnabled</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Send options to the client</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">sendOptions(String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Is CORS allowed?</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(!</span><span style="color:#0000c0">isCorsEnabled </span><span style="color:#000000">|| </span><span style="color:#6a3e3e">origin </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null </span><span style="color:#000000">|| !</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">.startsWith(</span><span style="color:#2a00ff">&quot;http://localhost&quot;</span><span style="color:#000000">)) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Set the CORS header</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Origin&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// allow certain headers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Headers&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;accept, authorization&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Allow GET</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Methods&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;GET&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 8: the [<span style="color: #000000">CorsController</span>] class is a Spring controller;
+  </li>
+  <li>lines 11-12: injection of the [<span style="color: #0000c0">isCorsEnabled</span>] bean, which indicates whether or not to handle CORS headers;
+  </li>
+  <li>lines 15–26: the [sendOptions] method handles responses to clients sending CORS headers;
+  </li>
+  <li>lines 17-19: if the application is configured to accept cross-domain requests, and if the sender has sent the [Origin] HTTP header, and if that origin starts with [http://localhost], then the cross-domain request is accepted; otherwise, it is rejected;
+  </li>
+  <li>line 21: if the client is in the domain [http://localhost:port], we send the HTTP header:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#2a00ff">Access-</span><span style="color:#000000">Control</span><span style="color:#2a00ff">-Allow-Origin:  http://localhost:port</span></span>
+</code></pre></div>
+
+<p>which means that the server accepts the client&#x27;s origin;</p>
+<ul>
+  <li>lines 22–25: we have specified two specific HTTP headers in the [OPTIONS] HTTP request:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">Access-Control-Request-Method: GET</span></span>
+<span class="odt-code-line"><span style="color:#000000">Access-Control-Request-Headers: accept, authorization</span></span>
+</code></pre></div>
+
+<p>In response to the [Access-Control-Request-X] HTTP header, the server responds with an [Access-Control-Allow-X] HTTP header specifying what is allowed. Lines 22–25 simply repeat the client’s request to indicate that it is accepted;</p>
+<p><a id="refheading14540524987110"></a></p>
+<h4 id="21292-the-controller-corscategoriecontroller">21.2.9.2. <span style="color: #4f81bd">The controller [CorsCategorieController]</span></h4>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.server.service;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.util.List;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.servlet.http.HttpServletRequest;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.servlet.http.HttpServletResponse;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RequestHeader;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RequestMapping;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RequestMethod;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RestController;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.jdbc.entities.Category;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.entities.CoreCategory;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.CategoryController;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.Response;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@RestController</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">CategoryController </span><span style="font-weight:bold;background-color:#ff950e;color:#7f0055">extends </span><span style="background-color:#ff950e;color:#000000">CorsController </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">CategorieController </span><span style="color:#0000c0">categoryController</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllShortCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">getAllShortCategories(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        sendOptions(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllShortCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;List&lt;Category&gt;&gt; getAllShortCategories(</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// original method</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">categoryController</span><span style="color:#000000">.getAllShortCategories();</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 19: the [@RestController] annotation makes the class both a Spring component and an MVC controller that sends its own responses to the client;
+  </li>
+  <li>Line 20: The [<span style="color: #000000">CorsCategorieController</span>] class extends the [CorsController] class we just saw;
+  </li>
+  <li>lines 22–23: injection of the [<span style="color: #0000c0">CategorieController</span>] controller from the [spring-webjson-server-jdbc-generic] dependency;
+  </li>
+  <li>lines 25–29: handle the URL [<span style="color: #2a00ff">/cors-getAllShortCategories</span>] when it is requested with the HTTP [OPTIONS] method. By convention, we decide that web clients wishing to call the [/U] URL of the secure web service must actually call the [/cors-U] URL. The deployed web service will thus have two types of URLs:
+    <ul>
+      <li>[/U]: for non-web clients;
+      </li>
+      <li>[/cors-U]: for web clients;
+      </li>
+    </ul>
+  </li>
+  <li>line 25: the [<span style="color: #2a00ff">/cors-getAllShortCategories</span>] method accepts the following parameters:
+    <ul>
+      <li>the object [<span style="color: #646464">@RequestHeader</span><span style="color: #000000">(value = </span><span style="color: #2a00ff">&quot;Origin&quot;</span><span style="color: #000000">, required = </span><b><span style="color: #7f0055">false</span></b><span style="color: #000000">)</span>], which retrieves the HTTP [Origin] header from the request. This header was sent by the request origin:
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="color:#000000">Origin:http://localhost:8082</span></span>
+</code></pre></div>
+
+<p>We specify that the [Origin] HTTP header is optional [<span style="color: #000000">required = </span><strong><span style="color: #7f0055">false</span></strong>]. In this case, if the header is missing, the [String origin] parameter will have a <em>null</em> value. With [<span style="color: #000000">required = </span><strong><span style="color: #7f0055">true</span></strong>], which is the default value, an exception is thrown if the header is missing. We wanted to avoid this scenario;</p>
+<ul>
+  <li>(continued)
+    <ul>
+      <li> the [HttpServletResponse response] object that will be returned to the client who made the request;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>These two parameters are injected by Spring;</p>
+<ul>
+  <li>line 28: we delegate the handling of the request to the [sendOptions] method of the parent class [CorsController];
+  </li>
+  <li>lines 31–36: the [<span style="color: #000000">getAllShortCategories</span>] method handles the URL [<span style="color: #2a00ff">/cors-getAllShortCategories</span>] when it is requested with a GET;
+  </li>
+  <li>Line 35: The work is delegated to the [CategorieController.<span style="color: #000000">getAllShortCategories] </span>method <span style="color: #000000">of the [spring-webjson-server-jdbc-generic] dependency;</span>
+  </li>
+</ul>
+
+<p>We are now ready for further testing. We launch the new version of the web service and find that the problem remains unchanged. Nothing has changed. If we add a console output on line 28 above, it is never displayed, indicating that the [<span style="color: #000000">corsGetAllShortCategories</span>] method on line 25 is never called.</p>
+<p>After some research, we discover that Spring MVC handles [OPTIONS] HTTP requests itself using default handling. Therefore, it is always Spring that responds, and never the [<span style="color: #000000">corsGetAllShortCategories</span>] method on line 25. This default behavior of Spring MVC can be changed. We modify the existing [AppConfig] class:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EA000000B4DC98115A.png" style="display:inline-block; margin:4px;width:4.33cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000000B4DC98115A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.server.config;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.annotation.PostConstruct;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Bean;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.ComponentScan;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Configuration;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Import;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.servlet.DispatcherServlet;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.cors.server.service&quot; </span><span style="color:#000000">})</span></span>
+<span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ spring.security.config.AppConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// cross-domain requests</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isCorsEnabled() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">DispatcherServlet </span><span style="color:#0000c0">dispatcherServlet</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@PostConstruct</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">init(){</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// the application handles HTTP requests itself [OPTIONS]</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">dispatcherServlet</span><span style="color:#000000">.setDispatchOptionsRequest(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 23-24: we inject the [<span style="color: #000000">DispatcherServlet </span><span style="color: #0000c0">dispatcherServlet</span>] component, which was defined in the [spring-webjson-server-jdbc-generic] dependency;
+  </li>
+  <li>lines 26-30: the [@PostConstruct] annotation ensures that the [init] method will be executed after the [AppConfig] class is instantiated and after Spring has performed its injections;
+  </li>
+  <li>line 29: we configure the servlet to forward [OPTIONS] HTTP requests to the application;
+  </li>
+</ul>
+
+<p>We rerun the tests with this new configuration. We get the following result:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050D00000474D0D87500.png" style="display:inline-block; margin:4px;width:17.106cm;height:15.081cm;" class="odt-zoomable" data-zoom-src="images/100000000000050D00000474D0D87500.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], we see that there are two HTTP requests to the URL [http://localhost:8080/getAllCategories];
+  </li>
+  <li>in [2], the [OPTIONS] request;
+  </li>
+  <li>in [3], the three HTTP headers we just configured in the server’s response;
+  </li>
+</ul>
+
+<p>Let us now examine the second claim:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005310000047DE4F53DB6.png" style="display:inline-block; margin:4px;width:17.582cm;height:15.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000005310000047DE4F53DB6.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], the request under consideration;
+  </li>
+  <li>in [2], this is the GET request. Thanks to the first [OPTIONS] request, the browser received the information it requested. It now performs the [GET] request that was initially requested;
+  </li>
+  <li>in [3], the server&#x27;s response;
+  </li>
+  <li>in [4], the server sends JSON;
+  </li>
+  <li>in [5], an error occurred;
+  </li>
+  <li>in [6], the error message;
+  </li>
+</ul>
+
+<p>It is more difficult to explain what happened here. The server’s response [3] is normal [HTTP/1.1 200 OK]. We should therefore have the requested document. It is possible that the server did indeed send the document but that the browser is preventing its use because it requires that, for the GET request as well, the response include the HTTP header [Access-Control-Allow-Origin:http://localhost:8081].</p>
+<p>We modify the method that handles the GET request for the URL [<span style="color: #2a00ff">/cors-getAllShortCategories</span>]:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllShortCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;List&lt;Category&gt;&gt; getAllShortCategories(</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// CORS headers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        sendOptions(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// original method</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">categoryController</span><span style="color:#000000">.getAllShortCategories();</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 5: as with the HTTP [OPTIONS] request, the server will send the CORS HTTP headers for an HTTP [GET] request;
+  </li>
+</ul>
+
+<p>After this change, the results are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023600000194BBFEA850.png" style="display:inline-block; margin:4px;width:10.479cm;height:7.481cm;" class="odt-zoomable" data-zoom-src="images/100000000000023600000194BBFEA850.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>We have successfully obtained the short version of all categories.</p>
+<p><a id="refheading196721811596012"></a></p>
+<h4 id="21293-the-get-urls">21.2.9.3. <span style="color: #4f81bd">The [GET] URLs</span></h4>
+<p>In the controllers [CorsCategorieController, CorsProduitController, CorsAuthenticateController], the code for the actions that handle the requested [GET] URLs follows the pattern of the actions that previously handled the URL [/cors-getAllShortArticles]. The reader can verify the code in the examples provided with this document. Here is an example for the [/cors-getAllLongProduits] URL in the [CorsProduitController] controller:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.server.service;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.util.List;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.servlet.http.HttpServletRequest;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.servlet.http.HttpServletResponse;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.beans.factory.annotation.Autowired;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RequestHeader;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RequestMapping;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RequestMethod;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RestController;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.jdbc.entities.Product;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.entities.CoreProduct;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.ProductController;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.Response;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@RestController</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">ProductController </span><span style="font-weight:bold;background-color:#ff950e;color:#7f0055">extends </span><span style="background-color:#ff950e;color:#000000">Controller </span><span style="color:#000000">{</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">ProduitController </span><span style="color:#0000c0">productController</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllLongProducts&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;List&lt;Product&gt;&gt; getAllLongProducts(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// CORS headers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        sendOptions(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// origin method</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">productController</span><span style="color:#000000">.getAllLongProducts();</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllLongProduits&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">getAllProducts(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        sendOptions(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022900000212C2E40077.png" style="display:inline-block; margin:4px;width:10.239cm;height:9.813cm;" class="odt-zoomable" data-zoom-src="images/100000000000022900000212C2E40077.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><a id="refheading196723811596012"></a></p>
+<h4 id="21294-post-urls">21.2.9.4. <span style="color: #4f81bd">[POST] URLs</span></h4>
+<p>Let&#x27;s consider the following scenario:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000030C000001F8B7804B0D.png" style="display:inline-block; margin:4px;width:10.319cm;height:6.668cm;" class="odt-zoomable" data-zoom-src="images/100000000000030C000001F8B7804B0D.png" /></td></tr></table>
+
+<ul>
+  <li>We make a POST [1] to the URL [2];
+  </li>
+  <li>in [3], the posted value. This is the JSON string for a category with no products;
+  </li>
+  <li>Ultimately, we want to create a category named [category[2]];
+  </li>
+</ul>
+
+<p>We are not modifying any code at this point. The result obtained is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004ED0000042558717F81.png" style="display:inline-block; margin:4px;width:16.683cm;height:14.037cm;" class="odt-zoomable" data-zoom-src="images/10000000000004ED0000042558717F81.png" /></td></tr></table>
+
+<ul>
+  <li>in [1], as with [GET] requests, an [OPTIONS] request is made by the browser;
+  </li>
+  <li>in [2], it requests access authorization for a [POST] request. Previously, it was [GET];
+  </li>
+  <li>In [3], it requests authorization to send the HTTP headers [accept, authorization, content-type]. Previously, we only had the first two headers;
+  </li>
+  <li>in [4], the web service does not grant all the requested permissions, which causes error [5];
+  </li>
+</ul>
+
+<p>We modify the [CorsController.sendOptions] method as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">sendOptions(String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Is CORS allowed?</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(!</span><span style="color:#0000c0">isCorsEnabled </span><span style="color:#000000">|| </span><span style="color:#6a3e3e">origin </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null </span><span style="color:#000000">|| !</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">.startsWith(</span><span style="color:#2a00ff">&quot;http://localhost&quot;</span><span style="color:#000000">)) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Set the CORS header</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Origin&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// allow certain headers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Headers&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;accept, authorization, content-type&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// allow GET and POST</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Methods&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;GET, POST&quot;</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 9: we added the HTTP header [Content-Type] (case is not sensitive);
+  </li>
+  <li>line 11: we added the HTTP method [POST];
+  </li>
+</ul>
+
+<p>This means that [POST] methods are handled the same way as [GET] requests. Here is an example of the URL [/cors-saveCategories] in the [CorsCategorieController] controller:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-saveCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;List&lt;CoreCategorie&gt;&gt; saveCategories(HttpServletRequest </span><span style="color:#6a3e3e">request</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// CORS headers</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ff950e;color:#000000">sendOptions</span><span style="color:#000000">(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// origin method</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">categoryController</span><span style="color:#000000">.saveCategories(</span><span style="color:#6a3e3e">request</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-saveCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">corsSaveCategories(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ff950e;color:#000000">sendOptions</span><span style="color:#000000">(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<p>With these changes made, the result is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020E00000186792455BB.png" style="display:inline-block; margin:4px;width:9.74cm;height:7.221cm;" class="odt-zoomable" data-zoom-src="images/100000000000020E00000186792455BB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p>The category [categorie[2]] has been successfully added to the database. The DBMS has assigned it the primary key 226. This can be verified using the GET method [/cors-getAllShortCategories]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002250000019D5592904D.png" style="display:inline-block; margin:4px;width:10.171cm;height:7.652cm;" class="odt-zoomable" data-zoom-src="images/10000000000002250000019D5592904D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><a id="refheading196725811596012"></a></p>
+<h3 id="21210-conclusion">21.2.10. <span style="color: #4f81bd">Conclusion</span></h3>
+<p>Our application now supports cross-domain requests. These can be enabled or disabled via configuration in the [AppConfig] class:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.server.config;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.cors.server.service&quot; </span><span style="color:#000000">})</span></span>
+<span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ spring.security.config.AppConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// cross-domain requests</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isCorsEnabled() {</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"><span style="color:#000000">}</span></span>
+</code></pre></div>
+
+<p><a id="refheading14586824987110"></a></p>
+<h2 id="213-the-eclipse-project-spring-cors-server-jpa-generic">21.3. <span style="color: #4f81bd">The Eclipse project [spring-cors-server-jpa-generic]</span></h2>
+<p><a id="refheading14514311862793331"></a><span style="color: #000000">The CORS web service will now be implemented by the [spring-cors-server-jpa-generic] project, which is based on the [spring-security-server-jpa-generic] project that manages database access using Spring Data JPA:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DD0000028E38CD896E.png" style="display:inline-block; margin:4px;width:16.471cm;height:8.652cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DD0000028E38CD896E.png" /></td></tr></table>
+
+<p><span style="color: #000000">The [spring-cors-server-jpa-generic] project is created by cloning the previously studied [spring-cors-server-jdbc-generic] project.</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010B000002005176F9BA.png" style="display:inline-block; margin:4px;width:4.941cm;height:9.476cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B000002005176F9BA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Next, there are two changes to make. The first is in the [pom.xml] file:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot; </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:</span><span style="color:#000000">schemaLocation=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/modelVersion</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">dvp.spring.database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-cors-server-jpa-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.0.1-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">name</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-cors-server-jpa-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/name</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">description</span><span style="color:#008080">&gt;</span><span style="color:#000000">Spring CORS demo</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/description</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework.boot</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-boot-starter-parent</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.2.3.RELEASE</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/parent</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f5fbf">&lt;!-- plugins --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.apache.maven.plugins</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">maven-surefire-plugin</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="text-decoration:underline;color:#008080">&lt;</span><span style="text-decoration:underline;color:#3f7f7f">version</span><span style="text-decoration:underline;color:#008080">&gt;</span><span style="text-decoration:underline;color:#000000">2.18.1</span><span style="text-decoration:underline;color:#008080">&lt;</span><span style="text-decoration:underline;color:#3f7f7f">/version</span><span style="text-decoration:underline;color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugin</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/plugins</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/build</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">dvp.spring.database</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-security-server-jpa-generic</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">0.0.1-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 30–32: the dependency on the secure web service [spring-security-server-jpa-generic];
+  </li>
+</ul>
+
+<p>In the end, the project dependencies are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011C00000081484803B8.png" style="display:inline-block; margin:4px;width:5.26cm;height:2.388cm;" class="odt-zoomable" data-zoom-src="images/100000000000011C00000081484803B8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><strong>Note</strong><span style="color: #000000">: Press Alt-F5 and then regenerate all projects</span></p>
+<p><span style="color: #000000">The second change is to update the imports in the classes that are reporting errors [Alt-Shift-O].</span></p>
+<p><span style="color: #000000">That’s it. We start the CORS web service with the runtime configuration [spring-cors-server-jpa-generic-hibernate-eclipselink]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000151000000D5231766F3.png" style="display:inline-block; margin:4px;width:6.241cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000D5231766F3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016700000118D85E3CEA.png" style="display:inline-block; margin:4px;width:6.65cm;height:5.188cm;" class="odt-zoomable" data-zoom-src="images/100000000000016700000118D85E3CEA.png" /></td></tr></table>
+
+<p><span style="color: #000000">Then launch the generic client:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E40000028AA744A251.png" style="display:inline-block; margin:4px;width:16.563cm;height:8.599cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E40000028AA744A251.png" /></td></tr></table>
+
+<p><span style="color: #000000">and using a browser, request the URL [1] with a GET. In [2], we see that the short version of the returned categories has the [entityType] field, which was missing in the previous JDBC version.</span></p>
+<p><span style="color: #000000">We will now cover two other CORS architectures:</span></p>
+<ul>
+  <li><span style="color: #000000">CORS / JPA EclipseLink / DB2 architecture;</span>
+  </li>
+  <li><span style="color: #000000">CORS / JPA OpenJpa / Firebird architecture;</span>
+<a id="refheading14680824987110"></a>
+
+## 21.4. <span style="color: #4f81bd">CORS / JPA EclipseLink / DB2 architecture</span>
+
+  </li>
+</ul>
+
+<p><span style="color: #000000">We will implement the following architecture:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D3000002781BCFA2E9.png" style="display:inline-block; margin:4px;width:16.339cm;height:8.361cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D3000002781BCFA2E9.png" /></td></tr></table>
+
+<p><span style="color: #000000">Load the following projects:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FE000001453CF31424.png" style="display:inline-block; margin:4px;width:4.701cm;height:6.015cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000001453CF31424.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><strong>Note</strong><span style="color: #000000">: Press Alt-F5 and regenerate all Maven projects.</span></p>
+<p><span style="color: #000000">Start the DB2 database and verify that the [dbproduitscategories] database exists. If not, create it (section</span><a href="#refheading1237324776430071"><u><span style="color: #0563c1"> 12.1.2</span></u></a><span style="color: #000000">).</span></p>
+<p><span style="color: #000000">We create users in the [dbproduitscategories] database using the [spring-security-create-users-hibernate-eclipselink] runtime configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001660000010172010C1E.png" style="display:inline-block; margin:4px;width:6.63cm;height:4.761cm;" class="odt-zoomable" data-zoom-src="images/10000000000001660000010172010C1E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015900000109E08D76FF.png" style="display:inline-block; margin:4px;width:6.391cm;height:4.909cm;" class="odt-zoomable" data-zoom-src="images/100000000000015900000109E08D76FF.png" /></td></tr></table>
+
+<p><img src="images/10000000000003940000013715020D49.png" style="width:16.96cm;height:5.757cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003940000013715020D49.png" /></p>
+<p><span style="color: #000000">Then start the CORS web service using the runtime configuration named [spring-cors-server-jpa-generic-hibernate-eclipselink] and its client named [spring-cors-client-generic]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000155000000C55CD5EAE1.png" style="display:inline-block; margin:4px;width:6.309cm;height:3.644cm;" class="odt-zoomable" data-zoom-src="images/1000000000000155000000C55CD5EAE1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FB000000C89E5B8CEB.png" style="display:inline-block; margin:4px;width:4.65cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000000C89E5B8CEB.png" /></td></tr></table>
+
+<p><span style="color: #000000">Populate the [dbproduitscategories] database with values using the runtime configuration [spring-jdbc-generic-04-fillDataBase]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C2EE24877E.png" style="display:inline-block; margin:4px;width:5.549cm;height:3.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C2EE24877E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Finally, request the following URL in a browser:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020F000001A9F330B472.png" style="display:inline-block; margin:4px;width:9.76cm;height:7.87cm;" class="odt-zoomable" data-zoom-src="images/100000000000020F000001A9F330B472.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><a id="refheading14681024987110"></a></p>
+<h2 id="215-cors-jpa-openjpa-firebird-architecture">21.5. <span style="color: #4f81bd">CORS / JPA OpenJPA / Firebird Architecture</span></h2>
+<p><span style="color: #000000">We will now implement the following architecture:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C60000027331C214A5.png" style="display:inline-block; margin:4px;width:16.166cm;height:8.296cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C60000027331C214A5.png" /></td></tr></table>
+
+<p><span style="color: #000000">Load the following projects:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001060000013CCB0513E7.png" style="display:inline-block; margin:4px;width:4.851cm;height:5.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000001060000013CCB0513E7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><strong>Note</strong><span style="color: #000000">: Press Alt-F5 and regenerate all Maven projects.</span></p>
+<p><span style="color: #000000">Start the Firebird DBMS and verify that the [dbproduitscategories] database exists. If not, create it (section</span><a href="#refheading1237324776430073"><u><span style="color: #0563c1"> 14.1.2</span></u></a><span style="color: #000000">).</span></p>
+<p><span style="color: #000000">We create users in the [dbproduitscategories] database using the [spring-security-create-users-openjpa] runtime configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000116000000CA46FBA7DE.png" style="display:inline-block; margin:4px;width:5.151cm;height:3.743cm;" class="odt-zoomable" data-zoom-src="images/1000000000000116000000CA46FBA7DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000236000001359FDE8258.png" style="display:inline-block; margin:4px;width:10.479cm;height:5.72cm;" class="odt-zoomable" data-zoom-src="images/1000000000000236000001359FDE8258.png" /></td></tr></table>
+
+<p><img src="images/10000000000003AA00000107C190BBBF.png" style="width:17.371cm;height:4.872cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003AA00000107C190BBBF.png" /></p>
+<p><span style="color: #000000">Then start the CORS web service with the runtime configuration named [spring-cors-server-jpa-generic-openjpa]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011F000000EABA959C2F.png" style="display:inline-block; margin:4px;width:5.309cm;height:4.329cm;" class="odt-zoomable" data-zoom-src="images/100000000000011F000000EABA959C2F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023F00000139447B4AC5.png" style="display:inline-block; margin:4px;width:10.65cm;height:5.796cm;" class="odt-zoomable" data-zoom-src="images/100000000000023F00000139447B4AC5.png" /></td></tr></table>
+
+<p><span style="color: #000000">Start the CORS client using the [spring-cors-client-generic] configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D0000000E245C97B2C.png" style="display:inline-block; margin:4px;width:3.851cm;height:4.184cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000E245C97B2C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Populate the [dbproduitscategories] database with values using the [spring-jdbc-generic-04-fillDataBase] runtime configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C2EE24877E.png" style="display:inline-block; margin:4px;width:5.549cm;height:3.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C2EE24877E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Finally, request the following URL in a browser:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020E000001A02CD42F8F.png" style="display:inline-block; margin:4px;width:9.74cm;height:7.703cm;" class="odt-zoomable" data-zoom-src="images/100000000000020E000001A02CD42F8F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
