@@ -1201,7 +1201,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.transaction.PlatformTransactionManager;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ConfigJdbc.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">ConfigJpa {</span></span>
 <span class="odt-code-line"></span>
@@ -1213,7 +1213,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setDatabase(Database.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">MYSQL</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// JPA entity packages</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public final static </span><span style="color:#000000">String[] </span><span style="font-weight:bold;font-style:italic;color:#0000c0">ENTITIES_PACKAGES </span><span style="color:#000000">= { </span><span style="color:#2a00ff">&quot;generic.jpa.entities.dbproduitscategories&quot; </span><span style="color:#000000">};</span></span>
@@ -1232,7 +1232,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setInitialSize(5);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// EntityManagerFactory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1243,7 +1243,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setDataSource(</span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.afterPropertiesSet();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.getObject();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Transaction manager</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1252,7 +1252,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">txManager</span><span style="color:#000000">.setEntityManagerFactory(</span><span style="color:#6a3e3e">entityManagerFactory</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">txManager</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>This configuration is similar to the one described in Section<a href="#refheading1052942082896917"><u><span style="color: #0563c1"> 6.3.2</span></u></a> for the Hibernate JPA implementation. We will only detail the differences:</p>
@@ -1349,31 +1349,50 @@
 </ul>
 
 <p>The console results obtained for the [JUnitTestProxies] test are as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">doNothing</span></span>
-<span class="odt-code-line"><span style="color:#000000">Emptying the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getShortCategoriesByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Category type: PROXY</span></span>
-<span class="odt-code-line"><span style="color:#000000">Category:</span></span>
-<span class="odt-code-line"><span style="background-color:#ff950e;color:#000000">Exception: java.lang.NullPointerException, Message: null</span></span>
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getLongCategoriesByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Category type: POJO</span></span>
-<span class="odt-code-line"><span style="color:#000000">Category:</span></span>
-<span class="odt-code-line"><span style="color:#000000">1</span></span>
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getShortProductsByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product type: PROXY</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product category name:</span></span>
-<span class="odt-code-line"><span style="background-color:#ff950e;color:#000000">Exception: java.lang.NullPointerException, Message: null</span></span>
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getLongProductsByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product type: POJO</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product category name:</span></span>
-<span class="odt-code-line"><span style="color:#000000">category[0]</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Dumping the database --------------------------------
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>doNothing
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>Emptying the database --------------------------------
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>getShortCategoriesByName1 --------------------------------
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>Category type: PROXY
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>Category:
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>Exception: java.lang.NullPointerException, Message: null
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>Dumping the database --------------------------------
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>getLongCategoriesByName1 --------------------------------
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>Category type: POJO
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>Category:
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>1
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>Dumping the database --------------------------------
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>getShortProductsByName1 --------------------------------
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>Product type: PROXY
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>Product category name:
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>Exception: java.lang.NullPointerException, Message: null
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>Dumping the database --------------------------------
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>getLongProductsByName1 --------------------------------
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>Product type: POJO
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>Product category name:
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>category[0]
+</code></pre></div></td></tr></table></div>
 <p>Here we see that when accessing the [Categorie.produits] field of a PROXY-type category and the [Produit.categorie] field of a PROXY-type product, we have a <em>null</em> pointer in both cases (lines 7 and 17).</p>
 
 

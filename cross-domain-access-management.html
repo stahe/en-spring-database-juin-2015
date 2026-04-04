@@ -1375,7 +1375,7 @@
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h3</span><span style="color:#008080">&gt;</span><span style="color:#000000">JQuery Basics</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/h3</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">div </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;element1&quot;</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Element 1</span></span>
+<span class="odt-code-line">    Element 1</span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/div</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/body</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/html</span><span style="color:#008080">&gt;</span></span>
@@ -1397,33 +1397,43 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F6000000FCC825B17E.png" style="display:inline-block; margin:4px;width:16.801cm;height:3.334cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F6000000FCC825B17E.png" /></td></tr></table>
 
 <p><span style="color: #000000">In Google Chrome, press [Ctrl-Shift-I] to open the developer tools [3]. The [Console] tab [4] allows you to run JavaScript code. Below, we provide JavaScript commands to type and explain what they do.</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">JS</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">result</span></span>
-</code></pre></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;)</span></span>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>JS
 </code></pre></div>
-<div style="margin:0 0 0.5em 0">: returns the collection of all elements with <b>the id</b></div><div style="margin:0 0 0.5em 0"> [element1], so normally a collection</div><div style="margin:0 0 0.5em 0"> of 0 or 1 element because you cannot have</div><div style="margin:0 0 0.5em 0"> two identical <b>IDs </b>on an HTML page.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).text(&quot;blah&quot;)</span></span>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>result
 </code></pre></div>
-<div style="margin:0 0 0.5em 0">: assigns the text [blabla] to all elements in</div><div style="margin:0 0 0.5em 0"> the collection. This changes the</div><div style="margin:0 0 0.5em 0"> content displayed by the page</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).hide()</span></span>
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
-<div style="margin:0 0 0.5em 0">hides the elements in the collection. The text</div><div style="margin:0 0 0.5em 0"> [blabla] is no longer displayed.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;)</span></span>
+</div>
+<div style="margin:0 0 0.5em 0">: returns the collection of all elements with <b>the id</b></div><div style="margin:0 0 0.5em 0"> [element1], so normally a collection</div><div style="margin:0 0 0.5em 0"> of 0 or 1 element because you cannot have</div><div style="margin:0 0 0.5em 0"> two identical <b>IDs </b>on an HTML page.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$(&quot;#element1&quot;).text(&quot;blah&quot;)
 </code></pre></div>
-<div style="margin:0 0 0.5em 0">: displays the collection again. This</div><div style="margin:0 0 0.5em 0">allows us to see that the element with the ID [element1] has</div><div style="margin:0 0 0.5em 0">the CSS attribute <b>style=&#x27;display: none;&#x27;</b>, which</div><div style="margin:0 0 0.5em 0"> the element to be hidden.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).show()</span></span>
+</div>
+<div style="margin:0 0 0.5em 0">: assigns the text [blabla] to all elements in</div><div style="margin:0 0 0.5em 0"> the collection. This changes the</div><div style="margin:0 0 0.5em 0"> content displayed by the page</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$(&quot;#element1&quot;).hide()
 </code></pre></div>
-<div style="margin:0 0 0.5em 0">: displays the elements in the collection. The text</div><div style="margin:0 0 0.5em 0">[blabla] appears again. It is the</div><div style="margin:0 0 0.5em 0"><b>style=&#x27;display: block;&#x27; </b>that ensures this</div><div style="margin:0 0 0.5em 0"> display.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">$(&quot;#element1&quot;).attr(&#x27;style&#x27;,&#x27;color: red&#x27;)</span></span>
+</div>
+<div style="margin:0 0 0.5em 0">hides the elements in the collection. The text</div><div style="margin:0 0 0.5em 0"> [blabla] is no longer displayed.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
-<div style="margin:0 0 0.5em 0">: sets an attribute on all elements in the</div><div style="margin:0 0 0.5em 0">collection. The attribute here is [style] and its value</div><div style="margin:0 0 0.5em 0"> [color: red]. The text [blabla] turns red.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Array</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE0000011645A3961D.png" style="display:inline-block; margin:4px;width:4.41cm;height:5.151cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE0000011645A3961D.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Dictionary</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A0000000F3CAFDC489.png" style="display:inline-block; margin:4px;width:7.699cm;height:4.496cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000F3CAFDC489.png" /></td></tr></table>
+</div>
+<div style="margin:0 0 0.5em 0">: displays the collection again. This</div><div style="margin:0 0 0.5em 0">allows us to see that the element with the ID [element1] has</div><div style="margin:0 0 0.5em 0">the CSS attribute <b>style=&#x27;display: none;&#x27;</b>, which</div><div style="margin:0 0 0.5em 0"> the element to be hidden.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$(&quot;#element1&quot;).show()
+</code></pre></div>
+</div>
+<div style="margin:0 0 0.5em 0">: displays the elements in the collection. The text</div><div style="margin:0 0 0.5em 0">[blabla] appears again. It is the</div><div style="margin:0 0 0.5em 0"><b>style=&#x27;display: block;&#x27; </b>that ensures this</div><div style="margin:0 0 0.5em 0"> display.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$(&quot;#element1&quot;).attr(&#39;style&#39;,&#39;color: red&#39;)
+</code></pre></div>
+</div>
+<div style="margin:0 0 0.5em 0">: sets an attribute on all elements in the</div><div style="margin:0 0 0.5em 0">collection. The attribute here is [style] and its value</div><div style="margin:0 0 0.5em 0"> [color: red]. The text [blabla] turns red.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Array
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE0000011645A3961D.png" style="display:inline-block; margin:4px;width:4.41cm;height:5.151cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE0000011645A3961D.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Dictionary
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A0000000F3CAFDC489.png" style="display:inline-block; margin:4px;width:7.699cm;height:4.496cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000F3CAFDC489.png" /></td></tr></table>
 
 <p><span style="color: #000000">Note that the browser&#x27;s URL did not change during all these operations. There was no communication with the web server. Everything happens within the browser. Now, let&#x27;s view the page&#x27;s source code:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1437,7 +1447,7 @@
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h3</span><span style="color:#008080">&gt;</span><span style="color:#000000">JQuery Basics</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/h3</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">div </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;element1&quot;</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Element 1</span></span>
+<span class="odt-code-line">    Element 1</span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/div</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/body</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/html</span><span style="color:#008080">&gt;</span></span>
@@ -1462,7 +1472,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">h2</span><span style="color:#008080">&gt;</span><span style="color:#000000">Web service client / JSON</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/h2</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">form </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;form&quot;</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- HTTP method --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        HTTP method:</span></span>
+<span class="odt-code-line">        HTTP method:</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!--  --&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">input </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;radio&quot; </span><span style="color:#000000">id=</span><span style="font-style:italic;color:#2a00ff">&quot;get&quot; </span><span style="color:#000000">name=</span><span style="font-style:italic;color:#2a00ff">&quot;method&quot; </span><span style="color:#000000">value=</span><span style="font-style:italic;color:#2a00ff">&quot;get&quot; </span><span style="color:#000000">checked=</span><span style="font-style:italic;color:#2a00ff">&quot;checked&quot; </span><span style="color:#008080">/&gt;</span><span style="color:#000000">GET</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!--  --&gt;</span></span>
@@ -1492,7 +1502,7 @@
 
 <p><span style="color: #000000">The [client.js] code is as follows:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="color:#000000">// global variables</span></span>
+<span class="odt-code-line">// global variables</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">url;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">posted;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">var </span><span style="color:#000000">response;</span></span>
@@ -1505,69 +1515,69 @@
 <span class="odt-code-line"><span style="color:#000000">    method = document.forms[0].elements[</span><span style="color:#2a00ff">&#x27;method&#x27;</span><span style="color:#000000">].value;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// make an Ajax call manually</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(method === </span><span style="color:#2a00ff">&quot;get&quot;</span><span style="color:#000000">) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        doGet(urlValue);</span></span>
+<span class="odt-code-line">        doGet(urlValue);</span>
 <span class="odt-code-line"><span style="color:#000000">    } </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
-<span class="odt-code-line"><span style="color:#000000">        doPost(urlValue, postedValue);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        doPost(urlValue, postedValue);</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">function </span><span style="color:#000000">doGet(url) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// make an Ajax call manually</span></span>
-<span class="odt-code-line"><span style="color:#000000">    $.ajax({</span></span>
-<span class="odt-code-line"><span style="color:#000000">        headers: {</span></span>
+<span class="odt-code-line">    $.ajax({</span>
+<span class="odt-code-line">        headers: {</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2a00ff">&#x27;Authorization&#x27; </span><span style="color:#000000">: </span><span style="color:#2a00ff">&#x27;Basic YWRtaW46YWRtaW4=&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        url: </span><span style="color:#2a00ff">&#x27;http://localhost:8081&#x27; </span><span style="color:#000000">+ url,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        type: </span><span style="color:#2a00ff">&#x27;GET&#x27;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        dataType: </span><span style="color:#2a00ff">&#x27;text/plain&#x27;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        beforeSend: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        success: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(data) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// text result</span></span>
-<span class="odt-code-line"><span style="color:#000000">            response.text(data);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">            response.text(data);</span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        complete: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        error: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(jqXHR) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// system error</span></span>
-<span class="odt-code-line"><span style="color:#000000">            response.text(jqXHR.responseText);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    })</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">            response.text(jqXHR.responseText);</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    })</span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">function </span><span style="color:#000000">doPost(url, posted) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// We make an Ajax call manually</span></span>
-<span class="odt-code-line"><span style="color:#000000">    $.ajax({</span></span>
-<span class="odt-code-line"><span style="color:#000000">        headers: {</span></span>
+<span class="odt-code-line">    $.ajax({</span>
+<span class="odt-code-line">        headers: {</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#2a00ff">&#x27;Authorization&#x27; </span><span style="color:#000000">: </span><span style="color:#2a00ff">&#x27;Basic YWRtaW46YWRtaW4=&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        url: </span><span style="color:#2a00ff">&#x27;http://localhost:8081    &#x27; </span><span style="color:#000000">+ url,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        type: </span><span style="color:#2a00ff">&#x27;POST&#x27;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        contentType: </span><span style="color:#2a00ff">&#x27;application/json&#x27;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        data: posted,</span></span>
+<span class="odt-code-line">        data: posted,</span>
 <span class="odt-code-line"><span style="color:#000000">        dataType: </span><span style="color:#2a00ff">&#x27;text/plain&#x27;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        beforeSend: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        success: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(data) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// text result</span></span>
-<span class="odt-code-line"><span style="color:#000000">            response.text(data);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">            response.text(data);</span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        complete: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        error: </span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">(jqXHR) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// system error</span></span>
-<span class="odt-code-line"><span style="color:#000000">            response.text(jqXHR.responseText);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    })</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">            response.text(jqXHR.responseText);</span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    })</span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">// on document load</span></span>
+<span class="odt-code-line">// on document load</span>
 <span class="odt-code-line"><span style="color:#000000">$(document).ready(</span><span style="font-weight:bold;color:#7f0055">function</span><span style="color:#000000">() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// retrieve the references of the page components</span></span>
 <span class="odt-code-line"><span style="color:#000000">    url = $(</span><span style="color:#2a00ff">&quot;#url&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    posted = $(</span><span style="color:#2a00ff">&quot;#posted&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    response = $(</span><span style="color:#2a00ff">&quot;#response&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">});</span></span>
+<span class="odt-code-line">});</span>
 </code></pre></div>
 
 <ul>
@@ -1637,13 +1647,13 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.SpringApplication;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.autoconfigure.EnableAutoConfiguration;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@EnableAutoConfiguration</span></span>
+<span class="odt-code-line">@EnableAutoConfiguration</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Client {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        SpringApplication.</span><span style="font-style:italic;color:#000000">run</span><span style="color:#000000">(Client.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">, </span><span style="color:#6a3e3e">args</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1784,7 +1794,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Import;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.servlet.DispatcherServlet;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.cors.server.service&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ spring.security.config.AppConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
@@ -1793,9 +1803,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isCorsEnabled() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1832,7 +1842,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.beans.factory.annotation.Autowired;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.stereotype.Component;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Component</span></span>
+<span class="odt-code-line">@Component</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">CorsController {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
@@ -1843,15 +1853,15 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Is CORS allowed?</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(!</span><span style="color:#0000c0">isCorsEnabled </span><span style="color:#000000">|| </span><span style="color:#6a3e3e">origin </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null </span><span style="color:#000000">|| !</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">.startsWith(</span><span style="color:#2a00ff">&quot;http://localhost&quot;</span><span style="color:#000000">)) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Set the CORS header</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Origin&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// allow certain headers</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Headers&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;accept, authorization&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Allow GET</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Methods&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;GET&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1877,11 +1887,9 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Access-Control-Request-Method: GET</span></span>
-<span class="odt-code-line"><span style="color:#000000">Access-Control-Request-Headers: accept, authorization</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Access-Control-Request-Method: GET
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Access-Control-Request-Headers: accept, authorization
 </code></pre></div>
-
 <p>In response to the [Access-Control-Request-X] HTTP header, the server responds with an [Access-Control-Allow-X] HTTP header specifying what is allowed. Lines 22–25 simply repeat the client’s request to indicate that it is accepted;</p>
 <p><a id="refheading14540524987110"></a></p>
 <h4 id="21292-the-controller-corscategoriecontroller">21.2.9.2. <span style="color: #4f81bd">The controller [CorsCategorieController]</span></h4>
@@ -1904,7 +1912,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.CategoryController;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.Response;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@RestController</span></span>
+<span class="odt-code-line">@RestController</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">CategoryController </span><span style="font-weight:bold;background-color:#ff950e;color:#7f0055">extends </span><span style="background-color:#ff950e;color:#000000">CorsController </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
@@ -1914,17 +1922,17 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">getAllShortCategories(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        sendOptions(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllShortCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;List&lt;Category&gt;&gt; getAllShortCategories(</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// original method</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">categoryController</span><span style="color:#000000">.getAllShortCategories();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1950,10 +1958,8 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Origin:http://localhost:8082</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Origin:http://localhost:8082
 </code></pre></div>
-
 <p>We specify that the [Origin] HTTP header is optional [<span style="color: #000000">required = </span><strong><span style="color: #7f0055">false</span></strong>]. In this case, if the header is missing, the [String origin] parameter will have a <em>null</em> value. With [<span style="color: #000000">required = </span><strong><span style="color: #7f0055">true</span></strong>], which is the default value, an exception is thrown if the header is missing. We wanted to avoid this scenario;</p>
 <ul>
   <li>(continued)
@@ -1990,7 +1996,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Import;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.servlet.DispatcherServlet;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.cors.server.service&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ spring.security.config.AppConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
@@ -1999,17 +2005,17 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isCorsEnabled() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">DispatcherServlet </span><span style="color:#0000c0">dispatcherServlet</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@PostConstruct</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">init(){</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// the application handles HTTP requests itself [OPTIONS]</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">dispatcherServlet</span><span style="color:#000000">.setDispatchOptionsRequest(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
 </code></pre></div>
 
@@ -2062,7 +2068,7 @@
 <span class="odt-code-line"><span style="color:#000000">        sendOptions(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// original method</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">categoryController</span><span style="color:#000000">.getAllShortCategories();</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2096,7 +2102,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.ProductController;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.Response;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@RestController</span></span>
+<span class="odt-code-line">@RestController</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">ProductController </span><span style="font-weight:bold;background-color:#ff950e;color:#7f0055">extends </span><span style="background-color:#ff950e;color:#000000">Controller </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
@@ -2109,15 +2115,15 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// origin method</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">productController</span><span style="color:#000000">.getAllLongProducts();</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllLongProduits&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">getAllProducts(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        sendOptions(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022900000212C2E40077.png" style="display:inline-block; margin:4px;width:10.239cm;height:9.813cm;" class="odt-zoomable" data-zoom-src="images/100000000000022900000212C2E40077.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -2156,15 +2162,15 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Is CORS allowed?</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(!</span><span style="color:#0000c0">isCorsEnabled </span><span style="color:#000000">|| </span><span style="color:#6a3e3e">origin </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null </span><span style="color:#000000">|| !</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">.startsWith(</span><span style="color:#2a00ff">&quot;http://localhost&quot;</span><span style="color:#000000">)) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Set the CORS header</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Origin&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// allow certain headers</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Headers&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;accept, authorization, content-type&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// allow GET and POST</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">response</span><span style="color:#000000">.addHeader(</span><span style="color:#2a00ff">&quot;Access-Control-Allow-Methods&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;GET, POST&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2183,13 +2189,13 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ff950e;color:#000000">sendOptions</span><span style="color:#000000">(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// origin method</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">categoryController</span><span style="color:#000000">.saveCategories(</span><span style="color:#6a3e3e">request</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-saveCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">corsSaveCategories(</span><span style="color:#646464">@RequestHeader</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;Origin&quot;</span><span style="color:#000000">, required = </span><span style="font-weight:bold;color:#7f0055">false</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">origin</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            HttpServletResponse </span><span style="color:#6a3e3e">response</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#ff950e;color:#000000">sendOptions</span><span style="color:#000000">(</span><span style="color:#6a3e3e">origin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">response</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>With these changes made, the result is as follows:</p>
@@ -2204,7 +2210,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.cors.server.config;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.cors.server.service&quot; </span><span style="color:#000000">})</span></span>
@@ -2215,14 +2221,14 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isCorsEnabled() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><a id="refheading14586824987110"></a></p>
 <h2 id="213-the-eclipse-project-spring-cors-server-jpa-generic">21.3. <span style="color: #4f81bd">The Eclipse project [spring-cors-server-jpa-generic]</span></h2>
-<p><a id="refheading14514311862793331"></a><span style="color: #000000">The CORS web service will now be implemented by the [spring-cors-server-jpa-generic] project, which is based on the [spring-security-server-jpa-generic] project that manages database access using Spring Data JPA:</span></p>
+<p><span style="color: #000000"><a id="refheading14514311862793331"></a>The CORS web service will now be implemented by the [spring-cors-server-jpa-generic] project, which is based on the [spring-security-server-jpa-generic] project that manages database access using Spring Data JPA:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DD0000028E38CD896E.png" style="display:inline-block; margin:4px;width:16.471cm;height:8.652cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DD0000028E38CD896E.png" /></td></tr></table>
 
 <p><span style="color: #000000">The [spring-cors-server-jpa-generic] project is created by cloning the previously studied [spring-cors-server-jdbc-generic] project.</span></p>

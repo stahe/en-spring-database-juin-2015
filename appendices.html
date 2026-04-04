@@ -1137,21 +1137,21 @@
 <p>It contains the following lines:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f5fbf">&lt;!-- localRepository</span></span>
-<span class="odt-code-line"><span style="color:#000000">   | The path to the local repository that Maven will use to store artifacts.</span></span>
-<span class="odt-code-line"><span style="color:#000000">   |</span></span>
-<span class="odt-code-line"><span style="color:#000000">   | Default: ${user.home}/.m2/repository</span></span>
-<span class="odt-code-line"><span style="color:#000000">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">--&gt;</span></span>
+<span class="odt-code-line">   | The path to the local repository that Maven will use to store artifacts.</span>
+<span class="odt-code-line">   |</span>
+<span class="odt-code-line">   | Default: ${user.home}/.m2/repository</span>
+<span class="odt-code-line">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span>
+<span class="odt-code-line">--&gt;</span>
 </code></pre></div>
 
 <p>The default value on line 4 may cause issues for some software using Maven if, like me, your {user.home} path contains a space (for example, [C:\Users\Serge Tahé]). We will specify (line 7) a different folder for the local Maven repository:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f5fbf">&lt;!-- localRepository</span></span>
-<span class="odt-code-line"><span style="color:#000000">   | The path to the local repository Maven will use to store artifacts.</span></span>
-<span class="odt-code-line"><span style="color:#000000">   |</span></span>
-<span class="odt-code-line"><span style="color:#000000">   | Default: ${user.home}/.m2/repository</span></span>
-<span class="odt-code-line"><span style="color:#000000">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  --&gt;</span></span>
+<span class="odt-code-line">   | The path to the local repository Maven will use to store artifacts.</span>
+<span class="odt-code-line">   |</span>
+<span class="odt-code-line">   | Default: ${user.home}/.m2/repository</span>
+<span class="odt-code-line">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span>
+<span class="odt-code-line">  --&gt;</span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">localRepository</span><span style="color:#008080">&gt;</span><span style="background-color:#ff950e;color:#000000">D:\Programs\devjava\maven\.m2\repository</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/localRepository</span><span style="color:#008080">&gt;</span></span>
 </code></pre></div>
 
@@ -1273,9 +1273,9 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;test01&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C80000039C9BC5C590.png" style="display:inline-block; margin:4px;width:12.806cm;height:12.224cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C80000039C9BC5C590.png" /></td></tr></table>
@@ -1387,19 +1387,25 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002EB000000E69F4E2B15.png" style="display:inline-block; margin:4px;width:13.831cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000002EB000000E69F4E2B15.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The download URLs are currently (May 2015) as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">MySQL5</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/mysql/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/mysql/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">IBM DB2</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/db2/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/db2/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Firebird / Interbase</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/ibfb/manager"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/ibfb/manager</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Oracle</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/oracle/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/oracle/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Microsoft SQL Server</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/mssql/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/mssql/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">PostgreSQL</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/postgresql/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/postgresql/manager/download</span></u></a></div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MySQL5
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/mysql/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/mysql/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>IBM DB2
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/db2/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/db2/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Firebird / Interbase
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/ibfb/manager"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/ibfb/manager</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Oracle
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/oracle/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/oracle/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Microsoft SQL Server
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/mssql/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/mssql/manager/download</span></u></a></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>PostgreSQL
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/postgresql/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/postgresql/manager/download</span></u></a></div></td></tr></table>
 
 <p><span style="color: #000000">When installing, for example, the MySQL5 MyManager client, you get the following directory structure:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B0000021D848355D9.png" style="display:inline-block; margin:4px;width:17.503cm;height:7.158cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B0000021D848355D9.png" /></td></tr></table>
@@ -1769,16 +1775,16 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.lastName = lastName;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.firstName = firstName;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.age = age;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// signature</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String toString() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">String.format(</span><span style="color:#2a00ff">&quot;Person[%s, %s, %d]&quot;</span><span style="color:#000000">, lastName, firstName, age);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>The [Main] class is as follows:</p>
@@ -1799,7 +1805,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// creating a person</span></span>
 <span class="odt-code-line"><span style="color:#000000">    Person paul = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Person(</span><span style="color:#2a00ff">&quot;Denis&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Paul&quot;</span><span style="color:#000000">, 40);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Display JSON</span></span>
-<span class="odt-code-line"><span style="color:#000000">    String json = mapper.writeValueAsString(paul);</span></span>
+<span class="odt-code-line">    String json = mapper.writeValueAsString(paul);</span>
 <span class="odt-code-line"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;JSON=&quot; </span><span style="color:#000000">+ json);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Instantiate Person from JSON</span></span>
 <span class="odt-code-line"><span style="color:#000000">    Person p = mapper.readValue(json, Person.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
@@ -1809,27 +1815,27 @@
 <span class="odt-code-line"><span style="color:#000000">    Person virginie = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Person(</span><span style="color:#2a00ff">&quot;Radot&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Virginie&quot;</span><span style="color:#000000">, 20);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    Person[] people = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Person[]{paul, virginie};</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Display JSON</span></span>
-<span class="odt-code-line"><span style="color:#000000">    json = mapper.writeValueAsString(people);</span></span>
+<span class="odt-code-line">    json = mapper.writeValueAsString(people);</span>
 <span class="odt-code-line"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;JSON people=&quot; </span><span style="color:#000000">+ json);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// dictionary</span></span>
 <span class="odt-code-line"><span style="color:#000000">    Map&lt;String, Person&gt; hpeople = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">HashMap&lt;String, Person&gt;();</span></span>
 <span class="odt-code-line"><span style="color:#000000">    hpeople.put(</span><span style="color:#2a00ff">&quot;1&quot;</span><span style="color:#000000">, paul);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    hpeople.put(</span><span style="color:#2a00ff">&quot;2&quot;</span><span style="color:#000000">, virginie);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Display JSON</span></span>
-<span class="odt-code-line"><span style="color:#000000">    json = mapper.writeValueAsString(hpeople);</span></span>
+<span class="odt-code-line">    json = mapper.writeValueAsString(hpeople);</span>
 <span class="odt-code-line"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;JSON hpeople=&quot; </span><span style="color:#000000">+ json);</span></span>
-<span class="odt-code-line"><span style="color:#000000">  }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">  }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>Executing this class produces the following screen output:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Json={&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40}
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Person = Person[Denis, Paul, 40]
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>Json people=[{&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40},{&quot;lastName&quot;:&quot;Radot&quot;,&quot;firstName&quot;:&quot;Virginie&quot;,&quot;age&quot;:20}]
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>Json people={&quot;2&quot;:{&quot;lastName&quot;:&quot;Radot&quot;,&quot;firstName&quot;:&quot;Virginie&quot;,&quot;age&quot;:20},&quot;1&quot;:{&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40}}
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Json={&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40}
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>Person = Person[Denis, Paul, 40]
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>Json people=[{&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40},{&quot;lastName&quot;:&quot;Radot&quot;,&quot;firstName&quot;:&quot;Virginie&quot;,&quot;age&quot;:20}]
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>Json people={&quot;2&quot;:{&quot;lastName&quot;:&quot;Radot&quot;,&quot;firstName&quot;:&quot;Virginie&quot;,&quot;age&quot;:20},&quot;1&quot;:{&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40}}
 </code></pre></div></td></tr></table></div>
 <p>Key takeaways from the example:</p>
 <ul>

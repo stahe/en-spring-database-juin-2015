@@ -1165,7 +1165,7 @@
 <span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#3f5fbf">&lt;!-- constant dependencies ********************************************** --&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">...</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
 </code></pre></div>
 
@@ -1209,7 +1209,7 @@
 <span class="odt-code-line"><span style="color:#000000">                .usingGeneratedKeyColumns(</span><span style="background-color:#ff950e;color:#000000">ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;background-color:#ff950e;color:#0000c0">PRODUCTS_ID</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">                .usingColumns(ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">PRODUCTS_NAME</span><span style="color:#000000">, ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">PRODUCTS_PRICE</span><span style="color:#000000">, ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">PRODUCTS_DESCRIPTION</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">PRODUCTS_CATEGORY_ID</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// insert category</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1217,7 +1217,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">SimpleJdbcInsert(</span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">).withTableName(ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_CATEGORIES</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">                .usingGeneratedKeyColumns(</span><span style="background-color:#ff950e;color:#000000">ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;background-color:#ff950e;color:#0000c0">TAB_CATEGORIES_ID</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">                .usingColumns(ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_CATEGORIES_NAME</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><a id="refheading1221664776430071"></a></p>
@@ -1237,7 +1237,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setDatabase(</span><span style="background-color:#ff950e;color:#000000">Database.</span><span style="font-weight:bold;font-style:italic;background-color:#ff950e;color:#0000c0">POSTGRESQL</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>

@@ -1213,7 +1213,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.GenerationType;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.Id;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Entity</span></span>
+<span class="odt-code-line">@Entity</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Customer {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Id</span></span>
@@ -1223,19 +1223,19 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String </span><span style="color:#0000c0">lastName</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">Customer() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Customer(String firstName, String lastName) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">firstName </span><span style="color:#000000">= firstName;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">lastName </span><span style="color:#000000">= lastName;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String toString() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">String</span><span style="font-style:italic;color:#000000">.format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;Customer[id=%d, firstName=&#x27;%s&#x27;, lastName=&#x27;%s&#x27;]&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">id</span><span style="color:#000000">, </span><span style="color:#0000c0">firstName</span><span style="color:#000000">, </span><span style="color:#0000c0">lastName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>A customer has an ID [id], a first name [firstName], and a last name [lastName]. Each [Customer] instance represents a row in a database table.</p>
@@ -1271,8 +1271,8 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">CustomerRepository </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">CrudRepository&lt;Customer, Long&gt; {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    List&lt;Customer&gt; findByLastName(String lastName);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    List&lt;Customer&gt; findByLastName(String lastName);</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>This is therefore an <strong>interface</strong> and not a class (line 7). It extends the [CrudRepository] interface, a Spring Data interface (line 5). This interface is parameterized by two types: the first is the type of the managed elements, here the [Customer] type; the second is the type of the primary key of the managed elements, here a [Long] type. The [CrudRepository] interface is as follows:</p>
@@ -1281,20 +1281,20 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.io.Serializable;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@NoRepositoryBean</span></span>
+<span class="odt-code-line">@NoRepositoryBean</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface</span><a id="crudrepository"></a><span style="color:#000000"> CrudRepository&lt;T, ID </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">Serializable&gt; </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">Repository&lt;T, ID&gt; {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;S </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">T&gt; S save(S entity);</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;S </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">T&gt; Iterable&lt;S&gt; save(Iterable&lt;S&gt; entities);</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    T findOne(ID id);</span></span>
+<span class="odt-code-line">    T findOne(ID id);</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">boolean </span><span style="color:#000000">exists(ID id);</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    Iterable&lt;T&gt; findAll();</span></span>
+<span class="odt-code-line">    Iterable&lt;T&gt; findAll();</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    Iterable&lt;T&gt; findAll(Iterable&lt;ID&gt; ids);</span></span>
+<span class="odt-code-line">    Iterable&lt;T&gt; findAll(Iterable&lt;ID&gt; ids);</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">long </span><span style="color:#000000">count();</span></span>
 <span class="odt-code-line"></span>
@@ -1305,7 +1305,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">void </span><span style="color:#000000">delete(Iterable&lt;? </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">T&gt; entities);</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">void </span><span style="color:#000000">deleteAll();</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>This interface defines the CRUD (Create – Read – Update – Delete) operations that can be performed on a JPA T type:</p>
@@ -1336,7 +1336,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">CustomerRepository </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">CrudRepository&lt;Customer, Long&gt; {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    List&lt;Customer&gt; findByLastName(String lastName);</span></span>
+<span class="odt-code-line">    List&lt;Customer&gt; findByLastName(String lastName);</span>
 <span class="odt-code-line"><span style="color:#000000">}</span></span>
 </code></pre></div>
 
@@ -1353,20 +1353,14 @@
 </code></pre></div>
 
 <p>The method on line 9 is automatically implemented by [Spring Data] because it references the [lastName] field (line 3) of [Customer]. When it encounters a [findBySomething] method in the interface to be implemented, Spring Data implements it using the following JPQL (Java Persistence Query Language) query:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">select t from T t where t.something=:value</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">select</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">something</span><span class="o">=</span><span class="p">:</span><span class="n">value</span>
 </code></pre></div>
-
 <p>Therefore, the type T must have a field named [something]. Thus, the method</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">List&lt;Customer&gt; findByLastName(String lastName);</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>List&lt;Customer&gt; findByLastName(String lastName);
 </code></pre></div>
-
 <p>will be implemented with code similar to the following:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">return [em].createQuery(&quot;select c from Customer c where c.lastName=:value&quot;).setParameter(&quot;value&quot;,lastName).getResultList()</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="n">em</span><span class="p">].</span><span class="n">createQuery</span><span class="p">(</span><span class="ss">&quot;select c from Customer c where c.lastName=:value&quot;</span><span class="p">).</span><span class="n">setParameter</span><span class="p">(</span><span class="ss">&quot;value&quot;</span><span class="p">,</span><span class="n">lastName</span><span class="p">).</span><span class="n">getResultList</span><span class="p">()</span>
 </code></pre></div>
-
 <p>where [em] refers to the JPA persistence context. This is only possible if the [Customer] class has a field named [lastName], which is the case.</p>
 <p>In conclusion, in simple cases, Spring Data allows us to implement the [DAO] layer with a simple interface.</p>
 <p><a id="refheading2192382014630537"></a></p>
@@ -1385,15 +1379,15 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.SpringApplication;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.autoconfigure.SpringBootApplication;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@SpringBootApplication</span></span>
+<span class="odt-code-line">@SpringBootApplication</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Application </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">CommandLineRunner {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
 <span class="odt-code-line"><span style="color:#000000">    CustomerRepository </span><span style="color:#0000c0">repository</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        SpringApplication.</span><span style="font-style:italic;color:#000000">run</span><span style="color:#000000">(Application.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">run(String... </span><span style="color:#6a3e3e">strings</span><span style="color:#000000">) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">Exception {</span></span>
@@ -1409,7 +1403,7 @@
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;-------------------------------&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Customer </span><span style="color:#6a3e3e">customer </span><span style="color:#000000">: </span><span style="color:#0000c0">repository</span><span style="color:#000000">.findAll()) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#6a3e3e">customer</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println();</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// fetch an individual customer by ID</span></span>
@@ -1424,10 +1418,10 @@
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;--------------------------------------------&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Customer </span><span style="color:#6a3e3e">bauer </span><span style="color:#000000">: </span><span style="color:#0000c0">repository</span><span style="color:#000000">.findByLastName(</span><span style="color:#2a00ff">&quot;Bauer&quot;</span><span style="color:#000000">)) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#6a3e3e">bauer</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1455,50 +1449,50 @@
 
 <p>The console output is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="color:#000000">.   ____          _            __ _ _</span></span>
-<span class="odt-code-line"><span style="color:#000000"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span></span>
-<span class="odt-code-line"><span style="color:#000000">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span></span>
-<span class="odt-code-line"><span style="color:#000000"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span></span>
-<span class="odt-code-line"><span style="color:#000000">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span></span>
-<span class="odt-code-line"><span style="color:#000000"> =========|_|==============|___/=/_/_/_/</span></span>
-<span class="odt-code-line"><span style="color:#000000"> :: Spring Boot ::        (v1.2.2.RELEASE)</span></span>
+<span class="odt-code-line">.   ____          _            __ _ _</span>
+<span class="odt-code-line"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span>
+<span class="odt-code-line">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span>
+<span class="odt-code-line"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span>
+<span class="odt-code-line">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span>
+<span class="odt-code-line"> =========|_|==============|___/=/_/_/_/</span>
+<span class="odt-code-line"> :: Spring Boot ::        (v1.2.2.RELEASE)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:43.661  INFO 5784 --- [           main] hello.Application                        : Starting Application on Gportpers3 with PID 5784 (started by ST in C:\Users\Serge Tahé\Documents\workspace-sts-3.6.3.RELEASE\gs-accessing-data-jpa-complete)</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:43.708  INFO 5784 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.230  INFO 5784 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit &#x27;default&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.254  INFO 5784 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: default</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ...]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.331  INFO 5784 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.8.Final}</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.332  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.334  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.651  INFO 5784 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.754  INFO 5784 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:45.877  INFO 5784 --- [           main] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:46.154  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:46.169  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:46.779  INFO 5784 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customers found with findAll():</span></span>
-<span class="odt-code-line"><span style="color:#000000">-------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=2, firstName=&#x27;Chloe&#x27;, lastName=&#x27;O&#x27;Brian&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=4, firstName=&#x27;David&#x27;, lastName=&#x27;Palmer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=5, firstName=&#x27;Michelle&#x27;, lastName=&#x27;Dessler&#x27;]</span></span>
+<span class="odt-code-line">2015-03-10 15:35:43.708  INFO 5784 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span>
+<span class="odt-code-line">2015-03-10 15:35:45.230  INFO 5784 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit &#x27;default&#x27;</span>
+<span class="odt-code-line">2015-03-10 15:35:45.254  INFO 5784 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [</span>
+<span class="odt-code-line">    name: default</span>
+<span class="odt-code-line">    ...]</span>
+<span class="odt-code-line">2015-03-10 15:35:45.331  INFO 5784 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.8.Final}</span>
+<span class="odt-code-line">2015-03-10 15:35:45.332  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found</span>
+<span class="odt-code-line">2015-03-10 15:35:45.334  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist</span>
+<span class="odt-code-line">2015-03-10 15:35:45.651  INFO 5784 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span>
+<span class="odt-code-line">2015-03-10 15:35:45.754  INFO 5784 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span>
+<span class="odt-code-line">2015-03-10 15:35:45.877  INFO 5784 --- [           main] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory</span>
+<span class="odt-code-line">2015-03-10 15:35:46.154  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span>
+<span class="odt-code-line">2015-03-10 15:35:46.169  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete</span>
+<span class="odt-code-line">2015-03-10 15:35:46.779  INFO 5784 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup</span>
+<span class="odt-code-line">Customers found with findAll():</span>
+<span class="odt-code-line">-------------------------------</span>
+<span class="odt-code-line">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span>
+<span class="odt-code-line">Customer[id=2, firstName=&#x27;Chloe&#x27;, lastName=&#x27;O&#x27;Brian&#x27;]</span>
+<span class="odt-code-line">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span>
+<span class="odt-code-line">Customer[id=4, firstName=&#x27;David&#x27;, lastName=&#x27;Palmer&#x27;]</span>
+<span class="odt-code-line">Customer[id=5, firstName=&#x27;Michelle&#x27;, lastName=&#x27;Dessler&#x27;]</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">Customer found with findOne(1L):</span></span>
-<span class="odt-code-line"><span style="color:#000000">--------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line">Customer found with findOne(1L):</span>
+<span class="odt-code-line">--------------------------------</span>
+<span class="odt-code-line">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">Customer found with findByLastName(&#x27;Bauer&#x27;):</span></span>
-<span class="odt-code-line"><span style="color:#000000">--------------------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.040  INFO 5784 --- [           main] hello.Application                        : Started Application in 3.623 seconds (JVM running for 4.324)</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.042  INFO 5784 --- [       Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.044  INFO 5784 --- [       Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.046  INFO 5784 --- [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit &#x27;default&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.047  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span></span>
+<span class="odt-code-line">Customer found with findByLastName(&#x27;Bauer&#x27;):</span>
+<span class="odt-code-line">--------------------------------------------</span>
+<span class="odt-code-line">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span>
+<span class="odt-code-line">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span>
+<span class="odt-code-line">2015-03-10 15:35:47.040  INFO 5784 --- [           main] hello.Application                        : Started Application in 3.623 seconds (JVM running for 4.324)</span>
+<span class="odt-code-line">2015-03-10 15:35:47.042  INFO 5784 --- [       Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span>
+<span class="odt-code-line">2015-03-10 15:35:47.044  INFO 5784 --- [       Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown</span>
+<span class="odt-code-line">2015-03-10 15:35:47.046  INFO 5784 --- [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit &#x27;default&#x27;</span>
+<span class="odt-code-line">2015-03-10 15:35:47.047  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span>
 <span class="odt-code-line"><span style="color:#000000">2015-03-10 15:35:47.051  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete</span></span>
 </code></pre></div>
 
@@ -1662,9 +1656,9 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// close context</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">context</span><span style="color:#000000">.close();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1696,10 +1690,10 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.transaction.PlatformTransactionManager;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.transaction.annotation.EnableTransactionManagement;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@EnableTransactionManagement</span></span>
+<span class="odt-code-line">@EnableTransactionManagement</span>
 <span class="odt-code-line"><span style="color:#646464">@EnableJpaRepositories</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;repositories&quot; </span><span style="color:#000000">})</span></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">// @ComponentScan(basePackages={&quot;package1&quot;,&quot;package2&quot;})</span></span>
+<span class="odt-code-line">@Configuration</span>
+<span class="odt-code-line">// @ComponentScan(basePackages={&quot;package1&quot;,&quot;package2&quot;})</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// the H2 database</span></span>
@@ -1716,7 +1710,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setInitialSize(1);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// the JPA provider</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1726,7 +1720,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter</span><span style="color:#000000">.setDatabase(Database.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">H2</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">hibernateJpaVendorAdapter</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// EntityManagerFactory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1737,7 +1731,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setDataSource(</span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.afterPropertiesSet();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.getObject();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Transaction manager</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1747,7 +1741,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">txManager</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    }</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1829,11 +1823,9 @@
 </ul>
 
 <p>Once this is done, open a console in the folder containing the executable archive:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">.....\dist&gt;dir</span></span>
-<span class="odt-code-line"><span style="color:#000000">06/12/2014  09:11        15 104 869 gs-accessing-data-jpa-02.jar</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.....\dist&gt;dir
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>06/12/2014  09:11        15 104 869 gs-accessing-data-jpa-02.jar
 </code></pre></div>
-
 <p>The archive is executed as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">.....\dist&gt;</span><span style="color:#ff3333">java -jar gs-accessing-data-jpa-02.jar</span></span>
@@ -1841,55 +1833,55 @@
 
 <p>The results displayed in the console are as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.</span></span>
-<span class="odt-code-line"><span style="color:#000000">SLF4J: Defaulting to no-operation (NOP) logger implementation</span></span>
-<span class="odt-code-line"><span style="color:#000000">SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000204: Processing PersistenceUnitInfo [</span></span>
-<span class="odt-code-line"><span style="color:#000000">    name: default</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ...]</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.Version logVersion</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000412: Hibernate Core {4.3.8.Final}</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.cfg.Environment &lt;clinit&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000206: hibernate.properties not found</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:20 PM org.hibernate.cfg.Environment buildBytecodeProvider</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000021: Bytecode provider name: javassist</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.dialect.Dialect &lt;init&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000397: Using ASTQueryTranslatorFactory</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000228: Running hbm2ddl schema update</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000102: Fetching database metadata</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000396: Updating schema</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000262: Table not found: Customer</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000262: Table not found: Customer</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000262: Table not found: Customer</span></span>
-<span class="odt-code-line"><span style="color:#000000">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span></span>
-<span class="odt-code-line"><span style="color:#000000">INFO: HHH000232: Schema update complete</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customers found with findAll():</span></span>
-<span class="odt-code-line"><span style="color:#000000">-------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=2, firstName=&#x27;Chloe&#x27;, lastName=&#x27;O&#x27;Brian&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=4, firstName=&#x27;David&#x27;, lastName=&#x27;Palmer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=5, firstName=&#x27;Michelle&#x27;, lastName=&#x27;Dessler&#x27;]</span></span>
+<span class="odt-code-line">SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.</span>
+<span class="odt-code-line">SLF4J: Defaulting to no-operation (NOP) logger implementation</span>
+<span class="odt-code-line">SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.</span>
+<span class="odt-code-line">March 10, 2015 5:27:20 PM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation</span>
+<span class="odt-code-line">INFO: HHH000204: Processing PersistenceUnitInfo [</span>
+<span class="odt-code-line">    name: default</span>
+<span class="odt-code-line">    ...]</span>
+<span class="odt-code-line">March 10, 2015 5:27:20 PM org.hibernate.Version logVersion</span>
+<span class="odt-code-line">INFO: HHH000412: Hibernate Core {4.3.8.Final}</span>
+<span class="odt-code-line">March 10, 2015 5:27:20 PM org.hibernate.cfg.Environment &lt;clinit&gt;</span>
+<span class="odt-code-line">INFO: HHH000206: hibernate.properties not found</span>
+<span class="odt-code-line">March 10, 2015 5:27:20 PM org.hibernate.cfg.Environment buildBytecodeProvider</span>
+<span class="odt-code-line">INFO: HHH000021: Bytecode provider name: javassist</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager &lt;clinit&gt;</span>
+<span class="odt-code-line">INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.dialect.Dialect &lt;init&gt;</span>
+<span class="odt-code-line">INFO: HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;</span>
+<span class="odt-code-line">INFO: HHH000397: Using ASTQueryTranslatorFactory</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span>
+<span class="odt-code-line">INFO: HHH000228: Running hbm2ddl schema update</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span>
+<span class="odt-code-line">INFO: HHH000102: Fetching database metadata</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span>
+<span class="odt-code-line">INFO: HHH000396: Updating schema</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span>
+<span class="odt-code-line">INFO: HHH000262: Table not found: Customer</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span>
+<span class="odt-code-line">INFO: HHH000262: Table not found: Customer</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.DatabaseMetadata getTableMetadata</span>
+<span class="odt-code-line">INFO: HHH000262: Table not found: Customer</span>
+<span class="odt-code-line">March 10, 2015 5:27:22 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute</span>
+<span class="odt-code-line">INFO: HHH000232: Schema update complete</span>
+<span class="odt-code-line">Customers found with findAll():</span>
+<span class="odt-code-line">-------------------------------</span>
+<span class="odt-code-line">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span>
+<span class="odt-code-line">Customer[id=2, firstName=&#x27;Chloe&#x27;, lastName=&#x27;O&#x27;Brian&#x27;]</span>
+<span class="odt-code-line">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span>
+<span class="odt-code-line">Customer[id=4, firstName=&#x27;David&#x27;, lastName=&#x27;Palmer&#x27;]</span>
+<span class="odt-code-line">Customer[id=5, firstName=&#x27;Michelle&#x27;, lastName=&#x27;Dessler&#x27;]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">Customer found with findOne(1L):</span></span>
-<span class="odt-code-line"><span style="color:#000000">--------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line">--------------------------------</span>
+<span class="odt-code-line">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">Customer found with findByLastName(&#x27;Bauer&#x27;):</span></span>
-<span class="odt-code-line"><span style="color:#000000">--------------------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
+<span class="odt-code-line">Customer found with findByLastName(&#x27;Bauer&#x27;):</span>
+<span class="odt-code-line">--------------------------------------------</span>
+<span class="odt-code-line">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span>
+<span class="odt-code-line">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span>
 </code></pre></div>
 
 <p><a id="refheading2192462014630537"></a></p>
@@ -2004,13 +1996,13 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.SpringApplication;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.autoconfigure.SpringBootApplication;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@SpringBootApplication</span></span>
+<span class="odt-code-line">@SpringBootApplication</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">IntroSpringData01Application {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        SpringApplication.</span><span style="font-style:italic;color:#000000">run</span><span style="color:#000000">(IntroSpringData01Application.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">, </span><span style="color:#6a3e3e">args</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2033,9 +2025,9 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">contextLoads() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>

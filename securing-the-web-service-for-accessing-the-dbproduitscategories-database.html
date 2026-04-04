@@ -1497,7 +1497,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD000000956E161172.png" style="display:inline-block; margin:4px;width:4.68cm;height:2.755cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD000000956E161172.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1623871200878134"></a></p>
-<p><a id="refheading571071429907001"></a><span style="color: #000000">Spring Security requires the creation of a class that implements the following [UsersDetail] interface:</span></p>
+<p><span style="color: #000000"><a id="refheading571071429907001"></a>Spring Security requires the creation of a class that implements the following [UsersDetail] interface:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000028A000001A12033E12F.png" style="display:inline-block; margin:4px;width:11.414cm;height:7.324cm;" class="odt-zoomable" data-zoom-src="images/100000000000028A000001A12033E12F.png" /></td></tr></table>
 
 <p><span style="color: #000000">This interface is implemented here by the [AppUserDetails] class:</span></p>
@@ -1535,12 +1535,12 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">AppUserDetails() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">AppUserDetails(User </span><span style="color:#6a3e3e">user</span><span style="color:#000000">, NamedParameterJdbcTemplate </span><span style="color:#6a3e3e">namedParameterJdbcTemplate</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">user </span><span style="color:#000000">= </span><span style="color:#6a3e3e">user</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">namedParameterJdbcTemplate </span><span style="color:#000000">= </span><span style="color:#6a3e3e">namedParameterJdbcTemplate</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// -------------------------interface</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
@@ -1548,10 +1548,10 @@
 <span class="odt-code-line"><span style="color:#000000">        Collection&lt;GrantedAuthority&gt; </span><span style="color:#6a3e3e">authorities </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ArrayList&lt;&gt;();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Role </span><span style="color:#6a3e3e">role </span><span style="color:#000000">: getRoles(</span><span style="color:#0000c0">user</span><span style="color:#000000">.getId())) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">authorities</span><span style="color:#000000">.add(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">SimpleGrantedAuthority(</span><span style="color:#6a3e3e">role</span><span style="color:#000000">.getName()));</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">authorities</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// private methods----------------</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">List&lt;Role&gt; getRoles(Long </span><span style="color:#6a3e3e">id</span><span style="color:#000000">) {</span></span>
@@ -1561,19 +1561,19 @@
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">//e.printStackTrace();</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(167, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">// --------------------- mappers</span></span>
+<span class="odt-code-line">// --------------------- mappers</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">ShortRoleMapper </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">RowMapper&lt;Role&gt; {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Role mapRow(ResultSet </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">rowNum</span><span style="color:#000000">) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">SQLException {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">Role(</span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getLong(</span><span style="color:#2a00ff">&quot;r_ID&quot;</span><span style="color:#000000">), </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getLong(</span><span style="color:#2a00ff">&quot;r_VERSIONING&quot;</span><span style="color:#000000">), </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getString(</span><span style="color:#2a00ff">&quot;r_NAME&quot;</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1581,7 +1581,7 @@
   </li>
   <li><span style="color: #000000">lines 29-30: the class encapsulates a user (line 19) and the repository that provides details about that user (line 20);</span>
   </li>
-  <li><span style="color: #000000">line 27: the database will be accessed via JDBC using the [NamedParameterJdbcTemplate </span><span style="color: #0000c0">namedParameterJdbcTemplate</span><span style="color: #000000">] object defined in the [spring-jdbc-generic-04] project. Note that this object is not injected by Spring as is often done. It is provided to the constructor in lines 36–39. Why? </span><span style="color: #000000">Because the [AppUserDetails] class is not a Spring component (it lacks the @Component annotation) and therefore cannot be injected;</span>
+  <li><span style="color: #000000">line 27: the database will be accessed via JDBC using the [NamedParameterJdbcTemplate </span><span style="color: #0000c0">namedParameterJdbcTemplate</span><span style="color: #000000">] object defined in the [spring-jdbc-generic-04] project. Note that this object is not injected by Spring as is often done. It is provided to the constructor in lines 36–39. Why? Because the [AppUserDetails] class is not a Spring component (it lacks the @Component annotation) and therefore cannot be injected;</span>
   </li>
   <li><span style="color: #000000">lines 36–39: the constructor that instantiates the class with a user and its repository;</span>
   </li>
@@ -1609,7 +1609,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.security.dao;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppUserDetails </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">UserDetails {</span></span>
 <span class="odt-code-line"></span>
@@ -1623,12 +1623,12 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">AppUserDetails() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">AppUserDetails(User </span><span style="color:#6a3e3e">user</span><span style="color:#000000">, NamedParameterJdbcTemplate </span><span style="color:#6a3e3e">namedParameterJdbcTemplate</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">user </span><span style="color:#000000">= </span><span style="color:#6a3e3e">user</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">namedParameterJdbcTemplate </span><span style="color:#000000">= </span><span style="color:#6a3e3e">namedParameterJdbcTemplate</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// -------------------------interface</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
@@ -1636,43 +1636,43 @@
 <span class="odt-code-line"><span style="color:#000000">        Collection&lt;GrantedAuthority&gt; </span><span style="color:#6a3e3e">authorities </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ArrayList&lt;&gt;();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Role </span><span style="color:#6a3e3e">role </span><span style="color:#000000">: getRoles(</span><span style="color:#0000c0">user</span><span style="color:#000000">.getId())) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">authorities</span><span style="color:#000000">.add(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">SimpleGrantedAuthority(</span><span style="color:#6a3e3e">role</span><span style="color:#000000">.getName()));</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">authorities</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getPassword() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">user</span><span style="color:#000000">.getPassword();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getUsername() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">user</span><span style="color:#000000">.getLogin();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isAccountNonExpired() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isAccountNonLocked() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isCredentialsNonExpired() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public boolean </span><span style="color:#000000">isEnabled() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return true</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    ...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1715,7 +1715,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.jdbc.entities.User;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.jdbc.infrastructure.DaoException;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Service</span></span>
+<span class="odt-code-line">@Service</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppUserDetailsService </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">UserDetailsService {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// injections</span></span>
@@ -1734,25 +1734,25 @@
 <span class="odt-code-line"><span style="color:#000000">                    Collections.</span><span style="font-style:italic;color:#000000">singletonMap</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;login&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">login</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ShortUserMapper());</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(145, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Found?</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">users</span><span style="color:#000000">.size() == 0) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">UsernameNotFoundException(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;login [%s] does not exist&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">login</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// return the user details</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">AppUserDetails(</span><span style="color:#6a3e3e">users</span><span style="color:#000000">.get(0), </span><span style="color:#0000c0">namedParameterJdbcTemplate</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">// --------------------- mappers</span></span>
+<span class="odt-code-line">// --------------------- mappers</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">ShortUserMapper </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">RowMapper&lt;User&gt; {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">User mapRow(ResultSet </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">rowNum</span><span style="color:#000000">) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">SQLException {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">User(</span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getLong(</span><span style="color:#2a00ff">&quot;u_ID&quot;</span><span style="color:#000000">), </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getLong(</span><span style="color:#2a00ff">&quot;u_VERSIONING&quot;</span><span style="color:#000000">), </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getString(</span><span style="color:#2a00ff">&quot;u_NAME&quot;</span><span style="color:#000000">), </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getString(</span><span style="color:#2a00ff">&quot;u_LOGIN&quot;</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">rs</span><span style="color:#000000">.getString(</span><span style="color:#2a00ff">&quot;u_PASSWORD&quot;</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1795,7 +1795,7 @@
 <h3 id="2024-project-security-configuration">20.2.4. <span style="color: #4f81bd">Project security configuration</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042E00000106D72DACD7.png" style="display:inline-block; margin:4px;width:14.155cm;height:3.466cm;" class="odt-zoomable" data-zoom-src="images/100000000000042E00000106D72DACD7.png" /></td></tr></table>
 
-<p><a id="refheading571131429907001"></a><span style="color: #000000">The project is configured by the following [AppConfig] class:</span></p>
+<p><span style="color: #000000"><a id="refheading571131429907001"></a>The project is configured by the following [AppConfig] class:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>1</b></div><img src="images/100000000000010A000000FD88BBE4D6.png" style="display:inline-block; margin:4px;width:4.93cm;height:4.688cm;" class="odt-zoomable" data-zoom-src="images/100000000000010A000000FD88BBE4D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">We have already encountered a Spring Security configuration class (see Section</span><a href="#refheading9327894989336"><u><span style="color: #0563c1"> 19.2.4</span></u></a><span style="color: #000000">):</span></p>
@@ -1808,20 +1808,20 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">@EnableWebMvcSecurity</span></span>
+<span class="odt-code-line">@Configuration</span>
+<span class="odt-code-line">@EnableWebMvcSecurity</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">WebSecurityConfig </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">WebSecurityConfigurerAdapter {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected void </span><span style="color:#000000">configure(HttpSecurity http) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">Exception {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        http.authorizeRequests().antMatchers(</span><span style="color:#2a00ff">&quot;/&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;/home&quot;</span><span style="color:#000000">).permitAll().anyRequest().authenticated();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        http.formLogin().loginPage(</span><span style="color:#2a00ff">&quot;/login&quot;</span><span style="color:#000000">).permitAll().and().logout().permitAll();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected void </span><span style="color:#000000">configure(AuthenticationManagerBuilder auth) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">Exception {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        auth.inMemoryAuthentication().withUser(</span><span style="color:#2a00ff">&quot;user&quot;</span><span style="color:#000000">).password(</span><span style="color:#2a00ff">&quot;password&quot;</span><span style="color:#000000">).roles(</span><span style="color:#2a00ff">&quot;USER&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><span style="color: #000000">We will follow the same procedure:</span></p>
@@ -1852,8 +1852,8 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.security.dao.AppUserDetailsService;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.config.WebConfig;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">@EnableWebSecurity</span></span>
+<span class="odt-code-line">@Configuration</span>
+<span class="odt-code-line">@EnableWebSecurity</span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.security.dao&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;spring.security.service&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ spring.webjson.server.config.AppConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">, WebConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">WebSecurityConfigurerAdapter {</span></span>
@@ -1868,7 +1868,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Authentication is handled by the [appUserDetailsService] bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// the password is encrypted using the BCrypt hashing algorithm</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">registry</span><span style="color:#000000">.userDetailsService(</span><span style="color:#0000c0">appUserDetailsService</span><span style="color:#000000">).passwordEncoder(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">BCryptPasswordEncoder());</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected void </span><span style="color:#000000">configure(HttpSecurity </span><span style="color:#6a3e3e">http</span><span style="color:#000000">) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">Exception {</span></span>
@@ -1887,9 +1887,9 @@
 <span class="odt-code-line"><span style="color:#000000">                    .hasRole(</span><span style="color:#2a00ff">&quot;ADMIN&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// session or not?</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">//http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1921,15 +1921,11 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Authorization:Basic code</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Authorization:Basic code
 </code></pre></div>
-
 <p>where code is the Base64 encoding of the <strong>login:password</strong> string. For example, the Base64 encoding of the string <em>admin:admin</em> is <em>YWRtaW46YWRtaW4=</em>. Therefore, a user with the login [admin] and password [admin] will send the following HTTP header to authenticate:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Authorization:Basic YWRtaW46YWRtaW4=</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Authorization:Basic YWRtaW46YWRtaW4=
 </code></pre></div>
-
 <ul>
   <li><span style="color: #000000">Lines 47–49: indicate that all URLs of the web service are accessible to users with the [ROLE_ADMIN] role. This means that a user without this role cannot access the web service;</span>
   </li>
@@ -1940,10 +1936,8 @@
 <h3 id="2025-testing-the-secure-web-service">20.2.5. <span style="color: #4f81bd">Testing the secure web service</span></h3>
 <p><span style="color: #000000">We will test the web service using the Chrome client [Advanced Rest Client]. We will need to specify the HTTP authentication header:</span></p>
 <p><a id="refheading1623951200878134"></a></p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><a id="refheading571151429907001"></a><span style="color:#000000">Authorization:Basic code</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Authorization:Basic code
 </code></pre></div>
-
 <p><span style="color: #000000">where [code] is the Base64-encoded string [login:password]. To generate this code, you can use the following program from the [spring-security-create-users] project:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FC000000D5F984A335.png" style="display:inline-block; margin:4px;width:4.671cm;height:3.948cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FC000000D5F984A335.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -1959,26 +1953,24 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">args</span><span style="color:#000000">.</span><span style="color:#0000c0">length </span><span style="color:#000000">!= 2) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Syntax: login password&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-style:italic">exit</span><span style="color:#000000">(0);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Retrieve the two arguments</span></span>
 <span class="odt-code-line"><span style="color:#000000">        String </span><span style="color:#6a3e3e">string </span><span style="color:#000000">= String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s:%s&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">args</span><span style="color:#000000">[0], </span><span style="color:#6a3e3e">args</span><span style="color:#000000">[1]);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// we encode the string</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">byte</span><span style="color:#000000">[] </span><span style="color:#6a3e3e">data </span><span style="color:#000000">= Base64.</span><span style="font-style:italic;color:#000000">encode</span><span style="color:#000000">(</span><span style="color:#6a3e3e">string</span><span style="color:#000000">.getBytes());</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// display its Base64 encoding</span></span>
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">String(</span><span style="color:#6a3e3e">data</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><span style="color: #000000">If we run this program with the two arguments [admin admin]:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B600000082F93EB79F.png" style="display:inline-block; margin:4px;width:3.371cm;height:2.408cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B600000082F93EB79F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">we get the following result:</span></p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">YWRtaW46YWRtaW4=</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>YWRtaW46YWRtaW4=
 </code></pre></div>
-
 <p><span style="color: #000000">We are now ready for testing:</span></p>
 <ul>
   <li><span style="color: #000000">the MySQL DBMS must be running;</span>
@@ -2050,10 +2042,8 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000009E000000765D52ED73.png" style="display:inline-block; margin:4px;width:2.93cm;height:2.187cm;" class="odt-zoomable" data-zoom-src="images/100000000000009E000000765D52ED73.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">we get the following result:</span></p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">dXNlcjp1c2Vy</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dXNlcjp1c2Vy
 </code></pre></div>
-
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DB0000010468F7712F.png" style="display:inline-block; margin:4px;width:6.285cm;height:3.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DB0000010468F7712F.png" /></td></tr></table>
 
 <ul>
@@ -2083,14 +2073,14 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.server.service.Response;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@RestController</span></span>
+<span class="odt-code-line">@RestController</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AuthenticateController {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/authenticate&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;Void&gt; authenticate() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">Response&lt;Void&gt;(0, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2131,10 +2121,8 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E9000000B8B3C9AB77.png" style="display:inline-block; margin:4px;width:4.309cm;height:3.403cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000B8B3C9AB77.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000CD00000080C1FA907B.png" style="display:inline-block; margin:4px;width:3.799cm;height:2.372cm;" class="odt-zoomable" data-zoom-src="images/10000000000000CD00000080C1FA907B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The [Client] class handles HTTP communication with the secure / JSON web server. As we have just seen, in this HTTP communication, the client must now send an authentication header, for example:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Authorization:Basic YWRtaW46YWRtaW4=</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Authorization:Basic YWRtaW46YWRtaW4=
 </code></pre></div>
-
 <p>The [IClient] interface becomes the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.webjson.client.dao;</span></span>
@@ -2145,7 +2133,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">IClient {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">&lt;T1, T2&gt; T1 getResponse(</span><span style="background-color:#ff950e;color:#000000">Credentials </span><span style="background-color:#ff950e;color:#6a3e3e">credentials</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">url</span><span style="color:#000000">, HttpMethod </span><span style="color:#6a3e3e">method</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">errStatus</span><span style="color:#000000">, T2 </span><span style="color:#6a3e3e">body</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2164,25 +2152,25 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructor</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Credentials() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Credentials(String </span><span style="color:#6a3e3e">login</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">password</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">login </span><span style="color:#000000">= </span><span style="color:#6a3e3e">login</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">password </span><span style="color:#000000">= </span><span style="color:#6a3e3e">password</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>The [Client] class, which implements the [IClient] interface, evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">spring.security.client.dao;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Component</span></span>
+<span class="odt-code-line">@Component</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Client </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">IClient {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// injections</span></span>
@@ -2198,7 +2186,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Encode the username and password in Base64 - requires Java 8</span></span>
 <span class="odt-code-line"><span style="color:#000000">        String </span><span style="color:#6a3e3e">string </span><span style="color:#000000">= String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s:%s&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">.getLogin(), </span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">.getPassword());</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;Basic %s&quot;</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">String(Base64.</span><span style="font-style:italic;color:#000000">getEncoder</span><span style="color:#000000">().encode(</span><span style="color:#6a3e3e">string</span><span style="color:#000000">.getBytes())));</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// generic request</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
@@ -2212,27 +2200,27 @@
 <span class="odt-code-line"><span style="color:#000000">                HeadersBuilder&lt;?&gt; </span><span style="color:#6a3e3e">headersBuilder </span><span style="color:#000000">= RequestEntity.</span><span style="font-style:italic;color:#000000">get</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">URI(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s%s&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">urlServiceWebJson</span><span style="color:#000000">, </span><span style="color:#6a3e3e">url</span><span style="color:#000000">)))    .accept(MediaType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">APPLICATION_JSON</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">credentials </span><span style="color:#000000">!= </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">headersBuilder </span><span style="color:#000000">= </span><span style="color:#6a3e3e">headersBuilder</span><span style="color:#000000">.header(</span><span style="color:#2a00ff">&quot;Authorization&quot;</span><span style="color:#000000">, getBase64(</span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
+<span class="odt-code-line">                }</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">request </span><span style="color:#000000">= </span><span style="color:#6a3e3e">headersBuilder</span><span style="color:#000000">.build();</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">method </span><span style="color:#000000">== HttpMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                BodyBuilder </span><span style="color:#6a3e3e">bodyBuilder </span><span style="color:#000000">= RequestEntity.</span><span style="font-style:italic;color:#000000">post</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">URI(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s%s&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">urlServiceWebJson</span><span style="color:#000000">, </span><span style="color:#6a3e3e">url</span><span style="color:#000000">))).header(</span><span style="color:#2a00ff">&quot;Content-Type&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;application/json&quot;</span><span style="color:#000000">).accept(MediaType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">APPLICATION_JSON</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">credentials </span><span style="color:#000000">!= </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">bodyBuilder </span><span style="color:#000000">= </span><span style="color:#6a3e3e">bodyBuilder</span><span style="color:#000000">.header(</span><span style="color:#2a00ff">&quot;Authorization&quot;</span><span style="color:#000000">, getBase64(</span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
+<span class="odt-code-line">                }</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">request </span><span style="color:#000000">= </span><span style="color:#6a3e3e">bodyBuilder</span><span style="color:#000000">.body(</span><span style="color:#6a3e3e">body</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// execute the request</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">response </span><span style="color:#000000">= </span><span style="color:#0000c0">restTemplate</span><span style="color:#000000">.exchange(</span><span style="color:#6a3e3e">request</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ParameterizedTypeReference&lt;Response&lt;T1&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            });</span></span>
+<span class="odt-code-line">            });</span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// wrap the exception</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(</span><span style="color:#6a3e3e">errStatus</span><span style="color:#000000">, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#3f7f5f">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2246,7 +2234,7 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000424000000DA4AA5A50F.png" style="display:inline-block; margin:4px;width:14.023cm;height:2.884cm;" class="odt-zoomable" data-zoom-src="images/1000000000000424000000DA4AA5A50F.png" /></td></tr></table>
 
 <p><a id="refheading9361894989336"></a></p>
-<h4 id="20321-the-idao-interface">20.3.2.1. <span style="color: #4f81bd"><span style="color: #000000">The [IDao] interface</span></span></h4>
+<h4 id="20321-the-idao-interface">20.3.2.1. <span style="color: #000000">The [IDao] interface</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001180000010E6DA2CEC2.png" style="display:inline-block; margin:4px;width:5.181cm;height:4.995cm;" class="odt-zoomable" data-zoom-src="images/10000000000001180000010E6DA2CEC2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">All methods of the [IDao] interface in the [spring-webjson-client-generic] project receive an additional [Credentials] parameter:</span></p>
@@ -2303,7 +2291,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">deleteEntitiesByEntity(Credentials </span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">, Iterable&lt;T&gt; </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">deleteEntitiesByEntity(Credentials </span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">, </span><span style="color:#646464">@SuppressWarnings</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;unchecked&quot;</span><span style="color:#000000">) T... </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2319,12 +2307,12 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">IAuthenticate {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// authentication</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">authenticate(Credentials </span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><span style="color: #000000">The [IAuthenticate] interface has only a single method, [authenticate]. This method returns nothing (void) if the user [Credentials </span><span style="color: #6a3e3e">credentials</span><span style="color: #000000">] is accepted by the secure web service; otherwise, it throws an exception.</span></p>
 <p><a id="refheading9363894989336"></a></p>
-<h4 id="20322-the-abstractdao-class">20.3.2.2. <span style="color: #4f81bd"><span style="color: #000000">The [AbstractDao] class</span></span></h4>
+<h4 id="20322-the-abstractdao-class">20.3.2.2. <span style="color: #000000">The [AbstractDao] class</span></h4>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001180000010EFA1026FE.png" style="display:inline-block; margin:4px;width:5.181cm;height:4.995cm;" class="odt-zoomable" data-zoom-src="images/10000000000001180000010EFA1026FE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">Recall that the [AbstractDao] class is the parent class of the [DaoCategorie] classes, which manage category URLs, and the [DaoProduit] class, which manages product URLs. All methods of the [AbstractDao] class in the [spring-webjson-client-generic] project receive an additional parameter [Credentials credentials] that they pass to the child class. Here is an example:</span></p>
@@ -2335,10 +2323,10 @@
 <span class="odt-code-line"><span style="color:#000000">        List&lt;T1&gt; </span><span style="color:#6a3e3e">entities </span><span style="color:#000000">= checkNullOrEmptyArgument(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">,</span><span style="color:#6a3e3e"> ids</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">entities </span><span style="color:#000000">!= </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">getShortEntitiesById(</span><span style="background-color:#ff950e;color:#6a3e3e">credentials</span><span style="color:#000000">, Lists.</span><span style="font-style:italic;color:#000000">newArrayList</span><span style="color:#000000">(</span><span style="color:#6a3e3e">ids</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2366,8 +2354,8 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">IAuthenticate </span><span style="color:#0000c0">authenticate</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2386,7 +2374,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.security.client.entities.Credentials;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Component</span></span>
+<span class="odt-code-line">@Component</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Authenticate </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">IAuthenticate {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">IClient </span><span style="color:#0000c0">client</span><span style="color:#000000">;</span></span>
@@ -2394,9 +2382,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// verification [credentials, password]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">authenticate(Credentials </span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">client</span><span style="color:#000000">.&lt;Void, Void&gt; getResponse(</span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;/authenticate&quot;</span><span style="color:#000000">, HttpMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">, 111, (Void) </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2420,7 +2408,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">authenticate(Credentials </span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000c0">authenticate</span><span style="color:#000000">.authenticate(</span><span style="color:#6a3e3e">credentials</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2433,7 +2421,7 @@
 
 <p><span style="color: #000000">The [DaoCategorie, DaoProduit] classes are those from the [spring-webjson-server-generic] project with the additional parameter [Credentials </span><span style="color: #6a3e3e">credentials</span><span style="color: #000000">]. Here is an example:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">@Component</span></span>
+<span class="odt-code-line">@Component</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">DaoCategorie </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">AbstractDao&lt;Categorie&gt; {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// injections</span></span>
@@ -2452,23 +2440,23 @@
 <span class="odt-code-line"><span style="color:#000000">                    202, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// the list of categories List&lt;Category&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.writeValueAsString(</span><span style="color:#6a3e3e">map</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;Category&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            });</span></span>
+<span class="odt-code-line">            });</span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(DaoException </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(221, </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">....</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">....</span>
 </code></pre></div>
 
 <p><a id="refheading1451371186279333"></a></p>
-<h3 id="2033-the-spring-configuration">20.3.3. <span style="color: #4f81bd"><span style="color: #000000">The Spring Configuration</span></span></h3>
+<h3 id="2033-the-spring-configuration">20.3.3. <span style="color: #000000">The Spring Configuration</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001150000007D748EF7D8.png" style="display:inline-block; margin:4px;width:5.129cm;height:2.314cm;" class="odt-zoomable" data-zoom-src="images/10000000000001150000007D748EF7D8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The [AppConfig] class configures the project&#x27;s Spring environment. It is identical to what it was in the [spring-webjson-client-generic] project, with one exception:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">({ </span><span style="color:#2a00ff">&quot;spring.security.client.dao&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
 </code></pre></div>
@@ -2478,7 +2466,7 @@
   </li>
 </ul>
 <p><a id="refheading9365894989336"></a></p>
-<h3 id="2034-tests-for-the-dao-layer">20.3.4. <span style="color: #4f81bd"><span style="color: #000000">Tests for the [DAO] layer</span></span></h3>
+<h3 id="2034-tests-for-the-dao-layer">20.3.4. <span style="color: #000000">Tests for the [DAO] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000442000000E4857FE39A.png" style="display:inline-block; margin:4px;width:14.42cm;height:3.016cm;" class="odt-zoomable" data-zoom-src="images/1000000000000442000000E4857FE39A.png" /></td></tr></table>
 
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010B000000B2846E1708.png" style="display:inline-block; margin:4px;width:4.941cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B000000B2846E1708.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
@@ -2520,7 +2508,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-style:italic;color:#0000c0">admin </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Credentials(</span><span style="color:#2a00ff">&quot;admin&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;admin&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-style:italic;color:#0000c0">user </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Credentials(</span><span style="color:#2a00ff">&quot;user&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;user&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-style:italic;color:#0000c0">unknown </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Credentials(</span><span style="color:#2a00ff">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;y&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span><span style="color:#000000">()</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">checkUserUser() {</span></span>
@@ -2530,10 +2518,10 @@
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(DaoException </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">se </span><span style="color:#000000">= </span><span style="color:#6a3e3e">e</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;checkUserUser: &quot; </span><span style="color:#000000">+ </span><span style="color:#6a3e3e">e</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        Assert.</span><span style="font-style:italic;color:#000000">assertNotNull</span><span style="color:#000000">(</span><span style="color:#6a3e3e">se</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        Assert.</span><span style="font-style:italic;color:#000000">assertEquals</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;403 Forbidden&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">se</span><span style="color:#000000">.getExceptions().get(0).getErrorMessage());</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span><span style="color:#000000">()</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">checkUserUnknown() {</span></span>
@@ -2543,10 +2531,10 @@
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(DaoException </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">se </span><span style="color:#000000">= </span><span style="color:#6a3e3e">e</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;checkUserUnknown : &quot; </span><span style="color:#000000">+ </span><span style="color:#6a3e3e">e</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        Assert.</span><span style="font-style:italic;color:#000000">assertNotNull</span><span style="color:#000000">(</span><span style="color:#6a3e3e">se</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        Assert.</span><span style="font-style:italic;color:#000000">assertEquals</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;401 Unauthorized&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">se</span><span style="color:#000000">.getExceptions().get(0).getErrorMessage());</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Test</span><span style="color:#000000">()</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">checkUserAdmin() {</span></span>
@@ -2556,10 +2544,10 @@
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(DaoException </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">se </span><span style="color:#000000">= </span><span style="color:#6a3e3e">e</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;checkUserAdmin : &quot; </span><span style="color:#000000">+ </span><span style="color:#6a3e3e">e</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        Assert.</span><span style="font-style:italic;color:#000000">assertNull</span><span style="color:#000000">(</span><span style="color:#6a3e3e">se</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2579,11 +2567,10 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A500000181F580BF76.png" style="display:inline-block; margin:4px;width:15.73cm;height:5.092cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A500000181F580BF76.png" /></td></tr></table>
 
 <p><span style="color: #000000">We then run the JUnit test [JUnitTestCredentials] with the runtime configuration [spring-security-client-generic-JUnitTestCredentials] [2]. The console results obtained are as follows:</span></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">checkUserUser: [code=111, trace=[Client,getResponse,65], exceptions=[{&quot;className&quot;:&quot;org.springframework.web.client.HttpClientErrorException&quot;,&quot;errorMessage&quot;:&quot;403 Forbidden&quot;}]</span></span>
-<span class="odt-code-line"><span style="color:#000000">checkUserUnknown: [code=111, trace=[Client,getResponse,65], exceptions=[{&quot;className&quot;:&quot;org.springframework.web.client.HttpClientErrorException&quot;,&quot;errorMessage&quot;:&quot;401 Unauthorized&quot;}]</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>checkUserUser: [code=111, trace=[Client,getResponse,65], exceptions=[{&quot;className&quot;:&quot;org.springframework.web.client.HttpClientErrorException&quot;,&quot;errorMessage&quot;:&quot;403 Forbidden&quot;}]
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>checkUserUnknown: [code=111, trace=[Client,getResponse,65], exceptions=[{&quot;className&quot;:&quot;org.springframework.web.client.HttpClientErrorException&quot;,&quot;errorMessage&quot;:&quot;401 Unauthorized&quot;}]
+</code></pre></div></td></tr></table></div>
 <p><span style="color: #000000">and the test passes:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F5000000B2933C5DC5.png" style="display:inline-block; margin:4px;width:4.54cm;height:3.298cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F5000000B2933C5DC5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -2604,7 +2591,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">IDao&lt;Category&gt; </span><span style="color:#0000c0">categoryDao</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">....</span></span>
+<span class="odt-code-line">....</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// users</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">static private </span><span style="background-color:#ff950e;color:#000000">Credentials </span><span style="font-style:italic;background-color:#ff950e;color:#0000c0">admin</span><span style="color:#000000">;</span></span>
@@ -2612,7 +2599,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@BeforeClass</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">init() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-style:italic;color:#0000c0">admin </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Credentials(</span><span style="color:#2a00ff">&quot;admin&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;admin&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Before</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">clean() {</span></span>
@@ -2623,19 +2610,19 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// clear the dictionaries</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Long </span><span style="color:#6a3e3e">id </span><span style="color:#000000">: </span><span style="color:#0000c0">mapCategories</span><span style="color:#000000">.keySet()) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000c0">mapCategories</span><span style="color:#000000">.remove(</span><span style="color:#6a3e3e">id</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Long </span><span style="color:#6a3e3e">id </span><span style="color:#000000">: </span><span style="color:#0000c0">mapProducts</span><span style="color:#000000">.keySet()) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000c0">mapProducts</span><span style="color:#000000">.remove(</span><span style="color:#6a3e3e">id</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">List&lt;Category&gt; fill(</span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">numCategories</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">numProducts</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// populate the tables</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ...</span></span>
+<span class="odt-code-line">        ...</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Add the category—the products will also be</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// inserted—we return the result at the same time</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">daoCategory</span><span style="color:#000000">.saveEntities(</span><span style="font-style:italic;background-color:#ff950e;color:#0000c0">admin</span><span style="color:#000000">, </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">Object[] showDataBase() </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">BeansException, JsonProcessingException {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// list of categories</span></span>
@@ -2648,8 +2635,8 @@
 <span class="odt-code-line"><span style="color:#000000">        display(</span><span style="color:#6a3e3e">products</span><span style="color:#000000">, </span><span style="color:#0000c0">context</span><span style="color:#000000">.getBean(</span><span style="color:#2a00ff">&quot;jsonMapperShortProduct&quot;</span><span style="color:#000000">, ObjectMapper.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">Object[] { </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">, </span><span style="color:#6a3e3e">products </span><span style="color:#000000">};</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
 </code></pre></div>
 
 <p><span style="color: #000000">All operations are performed using the [admin / admin] user, who is the only one with access rights to the secure web service.</span></p>
@@ -2675,8 +2662,8 @@
 <span class="odt-code-line"><span style="color:#000000">                    .hasRole(</span><span style="color:#2a00ff">&quot;ADMIN&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// no session</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">http</span><span style="color:#000000">.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">STATELESS</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><span style="color: #000000">Line 17 has an impact. It determines whether or not the user is forced to authenticate on every access. If we comment it out, the duration of the JUnit test is significantly shorter, because the user [admin] only authenticates for the first test and not for subsequent ones (even if the HTTP authentication header is sent by the client, the server does not re-verify the user’s password).</span></p>
@@ -2779,8 +2766,8 @@
 
 <p><span style="color: #000000">The [AppConfig] configuration file from the previous project [spring-security-server-jdbc-generic] is suitable. You simply need to add an additional configuration to it:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">@EnableWebSecurity</span></span>
+<span class="odt-code-line">@Configuration</span>
+<span class="odt-code-line">@EnableWebSecurity</span>
 <span class="odt-code-line"><span style="color:#646464">@EnableJpaRepositories</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.security.repositories&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.security.dao&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;spring.security.service&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ spring.webjson.server.config.AppConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
@@ -2838,7 +2825,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">com.fasterxml.jackson.annotation.JsonIgnore;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Entity</span></span>
+<span class="odt-code-line">@Entity</span>
 <span class="odt-code-line"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_USERS</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">User </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">AbstractCoreEntity {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// properties</span></span>
@@ -2869,7 +2856,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">User() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">User(Long </span><span style="color:#6a3e3e">id</span><span style="color:#000000">, Long </span><span style="color:#6a3e3e">version</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">identity</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">login</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">password</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">id </span><span style="color:#000000">= </span><span style="color:#6a3e3e">id</span><span style="color:#000000">;</span></span>
@@ -2877,15 +2864,15 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">name </span><span style="color:#000000">= </span><span style="color:#6a3e3e">identity</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">login </span><span style="color:#000000">= </span><span style="color:#6a3e3e">login</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">password </span><span style="color:#000000">= </span><span style="color:#6a3e3e">password</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// ------------------------------------------------------------</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// redefining [equals] and [hashcode]</span></span>
-<span class="odt-code-line"><span style="color:#646464">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2966,7 +2953,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">com.fasterxml.jackson.annotation.JsonIgnore;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Entity</span></span>
+<span class="odt-code-line">@Entity</span>
 <span class="odt-code-line"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_ROLES</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Role </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">AbstractCoreEntity {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// properties</span></span>
@@ -2974,7 +2961,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@GeneratedValue</span><span style="color:#000000">(strategy = GenerationType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">IDENTITY</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Column</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_JPA_ID</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">Long </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Version</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Column</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_JPA_VERSIONING</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">Long </span><span style="color:#0000c0">version</span><span style="color:#000000">;</span></span>
@@ -2993,25 +2980,25 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Role() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Role(Long </span><span style="color:#6a3e3e">id</span><span style="color:#000000">, Long </span><span style="color:#6a3e3e">version</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">name</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">id </span><span style="color:#000000">= </span><span style="color:#6a3e3e">id</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">version </span><span style="color:#000000">= </span><span style="color:#6a3e3e">version</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">name </span><span style="color:#000000">= </span><span style="color:#6a3e3e">name</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Role(String </span><span style="color:#6a3e3e">name</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">name </span><span style="color:#000000">= </span><span style="color:#6a3e3e">name</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// ------------------------------------------------------------</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Overriding [equals] and [hashCode]</span></span>
-<span class="odt-code-line"><span style="color:#646464">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -3050,7 +3037,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.Transient;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">javax.persistence.Version;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Entity</span></span>
+<span class="odt-code-line">@Entity</span>
 <span class="odt-code-line"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_USERS_ROLES</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">UserRole </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">AbstractCoreEntity {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// properties</span></span>
@@ -3079,20 +3066,20 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">UserRole() {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">UserRole(User </span><span style="color:#6a3e3e">user</span><span style="color:#000000">, Role </span><span style="color:#6a3e3e">role</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">user </span><span style="color:#000000">= </span><span style="color:#6a3e3e">user</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">role </span><span style="color:#000000">= </span><span style="color:#6a3e3e">role</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// ------------------------------------------------------------</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Override [equals] and [hashCode]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">...</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -3129,7 +3116,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// search for a user by their login</span></span>
 <span class="odt-code-line"><span style="color:#000000">    User findUserByLogin(String </span><span style="color:#6a3e3e">login</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -3156,7 +3143,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Search for a role by name</span></span>
 <span class="odt-code-line"><span style="color:#000000">    Role findRoleByName(String </span><span style="color:#6a3e3e">name</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -3176,7 +3163,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">UserRoleRepository </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">CrudRepository&lt;UserRole, Long&gt; {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -3214,18 +3201,18 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// properties</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">User </span><span style="color:#0000c0">user</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">UserRepository </span><span style="background-color:#ff950e;color:#0000c0">userRepository</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// local</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String </span><span style="color:#0000c0">simpleClassName </span><span style="color:#000000">= getClass().getSimpleName();</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">AppUserDetails() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">AppUserDetails(User </span><span style="color:#6a3e3e">user</span><span style="color:#000000">, </span><span style="background-color:#ff950e;color:#000000">UserRepository </span><span style="background-color:#ff950e;color:#6a3e3e">userRepository</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">user </span><span style="color:#000000">= </span><span style="color:#6a3e3e">user</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">userRepository </span><span style="color:#000000">= </span><span style="color:#6a3e3e">userRepository</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// -------------------------interface</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
@@ -3237,13 +3224,13 @@
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">e</span><span style="color:#000000">.printStackTrace();</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(167, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Role </span><span style="color:#6a3e3e">role </span><span style="color:#000000">: </span><span style="color:#6a3e3e">roles</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">authorities</span><span style="color:#000000">.add(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">SimpleGrantedAuthority(</span><span style="color:#6a3e3e">role</span><span style="color:#000000">.getName()));</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">authorities</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#000000">}</span></span>
 </code></pre></div>
 
@@ -3267,7 +3254,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.data.infrastructure.DaoException;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.security.repositories.UserRepository;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Service</span></span>
+<span class="odt-code-line">@Service</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppUserDetailsService </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">UserDetailsService {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
@@ -3283,16 +3270,16 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">user </span><span style="color:#000000">= </span><span style="background-color:#ff950e;color:#0000c0">userRepository</span><span style="color:#000000">.findUserByLogin(</span><span style="color:#6a3e3e">login</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(168, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Found?</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">user </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">UsernameNotFoundException(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;login [%s] does not exist&quot;</span><span style="color:#000000">, </span><span style="color:#6a3e3e">login</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// return the user details</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">AppUserDetails(</span><span style="color:#6a3e3e">user</span><span style="color:#000000">, </span><span style="color:#0000c0">userRepository</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -3416,11 +3403,11 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Import;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.data.jpa.repository.config.EnableJpaRepositories;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@EnableJpaRepositories</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.security.repositories&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ ConfigJpa.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -3474,7 +3461,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// if it doesn&#x27;t exist, create it</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">role </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">role </span><span style="color:#000000">= </span><span style="color:#6a3e3e">roleRepository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Role(</span><span style="color:#6a3e3e">roleName</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// Does the user already exist?</span></span>
 <span class="odt-code-line"><span style="color:#000000">            User </span><span style="color:#6a3e3e">user </span><span style="color:#000000">= </span><span style="color:#6a3e3e">userRepository</span><span style="color:#000000">.findUserByLogin(</span><span style="color:#6a3e3e">login</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// if they don&#x27;t exist, create them</span></span>
@@ -3492,21 +3479,21 @@
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">r</span><span style="color:#000000">.getName().equals(</span><span style="color:#6a3e3e">roleName</span><span style="color:#000000">)) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#6a3e3e">found </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="font-weight:bold;color:#7f0055">break</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
+<span class="odt-code-line">                    }</span>
+<span class="odt-code-line">                }</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#3f7f5f">// if not found, create the relationship with the role</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(!</span><span style="color:#6a3e3e">found</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">userRoleRepository</span><span style="color:#000000">.save(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">UserRole(</span><span style="color:#6a3e3e">user</span><span style="color:#000000">, </span><span style="color:#6a3e3e">role</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">                }</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Close Spring context</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">context</span><span style="color:#000000">.close();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// end</span></span>
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Work completed...&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>

@@ -1298,12 +1298,12 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Import;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.data.jpa.repository.config.EnableJpaRepositories;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ ConfigJpa.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@EnableJpaRepositories</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;console&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1324,7 +1324,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">eclipseLinkJpaVendorAdapter</span><span style="color:#000000">.setDatabase(Database.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">MYSQL</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">eclipseLinkJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">eclipseLinkJpaVendorAdapter</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>Line 8 is the important one here. It is present in all JPA implementations used. It specifies that if the tables associated with the JPA entities do not exist, they must be created. We will use this property to generate the tables.</p>
@@ -1342,7 +1342,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">ProductRepository </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">CrudRepository&lt;Product, Long&gt; {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>Instantiating this interface will trigger the instantiation of the JPA layer. Indeed, on line 7, the interface references the JPA entity [Product], which will force the instantiation of the JPA layer. We could have used any interface [CrudRepository] referencing one of the JPA entities. We can see that although the [repository] only references the JPA entity [Product], all tables for all JPA entities are generated.</p>
@@ -1364,9 +1364,9 @@
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Processing...&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">AnnotationConfigApplicationContext(AppConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">).close();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Processing complete...&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1418,53 +1418,53 @@
 
 <p>The generated SQL script is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">SET FOREIGN_KEY_CHECKS=0;</span></span>
+<span class="odt-code-line">SET FOREIGN_KEY_CHECKS=0;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">USE `dbproduitscategories`;</span></span>
+<span class="odt-code-line">USE `dbproduitscategories`;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `categories` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
+<span class="odt-code-line">CREATE TABLE `categories` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
 <span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `NAME` (`NAME`) USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  UNIQUE KEY `NAME` (`NAME`) USING BTREE</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `products` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `CATEGORY_ID` BIGINT(20) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `PRICE` DOUBLE NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `CATEGORY` INTEGER(11) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `NAME` (`NAME`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  KEY `FK_PRODUCTS_CATEGORY_ID` (`CATEGORY_ID`) USING BTREE,</span></span>
+<span class="odt-code-line">CREATE TABLE `products` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci DEFAULT NULL,</span>
+<span class="odt-code-line">  `CATEGORY_ID` BIGINT(20) NOT NULL,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `PRICE` DOUBLE NOT NULL,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  `CATEGORY` INTEGER(11) NOT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  UNIQUE KEY `NAME` (`NAME`) USING BTREE,</span>
+<span class="odt-code-line">  KEY `FK_PRODUCTS_CATEGORY_ID` (`CATEGORY_ID`) USING BTREE,</span>
 <span class="odt-code-line"><span style="color:#000000">  CONSTRAINT `FK_PRODUITS_CATEGORIE_ID` FOREIGN KEY (`CATEGORIE_ID`) REFERENCES `categories` (`ID`) </span><span style="background-color:#ff950e">ON DELETE CASCADE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `roles` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `roles` (</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `users` (</span></span>
-<span class="odt-code-line"><span style="color:#000000"> ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `users` (</span>
+<span class="odt-code-line"> ...</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `users_roles` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `users_roles` (</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 </code></pre></div>
 
 <p>Let&#x27;s look, for example, at the SQL script that generates the [PRODUCTS] table (lines 15–29):</p>
@@ -1510,52 +1510,52 @@
 
 <p>The SQL script for the database generated by Hibernate is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">SET FOREIGN_KEY_CHECKS=0;</span></span>
+<span class="odt-code-line">SET FOREIGN_KEY_CHECKS=0;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">USE `dbproduitscategories`;</span></span>
+<span class="odt-code-line">USE `dbproduitscategories`;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `categories` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `UK_7ajcg7japnxw846ru01damg8s` (`NAME`) USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `categories` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  UNIQUE KEY `UK_7ajcg7japnxw846ru01damg8s` (`NAME`) USING BTREE</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `products` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `CATEGORY_ID` BIGINT(20) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `PRICE` DOUBLE NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `UK_hfvjn9lp7qoo5x79uu0ump3rf` (`NAME`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  KEY `FK_p3foj9yrqnmi7856n9s8mbpue` (`CATEGORY_ID`) USING BTREE,</span></span>
+<span class="odt-code-line">CREATE TABLE `products` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci DEFAULT NULL,</span>
+<span class="odt-code-line">  `CATEGORY_ID` BIGINT(20) NOT NULL,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `PRICE` DOUBLE NOT NULL,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  UNIQUE KEY `UK_hfvjn9lp7qoo5x79uu0ump3rf` (`NAME`) USING BTREE,</span>
+<span class="odt-code-line">  KEY `FK_p3foj9yrqnmi7856n9s8mbpue` (`CATEGORY_ID`) USING BTREE,</span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ff950e">CONSTRAINT `FK_p3foj9yrqnmi7856n9s8mbpue` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `categories` (`ID`)</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `roles` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
+<span class="odt-code-line">CREATE TABLE `roles` (</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
 <span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `users` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `users` (</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `users_roles` (</span></span>
-<span class="odt-code-line"><span style="color:#000000"> ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `users_roles` (</span>
+<span class="odt-code-line"> ...</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 </code></pre></div>
 
 <p>The generated tables are the same since Hibernate also used JPA annotations. For Hibernate, I couldn’t find the equivalent of the EclipseLink annotation [@OnCascadeDelete], which generated the SQL attribute [ON DELETE CASCADE] on the foreign key [PRODUCTS.CATEGORY_ID] (line 25). This attribute must therefore be generated manually, as it is required for testing:</p>
@@ -1607,7 +1607,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.transaction.PlatformTransactionManager;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ ConfigJdbc.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">ConfigJpa {</span></span>
 <span class="odt-code-line"></span>
@@ -1619,8 +1619,8 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setDatabase(Database.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">MYSQL</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">..</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">..</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// EntityManagerFactory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">EntityManagerFactory entityManagerFactory(JpaVendorAdapter </span><span style="color:#6a3e3e">jpaVendorAdapter</span><span style="color:#000000">, DataSource </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">) {</span></span>
@@ -1633,8 +1633,8 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setDataSource(</span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.afterPropertiesSet();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.getObject();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1653,70 +1653,70 @@
 
 <p>The SQL script for the generated database is then as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">SET FOREIGN_KEY_CHECKS=0;</span></span>
+<span class="odt-code-line">SET FOREIGN_KEY_CHECKS=0;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">USE `dbproduitscategories`;</span></span>
+<span class="odt-code-line">USE `dbproduitscategories`;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `categories` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `U_CTGORIS_NOM` (`NAME`) USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `categories` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  UNIQUE KEY `U_CTGORIS_NOM` (`NAME`) USING BTREE</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `products` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `CATEGORY_ID` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `PRICE` DOUBLE NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `U_PRODUTS_NOM` (`NAME`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  KEY `CATEGORY_ID` (`CATEGORY_ID`) USING BTREE,</span></span>
+<span class="odt-code-line">CREATE TABLE `products` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci DEFAULT NULL,</span>
+<span class="odt-code-line">  `CATEGORY_ID` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `PRICE` DOUBLE NOT NULL,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  UNIQUE KEY `U_PRODUTS_NOM` (`NAME`) USING BTREE,</span>
+<span class="odt-code-line">  KEY `CATEGORY_ID` (`CATEGORY_ID`) USING BTREE,</span>
 <span class="odt-code-line"><span style="color:#000000">  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `categories` (`ID`) </span><span style="background-color:#ff950e">ON DELETE CASCADE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `roles` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `U_ROLES_NAME` (`NAME`) USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">CREATE TABLE `roles` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  UNIQUE KEY `U_ROLES_NAME` (`NAME`) USING BTREE</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `users` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `LOGIN` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `PASSWORD` VARCHAR(60) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
+<span class="odt-code-line">CREATE TABLE `users` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `LOGIN` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `PASSWORD` VARCHAR(60) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
 <span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  UNIQUE KEY `U_USERS_LOGIN` (`LOGIN`) USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">  UNIQUE KEY `U_USERS_LOGIN` (`LOGIN`) USING BTREE</span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `users_roles` (</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `ROLE_ID` BIGINT(20) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `USER_ID` BIGINT(20) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  PRIMARY KEY (`ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  KEY `ROLE_ID` (`ROLE_ID`) USING BTREE,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  KEY `USER_ID` (`USER_ID`) USING BTREE,</span></span>
+<span class="odt-code-line">CREATE TABLE `users_roles` (</span>
+<span class="odt-code-line">  `ID` BIGINT(20) NOT NULL AUTO_INCREMENT,</span>
+<span class="odt-code-line">  `VERSIONING` BIGINT(20) DEFAULT NULL,</span>
+<span class="odt-code-line">  `ROLE_ID` BIGINT(20) NOT NULL,</span>
+<span class="odt-code-line">  `USER_ID` BIGINT(20) NOT NULL,</span>
+<span class="odt-code-line">  PRIMARY KEY (`ID`) USING BTREE,</span>
+<span class="odt-code-line">  KEY `ROLE_ID` (`ROLE_ID`) USING BTREE,</span>
+<span class="odt-code-line">  KEY `USER_ID` (`USER_ID`) USING BTREE,</span>
 <span class="odt-code-line"><span style="color:#000000">  CONSTRAINT `users_roles_ibfk_2` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`ID`) </span><span style="background-color:#ff950e">ON DELETE CASCADE</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">  CONSTRAINT `users_roles_ibfk_1` FOREIGN KEY (`ROLE_ID`) REFERENCES `roles` (`ID`) </span><span style="background-color:#ff950e">ON DELETE CASCADE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 </code></pre></div>
 
 <p>This is the same as with EclipseLink. We will therefore make the same corrections to the tables. Once this is done, verify that the following test cases pass:</p>
@@ -1817,7 +1817,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#646464">@EnableJpaRepositories</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;console&quot; </span><span style="color:#000000">})</span></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ ConfigJpa.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
 <span class="odt-code-line"></span>
@@ -1835,7 +1835,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setInitialSize(5);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// EntityManagerFactory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1846,9 +1846,9 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setDataSource(</span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.afterPropertiesSet();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.getObject();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1921,7 +1921,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Product() {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Product(</span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">id</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">name</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">category</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">double </span><span style="color:#6a3e3e">price</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">description</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">id </span><span style="color:#000000">= </span><span style="color:#6a3e3e">id</span><span style="color:#000000">;</span></span>
@@ -1929,11 +1929,11 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">category </span><span style="color:#000000">= </span><span style="color:#6a3e3e">category</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">price </span><span style="color:#000000">= </span><span style="color:#6a3e3e">price</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">description </span><span style="color:#000000">= </span><span style="color:#6a3e3e">description</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    ...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>This is a JPA definition that has now become standard. Note the following points:</p>
@@ -1963,9 +1963,9 @@
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Processing...&quot;</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">AnnotationConfigApplicationContext(AppConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">).close();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Processing complete...&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>This is code we&#x27;ve seen before.</p>
@@ -1976,19 +1976,19 @@
 
 <p>The console logs are as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#000000">Processing...</span></span>
-<span class="odt-code-line"><span style="color:#000000">16:31:17.668 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6fadae5d: startup date [Tue Jun 02 16:31:17 CEST 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span style="color:#000000">16:31:17.758 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean &#x27;entityManagerFactory&#x27;: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=generic.jpa.config.ConfigJpa; factoryMethodName=entityManagerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class generic.jpa.config.ConfigJpa] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=entityManagerFactory; initMethodName=null; destroyMethodName=(inferred); defined in console.AppConfig]</span></span>
-<span class="odt-code-line"><span style="color:#000000">16:31:17.759 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean &#x27;dataSource&#x27;: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=generic.jpa.config.ConfigJpa; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class generic.jpa.config.ConfigJpa] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in console.AppConfig]</span></span>
-<span class="odt-code-line"><span style="color:#000000">16:31:18.462 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit &#x27;generic-jpa-entities-dbproduits&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">[EL Info]: server: 2015-06-02 16:31:18.624--ServerSession(817299424)--Detected server platform: org.eclipse.persistence.platform.server.NoServerPlatform.</span></span>
+<span class="odt-code-line">Processing...</span>
+<span class="odt-code-line">16:31:17.668 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6fadae5d: startup date [Tue Jun 02 16:31:17 CEST 2015]; root of context hierarchy</span>
+<span class="odt-code-line">16:31:17.758 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean &#x27;entityManagerFactory&#x27;: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=generic.jpa.config.ConfigJpa; factoryMethodName=entityManagerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class generic.jpa.config.ConfigJpa] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=entityManagerFactory; initMethodName=null; destroyMethodName=(inferred); defined in console.AppConfig]</span>
+<span class="odt-code-line">16:31:17.759 [main] INFO  o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean &#x27;dataSource&#x27;: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=generic.jpa.config.ConfigJpa; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in class generic.jpa.config.ConfigJpa] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=appConfig; factoryMethodName=dataSource; initMethodName=null; destroyMethodName=(inferred); defined in console.AppConfig]</span>
+<span class="odt-code-line">16:31:18.462 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit &#x27;generic-jpa-entities-dbproduits&#x27;</span>
+<span class="odt-code-line">[EL Info]: server: 2015-06-02 16:31:18.624--ServerSession(817299424)--Detected server platform: org.eclipse.persistence.platform.server.NoServerPlatform.</span>
 <span class="odt-code-line"><span style="color:#000000">[EL Info]: server: 2015-06-02 16:31:19.015--ServerSession(817299424)--Detected server platform: org.eclipse.persistence.platform.server.NoServerPlatform.</span></span>
-<span class="odt-code-line"><span style="color:#000000">[EL Info]: 2015-06-02 16:31:19.021--ServerSession(817299424)--EclipseLink, version: Eclipse Persistence Services - 2.6.0.v20150309-bf26070</span></span>
-<span class="odt-code-line"><span style="color:#000000">[EL Info]: connection: 2015-06-02 16:31:20.122--ServerSession(817299424)--/file:/D:/data/istia-1415/spring data/dvp/dvp-spring-database-04/spring-database-generic/spring-jpa/generic-create-dbproduits/target/classes_generic-jpa-entities-dbproduits login successful</span></span>
-<span class="odt-code-line"><span style="color:#000000">16:31:20.654 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@6fadae5d: startup date [Tue Jun 02 16:31:17 CEST 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span style="color:#000000">[EL Info]: connection: 2015-06-02 16:31:20.656--ServerSession(817299424)--/file:/D:/data/istia-1415/spring data/dvp/dvp-spring-database-04/spring-database-generic/spring-jpa/generic-create-dbproduits/target/classes_generic-jpa-entities-dbproduits logout successful</span></span>
-<span class="odt-code-line"><span style="color:#000000">[EL Warning]: 2015-06-02 16:31:20.657--session_manager_no_partition</span></span>
-<span class="odt-code-line"><span style="color:#000000">Work completed...</span></span>
+<span class="odt-code-line">[EL Info]: 2015-06-02 16:31:19.021--ServerSession(817299424)--EclipseLink, version: Eclipse Persistence Services - 2.6.0.v20150309-bf26070</span>
+<span class="odt-code-line">[EL Info]: connection: 2015-06-02 16:31:20.122--ServerSession(817299424)--/file:/D:/data/istia-1415/spring data/dvp/dvp-spring-database-04/spring-database-generic/spring-jpa/generic-create-dbproduits/target/classes_generic-jpa-entities-dbproduits login successful</span>
+<span class="odt-code-line">16:31:20.654 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext - Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@6fadae5d: startup date [Tue Jun 02 16:31:17 CEST 2015]; root of context hierarchy</span>
+<span class="odt-code-line">[EL Info]: connection: 2015-06-02 16:31:20.656--ServerSession(817299424)--/file:/D:/data/istia-1415/spring data/dvp/dvp-spring-database-04/spring-database-generic/spring-jpa/generic-create-dbproduits/target/classes_generic-jpa-entities-dbproduits logout successful</span>
+<span class="odt-code-line">[EL Warning]: 2015-06-02 16:31:20.657--session_manager_no_partition</span>
+<span class="odt-code-line">Work completed...</span>
 </code></pre></div>
 
 <p>Now, let’s return to the [MyManager] client and refresh the display [1-2]:</p>
@@ -1996,21 +1996,21 @@
 
 <p>In [3], we can see that a table has been generated. Now let’s check the database’s DDL (Domain Definition Language):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">SET FOREIGN_KEY_CHECKS=0;</span></span>
+<span class="odt-code-line">SET FOREIGN_KEY_CHECKS=0;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">USE `dbproducts`;</span></span>
+<span class="odt-code-line">USE `dbproducts`;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `products` (</span></span>
+<span class="odt-code-line">CREATE TABLE `products` (</span>
 <span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL </span><span style="background-color:#ff950e">AUTO_INCREMENT</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `CATEGORY` INTEGER(11) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `PRICE` DOUBLE NOT NULL,</span></span>
+<span class="odt-code-line">  `CATEGORY` INTEGER(11) NOT NULL,</span>
+<span class="odt-code-line">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `PRICE` DOUBLE NOT NULL,</span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ff950e">PRIMARY KEY (`ID`) </span><span style="color:#000000">USING BTREE,</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ff950e">UNIQUE KEY `NAME` (`NAME`) </span><span style="color:#000000">USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 </code></pre></div>
 
 <p>We do indeed get the expected table. To verify this, we will run the following configuration:</p>
@@ -2027,19 +2027,19 @@
 
 <p>The SQL script generated by Hibernate is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#000000">USE `dbproduits`;</span></span>
+<span class="odt-code-line">USE `dbproduits`;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `products` (</span></span>
+<span class="odt-code-line">CREATE TABLE `products` (</span>
 <span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL </span><span style="background-color:#ff950e">AUTO_INCREMENT</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `CATEGORY` INTEGER(11) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `PRICE` DOUBLE NOT NULL,</span></span>
+<span class="odt-code-line">  `CATEGORY` INTEGER(11) NOT NULL,</span>
+<span class="odt-code-line">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `PRICE` DOUBLE NOT NULL,</span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ff950e">PRIMARY KEY (`ID`) </span><span style="color:#000000">USING BTREE,</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ff950e">UNIQUE KEY `UK_hfvjn9lp7qoo5x79uu0ump3rf` (`NAME`) </span><span style="color:#000000">USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 </code></pre></div>
 
 <p><a id="refheading118649630560624"></a></p>
@@ -2054,17 +2054,17 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span style="color:#000000">USE `dbproducts`;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">CREATE TABLE `products` (</span></span>
+<span class="odt-code-line">CREATE TABLE `products` (</span>
 <span class="odt-code-line"><span style="color:#000000">  `ID` BIGINT(20) NOT NULL </span><span style="background-color:#ff950e">AUTO_INCREMENT</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `CATEGORY` INTEGER(11) NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span></span>
-<span class="odt-code-line"><span style="color:#000000">  `PRICE` DOUBLE NOT NULL,</span></span>
+<span class="odt-code-line">  `CATEGORY` INTEGER(11) NOT NULL,</span>
+<span class="odt-code-line">  `DESCRIPTION` VARCHAR(100) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `NAME` VARCHAR(30) COLLATE utf8_general_ci NOT NULL,</span>
+<span class="odt-code-line">  `PRICE` DOUBLE NOT NULL,</span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ff950e">PRIMARY KEY (`ID`) </span><span style="color:#000000">USING BTREE,</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="background-color:#ff950e">UNIQUE KEY `U_PRODUTS_NOM` (`NAME`) </span><span style="color:#000000">USING BTREE</span></span>
-<span class="odt-code-line"><span style="color:#000000">) ENGINE=InnoDB</span></span>
-<span class="odt-code-line"><span style="color:#000000">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span></span>
-<span class="odt-code-line"><span style="color:#000000">;</span></span>
+<span class="odt-code-line">) ENGINE=InnoDB</span>
+<span class="odt-code-line">AUTO_INCREMENT=1 CHARACTER SET &#x27;utf8&#x27; COLLATE &#x27;utf8_general_ci&#x27;</span>
+<span class="odt-code-line">;</span>
 </code></pre></div>
 
 

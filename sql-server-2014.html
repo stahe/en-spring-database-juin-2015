@@ -1064,19 +1064,19 @@
 
 
 
-<p><a id="refheading12187047764300712"></a>
-<a id="refheading12187047764300711-copie-1"></a>
-<a id="refheading1218704776430071-copie-1"></a>
-<a id="refheading121870477643007-copie-1"></a>
-<a id="refheading11084335254046-copie-1"></a>
-<a id="refheading11083335254046-copie-1"></a>
-<a id="refheading11082135254046-copie-1"></a>
-<a id="refheading2192422014630537-copie-1"></a>
-<a id="refheading2192282014630537-copie-1"></a>
-<a id="refheading1051982082896917-copie-1"></a>
-<a id="refheading78459838046689-copie-1"></a>
+<p><a id="refheading261305838046689-copie-1"></a>
 <a id="refheading78457838046689-copie-1"></a>
-<a id="refheading261305838046689-copie-1"></a></p>
+<a id="refheading78459838046689-copie-1"></a>
+<a id="refheading1051982082896917-copie-1"></a>
+<a id="refheading2192282014630537-copie-1"></a>
+<a id="refheading2192422014630537-copie-1"></a>
+<a id="refheading11082135254046-copie-1"></a>
+<a id="refheading11083335254046-copie-1"></a>
+<a id="refheading11084335254046-copie-1"></a>
+<a id="refheading121870477643007-copie-1"></a>
+<a id="refheading1218704776430071-copie-1"></a>
+<a id="refheading12187047764300711-copie-1"></a>
+<a id="refheading12187047764300712"></a></p>
 <h1 id="13-sql-server-2014">13. <span style="color: #365f91">SQL Server 2014</span></h1>
 <p>We will now discuss porting what was done with MySQL to SQL Server 2014.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000487000000FF764B6EEF.png" style="display:inline-block; margin:4px;width:15.333cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/1000000000000487000000FF764B6EEF.png" /></td></tr></table>
@@ -1096,10 +1096,8 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A400000045648FBA2F.png" style="display:inline-block; margin:4px;width:3.039cm;height:1.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A400000045648FBA2F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The [install.bat] file contains the following code:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">&quot;%M2_HOME%\bin\mvn.bat&quot; install:install-file -Dfile=sqljdbc4-3.0.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;%M2_HOME%\bin\mvn.bat&quot; install:install-file -Dfile=sqljdbc4-3.0.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0
 </code></pre></div>
-
 <p>where [%M2-HOME%] is the Maven installation directory (see section<a href="#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>, page<a href="#refheading261309838046689"><u><span style="color: #0563c1"> 466</span></u></a>). After this installation, the SQL Server JDBC driver can be referenced in the [pom.xml] files using the following dependency:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
@@ -1202,7 +1200,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f5fbf">&lt;!-- constant dependencies ********************************************** --&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008080">...</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
 </code></pre></div>
 
@@ -1259,7 +1257,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setDatabase(</span><span style="font-weight:bold;font-style:italic;background-color:#ff950e;color:#000000">Database.</span><span style="font-weight:bold;font-style:italic;background-color:#ff950e;color:#0000c0">SQL_SERVER</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">openJpaVendorAdapter</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1276,8 +1274,8 @@
 <span class="odt-code-line"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_PRODUITS</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Product {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#3f7f5f">// fields</span></span>
-<span class="odt-code-line"><span style="color:#646464">@Id</span></span>
+<span class="odt-code-line">// fields</span>
+<span class="odt-code-line">@Id</span>
 <span class="odt-code-line"><span style="color:#646464">@Column</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_PRODUCTS_ID</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">Long </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span>
 </code></pre></div>
@@ -1288,8 +1286,8 @@
 <span class="odt-code-line"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_PRODUITS2</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Product2 {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#3f7f5f">// fields</span></span>
-<span class="odt-code-line"><span style="color:#646464">@Id</span></span>
+<span class="odt-code-line">// fields</span>
+<span class="odt-code-line">@Id</span>
 <span class="odt-code-line"><span style="color:#646464">@GeneratedValue</span><span style="color:#000000">(strategy = </span><span style="background-color:#ff950e;color:#000000">GenerationType.</span><span style="font-weight:bold;font-style:italic;background-color:#ff950e;color:#0000c0">IDENTITY</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Column</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_PRODUITS_ID</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">Long </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span>

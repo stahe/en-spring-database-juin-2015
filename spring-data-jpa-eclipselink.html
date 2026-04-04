@@ -1205,13 +1205,13 @@
 <span class="odt-code-line"><span style="color:#000000">                                </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pluginExecution</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pluginExecutionFilter</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                            de.empulse.eclipselink</span></span>
+<span class="odt-code-line">                                            de.empulse.eclipselink</span>
 <span class="odt-code-line"><span style="color:#000000">                                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                            staticweave-maven-plugin</span></span>
+<span class="odt-code-line">                                            staticweave-maven-plugin</span>
 <span class="odt-code-line"><span style="color:#000000">                                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">versionRange</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                            [1.0.0,)</span></span>
+<span class="odt-code-line">                                            [1.0.0,)</span>
 <span class="odt-code-line"><span style="color:#000000">                                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/versionRange</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">goals</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">goal</span><span style="color:#008080">&gt;</span><span style="color:#000000">weave</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/goal</span><span style="color:#008080">&gt;</span></span>
@@ -1284,7 +1284,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.transaction.PlatformTransactionManager;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ ConfigJdbc.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">ConfigJpa {</span></span>
 <span class="odt-code-line"></span>
@@ -1297,7 +1297,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">eclipseLinkJpaVendorAdapter</span><span style="color:#000000">.setDatabase(Database.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">MYSQL</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">eclipseLinkJpaVendorAdapter</span><span style="color:#000000">.setGenerateDdl(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">eclipseLinkJpaVendorAdapter</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// data source</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1313,7 +1313,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">.setInitialSize(5);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">dataSource</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// EntityManagerFactory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1324,7 +1324,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.afterPropertiesSet();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        EntityManagerFactory </span><span style="color:#6a3e3e">entityManagerFactory </span><span style="color:#000000">= </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.getObject();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">entityManagerFactory</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Transaction manager</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
@@ -1332,9 +1332,9 @@
 <span class="odt-code-line"><span style="color:#000000">        JpaTransactionManager </span><span style="color:#6a3e3e">txManager </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">JpaTransactionManager();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">txManager</span><span style="color:#000000">.setEntityManagerFactory(</span><span style="color:#6a3e3e">entityManagerFactory</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">txManager</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>This configuration is similar to the one described in Section<a href="#refheading1052942082896917"><u><span style="color: #0563c1"> 6.3.2</span></u></a> for the Hibernate JPA implementation. We will only detail the differences:</p>
@@ -1345,10 +1345,8 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">factory.setPackagesToScan(ENTITIES_PACKAGES);</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>factory.setPackagesToScan(ENTITIES_PACKAGES);
 </code></pre></div>
-
 <p>which was used to specify where to look for JPA entities. Here, we rely on the [persistence.xml] file (comment on line 25) (see section<a href="#refheading107479995711268"><u><span style="color: #0563c1"> 6.3.4</span></u></a>) to both:</p>
 <ul>
   <li>define the JPA entities;
@@ -1409,7 +1407,7 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">@Entity</span></span>
+<span class="odt-code-line">@Entity</span>
 <span class="odt-code-line"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_CATEGORIES</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#646464">@JsonFilter</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;jsonFilterCategorie&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Cache</span><span style="color:#000000">(alwaysRefresh = </span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">)</span></span>
@@ -1462,31 +1460,50 @@
 </ul>
 
 <p>The [JUnitTestProxies] test produces the following console output:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">doNothing</span></span>
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getShortCategoriesByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Category type: PROXY</span></span>
-<span class="odt-code-line"><span style="color:#000000">Category:</span></span>
-<span class="odt-code-line"><span style="background-color:#ff950e;color:#000000">1</span></span>
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getLongCategoriesByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Type category: POJO</span></span>
-<span class="odt-code-line"><span style="color:#000000">Category:</span></span>
-<span class="odt-code-line"><span style="color:#000000">1</span></span>
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getShortProductsByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product type: PROXY</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product category name:</span></span>
-<span class="odt-code-line"><span style="background-color:#ff950e;color:#000000">category[0]</span></span>
-<span class="odt-code-line"><span style="color:#000000">Dumping the database --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">getLongProductsByName1 --------------------------------</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product type: POJO</span></span>
-<span class="odt-code-line"><span style="color:#000000">Product category name:</span></span>
-<span class="odt-code-line"><span style="color:#000000">category[0]</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Dumping the database --------------------------------
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>doNothing
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Dumping the database --------------------------------
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>getShortCategoriesByName1 --------------------------------
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>Category type: PROXY
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>Category:
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>1
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>Dumping the database --------------------------------
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>getLongCategoriesByName1 --------------------------------
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>Type category: POJO
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>Category:
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>1
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>Dumping the database --------------------------------
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>getShortProductsByName1 --------------------------------
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>Product type: PROXY
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>Product category name:
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>category[0]
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>Dumping the database --------------------------------
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>getLongProductsByName1 --------------------------------
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>Product type: POJO
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>Product category name:
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>category[0]
+</code></pre></div></td></tr></table></div>
 <p>Here we see that when accessing the [Category.products] field of a PROXY-type category and the [Product.category] field of a PROXY-type product, we successfully retrieve the information in both cases (lines 7 and 17). Among the three JPA implementations, this is the only one that allows this on PROXY entities.</p>
 
 

@@ -1148,7 +1148,7 @@
 </ol>
 
 <ol>
-  <li><b>Processing</b>
+  <li>Processing
   </li>
 </ol>
 
@@ -1341,7 +1341,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RequestParam;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.web.bind.annotation.RestController;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@RestController</span></span>
+<span class="odt-code-line">@RestController</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">GreetingController {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private static final </span><span style="color:#000000">String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">template </span><span style="color:#000000">= </span><span style="color:#2a00ff">&quot;Hello, %s!&quot;</span><span style="color:#000000">;</span></span>
@@ -1350,8 +1350,8 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;/greeting&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Greeting greeting(</span><span style="color:#646464">@RequestParam</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;name&quot;</span><span style="color:#000000">, defaultValue = </span><span style="color:#2a00ff">&quot;World&quot;</span><span style="color:#000000">) String </span><span style="color:#6a3e3e">name</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">Greeting(</span><span style="color:#0000c0">counter</span><span style="color:#000000">.incrementAndGet(), String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="font-weight:bold;font-style:italic;color:#0000c0">template</span><span style="color:#000000">, </span><span style="color:#6a3e3e">name</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1380,28 +1380,24 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Greeting(</span><span style="font-weight:bold;color:#7f0055">long </span><span style="color:#000000">id, String content) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">id </span><span style="color:#000000">= id;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">content </span><span style="color:#000000">= content;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public long </span><span style="color:#000000">getId() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String getContent() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#0000c0">content</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>The JSON transformation of this object will create the string <strong>{&quot;id&quot;:n,&quot;content&quot;:&quot;text&quot;}</strong>. Ultimately, the JSON string produced by the controller method will be in the form:</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">{&quot;id&quot;:2,&quot;content&quot;:&quot;Hello, World!&quot;}</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{&quot;id&quot;:2,&quot;content&quot;:&quot;Hello, World!&quot;}
 </code></pre></div>
-
 <p>or </p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">{&quot;id&quot;:2,&quot;content&quot;:&quot;Hello, John!&quot;}</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{&quot;id&quot;:2,&quot;content&quot;:&quot;Hello, John!&quot;}
 </code></pre></div>
-
 <p><a id="refheading15924779844303"></a></p>
 <h3 id="1636-execution">16.3.6. <span style="color: #4f81bd">Execution</span></h3>
 <p><a id="refheading570311429907001"></a></p>
@@ -1415,15 +1411,15 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.boot.SpringApplication;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.ComponentScan;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@ComponentScan</span></span>
-<span class="odt-code-line"><span style="color:#000000">@EnableAutoConfiguration</span></span>
+<span class="odt-code-line">@ComponentScan</span>
+<span class="odt-code-line">@EnableAutoConfiguration</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Application {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        SpringApplication.</span><span style="font-style:italic;color:#000000">run</span><span style="color:#000000">(Application.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">, </span><span style="color:#6a3e3e">args</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>We have already encountered and explained this code in the previous example. Let’s run the project:</p>
@@ -1431,33 +1427,33 @@
 
 <p>We get the following console logs:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"><span style="color:#000000">  .   ____          _            __ _ _</span></span>
-<span class="odt-code-line"><span style="color:#000000"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span></span>
-<span class="odt-code-line"><span style="color:#000000">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span></span>
-<span class="odt-code-line"><span style="color:#000000"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span></span>
-<span class="odt-code-line"><span style="color:#000000">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span></span>
-<span class="odt-code-line"><span style="color:#000000"> =========|_|==============|___/=/_/_/_/</span></span>
-<span class="odt-code-line"><span style="color:#000000"> :: Spring Boot ::        (v1.1.9.RELEASE)</span></span>
+<span class="odt-code-line">  .   ____          _            __ _ _</span>
+<span class="odt-code-line"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span>
+<span class="odt-code-line">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span>
+<span class="odt-code-line"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span>
+<span class="odt-code-line">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span>
+<span class="odt-code-line"> =========|_|==============|___/=/_/_/_/</span>
+<span class="odt-code-line"> :: Spring Boot ::        (v1.1.9.RELEASE)</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:55.005  INFO 3152 --- [           main] hello.Application                        : Starting Application on Gportpers3 with PID 3152 (started by ST in D:\data\istia-1415\spring mvc\dvp-final\gs-rest-service)</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:55.046  INFO 3152 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62e136d3: startup date [Fri Nov 28 15:22:55 CET 2014]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:55.762  INFO 3152 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean &#x27;beanNameViewResolver&#x27;: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:56.567  INFO 3152 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 8080</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:56.738  INFO 3152 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:56.740  INFO 3152 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.56</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:56.869  INFO 3152 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext</span></span>
+<span class="odt-code-line">2014-11-28 15:22:55.005  INFO 3152 --- [           main] hello.Application                        : Starting Application on Gportpers3 with PID 3152 (started by ST in D:\data\istia-1415\spring mvc\dvp-final\gs-rest-service)</span>
+<span class="odt-code-line">2014-11-28 15:22:55.046  INFO 3152 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@62e136d3: startup date [Fri Nov 28 15:22:55 CET 2014]; root of context hierarchy</span>
+<span class="odt-code-line">2014-11-28 15:22:55.762  INFO 3152 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean &#x27;beanNameViewResolver&#x27;: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]</span>
+<span class="odt-code-line">2014-11-28 15:22:56.567  INFO 3152 --- [           main] .t.TomcatEmbeddedServletContainerFactory : Server initialized with port: 8080</span>
+<span class="odt-code-line">2014-11-28 15:22:56.738  INFO 3152 --- [           main] o.apache.catalina.core.StandardService   : Starting service Tomcat</span>
+<span class="odt-code-line">2014-11-28 15:22:56.740  INFO 3152 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.56</span>
+<span class="odt-code-line">2014-11-28 15:22:56.869  INFO 3152 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext</span>
 <span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:56.870  INFO 3152 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1827 ms</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.478  INFO 3152 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: &#x27;dispatcherServlet&#x27; to [/]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.481  INFO 3152 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: &#x27;hiddenHttpMethodFilter&#x27; to: [/*]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.685  INFO 3152 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.879  INFO 3152 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/greeting],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public hello.Greeting hello.GreetingController.greeting(java.lang.String)</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.884  INFO 3152 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping: Mapped &quot;{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.885  INFO 3152 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.906  INFO 3152 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:57.907  INFO 3152 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:58.231  INFO 3152 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:58.318  INFO 3152 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080/http</span></span>
-<span class="odt-code-line"><span style="color:#000000">2014-11-28 15:22:58.319  INFO 3152 --- [           main] hello.Application                        : Started Application in 3.788 seconds (JVM running for 4.424)</span></span>
+<span class="odt-code-line">2014-11-28 15:22:57.478  INFO 3152 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: &#x27;dispatcherServlet&#x27; to [/]</span>
+<span class="odt-code-line">2014-11-28 15:22:57.481  INFO 3152 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: &#x27;hiddenHttpMethodFilter&#x27; to: [/*]</span>
+<span class="odt-code-line">2014-11-28 15:22:57.685  INFO 3152 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</span>
+<span class="odt-code-line">2014-11-28 15:22:57.879  INFO 3152 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/greeting],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public hello.Greeting hello.GreetingController.greeting(java.lang.String)</span>
+<span class="odt-code-line">2014-11-28 15:22:57.884  INFO 3152 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping: Mapped &quot;{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}&quot; onto public org.springframework.http.ResponseEntity&lt;java.util.Map&lt;java.lang.String, java.lang.Object&gt;&gt; org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)</span>
+<span class="odt-code-line">2014-11-28 15:22:57.885  INFO 3152 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped &quot;{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}&quot; onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)</span>
+<span class="odt-code-line">2014-11-28 15:22:57.906  INFO 3152 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</span>
+<span class="odt-code-line">2014-11-28 15:22:57.907  INFO 3152 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]</span>
+<span class="odt-code-line">2014-11-28 15:22:58.231  INFO 3152 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup</span>
+<span class="odt-code-line">2014-11-28 15:22:58.318  INFO 3152 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080/http</span>
+<span class="odt-code-line">2014-11-28 15:22:58.319  INFO 3152 --- [           main] hello.Application                        : Started Application in 3.788 seconds (JVM running for 4.424)</span>
 </code></pre></div>
 
 <ul>
@@ -1525,21 +1521,19 @@
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/build</span><span style="color:#008080">&gt;</span></span>
 </code></pre></div>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#000000">[INFO] --- spring-boot-maven-plugin:1.1.0.RELEASE:repackage (default) @ gs-rest-service ---</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="o">---</span> <span class="n">spring</span><span class="o">-</span><span class="n">boot</span><span class="o">-</span><span class="n">maven</span><span class="o">-</span><span class="n">plugin</span><span class="p">:</span><span class="mf">1.1.0</span><span class="o">.</span><span class="n">RELEASE</span><span class="p">:</span><span class="n">repackage</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span> <span class="o">@</span> <span class="n">gs</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">service</span> <span class="o">---</span>
 </code></pre></div>
-
 <p>In a command prompt, navigate to the generated folder:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">D:\Temp\wksSTS\gs-rest-service\target&gt;</span><span style="background-color:#ff950e">dir</span></span>
-<span class="odt-code-line"><span style="color:#000000"> ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">06/11/2014  3:30 PM    &lt;DIR&gt;          classes</span></span>
-<span class="odt-code-line"><span style="color:#000000">06/11/2014  3:30 PM    &lt;DIR&gt;          generated-sources</span></span>
-<span class="odt-code-line"><span style="color:#000000">06/11/2014  3:30 PM        11,073,572 gs-rest-service-0.1.0.jar</span></span>
-<span class="odt-code-line"><span style="color:#000000">06/11/2014  3:30 PM             3,690 gs-rest-service-0.1.0.jar.original</span></span>
-<span class="odt-code-line"><span style="color:#000000">06/11/2014  3:30 PM    &lt;DIR&gt;          maven-archiver</span></span>
-<span class="odt-code-line"><span style="color:#000000">06/11/2014  3:30 PM    &lt;DIR&gt;          maven-status</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"> ...</span>
+<span class="odt-code-line">06/11/2014  3:30 PM    &lt;DIR&gt;          classes</span>
+<span class="odt-code-line">06/11/2014  3:30 PM    &lt;DIR&gt;          generated-sources</span>
+<span class="odt-code-line">06/11/2014  3:30 PM        11,073,572 gs-rest-service-0.1.0.jar</span>
+<span class="odt-code-line">06/11/2014  3:30 PM             3,690 gs-rest-service-0.1.0.jar.original</span>
+<span class="odt-code-line">06/11/2014  3:30 PM    &lt;DIR&gt;          maven-archiver</span>
+<span class="odt-code-line">06/11/2014  3:30 PM    &lt;DIR&gt;          maven-status</span>
+<span class="odt-code-line">...</span>
 </code></pre></div>
 
 <ul>
@@ -1551,19 +1545,19 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">D:\Temp\wksSTS\gs-rest-service-complete\target&gt;</span><span style="background-color:#ff950e">java -jar gs-rest-service-0.1.0.jar</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  .   ____          _            __ _ _</span></span>
-<span class="odt-code-line"><span style="color:#000000"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span></span>
-<span class="odt-code-line"><span style="color:#000000">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span></span>
-<span class="odt-code-line"><span style="color:#000000"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span></span>
-<span class="odt-code-line"><span style="color:#000000">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span></span>
-<span class="odt-code-line"><span style="color:#000000"> =========|_|==============|___/=/_/_/_/</span></span>
-<span class="odt-code-line"><span style="color:#000000"> :: Spring Boot ::        (v1.1.0.RELEASE)</span></span>
+<span class="odt-code-line">  .   ____          _            __ _ _</span>
+<span class="odt-code-line"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span>
+<span class="odt-code-line">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span>
+<span class="odt-code-line"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span>
+<span class="odt-code-line">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span>
+<span class="odt-code-line"> =========|_|==============|___/=/_/_/_/</span>
+<span class="odt-code-line"> :: Spring Boot ::        (v1.1.0.RELEASE)</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">2014-06-11 15:32:47.088  INFO 4972 --- [           main] hello.Application</span></span>
-<span class="odt-code-line"><span style="color:#000000">                  : Starting Application on Gportpers3 with PID 4972 (D:\Temp\wk</span></span>
-<span class="odt-code-line"><span style="color:#000000">sSTS\gs-rest-service-complete\target\gs-rest-service-0.1.0.jar started by ST in</span></span>
-<span class="odt-code-line"><span style="color:#000000">D:\Temp\wksSTS\gs-rest-service-complete\target)</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">2014-06-11 15:32:47.088  INFO 4972 --- [           main] hello.Application</span>
+<span class="odt-code-line">                  : Starting Application on Gportpers3 with PID 4972 (D:\Temp\wk</span>
+<span class="odt-code-line">sSTS\gs-rest-service-complete\target\gs-rest-service-0.1.0.jar started by ST in</span>
+<span class="odt-code-line">D:\Temp\wksSTS\gs-rest-service-complete\target)</span>
+<span class="odt-code-line">...</span>
 </code></pre></div>
 
 <p>Now that the web application is running, you can access it using a browser:</p>
@@ -1607,9 +1601,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">SpringApplicationBuilder configure(SpringApplicationBuilder application) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">application.sources(Application.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>

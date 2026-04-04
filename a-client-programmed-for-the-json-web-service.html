@@ -1354,7 +1354,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">({ </span><span style="color:#2a00ff">&quot;spring.webjson.client.dao&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
 <span class="odt-code-line"></span>
@@ -1366,7 +1366,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">ObjectMapper jsonMapper(RestTemplate </span><span style="color:#6a3e3e">restTemplate</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">((MappingJackson2HttpMessageConverter) (</span><span style="color:#6a3e3e">restTemplate</span><span style="color:#000000">.getMessageConverters().get(0))).getObjectMapper();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Scope</span><span style="color:#000000">(value = ConfigurableBeanFactory.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SCOPE_PROTOTYPE</span><span style="color:#000000">)</span></span>
@@ -1375,7 +1375,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">jsonMapper</span><span style="color:#000000">.setFilters(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">SimpleFilterProvider().addFilter(</span><span style="color:#2a00ff">&quot;jsonFilterCategorie&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;products&quot;</span><span style="color:#000000">)));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">jsonMapper</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Scope</span><span style="color:#000000">(value = ConfigurableBeanFactory.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SCOPE_PROTOTYPE</span><span style="color:#000000">)</span></span>
@@ -1385,7 +1385,7 @@
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">()).addFilter(</span><span style="color:#2a00ff">&quot;jsonFilterProduct&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;category&quot;</span><span style="color:#000000">)));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">jsonMapper</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Scope</span><span style="color:#000000">(value = ConfigurableBeanFactory.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SCOPE_PROTOTYPE</span><span style="color:#000000">)</span></span>
@@ -1394,7 +1394,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">jsonMapper</span><span style="color:#000000">.setFilters(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">SimpleFilterProvider().addFilter(</span><span style="color:#2a00ff">&quot;jsonFilterProduct&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;category&quot;</span><span style="color:#000000">)));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">jsonMapper</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Scope</span><span style="color:#000000">(value = ConfigurableBeanFactory.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SCOPE_PROTOTYPE</span><span style="color:#000000">)</span></span>
@@ -1404,7 +1404,7 @@
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">()).addFilter(</span><span style="color:#2a00ff">&quot;jsonFilterCategory&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;products&quot;</span><span style="color:#000000">));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">jsonMapper</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">RestTemplate restTemplate(</span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">timeout</span><span style="color:#000000">) {</span></span>
@@ -1420,18 +1420,18 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6a3e3e">factory</span><span style="color:#000000">.setReadTimeout(</span><span style="color:#6a3e3e">timeout</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">restTemplate</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public int </span><span style="color:#000000">timeout() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="font-weight:bold;font-style:italic;color:#0000c0">TIMEOUT</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String urlWebJson() {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="font-weight:bold;font-style:italic;color:#0000c0">URL_WEBJSON</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1493,7 +1493,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public interface </span><span style="color:#000000">IClient {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">&lt;T1, T2&gt; T1 getResponse(String </span><span style="color:#6a3e3e">url</span><span style="color:#000000">, HttpMethod </span><span style="color:#6a3e3e">method</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">errStatus</span><span style="color:#000000">, T2 </span><span style="color:#6a3e3e">body</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>The interface has only one method [getResponse]:</p>
@@ -1541,7 +1541,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">spring.webjson.client.infrastructure.DaoException;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Component</span></span>
+<span class="odt-code-line">@Component</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Client </span><span style="font-weight:bold;color:#7f0055">implements </span><span style="color:#000000">IClient {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// injections</span></span>
@@ -1557,13 +1557,13 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">&lt;T1, T2&gt; T1 getResponse(String </span><span style="color:#6a3e3e">url</span><span style="color:#000000">, HttpMethod </span><span style="color:#6a3e3e">method</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">errStatus</span><span style="color:#000000">, T2 </span><span style="color:#6a3e3e">body</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// list of error messages for an exception</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">List&lt;String&gt; getMessagesForException(Exception </span><span style="color:#6a3e3e">exception</span><span style="color:#000000">) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">    ...</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1590,20 +1590,20 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">method </span><span style="color:#000000">== HttpMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">request </span><span style="color:#000000">= RequestEntity.</span><span style="font-style:italic;color:#000000">get</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">URI(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s%s&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">urlServiceWebJson</span><span style="color:#000000">, </span><span style="color:#6a3e3e">url</span><span style="color:#000000">)))</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        .accept(MediaType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">APPLICATION_JSON</span><span style="color:#000000">).build();</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">method </span><span style="color:#000000">== HttpMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">request </span><span style="color:#000000">= RequestEntity.</span><span style="font-style:italic;color:#000000">post</span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">URI(String.</span><span style="font-style:italic;color:#000000">format</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;%s%s&quot;</span><span style="color:#000000">, </span><span style="color:#0000c0">urlServiceWebJson</span><span style="color:#000000">, </span><span style="color:#6a3e3e">url</span><span style="color:#000000">)))</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        .header(</span><span style="color:#2a00ff">&quot;Content-Type&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;application/json&quot;</span><span style="color:#000000">).accept(MediaType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">APPLICATION_JSON</span><span style="color:#000000">).body(</span><span style="color:#6a3e3e">body</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// execute the request</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">response </span><span style="color:#000000">= </span><span style="color:#0000c0">restTemplate</span><span style="color:#000000">.exchange(</span><span style="color:#6a3e3e">request</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ParameterizedTypeReference&lt;Response&lt;T1&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            });</span></span>
+<span class="odt-code-line">            });</span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// wrap the exception</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(</span><span style="color:#6a3e3e">errStatus</span><span style="color:#000000">, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1639,7 +1639,7 @@
 
 <p>The [<span style="color: #000000">getResponse</span>] method continues as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#3f7f5f">// generic request</span></span>
+<span class="odt-code-line">// generic request</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">&lt;T1, T2&gt; T1 getResponse(String </span><span style="color:#6a3e3e">url</span><span style="color:#000000">, HttpMethod </span><span style="color:#6a3e3e">method</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">errStatus</span><span style="color:#000000">, T2 </span><span style="color:#6a3e3e">body</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">...</span></span>
@@ -1653,8 +1653,8 @@
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// All good</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">entity</span><span style="color:#000000">.getBody();</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <ul>
@@ -1678,17 +1678,17 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response() {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response(</span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">status</span><span style="color:#000000">, String </span><span style="color:#6a3e3e">exception</span><span style="color:#000000">, T </span><span style="color:#6a3e3e">body</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">status </span><span style="color:#000000">= </span><span style="color:#6a3e3e">status</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">exception </span><span style="color:#000000">= </span><span style="color:#6a3e3e">exception</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.</span><span style="color:#0000c0">body </span><span style="color:#000000">= </span><span style="color:#6a3e3e">body</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>Let&#x27;s go back to the [getResponse] method:</p>
@@ -1765,7 +1765,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">deleteEntitiesByEntity(Iterable&lt;T&gt; </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">deleteEntitiesByEntity(</span><span style="color:#646464">@SuppressWarnings</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;unchecked&quot;</span><span style="color:#000000">) T... </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p>The [AbstractDao] class implements the [IDao] interface. It is analogous to the class of the same name on the server side (see Section<a href="#refheading1052102082896917"><u><span style="color: #0563c1"> 4.8</span></u></a>). It serves as the parent class for the [DaoCategorie] and [DaoProduit] classes. It is not identical for two reasons:</p>
@@ -1810,10 +1810,10 @@
 <span class="odt-code-line"><span style="color:#000000">        List&lt;T1&gt; </span><span style="color:#6a3e3e">entities </span><span style="color:#000000">= checkNullOrEmptyArgument(</span><span style="font-weight:bold;color:#7f0055">true</span><span style="color:#000000">,</span><span style="color:#6a3e3e"> ids</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">entities </span><span style="color:#000000">!= </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">getShortEntitiesById(Lists.</span><span style="font-style:italic;color:#000000">newArrayList</span><span style="color:#000000">(</span><span style="color:#6a3e3e">ids</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">List&lt;T1&gt; getShortEntitiesById(Long...</span><span style="color:#6a3e3e"> ids</span><span style="color:#000000">) {</span></span>
@@ -1824,12 +1824,12 @@
 <span class="odt-code-line"><span style="color:#000000">        }</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">getShortEntitiesById(Lists.</span><span style="font-style:italic;color:#000000">newArrayList</span><span style="color:#000000">(</span><span style="color:#6a3e3e">ids</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public void </span><span style="color:#000000">deleteEntitiesByEntity(</span><span style="color:#646464">@SuppressWarnings</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;unchecked&quot;</span><span style="color:#000000">) T1... </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">        ...</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// private methods ----------------------------------------------</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">&lt;T3&gt; List&lt;T1&gt; checkNullOrEmptyArgument(</span><span style="font-weight:bold;color:#7f0055">boolean </span><span style="color:#6a3e3e">checkEmpty</span><span style="color:#000000">, Iterable&lt;T3&gt; </span><span style="color:#6a3e3e">elements</span><span style="color:#000000">) {</span></span>
@@ -1837,25 +1837,25 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">elements </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">MyIllegalArgumentException(222, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">NullPointerException(</span><span style="color:#2a00ff">&quot;The argument cannot be null&quot;</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Are the elements empty?</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(!</span><span style="color:#6a3e3e">elements</span><span style="color:#000000">.iterator().hasNext()) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">checkEmpty</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">MyIllegalArgumentException(223, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">RuntimeException(</span><span style="color:#2a00ff">&quot;The argument cannot be an empty list&quot;</span><span style="color:#000000">), </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            } </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">ArrayList&lt;T1&gt;();</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// default result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return null</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@SuppressWarnings</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;unchecked&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">&lt;T3&gt; List&lt;T1&gt; checkNullOrEmptyArgument(</span><span style="font-weight:bold;color:#7f0055">boolean </span><span style="color:#6a3e3e">checkEmpty</span><span style="color:#000000">, T3... </span><span style="color:#6a3e3e">elements</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Are the elements null?</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">elements </span><span style="color:#000000">== </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">MyIllegalArgumentException(222, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">NullPointerException(</span><span style="color:#2a00ff">&quot;The argument cannot be null&quot;</span><span style="color:#000000">), </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Is elements empty?</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">elements</span><span style="color:#000000">.</span><span style="color:#0000c0">length </span><span style="color:#000000">== 0) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">checkEmpty</span><span style="color:#000000">) {</span></span>
@@ -1863,11 +1863,11 @@
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            } </span><span style="font-weight:bold;color:#7f0055">else </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">ArrayList&lt;T1&gt;();</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// default result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return null</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// protected methods ----------------------------------------------</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract protected </span><span style="color:#000000">List&lt;T1&gt; getShortEntitiesById(List&lt;Long&gt;</span><span style="color:#6a3e3e"> ids</span><span style="color:#000000">);</span></span>
@@ -1883,7 +1883,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract protected void </span><span style="color:#000000">deleteEntitiesById(List&lt;Long&gt;</span><span style="color:#6a3e3e"> ids</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">abstract protected void </span><span style="color:#000000">deleteEntitiesByName(List&lt;String&gt; </span><span style="color:#6a3e3e">names</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><a id="refheading1350661333600986"></a></p>
@@ -1910,7 +1910,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">com.fasterxml.jackson.core.type.TypeReference;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">com.fasterxml.jackson.databind.ObjectMapper;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Component</span></span>
+<span class="odt-code-line">@Component</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">DaoCategory </span><span style="font-weight:bold;color:#7f0055">extends </span><span style="color:#000000">AbstractDao&lt;Category&gt; {</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
@@ -1918,8 +1918,8 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">IClient </span><span style="color:#0000c0">client</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#646464">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1948,15 +1948,15 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// list of categories List&lt;Category&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            List&lt;Category&gt; </span><span style="color:#6a3e3e">categories </span><span style="color:#000000">= </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.writeValueAsString(</span><span style="color:#6a3e3e">map</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;Category&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    });</span></span>
+<span class="odt-code-line">                    });</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// Recreate the product-to-category link</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">linkCategoryWithProducts(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(DaoException </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(233, </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -1998,11 +1998,11 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">products </span><span style="color:#000000">!= </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">products</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategory(</span><span style="color:#6a3e3e">category</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">                }</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><a id="refheading1398131985289926"></a></p>
@@ -2019,7 +2019,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// list of categories List&lt;Category&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            List&lt;Category&gt; </span><span style="color:#6a3e3e">categories </span><span style="color:#000000">= </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.writeValueAsString(</span><span style="color:#6a3e3e">map</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;Category&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    });</span></span>
+<span class="odt-code-line">                    });</span>
 <span class="odt-code-line"></span>
 </code></pre></div>
 
@@ -2029,11 +2029,11 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#3f7f5f">// JSON filters</span></span>
+<span class="odt-code-line">// JSON filters</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">ObjectMapper jsonMapper(RestTemplate </span><span style="color:#6a3e3e">restTemplate</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">((MappingJackson2HttpMessageConverter) (</span><span style="color:#6a3e3e">restTemplate</span><span style="color:#000000">.getMessageConverters().get(0))).getObjectMapper();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Scope</span><span style="color:#000000">(value = ConfigurableBeanFactory.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">SCOPE_PROTOTYPE</span><span style="color:#000000">)</span></span>
@@ -2043,11 +2043,11 @@
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">()).addFilter(</span><span style="color:#2a00ff">&quot;jsonFilterProduct&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                SimpleBeanPropertyFilter.</span><span style="font-style:italic;color:#000000">serializeAllExcept</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;category&quot;</span><span style="color:#000000">)));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">jsonMapper</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">RestTemplate restTemplate(</span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">timeout</span><span style="color:#000000">) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    ...</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
 </code></pre></div>
 
@@ -2107,13 +2107,13 @@
 <span class="odt-code-line"><span style="color:#000000">            Object </span><span style="color:#6a3e3e">map </span><span style="color:#000000">= </span><span style="color:#0000c0">client</span><span style="color:#000000">.&lt;List&lt;Category&gt;, List&lt;Long&gt;&gt; getResponse(</span><span style="color:#2a00ff">&quot;/getShortCategoriesById&quot;</span><span style="color:#000000">, HttpMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, 204,</span><span style="color:#6a3e3e"> ids</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// the category</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.writeValueAsString(</span><span style="color:#6a3e3e">map</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;Category&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            });</span></span>
+<span class="odt-code-line">            });</span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(DaoException </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(223, </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2142,7 +2142,7 @@
 <h4 id="18524-the-saveentities-method">18.5.2.4. <span style="color: #4f81bd">The [saveEntities] method</span></h4>
 <p>The [saveEntities] method persists categories to the database. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#646464">@Override</span></span>
+<span class="odt-code-line">@Override</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">List&lt;Category&gt; saveEntities(List&lt;Category&gt; </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// JSON filters</span></span>
@@ -2153,7 +2153,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// the list of added core categories</span></span>
 <span class="odt-code-line"><span style="color:#000000">            List&lt;CoreCategory&gt; </span><span style="color:#6a3e3e">coreCategories </span><span style="color:#000000">= </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.writeValueAsString(</span><span style="color:#6a3e3e">map</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;CoreCategory&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    });</span></span>
+<span class="odt-code-line">                    });</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// update the categories with the received information</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(</span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#6a3e3e">i </span><span style="color:#000000">= 0; </span><span style="color:#6a3e3e">i </span><span style="color:#000000">&lt; </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">.size(); i++) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                Category </span><span style="color:#6a3e3e">category </span><span style="color:#000000">= </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">.get(</span><span style="color:#6a3e3e">i</span><span style="color:#000000">);</span></span>
@@ -2167,15 +2167,15 @@
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setId(</span><span style="color:#6a3e3e">coreProducts</span><span style="color:#000000">.get(</span><span style="color:#6a3e3e">j</span><span style="color:#000000">).getId());</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategoryId(</span><span style="color:#6a3e3e">category</span><span style="color:#000000">.getId());</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategory(</span><span style="color:#6a3e3e">category</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    }</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">                    }</span>
+<span class="odt-code-line">                }</span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(DaoException </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw </span><span style="color:#6a3e3e">e1</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(220, </span><span style="color:#6a3e3e">e2</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">    }</span></span>
 </code></pre></div>
 
@@ -2321,12 +2321,12 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Configuration;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">org.springframework.context.annotation.Import;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">@Configuration</span></span>
+<span class="odt-code-line">@Configuration</span>
 <span class="odt-code-line"><span style="color:#646464">@ComponentScan</span><span style="color:#000000">(basePackages = { </span><span style="color:#2a00ff">&quot;spring.webjson.server.service&quot; </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#646464">@Import</span><span style="color:#000000">({ </span><span style="background-color:#ff950e;color:#000000">spring.data.config.AppConfig.</span><span style="font-weight:bold;background-color:#ff950e;color:#7f0055">class</span><span style="color:#000000">, WebConfig.</span><span style="font-weight:bold;color:#7f0055">class </span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">AppConfig {</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2374,17 +2374,17 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/saveCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;List&lt;CoreCategory&gt;&gt; saveCategories(HttpServletRequest </span><span style="color:#6a3e3e">request</span><span style="color:#000000">) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// retrieve the posted value</span></span>
 <span class="odt-code-line"><span style="color:#000000">            String </span><span style="color:#6a3e3e">body </span><span style="color:#000000">= CharStreams.</span><span style="font-style:italic;color:#000000">toString</span><span style="color:#000000">(</span><span style="color:#6a3e3e">request</span><span style="color:#000000">.getReader());</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// deserialize it</span></span>
 <span class="odt-code-line"><span style="color:#000000">            ObjectMapper </span><span style="color:#6a3e3e">mapper </span><span style="color:#000000">= </span><span style="color:#0000c0">context</span><span style="color:#000000">.getBean(</span><span style="color:#2a00ff">&quot;jsonMapperLongCategorie&quot;</span><span style="color:#000000">, ObjectMapper.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            List&lt;Category&gt; </span><span style="color:#6a3e3e">categories </span><span style="color:#000000">= </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">body</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;Category&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            });</span></span>
+<span class="odt-code-line">            });</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// persist the categories</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">categories </span><span style="color:#000000">= </span><span style="color:#0000c0">daoCategory</span><span style="color:#000000">.saveEntities(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">            ...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">            ...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2410,7 +2410,7 @@
 
 <p>Let’s examine the code for the [DaoCategorie.saveEntities] method in the [DAO / JPA] layer:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#646464">@Override</span></span>
+<span class="odt-code-line">@Override</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">List&lt;Category&gt; saveEntities(List&lt;Category&gt; </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// we note the products that will be inserted</span></span>
 <span class="odt-code-line"><span style="color:#000000">        List&lt;Product&gt; </span><span style="color:#6a3e3e">insertedProducts </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ArrayList&lt;Product&gt;();</span></span>
@@ -2421,25 +2421,25 @@
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">products</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getId() == </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#6a3e3e">insertedProducts</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    }</span></span>
+<span class="odt-code-line">                    }</span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#3f7f5f">// We take this opportunity to re-establish (if necessary) the product --&gt; category relationship</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategory(</span><span style="color:#6a3e3e">category</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">                }</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Save the categories and products</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000c0">categoriesRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(201, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Update the [idCategorie] field for the inserted products</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">insertedProducts</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategoryId(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getCategory().getId());</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <ul>
@@ -2451,23 +2451,23 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/saveProducts&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Response&lt;List&lt;CoreProduct&gt;&gt; saveProducts(HttpServletRequest </span><span style="color:#6a3e3e">request</span><span style="color:#000000">) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ...</span></span>
+<span class="odt-code-line">    ...</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// retrieve the posted value</span></span>
 <span class="odt-code-line"><span style="color:#000000">            String </span><span style="color:#6a3e3e">body </span><span style="color:#000000">= CharStreams.</span><span style="font-style:italic;color:#000000">toString</span><span style="color:#000000">(</span><span style="color:#6a3e3e">request</span><span style="color:#000000">.getReader());</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// deserialize it</span></span>
 <span class="odt-code-line"><span style="color:#000000">            ObjectMapper </span><span style="color:#6a3e3e">mapper </span><span style="color:#000000">= </span><span style="color:#0000c0">context</span><span style="color:#000000">.getBean(</span><span style="color:#2a00ff">&quot;jsonMapperShortProduct&quot;</span><span style="color:#000000">, ObjectMapper.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            List&lt;Product&gt; </span><span style="color:#6a3e3e">products </span><span style="color:#000000">= </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">body</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;Product&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            });</span></span>
+<span class="odt-code-line">            });</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// persist the products</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">products </span><span style="color:#000000">= </span><span style="color:#0000c0">productDao</span><span style="color:#000000">.saveEntities(</span><span style="color:#6a3e3e">products</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            List&lt;CoreProduct&gt; </span><span style="color:#6a3e3e">coreProducts </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ArrayList&lt;CoreProduct&gt;();</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">products</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">coreProducts</span><span style="color:#000000">.add(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">CoreProduct(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getId()));</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// return the response</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return new </span><span style="color:#000000">Response&lt;List&lt;CoreProduct&gt;&gt;(0, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="color:#6a3e3e">coreProducts</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <ul>
@@ -2491,15 +2491,15 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getEntityType() == EntityType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POJO</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategory(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Category(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getCategoryId(), 0L, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// persist the products</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">Lists.</span><span style="font-style:italic;color:#000000">newArrayList</span><span style="color:#000000">(</span><span style="color:#0000c0">productsRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">entities</span><span style="color:#000000">));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(111, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2515,16 +2515,16 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">List&lt;Category&gt; getAllShortEntities() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// JSON filters</span></span>
 <span class="odt-code-line"><span style="color:#000000">            ObjectMapper </span><span style="color:#6a3e3e">mapper </span><span style="color:#000000">= </span><span style="color:#0000c0">context</span><span style="color:#000000">.getBean(</span><span style="color:#2a00ff">&quot;jsonMapperShortCategorie&quot;</span><span style="color:#000000">, ObjectMapper.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// get all categories</span></span>
 <span class="odt-code-line"><span style="color:#000000">            Object </span><span style="color:#6a3e3e">map </span><span style="color:#000000">= </span><span style="color:#0000c0">client</span><span style="color:#000000">.&lt;List&lt;Category&gt;, Void&gt; getResponse(</span><span style="color:#2a00ff">&quot;/getAllShortCategories&quot;</span><span style="color:#000000">, HttpMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">, 202, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#3f7f5f">// the list of categories List&lt;Category&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.readValue(</span><span style="color:#6a3e3e">mapper</span><span style="color:#000000">.writeValueAsString(</span><span style="color:#6a3e3e">map</span><span style="color:#000000">), </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">TypeReference&lt;List&lt;Category&gt;&gt;() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            });</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">            });</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -2599,7 +2599,7 @@
 <p>I chose to do it in the [DAO / JPA] layer. There is, of course, a performance loss, but it is completely negligible compared to the DBMS response times. The changes are as follows:</p>
 <p>In the [DaoCategorie] class of the [spring-jpa-generic] project:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span style="color:#646464">@Override</span></span>
+<span class="odt-code-line">@Override</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">List&lt;Category&gt; saveEntities(List&lt;Category&gt; </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// ***************************************************************************************</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// clone the list of categories -- sometimes necessary for OpenJpa -- not including bugs</span></span>
@@ -2620,10 +2620,10 @@
 <span class="odt-code-line"><span style="color:#000000">                            </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getCategoryId(), </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getPrice(), </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getDescription(), </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getCategory());</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">product2</span><span style="color:#000000">.setEntityType(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getEntityType());</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">products2</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">product2</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
+<span class="odt-code-line">                }</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">category2</span><span style="color:#000000">.setProducts(</span><span style="color:#6a3e3e">products2</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Note the products to be inserted</span></span>
 <span class="odt-code-line"><span style="color:#000000">        List&lt;Product&gt; </span><span style="color:#6a3e3e">insertedProducts </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ArrayList&lt;Product&gt;();</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Category </span><span style="color:#6a3e3e">category </span><span style="color:#000000">: </span><span style="color:#6a3e3e">categories2</span><span style="color:#000000">) {</span></span>
@@ -2633,25 +2633,25 @@
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">products</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getId() == </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span><span style="color:#6a3e3e">insertedProducts</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    }</span></span>
+<span class="odt-code-line">                    }</span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#3f7f5f">// We take this opportunity to re-establish (if necessary) the product --&gt; category relationship</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategory(</span><span style="color:#6a3e3e">category</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">                }</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">                }</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Save the categories and products</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000c0">categoriesRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">categories2</span><span style="color:#000000">);</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(201, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Update the [idCategorie] field for the inserted products</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">insertedProducts</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategoryId(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getCategory().getId());</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// result</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#6a3e3e">categories2</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <ul>
@@ -2660,16 +2660,16 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">List&lt;Category&gt; categories=...</span></span>
+<span class="odt-code-line">List&lt;Category&gt; categories=...</span>
 <span class="odt-code-line"><span style="color:#000000">daoCategorie.saveEntities(categories)</span></span>
-<span class="odt-code-line"><span style="color:#000000">// use [categories]</span></span>
+<span class="odt-code-line">// use [categories]</span>
 </code></pre></div>
 
 <p>We must now write:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-csharp">
-<span class="odt-code-line"><span style="color:#000000">List&lt;Category&gt; categories = ...</span></span>
+<span class="odt-code-line">List&lt;Category&gt; categories = ...</span>
 <span class="odt-code-line"><span style="color:#000000">categories</span><span style="font-weight:bold"> = </span><span style="color:#000000">daoCategory.saveEntities(categories)</span></span>
-<span class="odt-code-line"><span style="color:#000000">// using [categories]</span></span>
+<span class="odt-code-line">// using [categories]</span>
 </code></pre></div>
 
 <p>In the [DaoProduct] class of the [spring-jpa-generic] project, the [saveEntities] method is modified similarly:</p>
@@ -2685,21 +2685,21 @@
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getPrice(), </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getDescription(), </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getCategory());</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">product2</span><span style="color:#000000">.setEntityType(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getEntityType());</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6a3e3e">products2</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">product2</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// Restore (if necessary) the link between a product and its category</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for </span><span style="color:#000000">(Product </span><span style="color:#6a3e3e">product </span><span style="color:#000000">: </span><span style="color:#6a3e3e">products2</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if </span><span style="color:#000000">(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getEntityType() == EntityType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POJO</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#6a3e3e">product</span><span style="color:#000000">.setCategory(</span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Category(</span><span style="color:#6a3e3e">product</span><span style="color:#000000">.getCategoryId(), 0L, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">));</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// persist the products</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try </span><span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">Lists.</span><span style="font-style:italic;color:#000000">newArrayList</span><span style="color:#000000">(</span><span style="color:#0000c0">productRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">products2</span><span style="color:#000000">));</span></span>
 <span class="odt-code-line"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch </span><span style="color:#000000">(Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw new </span><span style="color:#000000">DaoException(111, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <p><a id="refheading1398231985289926"></a></p>
