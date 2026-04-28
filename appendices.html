@@ -1118,16 +1118,16 @@
 <h2 id="231-installing-a-jdk">23.1. <span style="color: #4f81bd">Installing a JDK</span></h2>
 <p><a id="refheading256713779844303"></a>The latest JDK can be found at the URL [<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"><u><span style="color: #0563c1">http://www.oracle.com/technetwork/java/javase/downloads/index.html</span></u></a>] (October 2014). We will refer to the JDK installation directory as &lt;jdk-install&gt; hereafter.</p>
 <p><a id="refheading472751712028290"></a></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000229000001BDF10714D0.png" style="display:inline-block; margin:4px;width:10.239cm;height:8.239cm;" class="odt-zoomable" data-zoom-src="images/1000000000000229000001BDF10714D0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000229000001BDF10714D0.png" width="387" height="311" style="display:inline-block; margin:4px;width:10.239cm;height:8.239cm;" class="odt-zoomable" data-zoom-src="images/1000000000000229000001BDF10714D0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading261309838046689"></a></p>
 <h2 id="232-installing-maven">23.2. <span style="color: #4f81bd">Installing Maven</span></h2>
 <p><a id="refheading256715779844303"></a>Maven is a tool for managing dependencies in a Java project and more. It is available (October 2014) at the URL [<a href="http://maven.apache.org/download.cgi"><u><span style="color: #0563c1">http://maven.apache.org/download.cgi</span></u></a>].</p>
 <p><a id="refheading463261712028290"></a></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000269000000BB1072BA49.png" style="display:inline-block; margin:4px;width:11.419cm;height:3.461cm;" class="odt-zoomable" data-zoom-src="images/1000000000000269000000BB1072BA49.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000269000000BB1072BA49.png" width="432" height="131" style="display:inline-block; margin:4px;width:11.419cm;height:3.461cm;" class="odt-zoomable" data-zoom-src="images/1000000000000269000000BB1072BA49.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>Download and unzip the archive. We will refer to the Maven installation directory as &lt;maven-install&gt;.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001680000010CFC709FA5.png" style="display:inline-block; margin:4px;width:4.763cm;height:3.545cm;" class="odt-zoomable" data-zoom-src="images/10000000000001680000010CFC709FA5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001680000010CFC709FA5.png" width="180" height="134" style="display:inline-block; margin:4px;width:4.763cm;height:3.545cm;" class="odt-zoomable" data-zoom-src="images/10000000000001680000010CFC709FA5.png" /></td></tr></table>
 
 <ul>
   <li>In [1], the [conf/settings.xml] file configures Maven;
@@ -1136,23 +1136,23 @@
 
 <p>It contains the following lines:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f5fbf">&lt;!-- localRepository</span></span>
-<span class="odt-code-line">   | The path to the local repository that Maven will use to store artifacts.</span>
-<span class="odt-code-line">   |</span>
-<span class="odt-code-line">   | Default: ${user.home}/.m2/repository</span>
-<span class="odt-code-line">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span>
-<span class="odt-code-line">--&gt;</span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- localRepository</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   | The path to the local repository maven will use to store artifacts.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   |</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   | Default: ${user.home}/.m2/repository</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">--&gt;</span></span>
 </code></pre></div>
 
 <p>The default value on line 4 may cause issues for some software using Maven if, like me, your {user.home} path contains a space (for example, [C:\Users\Serge Tahé]). We will specify (line 7) a different folder for the local Maven repository:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f5fbf">&lt;!-- localRepository</span></span>
-<span class="odt-code-line">   | The path to the local repository Maven will use to store artifacts.</span>
-<span class="odt-code-line">   |</span>
-<span class="odt-code-line">   | Default: ${user.home}/.m2/repository</span>
-<span class="odt-code-line">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span>
-<span class="odt-code-line">  --&gt;</span>
-<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">localRepository</span><span style="color:#008080">&gt;</span><span style="background-color:#ff950e;color:#000000">D:\Programs\devjava\maven\.m2\repository</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/localRepository</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">&lt;!-- localRepository</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   | The path to the local repository maven will use to store artifacts.</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   |</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   | Default: ${user.home}/.m2/repository</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">localRepository</span><span style="color:#008080">&gt;</span><span style="background-color:#ff950e;color:#000000">D:\Programs\devjava\maven\.m2\repository</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">localRepository</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
 <p>On line 7, avoid using a path that contains spaces.</p>
@@ -1160,16 +1160,16 @@
 <h2 id="233-installing-sts-spring-tool-suite">23.3. <span style="color: #4f81bd">Installing STS (Spring Tool Suite)</span></h2>
 <p><a id="refheading179816779844303"></a>We will install <strong>SpringSource Tool Suite</strong> [<a href="http://www.springsource.com/developer/sts"><u><span style="color: #0563c1">http://www.springsource.com/developer/sts</span></u></a>] (October 2014), an Eclipse environment pre-configured with numerous plugins related to the Spring framework and also with a pre-installed Maven configuration.</p>
 <p><a id="refheading1633372067866943"></a></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049E00000236D5D5D439.png" style="display:inline-block; margin:4px;width:15.637cm;height:7.488cm;" class="odt-zoomable" data-zoom-src="images/100000000000049E00000236D5D5D439.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049E00000236D5D5D439.png" width="591" height="283" style="display:inline-block; margin:4px;width:15.637cm;height:7.488cm;" class="odt-zoomable" data-zoom-src="images/100000000000049E00000236D5D5D439.png" /></td></tr></table>
 
 <ul>
   <li>Go to the  <b>SpringSource Tool Suite </b>(STS) website  [1] to download the current version of STS [2A] [2B].
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D800000114495334AB.png" style="display:inline-block; margin:4px;width:16.404cm;height:3.651cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D800000114495334AB.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D800000114495334AB.png" width="620" height="138" style="display:inline-block; margin:4px;width:16.404cm;height:3.651cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D800000114495334AB.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050B0000024BA225979B.png" style="display:inline-block; margin:4px;width:17.08cm;height:7.766cm;" class="odt-zoomable" data-zoom-src="images/100000000000050B0000024BA225979B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050B0000024BA225979B.png" width="646" height="294" style="display:inline-block; margin:4px;width:17.08cm;height:7.766cm;" class="odt-zoomable" data-zoom-src="images/100000000000050B0000024BA225979B.png" /></td></tr></table>
 
 <ul>
   <li>The downloaded file is an installer that creates the file directory structure [3A] [3B]. In [4], we launch the executable,
@@ -1178,7 +1178,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020B000000A6208A7B57.png" style="display:inline-block; margin:4px;width:6.92cm;height:2.196cm;" class="odt-zoomable" data-zoom-src="images/100000000000020B000000A6208A7B57.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020B000000A6208A7B57.png" width="262" height="83" style="display:inline-block; margin:4px;width:6.92cm;height:2.196cm;" class="odt-zoomable" data-zoom-src="images/100000000000020B000000A6208A7B57.png" /></td></tr></table>
 
 <ul>
   <li>in [7], the servers window. A server is registered. It is a Tomcat-compatible VMware server.
@@ -1186,7 +1186,7 @@
 </ul>
 
 <p>You must specify the Maven installation directory to STS:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055600000268EE6ECED9.png" style="display:inline-block; margin:4px;width:17.999cm;height:8.117cm;" class="odt-zoomable" data-zoom-src="images/100000000000055600000268EE6ECED9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000055600000268EE6ECED9.png" width="680" height="307" style="display:inline-block; margin:4px;width:17.999cm;height:8.117cm;" class="odt-zoomable" data-zoom-src="images/100000000000055600000268EE6ECED9.png" /></td></tr></table>
 
 <ul>
   <li>in [1-2], configure STS;
@@ -1195,7 +1195,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000517000002213BA4C3BB.png" style="display:inline-block; margin:4px;width:17.238cm;height:7.211cm;" class="odt-zoomable" data-zoom-src="images/1000000000000517000002213BA4C3BB.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000517000002213BA4C3BB.png" width="652" height="273" style="display:inline-block; margin:4px;width:17.238cm;height:7.211cm;" class="odt-zoomable" data-zoom-src="images/1000000000000517000002213BA4C3BB.png" /></td></tr></table>
 
 <ul>
   <li>in [5], specify the Maven installation directory;
@@ -1206,7 +1206,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003590000030FF11C7275.png" style="display:inline-block; margin:4px;width:11.338cm;height:10.359cm;" class="odt-zoomable" data-zoom-src="images/10000000000003590000030FF11C7275.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003590000030FF11C7275.png" width="429" height="392" style="display:inline-block; margin:4px;width:11.338cm;height:10.359cm;" class="odt-zoomable" data-zoom-src="images/10000000000003590000030FF11C7275.png" /></td></tr></table>
 
 <ul>
   <li>In [8-9], verify the local Maven repository—the folder where it will store the dependencies it downloads and where STS will place the artifacts that are built;
@@ -1214,11 +1214,11 @@
 </ul>
 
 <p>You must also select a JDK (Java Development Kit) to run both Eclipse projects with and without Maven [1-5].</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000571000002A2A07A7AAA.png" style="display:inline-block; margin:4px;width:17.999cm;height:8.708cm;" class="odt-zoomable" data-zoom-src="images/1000000000000571000002A2A07A7AAA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000571000002A2A07A7AAA.png" width="680" height="329" style="display:inline-block; margin:4px;width:17.999cm;height:8.708cm;" class="odt-zoomable" data-zoom-src="images/1000000000000571000002A2A07A7AAA.png" /></td></tr></table>
 
 <p>With [4], you can add JDKs (Java Development Kits) or JREs (Java Runtime Environments). The latter can run .class files but cannot compile .java files to produce them. The JDK can do both. You should choose a JDK because certain Maven operations require one.</p>
 <p>To create an Eclipse project, proceed as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000530000001C5E067C733.png" style="display:inline-block; margin:4px;width:17.568cm;height:5.994cm;" class="odt-zoomable" data-zoom-src="images/1000000000000530000001C5E067C733.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000530000001C5E067C733.png" width="664" height="227" style="display:inline-block; margin:4px;width:17.568cm;height:5.994cm;" class="odt-zoomable" data-zoom-src="images/1000000000000530000001C5E067C733.png" /></td></tr></table>
 
 <ul>
   <li>In [3], give the project a name;
@@ -1227,7 +1227,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004570000018094B202FF.png" style="display:inline-block; margin:4px;width:14.698cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/10000000000004570000018094B202FF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004570000018094B202FF.png" width="556" height="192" style="display:inline-block; margin:4px;width:14.698cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/10000000000004570000018094B202FF.png" /></td></tr></table>
 
 <ul>
   <li>in [5], the project is created;
@@ -1236,7 +1236,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002F00000012F588A3A4F.png" style="display:inline-block; margin:4px;width:9.948cm;height:4.008cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F00000012F588A3A4F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002F00000012F588A3A4F.png" width="376" height="151" style="display:inline-block; margin:4px;width:9.948cm;height:4.008cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F00000012F588A3A4F.png" /></td></tr></table>
 
 <ul>
   <li>in [9], give the package a name;
@@ -1245,14 +1245,14 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F8000001EAAB032040.png" style="display:inline-block; margin:4px;width:13.441cm;height:6.482cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F8000001EAAB032040.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F8000001EAAB032040.png" width="508" height="245" style="display:inline-block; margin:4px;width:13.441cm;height:6.482cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F8000001EAAB032040.png" /></td></tr></table>
 
 <ul>
   <li>in [11-13], create a class within the package that was created;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000462000002DCEE33D53F.png" style="display:inline-block; margin:4px;width:14.843cm;height:9.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000462000002DCEE33D53F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000462000002DCEE33D53F.png" width="561" height="366" style="display:inline-block; margin:4px;width:14.843cm;height:9.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000462000002DCEE33D53F.png" /></td></tr></table>
 
 <ul>
   <li>in [14], name the class (must follow the CamelCase convention—each word in the name must start with a capital letter followed by lowercase letters);
@@ -1266,26 +1266,26 @@
 </ul>
 
 <p>Type the following code into the [main] method, which displays text on the console:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">st.istia;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Test01 {</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;test01&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">}</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> st.istia;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> Test01 {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;test01&quot;</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C80000039C9BC5C590.png" style="display:inline-block; margin:4px;width:12.806cm;height:12.224cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C80000039C9BC5C590.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C80000039C9BC5C590.png" width="484" height="462" style="display:inline-block; margin:4px;width:12.806cm;height:12.224cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C80000039C9BC5C590.png" /></td></tr></table>
 
 <ul>
   <li>In [18-20], run the class. Its [main] method will then be executed;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000386000000E130A864F5.png" style="display:inline-block; margin:4px;width:11.933cm;height:2.977cm;" class="odt-zoomable" data-zoom-src="images/1000000000000386000000E130A864F5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000386000000E130A864F5.png" width="451" height="113" style="display:inline-block; margin:4px;width:11.933cm;height:2.977cm;" class="odt-zoomable" data-zoom-src="images/1000000000000386000000E130A864F5.png" /></td></tr></table>
 
 <ul>
   <li>in [21-22], the result of the application;
@@ -1293,17 +1293,17 @@
 </ul>
 
 <p>If the [Console] view is not present, proceed as follows [1-4]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048C00000351B19DCB3F.png" style="display:inline-block; margin:4px;width:15.399cm;height:11.232cm;" class="odt-zoomable" data-zoom-src="images/100000000000048C00000351B19DCB3F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048C00000351B19DCB3F.png" width="582" height="425" style="display:inline-block; margin:4px;width:15.399cm;height:11.232cm;" class="odt-zoomable" data-zoom-src="images/100000000000048C00000351B19DCB3F.png" /></td></tr></table>
 
 <p>When importing an Eclipse project, it may contain errors. This may be due to an incorrect project configuration. To correct the error (if there is one), proceed as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000385000002B5E49289E9.png" style="display:inline-block; margin:4px;width:11.92cm;height:9.169cm;" class="odt-zoomable" data-zoom-src="images/1000000000000385000002B5E49289E9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000385000002B5E49289E9.png" width="451" height="347" style="display:inline-block; margin:4px;width:11.92cm;height:9.169cm;" class="odt-zoomable" data-zoom-src="images/1000000000000385000002B5E49289E9.png" /></td></tr></table>
 
 <ul>
   <li>In [1], modify the project&#x27;s [Build Path];
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000532000001D533D56277.png" style="display:inline-block; margin:4px;width:17.595cm;height:6.205cm;" class="odt-zoomable" data-zoom-src="images/1000000000000532000001D533D56277.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000532000001D533D56277.png" width="665" height="235" style="display:inline-block; margin:4px;width:17.595cm;height:6.205cm;" class="odt-zoomable" data-zoom-src="images/1000000000000532000001D533D56277.png" /></td></tr></table>
 
 <ul>
   <li>In [2], the project is configured to use a JVM 1.5;
@@ -1314,7 +1314,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B20000026BAB87A0A4.png" style="display:inline-block; margin:4px;width:15.901cm;height:8.19cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B20000026BAB87A0A4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B20000026BAB87A0A4.png" width="601" height="310" style="display:inline-block; margin:4px;width:15.901cm;height:8.19cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B20000026BAB87A0A4.png" /></td></tr></table>
 
 <ul>
   <li>in [5], add a JVM;
@@ -1324,7 +1324,7 @@
 </ul>
 
 <p>Once this is done, validate everything and then go to the [Java compiler] property of the project [7]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052F000002DFD7DBA326.png" style="display:inline-block; margin:4px;width:17.556cm;height:9.724cm;" class="odt-zoomable" data-zoom-src="images/100000000000052F000002DFD7DBA326.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052F000002DFD7DBA326.png" width="664" height="368" style="display:inline-block; margin:4px;width:17.556cm;height:9.724cm;" class="odt-zoomable" data-zoom-src="images/100000000000052F000002DFD7DBA326.png" /></td></tr></table>
 
 <ul>
   <li>in [8], instruct the compiler to accept all Java language features up to and including version 1.7 (or 1.8);
@@ -1336,41 +1336,41 @@
 </ul>
 
 <p>Additionally, the imported project may use UTF-8 character encoding. Follow these steps to set this encoding in the imported project [1-4]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D800000498E321E216.png" style="display:inline-block; margin:4px;width:16.404cm;height:15.558cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D800000498E321E216.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D800000498E321E216.png" width="620" height="588" style="display:inline-block; margin:4px;width:16.404cm;height:15.558cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D800000498E321E216.png" /></td></tr></table>
 
 <p>Additionally, it may be useful to disable spell checking in the project to prevent French comments from being underlined as incorrect. Follow steps [1-4] below:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005470000026E16CCC6A9.png" style="display:inline-block; margin:4px;width:17.873cm;height:8.229cm;" class="odt-zoomable" data-zoom-src="images/10000000000005470000026E16CCC6A9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005470000026E16CCC6A9.png" width="676" height="311" style="display:inline-block; margin:4px;width:17.873cm;height:8.229cm;" class="odt-zoomable" data-zoom-src="images/10000000000005470000026E16CCC6A9.png" /></td></tr></table>
 
 <p><a id="refheading261315838046689"></a></p>
 <h2 id="234-installing-the-mysql5-community-edition-dbms">23.4. <span style="color: #4f81bd">Installing the MySQL5 Community Edition DBMS</span></h2>
 <p>The MySQL5 Community Edition DBMS can be found (as of June 2015) at the URL [<a href="https://dev.mysql.com/downloads/mysql/"><u><span style="color: #0563c1">https://dev.mysql.com/downloads/mysql/</span></u></a>]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B10000012DA86A5F43.png" style="display:inline-block; margin:4px;width:9.11cm;height:3.979cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B10000012DA86A5F43.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B10000012DA86A5F43.png" width="344" height="150" style="display:inline-block; margin:4px;width:9.11cm;height:3.979cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B10000012DA86A5F43.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The installation proceeds as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BD000001C5B3D20E27.png" style="display:inline-block; margin:4px;width:12.661cm;height:5.994cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BD000001C5B3D20E27.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BD000001C5B3D20E27.png" width="479" height="227" style="display:inline-block; margin:4px;width:12.661cm;height:5.994cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BD000001C5B3D20E27.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000444000003457DEE245D.png" style="display:inline-block; margin:4px;width:14.446cm;height:11.074cm;" class="odt-zoomable" data-zoom-src="images/1000000000000444000003457DEE245D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000444000003457DEE245D.png" width="546" height="419" style="display:inline-block; margin:4px;width:14.446cm;height:11.074cm;" class="odt-zoomable" data-zoom-src="images/1000000000000444000003457DEE245D.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047800000303068F0E02.png" style="display:inline-block; margin:4px;width:15.134cm;height:10.201cm;" class="odt-zoomable" data-zoom-src="images/100000000000047800000303068F0E02.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000047800000303068F0E02.png" width="572" height="386" style="display:inline-block; margin:4px;width:15.134cm;height:10.201cm;" class="odt-zoomable" data-zoom-src="images/100000000000047800000303068F0E02.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054300000322B27F4058.png" style="display:inline-block; margin:4px;width:17.821cm;height:10.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000054300000322B27F4058.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054300000322B27F4058.png" width="674" height="401" style="display:inline-block; margin:4px;width:17.821cm;height:10.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000054300000322B27F4058.png" /></td></tr></table>
 
 <ul>
   <li>In [8], the password [root] was used. In this document, the MySQL DBMS administrator credentials are [root / root];
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048500000316DAB02274.png" style="display:inline-block; margin:4px;width:15.307cm;height:10.453cm;" class="odt-zoomable" data-zoom-src="images/100000000000048500000316DAB02274.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048500000316DAB02274.png" width="579" height="395" style="display:inline-block; margin:4px;width:15.307cm;height:10.453cm;" class="odt-zoomable" data-zoom-src="images/100000000000048500000316DAB02274.png" /></td></tr></table>
 
 <p>Once MySQL 5 is installed, open the Windows Services management page:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051A000001B23244C5BF.png" style="display:inline-block; margin:4px;width:17.277cm;height:5.741cm;" class="odt-zoomable" data-zoom-src="images/100000000000051A000001B23244C5BF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051A000001B23244C5BF.png" width="653" height="217" style="display:inline-block; margin:4px;width:17.277cm;height:5.741cm;" class="odt-zoomable" data-zoom-src="images/100000000000051A000001B23244C5BF.png" /></td></tr></table>
 
 <ul>
   <li>[1]: Windows icon in the lower-left corner;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DB0000014F767A78E2.png" style="display:inline-block; margin:4px;width:6.285cm;height:4.433cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DB0000014F767A78E2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DB0000014F767A78E2.png" width="238" height="168" style="display:inline-block; margin:4px;width:6.285cm;height:4.433cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DB0000014F767A78E2.png" /></td></tr></table>
 
 <ul>
   <li>In [8], set the [MySQL56] service to manual startup so that it does not consume resources unnecessarily. You will launch it from the Services page whenever you need it;
@@ -1379,12 +1379,12 @@
 <p><a id="refheading80991783410321"></a></p>
 <h2 id="235-installing-ems-mymanager">23.5. <span style="color: #4f81bd">Installing EMS MyManager</span></h2>
 <p>The website [<a href="http://www.sqlmanager.net/en/"><u><span style="color: #0563c1">http://www.sqlmanager.net/en/</span></u></a>] offers free clients to manage six types of DBMS:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000223000000AD3CE7D591.png" style="display:inline-block; margin:4px;width:10.13cm;height:3.203cm;" class="odt-zoomable" data-zoom-src="images/1000000000000223000000AD3CE7D591.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000223000000AD3CE7D591.png" width="383" height="121" style="display:inline-block; margin:4px;width:10.13cm;height:3.203cm;" class="odt-zoomable" data-zoom-src="images/1000000000000223000000AD3CE7D591.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The advantage is that they all feature the same interface for managing DBMSs. This is ideal for this document, where we want to manage all six DBMSs. There is no need to learn a new client when switching between DBMSs. They can all be found at the URL [http://www.sqlmanager.net/download/]. Download the free </span><em>“lite”</em><span style="color: #000000"> versions:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000227000000DEA0EF0C8D.png" style="display:inline-block; margin:4px;width:8.641cm;height:3.48cm;" class="odt-zoomable" data-zoom-src="images/1000000000000227000000DEA0EF0C8D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000227000000DEA0EF0C8D.png" width="327" height="132" style="display:inline-block; margin:4px;width:8.641cm;height:3.48cm;" class="odt-zoomable" data-zoom-src="images/1000000000000227000000DEA0EF0C8D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002EB000000E69F4E2B15.png" style="display:inline-block; margin:4px;width:13.831cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000002EB000000E69F4E2B15.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002EB000000E69F4E2B15.png" width="523" height="161" style="display:inline-block; margin:4px;width:13.831cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000002EB000000E69F4E2B15.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The download URLs are currently (May 2015) as follows:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
@@ -1408,7 +1408,7 @@
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a href="http://www.sqlmanager.net/fr/products/postgresql/manager/download"><u><span style="color: #0563c1">http://www.sqlmanager.net/fr/products/postgresql/manager/download</span></u></a></div></td></tr></table>
 
 <p><span style="color: #000000">When installing, for example, the MySQL5 MyManager client, you get the following directory structure:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B0000021D848355D9.png" style="display:inline-block; margin:4px;width:17.503cm;height:7.158cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B0000021D848355D9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052B0000021D848355D9.png" width="662" height="271" style="display:inline-block; margin:4px;width:17.503cm;height:7.158cm;" class="odt-zoomable" data-zoom-src="images/100000000000052B0000021D848355D9.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">the executable is in [2];</span>
@@ -1419,29 +1419,29 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E100000228AF9F81F1.png" style="display:inline-block; margin:4px;width:16.524cm;height:7.303cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E100000228AF9F81F1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E100000228AF9F81F1.png" width="625" height="276" style="display:inline-block; margin:4px;width:16.524cm;height:7.303cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E100000228AF9F81F1.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017B000001D1C4150C62.png" style="display:inline-block; margin:4px;width:5.015cm;height:6.152cm;" class="odt-zoomable" data-zoom-src="images/100000000000017B000001D1C4150C62.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017B000001D1C4150C62.png" width="190" height="233" style="display:inline-block; margin:4px;width:5.015cm;height:6.152cm;" class="odt-zoomable" data-zoom-src="images/100000000000017B000001D1C4150C62.png" /></td></tr></table>
 
 <p><a id="refheading39807804107930"></a></p>
 <h2 id="236-installation-of-the-oracle-database-express-edition-11g-release-2">23.6. <span style="color: #4f81bd">Installation of the Oracle Database Express Edition 11g Release 2</span></h2>
 <p><span style="color: #000000">The Oracle Database Express Edition</span> <em>11g</em> <span style="color: #000000">Release 2 DBMS is available at the following URL (June 2015): [</span><a href="http://www.oracle.com/technetwork/database/database-techno%20logies/express-edition/downloads/index.html"><u><span style="color: #0563c1">http://www.oracle.com/technetwork/database/database-techno logies/express-edition/downloads/index.html</span></u></a><span style="color: #000000">]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CD000001121B242F21.png" style="display:inline-block; margin:4px;width:8.541cm;height:5.076cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD000001121B242F21.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CD000001121B242F21.png" width="323" height="192" style="display:inline-block; margin:4px;width:8.541cm;height:5.076cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD000001121B242F21.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The installation proceeds as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000541000002148D435220.png" style="display:inline-block; margin:4px;width:17.794cm;height:7.038cm;" class="odt-zoomable" data-zoom-src="images/1000000000000541000002148D435220.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000541000002148D435220.png" width="673" height="266" style="display:inline-block; margin:4px;width:17.794cm;height:7.038cm;" class="odt-zoomable" data-zoom-src="images/1000000000000541000002148D435220.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050D000001C2383FBA12.png" style="display:inline-block; margin:4px;width:17.106cm;height:5.953cm;" class="odt-zoomable" data-zoom-src="images/100000000000050D000001C2383FBA12.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050D000001C2383FBA12.png" width="647" height="225" style="display:inline-block; margin:4px;width:17.106cm;height:5.953cm;" class="odt-zoomable" data-zoom-src="images/100000000000050D000001C2383FBA12.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [6], enter the password [system]. In this document, the Oracle administrator credentials are [system / system];</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000002287437E03E.png" style="display:inline-block; margin:4px;width:17.212cm;height:7.303cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000002287437E03E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000515000002287437E03E.png" width="651" height="276" style="display:inline-block; margin:4px;width:17.212cm;height:7.303cm;" class="odt-zoomable" data-zoom-src="images/1000000000000515000002287437E03E.png" /></td></tr></table>
 
 <p><span style="color: #000000">The installation sets up Oracle as a Windows service. Several services are installed, all of which are set to start automatically by default. The first step is to switch them to manual mode:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AF000000408303165F.png" style="display:inline-block; margin:4px;width:3.24cm;height:1.185cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AF000000408303165F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FF000001384EFF8E4D.png" style="display:inline-block; margin:4px;width:4.72cm;height:5.775cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF000001384EFF8E4D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C0000013951E40631.png" style="display:inline-block; margin:4px;width:5.549cm;height:5.789cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C0000013951E40631.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AF000000408303165F.png" width="122" height="45" style="display:inline-block; margin:4px;width:3.24cm;height:1.185cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AF000000408303165F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FF000001384EFF8E4D.png" width="178" height="218" style="display:inline-block; margin:4px;width:4.72cm;height:5.775cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF000001384EFF8E4D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C0000013951E40631.png" width="210" height="219" style="display:inline-block; margin:4px;width:5.549cm;height:5.789cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C0000013951E40631.png" /></td></tr></table>
 
 <p><span style="color: #000000">Two services must be started:</span></p>
 <ul>
@@ -1452,12 +1452,12 @@
 </ul>
 
 <p><span style="color: #000000">To administer Oracle, we will use the [OraManager] client (Section</span><a href="#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a><span style="color: #000000">). To use it, you must first install the [Oracle Database Express Edition</span> <em>11g</em> <span style="color: #000000">Release 2 </span><strong>Client</strong><span style="color: #000000">] suite available at the following URL (June 2015): [</span><a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-win32soft-098987.html"><u><span style="color: #0563c1">http://www.oracle.com/technetwork/database/enterprise-edition/downloads/112010-win32soft-098987.html</span></u></a><span style="color: #000000">]. You must download the 32-bit version because [OraManager] is a 32-bit client:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002060000019454CA5B36.png" style="display:inline-block; margin:4px;width:8.641cm;height:6.74cm;" class="odt-zoomable" data-zoom-src="images/10000000000002060000019454CA5B36.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002060000019454CA5B36.png" width="327" height="255" style="display:inline-block; margin:4px;width:8.641cm;height:6.74cm;" class="odt-zoomable" data-zoom-src="images/10000000000002060000019454CA5B36.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">Install this suite as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046300000371D5E32413.png" style="display:inline-block; margin:4px;width:14.857cm;height:11.656cm;" class="odt-zoomable" data-zoom-src="images/100000000000046300000371D5E32413.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046300000371D5E32413.png" width="562" height="441" style="display:inline-block; margin:4px;width:14.857cm;height:11.656cm;" class="odt-zoomable" data-zoom-src="images/100000000000046300000371D5E32413.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004690000035096CFAE72.png" style="display:inline-block; margin:4px;width:14.937cm;height:11.218cm;" class="odt-zoomable" data-zoom-src="images/10000000000004690000035096CFAE72.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004690000035096CFAE72.png" width="565" height="424" style="display:inline-block; margin:4px;width:14.937cm;height:11.218cm;" class="odt-zoomable" data-zoom-src="images/10000000000004690000035096CFAE72.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [3], specify the folder &lt;oracleXE-install&gt;\app\oracle\product\11.2.0\client_1, where &lt;oracleXE-install&gt; is the folder where you installed Oracle Express;</span>
@@ -1465,14 +1465,14 @@
 </ul>
 
 <p><span style="color: #000000">Now, let’s connect the [OraManager] client to the Oracle DBMS:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E7000002152D0E224B.png" style="display:inline-block; margin:4px;width:16.603cm;height:7.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E7000002152D0E224B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E7000002152D0E224B.png" width="628" height="266" style="display:inline-block; margin:4px;width:16.603cm;height:7.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E7000002152D0E224B.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [2], the group name is up to you;</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052F0000020898C3EE7B.png" style="display:inline-block; margin:4px;width:17.556cm;height:6.879cm;" class="odt-zoomable" data-zoom-src="images/100000000000052F0000020898C3EE7B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052F0000020898C3EE7B.png" width="664" height="260" style="display:inline-block; margin:4px;width:17.556cm;height:6.879cm;" class="odt-zoomable" data-zoom-src="images/100000000000052F0000020898C3EE7B.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [4], you must enter XE;</span>
@@ -1483,80 +1483,80 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000043C00000293E78B7263.png" style="display:inline-block; margin:4px;width:14.34cm;height:8.717cm;" class="odt-zoomable" data-zoom-src="images/100000000000043C00000293E78B7263.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000043C00000293E78B7263.png" width="542" height="329" style="display:inline-block; margin:4px;width:14.34cm;height:8.717cm;" class="odt-zoomable" data-zoom-src="images/100000000000043C00000293E78B7263.png" /></td></tr></table>
 
 <p><a id="refheading39815804107930"></a></p>
 <h2 id="237-installing-the-postgresql-94-dbms">23.7. <span style="color: #4f81bd">Installing the PostgreSQL 9.4 DBMS</span></h2>
 <p><span style="color: #000000">The </span><strong>PostgreSQL 9.4</strong> <span style="color: #000000">DBMS is available at the following URL (June 2015): [</span><a href="http://www.enterprisedb.com/products-services-training/pgdownload#windows"><u><span style="color: #0563c1">http://www.enterprisedb.com/products-services-training/pgdownload#windows</span></u></a><span style="color: #000000">]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C9000000D0DFC114FC.png" style="display:inline-block; margin:4px;width:13.199cm;height:3.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C9000000D0DFC114FC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C9000000D0DFC114FC.png" width="499" height="146" style="display:inline-block; margin:4px;width:13.199cm;height:3.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C9000000D0DFC114FC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The installation proceeds as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005380000027900AF2639.png" style="display:inline-block; margin:4px;width:17.674cm;height:8.373cm;" class="odt-zoomable" data-zoom-src="images/10000000000005380000027900AF2639.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005380000027900AF2639.png" width="668" height="316" style="display:inline-block; margin:4px;width:17.674cm;height:8.373cm;" class="odt-zoomable" data-zoom-src="images/10000000000005380000027900AF2639.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053D0000012107740363.png" style="display:inline-block; margin:4px;width:17.741cm;height:3.822cm;" class="odt-zoomable" data-zoom-src="images/100000000000053D0000012107740363.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053D0000012107740363.png" width="671" height="144" style="display:inline-block; margin:4px;width:17.741cm;height:3.822cm;" class="odt-zoomable" data-zoom-src="images/100000000000053D0000012107740363.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [4], the password is </span><i>postgres</i><span style="color: #000000">. In this document, the PostgreSQL DBMS administrator credentials are [postgres / postgres];</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E400000100CBE262F6.png" style="display:inline-block; margin:4px;width:16.563cm;height:3.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E400000100CBE262F6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E400000100CBE262F6.png" width="626" height="128" style="display:inline-block; margin:4px;width:16.563cm;height:3.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E400000100CBE262F6.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B00000022A3F24D123.png" style="display:inline-block; margin:4px;width:9.102cm;height:7.329cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B00000022A3F24D123.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B00000022A3F24D123.png" width="344" height="277" style="display:inline-block; margin:4px;width:9.102cm;height:7.329cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B00000022A3F24D123.png" /></td></tr></table>
 
 <p><span style="color: #000000">The installation sets up PostgreSQL as a Windows service with automatic startup. The first thing to do is to switch it to manual mode:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013400000080E40CA564.png" style="display:inline-block; margin:4px;width:5.701cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/100000000000013400000080E40CA564.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000141000001394A272550.png" style="display:inline-block; margin:4px;width:5.941cm;height:5.793cm;" class="odt-zoomable" data-zoom-src="images/1000000000000141000001394A272550.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013400000080E40CA564.png" width="215" height="90" style="display:inline-block; margin:4px;width:5.701cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/100000000000013400000080E40CA564.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000141000001394A272550.png" width="225" height="219" style="display:inline-block; margin:4px;width:5.941cm;height:5.793cm;" class="odt-zoomable" data-zoom-src="images/1000000000000141000001394A272550.png" /></td></tr></table>
 
 <p><span style="color: #000000">Now let’s connect the [PgManager] client (see section</span><a href="#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a><span style="color: #000000">) to the PostgreSQL database management system:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EA000001EFC6F55812.png" style="display:inline-block; margin:4px;width:16.642cm;height:6.548cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EA000001EFC6F55812.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EA000001EFC6F55812.png" width="629" height="247" style="display:inline-block; margin:4px;width:16.642cm;height:6.548cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EA000001EFC6F55812.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [2], the credentials are [postgres / postgres];</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049700000204DC19C996.png" style="display:inline-block; margin:4px;width:15.545cm;height:6.826cm;" class="odt-zoomable" data-zoom-src="images/100000000000049700000204DC19C996.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049700000204DC19C996.png" width="588" height="258" style="display:inline-block; margin:4px;width:15.545cm;height:6.826cm;" class="odt-zoomable" data-zoom-src="images/100000000000049700000204DC19C996.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">in [3], we connect to the [postgres] database;</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016800000381E665EAD1.png" style="display:inline-block; margin:4px;width:4.763cm;height:11.867cm;" class="odt-zoomable" data-zoom-src="images/100000000000016800000381E665EAD1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016800000381E665EAD1.png" width="180" height="449" style="display:inline-block; margin:4px;width:4.763cm;height:11.867cm;" class="odt-zoomable" data-zoom-src="images/100000000000016800000381E665EAD1.png" /></td></tr></table>
 
 <p><a id="refheading1244581068575470"></a></p>
 <h2 id="238-installing-the-db2-express-dbms">23.8. <span style="color: #4f81bd">Installing the DB2 Express DBMS</span></h2>
 <p><span style="color: #000000">The DB2 Express DBMS is available at the following URL (June 2015): [</span><a href="http://www-01.ibm.com/software/data/db2/express-c/download.html"><u><span style="color: #0563c1">http://www-01.ibm.com/software/data/db2/express-c/download.html</span></u></a><span style="color: #000000">]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000026300000134564A907D.png" style="display:inline-block; margin:4px;width:8.08cm;height:4.073cm;" class="odt-zoomable" data-zoom-src="images/100000000000026300000134564A907D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000026300000134564A907D.png" width="305" height="154" style="display:inline-block; margin:4px;width:8.08cm;height:4.073cm;" class="odt-zoomable" data-zoom-src="images/100000000000026300000134564A907D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The installation proceeds as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F1000001FB717D1C25.png" style="display:inline-block; margin:4px;width:13.349cm;height:6.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F1000001FB717D1C25.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F1000001FB717D1C25.png" width="505" height="254" style="display:inline-block; margin:4px;width:13.349cm;height:6.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F1000001FB717D1C25.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D6000002CCECE65347.png" style="display:inline-block; margin:4px;width:12.991cm;height:9.472cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D6000002CCECE65347.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D6000002CCECE65347.png" width="491" height="358" style="display:inline-block; margin:4px;width:12.991cm;height:9.472cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D6000002CCECE65347.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000389000002DABFCA133C.png" style="display:inline-block; margin:4px;width:11.973cm;height:9.657cm;" class="odt-zoomable" data-zoom-src="images/1000000000000389000002DABFCA133C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000389000002DABFCA133C.png" width="453" height="365" style="display:inline-block; margin:4px;width:11.973cm;height:9.657cm;" class="odt-zoomable" data-zoom-src="images/1000000000000389000002DABFCA133C.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E8000001D6BEBB3AEE.png" style="display:inline-block; margin:4px;width:16.616cm;height:6.218cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E8000001D6BEBB3AEE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E8000001D6BEBB3AEE.png" width="628" height="235" style="display:inline-block; margin:4px;width:16.616cm;height:6.218cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E8000001D6BEBB3AEE.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000523000001F17F80EDEA.png" style="display:inline-block; margin:4px;width:17.397cm;height:6.576cm;" class="odt-zoomable" data-zoom-src="images/1000000000000523000001F17F80EDEA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000523000001F17F80EDEA.png" width="658" height="249" style="display:inline-block; margin:4px;width:17.397cm;height:6.576cm;" class="odt-zoomable" data-zoom-src="images/1000000000000523000001F17F80EDEA.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035C000001D5E40CEF30.png" style="display:inline-block; margin:4px;width:11.377cm;height:6.204cm;" class="odt-zoomable" data-zoom-src="images/100000000000035C000001D5E40CEF30.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035C000001D5E40CEF30.png" width="430" height="234" style="display:inline-block; margin:4px;width:11.377cm;height:6.204cm;" class="odt-zoomable" data-zoom-src="images/100000000000035C000001D5E40CEF30.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [9], the password is [db2admin]. In this document, the DBMS administrator credentials are [db2admin / db2admin];</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000389000001DB0FF4102C.png" style="display:inline-block; margin:4px;width:11.973cm;height:6.285cm;" class="odt-zoomable" data-zoom-src="images/1000000000000389000001DB0FF4102C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000389000001DB0FF4102C.png" width="453" height="238" style="display:inline-block; margin:4px;width:11.973cm;height:6.285cm;" class="odt-zoomable" data-zoom-src="images/1000000000000389000001DB0FF4102C.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000518000001D566F3C35E.png" style="display:inline-block; margin:4px;width:17.251cm;height:6.205cm;" class="odt-zoomable" data-zoom-src="images/1000000000000518000001D566F3C35E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000518000001D566F3C35E.png" width="652" height="235" style="display:inline-block; margin:4px;width:17.251cm;height:6.205cm;" class="odt-zoomable" data-zoom-src="images/1000000000000518000001D566F3C35E.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000027400000080B3EA45A4.png" style="display:inline-block; margin:4px;width:11.629cm;height:2.371cm;" class="odt-zoomable" data-zoom-src="images/100000000000027400000080B3EA45A4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000027400000080B3EA45A4.png" width="440" height="90" style="display:inline-block; margin:4px;width:11.629cm;height:2.371cm;" class="odt-zoomable" data-zoom-src="images/100000000000027400000080B3EA45A4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><strong>Note</strong><span style="color: #000000">: You may be tempted to skip this step. Do not do so. It will create the folder where the DB2 databases we are going to create will be stored.</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C2000000BFCAC868AC.png" style="display:inline-block; margin:4px;width:8.331cm;height:3.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C2000000BFCAC868AC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011B000000C00F25C157.png" style="display:inline-block; margin:4px;width:5.241cm;height:3.556cm;" class="odt-zoomable" data-zoom-src="images/100000000000011B000000C00F25C157.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C2000000BFCAC868AC.png" width="315" height="134" style="display:inline-block; margin:4px;width:8.331cm;height:3.537cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C2000000BFCAC868AC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011B000000C00F25C157.png" width="198" height="134" style="display:inline-block; margin:4px;width:5.241cm;height:3.556cm;" class="odt-zoomable" data-zoom-src="images/100000000000011B000000C00F25C157.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000475000001D35138CCCF.png" style="display:inline-block; margin:4px;width:15.095cm;height:6.177cm;" class="odt-zoomable" data-zoom-src="images/1000000000000475000001D35138CCCF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000475000001D35138CCCF.png" width="571" height="233" style="display:inline-block; margin:4px;width:15.095cm;height:6.177cm;" class="odt-zoomable" data-zoom-src="images/1000000000000475000001D35138CCCF.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">A folder [d:\DB2] has been created [1];</span>
@@ -1566,56 +1566,56 @@
 </ul>
 
 <p><span style="color: #000000">The installation sets up DB2 as a Windows service with automatic startup. The first step is to switch it to manual mode:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014C000000B1A2B4730A.png" style="display:inline-block; margin:4px;width:6.151cm;height:3.279cm;" class="odt-zoomable" data-zoom-src="images/100000000000014C000000B1A2B4730A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011A00000145F0D8CCB5.png" style="display:inline-block; margin:4px;width:5.219cm;height:6.015cm;" class="odt-zoomable" data-zoom-src="images/100000000000011A00000145F0D8CCB5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014C000000B1A2B4730A.png" width="232" height="124" style="display:inline-block; margin:4px;width:6.151cm;height:3.279cm;" class="odt-zoomable" data-zoom-src="images/100000000000014C000000B1A2B4730A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011A00000145F0D8CCB5.png" width="197" height="227" style="display:inline-block; margin:4px;width:5.219cm;height:6.015cm;" class="odt-zoomable" data-zoom-src="images/100000000000011A00000145F0D8CCB5.png" /></td></tr></table>
 
 <p><span style="color: #000000">Do this for all the [DB2*] services listed above. Only the [DB2 - DB2COPY1] service needs to be started for the purposes of this document.</span></p>
 <p><span style="color: #000000">Now let’s connect the [Db2Manager] client (see section</span><a href="#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a><span style="color: #000000">) to the DB2 DBMS:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B90000013ECD24DD69.png" style="display:inline-block; margin:4px;width:3.431cm;height:5.898cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B90000013ECD24DD69.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002000000016086E8A97D.png" style="display:inline-block; margin:4px;width:9.479cm;height:6.518cm;" class="odt-zoomable" data-zoom-src="images/10000000000002000000016086E8A97D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B90000013ECD24DD69.png" width="130" height="223" style="display:inline-block; margin:4px;width:3.431cm;height:5.898cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B90000013ECD24DD69.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002000000016086E8A97D.png" width="358" height="246" style="display:inline-block; margin:4px;width:9.479cm;height:6.518cm;" class="odt-zoomable" data-zoom-src="images/10000000000002000000016086E8A97D.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053C00000231401F64C5.png" style="display:inline-block; margin:4px;width:17.727cm;height:7.422cm;" class="odt-zoomable" data-zoom-src="images/100000000000053C00000231401F64C5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053C00000231401F64C5.png" width="670" height="281" style="display:inline-block; margin:4px;width:17.727cm;height:7.422cm;" class="odt-zoomable" data-zoom-src="images/100000000000053C00000231401F64C5.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [1], use the credentials [db2admin / db2admin];</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E6000000ED5A93552A.png" style="display:inline-block; margin:4px;width:4.26cm;height:4.39cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E6000000ED5A93552A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E900000269F73BC962.png" style="display:inline-block; margin:4px;width:4.309cm;height:11.411cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E900000269F73BC962.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E6000000ED5A93552A.png" width="161" height="166" style="display:inline-block; margin:4px;width:4.26cm;height:4.39cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E6000000ED5A93552A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E900000269F73BC962.png" width="163" height="431" style="display:inline-block; margin:4px;width:4.309cm;height:11.411cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E900000269F73BC962.png" /></td></tr></table>
 
 <p><a id="refheading1255281068575470"></a></p>
 <h2 id="239-installing-the-sql-server-2014-express-dbms">23.9. <span style="color: #4f81bd">Installing the SQL Server 2014 Express DBMS</span></h2>
 <p><span style="color: #000000">The SQL Server 2014 Express DBMS is available at the following URL (June 2015): [</span><a href="http://www.microsoft.com/fr-fr/server-cloud/products/sql-server/"><u><span style="color: #0563c1">http://www.microsoft.com/fr-fr/server-cloud/products/sql-server/</span></u></a><span style="color: #000000">]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002610000015A59AD2CD4.png" style="display:inline-block; margin:4px;width:8.059cm;height:4.579cm;" class="odt-zoomable" data-zoom-src="images/10000000000002610000015A59AD2CD4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002610000015A59AD2CD4.png" width="305" height="173" style="display:inline-block; margin:4px;width:8.059cm;height:4.579cm;" class="odt-zoomable" data-zoom-src="images/10000000000002610000015A59AD2CD4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The installation proceeds as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000031E000000CE87B29E94.png" style="display:inline-block; margin:4px;width:13.16cm;height:3.397cm;" class="odt-zoomable" data-zoom-src="images/100000000000031E000000CE87B29E94.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000031E000000CE87B29E94.png" width="497" height="128" style="display:inline-block; margin:4px;width:13.16cm;height:3.397cm;" class="odt-zoomable" data-zoom-src="images/100000000000031E000000CE87B29E94.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003260000023F6E071C92.png" style="display:inline-block; margin:4px;width:13.984cm;height:9.977cm;" class="odt-zoomable" data-zoom-src="images/10000000000003260000023F6E071C92.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003260000023F6E071C92.png" width="529" height="377" style="display:inline-block; margin:4px;width:13.984cm;height:9.977cm;" class="odt-zoomable" data-zoom-src="images/10000000000003260000023F6E071C92.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000308000001F28338A762.png" style="display:inline-block; margin:4px;width:13.984cm;height:8.975cm;" class="odt-zoomable" data-zoom-src="images/1000000000000308000001F28338A762.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000308000001F28338A762.png" width="529" height="339" style="display:inline-block; margin:4px;width:13.984cm;height:8.975cm;" class="odt-zoomable" data-zoom-src="images/1000000000000308000001F28338A762.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000024B000001E58C4A0B40.png" style="display:inline-block; margin:4px;width:10.871cm;height:8.982cm;" class="odt-zoomable" data-zoom-src="images/100000000000024B000001E58C4A0B40.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000024B000001E58C4A0B40.png" width="411" height="339" style="display:inline-block; margin:4px;width:10.871cm;height:8.982cm;" class="odt-zoomable" data-zoom-src="images/100000000000024B000001E58C4A0B40.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000254000001E8787BD4F6.png" style="display:inline-block; margin:4px;width:11.04cm;height:9.038cm;" class="odt-zoomable" data-zoom-src="images/1000000000000254000001E8787BD4F6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000254000001E8787BD4F6.png" width="417" height="342" style="display:inline-block; margin:4px;width:11.04cm;height:9.038cm;" class="odt-zoomable" data-zoom-src="images/1000000000000254000001E8787BD4F6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000032F000002C4C6E89947.png" style="display:inline-block; margin:4px;width:10.783cm;height:9.366cm;" class="odt-zoomable" data-zoom-src="images/100000000000032F000002C4C6E89947.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000032F000002C4C6E89947.png" width="408" height="354" style="display:inline-block; margin:4px;width:10.783cm;height:9.366cm;" class="odt-zoomable" data-zoom-src="images/100000000000032F000002C4C6E89947.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [1], enter any password. We will change it later;</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000193000001E6C4D04405.png" style="display:inline-block; margin:4px;width:7.459cm;height:8.996cm;" class="odt-zoomable" data-zoom-src="images/1000000000000193000001E6C4D04405.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000193000001E6C4D04405.png" width="282" height="340" style="display:inline-block; margin:4px;width:7.459cm;height:8.996cm;" class="odt-zoomable" data-zoom-src="images/1000000000000193000001E6C4D04405.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C700000242E4E6C680.png" style="display:inline-block; margin:4px;width:12.039cm;height:9.788cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C700000242E4E6C680.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002C700000242E4E6C680.png" width="455" height="370" style="display:inline-block; margin:4px;width:12.039cm;height:9.788cm;" class="odt-zoomable" data-zoom-src="images/10000000000002C700000242E4E6C680.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">Next, start the SQL Server service:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001360000004185FCA9BA.png" style="display:inline-block; margin:4px;width:5.74cm;height:1.205cm;" class="odt-zoomable" data-zoom-src="images/10000000000001360000004185FCA9BA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000169000000AF2BF2192C.png" style="display:inline-block; margin:4px;width:6.68cm;height:3.239cm;" class="odt-zoomable" data-zoom-src="images/1000000000000169000000AF2BF2192C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001360000004185FCA9BA.png" width="217" height="46" style="display:inline-block; margin:4px;width:5.74cm;height:1.205cm;" class="odt-zoomable" data-zoom-src="images/10000000000001360000004185FCA9BA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000169000000AF2BF2192C.png" width="252" height="122" style="display:inline-block; margin:4px;width:6.68cm;height:3.239cm;" class="odt-zoomable" data-zoom-src="images/1000000000000169000000AF2BF2192C.png" /></td></tr></table>
 
 <p><span style="color: #000000">Once this is done, launch the [Microsoft SQL Server Management Studio] client, which was installed along with the DBMS (see Start Menu):</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D4000001EA13CB2503.png" style="display:inline-block; margin:4px;width:8.67cm;height:9.079cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D4000001EA13CB2503.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010A000000F99F3C2369.png" style="display:inline-block; margin:4px;width:4.93cm;height:4.614cm;" class="odt-zoomable" data-zoom-src="images/100000000000010A000000F99F3C2369.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D4000001EA13CB2503.png" width="328" height="343" style="display:inline-block; margin:4px;width:8.67cm;height:9.079cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D4000001EA13CB2503.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010A000000F99F3C2369.png" width="186" height="174" style="display:inline-block; margin:4px;width:4.93cm;height:4.614cm;" class="odt-zoomable" data-zoom-src="images/100000000000010A000000F99F3C2369.png" /></td></tr></table>
 
 <p><span style="color: #000000">We could use this client to administer SQL Server. However, for consistency with clients for other DBMSs, we will use the [MsManager] client (see Section</span><a href="#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a><span style="color: #000000">).</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F8000003773C52C9DC.png" style="display:inline-block; margin:4px;width:16.828cm;height:11.735cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F8000003773C52C9DC.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F8000003773C52C9DC.png" width="636" height="444" style="display:inline-block; margin:4px;width:16.828cm;height:11.735cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F8000003773C52C9DC.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [1], note the name of the DBMS;</span>
@@ -1625,14 +1625,14 @@
 </ul>
 
 <p><span style="color: #000000">Once this is done, launch the [SQL Server Configuration Manager] tool, which was installed along with the DBMS (see Start Menu):</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000501000001638142729A.png" style="display:inline-block; margin:4px;width:16.947cm;height:4.695cm;" class="odt-zoomable" data-zoom-src="images/1000000000000501000001638142729A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000501000001638142729A.png" width="641" height="177" style="display:inline-block; margin:4px;width:16.947cm;height:4.695cm;" class="odt-zoomable" data-zoom-src="images/1000000000000501000001638142729A.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">By default, in [2], TCP/IP communication is not enabled. For this document, you must enable it [3];</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002730000021B9C13BE81.png" style="display:inline-block; margin:4px;width:8.296cm;height:7.131cm;" class="odt-zoomable" data-zoom-src="images/10000000000002730000021B9C13BE81.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002730000021B9C13BE81.png" width="314" height="270" style="display:inline-block; margin:4px;width:8.296cm;height:7.131cm;" class="odt-zoomable" data-zoom-src="images/10000000000002730000021B9C13BE81.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">In [4], again for the purposes of this document, you must specify that the DBMS waits for client requests on port 1433. The value for [Dynamic TCP Ports] must be left blank;</span>
@@ -1640,7 +1640,7 @@
 </ul>
 
 <p><span style="color: #000000">Once this is done, launch the client [MsManager] (see section</span><a href="#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a><span style="color: #000000">):</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E90000020C671C605F.png" style="display:inline-block; margin:4px;width:16.63cm;height:6.932cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E90000020C671C605F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E90000020C671C605F.png" width="629" height="262" style="display:inline-block; margin:4px;width:16.63cm;height:6.932cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E90000020C671C605F.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">in [3], enter the name noted in [1];</span>
@@ -1649,40 +1649,40 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A400000152E8DD4EA5.png" style="display:inline-block; margin:4px;width:7.781cm;height:6.262cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A400000152E8DD4EA5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000119000000FA8DB2DAB3.png" style="display:inline-block; margin:4px;width:5.2cm;height:4.627cm;" class="odt-zoomable" data-zoom-src="images/1000000000000119000000FA8DB2DAB3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A400000152E8DD4EA5.png" width="294" height="237" style="display:inline-block; margin:4px;width:7.781cm;height:6.262cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A400000152E8DD4EA5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000119000000FA8DB2DAB3.png" width="197" height="175" style="display:inline-block; margin:4px;width:5.2cm;height:4.627cm;" class="odt-zoomable" data-zoom-src="images/1000000000000119000000FA8DB2DAB3.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000142000001DC0B3C60C4.png" style="display:inline-block; margin:4px;width:5.96cm;height:8.811cm;" class="odt-zoomable" data-zoom-src="images/1000000000000142000001DC0B3C60C4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000142000001DC0B3C60C4.png" width="225" height="333" style="display:inline-block; margin:4px;width:5.96cm;height:8.811cm;" class="odt-zoomable" data-zoom-src="images/1000000000000142000001DC0B3C60C4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><a id="refheading1255301068575470"></a></p>
 <h2 id="2310-installing-the-firebird-dbms">23.10. <span style="color: #4f81bd">Installing the Firebird DBMS</span></h2>
 <p><span style="color: #000000">The Firebird 2.5.4 DBMS is available at the following URL (June 2015): [</span><a href="http://www.firebirdsql.org/en/firebird-2-5-4/"><u><span style="color: #0563c1">http://www.firebirdsql.org/en/firebird-2-5-4/</span></u></a><span style="color: #000000">]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003820000020B7C20D1AE.png" style="display:inline-block; margin:4px;width:13.393cm;height:7.8cm;" class="odt-zoomable" data-zoom-src="images/10000000000003820000020B7C20D1AE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003820000020B7C20D1AE.png" width="506" height="295" style="display:inline-block; margin:4px;width:13.393cm;height:7.8cm;" class="odt-zoomable" data-zoom-src="images/10000000000003820000020B7C20D1AE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The installation proceeds as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001300000009F58F72954.png" style="display:inline-block; margin:4px;width:5.63cm;height:2.946cm;" class="odt-zoomable" data-zoom-src="images/10000000000001300000009F58F72954.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C80000016BF876BA4B.png" style="display:inline-block; margin:4px;width:8.44cm;height:6.719cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C80000016BF876BA4B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001300000009F58F72954.png" width="213" height="111" style="display:inline-block; margin:4px;width:5.63cm;height:2.946cm;" class="odt-zoomable" data-zoom-src="images/10000000000001300000009F58F72954.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C80000016BF876BA4B.png" width="319" height="254" style="display:inline-block; margin:4px;width:8.44cm;height:6.719cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C80000016BF876BA4B.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D100000168BE45A8F2.png" style="display:inline-block; margin:4px;width:8.641cm;height:6.69cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D100000168BE45A8F2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BD000001278F27187C.png" style="display:inline-block; margin:4px;width:8.241cm;height:5.463cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BD000001278F27187C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D100000168BE45A8F2.png" width="327" height="253" style="display:inline-block; margin:4px;width:8.641cm;height:6.69cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D100000168BE45A8F2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BD000001278F27187C.png" width="311" height="206" style="display:inline-block; margin:4px;width:8.241cm;height:5.463cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BD000001278F27187C.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CC0000016F19C0C89B.png" style="display:inline-block; margin:4px;width:8.52cm;height:6.796cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CC0000016F19C0C89B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DC000001712EED977C.png" style="display:inline-block; margin:4px;width:8.56cm;height:6.636cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DC000001712EED977C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CC0000016F19C0C89B.png" width="322" height="257" style="display:inline-block; margin:4px;width:8.52cm;height:6.796cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CC0000016F19C0C89B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001DC000001712EED977C.png" width="324" height="251" style="display:inline-block; margin:4px;width:8.56cm;height:6.636cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DC000001712EED977C.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019100000168E99CD1AA.png" style="display:inline-block; margin:4px;width:7.421cm;height:6.662cm;" class="odt-zoomable" data-zoom-src="images/100000000000019100000168E99CD1AA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AC00000132A24062EF.png" style="display:inline-block; margin:4px;width:7.93cm;height:5.669cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AC00000132A24062EF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019100000168E99CD1AA.png" width="280" height="252" style="display:inline-block; margin:4px;width:7.421cm;height:6.662cm;" class="odt-zoomable" data-zoom-src="images/100000000000019100000168E99CD1AA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AC00000132A24062EF.png" width="300" height="214" style="display:inline-block; margin:4px;width:7.93cm;height:5.669cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AC00000132A24062EF.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A300000169FEBDA68E.png" style="display:inline-block; margin:4px;width:7.759cm;height:6.685cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A300000169FEBDA68E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B400000170F30F0E81.png" style="display:inline-block; margin:4px;width:8.07cm;height:6.81cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B400000170F30F0E81.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A300000169FEBDA68E.png" width="293" height="253" style="display:inline-block; margin:4px;width:7.759cm;height:6.685cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A300000169FEBDA68E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B400000170F30F0E81.png" width="305" height="257" style="display:inline-block; margin:4px;width:8.07cm;height:6.81cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B400000170F30F0E81.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013E00000162A1CA2117.png" style="display:inline-block; margin:4px;width:5.89cm;height:6.556cm;" class="odt-zoomable" data-zoom-src="images/100000000000013E00000162A1CA2117.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013E00000162A1CA2117.png" width="223" height="248" style="display:inline-block; margin:4px;width:5.89cm;height:6.556cm;" class="odt-zoomable" data-zoom-src="images/100000000000013E00000162A1CA2117.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">Once this is done, let’s check the startup mode of the created Windows service:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000174000001201B3002D6.png" style="display:inline-block; margin:4px;width:6.89cm;height:5.334cm;" class="odt-zoomable" data-zoom-src="images/1000000000000174000001201B3002D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001620000019AFA4D8190.png" style="display:inline-block; margin:4px;width:6.549cm;height:7.585cm;" class="odt-zoomable" data-zoom-src="images/10000000000001620000019AFA4D8190.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000174000001201B3002D6.png" width="260" height="202" style="display:inline-block; margin:4px;width:6.89cm;height:5.334cm;" class="odt-zoomable" data-zoom-src="images/1000000000000174000001201B3002D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001620000019AFA4D8190.png" width="248" height="287" style="display:inline-block; margin:4px;width:6.549cm;height:7.585cm;" class="odt-zoomable" data-zoom-src="images/10000000000001620000019AFA4D8190.png" /></td></tr></table>
 
 <p><span style="color: #000000">Now let’s connect the [IBManager] client (see section</span><a href="#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a><span style="color: #000000">) to the installed Firebird DBMS:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D70000028AD43CFDB6.png" style="display:inline-block; margin:4px;width:16.392cm;height:8.601cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D70000028AD43CFDB6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D70000028AD43CFDB6.png" width="620" height="325" style="display:inline-block; margin:4px;width:16.392cm;height:8.601cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D70000028AD43CFDB6.png" /></td></tr></table>
 
 <ul>
   <li><span style="color: #000000">in [1], the password is </span><i>masterkey</i><span style="color: #000000">;</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000184000001CAD091AE99.png" style="display:inline-block; margin:4px;width:7.181cm;height:8.477cm;" class="odt-zoomable" data-zoom-src="images/1000000000000184000001CAD091AE99.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B700000108D58783F9.png" style="display:inline-block; margin:4px;width:3.39cm;height:4.89cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B700000108D58783F9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AB000000FD25BB7D79.png" style="display:inline-block; margin:4px;width:3.17cm;height:4.69cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AB000000FD25BB7D79.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000184000001CAD091AE99.png" width="271" height="320" style="display:inline-block; margin:4px;width:7.181cm;height:8.477cm;" class="odt-zoomable" data-zoom-src="images/1000000000000184000001CAD091AE99.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B700000108D58783F9.png" width="128" height="185" style="display:inline-block; margin:4px;width:3.39cm;height:4.89cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B700000108D58783F9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000AB000000FD25BB7D79.png" width="120" height="177" style="display:inline-block; margin:4px;width:3.17cm;height:4.69cm;" class="odt-zoomable" data-zoom-src="images/10000000000000AB000000FD25BB7D79.png" /></td></tr></table>
 
 <p><a id="refheading261317838046689"></a></p>
 <h2 id="2311-installing-the-advanced-rest-client-chrome-plugin">23.11. <span style="color: #4f81bd">Installing the [Advanced Rest Client] Chrome plugin</span></h2>
@@ -1695,21 +1695,21 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B0000000D21DA44C58.png" style="display:inline-block; margin:4px;width:7.999cm;height:3.888cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B0000000D21DA44C58.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B0000000D21DA44C58.png" width="302" height="147" style="display:inline-block; margin:4px;width:7.999cm;height:3.888cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B0000000D21DA44C58.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <ul>
   <li>the app is then available for download:
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BB000000AE1112526C.png" style="display:inline-block; margin:4px;width:17.48cm;height:3.186cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BB000000AE1112526C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003BB000000AE1112526C.png" width="661" height="120" style="display:inline-block; margin:4px;width:17.48cm;height:3.186cm;" class="odt-zoomable" data-zoom-src="images/10000000000003BB000000AE1112526C.png" /></td></tr></table>
 
 <ul>
   <li>to get it, you’ll need to create a Google account. The [Google Web Store] will then ask for confirmation [1]:
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052000000249E61B24FA.png" style="display:inline-block; margin:4px;width:17.357cm;height:7.738cm;" class="odt-zoomable" data-zoom-src="images/100000000000052000000249E61B24FA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052000000249E61B24FA.png" width="656" height="292" style="display:inline-block; margin:4px;width:17.357cm;height:7.738cm;" class="odt-zoomable" data-zoom-src="images/100000000000052000000249E61B24FA.png" /></td></tr></table>
 
 <ul>
   <li>in [2], the added extension is available in the [Apps] option [3]. This option appears on every new tab you create (CTRL-T) in the browser.
@@ -1727,28 +1727,28 @@
 </ul>
 
 <p>Both methods may throw an exception. Here is an example.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D5000000EFB3DEB6F9.png" style="display:inline-block; margin:4px;width:3.941cm;height:4.422cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D5000000EFB3DEB6F9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D5000000EFB3DEB6F9.png" width="149" height="167" style="display:inline-block; margin:4px;width:3.941cm;height:4.422cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D5000000EFB3DEB6F9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
 <p>The project above is a Maven project with the following [pom.xml] file;</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
-<span class="odt-code-line"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml </span><span style="color:#000000">version=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot; </span><span style="color:#000000">encoding=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span>
-<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project </span><span style="color:#000000">xmlns=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">         </span><span style="color:#7f007f">xmlns:</span><span style="color:#000000">xsi=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">         </span><span style="color:#7f007f">xsi:</span><span style="color:#000000">schemaLocation=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/modelVersion</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">istia.st.pam</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">json</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.0-SNAPSHOT</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">com.fasterxml.jackson.core</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/groupId</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">jackson-databind</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/artifactId</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">2.3.3</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/version</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependency</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/dependencies</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/project</span><span style="color:#008080">&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span><span style="color:#000000"> </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">         </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">         </span><span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span><span style="color:#000000">4.0.0</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">modelVersion</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">istia.st.pam</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">json</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">1.0-SNAPSHOT</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">com.fasterxml.jackson.core</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">jackson-databind</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span><span style="color:#000000">2.3.3</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">version</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
 <ul>
@@ -1757,85 +1757,85 @@
 </ul>
 
 <p>The [Person] class is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">istia.st.json;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Person {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// data</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String lastName;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private </span><span style="color:#000000">String firstName;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private int </span><span style="color:#000000">age;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// constructors</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Person() {</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">Person(String lastName, String firstName, </span><span style="font-weight:bold;color:#7f0055">int </span><span style="color:#000000">age) {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.lastName = lastName;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.firstName = firstName;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.age = age;</span></span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// signature</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public </span><span style="color:#000000">String toString() {</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">String.format(</span><span style="color:#2a00ff">&quot;Person[%s, %s, %d]&quot;</span><span style="color:#000000">, lastName, firstName, age);</span></span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// getters and setters</span></span>
-<span class="odt-code-line">...</span>
-<span class="odt-code-line">}</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.json;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> Personne {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// data</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String nom;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String prenom;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> age;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// manufacturers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Personne() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    }</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Personne(String nom, String prénom, </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> âge) {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.nom = nom;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.prenom = prénom;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">this</span><span style="color:#000000">.age = âge;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// signature</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> String toString() {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> String.format(</span><span style="color:#2a00ff">&quot;Personne[%s, %s, %d]&quot;</span><span style="color:#000000">, nom, prenom, age);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// getters and setters</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p>The [Main] class is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">package </span><span style="color:#000000">istia.st.json;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">com.fasterxml.jackson.databind.ObjectMapper;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.io.IOException;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.util.HashMap;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">import </span><span style="color:#000000">java.util.Map;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#7f0055">public class </span><span style="color:#000000">Main {</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f7f5f">// the serialization/deserialization tool</span></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">static </span><span style="color:#000000">ObjectMapper mapper = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">ObjectMapper();</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public static void </span><span style="color:#000000">main(String[] args) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">IOException {</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// creating a person</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Person paul = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Person(</span><span style="color:#2a00ff">&quot;Denis&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Paul&quot;</span><span style="color:#000000">, 40);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Display JSON</span></span>
-<span class="odt-code-line">    String json = mapper.writeValueAsString(paul);</span>
-<span class="odt-code-line"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;JSON=&quot; </span><span style="color:#000000">+ json);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Instantiate Person from JSON</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Person p = mapper.readValue(json, Person.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// display Person</span></span>
-<span class="odt-code-line"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;Person=&quot; </span><span style="color:#000000">+ p);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// an array</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Person virginie = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Person(</span><span style="color:#2a00ff">&quot;Radot&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Virginie&quot;</span><span style="color:#000000">, 20);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Person[] people = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">Person[]{paul, virginie};</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Display JSON</span></span>
-<span class="odt-code-line">    json = mapper.writeValueAsString(people);</span>
-<span class="odt-code-line"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;JSON people=&quot; </span><span style="color:#000000">+ json);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// dictionary</span></span>
-<span class="odt-code-line"><span style="color:#000000">    Map&lt;String, Person&gt; hpeople = </span><span style="font-weight:bold;color:#7f0055">new </span><span style="color:#000000">HashMap&lt;String, Person&gt;();</span></span>
-<span class="odt-code-line"><span style="color:#000000">    hpeople.put(</span><span style="color:#2a00ff">&quot;1&quot;</span><span style="color:#000000">, paul);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    hpeople.put(</span><span style="color:#2a00ff">&quot;2&quot;</span><span style="color:#000000">, virginie);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#3f7f5f">// Display JSON</span></span>
-<span class="odt-code-line">    json = mapper.writeValueAsString(hpeople);</span>
-<span class="odt-code-line"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;JSON hpeople=&quot; </span><span style="color:#000000">+ json);</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">}</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.json;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> com.fasterxml.jackson.databind.ObjectMapper;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.io.IOException;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.util.HashMap;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.util.Map;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> Main {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#000000">// the serialization / deserialization tool</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> ObjectMapper mapper = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ObjectMapper();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> main(String[] args) </span><span style="font-weight:bold;color:#7f0055">throws</span><span style="color:#000000"> IOException {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// creation of a person</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Personne paul = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Personne(</span><span style="color:#2a00ff">&quot;Denis&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Paul&quot;</span><span style="color:#000000">, 40);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// display jSON</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    String json = mapper.writeValueAsString(paul);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;Json=&quot;</span><span style="color:#000000"> + json);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// person instantiation from Json</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Personne p = mapper.readValue(json, Personne.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// person display</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;Personne=&quot;</span><span style="color:#000000"> + p);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// a picture</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Personne virginie = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Personne(</span><span style="color:#2a00ff">&quot;Radot&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;Virginie&quot;</span><span style="color:#000000">, 20);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Personne[] personnes = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Personne[]{paul, virginie};</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// json display</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    json = mapper.writeValueAsString(personnes);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;Json personnes=&quot;</span><span style="color:#000000"> + json);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// dictionary</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    Map&lt;String, Personne&gt; hpersonnes = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> HashMap&lt;String, Personne&gt;();</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    hpersonnes.put(</span><span style="color:#2a00ff">&quot;1&quot;</span><span style="color:#000000">, paul);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    hpersonnes.put(</span><span style="color:#2a00ff">&quot;2&quot;</span><span style="color:#000000">, virginie);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// json display</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    json = mapper.writeValueAsString(hpersonnes);</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    System.out.println(</span><span style="color:#2a00ff">&quot;Json hpersonnes=&quot;</span><span style="color:#000000"> + json);</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <p>Executing this class produces the following screen output:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Json={&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40}
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>Person = Person[Denis, Paul, 40]
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>Json people=[{&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40},{&quot;lastName&quot;:&quot;Radot&quot;,&quot;firstName&quot;:&quot;Virginie&quot;,&quot;age&quot;:20}]
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>Json people={&quot;2&quot;:{&quot;lastName&quot;:&quot;Radot&quot;,&quot;firstName&quot;:&quot;Virginie&quot;,&quot;age&quot;:20},&quot;1&quot;:{&quot;lastName&quot;:&quot;Denis&quot;,&quot;firstName&quot;:&quot;Paul&quot;,&quot;age&quot;:40}}
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Json={&quot;nom&quot;:&quot;Denis&quot;,&quot;prenom&quot;:&quot;Paul&quot;,&quot;age&quot;:40}
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>Personne=Personne[Denis, Paul, 40]
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>Json personnes=[{&quot;nom&quot;:&quot;Denis&quot;,&quot;prenom&quot;:&quot;Paul&quot;,&quot;age&quot;:40},{&quot;nom&quot;:&quot;Radot&quot;,&quot;prenom&quot;:&quot;Virginie&quot;,&quot;age&quot;:20}]
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>Json hpersonnes={&quot;2&quot;:{&quot;nom&quot;:&quot;Radot&quot;,&quot;prenom&quot;:&quot;Virginie&quot;,&quot;age&quot;:20},&quot;1&quot;:{&quot;nom&quot;:&quot;Denis&quot;,&quot;prenom&quot;:&quot;Paul&quot;,&quot;age&quot;:40}}
 </code></pre></div></td></tr></table></div>
 <p>Key takeaways from the example:</p>
 <ul>
@@ -1883,8 +1883,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

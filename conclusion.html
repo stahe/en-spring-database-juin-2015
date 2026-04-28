@@ -947,13 +947,13 @@
 <p><a id="refheading14681224987110"></a></p>
 <h1 id="22-conclusion">22. <span style="color: #365f91">Conclusion</span></h1>
 <p><span style="color: #000000">Let’s review what we’ve done in this document. </span>We examined two [DAO] layers using one of the following two architectures:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C0000010776D1AF9E.png" style="display:inline-block; margin:4px;width:15.61cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C0000010776D1AF9E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C0000010776D1AF9E.png" width="590" height="131" style="display:inline-block; margin:4px;width:15.61cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C0000010776D1AF9E.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AF000000FEE9F16F00.png" style="display:inline-block; margin:4px;width:15.863cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AF000000FEE9F16F00.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AF000000FEE9F16F00.png" width="600" height="127" style="display:inline-block; margin:4px;width:15.863cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AF000000FEE9F16F00.png" /></td></tr></table>
 
 <p>The [DAO1] layer was implemented with <strong>Spring JDBC</strong> and the [DAO2] layer with <strong>Spring JPA.</strong> The [DAO1] and [DAO2] layers implemented the same [IDAO] interface, which allowed us to write a single test [JUnitTestDao] to test both [DAO] layers;</p>
 <p>Once this was done, we exposed the [IDAO] interface on the web as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA00000296328D383D.png" style="display:inline-block; margin:4px;width:15.796cm;height:8.758cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA00000296328D383D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA00000296328D383D.png" width="597" height="331" style="display:inline-block; margin:4px;width:15.796cm;height:8.758cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA00000296328D383D.png" /></td></tr></table>
 
 <ul>
   <li>In [1], the [IDAO] layer was exposed on the web through a web layer [2] implemented using <b>Spring MVC</b>. It is indeed the [IDAO] interface that is exposed, and we built two versions of the web service depending on whether this interface is implemented using a [DAO-JDBC] or [DAO-JPA-JDBC] architecture;
@@ -965,7 +965,7 @@
 </ul>
 
 <p>With that done, we secured access to the web service:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049D0000028A7325823B.png" style="display:inline-block; margin:4px;width:15.625cm;height:8.601cm;" class="odt-zoomable" data-zoom-src="images/100000000000049D0000028A7325823B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049D0000028A7325823B.png" width="591" height="325" style="display:inline-block; margin:4px;width:15.625cm;height:8.601cm;" class="odt-zoomable" data-zoom-src="images/100000000000049D0000028A7325823B.png" /></td></tr></table>
 
 <ul>
   <li>in [5], the client’s HTTP request passes through an authentication layer implemented with <b>Spring Security</b>;
@@ -973,7 +973,7 @@
 </ul>
 
 <p>With that done, we evolved the previous architecture into the following:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000490000002863381F4FF.png" style="display:inline-block; margin:4px;width:15.452cm;height:8.546cm;" class="odt-zoomable" data-zoom-src="images/1000000000000490000002863381F4FF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000490000002863381F4FF.png" width="584" height="323" style="display:inline-block; margin:4px;width:15.452cm;height:8.546cm;" class="odt-zoomable" data-zoom-src="images/1000000000000490000002863381F4FF.png" /></td></tr></table>
 
 <ul>
   <li>in [3], the client application is itself a web application served by the web server [4]. The client application displays a form [5] in the browser that allows querying the URLs of the secure web service. HTTP access to the secure web service is handled by a [jS] layer implemented in JavaScript. This architecture utilizes what are known as cross-domain requests:
@@ -1026,9 +1026,9 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA000000F951F7FE6D.png" style="display:inline-block; margin:4px;width:15.796cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA000000F951F7FE6D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA000000F951F7FE6D.png" width="597" height="124" style="display:inline-block; margin:4px;width:15.796cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA000000F951F7FE6D.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000488000000F283F9D213.png" style="display:inline-block; margin:4px;width:15.346cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000488000000F283F9D213.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000488000000F283F9D213.png" width="580" height="121" style="display:inline-block; margin:4px;width:15.346cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000488000000F283F9D213.png" /></td></tr></table>
 
 <p>The Maven configuration project for the JDBC layer [1] of a specific DBMS allows:</p>
 <ul>
@@ -1102,8 +1102,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

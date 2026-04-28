@@ -1032,7 +1032,7 @@
 <p><a id="refheading1051242082896917"></a></p>
 <h2 id="11-contents">1.1. <span style="color: #4f81bd">Contents</span></h2>
 <p>In this document, we propose to study different database deployment configurations. Consider the following layered architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007080000017A09403716.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.78cm;" class="odt-zoomable" data-zoom-src="images/10000000000007080000017A09403716.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007080000017A09403716.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.78cm;" class="odt-zoomable" data-zoom-src="images/10000000000007080000017A09403716.png" /></td></tr></table>
 
 <p>The execution flow goes from left to right:</p>
 <ul>
@@ -1050,17 +1050,17 @@
 <li>The [UI] layer is the layer that executes the user’s actions and returns the results of those actions to the user;</li>
 </ul>
 <p>Above, the [DAO] layer sends SQL queries to the [JDBC] layer for execution in the DBMS. In recent years (since 2006), this architecture has evolved as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006FE000001774C207100.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.771cm;" class="odt-zoomable" data-zoom-src="images/10000000000006FE000001774C207100.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006FE000001774C207100.png" width="680" height="143" style="display:inline-block; margin:4px;width:17.999cm;height:3.771cm;" class="odt-zoomable" data-zoom-src="images/10000000000006FE000001774C207100.png" /></td></tr></table>
 
 <p>It is now the JPA (Java Persistence API) layer that sends SQL queries to the JDBC layer and receives the results. The [JPA] layer presents operations to the [DAO] layer for persisting, modifying, deleting, and retrieving objects. The [DAO] layer no longer issues SQL commands. This approach is more portable because JPA implementations handle differences between DBMSs, but it is slower than JDBC technology. We will conduct performance tests to demonstrate this. JPA technology formalizes the work done by the Hibernate framework [<a href="http://hibernate.org/"><u><span style="color: #0563c1">http://hibernate.org/</span></u></a>] years ago.</p>
 <p>We will examine two [DAO] layers using one of the following two architectures:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E4000001759C9090B7.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.806cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E4000001759C9090B7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E4000001759C9090B7.png" width="680" height="144" style="display:inline-block; margin:4px;width:17.999cm;height:3.806cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E4000001759C9090B7.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E10000016947159BE8.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.69cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E10000016947159BE8.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E10000016947159BE8.png" width="680" height="139" style="display:inline-block; margin:4px;width:17.999cm;height:3.69cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E10000016947159BE8.png" /></td></tr></table>
 
 <p>We will require the [DAO1] and [DAO2] layers to implement the same [IDAO] interface. Thus, the [JUnitTestsDao] test will be the same for both configurations and will allow us to compare performance. The [DAO1] layer will be implemented with <strong>Spring JDBC</strong> and the [DAO2] layer with <strong>Spring JPA</strong>;</p>
 <p>Once this is done, we will expose the [IDAO] interface on the web as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B7000003C06070A4E3.png" style="display:inline-block; margin:4px;width:17.999cm;height:10.052cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B7000003C06070A4E3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006B7000003C06070A4E3.png" width="680" height="380" style="display:inline-block; margin:4px;width:17.999cm;height:10.052cm;" class="odt-zoomable" data-zoom-src="images/10000000000006B7000003C06070A4E3.png" /></td></tr></table>
 
 <ul>
 <li>In [1], the [IDAO] layer is exposed on the web through a web layer [2] implemented by <strong>Spring MVC</strong>. It is indeed the [IDAO] interface that is exposed, and we will build two versions of the web service depending on whether this interface is implemented using a [DAO-JDBC] or [DAO-JPA-JDBC] architecture;</li>
@@ -1068,13 +1068,13 @@
 <li>In [3], the [DAO-Client] layer will be implemented using <strong>Spring RestTemplate</strong>;</li>
 </ul>
 <p>Once this is done, we will secure access to the web service:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000071B000003E52277B936.png" style="display:inline-block; margin:4px;width:17.999cm;height:9.865cm;" class="odt-zoomable" data-zoom-src="images/100000000000071B000003E52277B936.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000071B000003E52277B936.png" width="680" height="373" style="display:inline-block; margin:4px;width:17.999cm;height:9.865cm;" class="odt-zoomable" data-zoom-src="images/100000000000071B000003E52277B936.png" /></td></tr></table>
 
 <ul>
 <li>in [5], the client’s HTTP request passes through an authentication layer implemented with <strong>Spring Security</strong>;</li>
 </ul>
 <p>Once this is done, we will evolve the previous architecture into the following:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006EE000003F3B5665B26.png" style="display:inline-block; margin:4px;width:17.999cm;height:10.259cm;" class="odt-zoomable" data-zoom-src="images/10000000000006EE000003F3B5665B26.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006EE000003F3B5665B26.png" width="680" height="388" style="display:inline-block; margin:4px;width:17.999cm;height:10.259cm;" class="odt-zoomable" data-zoom-src="images/10000000000006EE000003F3B5665B26.png" /></td></tr></table>
 
 <ul>
 <li>In [3], the client application is itself a web application. It will feature a form [5] allowing users to query the URLs of the secure web service. HTTP access to the secure web service will be handled via a [DAO-client-js] layer implemented in JavaScript. This architecture utilizes what are known as cross-domain requests:<ul>
@@ -1107,9 +1107,9 @@
 </ul>
 </li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006F900000158D2400553.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.47cm;" class="odt-zoomable" data-zoom-src="images/10000000000006F900000158D2400553.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006F900000158D2400553.png" width="680" height="131" style="display:inline-block; margin:4px;width:17.999cm;height:3.47cm;" class="odt-zoomable" data-zoom-src="images/10000000000006F900000158D2400553.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006F00000016107BC0901.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.577cm;" class="odt-zoomable" data-zoom-src="images/10000000000006F00000016107BC0901.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006F00000016107BC0901.png" width="680" height="135" style="display:inline-block; margin:4px;width:17.999cm;height:3.577cm;" class="odt-zoomable" data-zoom-src="images/10000000000006F00000016107BC0901.png" /></td></tr></table>
 
 <p>The Maven configuration project for the JDBC layer [1] of a specific DBMS consists of two steps:</p>
 <ul>
@@ -1175,14 +1175,14 @@
 <p><a id="refheading2534711226231699"></a></p>
 <h2 id="14-the-examples">1.4. <span style="color: #4f81bd">The examples</span></h2>
 <p>The examples are available |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQCxCAeGD84ISJaB8ECEumfbAb9qX4YxbgWBn3tI95pWU7Q?e=Q2feK6">HERE</a>| as a downloadable <em>ZIP</em> file.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D1000001E5B81C446D.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.002cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D1000001E5B81C446D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006D1000001E5B81C446D.png" width="680" height="189" style="display:inline-block; margin:4px;width:17.999cm;height:5.002cm;" class="odt-zoomable" data-zoom-src="images/10000000000006D1000001E5B81C446D.png" /></td></tr></table>
 
 <ul>
 <li>In [1], the example folders;</li>
 <li>in [2], the [spring-core] folder contains the Spring learning projects;</li>
 <li>in [3], the [spring-database-config] folder contains the JDBC and JPA configuration projects for the six databases;</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000715000001A4893DD878.png" style="display:inline-block; margin:4px;width:17.999cm;height:4.17cm;" class="odt-zoomable" data-zoom-src="images/1000000000000715000001A4893DD878.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000715000001A4893DD878.png" width="680" height="158" style="display:inline-block; margin:4px;width:17.999cm;height:4.17cm;" class="odt-zoomable" data-zoom-src="images/1000000000000715000001A4893DD878.png" /></td></tr></table>
 
 <ul>
 <li>in [4], the Oracle DBMS configuration. It contains three folders:<ul>
@@ -1199,14 +1199,14 @@
 </li>
 <li>in [6], the [eclipse config / launch configurations] folder contains the launch configurations that the reader can import into Eclipse and then adapt to their own environment;</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000746000001BCA78A493C.png" style="display:inline-block; margin:4px;width:17.999cm;height:4.292cm;" class="odt-zoomable" data-zoom-src="images/1000000000000746000001BCA78A493C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000746000001BCA78A493C.png" width="680" height="162" style="display:inline-block; margin:4px;width:17.999cm;height:4.292cm;" class="odt-zoomable" data-zoom-src="images/1000000000000746000001BCA78A493C.png" /></td></tr></table>
 
 <ul>
 <li>in [7], the [spring-database-generic] folder contains all the DB access code common to the six DBMSs and the three JPA providers;</li>
 <li>In [8], [spring-jdbc] contains four projects that demonstrate the JDBC API as well as Spring JDBC;</li>
 <li>In [9], [spring-jpa / spring-jpa-generic] is the project that uses a JPA layer to access a database. The [generic-create-db*] projects are JPA projects used to create the databases utilized by the JPA layer;</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076A0000016B3E2281C5.png" style="display:inline-block; margin:4px;width:17.999cm;height:3.441cm;" class="odt-zoomable" data-zoom-src="images/100000000000076A0000016B3E2281C5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000076A0000016B3E2281C5.png" width="680" height="130" style="display:inline-block; margin:4px;width:17.999cm;height:3.441cm;" class="odt-zoomable" data-zoom-src="images/100000000000076A0000016B3E2281C5.png" /></td></tr></table>
 
 <ul>
 <li>
@@ -1269,8 +1269,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
