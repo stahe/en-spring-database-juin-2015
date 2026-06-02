@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -563,10 +565,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#82-setting-up-the-development-environment" class="md-nav__link">
+  <a href="#82-setting-up-the-work-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.2. Setting up the development environment
+        8.2. Setting up the work environment
       
     </span>
   </a>
@@ -574,15 +576,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#83-the-jpa-layer-configuration-project" class="md-nav__link">
+  <a href="#83-the-jpa-configuration-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        8.3. The JPA layer configuration project
+        8.3. The JPA configuration project
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="8.3. The JPA layer configuration project">
+    <nav class="md-nav" aria-label="8.3. The JPA configuration project">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -872,7 +874,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -892,14 +894,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -946,14 +948,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -1064,38 +1066,38 @@
 
 
 
-<p><a id="refheading11083335254046"></a></p>
+<p><span id="refheading11083335254046" name="refheading11083335254046" class="odt-bookmark-anchor"></span></p>
 <h1 id="8-spring-data-jpa-openjpa">8. <span style="color: #365f91">Spring Data JPA OpenJpa</span></h1>
-<p><a id="refheading11083535254046"></a></p>
+<p><span id="refheading11083535254046" name="refheading11083535254046" class="odt-bookmark-anchor"></span></p>
 <h2 id="81-introduction">8.1. <span style="color: #4f81bd">Introduction</span></h2>
-<p><a id="refheading219244201463053711"></a>We are reusing the previous architecture, which we are now implementing with a JPA/OpenJpa layer.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A1000000F023BF7497.png" width="593" height="120" style="display:inline-block; margin:4px;width:15.677cm;height:3.175cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A1000000F023BF7497.png" /></td></tr></table>
+<p><span id="refheading219244201463053711" name="refheading219244201463053711" class="odt-bookmark-anchor"></span>We are reusing the previous architecture, which we are now implementing with a JPA / OpenJpa layer.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004A1000000F023BF7497.png" width="593" height="120" style="display:inline-block; margin:4px;width:15.677cm;height:3.175cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A1000000F023BF7497.png" /></td></tr></table>
 
-<p><a id="refheading11083735254046"></a></p>
-<h2 id="82-setting-up-the-development-environment">8.2. <span style="color: #4f81bd">Setting up the development environment</span></h2>
-<p>Using STS, download the [myql-config-jpa-eclipselink] project [1-4]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053E000001C4041880E3.png" width="671" height="226" style="display:inline-block; margin:4px;width:17.754cm;height:5.98cm;" class="odt-zoomable" data-zoom-src="images/100000000000053E000001C4041880E3.png" /></td></tr></table>
+<p><span id="refheading11083735254046" name="refheading11083735254046" class="odt-bookmark-anchor"></span></p>
+<h2 id="82-setting-up-the-work-environment">8.2. <span style="color: #4f81bd">Setting up the work environment</span></h2>
+<p>Using STS, unpack the [myql-config-jpa-eclipselink] and [1-4] project:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000053E000001C4041880E3.png" width="671" height="226" style="display:inline-block; margin:4px;width:17.754cm;height:5.98cm;" class="odt-zoomable" data-zoom-src="images/100000000000053E000001C4041880E3.png" /></td></tr></table>
 
-<p>then import the [mysl-config-jpa-openjpa] project [5] located in the [&lt;examples&gt;/spring-database-config/mysql/eclipse] folder [6]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002E00000015F50ED6757.png" width="368" height="176" style="display:inline-block; margin:4px;width:9.737cm;height:4.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E00000015F50ED6757.png" /></td></tr></table>
+<p>then import the [mysl-config-jpa-openjpa] and [5] projects located in the [&lt;exemples&gt;/spring-database-config/mysql/eclipse] and [6] folder:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002E00000015F50ED6757.png" width="368" height="176" style="display:inline-block; margin:4px;width:9.737cm;height:4.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E00000015F50ED6757.png" /></td></tr></table>
 
-<p>Once this is done, refresh the Maven environment (Alt-F5) for all projects in [Package Explorer]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000206000001059E33D19A.png" width="362" height="183" style="display:inline-block; margin:4px;width:9.59cm;height:4.831cm;" class="odt-zoomable" data-zoom-src="images/1000000000000206000001059E33D19A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>Once this is done, reset the Maven environment (Alt-F5) for all projects in [Package Explorer]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000206000001059E33D19A.png" width="362" height="183" style="display:inline-block; margin:4px;width:9.59cm;height:4.831cm;" class="odt-zoomable" data-zoom-src="images/1000000000000206000001059E33D19A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>Then, to verify the working environment, run the build configuration named [spring-jpa-generic-JUnitTestDao-openjpa]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000122000000C3A8E42DE1.png" width="203" height="136" style="display:inline-block; margin:4px;width:5.369cm;height:3.611cm;" class="odt-zoomable" data-zoom-src="images/1000000000000122000000C3A8E42DE1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D00000011BC9005B61.png" width="325" height="198" style="display:inline-block; margin:4px;width:8.59cm;height:5.239cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D00000011BC9005B61.png" /></td></tr></table>
+<p>Next, to verify the runtime environment, run the runtime configuration named [spring-jpa-generic-JUnitTestDao-openjpa]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000122000000C3A8E42DE1.png" width="203" height="136" style="display:inline-block; margin:4px;width:5.369cm;height:3.611cm;" class="odt-zoomable" data-zoom-src="images/1000000000000122000000C3A8E42DE1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001D00000011BC9005B61.png" width="325" height="198" style="display:inline-block; margin:4px;width:8.59cm;height:5.239cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D00000011BC9005B61.png" /></td></tr></table>
 
-<p>This configuration runs the [JUnitTestDao] test. This test should pass:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A0000001186E138E1D.png" width="289" height="195" style="display:inline-block; margin:4px;width:7.65cm;height:5.149cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000001186E138E1D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>This configuration runs the test [JUnitTestDao]. This test must pass:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001A0000001186E138E1D.png" width="289" height="195" style="display:inline-block; margin:4px;width:7.65cm;height:5.149cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000001186E138E1D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading105290208289691711"></a></p>
-<h2 id="83-the-jpa-layer-configuration-project">8.3. <span style="color: #4f81bd">The JPA layer configuration project</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000132000000F1A8D4EB2E.png" width="215" height="169" style="display:inline-block; margin:4px;width:5.68cm;height:4.473cm;" class="odt-zoomable" data-zoom-src="images/1000000000000132000000F1A8D4EB2E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading105290208289691711" name="refheading105290208289691711" class="odt-bookmark-anchor"></span></p>
+<h2 id="83-the-jpa-configuration-project">8.3. <span style="color: #4f81bd">The JPA configuration project</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000132000000F1A8D4EB2E.png" width="215" height="169" style="display:inline-block; margin:4px;width:5.68cm;height:4.473cm;" class="odt-zoomable" data-zoom-src="images/1000000000000132000000F1A8D4EB2E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The purpose of this project is to configure the JPA layer of the architecture shown below:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B6000000F178CB44EF.png" width="603" height="120" style="display:inline-block; margin:4px;width:15.954cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B6000000F178CB44EF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004B6000000F178CB44EF.png" width="603" height="120" style="display:inline-block; margin:4px;width:15.954cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B6000000F178CB44EF.png" /></td></tr></table>
 
-<p><a id="refheading105292208289691711"></a></p>
+<p><span id="refheading105292208289691711" name="refheading105292208289691711" class="odt-bookmark-anchor"></span></p>
 <h3 id="831-maven-configuration">8.3.1. <span style="color: #4f81bd">Maven Configuration</span></h3>
 <p>The project is a Maven project configured by the following [pom.xml] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1163,24 +1165,24 @@
 <ul>
   <li>lines 5–7: the Maven artifact generated by this project. It is the same as that of the [mysql-config-jpa-hibernate] project. This means that only one of these projects can be active at any given time;
   </li>
-  <li>lines 10–14: the parent Maven project that sets the version of most of the dependencies required by the project;
+  <li>lines 10–14: the parent Maven project that defines the version for most of the dependencies required by the project;
   </li>
   <li>lines 19–23: the OpenJpa library;
   </li>
-  <li>lines 26–29: the Spring Data library;
+  <li>lines 26–29: the Spring library Data;
   </li>
-  <li>lines 32–34: the JPA layer configuration project is based on the JDBC layer configuration project, which defines, among other things, the JDBC driver for the DBMS being used and the database connection details;
+  <li>lines 32–34: the JPA layer configuration project relies on the JDBC layer configuration project, which defines, among other things, the JDBC driver for the SGBD being used and the database connection details;
   </li>
-  <li>lines 35–40: the JDBC layer configuration project includes the [Spring JDBC] library, which is replaced here by the [Spring Data JPA] library. Therefore, we specify not to include it in the project dependencies. However, if it remains, this does not cause any errors;
+  <li>lines 35–40: the configuration project for layer JDBC includes the library [Spring JDBC], which is replaced here by the library [Spring Data JPA]. Therefore, we recommend not including it in the project dependencies. However, if it remains, this will not cause any errors;
   </li>
 </ul>
 
 <p>In the end, the dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FA0000006AC0FC5129.png" width="175" height="74" style="display:inline-block; margin:4px;width:4.63cm;height:1.963cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FA0000006AC0FC5129.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FA0000006AC0FC5129.png" width="175" height="74" style="display:inline-block; margin:4px;width:4.63cm;height:1.963cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FA0000006AC0FC5129.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading105294208289691711"></a></p>
+<p><span id="refheading105294208289691711" name="refheading105294208289691711" class="odt-bookmark-anchor"></span></p>
 <h3 id="832-spring-configuration">8.3.2. <span style="color: #4f81bd">Spring Configuration</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000129000000FF20BF6D90.png" width="208" height="178" style="display:inline-block; margin:4px;width:5.5cm;height:4.722cm;" class="odt-zoomable" data-zoom-src="images/1000000000000129000000FF20BF6D90.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000129000000FF20BF6D90.png" width="208" height="178" style="display:inline-block; margin:4px;width:5.5cm;height:4.722cm;" class="odt-zoomable" data-zoom-src="images/1000000000000129000000FF20BF6D90.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [ConfigJpa] class configures the Spring project as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1255,14 +1257,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>This configuration is similar to the one described in Section<a href="#refheading1052942082896917"><u><span style="color: #0563c1"> 6.3.2</span></u></a> for the Hibernate JPA implementation. We will only detail the differences:</p>
+<p>This configuration is similar to the one described in Section<a href="spring-data-jpa-hibernate.html#refheading1052942082896917"><u><span style="color: #0563c1"> 6.3.2</span></u></a> for the JPA Hibernate implementation. We will only detail the differences:</p>
 <ul>
-  <li>lines 23–30: the [jpaVendorAdapter] bean is now implemented using OpenJpa;
+  <li>lines 23–30: the [jpaVendorAdapter] bean is now implemented with OpenJpa;
   </li>
 </ul>
-<p><a id="refheading11083935254046"></a></p>
+<p><span id="refheading11083935254046" name="refheading11083935254046" class="odt-bookmark-anchor"></span></p>
 <h2 id="84-the-persistencexml-file">8.4. <span style="color: #4f81bd">The [persistence.xml] file</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000C8EA873F9B.png" width="167" height="140" style="display:inline-block; margin:4px;width:4.41cm;height:3.706cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C8EA873F9B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EE000000C8EA873F9B.png" width="167" height="140" style="display:inline-block; margin:4px;width:4.41cm;height:3.706cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C8EA873F9B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span><span style="color:#000000"> </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
@@ -1286,61 +1288,61 @@
 </code></pre></div>
 
 <ul>
-  <li>line 4: the persistence unit linked to the [dbproduitscategories] database. It can have any name (<i>name</i> attribute);
+  <li>line 4: the persistence unit associated with the [dbproduitscategories] database. It can have any name (<i>name</i> attribute);
   </li>
   <li>lines 6–10: the five JPA entities to be managed;
   </li>
-  <li>lines 13–17: another persistence unit linked to the [dbproduitscategories] database. OpenJpa allows for a persistence file containing multiple persistence units. EclipseLink does not. Recall that with Hibernate, we did not use a persistence file;
+  <li>lines 13–17: another persistence unit linked to the [dbproduits] database. OpenJpa allows for a persistence file with multiple persistence units. EclipseLink does not. Note that with Hibernate, we did not use a persistence file;
   </li>
 </ul>
-<p><a id="refheading11084135254046"></a></p>
+<p><span id="refheading11084135254046" name="refheading11084135254046" class="odt-bookmark-anchor"></span></p>
 <h2 id="85-the-test-layer">8.5. <span style="color: #4f81bd">The test layer</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049D000000EE65368E9E.png" width="591" height="119" style="display:inline-block; margin:4px;width:15.625cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/100000000000049D000000EE65368E9E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000049D000000EE65368E9E.png" width="591" height="119" style="display:inline-block; margin:4px;width:15.625cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/100000000000049D000000EE65368E9E.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010F000000D6F3BF1063.png" width="190" height="150" style="display:inline-block; margin:4px;width:5.02cm;height:3.963cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000D6F3BF1063.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010F000000D6F3BF1063.png" width="190" height="150" style="display:inline-block; margin:4px;width:5.02cm;height:3.963cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000D6F3BF1063.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The tests above are identical to those for the Spring JDBC, Spring JPA Hibernate, and Spring JPA EclipseLink implementations. Refer to the following pages if necessary:</p>
+<p>The tests above are identical to those for the Spring JDBC, Spring JPA Hibernate, and Spring JPA EclipseLink implementations. Please refer to the following pages if necessary:</p>
 <ul>
-  <li>[JUnitTestCheckArguments]: Section<a href="#refheading1052502082896917"><u><span style="color: #0563c1"> 4.11.1</span></u></a>;
+  <li>[JUnitTestCheckArguments]: section<a href="introduction-to-spring-jdbc.html#refheading1052502082896917"><u><span style="color: #0563c1"> 4.11.1</span></u></a>;
   </li>
-  <li>[JUnitTestDao]: Section<a href="#refheading1052522082896917"><u><span style="color: #0563c1"> 4.11.2</span></u></a>;
+  <li>[JUnitTestDao]: Section<a href="introduction-to-spring-jdbc.html#refheading1052522082896917"><u><span style="color: #0563c1"> 4.11.2</span></u></a>;
   </li>
-  <li>[JUnitTestPushTheLimits]: section<a href="#refheading1052702082896917"><u><span style="color: #0563c1"> 4.11.3</span></u></a>;
+  <li>[JUnitTestPushTheLimits]: paragraph<a href="introduction-to-spring-jdbc.html#refheading1052702082896917"><u><span style="color: #0563c1"> 4.11.3</span></u></a>;
   </li>
-  <li>[JUnitTestProxies]: section<a href="#refheading10881435254046"><u><span style="color: #0563c1"> 6.4.5</span></u></a>;
+  <li>[JUnitTestProxies]: paragraph<a href="spring-data-jpa-hibernate.html#refheading10881435254046"><u><span style="color: #0563c1"> 6.4.5</span></u></a>;
   </li>
 </ul>
 
-<p>The execution configurations to use are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000162000000BDC3721779.png" width="248" height="132" style="display:inline-block; margin:4px;width:6.549cm;height:3.498cm;" class="odt-zoomable" data-zoom-src="images/1000000000000162000000BDC3721779.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012A000000BD9304E52A.png" width="209" height="132" style="display:inline-block; margin:4px;width:5.519cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/100000000000012A000000BD9304E52A.png" /></td></tr></table>
+<p>The execution configurations to be used are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000162000000BDC3721779.png" width="248" height="132" style="display:inline-block; margin:4px;width:6.549cm;height:3.498cm;" class="odt-zoomable" data-zoom-src="images/1000000000000162000000BDC3721779.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012A000000BD9304E52A.png" width="209" height="132" style="display:inline-block; margin:4px;width:5.519cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/100000000000012A000000BD9304E52A.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000158000000BA3FBF4C16.png" width="241" height="130" style="display:inline-block; margin:4px;width:6.369cm;height:3.445cm;" class="odt-zoomable" data-zoom-src="images/1000000000000158000000BA3FBF4C16.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014C000000C8DA303BBA.png" width="232" height="140" style="display:inline-block; margin:4px;width:6.151cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000014C000000C8DA303BBA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000158000000BA3FBF4C16.png" width="241" height="130" style="display:inline-block; margin:4px;width:6.369cm;height:3.445cm;" class="odt-zoomable" data-zoom-src="images/1000000000000158000000BA3FBF4C16.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000014C000000C8DA303BBA.png" width="232" height="140" style="display:inline-block; margin:4px;width:6.151cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000014C000000C8DA303BBA.png" /></td></tr></table>
 
-<p>For JPA entities to be <em>woven</em> by OpenJpa, Java applications or JUnit tests must be launched with a <strong>Java agent</strong>. This agent will weave the JPA entities before they are loaded by the JVM [<a href="http://openjpa.apache.org/builds/1.2.3/apache-openjpa/docs/ref_guide_pc_enhance.html"><u><span style="color: #0563c1">http://openjpa.apache.org/builds/1.2.3/apache-openjpa/docs/ref_guide_pc_enhance.html</span></u></a>]. Let’s look, for example, at the configuration of the [JUnitTestDao] test:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C40000019536B4F670.png" width="610" height="203" style="display:inline-block; margin:4px;width:16.14cm;height:5.359cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C40000019536B4F670.png" /></td></tr></table>
+<p>For the JPA entities to be enriched (<em>woven</em>) by OpenJpa, the Java applications or JUnit tests must be launched with a <strong>Java agent</strong>. This agent will enrich the JPA entities before they are loaded by JVM and [http://openjpa.apache.org/builds/1.2.3/apache-openjpa/docs/ref_guide_pc_enhance.html]. Let’s look, for example, at the configuration of the [JUnitTestDao] test:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004C40000019536B4F670.png" width="610" height="203" style="display:inline-block; margin:4px;width:16.14cm;height:5.359cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C40000019536B4F670.png" /></td></tr></table>
 
 <ul>
-  <li>In the [Arguments] tab [1], we provide the Java agent reference to the JVM using the syntax [2]. The Java agent is the [openjpa-&lt;version&gt;.jar] archive found in the [&lt;m2-repo&gt;/org/apache/openjpa/&lt;version&gt;] folder. The &lt;m2-repo&gt; folder is specified in the Eclipse configuration ([3] below):
+  <li>In the [Arguments] [1] tab, the Java agent reference is specified for JVM using the [2] syntax. The Java agent is the [openjpa-&lt;version&gt;.jar] archive found in the [&lt;m2-repo&gt;/org/apache/openjpa/&lt;version&gt;] folder. The &lt;m2-repo&gt; folder is specified in the Eclipse configuration ([3] below):
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C9000002D7240A4BDE.png" width="485" height="364" style="display:inline-block; margin:4px;width:12.82cm;height:9.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C9000002D7240A4BDE.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003C9000002D7240A4BDE.png" width="485" height="364" style="display:inline-block; margin:4px;width:12.82cm;height:9.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C9000002D7240A4BDE.png" /></td></tr></table>
 
-<p>In [2] above, we used a user-defined variable [M2_REPO]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002B60000021321D2CC33.png" width="486" height="372" style="display:inline-block; margin:4px;width:12.85cm;height:9.832cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B60000021321D2CC33.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>In [2], above, we used a user-defined variable [M2_REPO]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002B60000021321D2CC33.png" width="486" height="372" style="display:inline-block; margin:4px;width:12.85cm;height:9.832cm;" class="odt-zoomable" data-zoom-src="images/10000000000002B60000021321D2CC33.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>We assigned the value shown in [3] to the [M2_REPO] variable.</p>
+<p>The variable [M2_REPO] was assigned the value shown in [3].</p>
 <p>The results obtained for the [JUnitTestDao] and [JUnitTestPushTheLimits] tests are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F4000001D07954B993.png" width="634" height="232" style="display:inline-block; margin:4px;width:16.775cm;height:6.138cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F4000001D07954B993.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004F4000001D07954B993.png" width="634" height="232" style="display:inline-block; margin:4px;width:16.775cm;height:6.138cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F4000001D07954B993.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051F00000184DA35DEB7.png" width="656" height="194" style="display:inline-block; margin:4px;width:17.344cm;height:5.133cm;" class="odt-zoomable" data-zoom-src="images/100000000000051F00000184DA35DEB7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051F00000184DA35DEB7.png" width="656" height="194" style="display:inline-block; margin:4px;width:17.344cm;height:5.133cm;" class="odt-zoomable" data-zoom-src="images/100000000000051F00000184DA35DEB7.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000277000001420FED6384.png" width="316" height="161" style="display:inline-block; margin:4px;width:8.348cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000277000001420FED6384.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000277000001420FED6384.png" width="316" height="161" style="display:inline-block; margin:4px;width:8.348cm;height:4.26cm;" class="odt-zoomable" data-zoom-src="images/1000000000000277000001420FED6384.png" /></td></tr></table>
 
 <ul>
   <li>in [1], [JUnitTestPushTheLimits-EclipseLink]: 70.583 s;
   </li>
-  <li>in [2], [JUnitTestPushTheLimits-Hibernate]: 78.945 s;
+  <li>for [2], [JUnitTestPushTheLimits-Hibernate]: 78.945 s;
   </li>
   <li>in [3], [JUnitTestPushTheLimits-JDBC]: 36.09 s;
   </li>
@@ -1393,7 +1395,7 @@
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a>Nom de la catégorie du produit :
 <a id="__codelineno-0-22" name="__codelineno-0-22"></a>categorie[0]
 </code></pre></div></td></tr></table></div>
-<p>Here we see that when accessing the [Categorie.produits] field of a PROXY-type category and the [Produit.categorie] field of a PROXY-type product, we have a <em>null</em> pointer in both cases (lines 7 and 17).</p>
+<p>Here we see that when accessing the [Categorie.produits] field of a category of type PROXY and the [Produit.categorie] field of a product of type PROXY, we have a <em>null</em> pointer in both cases (lines 7 and 17).</p>
 
 
 

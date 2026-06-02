@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://stahe.github.io/en-spring-database-juin-2015/cross-domain-access-management.html">
       
       
-        <link rel="prev" href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html">
+        <link rel="prev" href="securing-the-web-service-for-database-access-dbproduitscategories.html">
       
       
         <link rel="next" href="conclusion.html">
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -742,7 +744,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -762,14 +764,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -816,14 +818,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -926,10 +928,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#2121-setting-up-the-development-environment" class="md-nav__link">
+  <a href="#2121-setting-up-the-work-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.1. Setting up the development environment
+        21.2.1. Setting up the work environment
       
     </span>
   </a>
@@ -962,7 +964,7 @@
   <a href="#2124-basics-of-jquery-and-javascript" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.4. Basics of jQuery and JavaScript
+        21.2.4. Basics of jQuery and Javascript
       
     </span>
   </a>
@@ -970,10 +972,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2125-the-applications-javascript-code" class="md-nav__link">
+  <a href="#2125-the-applications-js-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.5. The application&#x27;s JavaScript code
+        21.2.5. The application&#x27;s jS code
       
     </span>
   </a>
@@ -992,10 +994,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2127-the-url-getallshortcategories" class="md-nav__link">
+  <a href="#2127-url-getallshortcategories" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.7. The URL [/getAllShortCategories]
+        21.2.7. URL [/getAllShortCategories]
       
     </span>
   </a>
@@ -1006,7 +1008,7 @@
   <a href="#2128-a-new-web-service-json" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.8. A new web service / JSON
+        21.2.8. A new web service / json
       
     </span>
   </a>
@@ -1026,10 +1028,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21291-the-corscontroller" class="md-nav__link">
+  <a href="#21291-the-controller-corscontroller" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.9.1. The [CorsController]
+        21.2.9.1. The controller [CorsController]
       
     </span>
   </a>
@@ -1048,10 +1050,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21293-the-get-urls" class="md-nav__link">
+  <a href="#21293-the-url-get" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.9.3. The [GET] URLs
+        21.2.9.3. The URL [GET]
       
     </span>
   </a>
@@ -1059,10 +1061,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21294-post-urls" class="md-nav__link">
+  <a href="#21294-url-post" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.2.9.4. [POST] URLs
+        21.2.9.4. URL [POST]
       
     </span>
   </a>
@@ -1102,10 +1104,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#214-cors-jpa-eclipselink-db2-architecture" class="md-nav__link">
+  <a href="#214-architecture-cors-jpa-eclipselink-db2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.4. CORS / JPA EclipseLink / DB2 architecture
+        21.4. Architecture CORS / JPA EclipseLink / DB2
       
     </span>
   </a>
@@ -1113,10 +1115,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#215-cors-jpa-openjpa-firebird-architecture" class="md-nav__link">
+  <a href="#215-architecture-cors-jpa-openjpa-firebird" class="md-nav__link">
     <span class="md-ellipsis">
       
-        21.5. CORS / JPA OpenJPA / Firebird Architecture
+        21.5. Architecture CORS / JPA OpenJPA / Firebird
       
     </span>
   </a>
@@ -1202,90 +1204,90 @@
 
 
 
-<p><a id="refheading78461838046689"></a></p>
+<p><span id="refheading78461838046689" name="refheading78461838046689" class="odt-bookmark-anchor"></span></p>
 <h1 id="21-cross-domain-access-management">21. <span style="color: #365f91">Cross-domain access management</span></h1>
-<p><a id="refheading14539724987110"></a></p>
+<p><span id="refheading14539724987110" name="refheading14539724987110" class="odt-bookmark-anchor"></span></p>
 <h2 id="211-architecture">21.1. <span style="color: #4f81bd">Architecture</span></h2>
-<p>We will now examine the issue of cross-domain requests. In the <span style="color: #000000">document [</span><a href="http://tahe.developpez.com/angularjs-spring4"><u><span style="color: #0563c1">AngularJS / Spring 4 Tutorial</span></u></a><span style="color: #000000">], we develop a client/server application where the client is an AngularJS application:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000393000003667D7298AD.png" width="458" height="435" style="display:inline-block; margin:4px;width:12.106cm;height:11.511cm;" class="odt-zoomable" data-zoom-src="images/1000000000000393000003667D7298AD.png" /></td></tr></table>
+<p>We will now examine the issue of cross-domain requests. In <span style="color: #000000">document [Tutoriel AngularJS / Spring 4], we develop a client/server application where the client is an application AngularJS:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000393000003667D7298AD.png" width="458" height="435" style="display:inline-block; margin:4px;width:12.106cm;height:11.511cm;" class="odt-zoomable" data-zoom-src="images/1000000000000393000003667D7298AD.png" /></td></tr></table>
 
 <ul>
-  <li>the HTML/CSS/JS pages of the Angular application come from the server [1];
+  <li>the HTML / CSS / JS pages of the Angular application come from the [1] server;
   </li>
-  <li>in [2], the [dao] service makes a request to another server, server [2]. Well, this is prohibited by the browser running the Angular application because it is a security vulnerability. The application can only query the server from which it originates, i.e., server [1];
+  <li>in [2], the [dao] service makes a request to another server, the [2] server. Well, that is prohibited by the browser running the Angular application because it is a security vulnerability. The application can only query the server it came from, i.e., the [1] server;
   </li>
 </ul>
 
-<p>In fact, it is inaccurate to say that the browser prevents the Angular application from querying server [2]. The browser actually queries server [2] to determine whether it allows a client that does not originate from its own domain to query it. This sharing technique is called <strong>CORS</strong> (Cross-Origin Resource Sharing). Server [2] grants permission by sending specific HTTP headers.</p>
+<p>In fact, it is inaccurate to say that the browser prevents the Angular application from querying the server [2]. The browser actually queries the server [2] to find out if it allows a client that does not originate from its own domain to query it. This sharing technique is called Cross-Origin Resource Sharing (<strong>CORS</strong>). The [2] server grants permission by sending specific headers.</p>
 <p><span style="color: #000000">To demonstrate the issues that can arise, we will create a client/server application where:</span></p>
-<ul>
-  <li><span style="color: #000000">the server will be our secure web/JSON server;</span>
+<ol>
+  <li><span style="color: #000000">the server will be our secure web server;</span>
   </li>
-  <li><span style="color: #000000">the client will be a simple HTML page equipped with JavaScript code that will make requests to the web/JSON server;</span>
+  <li><span style="color: #000000">the client will be a simple HTML page equipped with Javascript code that will make requests to the web server / jSON;</span>
   </li>
-</ul>
+</ol>
 
 <p><span style="color: #000000">We will implement the following architecture:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B00000027859C3C263.png" width="600" height="316" style="display:inline-block; margin:4px;width:15.875cm;height:8.361cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B00000027859C3C263.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004B00000027859C3C263.png" width="600" height="316" style="display:inline-block; margin:4px;width:15.875cm;height:8.361cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B00000027859C3C263.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">in [1], a web application delivers HTML/JS pages;</span>
+  <li><span style="color: #000000">in [1], a web application delivers pages HTML / jS;</span>
   </li>
-  <li><span style="color: #000000">in [2], the browser executes the JavaScript embedded in the HTML pages to query the secure web service [3];</span>
-  </li>
-</ul>
-<p><a id="refheading14680624987110"></a></p>
-<h2 id="212-the-spring-cors-server-jdbc-generic-project">21.2. <span style="color: #4f81bd">The [spring-cors-server-jdbc-generic] project</span></h2>
-<p><a id="refheading14539924987110"></a></p>
-<h3 id="2121-setting-up-the-development-environment">21.2.1. <span style="color: #4f81bd">Setting up the development environment</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FF0000013F4246EBB9.png" width="178" height="223" style="display:inline-block; margin:4px;width:4.72cm;height:5.906cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF0000013F4246EBB9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<ul>
-  <li><span style="color: #000000">Download the projects listed above. The [spring-cors-*] projects can be found in the folder [&lt;examples&gt;\spring-database-generic\spring-cors];</span>
-  </li>
-  <li><span style="color: #000000">Press Alt-F5 and rebuild all Maven projects;</span>
+  <li><span style="color: #000000">In [2], the browser executes the Javascript embedded in the HTML pages to query the secure web service [3];</span>
   </li>
 </ul>
+<p><span id="refheading14680624987110" name="refheading14680624987110" class="odt-bookmark-anchor"></span></p>
+<h2 id="212-the-spring-cors-server-jdbc-generic-project">21.2. <span style="color: #4f81bd"><strong>The [spring-cors-server-jdbc-generic] project</strong></span></h2>
+<p><span id="refheading14539924987110" name="refheading14539924987110" class="odt-bookmark-anchor"></span></p>
+<h3 id="2121-setting-up-the-work-environment">21.2.1. <span style="color: #4f81bd">Setting up the work environment</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FF0000013F4246EBB9.png" width="178" height="223" style="display:inline-block; margin:4px;width:4.72cm;height:5.906cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF0000013F4246EBB9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">Then run the run configuration named [spring-cors-server-jdbc-generic] (the MySQL database must be running), which starts a web service on port 8081:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000151000000F5EC5B5CFD.png" width="236" height="171" style="display:inline-block; margin:4px;width:6.241cm;height:4.537cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000F5EC5B5CFD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<p><span style="color: #000000">Populate the [dbproduitscategories] database using the runtime configuration named [spring-jdbc-generic-04-fillDataBase]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000133000000CE9DA8A3AF.png" width="215" height="144" style="display:inline-block; margin:4px;width:5.68cm;height:3.812cm;" class="odt-zoomable" data-zoom-src="images/1000000000000133000000CE9DA8A3AF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<p><span style="color: #000000">Run the runtime configuration named [spring-cors-client-generic], which launches a second web application (on another Tomcat instance) on port 8082:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E4000000C5F15CB77F.png" width="159" height="138" style="display:inline-block; margin:4px;width:4.219cm;height:3.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E4000000C5F15CB77F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<p><span style="color: #000000">Using a browser, request the URL [http://localhost:8082/client.html]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000054C0000021A55768DEE.png" width="678" height="269" style="display:inline-block; margin:4px;width:17.939cm;height:7.117cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C0000021A55768DEE.png" /></td></tr></table>
-
-<ul>
-  <li><span style="color: #000000">In [1], we request the short version of all categories;</span>
+<ol>
+  <li><span style="color: #000000">Load the projects listed above. The [spring-cors-*] projects can be found in the [&lt;exemples&gt;\spring-database-generic\spring-cors] folder;</span>
   </li>
-  <li><span style="color: #000000">in [2], the server’s JSON response;</span>
+  <li><span style="color: #000000">Press Alt-F5 and regenerate all Maven projects;</span>
   </li>
-</ul>
-<p><a id="refheading196717811596012"></a></p>
+</ol>
+
+<p><span style="color: #000000">Then run the run configuration named [spring-cors-server-jdbc-generic] (SGBD and MySQL must be launched), which starts a web service on port 8081:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000151000000F5EC5B5CFD.png" width="236" height="171" style="display:inline-block; margin:4px;width:6.241cm;height:4.537cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000F5EC5B5CFD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Populate the [dbproduitscategories] database with the run configuration named [spring-jdbc-generic-04-fillDataBase]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000133000000CE9DA8A3AF.png" width="215" height="144" style="display:inline-block; margin:4px;width:5.68cm;height:3.812cm;" class="odt-zoomable" data-zoom-src="images/1000000000000133000000CE9DA8A3AF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Run the execution configuration named [spring-cors-client-generic], which launches a second web application (on a different Tomcat instance) on port 8082:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E4000000C5F15CB77F.png" width="159" height="138" style="display:inline-block; margin:4px;width:4.219cm;height:3.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E4000000C5F15CB77F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Using a browser, request URL from [http://localhost:8082/client.html]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000054C0000021A55768DEE.png" width="678" height="269" style="display:inline-block; margin:4px;width:17.939cm;height:7.117cm;" class="odt-zoomable" data-zoom-src="images/100000000000054C0000021A55768DEE.png" /></td></tr></table>
+
+<ol>
+  <li><span style="color: #000000">In [1], we request the short version of all categories from version;</span>
+  </li>
+  <li><span style="color: #000000">in [2], the server’s response jSON;</span>
+  </li>
+</ol>
+<p><span id="refheading196717811596012" name="refheading196717811596012" class="odt-bookmark-anchor"></span></p>
 <h3 id="2122-the-client-project-spring-cors-client-generic">21.2.2. <span style="color: #4f81bd">The client project [spring-cors-client-generic]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000044C000000D514A2B61F.png" width="550" height="107" style="display:inline-block; margin:4px;width:14.552cm;height:2.819cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000000D514A2B61F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000044C000000D514A2B61F.png" width="550" height="107" style="display:inline-block; margin:4px;width:14.552cm;height:2.819cm;" class="odt-zoomable" data-zoom-src="images/100000000000044C000000D514A2B61F.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000111000001463655713A.png" width="191" height="228" style="display:inline-block; margin:4px;width:5.05cm;height:6.031cm;" class="odt-zoomable" data-zoom-src="images/1000000000000111000001463655713A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000111000001463655713A.png" width="191" height="228" style="display:inline-block; margin:4px;width:5.05cm;height:6.031cm;" class="odt-zoomable" data-zoom-src="images/1000000000000111000001463655713A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">The [application.properties] file allows us to set the port for the client web application. Its contents are as follows:</span></p>
+<p><span style="color: #000000">The file [application.properties] allows us to set the port for the client web application. Its contents are as follows:</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">server.port=</span><span style="color:#2a00ff">8082</span></span></span>
 </code></pre></div>
 
 <p><span style="color: #000000">Thus:</span></p>
 <ul>
-  <li><span style="color: #000000">the client is a web application available at the URL [http://localhost:8082];</span>
+  <li><span style="color: #000000">the client is a web application available at URL [http://localhost:8082];</span>
   </li>
-  <li><span style="color: #000000">the server is a web application available at the URL [http://localhost:8081];</span>
+  <li><span style="color: #000000">the server is a web application available at URL [http://localhost:8081];</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">Because the client is not accessed via the same port as the server, the issue of cross-domain requests arises. Indeed, [http://localhost:8081] and [http://localhost:8082] are two different domains.</span></p>
-<p><a id="refheading4845838046689"></a></p>
+<p><span style="color: #000000">Because the client is not accessed from the same port as the server, the issue of cross-domain requests arises. Indeed, [http://localhost:8081] and [http://localhost:8082] are two different domains.</span></p>
+<p><span id="refheading4845838046689" name="refheading4845838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="2123-maven-configuration">21.2.3. <span style="color: #4f81bd">Maven Configuration</span></h3>
 <p><span style="color: #000000">The project is a Maven project with the following [pom.xml] file:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1347,21 +1349,21 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<ul>
+<ol>
   <li><span style="color: #000000">lines 14–19: this is a Spring Boot project;</span>
   </li>
-  <li><span style="color: #000000">lines 27–30: we use the [spring-boot-starter-web] dependency, which includes a Tomcat server and Spring MVC;</span>
+  <li><span style="color: #000000">lines 27-30: we use the [spring-boot-starter-web] dependency, which includes a Tomcat server and Spring MVC;</span>
   </li>
-</ul>
-<p><a id="refheading4847838046689"></a></p>
-<h3 id="2124-basics-of-jquery-and-javascript">21.2.4. <span style="color: #4f81bd">Basics of jQuery and JavaScript</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000403000000D2C959C0A6.png" width="514" height="105" style="display:inline-block; margin:4px;width:13.587cm;height:2.778cm;" class="odt-zoomable" data-zoom-src="images/1000000000000403000000D2C959C0A6.png" /></td></tr></table>
+</ol>
+<p><span id="refheading4847838046689" name="refheading4847838046689" class="odt-bookmark-anchor"></span></p>
+<h3 id="2124-basics-of-jquery-and-javascript">21.2.4. <span style="color: #4f81bd">Basics of jQuery and Javascript</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000403000000D2C959C0A6.png" width="514" height="105" style="display:inline-block; margin:4px;width:13.587cm;height:2.778cm;" class="odt-zoomable" data-zoom-src="images/1000000000000403000000D2C959C0A6.png" /></td></tr></table>
 
 <p><span style="color: #000000">The web application delivers the following single page:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CD00000163BAF6D1B4.png" width="323" height="249" style="display:inline-block; margin:4px;width:8.541cm;height:6.578cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000163BAF6D1B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001CD00000163BAF6D1B4.png" width="323" height="249" style="display:inline-block; margin:4px;width:8.541cm;height:6.578cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000163BAF6D1B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">It includes JavaScript (JS) code that runs in the browser. We’ll cover some JavaScript basics to help us understand the code. The client will make HTTP requests using the jQuery library [</span><a href="https://jquery.com/"><u><span style="color: #0563c1">https://jquery.com/</span></u></a><span style="color: #000000">], which provides many functions that simplify JavaScript development. We create a static HTML file [jQuery.html] and place it in the [static] folder:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E7000000DBC1673E09.png" width="162" height="153" style="display:inline-block; margin:4px;width:4.279cm;height:4.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000DBC1673E09.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">It includes Javascript (jS) code that runs in the browser. We will cover some basics of Javascript to help us understand the code. The client will make HTTP calls using the jQuery [https://jquery.com/] library, which provides numerous functions that facilitate Javascript development. We create a static file HTML [jQuery.html] and place it in the [static] folder:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E7000000DBC1673E09.png" width="162" height="153" style="display:inline-block; margin:4px;width:4.279cm;height:4.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000DBC1673E09.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">This file will have the following content:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1382,60 +1384,60 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">line 6: importing jQuery;</span>
+  <li><span style="color: #000000">line 6: import of jQuery;</span>
   </li>
-  <li><span style="color: #000000">lines 10–12: a page element with </span><b>the ID </b><span style="color: #000000">[element1]. We’re going to work with this element.</span>
+  <li><span style="color: #000000">lines 10-12: an element from the </span><b>id </b><span style="color: #000000">[element1] page. We’re going to play around with this element.</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">We need to download the file [</span><em><span style="color: #2a00ff">jquery-2.1.3.min.js</span></em><span style="color: #000000">]. You can find the latest version of jQuery at the URL [</span><a href="http://jquery.com/download/"><u><span style="color: #0563c1">http://jquery.com/download/</span></u></a><span style="color: #000000">]:</span></p>
+<p><span style="color: #000000">We need to download the [jquery-2.1.3.min.js] file. It can be found in the last version from jQuery to URL [http://jquery.com/download/]:</span></p>
 <p><img src="images/10000000000003CC00000103F6C4BFF9.png" width="680" height="181" style="width:18cm;height:4.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003CC00000103F6C4BFF9.png" /></p>
-<p><span style="color: #000000">We’ll place the downloaded file in the [static/js] folder:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E7000000DBC1673E09.png" width="162" height="153" style="display:inline-block; margin:4px;width:4.279cm;height:4.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000DBC1673E09.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">Place the downloaded file in the [static / js] folder:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E7000000DBC1673E09.png" width="162" height="153" style="display:inline-block; margin:4px;width:4.279cm;height:4.057cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000DBC1673E09.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">Once that’s done, open the static view [jQuery.html] in Chrome [1-2]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F6000000FCC825B17E.png" width="635" height="126" style="display:inline-block; margin:4px;width:16.801cm;height:3.334cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F6000000FCC825B17E.png" /></td></tr></table>
+<p><span style="color: #000000">Once this is done, request the static view [jQuery.html] using Chrome [1-2]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004F6000000FCC825B17E.png" width="635" height="126" style="display:inline-block; margin:4px;width:16.801cm;height:3.334cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F6000000FCC825B17E.png" /></td></tr></table>
 
-<p><span style="color: #000000">In Google Chrome, press [Ctrl-Shift-I] to open the developer tools [3]. The [Console] tab [4] allows you to run JavaScript code. Below, we provide JavaScript commands to type and explain what they do.</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<p><span style="color: #000000">In Google Chrome, press [Ctrl-Maj-I] to bring up the developer tools [3]. The [Console] [4] tab allows you to run code Javascript. Below, we provide Javascript commands to type and explain them.</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>JS
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>result
 </code></pre></div>
-</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: returns the collection of all elements with <b>the id</b></div><div style="margin:0 0 0.5em 0"> [element1], so normally a collection</div><div style="margin:0 0 0.5em 0"> of 0 or 1 element because you cannot have</div><div style="margin:0 0 0.5em 0"> two identical <b>IDs </b>on an HTML page.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B60000008356BBD730.png" width="127" height="92" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$(&quot;#element1&quot;).text(&quot;blah&quot;)
+<div style="margin:0 0 0.5em 0">: returns the collection of all elements in <b>id</b></div><div style="margin:0 0 0.5em 0"> [element1], so normally a collection</div><div style="margin:0 0 0.5em 0"> of 0 or 1 element because you cannot have</div><div style="margin:0 0 0.5em 0"> two identical <b>id elements </b>on a HTML page.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000B60000008356BBD730.png" width="127" height="92" style="display:inline-block; margin:4px;width:3.371cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B60000008356BBD730.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$(&quot;#element1&quot;).text(&quot;blabla&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: assigns the text [blabla] to all elements in</div><div style="margin:0 0 0.5em 0"> the collection. This changes the</div><div style="margin:0 0 0.5em 0"> content displayed by the page</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000253B59BD93.png" width="180" height="26" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" width="167" height="128" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: sets the text to [blabla] for all elements in</div><div style="margin:0 0 0.5em 0"> the collection. This changes the</div><div style="margin:0 0 0.5em 0"> content displayed by the page</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000101000000253B59BD93.png" width="180" height="26" style="display:inline-block; margin:4px;width:4.761cm;height:0.684cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000253B59BD93.png" /><img src="images/10000000000000EF000000B740C0BE12.png" width="167" height="128" style="display:inline-block; margin:4px;width:4.431cm;height:3.394cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000B740C0BE12.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$(&quot;#element1&quot;).hide()
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">hides the elements in the collection. The text</div><div style="margin:0 0 0.5em 0"> [blabla] is no longer displayed.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD0000001F991499F4.png" width="177" height="22" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" width="155" height="106" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">hides the elements in the collection. The text</div><div style="margin:0 0 0.5em 0"> [blabla] is no longer displayed.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FD0000001F991499F4.png" width="177" height="22" style="display:inline-block; margin:4px;width:4.68cm;height:0.573cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD0000001F991499F4.png" /><img src="images/10000000000000DE000000987D612336.png" width="155" height="106" style="display:inline-block; margin:4px;width:4.11cm;height:2.813cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DE000000987D612336.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$(&quot;#element1&quot;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: displays the collection again. This</div><div style="margin:0 0 0.5em 0">allows us to see that the element with the ID [element1] has</div><div style="margin:0 0 0.5em 0">the CSS attribute <b>style=&#x27;display: none;&#x27;</b>, which</div><div style="margin:0 0 0.5em 0"> the element to be hidden.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019B0000002A4792CCDD.png" width="288" height="29" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: displays the collection again. This</div><div style="margin:0 0 0.5em 0">allows us to see that the element id [element1] has</div><div style="margin:0 0 0.5em 0">the attribute CSS <b>style=&#x27;display: none;&#x27;</b>, which</div><div style="margin:0 0 0.5em 0"> the element to be hidden.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019B0000002A4792CCDD.png" width="288" height="29" style="display:inline-block; margin:4px;width:7.609cm;height:0.778cm;" class="odt-zoomable" data-zoom-src="images/100000000000019B0000002A4792CCDD.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$(&quot;#element1&quot;).show()
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: displays the elements in the collection. The text</div><div style="margin:0 0 0.5em 0">[blabla] appears again. It is the</div><div style="margin:0 0 0.5em 0"><b>style=&#x27;display: block;&#x27; </b>that ensures this</div><div style="margin:0 0 0.5em 0"> display.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A500000026083A7878.png" width="294" height="27" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" width="174" height="135" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div style="margin:0 0 0.5em 0">: displays the elements in the collection. The text</div><div style="margin:0 0 0.5em 0">[blabla] appears again. It is the</div><div style="margin:0 0 0.5em 0">CSS <b>style=&#x27;display: block;&#x27; </b>that ensures this</div><div style="margin:0 0 0.5em 0"> display.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001A500000026083A7878.png" width="294" height="27" style="display:inline-block; margin:4px;width:7.789cm;height:0.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A500000026083A7878.png" /><img src="images/10000000000000F9000000C13449EDE1.png" width="174" height="135" style="display:inline-block; margin:4px;width:4.611cm;height:3.574cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F9000000C13449EDE1.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$(&quot;#element1&quot;).attr(&#39;style&#39;,&#39;color: red&#39;)
 </code></pre></div>
 </div>
-<div style="margin:0 0 0.5em 0">: sets an attribute on all elements in the</div><div style="margin:0 0 0.5em 0">collection. The attribute here is [style] and its value</div><div style="margin:0 0 0.5em 0"> [color: red]. The text [blabla] turns red.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000231B4940BC.png" width="276" height="24" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" width="173" height="134" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Array
+<div style="margin:0 0 0.5em 0">: sets an attribute on all elements in the</div><div style="margin:0 0 0.5em 0">collection. The attribute here is [style] and its value</div><div style="margin:0 0 0.5em 0"> [color: red]. The text [blabla] turns red.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000018B000000231B4940BC.png" width="276" height="24" style="display:inline-block; margin:4px;width:7.31cm;height:0.647cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000231B4940BC.png" /><img src="images/10000000000000F7000000BF541DB4ED.png" width="173" height="134" style="display:inline-block; margin:4px;width:4.57cm;height:3.535cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000BF541DB4ED.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Table
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE0000011645A3961D.png" width="167" height="195" style="display:inline-block; margin:4px;width:4.41cm;height:5.151cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE0000011645A3961D.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EE0000011645A3961D.png" width="167" height="195" style="display:inline-block; margin:4px;width:4.41cm;height:5.151cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE0000011645A3961D.png" /></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Dictionary
 </code></pre></div>
-</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A0000000F3CAFDC489.png" width="291" height="170" style="display:inline-block; margin:4px;width:7.699cm;height:4.496cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000F3CAFDC489.png" /></td></tr></table>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001A0000000F3CAFDC489.png" width="291" height="170" style="display:inline-block; margin:4px;width:7.699cm;height:4.496cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000F3CAFDC489.png" /></td></tr></table>
 
-<p><span style="color: #000000">Note that the browser&#x27;s URL did not change during all these operations. There was no communication with the web server. Everything happens within the browser. Now, let&#x27;s view the page&#x27;s source code:</span></p>
+<p><span style="color: #000000">Note that the browser&#x27;s URL has not changed during all these operations. There has been no communication with the web server. Everything happens within the browser. Now, let&#x27;s view the page&#x27;s source code:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span><span style="color:#000000"> </span><span style="color:#008080">html&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/1999/xhtml&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1453,11 +1455,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">html</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">This is the original text. It does not reflect the changes made to the element in lines 10–12. It is important to keep this in mind when debugging JavaScript. In such cases, it is often unnecessary to view the source code of the displayed page.</span></p>
-<p><a id="refheading4849838046689"></a></p>
-<h3 id="2125-the-applications-javascript-code">21.2.5. <span style="color: #4f81bd">The application&#x27;s JavaScript code</span></h3>
-<p><span style="color: #000000">Let’s return to the HTML code of the client application page that will query the web service / JSON:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001CD00000163BAF6D1B4.png" width="323" height="249" style="display:inline-block; margin:4px;width:8.541cm;height:6.578cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000163BAF6D1B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">This is the original text. It does not reflect the changes made to the element in lines 10–12. It is important to keep this in mind when debugging Javascript. In such cases, it is often unnecessary to view the source code of the displayed page.</span></p>
+<p><span id="refheading4849838046689" name="refheading4849838046689" class="odt-bookmark-anchor"></span></p>
+<h3 id="2125-the-applications-js-code">21.2.5. <span style="color: #4f81bd">The application&#x27;s jS code</span></h3>
+<p><span style="color: #000000">Let’s return to the code for the client application page that will query the web service:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001CD00000163BAF6D1B4.png" width="323" height="249" style="display:inline-block; margin:4px;width:8.541cm;height:6.578cm;" class="odt-zoomable" data-zoom-src="images/10000000000001CD00000163BAF6D1B4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;!</span><span style="color:#3f7f7f">DOCTYPE</span><span style="color:#000000"> </span><span style="color:#008080">html&gt;</span></span></span>
@@ -1496,11 +1498,11 @@
   </li>
   <li><span style="color: #000000">line 7: we import code that we will write;</span>
   </li>
-  <li><span style="color: #000000">Lines 11, 15, 17, 21: Note the [id] identifiers of the page components. The JavaScript references these components via these identifiers;</span>
+  <li><span style="color: #000000">lines 11, 15, 17, 21: note the [id] identifiers of the page components. javascript references these components via these identifiers;</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">The [client.js] code is as follows:</span></p>
+<p><span style="color: #000000">The code [client.js] is as follows:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">// global data</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">var</span><span style="color:#000000"> url;</span></span></span>
@@ -1581,23 +1583,23 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">lines 71–75: JavaScript code executed after the document has finished loading in the browser;</span>
+  <li><span style="color: #000000">lines 71-75: jS code executed after the document has finished loading in the browser;</span>
   </li>
-  <li><span style="color: #000000">lines 73-75: retrieves the references of three elements in the HTML document;</span>
+  <li><span style="color: #000000">lines 73-75: retrieves the references of three fields from the HTML document;</span>
   </li>
-  <li><span style="color: #000000">lines 2-5: global variables known throughout all functions defined in the JavaScript file;</span>
+  <li><span style="color: #000000">lines 2-5: global variables known throughout all functions defined in the jS file;</span>
   </li>
   <li><span style="color: #000000">line 9: retrieves the URL entered by the user;</span>
   </li>
-  <li><span style="color: #000000">line 10: retrieves the value the user wants to post;</span>
+  <li><span style="color: #000000">line 10: retrieve the value the user wants to post;</span>
   </li>
-  <li><span style="color: #000000">line 11: retrieves the method [get] or [post] to use when requesting the URL from line 9:</span>
+  <li><span style="color: #000000">line 11: retrieve the method ([get] or [post]) to use for requesting the URL from line 9:</span>
     <ul>
       <li><b>document </b><span style="color: #000000">refers to the document loaded by the browser, known as the DOM (Document Object Model),</span>
       </li>
-      <li><b>document.forms[0] </b><span style="color: #000000">refers to the first form in the document; a document may contain multiple forms. Here, there is only one;</span>
+      <li><b>document.forms[0] </b><span style="color: #000000">refers to the first form in the document; a document may contain multiple forms. Here, there is only one,</span>
       </li>
-      <li><b>document.forms[0].elements[&#x27;method&#x27;</b><span style="color: #000000">] refers to the form element with the [name=&#x27;method&#x27;] attribute. There are two:</span>
+      <li><b>document.forms[0].elements[&#x27;method&#x27;] </b><span style="color: #000000">refers to the form element that has the attribute [name=&#x27;method&#x27;]. There are two of them:</span>
       </li>
     </ul>
   </li>
@@ -1611,35 +1613,35 @@
 <ul>
   <li><span style="color: #000000">(continued)</span>
     <ul>
-      <li><b>document.forms[0].elements[&#x27;method&#x27;].value </b><span style="color: #000000">is the value that will be posted for the component with the [name=&#x27;method&#x27;] attribute. We know that the posted value is the value of the [value] attribute of the checked radio button. Here, it will therefore be one of the strings [&#x27;get&#x27;, &#x27;post&#x27;];</span>
+      <li><b>document.forms[0].elements[&#x27;method&#x27;].value </b><span style="color: #000000">is the value that will be posted for the component with the attribute [name=&#x27;method&#x27;]. We know that the posted value is the value of the [value] attribute of the selected radio button. Here, it will therefore be one of the strings [&#x27;get&#x27;, &#x27;post&#x27;];</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">Lines 13–18: Depending on the HTTP method to be used, either the [doGet] or [doPost] method is executed;</span>
+  <li><span style="color: #000000">lines 13–18: depending on which HTTP method to use, either the [doGet] or [doPost] method is executed;</span>
   </li>
-  <li><span style="color: #000000">The jQuery method [$.ajax] makes an HTTP request;</span>
+  <li><span style="color: #000000">The method jQuery [$.ajax] makes a call to HTTP;</span>
   </li>
-  <li><span style="color: #000000">lines 23–25: We are communicating with a server that requires an HTTP header [Authorization: Basic code]. We create this header for the user [admin / admin], who is the only one authorized to query the server;</span>
+  <li><span style="color: #000000">Lines 23–25: We are communicating with a server that requires a header HTTP [Authorization: Basic code]. We create this header for the user [admin / admin], who is the only one authorized to query the server;</span>
   </li>
-  <li><span style="color: #000000">line 26: the user will enter URLs of the form [/getAllLongCategories, /saveCategories, ...]. These URLs must therefore be completed;</span>
+  <li><span style="color: #000000">line 26: the user will enter URL of the type [/getAllLongCategories, /saveCategories, ...]. These URL must therefore be completed;</span>
   </li>
-  <li><span style="color: #000000">line 27: HTTP method to use;</span>
+  <li><span style="color: #000000">line 27: HTTP method to be used;</span>
   </li>
-  <li><span style="color: #000000">line 28: the server returns JSON. We specify the type [text/plain] as the response type so that it is displayed exactly as received;</span>
+  <li><span style="color: #000000">line 28: the server returns jSON. We specify the type [text/plain] as the result type in order to display it as received;</span>
   </li>
-  <li><span style="color: #000000">line 33: display the server&#x27;s text response;</span>
+  <li><span style="color: #000000">line 33: display of the server&#x27;s text response;</span>
   </li>
   <li><span style="color: #000000">line 39: display any error message in text format;</span>
   </li>
   <li><span style="color: #000000">line 44: the [doPost] method receives a second parameter, which is the value to be posted;</span>
   </li>
-  <li><span style="color: #000000">line 52: to indicate that the posted value will be in the form of a JSON string;</span>
+  <li><span style="color: #000000">line 52: to indicate that the posted value will be in the form of a jSON string;</span>
   </li>
 </ul>
-<p><a id="refheading4851838046689"></a></p>
+<p><span id="refheading4851838046689" name="refheading4851838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="2126-client-execution">21.2.6. <span style="color: #4f81bd">Client Execution</span></h3>
-<p><span style="color: #000000">The client application is a console application launched by the following executable [Client] class:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E60000008330350B48.png" width="161" height="92" style="display:inline-block; margin:4px;width:4.26cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E60000008330350B48.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">The client application is a console application launched by the following executable class [Client]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E60000008330350B48.png" width="161" height="92" style="display:inline-block; margin:4px;width:4.26cm;height:2.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E60000008330350B48.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.client;</span></span></span>
@@ -1657,7 +1659,7 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">Line 6: The [@EnableAutoConfiguration] annotation is an annotation of the [Spring Boot] project (line 4). Spring Boot will inspect the archives present in the project&#x27;s classpath. In this case, these will be all the Maven dependencies provided by the single dependency in the [pom.xml] file:</span>
+  <li><span style="color: #000000">Line 6: The annotation [@EnableAutoConfiguration] is an annotation from the [Spring Boot] project (line 4). Spring Boot will inspect the archives present in the project&#x27;s classpath. In this case, these will be all the Maven dependencies brought in by the single dependency of the [pom.xml] file:</span>
   </li>
 </ul>
 
@@ -1670,67 +1672,67 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependencies</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">This dependency includes a large number of libraries, notably Spring MVC and a Tomcat server. Because of these dependencies, Spring Boot will configure a Spring MVC project running on Tomcat using default values. The Tomcat server is then configured to run on port 8080. If you want to override the default values chosen by Spring Boot, you can use the [application.properties] file at the root of the classpath (everything in [src/main/resources] is at the root of the classpath):</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E800000080111EF42C.png" width="163" height="90" style="display:inline-block; margin:4px;width:4.3cm;height:2.372cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E800000080111EF42C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">This dependency includes a large number of artifacts, notably Spring MVC and a Tomcat server. Because of these dependencies, Spring Boot will configure, using default values, a Spring MVC project running on Tomcat. The Tomcat server is then configured to run on port 8080. If you want to override the default values chosen by Spring Boot, you can use the [application.properties] file at the root of the Classpath (everything in [src / main / resources] is at the root of the Classpath):</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E800000080111EF42C.png" width="163" height="90" style="display:inline-block; margin:4px;width:4.3cm;height:2.372cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E800000080111EF42C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">We specify that the Tomcat server should run on port 8082 as follows:</span></p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">server.port=</span><span style="color:#2a00ff">8082</span></span></span>
 </code></pre></div>
 
-<p>A list of parameters that can be used in [application.properties] is available at the URL (June 2015) [<a href="http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html"><u><span style="color: #0563c1">http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html</span></u></a>];</p>
+<p>The list of parameters that can be used in [application.properties] can be found in URL (June 2015) [http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html];</p>
 <p><span style="color: #000000">Back to the code in [Client.java]:</span></p>
 <ul>
-  <li>line 10: the [SpringApplication.<i>run</i>] method will deploy the [client.html] page to the Tomcat server present in the project’s classpath;
+  <li>line 10: the [SpringApplication.run] method will deploy the [client.html] page to the Tomcat server present in the project’s classpath;
   </li>
 </ul>
-<p><a id="refheading196719811596012"></a></p>
-<h3 id="2127-the-url-getallshortcategories">21.2.7. <span style="color: #4f81bd">The URL [/getAllShortCategories]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B5000002894EDC1A9D.png" width="603" height="325" style="display:inline-block; margin:4px;width:15.942cm;height:8.587cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B5000002894EDC1A9D.png" /></td></tr></table>
+<p><span id="refheading196719811596012" name="refheading196719811596012" class="odt-bookmark-anchor"></span></p>
+<h3 id="2127-url-getallshortcategories">21.2.7. <span style="color: #4f81bd">URL [/getAllShortCategories]</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004B5000002894EDC1A9D.png" width="603" height="325" style="display:inline-block; margin:4px;width:15.942cm;height:8.587cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B5000002894EDC1A9D.png" /></td></tr></table>
 
 <p><span style="color: #000000">We launch:</span></p>
-<ul>
-  <li><span style="color: #000000">the secure web/JSON server on port 8081 (configuration [spring-security-server-jdbc-generic]);</span>
+<ol>
+  <li><span style="color: #000000">the secure web server / json on port 8081 (configuration [spring-security-server-jdbc-generic]);</span>
   </li>
   <li><span style="color: #000000">the client for this server on port 8082 (configuration [spring-cors-client-generic]);</span>
   </li>
-</ul>
+</ol>
 
-<p><span style="color: #000000">then we request the URL [http://localhost:8082/client.html] [1]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E100000227511AAF70.png" width="625" height="276" style="display:inline-block; margin:4px;width:16.524cm;height:7.29cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E100000227511AAF70.png" /></td></tr></table>
+<p><span style="color: #000000">then we request URL [http://localhost:8082/client.html] [1]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004E100000227511AAF70.png" width="625" height="276" style="display:inline-block; margin:4px;width:16.524cm;height:7.29cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E100000227511AAF70.png" /></td></tr></table>
 
 <ul>
-  <li><span style="color: #000000">in [2], we perform a GET request on the URL [http://localhost:8081/getAllShortCategories];</span>
+  <li><span style="color: #000000">in [2], we perform a GET on URL and [http://localhost:8081/getAllShortCategories];</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">We do not receive a response from the server. When we look at the Chrome developer console (Ctrl-Shift-I), we see an error:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FA000003E06222BA0A.png" width="637" height="496" style="display:inline-block; margin:4px;width:16.854cm;height:13.123cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FA000003E06222BA0A.png" /></td></tr></table>
+<p><span style="color: #000000">We do not receive a response from the server. When we look at the Chrome DevTools (Ctrl-Shift-I), we see an error:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004FA000003E06222BA0A.png" width="637" height="496" style="display:inline-block; margin:4px;width:16.854cm;height:13.123cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FA000003E06222BA0A.png" /></td></tr></table>
 
-<ul>
+<ol>
   <li><span style="color: #000000">in [1], we are in the [Network] tab;</span>
   </li>
-  <li><span style="color: #000000">In [2], we see that the HTTP request made is not [GET] but [OPTIONS]. In the case of a cross-domain request, the browser checks with the server to ensure that certain conditions are met by sending an HTTP [OPTIONS] request. In this instance, the requests are those indicated by the dots [5-6];</span>
+  <li><span style="color: #000000">In [2], we see that the request HTTP that was made is not [GET] but [OPTIONS]. In the case of a cross-domain request, the browser checks with the server to ensure that certain conditions are met by sending it a request HTTP [OPTIONS]. In this case, the requests are those indicated by the dots [5-6];</span>
   </li>
-  <li><span style="color: #000000">In [5], the browser asks whether the target URL can be reached with a GET. The [Access-Control-Request-Method] request asks for a response with an [Access-Control-Allow-Methods] HTTP header indicating that the requested method is accepted;</span>
+  <li><span style="color: #000000">in [5], the browser asks whether the URL target can be reached with a GET. The [Access-Control-Request-Method] request asks for a response with a HTTP [Access-Control-Allow-Methods] header indicating that the requested method is accepted;</span>
   </li>
-  <li><span style="color: #000000">in [6], the browser sends the HTTP header [Origin: http://localhost:8081]. This header requests a response in an HTTP header [Access-Control-Allow-Origin] indicating that the specified origin is accepted;</span>
+  <li><span style="color: #000000">in [6], the browser sends the header HTTP [Origin: http://localhost:8081]. This header requests a response in a HTTP [Access-Control-Allow-Origin] header indicating that the specified origin is accepted;</span>
   </li>
-  <li><span style="color: #000000">In [7], the browser asks whether the HTTP headers [Accept] and [Authorization] are accepted. The [Access-Control-Request-Headers] request expects a response with an HTTP header [Access-Control-Allow-Headers] indicating that the requested headers are accepted;</span>
+  <li><span style="color: #000000">In [7], the browser asks whether the headers HTTP, [accept], and [authorization] are accepted. The [Access-Control-Request-Headers] request expects a response with a HTTP or [Access-Control-Allow-Headers] header indicating that the requested headers are accepted;</span>
   </li>
-  <li><span style="color: #000000">an error occurs in [3]. Clicking the icon results in error [4];</span>
+  <li><span style="color: #000000">an error occurs in [3]. Clicking on the icon results in the error [4];</span>
   </li>
-  <li><span style="color: #000000">In [4], the message indicates that the server did not send the [Access-Control-Allow-Origin] HTTP header, which specifies whether the origin of the request is accepted;</span>
+  <li><span style="color: #000000">in [4], the message indicates that the server did not send the header HTTP [Access-Control-Allow-Origin], which indicates whether the origin of the request is accepted;</span>
   </li>
   <li><span style="color: #000000">in [8], we can see that the server did indeed not send this header. As a result, the browser refused to make the HTTP GET request that was initially requested;</span>
   </li>
-</ul>
+</ol>
 
-<p><span style="color: #000000">We need to modify the web server / JSON.</span></p>
-<p><a id="refheading4853838046689"></a></p>
-<h3 id="2128-a-new-web-service-json">21.2.8. <span style="color: #4f81bd">A new web service / JSON</span></h3>
-<p>We are creating a new Maven project [spring-cors-server-jdbc-generic]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000119000001335B517914.png" width="197" height="215" style="display:inline-block; margin:4px;width:5.2cm;height:5.681cm;" class="odt-zoomable" data-zoom-src="images/1000000000000119000001335B517914.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">We need to modify the web server / jSON.</span></p>
+<p><span id="refheading4853838046689" name="refheading4853838046689" class="odt-bookmark-anchor"></span></p>
+<h3 id="2128-a-new-web-service-json">21.2.8. <span style="color: #4f81bd">A new web service / json</span></h3>
+<p>We create a new Maven project [spring-cors-server-jdbc-generic]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000119000001335B517914.png" width="197" height="215" style="display:inline-block; margin:4px;width:5.2cm;height:5.681cm;" class="odt-zoomable" data-zoom-src="images/1000000000000119000001335B517914.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The Maven configuration for the new web service is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1772,15 +1774,15 @@
 </code></pre></div>
 
 <ul>
-  <li>Lines 30–32: We retrieve all the data from the work done so far by accessing the secure JSON archive on the web server;
+  <li>Lines 30–32: We incorporate all the work done so far by using the secure web server archive /json;
   </li>
 </ul>
 
 <p>In the end, the dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001010000006642972374.png" width="180" height="71" style="display:inline-block; margin:4px;width:4.761cm;height:1.889cm;" class="odt-zoomable" data-zoom-src="images/10000000000001010000006642972374.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001010000006642972374.png" width="180" height="71" style="display:inline-block; margin:4px;width:4.761cm;height:1.889cm;" class="odt-zoomable" data-zoom-src="images/10000000000001010000006642972374.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The configuration class [AppConfig] is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EA000000B4DC98115A.png" width="164" height="126" style="display:inline-block; margin:4px;width:4.33cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000000B4DC98115A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EA000000B4DC98115A.png" width="164" height="126" style="display:inline-block; margin:4px;width:4.33cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000000B4DC98115A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.server.config;</span></span></span>
@@ -1811,28 +1813,28 @@
 <ul>
   <li>line 12: the class is a Spring configuration class;
   </li>
-  <li>line 9: other Spring components can be found in the [<span style="color: #2a00ff">spring.cors.server.service</span>] package;
+  <li>line 9: other Spring components can be found in the [spring.cors.server.service] package;
   </li>
   <li>line 14: we import the beans from the [spring-security-server-jdbc-generic] project;
   </li>
-  <li>lines 18–21: we create a Spring component named [<span style="color: #000000">isCorsEnabled</span>] that indicates whether or not clients outside the server’s domain are accepted;
+  <li>lines 18–21: we create a Spring component named [isCorsEnabled] that determines whether or not to accept clients beans from outside the server domain;
   </li>
 </ul>
-<p><a id="refheading14540124987110"></a></p>
+<p><span id="refheading14540124987110" name="refheading14540124987110" class="odt-bookmark-anchor"></span></p>
 <h3 id="2129-the-controllers">21.2.9. <span style="color: #4f81bd">The controllers</span></h3>
 <p>The new web service has four controllers:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000112000000A6A4CD6E3A.png" width="192" height="116" style="display:inline-block; margin:4px;width:5.069cm;height:3.071cm;" class="odt-zoomable" data-zoom-src="images/1000000000000112000000A6A4CD6E3A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000112000000A6A4CD6E3A.png" width="192" height="116" style="display:inline-block; margin:4px;width:5.069cm;height:3.071cm;" class="odt-zoomable" data-zoom-src="images/1000000000000112000000A6A4CD6E3A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<ul>
-  <li>[CorsCategorieController] handles category processing URLs. It only manages CORS headers from web clients. Otherwise, it delegates the work to the [CategorieController] in the [spring-webjson-server-jdbc-generic] dependency;
+<ol>
+  <li>[CorsCategorieController] handles URL requests for category processing. It handles only the CORS headers of the clients web requests. Otherwise, it delegates the work to the [CategorieController] controller of the [spring-webjson-server-jdbc-generic] dependency;
   </li>
-  <li>[CorsProductController] and [CorsAuthenticateController] do the same by delegating the work to the [ProductController] in the [spring-webjson-server-jdbc-generic] dependency and the [AuthenticateController] in the [spring-security-server-jdbc-generic] dependency;
+  <li>[CorsProduitController] and [CorsAuthenticateController] do the same by delegating the work to the [ProduitController] controllers of the [spring-webjson-server-jdbc-generic] dependency and the [AuthenticateController] controllers of the[spring-security-server-jdbc-generic];
   </li>
   <li>[CorsController] is used to factor out what is common to the three previous controllers;
   </li>
-</ul>
-<p><a id="refheading14540324987110"></a></p>
-<h4 id="21291-the-corscontroller">21.2.9.1. <span style="color: #4f81bd">The [CorsController]</span></h4>
+</ol>
+<p><span id="refheading14540324987110" name="refheading14540324987110" class="odt-bookmark-anchor"></span></p>
+<h4 id="21291-the-controller-corscontroller">21.2.9.1. <span style="color: #4f81bd">The controller [CorsController]</span></h4>
 <p>The [CorsController] class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.server.service;</span></span></span>
@@ -1864,34 +1866,32 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
-  <li>line 8: the [<span style="color: #000000">CorsController</span>] class is a Spring controller;
+<ol>
+  <li>line 8: the [CorsController] class is a Spring controller;
   </li>
-  <li>lines 11-12: injection of the [<span style="color: #0000c0">isCorsEnabled</span>] bean, which indicates whether or not to handle CORS headers;
+  <li>lines 11-12: injection of the [isCorsEnabled] bean, which indicates whether or not to handle the CORS headers;
   </li>
-  <li>lines 15–26: the [sendOptions] method handles responses to clients sending CORS headers;
+  <li>lines 15–26: the [sendOptions] method handles responses to clients requests that send CORS headers;
   </li>
-  <li>lines 17-19: if the application is configured to accept cross-domain requests, and if the sender has sent the [Origin] HTTP header, and if that origin starts with [http://localhost], then the cross-domain request is accepted; otherwise, it is rejected;
+  <li>lines 17-19: if the application is configured to accept cross-domain requests, and if the sender has sent the HTTP header, and if this origin begins with [http://localhost], then the cross-domain request is accepted; otherwise, it is rejected;
   </li>
-  <li>line 21: if the client is in the domain [http://localhost:port], we send the HTTP header:
+  <li>line 21: if the client is in the domain [http://localhost:port], we send the header HTTP:
   </li>
-</ul>
+</ol>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#2a00ff">Access-Control-Allow-Origin:</span><span style="color:#000000"> </span><span style="color:#2a00ff"> http://localhost:port</span></span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Access-Control-Allow-Origin:  http://localhost:port
 </code></pre></div>
-
 <p>which means that the server accepts the client&#x27;s origin;</p>
-<ul>
-  <li>lines 22–25: we have specified two specific HTTP headers in the [OPTIONS] HTTP request:
+<ol>
+  <li>lines 22–25: we have specified two specific HTTP headers in the HTTP [OPTIONS] request:
   </li>
-</ul>
+</ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Access-Control-Request-Method: GET
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Access-Control-Request-Headers: accept, authorization
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Access-Control-Request-Method: GET
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Access-Control-Request-Headers: accept, authorization
 </code></pre></div>
-<p>In response to the [Access-Control-Request-X] HTTP header, the server responds with an [Access-Control-Allow-X] HTTP header specifying what is allowed. Lines 22–25 simply repeat the client’s request to indicate that it is accepted;</p>
-<p><a id="refheading14540524987110"></a></p>
+<p>In response to the HTTP [Access-Control-Request-X] header, the server responds with a HTTP [Access-Control-Allow-X] header in which it specifies what is authorized. Lines 22–25 simply repeat the client’s request to indicate that it has been accepted;</p>
+<p><span id="refheading14540524987110" name="refheading14540524987110" class="odt-bookmark-anchor"></span></p>
 <h4 id="21292-the-controller-corscategoriecontroller">21.2.9.2. <span style="color: #4f81bd">The controller [CorsCategorieController]</span></h4>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.server.service;</span></span></span>
@@ -1935,32 +1935,32 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
-  <li>line 19: the [@RestController] annotation makes the class both a Spring component and an MVC controller that sends its own responses to the client;
+<ol>
+  <li>line 19: the annotation [@RestController] makes the class both a Spring component and a MVC controller that sends its own responses to the client;
   </li>
-  <li>Line 20: The [<span style="color: #000000">CorsCategorieController</span>] class extends the [CorsController] class we just saw;
+  <li>line 20: the [CorsCategorieController] class extends the [CorsController] class we just saw;
   </li>
-  <li>lines 22–23: injection of the [<span style="color: #0000c0">CategorieController</span>] controller from the [spring-webjson-server-jdbc-generic] dependency;
+  <li>lines 22–23: inject the [CategorieController categorieController] controller from the [spring-webjson-server-jdbc-generic] dependency;
   </li>
-  <li>lines 25–29: handle the URL [<span style="color: #2a00ff">/cors-getAllShortCategories</span>] when it is requested with the HTTP [OPTIONS] method. By convention, we decide that web clients wishing to call the [/U] URL of the secure web service must actually call the [/cors-U] URL. The deployed web service will thus have two types of URLs:
-    <ul>
+  <li>lines 25–29: handle the URL [/cors-getAllShortCategories] when it is requested with the HTTP [OPTIONS] command. By convention, we decide that web services that want to call the URL [/U] of the secure web service must actually call theURL [/cors-U]. The deployed web service will thus have two types of URL:
+    <ol>
       <li>[/U]: for non-web clients;
       </li>
-      <li>[/cors-U]: for web clients;
+      <li>[/cors-U]: for web-based clients;
       </li>
-    </ul>
+    </ol>
   </li>
-  <li>line 25: the [<span style="color: #2a00ff">/cors-getAllShortCategories</span>] method accepts the following parameters:
-    <ul>
-      <li>the object [<span style="color: #646464">@RequestHeader</span><span style="color: #000000">(value = </span><span style="color: #2a00ff">&quot;Origin&quot;</span><span style="color: #000000">, required = </span><b><span style="color: #7f0055">false</span></b><span style="color: #000000">)</span>], which retrieves the HTTP [Origin] header from the request. This header was sent by the request origin:
+  <li>Line 25: The [/cors-getAllShortCategories] method accepts the following parameters:
+    <ol>
+      <li>the [@RequestHeader(value = &quot;Origin&quot;, required = false)] object, which retrieves the HTTP [Origin] header from the request. This header was sent by the request sender:
       </li>
-    </ul>
+    </ol>
   </li>
-</ul>
+</ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Origin:http://localhost:8082
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Origin:http://localhost:8082
 </code></pre></div>
-<p>We specify that the [Origin] HTTP header is optional [<span style="color: #000000">required = </span><strong><span style="color: #7f0055">false</span></strong>]. In this case, if the header is missing, the [String origin] parameter will have a <em>null</em> value. With [<span style="color: #000000">required = </span><strong><span style="color: #7f0055">true</span></strong>], which is the default value, an exception is thrown if the header is missing. We wanted to avoid this scenario;</p>
+<p>It is specified that the HTTP [Origin] header is optional [required = false]. In this case, if the header is missing, the [String origin] parameter will have a <em>null</em> value. With [required = true], which is the default value, an exception is thrown if the header is missing. We wanted to avoid this scenario;</p>
 <ul>
   <li>(continued)
     <ul>
@@ -1971,18 +1971,18 @@
 </ul>
 
 <p>These two parameters are injected by Spring;</p>
-<ul>
-  <li>line 28: we delegate the handling of the request to the [sendOptions] method of the parent class [CorsController];
+<ol>
+  <li>line 28: we delegate the processing of the request to the [sendOptions] method of the parent class [CorsController];
   </li>
-  <li>lines 31–36: the [<span style="color: #000000">getAllShortCategories</span>] method handles the URL [<span style="color: #2a00ff">/cors-getAllShortCategories</span>] when it is requested with a GET;
+  <li>lines 31–36: the [getAllShortCategories] method processes URL and [/cors-getAllShortCategories] when called with a GET;
   </li>
-  <li>Line 35: The work is delegated to the [CategorieController.<span style="color: #000000">getAllShortCategories] </span>method <span style="color: #000000">of the [spring-webjson-server-jdbc-generic] dependency;</span>
+  <li>line 35: the task is delegated to the [CategorieController.getAllShortCategories] method <span style="color: #000000">of the [spring-webjson-server-jdbc-generic] dependency;</span>
   </li>
-</ul>
+</ol>
 
-<p>We are now ready for further testing. We launch the new version of the web service and find that the problem remains unchanged. Nothing has changed. If we add a console output on line 28 above, it is never displayed, indicating that the [<span style="color: #000000">corsGetAllShortCategories</span>] method on line 25 is never called.</p>
-<p>After some research, we discover that Spring MVC handles [OPTIONS] HTTP requests itself using default handling. Therefore, it is always Spring that responds, and never the [<span style="color: #000000">corsGetAllShortCategories</span>] method on line 25. This default behavior of Spring MVC can be changed. We modify the existing [AppConfig] class:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EA000000B4DC98115A.png" width="164" height="126" style="display:inline-block; margin:4px;width:4.33cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000000B4DC98115A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>We are now ready for further testing. We launch the new version from the web service and find that the problem remains. Nothing has changed. If we add a console output on line 28 above, it is never displayed, indicating that the [corsGetAllShortCategories] method on line 25 is never called.</p>
+<p>After some research, we discover that Spring MVC handles the commands HTTP and [OPTIONS] itself using default processing. Therefore, it is always Spring that responds, and never the [corsGetAllShortCategories] method on line 25. This default behavior of Spring MVC can be changed. We modify the existing [AppConfig] class:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EA000000B4DC98115A.png" width="164" height="126" style="display:inline-block; margin:4px;width:4.33cm;height:3.33cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EA000000B4DC98115A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.server.config;</span></span></span>
@@ -2019,47 +2019,47 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 </code></pre></div>
 
+<ol>
+  <li>lines 23-24: the [DispatcherServlet dispatcherServlet] component, which was defined in the [spring-webjson-server-jdbc-generic] dependency, is injected;
+  </li>
+  <li>lines 26-30: the [@PostConstruct] annotation ensures that the [init] method will be executed after the [AppConfig] class is instantiated and after the injections performed by Spring;
+  </li>
+  <li>line 29: we instruct the servlet to forward the commands HTTP and [OPTIONS] to the application;
+  </li>
+</ol>
+
+<p>We rerun the tests with this new configuration. We obtain the following result:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000050D00000474D0D87500.png" width="647" height="570" style="display:inline-block; margin:4px;width:17.106cm;height:15.081cm;" class="odt-zoomable" data-zoom-src="images/100000000000050D00000474D0D87500.png" /></td></tr></table>
+
 <ul>
-  <li>lines 23-24: we inject the [<span style="color: #000000">DispatcherServlet </span><span style="color: #0000c0">dispatcherServlet</span>] component, which was defined in the [spring-webjson-server-jdbc-generic] dependency;
+  <li>in [1], we see that there are two requests HTTP to URL and [http://localhost:8080/getAllCategories];
   </li>
-  <li>lines 26-30: the [@PostConstruct] annotation ensures that the [init] method will be executed after the [AppConfig] class is instantiated and after Spring has performed its injections;
+  <li>in [2], the request [OPTIONS];
   </li>
-  <li>line 29: we configure the servlet to forward [OPTIONS] HTTP requests to the application;
+  <li>in [3], the three headers HTTP that we just configured in the server response;
   </li>
 </ul>
 
-<p>We rerun the tests with this new configuration. We get the following result:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050D00000474D0D87500.png" width="647" height="570" style="display:inline-block; margin:4px;width:17.106cm;height:15.081cm;" class="odt-zoomable" data-zoom-src="images/100000000000050D00000474D0D87500.png" /></td></tr></table>
+<p>Let’s now examine the second request:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005310000047DE4F53DB6.png" width="665" height="575" style="display:inline-block; margin:4px;width:17.582cm;height:15.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000005310000047DE4F53DB6.png" /></td></tr></table>
 
-<ul>
-  <li>in [1], we see that there are two HTTP requests to the URL [http://localhost:8080/getAllCategories];
+<ol>
+  <li>in [1], the request being examined;
   </li>
-  <li>in [2], the [OPTIONS] request;
+  <li>in [2], this is the request GET. Thanks to the first request, [OPTIONS], the browser received the information it requested. It is now making the request [GET] that was initially requested;
   </li>
-  <li>in [3], the three HTTP headers we just configured in the server’s response;
+  <li>in [3], the server’s response;
   </li>
-</ul>
-
-<p>Let us now examine the second claim:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005310000047DE4F53DB6.png" width="665" height="575" style="display:inline-block; margin:4px;width:17.582cm;height:15.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000005310000047DE4F53DB6.png" /></td></tr></table>
-
-<ul>
-  <li>in [1], the request under consideration;
-  </li>
-  <li>in [2], this is the GET request. Thanks to the first [OPTIONS] request, the browser received the information it requested. It now performs the [GET] request that was initially requested;
-  </li>
-  <li>in [3], the server&#x27;s response;
-  </li>
-  <li>in [4], the server sends JSON;
+  <li>in [4], the server sends jSON;
   </li>
   <li>in [5], an error occurred;
   </li>
   <li>in [6], the error message;
   </li>
-</ul>
+</ol>
 
-<p>It is more difficult to explain what happened here. The server’s response [3] is normal [HTTP/1.1 200 OK]. We should therefore have the requested document. It is possible that the server did indeed send the document but that the browser is preventing its use because it requires that, for the GET request as well, the response include the HTTP header [Access-Control-Allow-Origin:http://localhost:8081].</p>
-<p>We modify the method that handles the GET request for the URL [<span style="color: #2a00ff">/cors-getAllShortCategories</span>]:</p>
+<p>It is more difficult to explain what happened here. The server’s response [3] is normal [HTTP/1.1 200 OK]. We should therefore have the requested document. It is possible that the server did indeed send the document but that the browser is preventing its use because it requires that the response for the GET request also include the HTTP header [Access-Control-Allow-Origin:http://localhost:8081].</p>
+<p>We modify the method that handles GET from URL [/cors-getAllShortCategories]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-getAllShortCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">GET</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Response&lt;List&lt;Categorie&gt;&gt; getAllShortCategories(</span></span></span>
@@ -2071,18 +2071,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
-  <li>line 5: as with the HTTP [OPTIONS] request, the server will send the CORS HTTP headers for an HTTP [GET] request;
+<ol>
+  <li>line 5: as with the request HTTP [OPTIONS], the server will send the headers HTTP CORS for a request HTTP [GET];
   </li>
-</ul>
+</ol>
 
 <p>After this change, the results are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023600000194BBFEA850.png" width="396" height="283" style="display:inline-block; margin:4px;width:10.479cm;height:7.481cm;" class="odt-zoomable" data-zoom-src="images/100000000000023600000194BBFEA850.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000023600000194BBFEA850.png" width="396" height="283" style="display:inline-block; margin:4px;width:10.479cm;height:7.481cm;" class="odt-zoomable" data-zoom-src="images/100000000000023600000194BBFEA850.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>We have successfully obtained the short version of all categories.</p>
-<p><a id="refheading196721811596012"></a></p>
-<h4 id="21293-the-get-urls">21.2.9.3. <span style="color: #4f81bd">The [GET] URLs</span></h4>
-<p>In the controllers [CorsCategorieController, CorsProduitController, CorsAuthenticateController], the code for the actions that handle the requested [GET] URLs follows the pattern of the actions that previously handled the URL [/cors-getAllShortArticles]. The reader can verify the code in the examples provided with this document. Here is an example for the [/cors-getAllLongProduits] URL in the [CorsProduitController] controller:</p>
+<p>We have indeed obtained the short version for all categories.</p>
+<p><span id="refheading196721811596012" name="refheading196721811596012" class="odt-bookmark-anchor"></span></p>
+<h4 id="21293-the-url-get">21.2.9.3. <span style="color: #4f81bd">The URL [GET]</span></h4>
+<p>In the [CorsCategorieController, CorsProduitController, CorsAuthenticateController] controllers, the code for the actions that process the requested URL with a [GET] follows the pattern of the actions that previously processed the URL and [/cors-getAllShortArticles]. The reader can verify the code in the examples provided with this document. Here is an example for the URL and [/cors-getAllLongProduits] from the [CorsProduitController] controller:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.cors.server.service;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2126,33 +2126,33 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000022900000212C2E40077.png" width="387" height="371" style="display:inline-block; margin:4px;width:10.239cm;height:9.813cm;" class="odt-zoomable" data-zoom-src="images/100000000000022900000212C2E40077.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000022900000212C2E40077.png" width="387" height="371" style="display:inline-block; margin:4px;width:10.239cm;height:9.813cm;" class="odt-zoomable" data-zoom-src="images/100000000000022900000212C2E40077.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading196723811596012"></a></p>
-<h4 id="21294-post-urls">21.2.9.4. <span style="color: #4f81bd">[POST] URLs</span></h4>
-<p>Let&#x27;s consider the following scenario:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000030C000001F8B7804B0D.png" width="390" height="252" style="display:inline-block; margin:4px;width:10.319cm;height:6.668cm;" class="odt-zoomable" data-zoom-src="images/100000000000030C000001F8B7804B0D.png" /></td></tr></table>
+<p><span id="refheading196723811596012" name="refheading196723811596012" class="odt-bookmark-anchor"></span></p>
+<h4 id="21294-url-post">21.2.9.4. <span style="color: #4f81bd"><em>URL [POST]</em></span></h4>
+<p>Let&#x27;s examine the following case:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000030C000001F8B7804B0D.png" width="390" height="252" style="display:inline-block; margin:4px;width:10.319cm;height:6.668cm;" class="odt-zoomable" data-zoom-src="images/100000000000030C000001F8B7804B0D.png" /></td></tr></table>
 
 <ul>
-  <li>We make a POST [1] to the URL [2];
+  <li>we perform a POST [1] to the URL [2];
   </li>
-  <li>in [3], the posted value. This is the JSON string for a category with no products;
+  <li>in [3], the posted value. This is the string jSON from a category with no products;
   </li>
-  <li>Ultimately, we want to create a category named [category[2]];
+  <li>ultimately, we want to create a category named [categorie[2]];
   </li>
 </ul>
 
-<p>We are not modifying any code at this point. The result obtained is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004ED0000042558717F81.png" width="631" height="531" style="display:inline-block; margin:4px;width:16.683cm;height:14.037cm;" class="odt-zoomable" data-zoom-src="images/10000000000004ED0000042558717F81.png" /></td></tr></table>
+<p>We are not modifying any code at this time. The result obtained is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004ED0000042558717F81.png" width="631" height="531" style="display:inline-block; margin:4px;width:16.683cm;height:14.037cm;" class="odt-zoomable" data-zoom-src="images/10000000000004ED0000042558717F81.png" /></td></tr></table>
 
 <ul>
-  <li>in [1], as with [GET] requests, an [OPTIONS] request is made by the browser;
+  <li>in [1], as with the [GET] requests, a [OPTIONS] request is made by the browser;
   </li>
-  <li>in [2], it requests access authorization for a [POST] request. Previously, it was [GET];
+  <li>in [2], it requests access authorization for a [POST] request. Previously, this was [GET];
   </li>
-  <li>In [3], it requests authorization to send the HTTP headers [accept, authorization, content-type]. Previously, we only had the first two headers;
+  <li>in [3], it requests authorization to send the headers HTTP and [accept, authorization, content-type]. Previously, only the first two headers were present;
   </li>
-  <li>in [4], the web service does not grant all the requested permissions, which causes error [5];
+  <li>in [4], the web service does not grant all the requested permissions, which causes the error [5];
   </li>
 </ul>
 
@@ -2174,13 +2174,13 @@
 </code></pre></div>
 
 <ul>
-  <li>line 9: we added the HTTP header [Content-Type] (case is not sensitive);
+  <li>line 9: we added the header HTTP [Content-Type] (case is not important);
   </li>
-  <li>line 11: we added the HTTP method [POST];
+  <li>line 11: the method HTTP [POST] has been added;
   </li>
 </ul>
 
-<p>This means that [POST] methods are handled the same way as [GET] requests. Here is an example of the URL [/cors-saveCategories] in the [CorsCategorieController] controller:</p>
+<p>This means that the [POST] methods are handled in the same way as the [GET] requests. Here is an example of URL and [/cors-saveCategories] in the [CorsCategorieController] controller:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/cors-saveCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Response&lt;List&lt;CoreCategorie&gt;&gt; saveCategories(HttpServletRequest </span><span style="color:#6a3e3e">request</span><span style="color:#000000">,</span></span></span>
@@ -2199,12 +2199,12 @@
 </code></pre></div>
 
 <p>With these changes made, the result is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020E00000186792455BB.png" width="368" height="273" style="display:inline-block; margin:4px;width:9.74cm;height:7.221cm;" class="odt-zoomable" data-zoom-src="images/100000000000020E00000186792455BB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000020E00000186792455BB.png" width="368" height="273" style="display:inline-block; margin:4px;width:9.74cm;height:7.221cm;" class="odt-zoomable" data-zoom-src="images/100000000000020E00000186792455BB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The category [categorie[2]] has been successfully added to the database. The DBMS has assigned it the primary key 226. This can be verified using the GET method [/cors-getAllShortCategories]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002250000019D5592904D.png" width="384" height="289" style="display:inline-block; margin:4px;width:10.171cm;height:7.652cm;" class="odt-zoomable" data-zoom-src="images/10000000000002250000019D5592904D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>The category [categorie[2]] has been successfully added to the database. SGBD assigned it the primary key 226. This can be verified using the GET [/cors-getAllShortCategories] method:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002250000019D5592904D.png" width="384" height="289" style="display:inline-block; margin:4px;width:10.171cm;height:7.652cm;" class="odt-zoomable" data-zoom-src="images/10000000000002250000019D5592904D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading196725811596012"></a></p>
+<p><span id="refheading196725811596012" name="refheading196725811596012" class="odt-bookmark-anchor"></span></p>
 <h3 id="21210-conclusion">21.2.10. <span style="color: #4f81bd">Conclusion</span></h3>
 <p>Our application now supports cross-domain requests. These can be enabled or disabled via configuration in the [AppConfig] class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2226,15 +2226,15 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><a id="refheading14586824987110"></a></p>
+<p><span id="refheading14586824987110" name="refheading14586824987110" class="odt-bookmark-anchor"></span></p>
 <h2 id="213-the-eclipse-project-spring-cors-server-jpa-generic">21.3. <span style="color: #4f81bd">The Eclipse project [spring-cors-server-jpa-generic]</span></h2>
-<p><span style="color: #000000"><a id="refheading14514311862793331"></a>The CORS web service will now be implemented by the [spring-cors-server-jpa-generic] project, which is based on the [spring-security-server-jpa-generic] project that manages database access using Spring Data JPA:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DD0000028E38CD896E.png" width="623" height="327" style="display:inline-block; margin:4px;width:16.471cm;height:8.652cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DD0000028E38CD896E.png" /></td></tr></table>
+<p><span style="color: #000000"><span id="refheading14514311862793331" name="refheading14514311862793331" class="odt-bookmark-anchor"></span>The CORS web service will now be implemented by the [spring-cors-server-jpa-generic] project, whichis based on the [spring-security-server-jpa-generic] project, which manages database access using Spring Data JPA:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004DD0000028E38CD896E.png" width="623" height="327" style="display:inline-block; margin:4px;width:16.471cm;height:8.652cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DD0000028E38CD896E.png" /></td></tr></table>
 
-<p><span style="color: #000000">The [spring-cors-server-jpa-generic] project is created by cloning the previously studied [spring-cors-server-jdbc-generic] project.</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010B000002005176F9BA.png" width="187" height="358" style="display:inline-block; margin:4px;width:4.941cm;height:9.476cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B000002005176F9BA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">The [spring-cors-server-jpa-generic] project is created by cloning the previously examined [spring-cors-server-jdbc-generic] project.</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010B000002005176F9BA.png" width="187" height="358" style="display:inline-block; margin:4px;width:4.941cm;height:9.476cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B000002005176F9BA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">Next, there are two changes to make. The first is in the [pom.xml] file:</span></p>
+<p><span style="color: #000000">Next, there are two changes to make. The first is in the file [pom.xml]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -2273,78 +2273,78 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<ul>
+<ol>
   <li>lines 30–32: the dependency on the secure web service [spring-security-server-jpa-generic];
   </li>
-</ul>
+</ol>
 
 <p>In the end, the project dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011C00000081484803B8.png" width="199" height="90" style="display:inline-block; margin:4px;width:5.26cm;height:2.388cm;" class="odt-zoomable" data-zoom-src="images/100000000000011C00000081484803B8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011C00000081484803B8.png" width="199" height="90" style="display:inline-block; margin:4px;width:5.26cm;height:2.388cm;" class="odt-zoomable" data-zoom-src="images/100000000000011C00000081484803B8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><strong>Note</strong><span style="color: #000000">: Press Alt-F5 and then regenerate all projects</span></p>
-<p><span style="color: #000000">The second change is to update the imports in the classes that are reporting errors [Alt-Shift-O].</span></p>
-<p><span style="color: #000000">That’s it. We start the CORS web service with the runtime configuration [spring-cors-server-jpa-generic-hibernate-eclipselink]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000151000000D5231766F3.png" width="236" height="149" style="display:inline-block; margin:4px;width:6.241cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000D5231766F3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016700000118D85E3CEA.png" width="251" height="196" style="display:inline-block; margin:4px;width:6.65cm;height:5.188cm;" class="odt-zoomable" data-zoom-src="images/100000000000016700000118D85E3CEA.png" /></td></tr></table>
+<p><strong>Note</strong><span style="color: #000000">: Press Alt-F5, then regenerate all projects</span></p>
+<p><span style="color: #000000">The second change is to update the imports in the classes reporting [Alt-Maj-O] errors.</span></p>
+<p><span style="color: #000000">That’s it. We launch the CORS web service with the [spring-cors-server-jpa-generic-hibernate-eclipselink] runtime configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000151000000D5231766F3.png" width="236" height="149" style="display:inline-block; margin:4px;width:6.241cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000D5231766F3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000016700000118D85E3CEA.png" width="251" height="196" style="display:inline-block; margin:4px;width:6.65cm;height:5.188cm;" class="odt-zoomable" data-zoom-src="images/100000000000016700000118D85E3CEA.png" /></td></tr></table>
 
 <p><span style="color: #000000">Then launch the generic client:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E40000028AA744A251.png" width="626" height="325" style="display:inline-block; margin:4px;width:16.563cm;height:8.599cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E40000028AA744A251.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004E40000028AA744A251.png" width="626" height="325" style="display:inline-block; margin:4px;width:16.563cm;height:8.599cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E40000028AA744A251.png" /></td></tr></table>
 
-<p><span style="color: #000000">and using a browser, request the URL [1] with a GET. In [2], we see that the short version of the returned categories has the [entityType] field, which was missing in the previous JDBC version.</span></p>
-<p><span style="color: #000000">We will now cover two other CORS architectures:</span></p>
-<ul>
-  <li><span style="color: #000000">CORS / JPA EclipseLink / DB2 architecture;</span>
+<p><span style="color: #000000">and using a browser, request URL and [1] with GET. In [2], we see that the list of returned categories in version includes the [entityType] field, which was not present in the previous version or JDBC.</span></p>
+<p><span style="color: #000000">We will now examine two other CORS architectures:</span></p>
+<ol>
+  <li><span style="color: #000000">CORS / JPA EclipseLink / DB2;</span>
   </li>
-  <li><span style="color: #000000">CORS / JPA OpenJpa / Firebird architecture;</span>
+  <li><span style="color: #000000">CORS / JPA OpenJpa / Firebird;</span>
   </li>
-</ul>
-<p><a id="refheading14680824987110"></a></p>
-<h2 id="214-cors-jpa-eclipselink-db2-architecture">21.4. <span style="color: #4f81bd">CORS / JPA EclipseLink / DB2 architecture</span></h2>
+</ol>
+<p><span id="refheading14680824987110" name="refheading14680824987110" class="odt-bookmark-anchor"></span></p>
+<h2 id="214-architecture-cors-jpa-eclipselink-db2">21.4. <span style="color: #4f81bd">Architecture CORS / JPA EclipseLink / DB2</span></h2>
 <p><span style="color: #000000">We will implement the following architecture:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D3000002781BCFA2E9.png" width="618" height="316" style="display:inline-block; margin:4px;width:16.339cm;height:8.361cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D3000002781BCFA2E9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004D3000002781BCFA2E9.png" width="618" height="316" style="display:inline-block; margin:4px;width:16.339cm;height:8.361cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D3000002781BCFA2E9.png" /></td></tr></table>
 
 <p><span style="color: #000000">Load the following projects:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FE000001453CF31424.png" width="178" height="227" style="display:inline-block; margin:4px;width:4.701cm;height:6.015cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000001453CF31424.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FE000001453CF31424.png" width="178" height="227" style="display:inline-block; margin:4px;width:4.701cm;height:6.015cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FE000001453CF31424.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><strong>Note</strong><span style="color: #000000">: Press Alt-F5 and regenerate all Maven projects.</span></p>
-<p><span style="color: #000000">Start the DB2 database and verify that the [dbproduitscategories] database exists. If not, create it (section</span><a href="#refheading1237324776430071"><u><span style="color: #0563c1"> 12.1.2</span></u></a><span style="color: #000000">).</span></p>
-<p><span style="color: #000000">We create users in the [dbproduitscategories] database using the [spring-security-create-users-hibernate-eclipselink] runtime configuration:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001660000010172010C1E.png" width="251" height="180" style="display:inline-block; margin:4px;width:6.63cm;height:4.761cm;" class="odt-zoomable" data-zoom-src="images/10000000000001660000010172010C1E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015900000109E08D76FF.png" width="242" height="186" style="display:inline-block; margin:4px;width:6.391cm;height:4.909cm;" class="odt-zoomable" data-zoom-src="images/100000000000015900000109E08D76FF.png" /></td></tr></table>
+<p><span style="color: #000000">Run SGBD and DB2 and verify that the [dbproduitscategories] database exists. If not, create it (section</span><a href="ibm-db2-express-c-105.html#refheading1237324776430071"><u><span style="color: #0563c1"> 12.1.2</span></u></a><span style="color: #000000">).</span></p>
+<p><span style="color: #000000">Users are created in the [dbproduitscategories] database using the [spring-security-create-users-hibernate-eclipselink] runtime configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001660000010172010C1E.png" width="251" height="180" style="display:inline-block; margin:4px;width:6.63cm;height:4.761cm;" class="odt-zoomable" data-zoom-src="images/10000000000001660000010172010C1E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000015900000109E08D76FF.png" width="242" height="186" style="display:inline-block; margin:4px;width:6.391cm;height:4.909cm;" class="odt-zoomable" data-zoom-src="images/100000000000015900000109E08D76FF.png" /></td></tr></table>
 
 <p><img src="images/10000000000003940000013715020D49.png" width="641" height="218" style="width:16.96cm;height:5.757cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003940000013715020D49.png" /></p>
-<p><span style="color: #000000">Then start the CORS web service using the runtime configuration named [spring-cors-server-jpa-generic-hibernate-eclipselink] and its client named [spring-cors-client-generic]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000155000000C55CD5EAE1.png" width="238" height="138" style="display:inline-block; margin:4px;width:6.309cm;height:3.644cm;" class="odt-zoomable" data-zoom-src="images/1000000000000155000000C55CD5EAE1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FB000000C89E5B8CEB.png" width="176" height="140" style="display:inline-block; margin:4px;width:4.65cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000000C89E5B8CEB.png" /></td></tr></table>
-
-<p><span style="color: #000000">Populate the [dbproduitscategories] database with values using the runtime configuration [spring-jdbc-generic-04-fillDataBase]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C2EE24877E.png" width="210" height="136" style="display:inline-block; margin:4px;width:5.549cm;height:3.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C2EE24877E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<p><span style="color: #000000">Finally, request the following URL in a browser:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020F000001A9F330B472.png" width="369" height="297" style="display:inline-block; margin:4px;width:9.76cm;height:7.87cm;" class="odt-zoomable" data-zoom-src="images/100000000000020F000001A9F330B472.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<p><a id="refheading14681024987110"></a></p>
-<h2 id="215-cors-jpa-openjpa-firebird-architecture">21.5. <span style="color: #4f81bd">CORS / JPA OpenJPA / Firebird Architecture</span></h2>
-<p><span style="color: #000000">We will now implement the following architecture:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C60000027331C214A5.png" width="611" height="314" style="display:inline-block; margin:4px;width:16.166cm;height:8.296cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C60000027331C214A5.png" /></td></tr></table>
-
-<p><span style="color: #000000">Load the following projects:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001060000013CCB0513E7.png" width="183" height="221" style="display:inline-block; margin:4px;width:4.851cm;height:5.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000001060000013CCB0513E7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<p><strong>Note</strong><span style="color: #000000">: Press Alt-F5 and regenerate all Maven projects.</span></p>
-<p><span style="color: #000000">Start the Firebird DBMS and verify that the [dbproduitscategories] database exists. If not, create it (section</span><a href="#refheading1237324776430073"><u><span style="color: #0563c1"> 14.1.2</span></u></a><span style="color: #000000">).</span></p>
-<p><span style="color: #000000">We create users in the [dbproduitscategories] database using the [spring-security-create-users-openjpa] runtime configuration:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000116000000CA46FBA7DE.png" width="195" height="141" style="display:inline-block; margin:4px;width:5.151cm;height:3.743cm;" class="odt-zoomable" data-zoom-src="images/1000000000000116000000CA46FBA7DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000236000001359FDE8258.png" width="396" height="216" style="display:inline-block; margin:4px;width:10.479cm;height:5.72cm;" class="odt-zoomable" data-zoom-src="images/1000000000000236000001359FDE8258.png" /></td></tr></table>
-
-<p><img src="images/10000000000003AA00000107C190BBBF.png" width="657" height="184" style="width:17.371cm;height:4.872cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003AA00000107C190BBBF.png" /></p>
-<p><span style="color: #000000">Then start the CORS web service with the runtime configuration named [spring-cors-server-jpa-generic-openjpa]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011F000000EABA959C2F.png" width="201" height="164" style="display:inline-block; margin:4px;width:5.309cm;height:4.329cm;" class="odt-zoomable" data-zoom-src="images/100000000000011F000000EABA959C2F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023F00000139447B4AC5.png" width="403" height="219" style="display:inline-block; margin:4px;width:10.65cm;height:5.796cm;" class="odt-zoomable" data-zoom-src="images/100000000000023F00000139447B4AC5.png" /></td></tr></table>
-
-<p><span style="color: #000000">Start the CORS client using the [spring-cors-client-generic] configuration:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D0000000E245C97B2C.png" width="146" height="158" style="display:inline-block; margin:4px;width:3.851cm;height:4.184cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000E245C97B2C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">Then start the CORS web service with the execution configuration named [spring-cors-server-jpa-generic-hibernate-eclipselink] and its client named [spring-cors-client-generic]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000155000000C55CD5EAE1.png" width="238" height="138" style="display:inline-block; margin:4px;width:6.309cm;height:3.644cm;" class="odt-zoomable" data-zoom-src="images/1000000000000155000000C55CD5EAE1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FB000000C89E5B8CEB.png" width="176" height="140" style="display:inline-block; margin:4px;width:4.65cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000000C89E5B8CEB.png" /></td></tr></table>
 
 <p><span style="color: #000000">Populate the [dbproduitscategories] database with values using the [spring-jdbc-generic-04-fillDataBase] runtime configuration:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C000000C2EE24877E.png" width="210" height="136" style="display:inline-block; margin:4px;width:5.549cm;height:3.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C2EE24877E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012C000000C2EE24877E.png" width="210" height="136" style="display:inline-block; margin:4px;width:5.549cm;height:3.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C2EE24877E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">Finally, request the following URL in a browser:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020E000001A02CD42F8F.png" width="368" height="291" style="display:inline-block; margin:4px;width:9.74cm;height:7.703cm;" class="odt-zoomable" data-zoom-src="images/100000000000020E000001A02CD42F8F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000020F000001A9F330B472.png" width="369" height="297" style="display:inline-block; margin:4px;width:9.76cm;height:7.87cm;" class="odt-zoomable" data-zoom-src="images/100000000000020F000001A9F330B472.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><span id="refheading14681024987110" name="refheading14681024987110" class="odt-bookmark-anchor"></span></p>
+<h2 id="215-architecture-cors-jpa-openjpa-firebird">21.5. <span style="color: #4f81bd">Architecture CORS / JPA OpenJPA / Firebird</span></h2>
+<p><span style="color: #000000">We will now implement the following architecture:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004C60000027331C214A5.png" width="611" height="314" style="display:inline-block; margin:4px;width:16.166cm;height:8.296cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C60000027331C214A5.png" /></td></tr></table>
+
+<p><span style="color: #000000">Load the following projects:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001060000013CCB0513E7.png" width="183" height="221" style="display:inline-block; margin:4px;width:4.851cm;height:5.851cm;" class="odt-zoomable" data-zoom-src="images/10000000000001060000013CCB0513E7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><strong>Note</strong><span style="color: #000000">: Press Alt-F5 and regenerate all Maven projects.</span></p>
+<p><span style="color: #000000">Launch SGBD Firebird and verify that the [dbproduitscategories] database exists. If not, create it (section</span><a href="firebird-254.html#refheading1237324776430073"><u><span style="color: #0563c1"> 14.1.2</span></u></a><span style="color: #000000">).</span></p>
+<p><span style="color: #000000">We create users in the [dbproduitscategories] database using the [spring-security-create-users-openjpa] runtime configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000116000000CA46FBA7DE.png" width="195" height="141" style="display:inline-block; margin:4px;width:5.151cm;height:3.743cm;" class="odt-zoomable" data-zoom-src="images/1000000000000116000000CA46FBA7DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000236000001359FDE8258.png" width="396" height="216" style="display:inline-block; margin:4px;width:10.479cm;height:5.72cm;" class="odt-zoomable" data-zoom-src="images/1000000000000236000001359FDE8258.png" /></td></tr></table>
+
+<p><img src="images/10000000000003AA00000107C190BBBF.png" width="657" height="184" style="width:17.371cm;height:4.872cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003AA00000107C190BBBF.png" /></p>
+<p><span style="color: #000000">Then start the CORS web service with the execution configuration named [spring-cors-server-jpa-generic-openjpa]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011F000000EABA959C2F.png" width="201" height="164" style="display:inline-block; margin:4px;width:5.309cm;height:4.329cm;" class="odt-zoomable" data-zoom-src="images/100000000000011F000000EABA959C2F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000023F00000139447B4AC5.png" width="403" height="219" style="display:inline-block; margin:4px;width:10.65cm;height:5.796cm;" class="odt-zoomable" data-zoom-src="images/100000000000023F00000139447B4AC5.png" /></td></tr></table>
+
+<p><span style="color: #000000">Start the client CORS with the configuration [spring-cors-client-generic]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000D0000000E245C97B2C.png" width="146" height="158" style="display:inline-block; margin:4px;width:3.851cm;height:4.184cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000E245C97B2C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Populate the [dbproduitscategories] database with values using the [spring-jdbc-generic-04-fillDataBase] runtime configuration:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012C000000C2EE24877E.png" width="210" height="136" style="display:inline-block; margin:4px;width:5.549cm;height:3.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C000000C2EE24877E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Finally, request the following URL in a browser:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000020E000001A02CD42F8F.png" width="368" height="291" style="display:inline-block; margin:4px;width:9.74cm;height:7.703cm;" class="odt-zoomable" data-zoom-src="images/100000000000020E000001A02CD42F8F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 
 

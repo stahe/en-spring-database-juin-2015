@@ -12,7 +12,7 @@
         <meta name="author" content="Serge Tahé">
       
       
-        <link rel="canonical" href="https://stahe.github.io/en-spring-database-juin-2015/a-client-programmed-for-the-json-web-service.html">
+        <link rel="canonical" href="https://stahe.github.io/en-spring-database-juin-2015/a-client-programmed-for-the-web-service--json.html">
       
       
         <link rel="prev" href="exposing-a-database-on-the-web.html">
@@ -29,7 +29,7 @@
     
     
       
-        <title>18. A client programmed for the /jSON web service - Working with a relational database using the Spring ecosystem</title>
+        <title>18. A client programmed for the web service / jSON - Working with a relational database using the Spring ecosystem</title>
       
     
     
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -92,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#18-a-client-programmed-for-the-json-web-service" class="md-skip">
+        <a href="#18-a-client-programmed-for-the-web-service-json" class="md-skip">
           Skip to content
         </a>
       
@@ -128,7 +130,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              18. A client programmed for the /jSON web service
+              18. A client programmed for the web service / jSON
             
           </span>
         </div>
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -742,7 +744,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -778,7 +780,7 @@
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -789,14 +791,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link md-nav__link--active">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -825,7 +827,7 @@
   <a href="#181-the-eclipse-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.1. The Eclipse project
+        18.1. The Eclipse Project
       
     </span>
   </a>
@@ -912,10 +914,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#18522-managing-json-filters" class="md-nav__link">
+  <a href="#18522-filter-management-json" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.5.2.2. Managing JSON filters
+        18.5.2.2. Filter Management jSON
       
     </span>
   </a>
@@ -958,7 +960,7 @@
   <a href="#186-the-junit-test" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.6. The JUnit Test
+        18.6. The JUnit test
       
     </span>
   </a>
@@ -966,22 +968,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#187-web-service-json-jpa-hibernate-implementation" class="md-nav__link">
+  <a href="#187-web-service-implementation-json-jpa-hibernate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.7. Web service / JSON / JPA / Hibernate implementation
+        18.7. Web service implementation / jSON / JPA / Hibernate
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="18.7. Web service / JSON / JPA / Hibernate implementation">
+    <nav class="md-nav" aria-label="18.7. Web service implementation / jSON / JPA / Hibernate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#1871-the-eclipse-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.7.1. The Eclipse project
+        18.7.1. The Eclipse Project
       
     </span>
   </a>
@@ -1005,10 +1007,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#188-web-service-json-jpa-eclipselink-implementation" class="md-nav__link">
+  <a href="#188-web-service-implementation-json-jpa-eclipselink" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.8. Web Service / JSON / JPA / EclipseLink Implementation
+        18.8. Web service implementation / jSON / JPA / EclipseLink
       
     </span>
   </a>
@@ -1016,10 +1018,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#189-web-service-json-jpa-openjpa-implementation" class="md-nav__link">
+  <a href="#189-web-service-implementation-json-jpa-openjpa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.9. Web service / JSON / JPA / OpenJpa implementation
+        18.9. Web service implementation / jSON / JPA / OpenJpa
       
     </span>
   </a>
@@ -1030,7 +1032,7 @@
   <a href="#1810-web-service-implementation-json-jpa-eclipselink-postgresql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        18.10. Web service implementation / JSON / JPA / EclipseLink / PostgreSQL
+        18.10. Web service implementation / jSON / JPA / EclipseLink / PostgreSQL
       
     </span>
   </a>
@@ -1079,14 +1081,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -1197,40 +1199,40 @@
 
 
 
-<p><a id="refheading18006265679331"></a></p>
-<h1 id="18-a-client-programmed-for-the-json-web-service">18. <span style="color: #365f91">A client programmed for the /jSON web service</span></h1>
+<p><span id="refheading18006265679331" name="refheading18006265679331" class="odt-bookmark-anchor"></span></p>
+<h1 id="18-a-client-programmed-for-the-web-service-json">18. <span style="color: #365f91">A client programmed for the web service / jSON</span></h1>
 <p>Now that the [dbproduitscategories] database is available on the web, we will write an application that uses it. We will then have the following client/server architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B700000319C49E67A9.png" width="604" height="397" style="display:inline-block; margin:4px;width:15.968cm;height:10.492cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B700000319C49E67A9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004B700000319C49E67A9.png" width="604" height="397" style="display:inline-block; margin:4px;width:15.968cm;height:10.492cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B700000319C49E67A9.png" /></td></tr></table>
 
 <p>The client application will have three layers:</p>
 <ul>
-  <li>an [HTTP Client] [3] layer to communicate with the /jSON web application that exposes the database;
+  <li>a [Client HTTP] [3] layer to communicate with the web application / jSON that exposes the database;
   </li>
-  <li>a [DAO] layer [2] that will present the same interface as the [DAO] layer [4];
+  <li>a [DAO] [2] layer that will present the same interface as the [DAO] [4] layer;
   </li>
-  <li>a JUnit testing layer [1] to verify that the client and server are functioning correctly;
+  <li>a test layer JUnit [1] to verify that the client and server are functioning properly;
   </li>
 </ul>
-<p><a id="refheading17873265679331"></a></p>
-<h2 id="181-the-eclipse-project">18.1. <span style="color: #4f81bd">The Eclipse project</span></h2>
+<p><span id="refheading17873265679331" name="refheading17873265679331" class="odt-bookmark-anchor"></span></p>
+<h2 id="181-the-eclipse-project">18.1. <span style="color: #4f81bd">The Eclipse Project</span></h2>
 <p>The client&#x27;s Eclipse project is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004240000015EBDA930B8.png" width="530" height="175" style="display:inline-block; margin:4px;width:14.023cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000004240000015EBDA930B8.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004240000015EBDA930B8.png" width="530" height="175" style="display:inline-block; margin:4px;width:14.023cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000004240000015EBDA930B8.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001110000007F3FD68312.png" width="191" height="89" style="display:inline-block; margin:4px;width:5.05cm;height:2.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000001110000007F3FD68312.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010C000000807726F3DE.png" width="187" height="90" style="display:inline-block; margin:4px;width:4.96cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C000000807726F3DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011E000000EC1CB7BD06.png" width="200" height="165" style="display:inline-block; margin:4px;width:5.3cm;height:4.373cm;" class="odt-zoomable" data-zoom-src="images/100000000000011E000000EC1CB7BD06.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001110000007F3FD68312.png" width="191" height="89" style="display:inline-block; margin:4px;width:5.05cm;height:2.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000001110000007F3FD68312.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010C000000807726F3DE.png" width="187" height="90" style="display:inline-block; margin:4px;width:4.96cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C000000807726F3DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011E000000EC1CB7BD06.png" width="200" height="165" style="display:inline-block; margin:4px;width:5.3cm;height:4.373cm;" class="odt-zoomable" data-zoom-src="images/100000000000011E000000EC1CB7BD06.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011E000000CF8DCAB34F.png" width="200" height="145" style="display:inline-block; margin:4px;width:5.3cm;height:3.836cm;" class="odt-zoomable" data-zoom-src="images/100000000000011E000000CF8DCAB34F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000127000000CDA64B2122.png" width="206" height="143" style="display:inline-block; margin:4px;width:5.459cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/1000000000000127000000CDA64B2122.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011E000000CF8DCAB34F.png" width="200" height="145" style="display:inline-block; margin:4px;width:5.3cm;height:3.836cm;" class="odt-zoomable" data-zoom-src="images/100000000000011E000000CF8DCAB34F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000127000000CDA64B2122.png" width="206" height="143" style="display:inline-block; margin:4px;width:5.459cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/1000000000000127000000CDA64B2122.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<ul>
-  <li>The [spring.webjson.client.config] package contains the Spring configuration for the [DAO] layer;
+<ol>
+  <li>the [spring.webjson.client.config] package contains the Spring configuration for the [DAO] layer;
   </li>
   <li>the [spring.webjson.client.dao] package contains the implementation of the [DAO] layer;
   </li>
-  <li>the [spring.webjson.client.entities] package contains the objects exchanged with the web service / JSON. We are familiar with all of them;
+  <li>the [spring.webjson.client.entities] package contains the objects exchanged with the web service / jSON. We are familiar with all of them;
   </li>
-  <li>the [spring.webjson.client.infrastructure] package contains the exception classes used by the project. We know them all;
+  <li>The [spring.webjson.client.infrastructure] package contains the exception classes used by the project. We are familiar with all of them;
   </li>
-</ul>
-<p><a id="refheading17876265679331"></a></p>
+</ol>
+<p><span id="refheading17876265679331" name="refheading17876265679331" class="odt-bookmark-anchor"></span></p>
 <h2 id="182-maven-configuration-of-the-project">18.2. <span style="color: #4f81bd">Maven configuration of the project</span></h2>
 <p>The project is a Maven project configured by the following [pom.xml] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1313,12 +1315,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<ul>
-  <li>lines 16–20: the parent Maven project [<span style="color: #000000">spring-boot-starter-parent</span>], which allows us to define a number of dependencies without specifying their versions, as these are defined in the parent project;
+<ol>
+  <li>lines 16–20: the parent Maven project [spring-boot-starter-parent], which allows us to define a number of dependencies without specifying their version, as this is defined in the parent project;
   </li>
-  <li>lines 24–27: although we are not writing a web application, we need the [<span style="color: #000000">spring-web</span>] dependency, which includes the [RestTemplate] class that allows for easy interfacing with a web application or JSON;
+  <li>lines 24–27: although we are not writing a web application, we need the [spring-web] dependency, which includes the [RestTemplate] class that allows for easy interfacing with a web application / jSON;
   </li>
-  <li>lines 29–36: a JSON library;
+  <li>lines 29–36: a library, jSON;
   </li>
   <li>lines 38–41: a dependency that will allow us to set a <i>timeout </i>for the client’s HTTP requests. A <i>timeout </i>is the maximum wait time for a server response. After this time, the client signals a <i>timeout</i> error by throwing an exception;
   </li>
@@ -1326,12 +1328,12 @@
   </li>
   <li>lines 50–53: the logging library;
   </li>
-  <li>lines 54–64: the dependency for JUnit tests. It includes the JUnit 4 library required for testing. These dependencies have the [<span style="color: #008080">&lt;</span><span style="color: #3f7f7f">scope</span><span style="color: #008080">&gt;</span><span style="color: #000000">test</span><span style="color: #008080">&lt;</span><span style="color: #3f7f7f">/scope</span><span style="color: #008080">&gt;</span>] attribute, indicating that they are only needed for the testing phase. They are not included in the final project archive;
+  <li>lines 54–64: the dependency for JUnit tests. In particular, it includes the JUnit 4 library required for testing. These dependencies have the [&lt;scope&gt;test&lt;/scope&gt;] attribute, indicating that they are only required for the testing phase. They are not included in the final project archive;
   </li>
-</ul>
-<p><a id="refheading18010265679331"></a></p>
+</ol>
+<p><span id="refheading18010265679331" name="refheading18010265679331" class="odt-bookmark-anchor"></span></p>
 <h2 id="183-spring-configuration">18.3. <span style="color: #4f81bd">Spring Configuration</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010C000000807726F3DE.png" width="187" height="90" style="display:inline-block; margin:4px;width:4.96cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C000000807726F3DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010C000000807726F3DE.png" width="187" height="90" style="display:inline-block; margin:4px;width:4.96cm;height:2.369cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C000000807726F3DE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [AppConfig] class handles the Spring configuration for the HTTP client. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1437,55 +1439,55 @@
 <ul>
   <li>line 20: the class is a Spring configuration class;
   </li>
-  <li>line 21: other Spring components can be found in the [<span style="color: #2a00ff">spring.webjson.client.dao</span>] package;
+  <li>line 21: other Spring components can be found in the [spring.webjson.client.dao] package;
   </li>
   <li>line 25: a <i>timeout </i>of one second (1000 ms) is set;
   </li>
   <li>lines 88–91: the bean that returns this value;
   </li>
-  <li>line 26: the URL of the web service / JSON;
+  <li>line 26: the URL of the web service / jSON;
   </li>
-  <li>lines 93–96: the bean that returns this value;
+  <li>lines 93-96: the bean that returns this value;
   </li>
-  <li>lines 72–86: the configuration of the [RestTemplate] class that handles communication with the web service/JSON. When no configuration is required, it can be instantiated in the code with a simple [new RestTemplate()]. Here, we want to set the <i>timeout </i>for communication with the web service/JSON. The [timeout] bean on line 89 is passed as a parameter to the [restTemplate] method on line 73;
+  <li>lines 72–86: the configuration of the [RestTemplate] class that handles communication with the web service / jSON. When it does not need to be configured, it can be referenced in the code simply as [new RestTemplate()]. Here, we want to set the <i>timeout </i>for communication with the web service / jSON. The bean [timeout] on line 89 is passed as a parameter to the method [restTemplate] on line 73;
   </li>
-  <li>line 75: the [<span style="color: #000000">HttpComponentsClientHttpRequestFactory</span>] component is the one that allows us to set the <i>timeout </i>for communications (lines 82–83);
+  <li>line 75: the [HttpComponentsClientHttpRequestFactory] component is the component that allows us to set the exchange <i>timeout </i>(lines 82–83);
   </li>
-  <li>line 76: the [RestTemplate] class is constructed using this component. Since it relies on this component to communicate with the web service / JSON, the exchanges will indeed be subject to <i>the timeout</i>;
+  <li>line 76: the [RestTemplate] class is constructed using this component. Since it relies on this component to communicate with the web service /jSON, the exchanges will indeed be subject to <i>the timeout</i>;
   </li>
-  <li>lines 78–80: we associate a JSON converter with the [RestTemplate] class. We already discussed this when studying the web service. The client and server exchange lines of text. A converter serializes an object into text and deserializes text back into an object. There can be multiple converters associated with the [RestTemplate] class, and the one chosen at any given time depends on the HTTP headers sent by the server. Here, we have only a JSON converter since the text lines exchanged are JSON;
+  <li>lines 78–80: we associate a jSON converter with the [RestTemplate] class. We already discussed this when examining the web service. The client and server exchange lines of text. A converter is responsible for serializing an object into text and, conversely, deserializing text into an object. There may be several converters associated with the [RestTemplate] class, and the one chosen at any given time depends on the HTTP headers sent by the server. Here, we have only one jSON converter since the text lines exchanged are of type jSON;
   </li>
   <li>lines 82–83: the exchange <i>timeouts</i> are set;
   </li>
-  <li>lines 28–70: define JSON filters. These are the same as those on the server presented in section<a href="#refheading399120986338762"><u><span style="color: #0563c1"> 17.3.2.1</span></u></a>;
+  <li>lines 28–70: define jSON filters. These are the same as those on the server presented in section<a href="exposing-a-database-on-the-web.html#refheading399120986338762"><u><span style="color: #0563c1"> 17.3.2.1</span></u></a>;
   </li>
-  <li>lines 29–32: the [jsonMapper] bean is the JSON mapper for the [<span style="color: #000000">MappingJackson2HttpMessageConverter</span>] that we have associated with the [RestTemplate] class. We need this in the definition of the JSON filters;
+  <li>lines 29–32: the [jsonMapper] bean is the jSON mapper for the [MappingJackson2HttpMessageConverter] converter that we have associated with the [RestTemplate] class. We need this in the definition of the jSON filters;
   </li>
-  <li>lines 34–41: a bean defining the JSON filter [category without its products]. The [<span style="color: #000000">jsonMapperShortCategory</span>] method takes the [RestTemplate] bean defined on line 73 as a parameter;
+  <li>lines 34–41: a bean defining the jSON filter [catégorie sans ses produits]. The [jsonMapperShortCategorie] method receives the [restTemplate] bean defined on line 73 as a parameter;
   </li>
-  <li>line 37: we call the [jsonMapper] method from line 30 to retrieve the JSON mapper;
+  <li>line 37: the [jsonMapper] method from line 30 is called to retrieve the jSON mapper;
   </li>
-  <li>lines 38–39: we set the filter to return a category without its products;
+  <li>lines 38–39: the filter is set to return a category without its products;
   </li>
-  <li>line 40: the JSON mapper is returned as configured;
+  <li>line 40: the mapper jSON is rendered as configured;
   </li>
-  <li>lines 42–51: the JSON filter to retrieve a category along with its products;
+  <li>lines 42-51: the filter jSON to get a category with its products;
   </li>
-  <li>lines 53–60: the JSON filter to retrieve a product without its category;
+  <li>lines 53-60: the filter jSON to display a product without its category;
   </li>
-  <li>lines 62–70: the JSON filter to retrieve a product with its category;
+  <li>lines 62-70: the jSON filter to display a product with its category;
   </li>
 </ul>
 
-<p>All these beans will be available to the [DAO] layer code as well as to JUnit tests.</p>
-<p><a id="refheading18008265679331"></a></p>
+<p>All these beans will be available to the [DAO] layer codes as well as to the JUnit tests.</p>
+<p><span id="refheading18008265679331" name="refheading18008265679331" class="odt-bookmark-anchor"></span></p>
 <h2 id="184-implementation-of-the-http-client">18.4. <span style="color: #4f81bd">Implementation of the HTTP client</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000041A0000016473BC1288.png" width="525" height="178" style="display:inline-block; margin:4px;width:13.891cm;height:4.71cm;" class="odt-zoomable" data-zoom-src="images/100000000000041A0000016473BC1288.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000041A0000016473BC1288.png" width="525" height="178" style="display:inline-block; margin:4px;width:13.891cm;height:4.71cm;" class="odt-zoomable" data-zoom-src="images/100000000000041A0000016473BC1288.png" /></td></tr></table>
 
-<p><a id="refheading18020265679331"></a>Above is the [HTTP Client] layer that communicates with the web service we just built. We will now examine it.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000100000000C7288EB9D2.png" width="179" height="139" style="display:inline-block; margin:4px;width:4.74cm;height:3.685cm;" class="odt-zoomable" data-zoom-src="images/1000000000000100000000C7288EB9D2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading18020265679331" name="refheading18020265679331" class="odt-bookmark-anchor"></span>Above, the [Client HTTP] layer communicates with the web service we just built. We will now examine it.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000100000000C7288EB9D2.png" width="179" height="139" style="display:inline-block; margin:4px;width:4.74cm;height:3.685cm;" class="odt-zoomable" data-zoom-src="images/1000000000000100000000C7288EB9D2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The [Client] class handles communication with the web service / JSON. It implements the following [IClient] interface:</p>
+<p>The [Client] class implements communication with the web service / jSON. It implements the following [IClient] interface:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1496,27 +1498,27 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>The interface has only one method [getResponse]:</p>
+<p>The interface has only one method, [getResponse]:</p>
 <ul>
-  <li>line 6: the [<span style="color: #000000">getResponse] </span>method <span style="color: #000000">is a generic method parameterized by two types:</span>
+  <li>line 6: the [getResponse] method <span style="color: #000000">is a generic method parameterized by two types:</span>
     <ul>
-      <li><span style="color: #000000">[T1]: is the expected response type from the server in [Response&lt;T1&gt;], for example [List&lt;Category&gt;],</span>
+      <li><span style="color: #000000">[T1]: is the expected response type from the server in [Response&lt;T1&gt;], for example [List&lt;Categorie&gt;],</span>
       </li>
-      <li><span style="color: #000000">[T2]: is the type of the JSON parameter posted by POST operations, for example [List&lt;Product&gt;];</span>
+      <li><span style="color: #000000">[T2]: is the type of the jSON parameter posted by the POST operations, for example [List&lt;Produit&gt;];</span>
       </li>
     </ul>
   </li>
-  <li><span style="color: #000000">line 6: the [getResponse] method returns a result of type T1, for example [List&lt;Category&gt;];</span>
+  <li><span style="color: #000000">line 6: the method [getResponse] returns a result of type T1, for example [List&lt;Categorie&gt;];</span>
   </li>
   <li><span style="color: #000000">line 6: the parameters of [getResponse] are as follows:</span>
     <ul>
-      <li><span style="color: #000000">[String url]: the URL to query;</span>
+      <li><span style="color: #000000">[String url]: the URL to be queried;</span>
       </li>
-      <li><span style="color: #000000">[HttpMethod method]: HTTP method of the request, GET or POST as appropriate,</span>
+      <li><span style="color: #000000">[HttpMethod method]: HTTP method of the query, GET or POST as appropriate;</span>
       </li>
-      <li><span style="color: #000000">[int errStatus]: error code to be used in the [DaoException] class, if an error occurs during communication with the server,</span>
+      <li><span style="color: #000000">[int errStatus]: error code to be used in class [DaoException], if an error occurs during communication with the server,</span>
       </li>
-      <li><span style="color: #000000">[T2 body]: the value to post if a POST request is made;</span>
+      <li><span style="color: #000000">[T2 body]: the value to post if POST is present;</span>
       </li>
     </ul>
   </li>
@@ -1566,16 +1568,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
+<ol>
   <li>line 18: the [Client] class is a Spring component and can therefore be injected into other Spring components;
   </li>
   <li>lines 22–23: injection of the [RestTemplate] bean defined in [AppConfig] (see section<a href="#refheading18010265679331"><u><span style="color: #0563c1"> 18.3</span></u></a>), which handles communication with the server;
   </li>
-  <li>lines 24–25: injection of the web service URL / JSON defined in [AppConfig] (see section<a href="#refheading18010265679331"><u><span style="color: #0563c1"> 18.3</span></u></a>);
+  <li>lines 24–25: injection of the URL web service / jSON defined in [AppConfig] (see section<a href="#refheading18010265679331"><u><span style="color: #0563c1"> 18.3</span></u></a>);
   </li>
-  <li>Lines 37–39: The private method [<span style="color: #000000">getMessagesForException</span>] is a utility method used to retrieve the list of error messages contained in an exception. We have encountered it several times;
+  <li>lines 37–39: the private method [getMessagesForException] is a utility method used to retrieve the list of error messages contained in an exception. We have encountered it several times;
   </li>
-</ul>
+</ol>
 
 <p><span style="color: #000000">Let’s continue:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1606,38 +1608,38 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
-  <li><span style="color: #000000">line 18: the statement that sends the request to the server and receives its response. The [RestTemplate] component offers a large number of methods for interacting with the server, but only the [exchange] method accepts generic parameters. This is why it was chosen. The second parameter specifies the type of the expected response. The first parameter is the [RequestEntity] request (line 8). The result of the [exchange] method is of type [ResponseEntity&lt;Response&lt;T1&gt;&gt;] (line 5). The [ResponseEntity] type encapsulates the server’s complete response, including HTTP headers and the document sent by the server. Similarly, the [RequestEntity] type encapsulates the client’s entire request, including HTTP headers and any posted data;</span>
+<ol>
+  <li><span style="color: #000000">line 18: the statement that sends the request to the server and receives its response. The [RestTemplate] component offers a large number of methods for communicating with the server, but only the [exchange] method accepts generic parameters. This is why it was chosen. The second parameter specifies the type of the expected response. The first parameter is the [RequestEntity] request (line 8). The result of the [exchange] method is of type [ResponseEntity&lt;Response&lt;T1&gt;&gt;] (line 5). The type [ResponseEntity] encapsulates the complete server response, including the HTTP headers and the document sent by the server. Similarly, the [RequestEntity] type encapsulates the entire client request, including the HTTP headers and any posted value;</span>
   </li>
-  <li><span style="color: #000000">lines 8–16: we need to construct the [RequestEntity] request. It differs depending on whether we use a GET or a POST request;</span>
+  <li><span style="color: #000000">lines 8–16: we need to construct the request of type [RequestEntity]. It differs depending on whether we use a GET or a POST to make the request;</span>
   </li>
-  <li><span style="color: #000000">line 10: the request for a GET. The [RequestEntity] class provides static methods to create GET, POST, HEAD, and other requests. The [RequestEntity.get] method allows you to create a GET request by chaining the various methods that build it:</span>
-    <ul>
-      <li><span style="color: #000000">the [RequestEntity.get] method takes the target URL as a parameter in the form of a URI instance,</span>
+  <li><span style="color: #000000">line 10: the request for a GET. The [RequestEntity] class provides static methods to create the queries GET, POST, HEAD,... The [RequestEntity.get] method allows you to create a GET query by chaining the various methods that construct it:</span>
+    <ol>
+      <li><span style="color: #000000">the [RequestEntity.get] method takes as a parameter the target URL in the form of a URI instance,</span>
       </li>
-      <li><span style="color: #000000">the [accept] method allows you to define the elements of the [Accept] HTTP header. Here, we specify that we accept the [application/json] type that the server will send;</span>
+      <li><span style="color: #000000">the [accept] method allows you to define the elements of the HTTP header [Accept]. Here, we specify that we accept the [application/json] type that the server will send;</span>
       </li>
       <li><span style="color: #000000">the [build] method uses this information to construct the [RequestEntity] type of the request;</span>
       </li>
-    </ul>
+    </ol>
   </li>
-  <li><span style="color: #000000">Line 14: the POST request. The [RequestEntity.post] method allows you to create a POST request by chaining together the various methods that build it:</span>
-    <ul>
-      <li><span style="color: #000000">the [RequestEntity.post] method takes the target URL as a parameter in the form of a URI instance,</span>
+  <li><span style="color: #000000">Line 14: the request for a POST. The [RequestEntity.post] method allows us to create a POST request by chaining the various methods that construct it:</span>
+    <ol>
+      <li><span style="color: #000000">the [RequestEntity.post] method takes as a parameter the target URL in the form of a URI instance,</span>
       </li>
-      <li><span style="color: #000000">the [header] method defines an HTTP header. Here, we send the [</span><span style="color: #2a00ff">Content-Type: application/json</span><span style="color: #000000">] header to the server to indicate that the posted data will arrive in the form of a JSON string;</span>
+      <li><span style="color: #000000">the [header] method defines a HTTP header. Here, we send the [Content-Type: application/json] header to the server to indicate that the posted value will arrive in the form of a jSON string;</span>
       </li>
-      <li><span style="color: #000000">the [accept] method allows us to indicate that we accept the [application/json] type that the server will send;</span>
+      <li><span style="color: #000000">the method [accept] allows us to indicate that we accept the type [application/json] that the server will send;</span>
       </li>
-      <li><span style="color: #000000">the [body] method sets the posted value. This is the fourth parameter of the generic [getResponse] method (line 1);</span>
+      <li><span style="color: #000000">the method [body] sets the posted value. This is the fourth parameter of the generic method [getResponse] (line 1);</span>
       </li>
-    </ul>
+    </ol>
   </li>
-  <li><span style="color: #000000">Lines 20–23: If a communication error occurs with the server, a [DaoException] is thrown with the error code set to the [errStatus] parameter passed as the third parameter to the generic [getResponse] method (line 3);</span>
+  <li><span style="color: #000000">lines 20–23: if a communication error occurs with the server, an exception of type [DaoException] is thrown with the error code set to the parameter [errStatus] passed as the third parameter of the generic method [getResponse] (line 3);</span>
   </li>
-</ul>
+</ol>
 
-<p>The [<span style="color: #000000">getResponse</span>] method continues as follows:</p>
+<p>The [getResponse] method continues as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">// generic request</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
@@ -1658,7 +1660,7 @@
 </code></pre></div>
 
 <ul>
-  <li>line 4: we have received the response from the server. It is of type [<span style="color: #000000">ResponseEntity&lt;Response&lt;T1&gt;&gt;</span>] (line 5 of the previous code example) where the [Response] class is the class already used on the server side:
+  <li>line 4: we received the response from the server. It is of type [ResponseEntity&lt;Response&lt;T1&gt;&gt;] (line 5 of the previous code we examined), where the class [Response] is the class already used on the server side:
   </li>
 </ul>
 
@@ -1691,28 +1693,28 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>Let&#x27;s go back to the [getResponse] method:</p>
-<ul>
-  <li>line 6: we retrieve the [Response&lt;T1&gt;] object encapsulated in the response. This type has the fields [int status, String exception, T1 body];
+<p>Let&#x27;s return to the [getResponse] method:</p>
+<ol>
+  <li>line 6: we retrieve the [Response&lt;T1&gt;] document encapsulated in the response. This type has the fields [int status, String exception, T1 body];
   </li>
-  <li>line 7: we retrieve the [status] of the response, which is an error code;
+  <li>line 7: we retrieve the [status] from the response, which is an error code;
   </li>
-  <li>lines 9–12: if there is an error, we throw an exception containing the two pieces of information [status, exception] from the server’s response;
+  <li>lines 9–12: if there is an error, we throw an exception containing the two [status, exception] pieces of information from the server’s response;
   </li>
   <li>line 14: otherwise, we return the [T1] type contained in the [Response&lt;T1&gt;] response;
   </li>
-</ul>
+</ol>
 
-<p>The [Client] class is generic. It can be used for any web/JSON client.</p>
-<p><a id="refheading18022265679331"></a></p>
+<p>The [Client] class is generic. It can be used for any web client / jSON.</p>
+<p><span id="refheading18022265679331" name="refheading18022265679331" class="odt-bookmark-anchor"></span></p>
 <h2 id="185-implementation-of-the-dao-layer">18.5. <span style="color: #4f81bd">Implementation of the [Dao] layer</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042700000162CA255075.png" width="532" height="177" style="display:inline-block; margin:4px;width:14.063cm;height:4.683cm;" class="odt-zoomable" data-zoom-src="images/100000000000042700000162CA255075.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000042700000162CA255075.png" width="532" height="177" style="display:inline-block; margin:4px;width:14.063cm;height:4.683cm;" class="odt-zoomable" data-zoom-src="images/100000000000042700000162CA255075.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C800000095ECD11128.png" width="140" height="104" style="display:inline-block; margin:4px;width:3.701cm;height:2.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C800000095ECD11128.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C800000095ECD11128.png" width="140" height="104" style="display:inline-block; margin:4px;width:3.701cm;height:2.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C800000095ECD11128.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading1350641333600986"></a></p>
+<p><span id="refheading1350641333600986" name="refheading1350641333600986" class="odt-bookmark-anchor"></span></p>
 <h3 id="1851-the-abstractdao-class">18.5.1. <span style="color: #4f81bd">The [AbstractDao] class</span></h3>
-<p>The client-side [DAO] layer has the same interface as the server-side [DAO] layer (see section<a href="#refheading1052082082896917"><u><span style="color: #0563c1"> 4.7</span></u></a>):</p>
+<p>The client-side [DAO] layer has the same interface as the server-side [DAO] layer (see section<a href="introduction-to-spring-jdbc.html#refheading1052082082896917"><u><span style="color: #0563c1"> 4.7</span></u></a>):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1727,7 +1729,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getAllLongEntities();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// special entities - short version</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// particular entities - version short</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getShortEntitiesById(Iterable&lt;Long&gt; </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getShortEntitiesById(Long... </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
@@ -1736,7 +1738,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getShortEntitiesByName(String... </span><span style="color:#6a3e3e">names</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// special entities - long version</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// particular entities - version long</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getLongEntitiesById(Iterable&lt;Long&gt; </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getLongEntitiesById(Long... </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
@@ -1768,11 +1770,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">}</span></span></span>
 </code></pre></div>
 
-<p>The [AbstractDao] class implements the [IDao] interface. It is analogous to the class of the same name on the server side (see Section<a href="#refheading1052102082896917"><u><span style="color: #0563c1"> 4.8</span></u></a>). It serves as the parent class for the [DaoCategorie] and [DaoProduit] classes. It is not identical for two reasons:</p>
-<ul>
-  <li>on the server side, the [AbstractDao] class manages one piece of information:
+<p>The [AbstractDao] class implements the [IDao] interface. It is a class analogous to the server-side class of the same name (see section<a href="introduction-to-spring-jdbc.html#refheading1052102082896917"><u><span style="color: #0563c1"> 4.8</span></u></a>). It serves as the parent class for the classes [DaoCategorie] and [DaoProduit]. It is not identical for two reasons:</p>
+<ol>
+  <li>on the server side, the [AbstractDao] class handles one piece of information:
   </li>
-</ul>
+</ol>
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// injections</span></span></span>
@@ -1783,12 +1785,12 @@
 
 <p>which we don&#x27;t need here.</p>
 <ul>
-  <li>On the server side, the [AbstractDao] class uses [@Transactional] annotations to encapsulate each method within a transaction. On the client side, there is no database to manage. This annotation therefore disappears;
+  <li>On the server side, the [AbstractDao] class uses [@Transactional] annotations to encapsulate each method in a transaction. On the client side, there is no database to manage. This annotation therefore disappears;
   </li>
 </ul>
 
 <p>The [AbstractDao] class simply verifies the validity of the call parameters for the methods of the [IDao] interface before delegating the call to the child classes:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.client.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.util.ArrayList;</span></span></span>
@@ -1886,9 +1888,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><a id="refheading1350661333600986"></a></p>
+<p><span id="refheading1350661333600986" name="refheading1350661333600986" class="odt-bookmark-anchor"></span></p>
 <h3 id="1852-the-daocategorie-class">18.5.2. <span style="color: #4f81bd">The [DaoCategorie] class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C80000009534479127.png" width="140" height="104" style="display:inline-block; margin:4px;width:3.701cm;height:2.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C80000009534479127.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C80000009534479127.png" width="140" height="104" style="display:inline-block; margin:4px;width:3.701cm;height:2.757cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C80000009534479127.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [DaoCategorie] class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1922,21 +1924,21 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
+<ol>
   <li>line 19: the [DaoClient] class is a Spring component into which other Spring components can be injected;
   </li>
-  <li>line 20: the [<span style="color: #000000">DaoClient</span>] class extends the [<span style="color: #000000">AbstractDao&lt;Category&gt;</span>] class we just saw and therefore implements the [<span style="color: #000000">IDao&lt;Category&gt;</span>] interface;
+  <li>line 20: the [DaoClient] class extends the [AbstractDao&lt;Categorie&gt;] class we just saw and therefore implements the [IDao&lt;Categorie&gt;] interface;
   </li>
   <li>lines 22–23: we inject the Spring context to access its beans;
   </li>
-  <li>lines 24–25: we inject the HTTP client we just built;
+  <li>lines 24–25: we inject the HTTP client that we just built;
   </li>
-</ul>
+</ol>
 
-<p>The implementations of the various methods of the [DaoCategorie] interface all follow the same pattern. We will present three methods, one based on a [GET] operation, the other two on a [POST] operation.</p>
-<p><a id="refheading1350681333600986"></a></p>
-<h4 id="18521-the-getalllongentities-method">18.5.2.1. <span style="color: #4f81bd">The [<span style="color: #000000">getAllLongEntities</span>] method</span></h4>
-<p>The [<span style="color: #000000">getAllLongEntities</span>] method returns the long version of all categories in the database:</p>
+<p>The implementations of the various methods of the [DaoCategorie] interface all follow the same pattern. We will present three methods, one based on a [GET] operation, and the other two on a [POST] operation.</p>
+<p><span id="refheading1350681333600986" name="refheading1350681333600986" class="odt-bookmark-anchor"></span></p>
+<h4 id="18521-the-getalllongentities-method">18.5.2.1. <span style="color: #4f81bd">The [getAllLongEntities] method</span></h4>
+<p>The [getAllLongEntities] method generates the longest possible version for all categories in the database:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;Categorie&gt; getAllLongEntities() {</span></span></span>
@@ -1960,37 +1962,37 @@
 </code></pre></div>
 
 <ul>
-  <li>line 2: the method returns the list of categories in their long versions;
+  <li>line 2: the method returns the list of categories in their full versions;
   </li>
-  <li>line 5: the JSON mapper that will serialize the posted value (there isn’t one) and deserialize the response returned by the [Client] class (categories in their long versions);
+  <li>line 5: the jSON mapper, which will serialize the posted value (there is none) and deserialize the response returned by the [Client] class (categories in their long versions);
   </li>
-  <li>line 7: we call the [<span style="color: #000000">getResponse</span>] method of the [Client] class. This method handles communication with the web service / JSON. Its parameters are as follows:
+  <li>line 7: the [getResponse] method of the [Client] class is called. This method handles communication with the web service / jSON. Its parameters are as follows:
     <ul>
-      <li>the URL of the service being queried [<span style="color: #2a00ff">/getAllLongCategories]</span>;
+      <li>the URL of the queried service [/getAllLongCategories];
       </li>
-      <li>the [GET] method to use;
+      <li>the [GET] method to be used;
       </li>
       <li>the error code to use if an error occurs (232);
       </li>
-      <li>the posted value. Here, there is none;
+      <li>the posted value. There is none here;
       </li>
     </ul>
   </li>
-  <li>Line 7: In the expression [<span style="color: #000000">client.&lt;</span><b><span style="color: #000000">List&lt;Category&gt;</span></b><span style="color: #000000">, </span><b><span style="color: #000000">Void</span></b><span style="color: #000000">&gt;</span>], we specify the actual parameters of the generic types [T1, T2] for the [getResponse] method. Recall that [T1] is the type of the expected response and [T2] is the type of the posted value. Here, we expect a result of type [List&lt;Category&gt;] and there is no posted value [Void];
+  <li>line 7: in the expression [client.&lt;List&lt;Categorie&gt;, Void&gt;], the actual parameters of the generic types [T1, T2] of the method [getResponse] are specified. Note that [T1] is the type of the expected response and [T2] is the type of the posted value. Here, a result of type [List&lt;Categorie&gt;] is expected, and there is no posted value of type [Void];
   </li>
-  <li>Line 7: The result returned by the [getResponse] method is stored in an object of type [Object]. This is a bit odd since we expect a type [List&lt;Category&gt;]. This is because the [getResponse] method, which works with generic types [T1, T2], always returns a [java.util.LinkedHashMap] type, which must then be processed to return the correct type;
+  <li>Line 7: The result returned by the [getResponse] method is placed in an object of type [Object]. This is a bit odd, since we expect a type of [List&lt;Categorie&gt;]. This is because the [getResponse] method, which works with generic types [T1, T2], always returns a type [java.util.LinkedHashMap], which must then be used to return the correct type;
   </li>
-  <li>Line 9: We return the list of categories. To do this, we serialize the [map] object [<span style="color: #6a3e3e">mapper</span><span style="color: #000000">.writeValueAsString(</span><span style="color: #6a3e3e">map</span><span style="color: #000000">)</span>] into a JSON string, which we then deserialize back into a [List&lt;Category&gt;] type;
+  <li>Line 9: We return the list of categories. To do this, we serialize the [map] [mapper.writeValueAsString(map)] object into a jSON string, which we then deserialize back into a [List&lt;Categorie&gt;] type;
   </li>
-  <li>line 13: we have received a list of categories, some of which may have products. We receive the short version of these products. Therefore, when they are deserialized, the created [Product] objects have their [<i>category</i>] field <i>set to null</i>. The [<b>linkCategoryWithProducts</b>] method re-establishes the link between a [Product] and its [Category];
+  <li>Line 13: We have received a list of categories, some of which may have products. We receive the short version for these products. Therefore, when they are deserialized, the created [Produit] objects have their [categorie==null] field. The [linkCategorieWithProduits] method re-establishes the link between a [Produit] and its [Categorie];
   </li>
-  <li>lines 14–15: we catch the [DaoException] that the [getResponse] method might have thrown and immediately rethrow it. This unusual behavior is because if we don’t do this, the [DaoException] will be caught by lines 16–18, and we don’t want that;
+  <li>lines 14–15: we catch the [DaoException] exception that the [getResponse] method might have thrown and immediately rethrow it. This strange behavior is due to the fact that if we do not do this, the exception of type [DaoException] will be caught by lines 16–18, and we do not want that;
   </li>
-  <li>lines 16–18: we catch all other exceptions to encapsulate them in a [DaoException] type. Recall that the [DAO] layer must only throw this type of exception;
+  <li>Lines 16–18: We catch all other exceptions to encapsulate them in a [DaoException] type. Note that the [DAO] layer must only throw this type of exception;
   </li>
 </ul>
 
-<p>The [<strong>linkCategorieWithProduits</strong>] method, which re-establishes the links between [Product] entities and [Category] entities, is as follows:</p>
+<p>The [linkCategorieWithProduits] method that recreates the links between [Produit] entities and [Categorie] entities is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> List&lt;Categorie&gt; linkCategorieWithProduits(List&lt;Categorie&gt; </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Categorie </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
@@ -2005,9 +2007,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><a id="refheading1398131985289926"></a></p>
-<h4 id="18522-managing-json-filters">18.5.2.2. <span style="color: #4f81bd">Managing JSON filters</span></h4>
-<p>Let’s revisit JSON filter handling in the previous [<span style="color: #000000">getAllLongEntities</span>] method:</p>
+<p><span id="refheading1398131985289926" name="refheading1398131985289926" class="odt-bookmark-anchor"></span></p>
+<h4 id="18522-filter-management-json">18.5.2.2. <span style="color: #4f81bd">Filter Management jSON</span></h4>
+<p>Let’s revisit the handling of filters jSON in the previous method [getAllLongEntities]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;Categorie&gt; getAllLongEntities() {</span></span></span>
@@ -2024,7 +2026,7 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 5: We retrieve a JSON mapper from the Spring context that can handle the long versions of the categories. Let’s revisit the definition of this mapper in the Spring configuration [AppConfig]:
+  <li>Line 5: We retrieve a jSON mapper from the Spring context that can handle the long versions of the categories. Let’s revisit the definition of this mapper in the Spring configuration [AppConfig]:
   </li>
 </ul>
 
@@ -2052,13 +2054,13 @@
 </code></pre></div>
 
 <ul>
-  <li>The [<span style="color: #2a00ff">jsonMapperLongCategorie</span>] bean requested by the [getAlllongEntities] method is the bean in lines 7–15;
+  <li>The [jsonMapperLongCategorie] bean requested by the [getAlllongEntities] method is the bean in lines 7–15;
   </li>
-  <li>line 10: the mapper is provided by the [jsonMapper] method in lines 2–5. We can see that this JSON mapper belongs to the [RestTemplate] object, which manages HTTP exchanges between the client and the server. This mapper is used by default to:
+  <li>line 10: the mapper is provided by the [jsonMapper] method in lines 2–5. We can see that this jSON mapper belongs to the [RestTemplate] object, which manages the HTTP exchanges between the client and the server. This mapper is used by default to:
     <ul>
       <li>serialize the value posted to the server;
       </li>
-      <li>deserialize the response returned by the server;
+      <li>deserialize the response sent back by the server;
       </li>
     </ul>
   </li>
@@ -2078,24 +2080,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> linkCategorieWithProduits(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span></span>
 </code></pre></div>
 
-<ul>
-  <li><span style="color: #000000">Line 2: We retrieve the [</span><span style="color: #2a00ff">jsonMapperLongCategorie</span><span style="color: #000000">] mapper from the Spring context;</span>
+<ol>
+  <li><span style="color: #000000">line 2: we retrieve the [jsonMapperLongCategorie] mapper from the Spring context;</span>
   </li>
   <li><span style="color: #000000">line 4: the [getResponse] method is executed. This involves:</span>
-    <ul>
-      <li><span style="color: #000000">automatic serialization of the posted value (there isn&#x27;t one here);</span>
+    <ol>
+      <li><span style="color: #000000">automatic serialization of the posted value (there is none here);</span>
       </li>
-      <li><span style="color: #000000">automatic deserialization of the received response, here a List&lt;Category&gt; type. This is because the [Category] entity has a JSON filter [jsonFilterCategory], which needed to be handled. This is the reason for line 2;</span>
+      <li><span style="color: #000000">automatic deserialization of the received response, in this case a List&lt;Category&gt; type. This is because the [Categorie] entity has a jSON filter, which needed to be handled. This is the reason for line 2;</span>
       </li>
-    </ul>
+    </ol>
   </li>
-  <li><span style="color: #000000">line 6: the result undergoes a second serialization/deserialization with this same mapper to retrieve the List&lt;Category&gt; type. Line 4: the type returned by [getResponse] is an [Object] type;</span>
+  <li><span style="color: #000000">line 6: the result undergoes a second serialization/deserialization with this same mapper to retrieve the List&lt;Category&gt; type. Line 4: the type returned by [getResponse] is a [Object] type;</span>
   </li>
-</ul>
+</ol>
 
-<p><span style="color: #000000">In the following methods, note that the JSON mapper requested from the Spring context is used for both the posted value (serialization) and the received value (deserialization). If one or both values have a JSON filter, they must be configured. The mapper can therefore have up to two configured filters. In the following, this never happens. Either the posted value has no filter (List&lt;Long&gt;, List&lt;String&gt;), or the received value has none (List&lt;CoreCategory&gt;, List&lt;CoreProduct&gt;). The entities with a JSON filter are only [Category] and [Product].</span></p>
-<p><a id="refheading1350701333600986"></a></p>
-<h4 id="18523-the-getshortentitiesbyid-method">18.5.2.3. <span style="color: #4f81bd">The [getShortEntitiesById] method</span></h4>
+<p><span style="color: #000000">In the following methods, note that the jSON mapper requested from the Spring context is used for both the posted value (serialization) and the received value (deserialization). If one or both values have a jSON filter, they must be configured. The mapper can therefore have up to two configured filters. In the following, this never occurs. Either the posted value has no filter (List&lt;Long&gt;, List&lt;String&gt;), or the received value has none (List&lt;CoreCategorie&gt;, List&lt;CoreProduit&gt;). The entities with a jSON filter are only [Categorie] and [Produit].</span></p>
+<p><span id="refheading1350701333600986" name="refheading1350701333600986" class="odt-bookmark-anchor"></span></p>
+<h4 id="18523-the-getshortentitiesbyid-method">18.5.2.3. <span style="color: #4f81bd"><em>The [getShortEntitiesById] method</em></span></h4>
 <p>The [getShortEntitiesById] method returns the short versions of the categories whose primary keys it receives as parameters: </p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
@@ -2117,13 +2119,13 @@
 </code></pre></div>
 
 <ul>
-  <li>line 5: the JSON mapper that will serialize the posted value (a list of primary keys) and deserialize the response returned by the [Client] class (categories in their short versions). The chosen filter will have no effect on the posted value since there is no filter for the elements in the posted list;
+  <li>Line 5: the jSON mapper, which will serialize the posted value (a list of primary keys) and deserialize the response returned by the [Client] class (categories in their short versions). The selected filter will have no effect on the posted value since there is no filter for the elements in the posted list;
   </li>
-  <li>line 7: we call the [<span style="color: #000000">getResponse</span>] method of the parent class. This method handles communication with the web service / JSON. Its parameters are as follows:
+  <li>Line 7: The [getResponse] method of the parent class is called. This method handles communication with the web service /jSON. Its parameters are as follows:
     <ul>
-      <li>the URL of the service being queried [<span style="color: #2a00ff">/getShortCategoriesById]</span>;
+      <li>the URL of the queried service [/getShortCategoriesById];
       </li>
-      <li>the [POST] method to use;
+      <li>the [POST] method to be used;
       </li>
       <li>the error code to use if an error occurs (204);
       </li>
@@ -2131,16 +2133,16 @@
       </li>
     </ul>
   </li>
-  <li>line 7: in the expression [<span style="color: #000000">client.&lt;</span><b><span style="color: #000000">List&lt;Category&gt;, List&lt;Long&gt;</span></b><span style="color: #000000">&gt;</span>], we specify the actual parameters of the generic types [T1, T2] for the [getResponse] method. Recall that [T1] is the type of the expected response and [T2] is the type of the posted value. Here, we expect a result of type [List&lt;Category&gt;] and the posted value is a list of primary keys of type [List&lt;Long&gt;];
+  <li>line 7: in the expression [client.&lt;List&lt;Categorie&gt;, List&lt;Long&gt;&gt;], the actual parameters of the generic types [T1, T2] of the method [getResponse] are specified. Recall that [T1] is the type of the expected response and [T2] is the type of the posted value. Here, a result of type [List&lt;Categorie&gt;] is expected, and the posted value is a list of primary keys of type [List&lt;Long&gt;];
   </li>
-  <li>Line 7: The result returned by the [getResponse] method is stored in an [Object] type;
+  <li>line 7: the result returned by the [getResponse] method is placed in an object of type [Object];
   </li>
-  <li>Line 9: The list of categories is returned. To do this, the [map] object [<span style="color: #6a3e3e">mapper</span><span style="color: #000000">.writeValueAsString(</span><span style="color: #6a3e3e">map</span><span style="color: #000000">)</span>] is serialized into a JSON string, which is then deserialized into a [List&lt;Category&gt;] type;
+  <li>line 9: the list of categories is returned. To do this, the [map] [mapper.writeValueAsString(map)] object is serialized into a jSON string, which is then deserialized back to a [List&lt;Categorie&gt;] type;
   </li>
 </ul>
-<p><a id="refheading1350721333600986"></a></p>
+<p><span id="refheading1350721333600986" name="refheading1350721333600986" class="odt-bookmark-anchor"></span></p>
 <h4 id="18524-the-saveentities-method">18.5.2.4. <span style="color: #4f81bd">The [saveEntities] method</span></h4>
-<p>The [saveEntities] method persists categories to the database. Its code is as follows:</p>
+<p>The [saveEntities] method persists categories in the database. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> List&lt;Categorie&gt; saveEntities(List&lt;Categorie&gt; </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span></span>
@@ -2180,15 +2182,15 @@
 </code></pre></div>
 
 <ul>
-  <li>line 2: the [<span style="color: #000000">saveEntities</span>] method is used to persist the categories passed as parameters in the database. It returns these same categories enriched with their primary keys. If the categories are passed along with products, those are also persisted;
+  <li>line 2: the [saveEntities] method is used to persist the categories passed as parameters in the database. It returns these same categories enriched with their primary keys. If the categories are passed along with products, those are also persisted;
   </li>
-  <li>line 5: the JSON mapper that will serialize the posted value (a list of categories in their long versions) and deserialize the response returned by the [Client] class ([CoreCategory] objects). The chosen filter will have no effect on the result since the elements in the list received as a response are not filtered;
+  <li>line 5: the jSON mapper, which serializes the posted value (a list of categories in their long versions) and deserializes the response returned by the [Client] class ([CoreCategorie] objects). The selected filter will have no effect on the result since the elements in the list received in response have no filter;
   </li>
-  <li>line 7: we call the parent’s [getResponse] method to handle communication with the web service / JSON;
+  <li>line 7: we call the parent’s [getResponse] method to handle communication with the web service / jSON;
     <ul>
-      <li>the first parameter is the URL [<span style="color: #2a00ff">/saveCategories</span>];
+      <li>the first parameter is URL [/saveCategories];
       </li>
-      <li>the second parameter is the HTTP method to use, in this case a [POST];
+      <li>the second parameter is the HTTP method to be used, in this case [POST];
       </li>
       <li>the third parameter is the error code to use if an error occurs (200);
       </li>
@@ -2196,68 +2198,68 @@
       </li>
     </ul>
   </li>
-  <li>line 7: the generic parameters [T1, T2] of the [getResponse] method are here [<span style="color: #000000">List&lt;CoreCategory&gt;, List&lt;Category&gt;</span>]. The first type is that of the expected response, the second is the type of the posted value;
+  <li>line 7: the generic parameters [T1, T2] for the [getResponse] method are here [List&lt;CoreCategorie&gt;, List&lt;Categorie&gt;]. The first type is that of the expected response, the second is the type of the posted value;
   </li>
-  <li>line 7: we store the obtained response in a [Object] type;
+  <li>line 7: the response obtained is placed in a [Object] type;
   </li>
-  <li>line 9: we reconstruct the response of type [List&lt;CoreCategory&gt;]. The response to be returned is of type [List&lt;Category&gt;] (line 2) and not [List&lt;CoreCategory&gt;]. The received response is the list of primary keys for the persisted categories and products;
+  <li>line 9: the response of type [List&lt;CoreCategorie&gt;] is reconstructed. The response to be returned is of type [List&lt;Categorie&gt;] (line 2) and not [List&lt;CoreCategorie&gt;]. The received response is the list of primary keys for the persisted categories and products;
   </li>
-  <li>lines 14–28: the received primary keys are assigned to the categories and products (lines 17, 23, 24). Additionally, the [Product] → [Category] relationships are reconstructed (lines 24–25);
+  <li>lines 14–28: the received primary keys are assigned to categories and products (lines 17, 23, 24). Additionally, the links [Produit] → [Categorie] are reconstructed (lines 24–25);
   </li>
 </ul>
 
 <p>All other methods follow the same pattern.</p>
-<p><a id="refheading18024265679331"></a></p>
-<h2 id="186-the-junit-test">18.6. <span style="color: #4f81bd">The JUnit Test</span></h2>
-<p>Let’s return to the client/server architecture currently under development:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004880000030A8C120D26.png" width="580" height="389" style="display:inline-block; margin:4px;width:15.346cm;height:10.292cm;" class="odt-zoomable" data-zoom-src="images/10000000000004880000030A8C120D26.png" /></td></tr></table>
+<p><span id="refheading18024265679331" name="refheading18024265679331" class="odt-bookmark-anchor"></span></p>
+<h2 id="186-the-junit-test">18.6. <span style="color: #4f81bd">The JUnit test</span></h2>
+<p>Let’s return to the client/server architecture currently under construction:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004880000030A8C120D26.png" width="580" height="389" style="display:inline-block; margin:4px;width:15.346cm;height:10.292cm;" class="odt-zoomable" data-zoom-src="images/10000000000004880000030A8C120D26.png" /></td></tr></table>
 
-<p>We have built a [DAO] layer [2] with the same interface as the [DAO] layer [4]. To test the [DAO] layer [2], we can therefore use the JUnit tests that were used to test the [DAO] layer [4]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000110000000A6AC3F8165.png" width="190" height="116" style="display:inline-block; margin:4px;width:5.039cm;height:3.074cm;" class="odt-zoomable" data-zoom-src="images/1000000000000110000000A6AC3F8165.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>We have built a [DAO] [2] layer with the same interface as the [DAO] [4] layer. To test the [DAO] [2] layer, we can therefore use the JUnit tests that were used to test the [DAO] [4] layer:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000110000000A6AC3F8165.png" width="190" height="116" style="display:inline-block; margin:4px;width:5.039cm;height:3.074cm;" class="odt-zoomable" data-zoom-src="images/1000000000000110000000A6AC3F8165.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>These three tests are run using the following test configurations:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016B000000C5B8697976.png" width="254" height="138" style="display:inline-block; margin:4px;width:6.72cm;height:3.648cm;" class="odt-zoomable" data-zoom-src="images/100000000000016B000000C5B8697976.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000151000000D570F63A4D.png" width="236" height="149" style="display:inline-block; margin:4px;width:6.241cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000D570F63A4D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000016B000000C5B8697976.png" width="254" height="138" style="display:inline-block; margin:4px;width:6.72cm;height:3.648cm;" class="odt-zoomable" data-zoom-src="images/100000000000016B000000C5B8697976.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000151000000D570F63A4D.png" width="236" height="149" style="display:inline-block; margin:4px;width:6.241cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000151000000D570F63A4D.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000174000000C61503F070.png" width="260" height="139" style="display:inline-block; margin:4px;width:6.89cm;height:3.667cm;" class="odt-zoomable" data-zoom-src="images/1000000000000174000000C61503F070.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000174000000C61503F070.png" width="260" height="139" style="display:inline-block; margin:4px;width:6.89cm;height:3.667cm;" class="odt-zoomable" data-zoom-src="images/1000000000000174000000C61503F070.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The results of the three tests are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FB0000016D7350C96E.png" width="638" height="183" style="display:inline-block; margin:4px;width:16.868cm;height:4.83cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FB0000016D7350C96E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004FB0000016D7350C96E.png" width="638" height="183" style="display:inline-block; margin:4px;width:16.868cm;height:4.83cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FB0000016D7350C96E.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000050E00000168E61EA218.png" width="647" height="180" style="display:inline-block; margin:4px;width:17.119cm;height:4.763cm;" class="odt-zoomable" data-zoom-src="images/100000000000050E00000168E61EA218.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000050E00000168E61EA218.png" width="647" height="180" style="display:inline-block; margin:4px;width:17.119cm;height:4.763cm;" class="odt-zoomable" data-zoom-src="images/100000000000050E00000168E61EA218.png" /></td></tr></table>
 
-<ul>
+<ol>
   <li>in [1], the [JUnitTestCheckArguments] test;
   </li>
-  <li>in [2], the [JUnitTestDao] test;
+  <li>in [2], test [JUnitTestDao];
   </li>
-  <li>in [3], the [JUnitTestPushTheLimits] test executed on the client side (project [spring-webjson-client-generic]);
+  <li>in [3], the client-side test [JUnitTestPushTheLimits] (project [spring-webjson-client-generic]);
   </li>
-  <li>in [3], the [JUnitTestPushTheLimits] test executed on the server side (project [spring-jdbc-generic-04]). We observe that the network layer causes very little slowdown compared to that caused by access to the DBMS;
+  <li>in [3], the [JUnitTestPushTheLimits] test executed on the server side (project [spring-jdbc-generic-04]). We observe that the network layer causes very little slowdown compared to that caused by access to SGBD;
   </li>
-</ul>
-<p><a id="refheading1350741333600986"></a></p>
-<h2 id="187-web-service-json-jpa-hibernate-implementation">18.7. <span style="color: #4f81bd">Web service / JSON / JPA / Hibernate implementation</span></h2>
-<p>We will now examine the following architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CA00000305838B6B85.png" width="613" height="386" style="display:inline-block; margin:4px;width:16.219cm;height:10.225cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CA00000305838B6B85.png" /></td></tr></table>
+</ol>
+<p><span id="refheading1350741333600986" name="refheading1350741333600986" class="odt-bookmark-anchor"></span></p>
+<h2 id="187-web-service-implementation-json-jpa-hibernate">18.7. <span style="color: #4f81bd">Web service implementation / jSON / JPA / Hibernate</span></h2>
+<p>We are now looking at the following architecture:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004CA00000305838B6B85.png" width="613" height="386" style="display:inline-block; margin:4px;width:16.219cm;height:10.225cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CA00000305838B6B85.png" /></td></tr></table>
 
-<p>The modification is in [1]. The server’s [DAO] layer relies on a JPA implementation. We will first use a JPA / Hibernate implementation.</p>
-<p><a id="refheading1398151985289926"></a></p>
-<h3 id="1871-the-eclipse-project">18.7.1. <span style="color: #4f81bd">The Eclipse project</span></h3>
+<p>The modification is in [1]. The server’s [DAO] layer is based on a JPA implementation. We will first use a JPA / Hibernate implementation.</p>
+<p><span id="refheading1398151985289926" name="refheading1398151985289926" class="odt-bookmark-anchor"></span></p>
+<h3 id="1871-the-eclipse-project">18.7.1. <span style="color: #4f81bd">The Eclipse Project</span></h3>
 <p>For now, the projects loaded into Eclipse are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F7000000AD89C3E410.png" width="173" height="121" style="display:inline-block; margin:4px;width:4.57cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000AD89C3E410.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F7000000AD89C3E410.png" width="173" height="121" style="display:inline-block; margin:4px;width:4.57cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000AD89C3E410.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The [spring-webjson-server-jdbc-generic] project was based on the [spring-jdbc-generic-04] project, which configures the DAO / JDBC layer for accessing the MySQL DBMS. We will create a new project [spring-webjson-server-jpa-generic], which will rely on the [spring-jpa-generic] project that configures the DAO/JPA/JDBC layer for accessing the MySQL DBMS. We know that in both cases, the [DAO] layer implements the same [IDao] interface. The code for the [web] layer therefore remains unchanged.</p>
+<p>The [spring-webjson-server-jdbc-generic] project was based on the [spring-jdbc-generic-04] project, which configures the DAO / JDBC for accessing SGBD and MySQL. We will create a new project, [spring-webjson-server-jpa-generic], which will be based on the [spring-jpa-generic] project that configures the DAO / JPA / JDBC layer for accessing SGBD and MySQL. We know that in both cases, the [DAO] layer implements the same [IDao] interface. The code for the [web] layer therefore remains unchanged.</p>
 <p>We can create the [spring-webjson-server-jpa-generic] project by copying and pasting from the [spring-webjson-server-jdbc-generic] project:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000053500000180F448ED53.png" width="667" height="192" style="display:inline-block; margin:4px;width:17.635cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/100000000000053500000180F448ED53.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000053500000180F448ED53.png" width="667" height="192" style="display:inline-block; margin:4px;width:17.635cm;height:5.08cm;" class="odt-zoomable" data-zoom-src="images/100000000000053500000180F448ED53.png" /></td></tr></table>
 
 <ul>
   <li>in [1], specify a folder created specifically for the new project;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000013D1ECF150B.png" width="173" height="222" style="display:inline-block; margin:4px;width:4.57cm;height:5.865cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000013D1ECF150B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F70000013D1ECF150B.png" width="173" height="222" style="display:inline-block; margin:4px;width:4.57cm;height:5.865cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000013D1ECF150B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>There are three types of changes to make. The first ones are in the project’s Maven configuration file [pom.xml]:</p>
+<p>There are three types of changes to make. The first are in the project’s Maven configuration file [pom.xml]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -2310,10 +2312,10 @@
 </ul>
 
 <p>In the end, the dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000101000000857235FA47.png" width="180" height="93" style="display:inline-block; margin:4px;width:4.761cm;height:2.464cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000857235FA47.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000101000000857235FA47.png" width="180" height="93" style="display:inline-block; margin:4px;width:4.761cm;height:2.464cm;" class="odt-zoomable" data-zoom-src="images/1000000000000101000000857235FA47.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>Once this is done, we resolve all the import issues that appeared in the various classes. For example, the [Product, Category] entities are no longer found in the [spring-jdbc-generic-04] project but in the [spring-jpa-generic] project. Pressing [Ctrl-Shift-O] in a class’s code is sufficient to regenerate the imports.</p>
-<p>The final change needs to be made in the [AppConfig] configuration file:</p>
+<p>Once this is done, we resolve all import issues that appeared in the various classes. For example, [Produit, Categorie] entities are no longer to be found in the [spring-jdbc-generic-04] project but in the [spring-jpa-generic] project. Simply adding [Ctrl-Maj-O] to the code of a class is enough to regenerate the imports.</p>
+<p>The final change must be made in the configuration file [AppConfig]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.webjson.server.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2334,42 +2336,42 @@
   </li>
 </ul>
 
-<p>That’s it—we’re ready. We start the web service with the [spring-webjson-server-jpa-generic-hibernate-eclipselink] configuration:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016A000000CDAB037503.png" width="253" height="143" style="display:inline-block; margin:4px;width:6.699cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A000000CDAB037503.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019200000114E52D8BF7.png" width="281" height="193" style="display:inline-block; margin:4px;width:7.44cm;height:5.108cm;" class="odt-zoomable" data-zoom-src="images/100000000000019200000114E52D8BF7.png" /></td></tr></table>
+<p>With that done, we’re ready. We start the web service with the [spring-webjson-server-jpa-generic-hibernate-eclipselink] configuration:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000016A000000CDAB037503.png" width="253" height="143" style="display:inline-block; margin:4px;width:6.699cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A000000CDAB037503.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019200000114E52D8BF7.png" width="281" height="193" style="display:inline-block; margin:4px;width:7.44cm;height:5.108cm;" class="odt-zoomable" data-zoom-src="images/100000000000019200000114E52D8BF7.png" /></td></tr></table>
 
 <p>Then we run the three tests for the generic client [spring-webjson-client-generic]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FC00000150CF210FD8.png" width="638" height="168" style="display:inline-block; margin:4px;width:16.88cm;height:4.445cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FC00000150CF210FD8.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004FC00000150CF210FD8.png" width="638" height="168" style="display:inline-block; margin:4px;width:16.88cm;height:4.445cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FC00000150CF210FD8.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005060000017F37F459AC.png" width="643" height="192" style="display:inline-block; margin:4px;width:17.013cm;height:5.068cm;" class="odt-zoomable" data-zoom-src="images/10000000000005060000017F37F459AC.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005060000017F37F459AC.png" width="643" height="192" style="display:inline-block; margin:4px;width:17.013cm;height:5.068cm;" class="odt-zoomable" data-zoom-src="images/10000000000005060000017F37F459AC.png" /></td></tr></table>
 
-<ul>
-  <li>in [1], the [JUnitTestCheckArguments] test (run configuration [spring-webjson-client-generic-JUnitTestCheckArguments]);
+<ol>
+  <li>in [1], test [JUnitTestCheckArguments] (execution configuration [spring-webjson-client-generic-JUnitTestCheckArguments]);
   </li>
-  <li>in [2], the [JUnitTestDao] test (execution configuration [spring-webjson-client-generic-JUnitTestDao]);
+  <li>in [2], test [JUnitTestDao] (run configuration [spring-webjson-client-generic-JUnitTestDao]);
   </li>
-  <li>in [3], the [JUnitTestPushTheLimits] test run on the client side (run configuration [spring-webjson-client-generic-JUnitTestPushTheLimits]);
+  <li>in [3], the [JUnitTestPushTheLimits] test executed on the client side (run configuration [spring-webjson-client-generic-JUnitTestPushTheLimits]);
   </li>
-  <li>in [4], the [JUnitTestPushTheLimits] test executed on the server side (run configuration [spring-jpa-generic-JUnitTestPushTheLimits-hibernate-eclipselink]);
+  <li>in [4], the [JUnitTestPushTheLimits] test run on the server side ([spring-jpa-generic-JUnitTestPushTheLimits-hibernate-eclipselink] execution configuration);
   </li>
-</ul>
+</ol>
 
-<p><a id="refheading1398171985289926"></a></p>
+<p><span id="refheading1398171985289926" name="refheading1398171985289926" class="odt-bookmark-anchor"></span></p>
 <h3 id="1872-why-does-it-work">18.7.2. <span style="color: #4f81bd">Why does it work?</span></h3>
-<p>It works, and yet when you look closely at the code, it’s surprising that it does. While the [DAO] layers implemented by the [spring-jdbc-generic-04] and [spring-jpa-generic] projects do indeed present the same interface, they do not manipulate the same [Category] and [Product] entities: in the [spring-jpa-generic] project, these entities have an additional field [EntityType entityType] that can take two possible values:</p>
+<p>It works, and yet when you look closely at the code, it’s surprising that it works. While the [DAO] layers implemented by the [spring-jdbc-generic-04] and [spring-jpa-generic] projects do indeed present the same interface, they do not manipulate the same [Categorie] and [Produit] entities: in the [spring-jpa-generic] project, these entities have an additional field [EntityType entityType] that has two possible values:</p>
 <ul>
   <li><b>EntityType.POJO</b>: the entity is a normal object whose fields can be freely used;
   </li>
   <li><b>EntityType.PROXY</b>: the entity is a PROXY object rendered by the [JPA] layer. In this case, certain fields (actually the getters for these fields) do not behave as usual, and the following rules have been established:
     <ul>
-      <li>if [Category.entityType == EntityType.PROXY], then the [getProducts] method must not be used;
+      <li>if [Categorie.entityType==EntityType.PROXY], then the [getProduits] method must not be used;
       </li>
-      <li>if [Product.entityType == EntityType.PROXY], then the [getCategory] method must not be used;
+      <li>if [Produit.entityType==EntityType.PROXY], then do not use the [getCategorie] method;
       </li>
     </ul>
   </li>
 </ul>
 
-<p>However, we have just migrated the [spring-webjson-server-jdbc-generic] project to [spring-webjson-server-jpa-generic] without modifying the code. How is this possible?</p>
+<p>However, we have just ported the [spring-webjson-server-jdbc-generic] project to [spring-webjson-server-jpa-generic] without modifying the code. How is this possible?</p>
 <p>Let’s examine the code for the [saveCategories] method:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/saveCategories&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
@@ -2388,31 +2390,31 @@
 </code></pre></div>
 
 <ul>
-  <li>line 8: a List&lt;Category&gt; object is created from a JSON string:
+  <li>line 8: a List&lt;Category&gt; object is created from a string jSON:
     <ul>
-      <li>In the posted value, the products do not have a [category] field. It is indeed unnecessary to post this field. If we were to post it, deserialization would construct a [Product] object with a [category] field pointing to a newly created [Category] object. For n products, we would thus have n [Category] objects created, whereas only one is needed. Furthermore, the [category] field of the products would not point to the correct [Category] object, which is the one to which they belong. Therefore, here the products have a [category==null] field;
+      <li>in the posted value, the products do not have a [categorie] field. It is indeed unnecessary to post this field. If it were posted, deserialization would construct a [Produit] object with a [categorie] field pointing to a newly created [Categorie] object. For n products, this would result in n [Categorie] objects being created, whereas only one is needed. Furthermore, the [categorie] field of the products would not point to the correct [Categorie] object, which is the one to which they belong. So here the products have a [categorie==null] field;
       </li>
-      <li>In the [Category] and [Product] classes, the [EntityType entityType] field is defined as follows:
+      <li>in the classes [Categorie] and [Produit], the field [EntityType entityType] is defined as follows:
       </li>
     </ul>
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> EntityType </span><span style="color:#0000c0">entityType</span><span style="color:#000000"> = EntityType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POJO</span><span style="color:#000000">;</span></span></span>
 </code></pre></div>
 
-<p>Therefore, the [Category] and [Product] entities created by serialization are all of type POJO.</p>
+<p>Therefore, the entities [Categorie] and [Produit] created by serialization all have type POJO.</p>
 <ul>
-  <li>Line 11: We persist the categories. This shouldn’t work. In fact, while in the JDBC implementation the [Product.category] field is not needed for persistence (the [categoryId] field is used instead), in the JPA implementation it is absolutely necessary. This field must point to a [Category] entity, but here it is <i>null</i>.
+  <li>Line 11: the categories are persisted. This should not work. Indeed, if in the JDBC implementation, the [Produit.categorie] field is not needed for persistence (the [idCategorie] field is used), for the JPA implementation, it is absolutely necessary. This field must point to an entity [Categorie], but here it is <i>null</i>.
   </li>
 </ul>
 
 <p>Let’s examine the code for the [DaoCategorie.saveEntities] method in the [DAO / JPA] layer:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> List&lt;Categorie&gt; saveEntities(List&lt;Categorie&gt; </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on note les produits qui vont être insérés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// note the products to be inserted</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        List&lt;Produit&gt; </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;Produit&gt;();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Categorie </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            EntityType </span><span style="color:#6a3e3e">categorieType</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getEntityType();</span></span></span>
@@ -2422,32 +2424,32 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getId() == </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// on en profite pour rétablir (si besoin est) la relation produit --&gt; categorie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// we take this opportunity to re-establish (if necessary) the product --&gt; category relationship</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setCategorie(</span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on persiste les catégories / produits</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we persist categories / products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000c0">categoriesRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> DaoException(201, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on met à jour le champ [idCategorie] des produits insérés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// update the [idCategorie] field of inserted products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Produit </span><span style="color:#6a3e3e">produit</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setIdCategorie(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getCategorie().getId());</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// résultat</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 </code></pre></div>
 
-<ul>
-  <li>Lines 13–14: We can see that the [Product] → [Category] relationship is reestablished for the POJO entities (line 8), which is the case here. This explains why the persistence of the categories worked. This approach is useful in other situations: you can never be sure that the user has correctly linked the products to the categories. So we do it for them;
+<ol>
+  <li>lines 13-14: we see that the link [Produit]  --&gt; [Categorie] is reestablished for the entities POJO (line 8), which is the case here. This explains why category persistence worked. This scenario is useful in other circumstances: we can never be sure that the user has correctly linked the products to the categories. So we do it for them;
   </li>
-</ul>
+</ol>
 
-<p>Now let’s examine the [ProductController.saveProducts] method that persists products:</p>
+<p>Now let’s examine the [ProduitController.saveProduits] method that persists the products:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@RequestMapping</span><span style="color:#000000">(value = </span><span style="color:#2a00ff">&quot;/saveProduits&quot;</span><span style="color:#000000">, method = RequestMethod.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POST</span><span style="color:#000000">, consumes = </span><span style="color:#2a00ff">&quot;application/json; charset=UTF-8&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Response&lt;List&lt;CoreProduit&gt;&gt; saveProduits(HttpServletRequest </span><span style="color:#6a3e3e">request</span><span style="color:#000000">) {</span></span></span>
@@ -2470,30 +2472,30 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 </code></pre></div>
 
-<ul>
-  <li>Line 8: A List&lt;Product&gt; object is reconstructed from the posted value. For the reasons explained earlier, each [Product] object will have a field:
-    <ul>
+<ol>
+  <li>Line 8: A List&lt;Product&gt; object is reconstructed from the posted value. For the reasons explained earlier, each [Produit] object will have a field:
+    <ol>
       <li>[EntityType entityType] equal to [EntityType.POJO];
       </li>
-      <li>[Category category] equal to <i>null</i>;
+      <li>[Categorie categorie] equal to <i>null</i>;
       </li>
-    </ul>
+    </ol>
   </li>
-  <li>line 11: the persistence of the products should fail. Indeed, with JPA, the persistence of a product is only possible if its [category] field points to a [Category] entity;
+  <li>line 11: product persistence should fail. Indeed, with JPA, a product can only be persisted if its [categorie] field points to a [Categorie] entity;
   </li>
-</ul>
+</ol>
 
-<p>Let’s look at the code for the [DaoProduit.saveEntities] method in the [DAO / JPA] layer:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
+<p>Let&#x27;s look at the code for the [DaoProduit.saveEntities] method in the [DAO / JPA] layer:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> List&lt;Produit&gt; saveEntities(List&lt;Produit&gt; </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on rétablit (si besoin est) le lien entre un produits et sa catégorie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// re-establish (if necessary) the link between a product and its category</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Produit </span><span style="color:#6a3e3e">produit</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getEntityType() == EntityType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POJO</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setCategorie(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Categorie(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getIdCategorie(), 0L, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">));</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on persiste les produits</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we persist products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> Lists.</span><span style="font-style:italic;color:#000000">newArrayList</span><span style="color:#000000">(</span><span style="color:#0000c0">produitsRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">entities</span><span style="color:#000000">));</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span></span>
@@ -2502,16 +2504,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
-  <li>Lines 3–8: For each [Product] of type POJO, a link to a [Category] object with the correct primary key and a <i>non-null</i> version is created. This is sufficient for the JPA layer to correctly persist the product;
+<ol>
+  <li>lines 3-8: for each [Produit] of type POJO, a link to a [Categorie] object with the correct primary key and a <i>non-null</i> version is created. This is sufficient for the JPA layer to correctly persist the product;
   </li>
-</ul>
+</ol>
 
-<p>Let’s look at one final point. The [Category] and [Product] objects have an additional field [EntityType entityType] that will be serialized to JSON when these objects are sent to the client. We can verify this with [Advanced Rest Client]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000048300000245A2E67000.png" width="578" height="291" style="display:inline-block; margin:4px;width:15.281cm;height:7.687cm;" class="odt-zoomable" data-zoom-src="images/100000000000048300000245A2E67000.png" /></td></tr></table>
+<p>Let’s look at one final point. The objects [Categorie] and [Produit] have an additional field [EntityType entityType] that will be serialized to jSON when these objects are sent to the client. We can verify this with [Advanced Rest Client]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000048300000245A2E67000.png" width="578" height="291" style="display:inline-block; margin:4px;width:15.281cm;height:7.687cm;" class="odt-zoomable" data-zoom-src="images/100000000000048300000245A2E67000.png" /></td></tr></table>
 
-<p>On the client side, the [Category] and [Product] entities have been defined without the [EntityType entityType] field. This is normal since the [Category] and [Product] objects are serialized without their PROXY parts [Category.products], [Product.category]. On the client side, therefore, there is no concept of a PROXY entity. There are only normal objects.</p>
-<p>On the client side, the JSON string [1] is received by the following [DaoCategorie.getAllShortEntities] method:</p>
+<p>On the client side, the entities [Categorie] and [Produit] have been defined without the field [EntityType entityType]. This is normal since the objects [Categorie] and [Produit] are serialized without their PROXY, [Categorie.produits], and [Produit.categorie] components. On the client side, therefore, there is no concept of a PROXY entity. There are only normal objects.</p>
+<p>On the client side, the string jSON [1] is received by the following method:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;Categorie&gt; getAllShortEntities() {</span></span></span>
@@ -2527,91 +2529,91 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
-  <li>line 5: we configure the JSON mapper of the [RestTemplate] object to handle the JSON filters [<span style="color: #2a00ff">jsonFilterCategorie</span>] of the [Category] object and the filter [<span style="color: #2a00ff">jsonFilterProduct</span>] of the [Product] object;
+<ol>
+  <li>line 5: configure the jSON mapper of the [RestTemplate] object to handle the jSON and [jsonFilterCategorie] filters of the[Categorie] object and the [jsonFilterProduit] filter of the [Produit] object;
   </li>
-  <li>line 7: the posted value (there isn’t one here) and the received value (List&lt;Category&gt;) are serialized/deserialized using this mapper. Note that the presence of the [entityType] field in the received JSON string—even though this field does not exist in the [Category] and [Product] entities on the client side—does not cause an error. It is ignored. If it had caused an error, we would have modified the client-side filters to ignore it.
+  <li>Line 7: The posted value (there is none here) and the received value (List&lt;Category&gt;) are serialized/deserialized using this mapper. Note that the presence of the [entityType] field in the received jSON string, even though this field does not exist in the [Categorie] and [Produit] entities on the client side, does not cause an error. It is ignored. If it had caused an error, we would have modified the client-side filters to ignore it.
   </li>
-</ul>
-<p><a id="refheading1398191985289926"></a></p>
-<h2 id="188-web-service-json-jpa-eclipselink-implementation">18.8. <span style="color: #4f81bd">Web Service / JSON / JPA / EclipseLink Implementation</span></h2>
-<p>To implement the web service / JSON / JPA / EclipseLink, simply change the JPA implementation:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB0000013B2FE3172A.png" width="164" height="220" style="display:inline-block; margin:4px;width:4.35cm;height:5.831cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB0000013B2FE3172A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+</ol>
+<p><span id="refheading1398191985289926" name="refheading1398191985289926" class="odt-bookmark-anchor"></span></p>
+<h2 id="188-web-service-implementation-json-jpa-eclipselink">18.8. <span style="color: #4f81bd">Web service implementation / jSON / JPA / EclipseLink</span></h2>
+<p>To implement the web service / jSON / JPA / EclipseLink, simply change the implementation of JPA:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EB0000013B2FE3172A.png" width="164" height="220" style="display:inline-block; margin:4px;width:4.35cm;height:5.831cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB0000013B2FE3172A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><strong>Note</strong>: Press Alt-F5, then regenerate all Maven projects.</p>
 <p>We will launch the web service using the [spring-webjson-server-jpa-generic-hibernate-eclipselink] runtime configuration already used for Hibernate. Once this is done, run the three tests for the generic client [spring-webjson-client-generic]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004EB00000181C66F5037.png" width="630" height="192" style="display:inline-block; margin:4px;width:16.656cm;height:5.092cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EB00000181C66F5037.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004EB00000181C66F5037.png" width="630" height="192" style="display:inline-block; margin:4px;width:16.656cm;height:5.092cm;" class="odt-zoomable" data-zoom-src="images/10000000000004EB00000181C66F5037.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F80000015ED650627A.png" width="636" height="175" style="display:inline-block; margin:4px;width:16.828cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F80000015ED650627A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004F80000015ED650627A.png" width="636" height="175" style="display:inline-block; margin:4px;width:16.828cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F80000015ED650627A.png" /></td></tr></table>
 
 <ul>
   <li>in [1], the [JUnitTestCheckArguments] test;
   </li>
   <li>in [2], the [JUnitTestDao] test;
   </li>
-  <li>in [3], the [JUnitTestPushTheLimits] test run on the client side (project [spring-webjson-client-generic]);
+  <li>in [3], the client-side test [JUnitTestPushTheLimits] (project [spring-webjson-client-generic]);
   </li>
-  <li>in [4], the [JUnitTestPushTheLimits] test run on the server side (run configuration [spring-jpa-generic-JUnitTestPushTheLimits-hibernate-eclipselink]);
+  <li>in [4], the [JUnitTestPushTheLimits] test executed on the server side ([spring-jpa-generic-JUnitTestPushTheLimits-hibernate-eclipselink] execution configuration);
   </li>
 </ul>
 
-<p><a id="refheading1398211985289926"></a></p>
-<h2 id="189-web-service-json-jpa-openjpa-implementation">18.9. <span style="color: #4f81bd">Web service / JSON / JPA / OpenJpa implementation</span></h2>
-<p>To implement the web service / JSON / JPA / OpenJPA, simply change the JPA implementation:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001180000014F97087B63.png" width="196" height="234" style="display:inline-block; margin:4px;width:5.181cm;height:6.198cm;" class="odt-zoomable" data-zoom-src="images/10000000000001180000014F97087B63.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading1398211985289926" name="refheading1398211985289926" class="odt-bookmark-anchor"></span></p>
+<h2 id="189-web-service-implementation-json-jpa-openjpa">18.9. <span style="color: #4f81bd">Web service implementation / jSON / JPA / OpenJpa</span></h2>
+<p>To implement the web service / jSON / JPA / OpenJpa, simply change the implementation to JPA:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001180000014F97087B63.png" width="196" height="234" style="display:inline-block; margin:4px;width:5.181cm;height:6.198cm;" class="odt-zoomable" data-zoom-src="images/10000000000001180000014F97087B63.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><strong>Note</strong>: Press Alt-F5, then regenerate all Maven projects.</p>
-<p>We will launch the web service using the runtime configuration [spring-webjson-server-jpa-generic-openpa]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000159000000D50FEE0126.png" width="242" height="149" style="display:inline-block; margin:4px;width:6.391cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000159000000D50FEE0126.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BC00000116EA4D8E59.png" width="311" height="195" style="display:inline-block; margin:4px;width:8.22cm;height:5.147cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BC00000116EA4D8E59.png" /></td></tr></table>
+<p>We will launch the web service using the [spring-webjson-server-jpa-generic-openpa] runtime configuration:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000159000000D50FEE0126.png" width="242" height="149" style="display:inline-block; margin:4px;width:6.391cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000159000000D50FEE0126.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001BC00000116EA4D8E59.png" width="311" height="195" style="display:inline-block; margin:4px;width:8.22cm;height:5.147cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BC00000116EA4D8E59.png" /></td></tr></table>
 
 <p>Once this is done, run the three tests for the generic client [spring-webjson-client-generic]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DA00000141AE8EA089.png" width="621" height="161" style="display:inline-block; margin:4px;width:16.431cm;height:4.247cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DA00000141AE8EA089.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004DA00000141AE8EA089.png" width="621" height="161" style="display:inline-block; margin:4px;width:16.431cm;height:4.247cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DA00000141AE8EA089.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004E700000176D7D5B2E5.png" width="628" height="187" style="display:inline-block; margin:4px;width:16.603cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E700000176D7D5B2E5.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004E700000176D7D5B2E5.png" width="628" height="187" style="display:inline-block; margin:4px;width:16.603cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/10000000000004E700000176D7D5B2E5.png" /></td></tr></table>
 
-<ul>
+<ol>
   <li>in [1], the [JUnitTestCheckArguments] test (run configuration [spring-webjson-client-generic-JUnitTestCheckArguments]);
   </li>
-  <li>in [2], the [JUnitTestDao] test (run configuration [spring-webjson-client-generic-JUnitTestDao]);
+  <li>in [2], test [JUnitTestDao] (run configuration [spring-webjson-client-generic-JUnitTestDao]);
   </li>
-  <li>in [3], the [JUnitTestPushTheLimits] test run on the client side (run configuration [spring-webjson-client-generic-JUnitTestPushTheLimits]);
+  <li>in [3], the client-side test [JUnitTestPushTheLimits] (run configuration [spring-webjson-client-generic-JUnitTestPushTheLimits]);
   </li>
   <li>in [4], the [JUnitTestPushTheLimits] test executed on the server side (execution configuration [spring-jpa-generic-JUnitTestPushTheLimits-openpa]);
   </li>
-</ul>
+</ol>
 
-<p>To make the tests work, changes had to be made to the DAO/JPA layer. Indeed, for some inexplicable reason, the methods [DaoCategorie.saveEntities] and [DaoProduit.saveEntities] failed when populating the database, indicating that detached entities could not be persisted. A detached entity is an entity that has either:</p>
+<p>To make the tests work, changes had to be made to the DAO / JPA layer. In fact, for some inexplicable reason, the [DaoCategorie.saveEntities] and [DaoProduit.saveEntities] methods failed when populating the database, indicating that detached elements could not be persisted. A detached element is an element that has either:</p>
 <ul>
   <li>a <i>non-null</i> primary key;
   </li>
-  <li>a <i>non-null</i> version;
+  <li>a non<i>-null</i> version;
   </li>
 </ul>
 
-<p>Neither of these cases was verified. Not knowing where to look, I duplicated the entities to be persisted into a brand-new list, and then the tests worked. This change could have been made either:</p>
-<ul>
+<p>Neither of these cases was checked. Not knowing where to look, I duplicated the entities to be persisted into a brand-new list, and then the tests worked. This change could have been made either:</p>
+<ol>
   <li>in the [DAO / JPA] layer;
   </li>
-  <li>in the [web] layer that creates the entities to be persisted;
+  <li>in the [web] layer, which creates the entities to be persisted;
   </li>
-</ul>
+</ol>
 
-<p>I chose to do it in the [DAO / JPA] layer. There is, of course, a performance loss, but it is completely negligible compared to the DBMS response times. The changes are as follows:</p>
+<p>I chose to do it in the [DAO / JPA] layer. There is, of course, a performance loss, but it is completely negligible compared to the response times of SGBD. The changes are as follows:</p>
 <p>In the [DaoCategorie] class of the [spring-jpa-generic] project:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> List&lt;Categorie&gt; saveEntities(List&lt;Categorie&gt; </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// ***************************************************************************************</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on clone la liste des catégories -- nécessaire parfois pour OpenJpa -- bug non compris</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// clone category list -- sometimes necessary for OpenJpa -- bug not understood</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// ***************************************************************************************</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        List&lt;Categorie&gt; </span><span style="color:#6a3e3e">categories2</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;Categorie&gt;();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Categorie </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// catégorie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// category</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            Categorie </span><span style="color:#6a3e3e">categorie2</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Categorie(</span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getId(), </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getVersion(), </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getNom(), </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            EntityType </span><span style="color:#6a3e3e">categorieType</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getEntityType();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">categorie2</span><span style="color:#000000">.setEntityType(</span><span style="color:#6a3e3e">categorieType</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">categories2</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">categorie2</span><span style="color:#000000">);</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// produits</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000">// products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            List&lt;Produit&gt; </span><span style="color:#6a3e3e">produits</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> ((</span><span style="color:#6a3e3e">categorieType</span><span style="color:#000000"> == EntityType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POJO</span><span style="color:#000000">) &amp;&amp; (</span><span style="color:#6a3e3e">produits</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getProduits()) != </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                List&lt;Produit&gt; </span><span style="color:#6a3e3e">produits2</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;Produit&gt;();</span></span></span>
@@ -2624,7 +2626,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#6a3e3e">categorie2</span><span style="color:#000000">.setProduits(</span><span style="color:#6a3e3e">produits2</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on note les produits qui vont être insérés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// note the products to be inserted</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        List&lt;Produit&gt; </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;Produit&gt;();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Categorie </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">categories2</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            EntityType </span><span style="color:#6a3e3e">categorieType</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getEntityType();</span></span></span>
@@ -2634,48 +2636,48 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getId() == </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// on en profite pour rétablir (si besoin est) la relation produit --&gt; categorie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// we take this opportunity to re-establish (if necessary) the product --&gt; category relationship</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setCategorie(</span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on persiste les catégories / produits</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we persist categories / products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000c0">categoriesRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">categories2</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> DaoException(201, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on met à jour le champ [idCategorie] des produits insérés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// update the [idCategorie] field of inserted products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Produit </span><span style="color:#6a3e3e">produit</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setIdCategorie(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getCategorie().getId());</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// résultat</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#6a3e3e">categories2</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 </code></pre></div>
 
-<ul>
-  <li>lines 3–25: the [categories] list received as a parameter (line 2) is duplicated in the [categories2] list (line 6). It is this list that is persisted and returned to the caller (line 52). This has an important consequence: a different list is returned from the one passed as a parameter, so where we could previously write:
+<ol>
+  <li>lines 3–25: the list [categories] received as a parameter (line 2) is duplicated in the list [categories2] (line 6). It is this list that is persisted and returned to the caller (line 52). This has an important consequence: a different list is returned than the one passed as a parameter, so where we could previously write:
   </li>
-</ul>
+</ol>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>List&lt;Categorie&gt; categories=...
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>daoCategorie.saveEntities(categories)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>// exploitation de [categories]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>// operation of [categories]
 </code></pre></div>
 <p>We must now write:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">List&lt;Categorie&gt; categories=...</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">categories=</span><span style="color:#000000">daoCategorie.saveEntities(categories)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">// exploitation de [categories]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">// operation of [categories]</span></span>
 </code></pre></div>
 
-<p>In the [DaoProduct] class of the [spring-jpa-generic] project, the [saveEntities] method is modified similarly:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<p>In the [DaoProduit] class of the [spring-jpa-generic] project, the [saveEntities] method is modified similarly:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> List&lt;Produit&gt; saveEntities(List&lt;Produit&gt; </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// ***************************************************************************************</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on clone la liste des produits -- nécessaire parfois pour OpenJpa -- bug non compris</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// clone product list -- sometimes necessary for OpenJpa -- bug not understood</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// ***************************************************************************************</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        List&lt;Produit&gt; </span><span style="color:#6a3e3e">produits2</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;Produit&gt;();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Produit </span><span style="color:#6a3e3e">produit</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">entities</span><span style="color:#000000">) {</span></span></span>
@@ -2685,13 +2687,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">produits2</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">produit2</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on rétablit (si besoin est) le lien entre un produits et sa catégorie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// re-establish (if necessary) the link between a product and its category</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Produit </span><span style="color:#6a3e3e">produit</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">produits2</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getEntityType() == EntityType.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">POJO</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setCategorie(</span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> Categorie(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getIdCategorie(), 0L, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">));</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on persiste les produits</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we persist products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> Lists.</span><span style="font-style:italic;color:#000000">newArrayList</span><span style="color:#000000">(</span><span style="color:#0000c0">produitsRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">produits2</span><span style="color:#000000">));</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span></span>
@@ -2700,31 +2702,31 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><a id="refheading1398231985289926"></a></p>
-<h2 id="1810-web-service-implementation-json-jpa-eclipselink-postgresql">18.10. <span style="color: #4f81bd">Web service implementation / JSON / JPA / EclipseLink / PostgreSQL</span></h2>
-<p>To implement the web service / JSON / JPA / EclipseLink / PostgreSQL, you must install:</p>
-<ul>
-  <li>the [postgresql-config-jdbc] project for configuring the PostgreSQL JDBC layer;
+<p><span id="refheading1398231985289926" name="refheading1398231985289926" class="odt-bookmark-anchor"></span></p>
+<h2 id="1810-web-service-implementation-json-jpa-eclipselink-postgresql">18.10. <span style="color: #4f81bd">Web service implementation / jSON / JPA / EclipseLink / PostgreSQL</span></h2>
+<p>To implement the web service / jSON / JPA / EclipseLink / PostgresQL, you must install:</p>
+<ol>
+  <li>the [postgresql-config-jdbc] project for configuring the JDBC layer of PostgreSQL;
   </li>
-  <li>the [postgresql-config-jpa-eclipselink] project for configuring the PostgreSQL JPA layer;
+  <li>the [postresql-config-jpa-eclipselink] configuration project for the JPA layer of PostgreSQL;
   </li>
   <li>Press Alt-F5 and regenerate all Maven projects;
   </li>
-</ul>
+</ol>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD000000E7C82E48D4.png" width="177" height="161" style="display:inline-block; margin:4px;width:4.68cm;height:4.272cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD000000E7C82E48D4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FD000000E7C82E48D4.png" width="177" height="161" style="display:inline-block; margin:4px;width:4.68cm;height:4.272cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD000000E7C82E48D4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>Start the PostgreSQL DBMS and launch the web service using the [spring-webjson-server-jpa-generic-hibernate-eclipselink] runtime configuration used previously. Once this is done, run the three tests for the generic client [spring-webjson-client-generic]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004ED00000145A68A8400.png" width="631" height="163" style="display:inline-block; margin:4px;width:16.683cm;height:4.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000004ED00000145A68A8400.png" /></td></tr></table>
+<p>We launch SGBD and PostgreSQL, and start the web service using the [spring-webjson-server-jpa-generic-hibernate-eclipselink] runtime configuration previously used. Once this is done, run the three tests for the generic client [spring-webjson-client-generic]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004ED00000145A68A8400.png" width="631" height="163" style="display:inline-block; margin:4px;width:16.683cm;height:4.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000004ED00000145A68A8400.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F80000018CA499A7FD.png" width="636" height="198" style="display:inline-block; margin:4px;width:16.828cm;height:5.239cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F80000018CA499A7FD.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004F80000018CA499A7FD.png" width="636" height="198" style="display:inline-block; margin:4px;width:16.828cm;height:5.239cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F80000018CA499A7FD.png" /></td></tr></table>
 
 <ul>
-  <li>in [1], the [JUnitTestCheckArguments] test (run configuration [spring-webjson-client-generic-JUnitTestCheckArguments]);
+  <li>in [1], the [JUnitTestCheckArguments] test ([spring-webjson-client-generic-JUnitTestCheckArguments] execution configuration);
   </li>
-  <li>in [2], the [JUnitTestDao] test (run configuration [spring-webjson-client-generic-JUnitTestDao]);
+  <li>in [2], test [JUnitTestDao] (run configuration [spring-webjson-client-generic-JUnitTestDao]);
   </li>
-  <li>in [3], the [JUnitTestPushTheLimits] test executed on the client side (run configuration [spring-webjson-client-generic-JUnitTestPushTheLimits]);
+  <li>in [3], the client-side test [JUnitTestPushTheLimits] (run configuration [spring-webjson-client-generic-JUnitTestPushTheLimits]);
   </li>
   <li>in [4], the [JUnitTestPushTheLimits] test executed on the server side (execution configuration [spring-jpa-generic-JUnitTestPushTheLimits-hibernate-eclipselink]);
   </li>

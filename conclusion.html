@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -742,7 +744,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -762,14 +764,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -816,14 +818,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -944,50 +946,50 @@
 
 
 
-<p><a id="refheading14681224987110"></a></p>
+<p><span id="refheading14681224987110" name="refheading14681224987110" class="odt-bookmark-anchor"></span></p>
 <h1 id="22-conclusion">22. <span style="color: #365f91">Conclusion</span></h1>
 <p><span style="color: #000000">Let’s review what we’ve done in this document. </span>We examined two [DAO] layers using one of the following two architectures:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049C0000010776D1AF9E.png" width="590" height="131" style="display:inline-block; margin:4px;width:15.61cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C0000010776D1AF9E.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000049C0000010776D1AF9E.png" width="590" height="131" style="display:inline-block; margin:4px;width:15.61cm;height:3.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000049C0000010776D1AF9E.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AF000000FEE9F16F00.png" width="600" height="127" style="display:inline-block; margin:4px;width:15.863cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AF000000FEE9F16F00.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004AF000000FEE9F16F00.png" width="600" height="127" style="display:inline-block; margin:4px;width:15.863cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AF000000FEE9F16F00.png" /></td></tr></table>
 
-<p>The [DAO1] layer was implemented with <strong>Spring JDBC</strong> and the [DAO2] layer with <strong>Spring JPA.</strong> The [DAO1] and [DAO2] layers implemented the same [IDAO] interface, which allowed us to write a single test [JUnitTestDao] to test both [DAO] layers;</p>
+<p>The [DAO1] layer was implemented with <strong>Spring JDBC,</strong> and the [DAO2] layer with <strong>Spring JPA.</strong> The [DAO1] and [DAO2] layers implemented the same [IDAO] interface, which made it possible towrite a single test [JUnitTestDao] to test both layers [DAO];</p>
 <p>Once this was done, we exposed the [IDAO] interface on the web as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA00000296328D383D.png" width="597" height="331" style="display:inline-block; margin:4px;width:15.796cm;height:8.758cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA00000296328D383D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004AA00000296328D383D.png" width="597" height="331" style="display:inline-block; margin:4px;width:15.796cm;height:8.758cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA00000296328D383D.png" /></td></tr></table>
 
 <ul>
-  <li>In [1], the [IDAO] layer was exposed on the web through a web layer [2] implemented using <b>Spring MVC</b>. It is indeed the [IDAO] interface that is exposed, and we built two versions of the web service depending on whether this interface is implemented using a [DAO-JDBC] or [DAO-JPA-JDBC] architecture;
+  <li>In [1], the [IDAO] layer was exposed on the web through a [2] web layer implemented by <b>Spring MVC</b>. It is indeed the [IDAO] interface that is exposed, and we have built two versions of the web service depending on whether this interface is implemented with a [DAO-JDBC] or [DAO-JPA-JDBC] architecture;
   </li>
-  <li>in [B], a remote client uses the URLs exposed by the web service, which provide access to the methods of the [IDAO-server] layer. We ensured that the [DAO-Client] layer [3] implements the [IDAO-server] interface [1]. This allowed us to reuse the same [JUnitTestDao] test that had already been used twice;
+  <li>In [B], a remote client uses the URL exposed by the web service, which provide access to the methods of the [IDAO-serveur] layer. We ensured that the [DAO-Client] [3] layer implements the [IDAO-serveur] [1] interface. This allowed us to reuse the same [JUnitTestDao] test that had already been used twice;
   </li>
-  <li>In [3], the [DAO-Client] layer was implemented using <b>Spring RestTemplate</b>;
+  <li>in [3], the [DAO-client] layer was implemented with <b>Spring RestTemplate</b>;
   </li>
 </ul>
 
 <p>With that done, we secured access to the web service:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000049D0000028A7325823B.png" width="591" height="325" style="display:inline-block; margin:4px;width:15.625cm;height:8.601cm;" class="odt-zoomable" data-zoom-src="images/100000000000049D0000028A7325823B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000049D0000028A7325823B.png" width="591" height="325" style="display:inline-block; margin:4px;width:15.625cm;height:8.601cm;" class="odt-zoomable" data-zoom-src="images/100000000000049D0000028A7325823B.png" /></td></tr></table>
 
 <ul>
-  <li>in [5], the client’s HTTP request passes through an authentication layer implemented with <b>Spring Security</b>;
+  <li>In [5], the client’s request HTTP passes through an authentication layer implemented with <b>Spring Security</b>;
   </li>
 </ul>
 
-<p>With that done, we evolved the previous architecture into the following:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000490000002863381F4FF.png" width="584" height="323" style="display:inline-block; margin:4px;width:15.452cm;height:8.546cm;" class="odt-zoomable" data-zoom-src="images/1000000000000490000002863381F4FF.png" /></td></tr></table>
+<p>With that done, we have evolved the previous architecture into the following:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000490000002863381F4FF.png" width="584" height="323" style="display:inline-block; margin:4px;width:15.452cm;height:8.546cm;" class="odt-zoomable" data-zoom-src="images/1000000000000490000002863381F4FF.png" /></td></tr></table>
 
-<ul>
-  <li>in [3], the client application is itself a web application served by the web server [4]. The client application displays a form [5] in the browser that allows querying the URLs of the secure web service. HTTP access to the secure web service is handled by a [jS] layer implemented in JavaScript. This architecture utilizes what are known as cross-domain requests:
-    <ul>
-      <li>the web service presents URLs of the form [http://machine1:port1/];
+<ol>
+  <li>In [3], the client application is itself a web application served by the web server [4]. The client application displays a [5] form in the browser that allows querying the URL of the secure web service. Access to the secure web service is achieved through a layer implemented in Javascript. This architecture implements what are known as cross-domain requests:
+    <ol>
+      <li>the web service presents URL in the form [http://machine1:port1/];
       </li>
-      <li>the client web application is downloaded from a URL [http://machine2:port2/]. If [http://machine2:port2/] is not identical to [http://machine1:port1/] (same machine, same port), then the client browser will block HTTP calls from the [DAO-client-js] layer. To resolve this issue, the web service must allow cross-domain requests;
+      <li>the client web application is downloaded from a URL to a [http://machine2:port2/]. If [http://machine2:port2/] is not identical to [http://machine1:port1/] (same machine, same port), then the client browser will block HTTP calls from the [DAO-client-js] layer. To resolve this issue, the web service must allow cross-domain requests;
       </li>
-    </ul>
+    </ol>
   </li>
-</ul>
+</ol>
 
 <p>The projects presented have been tested with the following six databases:</p>
-<ul>
+<ol>
   <li>MySQL 5 Community Edition;
   </li>
   <li>SQL Server 2014 Express;
@@ -1000,71 +1002,71 @@
   </li>
   <li>Firebird 2.5.4;
   </li>
-</ul>
+</ol>
 
-<p>For each of these DBMSs, we developed four different [DAO] layers:</p>
+<p>For each of these SGBD, four different [DAO] layers have been developed:</p>
 <ul>
   <li>a layer implemented with Spring JDBC;
   </li>
-  <li>a layer implemented with Spring JPA and the Hibernate JPA provider;
+  <li>a layer implemented with Spring JPA and the Hibernate provider JPA;
   </li>
-  <li>a layer implemented with Spring JPA and the EclipseLink JPA provider;
+  <li>a layer implemented with Spring JPA and the JPA EclipseLink provider;
   </li>
-  <li>a layer implemented with Spring JPA and the OpenJPA JPA provider;
+  <li>a layer implemented with Spring JPA and the provider JPA OpenJPA;
   </li>
 </ul>
 
-<p>Thus, a set of twenty-four different configurations was presented. A major effort was made toward code refactoring:</p>
-<ul>
+<p>Thus, a set of twenty-four different configurations was presented. A major effort was made to factorize the code:</p>
+<ol>
   <li>most of the code is written only once. It is based on two Maven configuration projects:
-    <ul>
+    <ol>
       <li>one configures the JDBC layer;
       </li>
       <li>the other configures the JPA layer;
       </li>
-    </ul>
+    </ol>
+  </li>
+</ol>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004AA000000F951F7FE6D.png" width="597" height="124" style="display:inline-block; margin:4px;width:15.796cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA000000F951F7FE6D.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000488000000F283F9D213.png" width="580" height="121" style="display:inline-block; margin:4px;width:15.346cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000488000000F283F9D213.png" /></td></tr></table>
+
+<p>The Maven configuration project for the JDBC [1] layer of a specific SGBD allows:</p>
+<ul>
+  <li>import the driver archive JDBC;
+  </li>
+  <li>to define the access credentials for the database being used and the various SQL commands that the [DAO1] layer will send to the JDBC driver. Although SQL is standardized, portability issues have arisen primarily due to the presence in queries of table/column names that turned out to be prohibited keywords in certain SGBD (table ROLES for DB2, column PASSWORD for Firebird). Furthermore, although a column name is normally case-insensitive (upper/lowercase), we encountered an issue with PostgreSQL regarding the ID column of the tables’ primary key. It required that it be named <i>id </i>in lowercase;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004AA000000F951F7FE6D.png" width="597" height="124" style="display:inline-block; margin:4px;width:15.796cm;height:3.293cm;" class="odt-zoomable" data-zoom-src="images/10000000000004AA000000F951F7FE6D.png" /></td></tr></table>
-
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000488000000F283F9D213.png" width="580" height="121" style="display:inline-block; margin:4px;width:15.346cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/1000000000000488000000F283F9D213.png" /></td></tr></table>
-
-<p>The Maven configuration project for the JDBC layer [1] of a specific DBMS allows:</p>
-<ul>
-  <li>import the JDBC driver archive;
+<p>The three Maven configuration projects for the JPA, [2], and SGBD layers of a specific SGBD allow:</p>
+<ol>
+  <li>import the archive for the JPA implementation;
   </li>
-  <li>to define the access credentials for the database being used and the various SQL statements that the [DAO1] layer will send to the JDBC driver. Although SQL is standardized, we encountered portability issues primarily due to the presence in queries of table/column names that turned out to be prohibited keywords in certain DBMSs (the ROLES table for DB2, the PASSWORD column for Firebird). Furthermore, although a column name is normally case-insensitive (upper/lowercase), we encountered an issue with PostgreSQL regarding the ID column of the primary key in the tables. It required that it be named &quot;<i>id&quot; </i>in lowercase;
+  <li>configure the JPA implementation used for the specific connected SGBD. In fact, it is the JPA layer that sends the SQL commands to the JDBC layer. To be effective, it must know the SGBD in order to send it the SQL commands that it will recognize. These commands can utilize the SQL that owns this SGBD, as well as its specific characteristics (data types, sequences, triggers, procedures, automatic generation of primary keys, etc.);
   </li>
-</ul>
+</ol>
 
-<p>The three Maven projects for configuring the JPA layer [2] of a specific DBMS allow:</p>
-<ul>
-  <li>importing the JPA implementation archive;
-  </li>
-  <li>configure the JPA implementation used for the specific connected DBMS. In fact, it is the JPA layer that issues SQL commands to the JDBC layer. To be effective, it must know the DBMS in order to send it SQL commands that it will recognize. These commands may use the proprietary SQL of that DBMS as well as its specific features (data types, sequences, triggers, procedures, automatic generation of primary keys, etc.);
-  </li>
-</ul>
-
-<p>We thus created twenty-four Maven configuration projects (4 configurations × 6 DBMS) upon which all other database operation projects were based. In the diagrams above, since the [DAO1] and [DAO2] layers provide the same interface, the 24 configurations of the two architectures above were tested using a single test class [JUnitTestDao]. Once these architectures were verified, there were no further difficulties:</p>
-<ul>
+<p>We thus created twenty-four Maven configuration projects (4 configurations × 6 SGBD) on which all other database operation projects were based. In the diagrams above, since the [DAO1] and [DAO2] layers provide the same interface, the 24 configurations of the two architectures above were tested using the single test class [JUnitTestDao]. Once these architectures were verified, there were no further issues:</p>
+<ol>
   <li>the Maven project for publishing the database on the web is based on these two architectures. There are therefore also 24 possible configurations here;
   </li>
   <li>the Maven project for securing access to the web service builds on the previous project and also has 24 possible configurations;
   </li>
   <li><span style="color: #000000">finally, the Maven project enabling cross-domain requests to the secure web service builds on the previous project and also has 24 possible configurations;</span>
   </li>
-</ul>
+</ol>
 
 <p>Although this document does not cover all the capabilities of the Java language or all its areas of application, it can be used as a learning resource for the language. Readers who have mastered the content of this course will have reached an “advanced Java” level in both the use of the language and the Spring framework. They can then continue their Java training with the following books:</p>
 <ul>
-  <li>[Spring MVC and Thymeleaf by Example] [<a href="http://tahe.developpez.com/java/springmvc-thymeleaf"><u><span style="color: #0563c1">http://tahe.developpez.com/java/springmvc-thymeleaf</span></u></a>], which continues the exploration of the Spring ecosystem by introducing its &quot;MVC web programming&quot; branch. It uses a more complex database than the one studied here;
+  <li>[Spring MVC et Thymeleaf par l&#x27;exemple] [http://tahe.developpez.com/java/springmvc-thymeleaf], which continues the exploration of the Spring ecosystem by introducing its &quot;web programming&quot; branch (MVC). It uses a more complex database than the one studied here;
   </li>
-  <li>[AngularJS / Spring MVC Tutorial] [<a href="http://tahe.developpez.com/angularjs-spring4"><u><span style="color: #0563c1">http://tahe.developpez.com/angularjs-spring4</span></u></a>] which presents a client/server web architecture, where the client is implemented using the [AngularJS] framework and the server using [Spring MVC];
+  <li>[Tutoriel AngularJS / Spring MVC] [http://tahe.developpez.com/angularjs-spring4], which presents a client/server web architecture, where the client is implemented using the [AngularJS] framework and the server using [Spring MVC];
   </li>
-  <li>[Introduction to Java EE] [<a href="http://tahe.developpez.com/java/javaee"><u><span style="color: #0563c1">http://tahe.developpez.com/java/javaee</span></u></a>], which moves away from the Spring ecosystem to a web architecture based on JSF (Java Server Faces) and EJB (Enterprise JavaBeans);
+  <li>[Introduction à Java EE] [http://tahe.developpez.com/java/javaee], which moves away from the Spring ecosystem to a web architecture based on JSF (Java Server Faces) and EJB (Enterprise Java Bean);
   </li>
-  <li><span style="color: #000000">[Introduction to Android Tablet Programming] [</span><a href="http://tahe.developpez.com/android/exemples-intellij-aa"><u><span style="color: #0563c1">http://tahe.developpez.com/android/exemples-intellij-aa</span></u></a><span style="color: #000000">], which describes a client/server architecture where the client is an Android tablet programmed in Java and the server is a web service implemented using Spring MVC;</span>
+  <li><span style="color: #000000">[Introduction à la programmation des tablettes Android] [http://tahe.developpez.com/android/exemples-intellij-aa], which describes a client/server architecture, where the client is an Android tablet programmed in Java and the server is a web service implemented by Spring MVC;</span>
   </li>
 </ul>
 

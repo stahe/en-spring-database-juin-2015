@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -577,10 +579,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6332-the-jpa-entity-product" class="md-nav__link">
+  <a href="#6332-the-entity-jpa-produit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.3.3.2. The JPA entity [Product]
+        6.3.3.2. The entity JPA [Produit]
       
     </span>
   </a>
@@ -588,10 +590,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6333-the-jpa-category-entity" class="md-nav__link">
+  <a href="#6333-the-entity-jpa-categorie" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.3.3.3. The JPA [Category] entity
+        6.3.3.3. The entity JPA [Categorie]
       
     </span>
   </a>
@@ -677,10 +679,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6432-the-productsrepository-interface" class="md-nav__link">
+  <a href="#6432-the-produitsrepository-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.4.3.2. The [ProductsRepository] interface
+        6.4.3.2. The [ProduitsRepository] interface
       
     </span>
   </a>
@@ -738,10 +740,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6444-the-productdao-class" class="md-nav__link">
+  <a href="#6444-the-daoproduit-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6.4.4.4. The [ProductDao] class
+        6.4.4.4. The [DaoProduit] class
       
     </span>
   </a>
@@ -1061,7 +1063,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -1081,14 +1083,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -1135,14 +1137,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -1253,54 +1255,54 @@
 
 
 
-<p><a id="refheading2192422014630537"></a></p>
+<p><span id="refheading2192422014630537" name="refheading2192422014630537" class="odt-bookmark-anchor"></span></p>
 <h1 id="6-spring-data-jpa-hibernate">6. <span style="color: #365f91">Spring Data JPA Hibernate</span></h1>
-<p><a id="refheading2192442014630537"></a></p>
+<p><span id="refheading2192442014630537" name="refheading2192442014630537" class="odt-bookmark-anchor"></span></p>
 <h2 id="61-introduction">6.1. <span style="color: #4f81bd">Introduction</span></h2>
-<p>We will use the [dbproduitscategories] database managed by the [spring-jdbc-04] project and implement the two interfaces [IDao&lt;Category&gt;, IDao&lt;Product&gt;] defined in that project. This will allow us to do several things:</p>
+<p>We will use the [dbproduitscategories] database managed by the [spring-jdbc-04] project and implement the two [IDao&lt;Categorie&gt;, IDao&lt;Produit&gt;] interfaces defined in that project. This will allow us to do several things:</p>
 <ul>
   <li>compare the implementation code;
   </li>
-  <li>use the same test layer;
+  <li>use the same test suite;
   </li>
   <li>compare the performance of the two implementations;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A2000000EF6ADB2D89.png" width="593" height="120" style="display:inline-block; margin:4px;width:15.69cm;height:3.163cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A2000000EF6ADB2D89.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004A2000000EF6ADB2D89.png" width="593" height="120" style="display:inline-block; margin:4px;width:15.69cm;height:3.163cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A2000000EF6ADB2D89.png" /></td></tr></table>
 
 <ul>
-  <li>the [JDBC] layer is implemented by the [mysql-config-jdbc] project discussed in Section<a href="#refheading1051402082896917"><u><span style="color: #0563c1"> 3.3</span></u></a>;
+  <li>the [JDBC] layer is implemented by the [mysql-config-jdbc] project discussed in Section<a href="introduction-to-api-jdbc.html#refheading1051402082896917"><u><span style="color: #0563c1"> 3.3</span></u></a>;
   </li>
 </ul>
 
 <p>We will now move on to the other layers.</p>
-<p><a id="refheading1052882082896917"></a></p>
+<p><span id="refheading1052882082896917" name="refheading1052882082896917" class="odt-bookmark-anchor"></span></p>
 <h2 id="62-setting-up-the-working-environment">6.2. <span style="color: #4f81bd">Setting up the working environment</span></h2>
-<p>Using STS, import the [mysql-config-jpa-hibernate] project [1] located in the [&lt;examples&gt;/spring-database-config/mysql/eclipse] folder [2]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D5000001E42652F8C7.png" width="619" height="242" style="display:inline-block; margin:4px;width:16.365cm;height:6.403cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D5000001E42652F8C7.png" /></td></tr></table>
+<p>Using STS, import the [mysl-config-jpa-hibernate] and [1] projects located in the [&lt;exemples&gt;/spring-database-config/mysql/eclipse] and [2] folders:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004D5000001E42652F8C7.png" width="619" height="242" style="display:inline-block; margin:4px;width:16.365cm;height:6.403cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D5000001E42652F8C7.png" /></td></tr></table>
 
 <p>This project configures the [Spring JPA Hibernate] layer of the project. Each JPA implementation has its own configuration project.</p>
-<p>Next, import the [spring-jpa-generic] [1] project located in the [&lt;examples&gt;/spring-database-generic/spring-jpa] [2] folder:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C40000020E0531A35F.png" width="610" height="263" style="display:inline-block; margin:4px;width:16.14cm;height:6.959cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C40000020E0531A35F.png" /></td></tr></table>
+<p>Next, import the [spring-jpa-generic] and [1] projects located in the [&lt;exemples&gt;/spring-database-generic/spring-jpa] and [2] folders:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004C40000020E0531A35F.png" width="610" height="263" style="display:inline-block; margin:4px;width:16.14cm;height:6.959cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C40000020E0531A35F.png" /></td></tr></table>
 
-<p>Once this is done, refresh the Maven environment (Alt-F5) for all projects in [Package Explorer]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000020C000000F8941F9636.png" width="327" height="155" style="display:inline-block; margin:4px;width:8.641cm;height:4.09cm;" class="odt-zoomable" data-zoom-src="images/100000000000020C000000F8941F9636.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>Once this is done, reset the Maven environment (Alt-F5) for all projects in [Package Explorer]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000020C000000F8941F9636.png" width="327" height="155" style="display:inline-block; margin:4px;width:8.641cm;height:4.09cm;" class="odt-zoomable" data-zoom-src="images/100000000000020C000000F8941F9636.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>Then, to verify the working environment, run the build configuration named [spring-jpa-generic-JUnitTestDao-hibernate]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003DB0000029D2B6FD818.png" width="661" height="448" style="display:inline-block; margin:4px;width:17.48cm;height:11.848cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DB0000029D2B6FD818.png" /></td></tr></table>
+<p>Then, to verify the build environment, run the build configuration named [spring-jpa-generic-JUnitTestDao-hibernate]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003DB0000029D2B6FD818.png" width="661" height="448" style="display:inline-block; margin:4px;width:17.48cm;height:11.848cm;" class="odt-zoomable" data-zoom-src="images/10000000000003DB0000029D2B6FD818.png" /></td></tr></table>
 
-<p>This configuration runs the [JUnitTestDao] test. This test should pass:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013A00000130BF6F9ED6.png" width="212" height="205" style="display:inline-block; margin:4px;width:5.611cm;height:5.433cm;" class="odt-zoomable" data-zoom-src="images/100000000000013A00000130BF6F9ED6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>This configuration runs the [JUnitTestDao] test. This test must pass:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000013A00000130BF6F9ED6.png" width="212" height="205" style="display:inline-block; margin:4px;width:5.611cm;height:5.433cm;" class="odt-zoomable" data-zoom-src="images/100000000000013A00000130BF6F9ED6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading1052902082896917"></a></p>
-<h2 id="63-the-jpa-layer-configuration-project">6.3. <span style="color: #4f81bd">The JPA layer configuration project</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000130000000D53D455A3D.png" width="213" height="149" style="display:inline-block; margin:4px;width:5.63cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000130000000D53D455A3D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading1052902082896917" name="refheading1052902082896917" class="odt-bookmark-anchor"></span></p>
+<h2 id="63-the-jpa-layer-configuration-project">6.3. <span style="color: #4f81bd"><strong>The JPA layer configuration project</strong></span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000130000000D53D455A3D.png" width="213" height="149" style="display:inline-block; margin:4px;width:5.63cm;height:3.946cm;" class="odt-zoomable" data-zoom-src="images/1000000000000130000000D53D455A3D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The purpose of this project is to configure the JPA layer of the architecture shown below:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D5000000FF1A4034C8.png" width="619" height="128" style="display:inline-block; margin:4px;width:16.365cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D5000000FF1A4034C8.png" /></td></tr></table>
+<p>The purpose of this project is to configure the JPA layer of the architecture below:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004D5000000FF1A4034C8.png" width="619" height="128" style="display:inline-block; margin:4px;width:16.365cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D5000000FF1A4034C8.png" /></td></tr></table>
 
-<p><a id="refheading1052922082896917"></a></p>
+<p><span id="refheading1052922082896917" name="refheading1052922082896917" class="odt-bookmark-anchor"></span></p>
 <h3 id="631-maven-configuration">6.3.1. <span style="color: #4f81bd">Maven Configuration</span></h3>
 <p>The project is a Maven project configured by the following [pom.xml] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1366,26 +1368,26 @@
 </code></pre></div>
 
 <ul>
-  <li>lines 5-7: the Maven artifact generated by this project. The configuration projects for the other JPA implementations (Eclipselink and OpenJpa) will use this same artifact. This means that only one of these projects can be active at any given time. You should therefore avoid having them all present in [Package Explorer]. Only one is needed;
+  <li>Lines 5–7: the Maven artifact generated by this project. The configuration projects for the other JPA implementations (Eclipselink and OpenJpa) will use this same artifact. This means that only one of these projects can be active at any given time. Therefore, you should avoid having all of them present in [Package Explorer]. Only one is needed;
   </li>
-  <li>lines 10–14: the parent Maven project that specifies the versions of most of the dependencies required by the project;
+  <li>lines 10–14: the parent Maven project that defines version for most of the project’s necessary dependencies;
   </li>
   <li>lines 19–22: the Hibernate library;
   </li>
-  <li>lines 25–28: the Spring Data library;
+  <li>lines 25–28: the Spring library Data;
   </li>
-  <li>lines 32–34: the JPA layer configuration project relies on the JDBC layer configuration project, which defines, among other things, the JDBC driver for the DBMS being used and the database connection details;
+  <li>lines 32–34: the JPA layer configuration project relies on the JDBC layer configuration project, which defines, among other things, the JDBC driver for the SGBD being used and the database credentials;
   </li>
-  <li>lines 35–39: the JDBC layer configuration project includes the [Spring JDBC] library, which is replaced here by the [Spring Data JPA] library. Therefore, we specify not to include it in the project dependencies. However, if it remains, this does not cause any errors;
+  <li>lines 35–39: the configuration project for layer JDBC includes the library [Spring JDBC], which is replaced here by the library [Spring Data JPA]. Therefore, we recommend not including it in the project dependencies. However, leaving it in will not cause any errors;
   </li>
 </ul>
 
-<p>In the end, the project dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E1000000835772EDE4.png" width="158" height="92" style="display:inline-block; margin:4px;width:4.17cm;height:2.429cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E1000000835772EDE4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>Ultimately, the project dependencies are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E1000000835772EDE4.png" width="158" height="92" style="display:inline-block; margin:4px;width:4.17cm;height:2.429cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E1000000835772EDE4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading1052942082896917"></a></p>
+<p><span id="refheading1052942082896917" name="refheading1052942082896917" class="odt-bookmark-anchor"></span></p>
 <h3 id="632-spring-configuration">6.3.2. <span style="color: #4f81bd">Spring Configuration</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000132000000A37552073D.png" width="215" height="114" style="display:inline-block; margin:4px;width:5.68cm;height:3.027cm;" class="odt-zoomable" data-zoom-src="images/1000000000000132000000A37552073D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000132000000A37552073D.png" width="215" height="114" style="display:inline-block; margin:4px;width:5.68cm;height:3.027cm;" class="odt-zoomable" data-zoom-src="images/1000000000000132000000A37552073D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [ConfigJpa] class configures the Spring project:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1464,95 +1466,95 @@
 <ul>
   <li>line 18: the class is a Spring configuration class;
   </li>
-  <li>line 19: it imports the beans defined by the [ConfigJdbc] configuration class used to configure the Spring project [mysql-config-jdbc]. These are the JSON filters;
+  <li>line 19: it imports the beans defined by the configuration class [ConfigJdbc], which was used to configure the Spring project [mysql-config-jdbc]. These are the jSON filters;
   </li>
   <li>lines 23–30: define the JPA implementation used, in this case the Hibernate implementation (line 25);
   </li>
   <li>line 26: you can choose whether or not to display the SQL operations executed by the Hibernate implementation;
   </li>
-  <li>line 27: specifies the connected DBMS to Hibernate. This configuration is important. It allows Hibernate to use the SQL dialect of the MySQL DBMS, including its proprietary features. Furthermore, this informs it about the SQL types and DBMS objects it will be able to use. It is this ability of the JPA implementation to adapt to a specific DBMS that gives it high portability across DBMSs;
+  <li>line 27: specifies the connected SGBD to Hibernate. This configuration is important. It allows Hibernate to use the SQL dialect of SGBD MySQL, including its proprietary aspects. Furthermore, this informs it about the SQL types and SGBD objects that it will be able to use. It is this ability of the JPA implementation to adapt to a specific SGBD that gives it high portability between SGBD;
   </li>
-  <li>line 28: Hibernate may or may not generate the tables for the target database from the JPA entities it finds. This generation only occurs if the tables are absent. If they already exist, nothing is done. We will use this ability to generate tables when we demonstrate how the SQL generation scripts for the various databases used in this document were created;
+  <li>Line 28: Hibernate may or may not generate the target database tables from the JPA entities it finds. This generation only occurs if the tables are absent. If they already exist, no action is taken. We will use this ability to generate tables when we explain how the SQL generation scripts for the various databases used in this document were created;
   </li>
-  <li>line 33: the package containing the JPA entities for the [dbproduitscategories] database;
+  <li>line 33: the package containing the JPA entities from the [dbproduitscategories] database;
   </li>
-  <li>Lines 36–49: The data source [tomcat-jdbc] linked to the database [dbproduitscategories];
+  <li>lines 36–49: the [tomcat-jdbc] data source linked to the [dbproduitscategories] database;
   </li>
-  <li>lines 52–60: the bean named [entityManagerFactory] (it must be named this way) is the bean that will create the [EntityManager] object, which manages the JPA persistence context. All JPA operations go through it. Because we are using [Spring Data JPA], we will never use this object ourselves. However, we do need to configure it. It needs to know the following:
+  <li>lines 52–60: the bean named [entityManagerFactory] (it must be named exactly this) is the bean that will create the [EntityManager] object, which manages the JPA persistence context. All JPA operations go through it. Because we use [Spring Data JPA], we will never use this object ourselves. However, we need to configure it. It needs to know the following:
     <ul>
       <li>the JPA implementation used (line 55);
       </li>
       <li>the data source used (line 57);
       </li>
-      <li>the JPA entities for this source (line 56);
+      <li>the JPA entities from this source (line 56);
       </li>
     </ul>
   </li>
-  <li>line 58: initializes the EntityManager with this information;
+  <li>line 58: initializes EntityManager with this information;
   </li>
-  <li>line 59: returns the singleton [<span style="color: #000000">entityManagerFactory</span>];
+  <li>Line 59: defines the singleton [entityManagerFactory];
   </li>
-  <li>lines 63–68: define the transaction manager. It must be named [<span style="color: #000000">transactionManager</span>];
+  <li>Lines 63–68: define the transaction manager. It must be named [transactionManager];
   </li>
-  <li>line 65: a JPA transaction manager is created;
+  <li>line 65: a transaction manager named JPA is created;
   </li>
-  <li>line 66: it is connected to the data source from line 37 via the [<span style="color: #000000">entityManagerFactory</span>] bean (lines 53 and 57);
+  <li>line 66: it is linked to the data source from line 37 via the bean [entityManagerFactory] (lines 53 and 57);
   </li>
 </ul>
 
 <p>Only the bean in lines 23–30 depends on the JPA implementation used. The other beans then rely on it.</p>
-<p><a id="refheading2192502014630537"></a></p>
+<p><span id="refheading2192502014630537" name="refheading2192502014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="633-entities-in-the-jpa-layer">6.3.3. <span style="color: #4f81bd">Entities in the [JPA] layer</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A9000000F6B20BC554.png" width="597" height="123" style="display:inline-block; margin:4px;width:15.783cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A9000000F6B20BC554.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004A9000000F6B20BC554.png" width="597" height="123" style="display:inline-block; margin:4px;width:15.783cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A9000000F6B20BC554.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000133000000E9D4B78466.png" width="214" height="162" style="display:inline-block; margin:4px;width:5.65cm;height:4.288cm;" class="odt-zoomable" data-zoom-src="images/1000000000000133000000E9D4B78466.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000133000000E9D4B78466.png" width="214" height="162" style="display:inline-block; margin:4px;width:5.65cm;height:4.288cm;" class="odt-zoomable" data-zoom-src="images/1000000000000133000000E9D4B78466.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The target database is the [dbproduitscategories] database with its two tables [CATEGORIES] and [PRODUITS]. We have seen that it also has three other tables [USERS, ROLES, USERS_ROLES] that will be used to secure the web service to be deployed on the web. We will ignore these tables for now. As a reminder, here is the structure of the [CATEGORIES] and [PRODUCTS] tables:</p>
-<p>The [PRODUCTS] table is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000520000001663A1A8171.png" width="656" height="179" style="display:inline-block; margin:4px;width:17.357cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/1000000000000520000001663A1A8171.png" /></td></tr></table>
+<p>The target database is the [dbproduitscategories] database with its two tables, [CATEGORIES] and [PRODUITS]. We have seen that it also has three other tables, [USERS, ROLES, USERS_ROLES], which will be used to secure the web service to be deployed on the web. We will ignore these tables for now. As a reminder, here is the structure of the tables [CATEGORIES] and [PRODUITS]:</p>
+<p>The [PRODUITS] table is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000520000001663A1A8171.png" width="656" height="179" style="display:inline-block; margin:4px;width:17.357cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/1000000000000520000001663A1A8171.png" /></td></tr></table>
 
 <ul>
-  <li>[ID]: the auto-incrementing primary key of the table [2];
+  <li>[ID]: the auto-increment primary key of the [2] table;
   </li>
-  <li>[NAME]: the unique name of the product [4];
+  <li>[NOM]: the unique product name of [4];
   </li>
-  <li>[PRICE]: the product’s price;
+  <li>[PRIX]: the product price;
   </li>
   <li>[DESCRIPTION]: the product description;
   </li>
-  <li>[VERSIONING] is the product’s version number. Its initial version is 1 [3]. Each time the product is modified, its version number is incremented by the code that operates the table;
+  <li>[VERSIONING] is the product ID of version. Its initial version is 1 [3]. Each time the product is modified, its version number will be incremented by the code that operates the table;
   </li>
-  <li>[CATEGORY_ID]: the foreign key in the [CATEGORIES] table to identify the category to which the product belongs;
+  <li>[CATEGORIE_ID]: the foreign key in the [CATEGORIES] table to designate the category to which the product belongs;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000473000000E63803A595.png" width="570" height="115" style="display:inline-block; margin:4px;width:15.069cm;height:3.043cm;" class="odt-zoomable" data-zoom-src="images/1000000000000473000000E63803A595.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000473000000E63803A595.png" width="570" height="115" style="display:inline-block; margin:4px;width:15.069cm;height:3.043cm;" class="odt-zoomable" data-zoom-src="images/1000000000000473000000E63803A595.png" /></td></tr></table>
 
 <ul>
-  <li>in [1-3], the foreign key [CATEGORIE_ID] of the [PRODUITS] table. It references the [ID] column of the [CATEGORIES] table [4-5];
+  <li>in [1-3], the foreign key [CATEGORIE_ID] from the table [PRODUITS]. It targets the column [ID] in table [CATEGORIES] [4-5];
   </li>
-  <li>when a category is deleted, all products linked to it are also deleted [6]. This point is important to note because it is used in the construction of the [DAO] layer that uses the [dbproduitscategories] database;
+  <li>when a category is deleted, all products linked to it are also deleted [6]. This point is important to note because it is used in the construction of the [DAO] layer utilizing the [dbproduitscategories] database;
   </li>
 </ul>
 
-<p>The [CATEGORIES] table is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000038900000105F5502940.png" width="453" height="131" style="display:inline-block; margin:4px;width:11.973cm;height:3.454cm;" class="odt-zoomable" data-zoom-src="images/100000000000038900000105F5502940.png" /></td></tr></table>
+<p>The [CATEGORIES] table of categories is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000038900000105F5502940.png" width="453" height="131" style="display:inline-block; margin:4px;width:11.973cm;height:3.454cm;" class="odt-zoomable" data-zoom-src="images/100000000000038900000105F5502940.png" /></td></tr></table>
 
 <ul>
   <li>[ID]: auto-incrementing primary key;
   </li>
-  <li>[VERSIONING]: category version number;
+  <li>[VERSIONING]: version number of the category;
   </li>
-  <li>[NAME]: unique name of the category;
+  <li>[NOM]: unique name of the category;
   </li>
 </ul>
 
-<p>We will now describe the JPA entities [Product] and [Category], which correspond to the [PRODUCTS] and [CATEGORIES] tables.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000133000000E9D4B78466.png" width="214" height="162" style="display:inline-block; margin:4px;width:5.65cm;height:4.288cm;" class="odt-zoomable" data-zoom-src="images/1000000000000133000000E9D4B78466.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>We will now describe the entities JPA, [Produit], and [Categorie], which are images of the tables [PRODUITS] and [CATEGORIES].</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000133000000E9D4B78466.png" width="214" height="162" style="display:inline-block; margin:4px;width:5.65cm;height:4.288cm;" class="odt-zoomable" data-zoom-src="images/1000000000000133000000E9D4B78466.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading1961141114084373"></a></p>
+<p><span id="refheading1961141114084373" name="refheading1961141114084373" class="odt-bookmark-anchor"></span></p>
 <h4 id="6331-the-abstractcoreentity-interface">6.3.3.1. <span style="color: #4f81bd">The [AbstractCoreEntity] interface</span></h4>
-<p>The [AbstractCoreEntity] interface is implemented by the JPA entities [Category] and [Product]:</p>
+<p>The [AbstractCoreEntity] interface is implemented by the entities JPA, [Categorie], and [Produit]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> generic.jpa.entities.dbproduitscategories;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1578,11 +1580,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">This interface, implemented by the two JPA entities, simply lists the methods for reading and writing the [id], [version], and [entityType] fields of these entities. The role of the [entityType] field will be explained later;</span></p>
-<p><a id="refheading1961161114084373"></a></p>
-<h4 id="6332-the-jpa-entity-product">6.3.3.2. <span style="color: #4f81bd">The JPA entity [Product]</span></h4>
-<p>The [Product] class is the JPA entity associated with a row in the [PRODUCTS] table:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000026B000000E48FC8E8E8.png" width="433" height="160" style="display:inline-block; margin:4px;width:11.46cm;height:4.221cm;" class="odt-zoomable" data-zoom-src="images/100000000000026B000000E48FC8E8E8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span style="color: #000000">This interface, implemented by the two entities JPA, simply serves to list the methods for reading/writing the fields [id], [version], and [entityType] of these entities. The role of the [entityType] field will be explained later;</span></p>
+<p><span id="refheading1961161114084373" name="refheading1961161114084373" class="odt-bookmark-anchor"></span></p>
+<h4 id="6332-the-entity-jpa-produit">6.3.3.2. <span style="color: #4f81bd">The entity JPA [Produit]</span></h4>
+<p>The class [Produit] is the entity JPA associated with a row in the table [PRODUITS]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000026B000000E48FC8E8E8.png" width="433" height="160" style="display:inline-block; margin:4px;width:11.46cm;height:4.221cm;" class="odt-zoomable" data-zoom-src="images/100000000000026B000000E48FC8E8E8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> generic.jpa.entities.dbproduitscategories;</span></span></span>
@@ -1705,76 +1707,76 @@
 </code></pre></div>
 
 <ul>
-  <li>line 21: the [@Entity] annotation makes the [Product] class an entity managed by the [JPA] layer. You can also write [@Entity(name=&quot;MyProduct&quot;)], which gives the entity the name [MyProduct]. In the absence of this information, the entity’s name is the class name, in this case [Product]. This naming convention becomes necessary when there are two classes from different packages among the entities that share the same name;
+  <li>line 21: the annotation [@Entity] makes the class [Produit] an entity managed by the layer [JPA]. One can also write [@Entity(name=&quot;MonProduit&quot;)], which gives the entity the name [MonProduit]. In the absence of this information, the entity’s name is the class name, in this case [Produit]. This naming convention becomes necessary when there are two classes from different packages among the entities that share the same name;
   </li>
-  <li>line 22: the annotation [@Table(name = &quot;PRODUCTS&quot;)] indicates that the [Product] class is the object representation of a row in the [PRODUCTS] table in the database;
+  <li>line 22: the annotation [@Table(name = &quot;PRODUITS&quot;)] indicates that the class [Produit] is the object image of a row in the [PRODUITS] table in the database;
   </li>
-  <li>line 23: the name of the JSON filter to apply to the entity. We will see that the [<span style="color: #0000c0">categorie</span>] property on line 58 is not always available. It must therefore be excluded from the object’s JSON representation. To do this, we need a filter. We will therefore use a filter named [<span style="color: #2a00ff">jsonFilterCategorie</span>] to specify whether or not we want the [<span style="color: #0000c0">categorie</span>] property;
+  <li>line 23: the name of the filter jSON to be applied to the entity. We will see that the property [categorie] on line 58 is not always available. It must therefore be excluded from the jSON representation of the object. To do this, we need a filter. We will therefore specify in a filter named [jsonFilterCategorie] whether or not we want the [categorie] property;
   </li>
-  <li>line 26: the [@Id] annotation makes the annotated field the field associated with the primary key of the table in line 19;
+  <li>line 26: the annotation [@Id] makes the annotated field the field associated with the primary key of the table in line 19;
   </li>
-  <li>line 27: the [<span style="color: #646464">@GeneratedValue</span><span style="color: #000000">(strategy = GenerationType.</span><i><b><span style="color: #0000c0">IDENTITY</span></b></i><span style="color: #000000">)</span>] annotation sets the automatic generation mode for the primary key in the [PRODUITS] table. The [<span style="color: #000000">strategy</span>] attribute determines this. There are different modes:
+  <li>line 27: the annotation [@GeneratedValue(strategy = GenerationType.IDENTITY)] sets the mode for automatically generating the primary key in the table [PRODUITS]. This is determined by the attribute [strategy]. There are different modes:
   </li>
 </ul>
 
 <p><img src="images/100000000000038F000000F6013302D5.png" width="638" height="172" style="width:16.87cm;height:4.554cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000038F000000F6013302D5.png" /></p>
-<p>The [IDENTITY] strategy is not available for all DBMSs. Among the six DBMSs tested, it was available for [MySQL 5, PostgreSQL 9.4, SQL Server 2014, DB2 Express-C10.5]. For the other two [Oracle Express 11g Release 2, Firebird 2.5.4], the [SEQUENCE] strategy had to be used. For portability between JPA implementations, the [AUTO] strategy should not be used, as it leaves the choice of primary key generation strategy up to the JPA implementation. Thus, with MySQL 5 and the [AUTO] strategy:</p>
+<p>The [IDENTITY] strategy is not available for all SGBD entries. Among the six SGBD tested, it was available for the SGBD and [MySQL 5, PostgreSQL 9.4, SQL Server 2014, DB2 Express-C10.5]. For the other two [Oracle Express 11g Release 2, Firebird 2.5.4], the [SEQUENCE] strategy had to be used. For portability between implementations JPA, do not use the strategy [AUTO], which leaves the choice of primary key generation strategy up to the implementation JPA. Thus, with MySQL 5 and the [AUTO] strategy:</p>
 <ul>
-  <li>Hibernate chooses the [IDENTITY] strategy with the [AUTO_INCREMENT] mode for the primary key;
+  <li>Hibernate chooses strategy [IDENTITY] with primary key mode [AUTO_INCREMENT];
   </li>
-  <li>EclipseLink chooses the [TABLE] strategy, which creates a table named [SEQUENCE] by default that must be queried to retrieve the primary keys.
+  <li>EclipseLink chooses the strategy [TABLE], which creates a table named by default [SEQUENCE] that must be queried to obtain the primary keys.
   </li>
 </ul>
 
-<p>Ultimately, the database structure managed by these two JPA implementations is not the same. If it was generated by Hibernate, it will not be usable by EclipseLink, and vice versa.</p>
+<p>Ultimately, the database structure managed by these two implementations, JPA, is not the same. If it was generated by Hibernate, it will not be usable by EclipseLink, and vice versa.</p>
 <ul>
-  <li>Line 28: The [@Column(name=&quot;ID&quot;] annotation sets the name of the column in the [PRODUCTS] table to be associated with the [id] field;
+  <li>Line 28: The [@Column(name=&quot;ID&quot;] annotation sets the name of the column in the [PRODUITS] table to be associated with the [id] field;
   </li>
-  <li>line 29: the type [Long] is used instead of [long] for the primary key. This is because [null] primary keys have a specific meaning for JPA. Therefore, it is preferable to use an object type here rather than a simple type;
+  <li>Line 29: The type [Long] is used instead of [long] for the primary key. This is because the primary keys [null] have a specific meaning for JPA. Therefore, it is preferable to use an object type here rather than a simple type;
   </li>
-  <li>line 31: <span style="color: #000000">the [</span><span style="color: #646464">@Version</span><span style="color: #000000">] annotation indicates that the [version] field is associated with a versioning column. The JPA implementation will increment this version number each time the entity is modified. This number is used to prevent simultaneous updates of the entity by two different users: two users, U1 and U2, read entity E with a version number equal to V1. U1 modifies E and persists this change to the database: the version number then changes to V1+1. U2 modifies E in turn and attempts to persist this change to the database: they will receive an exception because their version (V1) differs from the one in the database (V1+1);</span>
+  <li>line 31: <span style="color: #000000">the annotation [@Version] indicates that the field [version] is associated with a versioning column. The JPA implementation will increment this number from version each time the entity is modified. This number is used to prevent simultaneous updates of the entity by two different users: two users, U1 and U2, read entity E with a version number equal to V1. U1 modifies E and commits this change to the database: the version number then changes to V1+1. U2 modifies E in turn and saves this change to the database: they will receive an exception because their version (V1) differs from the one in the database (V1+1);</span>
   </li>
-  <li><span style="color: #000000">Line 36: the entity type. There will be two: POJO and PROXY. By default, the Product instance will be a POJO (Plain Old Java Object). In some cases, the [Product] instances retrieved from the database will be of type [PROXY].  This will be the case when the [Category] property on line 58 has not been initialized with a category due to the [fetch = FetchType.</span><i><b><span style="color: #0000c0">LAZY</span></b></i><span style="color: #000000">] attribute on line 56. In this case, the JPA implementations to be tested differ:</span>
+  <li><span style="color: #000000">line 36: the entity type. There will be two: POJO and PROXY. By default, the resulting instance will be a POJO (Plain Old Java Object). In some cases, the [Produit] instances retrieved from the database will be of type [PROXY].  This will be the case when the [Categorie categorie] property on line 58 has not been initialized with a category due to the [fetch = FetchType.LAZY] attribute on line 56. In this case, the JPA implementations to be tested differ:</span>
     <ul>
-      <li><span style="color: #000000">[Hibernate, OpenJPA]: accessing the category of a [PROXY]-type product throws an exception. Hibernate uses the term &quot;proxy&quot; to refer to a JPA instance obtained in [LAZY] mode. This is why I used this term to refer to this type of entity;</span>
+      <li><span style="color: #000000">[Hibernate, OpenJPA]: accessing the category of a product of type [PROXY] causes an exception. Hibernate uses the term &quot;proxy&quot; to refer to a JPA instance obtained in [LAZY] mode. That is why I used this term to refer to this type of entity;</span>
       </li>
-      <li><span style="color: #000000">[EclipseLink]: accessing the category of a product of type [PROXY] triggers a search for that category in the database, and no exception is thrown;</span>
+      <li><span style="color: #000000">[EclipseLink]:  Accessing the category of a product of type [PROXY] triggers a search for that category in the database, and no exception occurs;</span>
       </li>
     </ul>
   </li>
 </ul>
 
-<p><span style="color: #000000">Because I wanted a test layer independent of the JPA implementation used, I needed to know the  type of each entity: POJO or PROXY. That is why I added the [entityType] field to the JPA entities;</span></p>
+<p><span style="color: #000000">Because I wanted to have a test layer independent of the JPA implementation used, I wanted to know the  type of each entity: POJO or PROXY. That is why I added the [entityType] field to the JPA entities;</span></p>
 <ul>
-  <li><span style="color: #000000">Line 35: The [</span><span style="color: #646464">@Transient</span><span style="color: #000000">] annotation indicates that the JPA implementation must ignore this field. Indeed, it does not exist in the DBMS tables;</span>
+  <li><span style="color: #000000">line 35: the annotation [@Transient] indicates that the implementation JPA must ignore this field. Indeed, it does not exist in the tables of SGBD;</span>
   </li>
-  <li><span style="color: #000000">line 40: the [Product] class throws a [ProxyException] that requires the class name;</span>
+  <li><span style="color: #000000">line 40: the class [Produit] throws an exception of type [ProxyException], which requires the class name;</span>
   </li>
-  <li><span style="color: #000000">line 38: as before, we indicate that the JPA implementation must ignore this field;</span>
+  <li><span style="color: #000000">line 38: as before, it is specified that the JPA implementation must ignore this field;</span>
   </li>
-  <li><span style="color: #000000">line 39: the [</span><span style="color: #646464">@JsonIgnore</span><span style="color: #000000">] annotation indicates that the JSON serializer/deserializer for a [Product] instance must ignore this field;</span>
+  <li><span style="color: #000000">line 39: the annotation [@JsonIgnore] specifies that the serializer/deserializer jSON of an instance [Produit] must ignore this field;</span>
   </li>
-  <li>line 43: the [@Column] annotation associates the [name] field with the [NAME] column in the [PRODUCTS] table. When the field has the same name as the associated column (case-insensitive), the [@Column] annotation can be omitted. This would be the case here. The attributes [<span style="color: #000000">unique = </span><b><span style="color: #7f0055">true</span></b><span style="color: #000000">, length = 30, nullable = </span><b><span style="color: #7f0055">false</span></b>] are only used when the JPA implementation generates the [CATEGORIES] table from the [Product] entity. They will be translated into the SQL attributes [UNIQUE, VARCHAR(30), NOT NULL], which ensure that the [NAME] column will have at most 30 characters, will be unique in the table, and cannot have the value NULL;
+  <li>line 43: annotation [@Column] associates field [nom] with column [NOM] of table [PRODUITS]. When the field has the same name as the associated column (case-insensitive), the annotation [@Column] can be omitted. This would be the case here. The [unique = true, length = 30, nullable = false] attributes are used only when the JPA implementation is required to generate the [CATEGORIES] table from the [Produit] entity. They will be translated by the attributes SQL and [UNIQUE, VARCHAR(30), NOT NULL], which ensure that the column [NOM] will have at most 30 characters, will be unique in the table, and cannot have the value NULL;
   </li>
-  <li>lines 46–47: the [idCategorie] field is linked to the [CATEGORIE_ID] column. We will return to these attributes a little later;
+  <li>lines 46–47: the field [idCategorie] linked to the column [CATEGORIE_ID]. We will return to its attributes a little later;
   </li>
-  <li>lines 49–50: the [price] field is associated with the [PRICE] column;
+  <li>lines 49–50: the field [prix] is associated with the column [PRIX];
   </li>
-  <li>lines 52-53: the [description] field is associated with the [DESCRIPTION] column;
+  <li>lines 52–53: the field [description] is associated with the column [DESCRIPTION];
   </li>
   <li>lines 56–58: the product category;
   </li>
-  <li>line 56: the [<span style="color: #646464">@ManyToOne</span>] annotation indicates that the column referenced by the annotation on line 57 [<span style="color: #646464">@JoinColumn</span><span style="color: #000000">(name = </span><span style="color: #2a00ff">&quot;CATEGORIE_ID&quot;</span><span style="color: #000000">)</span>] is a foreign key from the [PRODUITS] table of the [Product] entity to the [CATEGORIES] table associated with the entity on line 58. This annotation must be applied to a JPA entity. Therefore, the class in line 58 must be a JPA entity;
+  <li>line 56: the annotation [@ManyToOne] indicates that the column of the annotation on line 57, [@JoinColumn(name = &quot;CATEGORIE_ID&quot;)], is a foreign key in the table [PRODUITS] of theentity [Produit] on the table [CATEGORIES] associated with the entity in line 58. This annotation must annotate an entity JPA. Thus, the class of  line 58 must be an entity JPA;
   </li>
-  <li>Line 56: The annotation [<span style="color: #000000">fetch = FetchType.</span><i><b><span style="color: #0000c0">LAZY</span></b></i>] specifies that when a product is retrieved from the [PRODUCTS] table, its category (line 58) is not retrieved immediately (lazy loading). It is then retrieved during the first call to the [getCategory] method. To achieve this, at runtime, the JPA layer <b>enhances </b>the initial [getCategorie] method (which simply returns the <i>category</i> field) by making a call to the DBMS to fetch the category—a technique known as &quot;proxying.&quot; JPA implementations differ in how they handle this feature, as mentioned earlier. This attribute <b>is not mandatory</b>. The JPA implementation used is allowed to ignore it. It is because the [<span style="color: #0000c0">categorie</span>] property may or may not be present that we introduced the JSON filter on line 23. The join column [CATEGORIE_ID] in the [PRODUITS] table is automatically updated when a product is inserted or updated. It receives the value of [categorie.getId()], where [categorie] is the field on line 58. The JPA specification requires that this join column cannot be updated by any other means. It therefore enforces the attributes [<span style="color: #000000">insertable = </span><b><span style="color: #7f0055">false</span></b><span style="color: #000000">, updatable = </span><b><span style="color: #7f0055">false</span></b>] on line 46, which ensure that the [CATEGORIE_ID] column (the join column) associated with the [idCategorie] field cannot be modified by the [idCategorie] field. Only the transfer of the [CATEGORIE_ID] column into the [idCategorie] field will be possible;
+  <li>line 56: the annotation [fetch = FetchType.LAZY] specifies that when a product is retrieved from the table [PRODUITS], its category (line 58) should not be retrieved immediately (lazy loading). It is then retrieved during the first call to the [getCategorie] method. To achieve this, at runtime, the JPA layer <b>enhances </b>the initial [getCategorie] method (which simply returns the <i>category</i> field) by calling SGBD to retrieve the category—a technique known as &quot;proxying.&quot; The JPA implementations differ in their implementation of this feature, as mentioned above. This attribute <b>is not mandatory</b>. The JPA implementation used is permitted to ignore it. It is because the [categorie] property may or may not be present that we introduced the jSON filter in line 23. The join column [CATEGORIE_ID] in table [PRODUITS] is updated automatically when the product is inserted or updated. It receives the value of [categorie.getId()], where [categorie] is the field in row 58. The JPA specification requires that this join column cannot be updated by any other means. It also enforces the attributes [insertable = false, updatable = false] from line 46, which ensure that the column [CATEGORIE_ID] (i.e., the join column) associated with field [idCategorie] cannot be modified by field [idCategorie]. Only the transfer of column [CATEGORIE_ID] to field [idCategorie] will be possible;
   </li>
-  <li>lines 91–104: equality between [Product] entities is defined as equality between their primary keys [id];
+  <li>lines 91–104: the equality between entities [Produit] is defined as the equality between their primary keys [id];
   </li>
-  <li>lines 108-115: to make our test layer portable, we will uniformly manage the [PROXY] entities across the three JPA implementations [Hibernate, EclipseLink, OpenJpa]. For a [Product] entity of type [PROXY], we will prevent the value of the [category] field from being changed. The [ProxyException] class is as follows:
+  <li>lines 108–115: To make our test layer portable, we will uniformly handle the [PROXY] entities across the three implementations JPA and [Hibernate, EclipseLink, OpenJpa]. For a [Produit] entity of type [PROXY], we will prevent changes to the value of the [categorie] field. The [ProxyException] class is as follows:
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012D0000009410BCD312.png" width="212" height="104" style="display:inline-block; margin:4px;width:5.611cm;height:2.759cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D0000009410BCD312.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012D0000009410BCD312.png" width="212" height="104" style="display:inline-block; margin:4px;width:5.611cm;height:2.759cm;" class="odt-zoomable" data-zoom-src="images/100000000000012D0000009410BCD312.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> generic.jpa.infrastructure;</span></span></span>
@@ -1799,15 +1801,15 @@
 <ul>
   <li>to <b>create </b>database tables;
   </li>
-  <li>to <b>query</b> them. In this case, the JPA implementation expects to find the tables exactly as it would have generated them itself. Therefore, we cannot associate just any [PRODUCTS] table with the previous [Product] entity. It must have at least (it may have others) the characteristics of the [PRODUCTS] table that JPA would have generated. When working with JPA, the ideal approach is to start with an empty database in which JPA generates the tables. We will discuss this generation a little later. The SQL script provided for the MySQL DBMS was generated from the tables generated by JPA.
+  <li>to <b>query</b> them. In this case, the JPA implementation expects to find the tables exactly as it would have generated them itself. Therefore, not just any [PRODUITS] table can be associated with the preceding [Produit] entity. It must have at least (and may have others) the characteristics of the [PRODUITS] table that it would have generated. When working with JPA, it is best to start with an empty database in which JPA generates the tables. We will discuss this generation a little later. The SQL script provided for SGBD and MySQL was generated from the tables generated by JPA.
   </li>
 </ul>
 
-<p>All attributes of the [Product] entity are used to generate the [PRODUCTS] table. Once this is done, generation attributes such as [<span style="color: #000000">unique = </span><strong><span style="color: #7f0055">true</span></strong><span style="color: #000000">, length = 30, nullable = </span><strong><span style="color: #7f0055">false] </span></strong>are no longer used when querying the tables.</p>
-<p><a id="refheading1961181114084373"></a></p>
-<h4 id="6333-the-jpa-category-entity">6.3.3.3. <span style="color: #4f81bd">The JPA [Category] entity</span></h4>
-<p>The [Category] class is a JPA entity associated with a row in the [CATEGORIES] table:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000390000000F14F76FAA9.png" width="456" height="120" style="display:inline-block; margin:4px;width:12.065cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/1000000000000390000000F14F76FAA9.png" /></td></tr></table>
+<p>All attributes of the [Produit] entity are used to generate the [PRODUITS] table. Once this is done, generation attributes such as [unique = true, length = 30, nullable = false] are no longer used when processing the tables.</p>
+<p><span id="refheading1961181114084373" name="refheading1961181114084373" class="odt-bookmark-anchor"></span></p>
+<h4 id="6333-the-entity-jpa-categorie">6.3.3.3. <span style="color: #4f81bd">The entity JPA [Categorie]</span></h4>
+<p>The class [Categorie] is a JPA entity associated with a row in the table [CATEGORIES]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000390000000F14F76FAA9.png" width="456" height="120" style="display:inline-block; margin:4px;width:12.065cm;height:3.187cm;" class="odt-zoomable" data-zoom-src="images/1000000000000390000000F14F76FAA9.png" /></td></tr></table>
 
 <p>Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1901,7 +1903,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ------------------------------------------------------------</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// redefine [equals] and [hashcode]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// redefinition of [equals] and [hashcode]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> hashCode() {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        Long </span><span style="color:#6a3e3e">id</span><span style="color:#000000"> = getId();</span></span></span>
@@ -1930,40 +1932,40 @@
 </code></pre></div>
 
 <ul>
-  <li>line 24: the class is a JPA entity;
+  <li>line 24: the class is an entity JPA;
   </li>
-  <li>line 25: associated with the [CATEGORIES] table;
+  <li>line 25: associated with table [CATEGORIES];
   </li>
-  <li>line 26: the JSON representation of the [Category] entity is controlled by the filter named [<span style="color: #2a00ff">jsonFilterCategory</span>]. This must be configured before any request for a JSON representation of the entity. The [<span style="color: #2a00ff">jsonFilterCategorie</span>] filter will be used to determine whether or not to include the [products] field from line 40 in the JSON representation of the [Categorie] entity;
+  <li>line 26: the jSON representation of the [Categorie] entity is controlled by the filter named [jsonFilterCategorie]. This filter must be configured before any request for the jSON representation of the entity. The filter [jsonFilterCategorie] will be used to include or exclude the field [produits] from line 40 in the representation jSON of the entity [Categorie];
   </li>
-  <li>lines 29–32: the [id] field is associated with the primary key [ID] of the [CATEGORIES] table. The selected generation mode is [IDENTITY], which corresponds to [AUTO_INCREMENT] for MySQL;
+  <li>Lines 29–32: The field [id] is associated with the primary key [ID] of the table [CATEGORIES]. The selected generation mode is [IDENTITY], so the mode is [AUTO_INCREMENT] for MySQL;
   </li>
-  <li>lines 34–36: the [version] field is linked to the [VERSIONING] column in the [CATEGORIES] table;
+  <li>lines 34–36: the field [version] is linked to the versioning column [VERSIONING] in table [CATEGORIES];
   </li>
-  <li>lines 38-39: the type of the [Categorie] entity;
+  <li>lines 38-39: the type of the entity [Categorie];
   </li>
-  <li>lines 41–43: the short name of the [Categorie] class;
+  <li>lines 41-43: the short name of the class [Categorie];
   </li>
-  <li>Lines 46–47: The [name] field is linked to the [NAME] column in the [CATEGORIES] table. We assign it the JPA attributes [<span style="color: #000000">unique = </span><b><span style="color: #7f0055">true</span></b><span style="color: #000000">, length = 30, </span><b><span style="color: #7f0055">nullable = false</span></b>] so that when the [CATEGORIES] table is generated, the [NAME] column has the SQL attributes [UNIQUE, VARCHAR(30), NOT NULL];
+  <li>lines 46-47: the field [nom] is linked to the column [NOM] in table [CATEGORIES]. It is given the attributes JPA and [unique = true, length = 30, nullable=false] so that when the table [CATEGORIES] is generated, column [NOM] has the attributes SQL and [UNIQUE, VARCHAR(30), NOT NULL];
   </li>
-  <li>lines 50-51: the products that belong to the category;
+  <li>lines 50–51: the products that belong to the category;
   </li>
-  <li>line 50: the [<span style="color: #646464">@OneToMany</span>] annotation is the <b>inverse relationship </b>of the [@ManyToOne] relationship we encountered in the [Product] entity. The [<span style="color: #000000">mappedBy = </span><span style="color: #2a00ff">&quot;category&quot;</span>] attribute specifies the field in the [Product] entity annotated by the inverse [@ManyToOne] relationship. The attribute [<span style="color: #000000">cascade = { CascadeType.</span><i><b><span style="color: #0000c0">ALL </span></b></i><span style="color: #000000">}</span>] specifies that operations (persist, merge, remove) performed on an @Entity [Category] should cascade to the [products] in line 51. Partial cascades can be specified using the constants [<span style="color: #000000">CascadeType.</span><i><b><span style="color: #0000c0">PERSIST</span></b></i><span style="color: #0000c0">, </span><span style="color: #000000">CascadeType.</span><i><b><span style="color: #0000c0">MERGE</span></b></i><i><span style="color: #0000c0">, </span></i><span style="color: #000000">CascadeType.</span><i><b><span style="color: #0000c0">REMOVE</span></b></i>];
+  <li>line 50: the annotation [@OneToMany] is the <b>inverse relationship </b>of the relationship [@ManyToOne] that we encountered in the entity [Produit]. The attribute [mappedBy = &quot;categorie&quot;] indicates the field of the entity [Produit] annotated by the inverse relationship [@ManyToOne]. The attribute [cascade = { CascadeType.ALL }] specifies that operations (persist, merge, remove) performed on an @Entity [Categorie] should cascade to the [produits] entities in line 51. Partial cascades can be specified using the constants [CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE];
   </li>
-  <li>line 50: the [<span style="color: #000000">fetch = FetchType.</span><i><b><span style="color: #0000c0">LAZY</span></b></i>] attribute specifies that when a category is retrieved from the [CATEGORIES] table, its products are not immediately retrieved. They are retrieved during the first call to the [getProduits] method. To achieve this, at runtime, the JPA layer enhances the initial [getProduits] method (which simply returns the <i>products</i> field) by making a call to the DBMS to fetch the products for the category. This attribute <b>is mandatory</b>. The JPA implementation cannot ignore it. Because the [products] property may or may not be initialized, we have introduced the JSON filter on line 26, which allows us to specify whether or not we want this property and the entity type on line 39;
+  <li>line 50: the [fetch = FetchType.LAZY] attribute specifies that when a category is retrieved from the [CATEGORIES] table, its products are not immediately retrieved. They are then retrieved during the first call to the [getProduits] method. To achieve this, at runtime, the JPA layer extends the initial [getProduits] method (which simply returns the <i>products</i> field) by calling SGBD to retrieve the products for the category. This attribute <b>is mandatory</b>. The JPA implementation cannot ignore it. Because the [produits] property may or may not be initialized, we have introduced the jSON filter on line 26, which allows us to specify whether or not we want this property and the type of the entity on line 39;
   </li>
-  <li>lines 71–88: the [addProduct] method allows adding a product to the category;
+  <li>lines 71–88: the [addProduit] method allows adding a product to the category;
   </li>
-  <li>lines 73–76: To standardize proxy handling across different JPA implementations, we decided that products cannot be added to a [Category] entity of type PROXY;
+  <li>lines 73–76: To standardize proxy management across different JPA implementations, we decided that products cannot be added to a [Categorie] entity of type PROXY;
   </li>
-  <li>lines 92–112: two [Category] entities are considered equal if they have the same primary key [id];
+  <li>lines 92–112: two [Categorie] entities are considered equal if they have the same primary key [id];
   </li>
 </ul>
-<p><a id="refheading107479995711268"></a></p>
-<h3 id="634-the-persistencexml-file">6.3.4. <span style="color: #4f81bd">The [persistence.xml] file</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000DCC3B12641.png" width="167" height="154" style="display:inline-block; margin:4px;width:4.41cm;height:4.076cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000DCC3B12641.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading107479995711268" name="refheading107479995711268" class="odt-bookmark-anchor"></span></p>
+<h3 id="634-the-persistencexml-file">6.3.4. <span style="color: #4f81bd"><strong>The [persistence.xml] file</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EE000000DCC3B12641.png" width="167" height="154" style="display:inline-block; margin:4px;width:4.41cm;height:4.076cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000DCC3B12641.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>JPA applications must define certain properties of the JPA provider being used, as well as the JPA entities to be used, in a [META-INF/persistence.xml] file located in the application’s classpath. Above, it has been placed in the [src/main/resources] folder, which is effectively part of an Eclipse project’s classpath. When using JPA in conjunction with Spring, certain information that should be in the [persistence.xml] file is placed elsewhere in Spring configuration classes. In a Spring JPA application, Spring drives JPA. With Spring JPA Hibernate, the [persistence.xml] file can be reduced to its simplest form:</p>
+<p>JPA applications must define certain properties of the JPA provider being used, as well as the JPA entities to be used, in a [META-INF/persistence.xml] file located in the application’s classpath. In the example above, it has been placed in the [src/main/resources] folder, which is part of an Eclipse project’s classpath. When using JPA in conjunction with Spring, certain information that should be in the [persistence.xml] file is placed elsewhere in Spring configuration classes. In a Spring JPA application, Spring drives JPA. With Spring JPA Hibernate, the [persistence.xml] file can be reduced to its simplest form:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span><span style="color:#000000"> </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">persistence</span><span style="color:#000000"> </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://java.sun.com/xml/ns/persistence&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
@@ -1973,27 +1975,27 @@
 </code></pre></div>
 
 <ul>
-  <li>lines 1-5: a [persistence.xml] file must have a root &lt;persistence&gt; tag. The attributes of the tag on line 2 will not be used in this application;
+  <li>lines 1-5: A [persistence.xml] file must have a root &lt;persistence&gt; tag. The attributes of the tag on line 2 will not be used in this application;
   </li>
   <li>a persistence file can define one or more persistence units using the &lt;persistence-unit&gt; tag (line 4). A persistence unit manages access to a specific database. If the application manages two databases simultaneously, it will have two persistence units;
   </li>
-  <li>Line 4: A persistence unit has a name [name attribute], supports a transaction type [transaction-type attribute], has properties, and defines the entities associated with the database tables managed by the persistence unit. Here, since database access will be managed by [Spring JPA Hibernate], these last two pieces of information can be placed elsewhere. There are two types of transactions:
+  <li>Line 4: A persistence unit has a name [attribut name], supports a transaction type [attribut transaction-type], has properties, and defines the entities associated with the database tables managed by the persistence unit. Here, since database access will be managed by [Spring JPA Hibernate], these last two pieces of information can be placed elsewhere. There are two types of transactions:
     <ul>
-      <li>[RESOURCE_LOCAL]: transactions are managed by the application itself. This is the case here, where Spring will manage the transactions;
+      <li>[RESOURCE_LOCAL]: Transactions are managed by the application itself. This is the case here, where Spring will manage the transactions;
       </li>
-      <li>[JTA] (Java Transaction API): the EJB (Enterprise Java Bean) container running the application automatically manages transactions based on Java annotations found in the code. We are not using this configuration here;
+      <li>[JTA] (Java Transaction API): It is the EJB container (Enterprise Java Bean) running the application that will automatically manage transactions based on Java annotations found in the code. We are not using this configuration here;
       </li>
     </ul>
   </li>
 </ul>
 
 <p>We will see later that the contents of this [persistence.xml] file depend on the JPA implementation used.</p>
-<p><a id="refheading107481995711268"></a></p>
+<p><span id="refheading107481995711268" name="refheading107481995711268" class="odt-bookmark-anchor"></span></p>
 <h2 id="64-the-spring-jpa-generic-project">6.4. <span style="color: #4f81bd">The [spring-jpa-generic] project</span></h2>
 <p>Let’s recap what we want to do. We want to implement the following architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004CF000000FF7279B8F3.png" width="616" height="128" style="display:inline-block; margin:4px;width:16.286cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CF000000FF7279B8F3.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004CF000000FF7279B8F3.png" width="616" height="128" style="display:inline-block; margin:4px;width:16.286cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/10000000000004CF000000FF7279B8F3.png" /></td></tr></table>
 
-<p>in which the [DAO] layer would implement the [IDao&lt;Product&gt;, IDao&lt;Category&gt;] interface studied in Chapter<a href="#refheading1051982082896917"><u><span style="color: #0563c1"> 4</span></u></a>. The goal is to compare two implementations of this interface:</p>
+<p>in which the [DAO] layer would implement the [IDao&lt;Produit&gt;, IDao&lt;Categorie&gt;] interface discussed in Chapter<a href="introduction-to-spring-jdbc.html#refheading1051982082896917"><u><span style="color: #0563c1"> 4</span></u></a>. The goal is to compare two implementations of this interface:</p>
 <ul>
   <li>one built with Spring JDBC;
   </li>
@@ -2003,16 +2005,16 @@
 
 <p>In the architecture above:</p>
 <ul>
-  <li>the [JDBC] layer is implemented by the [mysql-config-jdbc] project discussed in Section<a href="#refheading1051402082896917"><u><span style="color: #0563c1"> 3.3</span></u></a>;
+  <li>the [JDBC] layer is implemented by the [mysql-config-jdbc] project discussed in Section<a href="introduction-to-api-jdbc.html#refheading1051402082896917"><u><span style="color: #0563c1"> 3.3</span></u></a>;
   </li>
   <li>the [JPA] layer is implemented by the [mysql-config-jpa-hibernate] project discussed in Section<a href="#refheading1052902082896917"><u><span style="color: #0563c1"> 6.3</span></u></a>;
   </li>
 </ul>
 
-<p>The [spring-jpa-generic] project handles the implementation of the [DAO] and [Spring Data] layers.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E9000000CDCF467FA2.png" width="163" height="143" style="display:inline-block; margin:4px;width:4.309cm;height:3.791cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000CDCF467FA2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>The [spring-jpa-generic] project implements the [DAO] and [Spring Data] layers.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E9000000CDCF467FA2.png" width="163" height="143" style="display:inline-block; margin:4px;width:4.309cm;height:3.791cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E9000000CDCF467FA2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading226282014630537"></a></p>
+<p><span id="refheading226282014630537" name="refheading226282014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="641-maven-configuration">6.4.1. <span style="color: #4f81bd">Maven Configuration</span></h3>
 <p>The [spring-jpa-generic] project is a Maven project configured by the following [pom.xml] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -2065,20 +2067,20 @@
 <ul>
   <li>Lines 22–26: The project has only one dependency, which is on the project that configures the application’s [JPA] layer, which we just examined. This is a generic application:
     <ul>
-      <li>we change the DBMS by changing the [JDBC] layer configuration project;
+      <li>we switch from SGBD by changing the configuration project of the [JDBC] layer;
       </li>
-      <li>we change the JPA implementation by changing the [JPA] layer configuration project;
+      <li>we change the JPA implementation by changing the configuration project of the [JPA] layer;
       </li>
     </ul>
   </li>
 </ul>
 
-<p>In the end, the dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F60000009C62A687FA.png" width="172" height="109" style="display:inline-block; margin:4px;width:4.56cm;height:2.893cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F60000009C62A687FA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>Ultimately, the dependencies are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F60000009C62A687FA.png" width="172" height="109" style="display:inline-block; margin:4px;width:4.56cm;height:2.893cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F60000009C62A687FA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading11081735254046"></a></p>
+<p><span id="refheading11081735254046" name="refheading11081735254046" class="odt-bookmark-anchor"></span></p>
 <h3 id="642-spring-configuration">6.4.2. <span style="color: #4f81bd">Spring Configuration</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E00000009038495447.png" width="157" height="101" style="display:inline-block; margin:4px;width:4.15cm;height:2.669cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E00000009038495447.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E00000009038495447.png" width="157" height="101" style="display:inline-block; margin:4px;width:4.15cm;height:2.669cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E00000009038495447.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [AppConfig] class configures the Spring project:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2101,22 +2103,22 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 11: The class is a Spring configuration class;
+  <li>line 11: the class is a Spring configuration class;
   </li>
-  <li>line 10: the [<span style="color: #646464">@EnableJpaRepositories</span>] annotation is used to designate the packages containing Spring Data’s [CrudRepository] interfaces. This makes them Spring components that can be injected into other Spring components;
+  <li>line 10: the [@EnableJpaRepositories] annotation is used to designate the packages containing the [CrudRepository] and Data interfaces from Spring. This makes them Spring components that can be injected into other Spring components;
   </li>
-  <li>line 12: the [<span style="color: #646464">@ComponentScan</span>] annotation indicates that the [<span style="color: #2a00ff">spring.data.dao</span>] package must be scanned for Spring components. The [DaoCategory] and [DaoProduct] components will be found;
+  <li>line 12: the [@ComponentScan] annotation indicates that the [spring.data.dao] package must be scanned for Spring components. The [DaoCategorie] and [DaoProduit] components will be found;
   </li>
-  <li>line 13: the beans from the [ConfigJpa] configuration class are imported. These include the bean for the JPA implementation being used (Hibernate, Eclipselink, OpenJpa), the data source to be used, the EntityManager that will handle JPA operations, and the transaction manager;
+  <li>line 13: the beans from the [ConfigJpa] configuration class are imported. This includes the bean from the JPA implementation used (Hibernate, Eclipselink, OpenJpa), the data source to be used, EntityManager which will handle the operations, and JPA, the transaction manager;
   </li>
 </ul>
-<p><a id="refheading2192522014630537"></a></p>
+<p><span id="refheading2192522014630537" name="refheading2192522014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="643-the-spring-data-layer">6.4.3. <span style="color: #4f81bd">The [Spring Data] layer</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004D60000010050035B88.png" width="619" height="128" style="display:inline-block; margin:4px;width:16.378cm;height:3.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D60000010050035B88.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004D60000010050035B88.png" width="619" height="128" style="display:inline-block; margin:4px;width:16.378cm;height:3.387cm;" class="odt-zoomable" data-zoom-src="images/10000000000004D60000010050035B88.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F2000000B642B7A5FD.png" width="169" height="127" style="display:inline-block; margin:4px;width:4.48cm;height:3.369cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F2000000B642B7A5FD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F2000000B642B7A5FD.png" width="169" height="127" style="display:inline-block; margin:4px;width:4.48cm;height:3.369cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F2000000B642B7A5FD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading107483995711268"></a></p>
+<p><span id="refheading107483995711268" name="refheading107483995711268" class="odt-bookmark-anchor"></span></p>
 <h4 id="6431-the-categoriesrepository-interface">6.4.3.1. <span style="color: #4f81bd">The [CategoriesRepository] interface</span></h4>
 <p>The [CategoriesRepository] interface manages access to the [CATEGORIES] table:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
@@ -2131,7 +2133,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> CategoriesRepository </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> CrudRepository&lt;Categorie, Long&gt; {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// categorie avec ses produits</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// category with products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Query</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;select c from Categorie c left join fetch c.produits where c.id=?1&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Categorie getLongCategorieById(Long </span><span style="color:#6a3e3e">id</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2160,17 +2162,17 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 10: The [CrudRepository] interface was used and explained in Section<a href="#crudrepository"><u><span style="color: #0563c1"> 5.1.3</span></u></a>. As a reminder:
+  <li>Line 10: The [CrudRepository] interface was used and explained in Section<a href="introduction-to-spring-data-jpa.html#crudrepository"><u><span style="color: #0563c1"> 5.1.3</span></u></a>. Recall that:
     <ul>
-      <li>the first parameter type of the interface is the JPA entity managed for CRUD operations (findOne, findAll, save, delete, deleteAll),
+      <li>the first parameter type of the interface is the JPA entity managed for accesses CRUD (findOne, findAll, save, delete, deleteAll),
       </li>
-      <li>the second parameter type of the interface is the primary key of the JPA entity, here an integer [Long];
+      <li>the second parameter type of the interface is the primary key of the entity JPA, in this case an integer [Long];
       </li>
     </ul>
   </li>
 </ul>
 
-<p>The methods of the interface are implemented using JPQL (Java Persistence Query Language) queries. These queries target JPA entities. In such a query:</p>
+<p>The interface methods are implemented by JPQL queries (Java Persistence Query Language). This query retrieves JPA entities. In such a query:</p>
 <ul>
   <li>tables are replaced by their associated JPA entities;
   </li>
@@ -2178,36 +2180,36 @@
   </li>
 </ul>
 
-<p>Let’s take the example of lines 31–32: the method on line 32 retrieves all categories from the database in their short form. It is implemented by the JPQL (Java Persistence Query Language) query on line 31, which closely resembles its SQL counterpart. For a deeper understanding of JPQL, see [<strong>ref2</strong>] (see section<a href="#ref2"><u><span style="color: #0563c1"> 1.2</span></u></a>).</p>
+<p>Let’s take lines 31–32 as an example: the method on line 32 retrieves all categories from the database in their short version form. It is implemented by the JPQL query (Java Persistence Query Language) in line 31, which closely resembles its counterpart SQL. For further details on JPQL, see [ref2] (see section<a href="introduction.html#ref2"><u><span style="color: #0563c1"> 1.2</span></u></a>).</p>
 <p>The methods of the [CategoriesRepository] interface are as follows:</p>
 <ul>
-  <li>Lines 13-14: The [<span style="color: #000000">getLongCategoryById</span>] method returns the long version of a category referenced by its primary key [id], i.e., the category along with its products. Recall that in the [Category] entity, the [products] field had the attribute [fetch = FetchType.LAZY] (lazy loading). In the JPQL query, we force the loading of products using the [fetch] keyword. The query’s ?1 parameter will be replaced at runtime by the value of the first parameter of the method on line 12, i.e., the [Long id] parameter;
+  <li>lines 13–14: the [getLongCategorieById] method retrieves the version record for a category referenced by its primary key [id], i.e., the category along with its products. Recall that in the [Categorie] entity, the [produits] field had the [fetch = FetchType.LAZY] attribute (lazy loading). In the query JPQL, we force the loading of products using the keyword [fetch]. The ?1 parameter of the query will be replaced at runtime by the value of the first parameter of the method on line 12, i.e., by the parameter [Long id];
   </li>
-  <li>lines 16–17: the [<span style="color: #000000">getLongCategoryByName</span>] method returns the long version of a category referenced by its name [name];
+  <li>lines 16–17: the method [getLongCategorieByName] returns the long version of a category referenced by its name [nom];
   </li>
-  <li>lines 19–20: the [<span style="color: #000000">getShortCategoriesByName</span>] method returns the short versions of categories referenced by their names. The [products] field of these categories is not <i>null</i>. It contains a reference to a proxy (a class created by the JPA implementation) whose role is to retrieve the products in the category when called. Calling it outside the JPA persistence context throws an exception (Hibernate and OpenJPA, but not EclipseLink). For this reason, we will not use the [products] field of a category’s short version;
+  <li>lines 19-20: the method [getShortCategoriesByName] returns the short versions of categories referenced by their names. The field [produits] for these categories is not <i>null</i>. It contains a reference to a proxy (a class created by the JPA implementation) whose role is to return the products in the category when called. Calling it outside the JPA persistence context causes an exception (Hibernate and OpenJpa but not EclipseLink). For this reason, we will not use the [produits] field of the short version for a category;
   </li>
-  <li>lines 22–23: the [<span style="color: #000000">getShortCategoriesById</span>] method returns the short versions of categories referenced by their primary keys [id];
+  <li>lines 22–23: the [getShortCategoriesById] method returns the short versions of categories referenced by their primary keys [id];
   </li>
-  <li>lines 25–26: the [<span style="color: #000000">getLongCategoriesById</span>] method returns the long versions of categories referenced by their primary keys [id];
+  <li>lines 25-26: the [getLongCategoriesById] method returns the long versions of categories referenced by their primary keys [id];
   </li>
-  <li>lines [28-29]: the [<span style="color: #000000">getLongCategoriesByName</span>] method returns the long versions of categories referenced by their names;
+  <li>lines [28-29]: the method [getLongCategoriesByName] returns the long versions of categories referenced by their names;
   </li>
-  <li>lines 31-32: the [<span style="color: #000000">getAllShortCategories</span>] method returns the short versions of all categories;
+  <li>lines 31-32: the method [getAllShortCategories] returns the short versions of all categories;
   </li>
-  <li>lines 34-35: the [<span style="color: #000000">getAllLongCategories</span>] method returns the long versions of all categories;
+  <li>lines 34-35: the [getAllLongCategories] method returns the long versions of all categories;
   </li>
 </ul>
 
-<p><strong>Note</strong>: Not all JPA implementations support the same JPQL syntax. Thus, the following syntax is accepted by Hibernate and EclipseLink but not by OpenJpa:</p>
+<p><strong>Note</strong>: Not all JPA implementations accept the same JPQL syntax. Thus, the following syntax is accepted by Hibernate and EclipseLink but not by OpenJpa:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@Query</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;select c from Categorie c left join fetch c.produits </span><span style="background-color:#ff950e;color:#2a00ff">p</span><span style="color:#2a00ff"> where c.nom=?1&quot;</span><span style="color:#000000">)</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">OpenJpa does not accept the alias [p] above.</span></p>
-<p><a id="refheading107485995711268"></a></p>
-<h4 id="6432-the-productsrepository-interface">6.4.3.2. <span style="color: #4f81bd">The [ProductsRepository] interface</span></h4>
-<p>The [ProductsRepository] interface manages access to the [PRODUCTS] table:</p>
+<p><span style="color: #000000">OpenJpa does not accept the alias [p] shown above.</span></p>
+<p><span id="refheading107485995711268" name="refheading107485995711268" class="odt-bookmark-anchor"></span></p>
+<h4 id="6432-the-produitsrepository-interface">6.4.3.2. <span style="color: #4f81bd">The [ProduitsRepository] interface</span></h4>
+<p>The [ProduitsRepository] interface manages access to the [PRODUITS] table:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.repositories;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2222,7 +2224,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@Transactional</span><span style="color:#000000">()</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> ProduitsRepository </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> CrudRepository&lt;Produit, Long&gt; {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// un produit avec sa catégorie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// a product with its category</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Query</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;select p from Produit p left join fetch p.categorie where p.id=?1&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> Produit getLongProduitById(Long </span><span style="color:#6a3e3e">id</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2250,34 +2252,34 @@
 </code></pre></div>
 
 <ul>
-  <li>lines [15-16]: the [<span style="color: #000000">getLongProductById</span>] method returns the long version of a product identified by its primary key [id], including its category. Recall that in the [Product] entity, the [category] field had the attribute [fetch = FetchType.LAZY] (lazy loading). In the JPQL query, we force the loading of the category using the [fetch] keyword;
+  <li>Lines [15-16]: The method [getLongProduitById] returns the long version of a product identified by its primary key [id], i.e., including its category. Recall that in the [Produit] entity, the [categorie] field had the [fetch = FetchType.LAZY] attribute (lazy loading). In the query JPQL, we force the loading of the category using the keyword [fetch];
   </li>
-  <li>lines 18-19: the [<span style="color: #000000">getLongProductByName</span>] method returns the long version of a product identified by its name;
+  <li>lines 18–19: the [getLongProduitByName] method returns the long version for a product identified by its name;
   </li>
-  <li>lines 21-22: the [<span style="color: #000000">getShortProduitsById</span>] method returns the short version of products identified by their primary key [id]. In this short version, the [category] field is not <i>null</i>. It contains a reference to a proxy generated by the JPA implementation, which, if called, will fetch the product’s category. This call can only be made within the JPA persistence context. Making it elsewhere causes an exception (Hibernate and OpenJPA, but not EclipseLink). Therefore, in the [DAO] layer or elsewhere, we will not use the [category] field of a product in its short version. In the product’s short version, the [idCategorie] field is initialized. Its value is the primary key of the category to which the product belongs. This allows us to later retrieve this category from the [DAO] layer via the method [DaoCategorie.<span style="color: #000000">getShortCategoriesById(idCategorie)];</span>
+  <li>lines 21-22: the [getShortProduitsById] method returns the short version of the products identified by their primary key [id]. In this short version, the [categorie] field is not <i>null</i>. It contains the reference to a proxy generated by the JPA implementation, which, if called, will retrieve the product category. This call can only be made within the JPA persistence context. Making it elsewhere causes an exception (Hibernate and OpenJpa, but not EclipseLink). Therefore, in the [DAO] layer or elsewhere, we will not use the [categorie] field of a product in its short version. In the product’s short version, the [idCategorie] field is initialized. Its value is the primary key of the category to which the product belongs. This allows this category to be subsequently retrieved from the [DAO] layer via the [DaoCategorie. getShortCategoriesById(idCategorie)] method<span style="color: #000000">;</span>
   </li>
-  <li><span style="color: #000000">lines 24–25: the [getShortProduitsByName] method returns the short version of the products identified by their names;</span>
+  <li><span style="color: #000000">lines 24–25: the [getShortProduitsByName] method returns the version short field for the products identified by their names;</span>
   </li>
-  <li><span style="color: #000000">lines 27–28: the [getLongProduitsById] method returns the long version of the products identified by their primary keys;</span>
+  <li><span style="color: #000000">lines 27–28: The [getLongProduitsById] method returns the long version for products identified by their primary keys;</span>
   </li>
-  <li><span style="color: #000000">lines 30-31: the [getLongProductsByName] method returns the long version of the products identified by their names;</span>
+  <li><span style="color: #000000">lines 30-31: the [getLongProduitsByName] method returns the long version for products identified by their names;</span>
   </li>
-  <li><span style="color: #000000">lines 33-34: the [getAllLongProducts] method returns the long version of all products;</span>
+  <li><span style="color: #000000">lines 33-34:  the [getAllLongProduits] method returns the long version of all products;</span>
   </li>
-  <li>lines 36-37: <span style="color: #000000">the [getAllShortProducts] method returns the short version of all products;</span>
+  <li>lines 36–37: <span style="color: #000000">the [getAllShortProduits] method returns the short version for all products;</span>
   </li>
 </ul>
 
-<p>These interfaces will be implemented by classes generated by the JPA implementation at runtime. Such classes are called [proxy] classes. By default, the methods of the [<span style="color: #000000">CrudRepository</span>] interface <strong>execute within a transaction</strong>. The fact that the [ProductsRepository] and [CategoriesRepository] interfaces extend the [<span style="color: #000000">CrudRepository</span>] class makes them Spring components. As such, they can be injected into other Spring components.</p>
-<p><a id="refheading2192542014630537"></a></p>
+<p>These interfaces will be implemented by classes generated by the JPA implementation when the project is executed. Such classes are called [proxy] classes. By default, the methods of the [CrudRepository] interface <strong>are executed within a transaction</strong>. The fact that the [ProduitsRepository, CategoriesRepository] interfaces extend the [CrudRepository] class makes them Spring components. As such, they can be injected into other Spring components.</p>
+<p><span id="refheading2192542014630537" name="refheading2192542014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="644-the-dao-layer">6.4.4. <span style="color: #4f81bd">The [DAO] layer</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F2000000EE5A1534E1.png" width="633" height="119" style="display:inline-block; margin:4px;width:16.748cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F2000000EE5A1534E1.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004F2000000EE5A1534E1.png" width="633" height="119" style="display:inline-block; margin:4px;width:16.748cm;height:3.149cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F2000000EE5A1534E1.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading107487995711268"></a></p>
+<p><span id="refheading107487995711268" name="refheading107487995711268" class="odt-bookmark-anchor"></span></p>
 <h4 id="6441-the-idaot-interface">6.4.4.1. <span style="color: #4f81bd">The [IDao&lt;T&gt;] interface</span></h4>
-<p>The [IDao&lt;T&gt;] interface is the one already discussed in the implementation of the [DAO] layer using Spring JDBC (see section<a href="#refheading1052082082896917"><u><span style="color: #0563c1"> 4.7</span></u></a>);</p>
+<p>The [IDao&lt;T&gt;] interface is the one already examined in the implementation of the [DAO] layer built with Spring JDBC (see section<a href="introduction-to-spring-jdbc.html#refheading1052082082896917"><u><span style="color: #0563c1"> 4.7</span></u></a>);</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2292,7 +2294,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getAllLongEntities();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// special entities - short version</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// particular entities - version short</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getShortEntitiesById(Iterable&lt;Long&gt; </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getShortEntitiesById(Long... </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
@@ -2301,7 +2303,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getShortEntitiesByName(String... </span><span style="color:#6a3e3e">names</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// special entities - long version</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// particular entities - version long</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getLongEntitiesById(Iterable&lt;Long&gt; </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> List&lt;T&gt; getLongEntitiesById(Long... </span><span style="color:#6a3e3e">ids</span><span style="color:#000000">);</span></span></span>
@@ -2333,22 +2335,22 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><a id="refheading107489995711268"></a></p>
-<h4 id="6442-the-abstract-class-abstractdao">6.4.4.2. <span style="color: #4f81bd">The abstract class [AbstractDao]</span></h4>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading107489995711268" name="refheading107489995711268" class="odt-bookmark-anchor"></span></p>
+<h4 id="6442-the-abstract-class-abstractdao">6.4.4.2. <span style="color: #4f81bd"><em>The abstract class [AbstractDao]</em></span></h4>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The abstract class [AbstractDao] is the parent class of the classes implementing the [DAO] layer:</p>
 <ul>
   <li>the [DaoProduit] class, which implements the [IDao&lt;Produit&gt;] interface and manages access to the [PRODUITS] table;
   </li>
-  <li>the [DaoCategorie] class, which implements the [IDao&lt;Categorie&gt;] interface and manages access to the [CATEGORIES] table;
+  <li>the class [DaoCategorie], which implements the interface [IDao&lt;Categorie&gt;] and manages access to the table [CATEGORIES];
   </li>
 </ul>
 
-<p>Its code is as described in Section<a href="#refheading1052102082896917"><u><span style="color: #0563c1"> 4.8</span></u></a>, with the following minor difference: no method has the [@Transactional] attribute, which causes the method to execute within a transaction. Here, we take advantage of the fact that Spring Data’s [CrudRepository] interfaces execute within a transaction by default.</p>
-<p><a id="refheading107668995711268"></a></p>
+<p>Its code is as described in section<a href="introduction-to-spring-jdbc.html#refheading1052102082896917"><u><span style="color: #0563c1"> 4.8</span></u></a>, with the following exception: no method has the [@Transactional] attribute, which causes the method to execute within a transaction. Here, we take advantage of the fact that the Spring interfaces [CrudRepository] and Data execute by default within a transaction.</p>
+<p><span id="refheading107668995711268" name="refheading107668995711268" class="odt-bookmark-anchor"></span></p>
 <h4 id="6443-the-daocategorie-class">6.4.4.3. <span style="color: #4f81bd">The [DaoCategorie] class</span></h4>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [DaoCategorie] class implements the [IDao&lt;Categorie&gt;] interface as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2474,23 +2476,23 @@
 </code></pre></div>
 
 <ul>
-  <li>line 17: the [@Component] annotation makes the [DaoCategorie] class a Spring component;
+  <li>line 17: the annotation [@Component] makes the class [DaoCategorie] a Spring component;
   </li>
-  <li>line 18: the [DaoCategorie] class extends the [<span style="color: #000000">AbstractDao&lt;Categorie&gt;</span>] class, which means it implements the [IDao&lt;Categorie&gt;] interface;
+  <li>line 18: the [DaoCategorie] class extends the [AbstractDao&lt;Categorie&gt;] class, which means it implements the [IDao&lt;Categorie&gt;] interface;
   </li>
-  <li>lines 20–24: injection of references to the two [CrudRepository] interfaces from [Spring Data]. This injection occurs when Spring objects are instantiated, typically at the start of the Spring project’s execution;
+  <li>Lines 20–24: Injection of references for the two interfaces [CrudRepository] and [Spring Data]. This injection occurs during the instantiation of Spring objects, typically at the start of the Spring project’s execution;
   </li>
-  <li>All methods of the class delegate the work to the methods of the same names in the [CrudRepository] interfaces;
+  <li>all methods of the class delegate the work to the methods of the same names in the [CrudRepository] interfaces;
   </li>
-  <li>All methods that return entities in their short form indicate this by setting the entity type to [EntityType.PROXY] (lines 29, 63, 72);
+  <li>all methods that return entities to their version short form indicate this by setting the entity’s type to [EntityType.PROXY] (lines 29, 63, 72);
   </li>
 </ul>
 
 <p>The [saveEntities] method warrants an explanation:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-bash">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">@Override</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected</span><span style="color:#000000"> List&lt;Categorie&gt; saveEntities(List&lt;Categorie&gt; </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on note les produits qui vont être insérés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// note the products to be inserted</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        List&lt;Produit&gt; </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000"> = </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> ArrayList&lt;Produit&gt;();</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Categorie </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            EntityType </span><span style="color:#6a3e3e">categorieType</span><span style="color:#000000"> = </span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">.getEntityType();</span></span></span>
@@ -2500,46 +2502,46 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="font-weight:bold;color:#7f0055">if</span><span style="color:#000000"> (</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getId() == </span><span style="font-weight:bold;color:#7f0055">null</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                        </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// on en profite pour rétablir (si besoin est) la relation produit --&gt; categorie</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                    <span style="color:#000000">// we take this opportunity to re-establish (if necessary) the product --&gt; category relationship</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setCategorie(</span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on persiste les catégories / produits</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// we persist categories / products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">try</span><span style="color:#000000"> {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000c0">categoriesRepository</span><span style="color:#000000">.save(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        } </span><span style="font-weight:bold;color:#7f0055">catch</span><span style="color:#000000"> (Exception </span><span style="color:#6a3e3e">e</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="font-weight:bold;color:#7f0055">throw</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> DaoException(201, </span><span style="color:#6a3e3e">e</span><span style="color:#000000">, </span><span style="color:#0000c0">simpleClassName</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// on met à jour le champ [idCategorie] des produits insérés</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// update the [idCategorie] field of inserted products</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">for</span><span style="color:#000000"> (Produit </span><span style="color:#6a3e3e">produit</span><span style="color:#000000"> : </span><span style="color:#6a3e3e">insertedProduits</span><span style="color:#000000">) {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.setIdCategorie(</span><span style="color:#6a3e3e">produit</span><span style="color:#000000">.getCategorie().getId());</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// résultat</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// result</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return</span><span style="color:#000000"> </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
 </code></pre></div>
 
 <ul>
-  <li>line 2: the categories passed as parameters are both categories to be inserted [id==null] and categories to be updated [id!=null];
+  <li>line 2: the categories passed as parameters are both categories to be inserted ([id==null]) and categories to be modified ([id!=null]);
   </li>
-  <li>line 20: we persist the categories using the method [<span style="color: #0000c0">categoriesRepository</span><span style="color: #000000">.save(</span><span style="color: #6a3e3e">entities</span><span style="color: #000000">)</span>]. During testing, we observe that the [idCategorie] field of the persisted products (id==null) is not populated. To resolve this issue, we note in lines 4–17 the products to be inserted, and once persisted, we populate their [idCategorie] field (lines 25–27);
+  <li>line 20: we persist the categories using the [categoriesRepository.save(entities)] method. During testing, we observe that the [idCategorie] field of the persisted products (id==null) is not populated. To resolve this issue, we note the products to be inserted in lines 4–17, and once they are persisted, we populate their [idCategorie] field (lines 25–27);
   </li>
   <li>lines 5–17: we iterate through the list of categories;
   </li>
-  <li>lines 8–16: for each category, we iterate through its list of products. Here lies a difficulty. The [saveEntities] method is used both to persist and to modify a category. In the latter case, the category may have been retrieved in its short version, thus containing a reference to a proxy method in the [products] field. Using it with Hibernate then causes an exception, because the category being used is no longer in the JPA persistence context, which was closed at the end of the transaction for the method that retrieved the short versions of the categories. We then use the [EntityType] field of the [Category] entity on line 8 to determine whether or not we can access the category’s list of products;
+  <li>lines 8–16: for each category, we iterate through its list of products. Here, there is a difficulty. The [saveEntities] method is used both to persist and to modify a category. In the latter case, the category may have been retrieved in its short version form, thus containing a proxy method reference in the [produits] field. Using it with Hibernate then causes an exception, because the category being used is no longer in the JPA persistence context, which was closed when the transaction for the method that retrieved the short versions of the categories ended. We then use the [EntityType] field of the [Categorie] entity on line 8 to determine whether or not we can access the list of products in the category;
   </li>
-  <li>line 14: we link the product to its category. Normally, this should already be the case. But we do not know how this product was created or whether it has been linked to its category. So, to avoid any issues (to manage the [Product] entity, JPA requires that it reference the [Category] entity to which it is linked), we establish this link ourselves.
+  <li>Line 14: We link the product to its category. Normally, this should already be the case. However, we do not know how this product was created or whether it has been linked to its category. So to avoid any issues (to manage the [Produit] entity, JPA requires that it reference the [Categorie] entity to which it is linked), we establish this link ourselves.
   </li>
 </ul>
 
-<p>By comparing this code to that of the [DaoProduit] class in the Spring JDBC implementation (see section<a href="#refheading1052122082896917"><u><span style="color: #0563c1"> 4.9</span></u></a>), we can see that the Spring Data JPA library greatly simplifies the writing of the [DAO] layer.</p>
-<p><a id="refheading11081935254046"></a></p>
-<h4 id="6444-the-productdao-class">6.4.4.4. <span style="color: #4f81bd">The [ProductDao] class</span></h4>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>By comparing this code to that of the [DaoProduit] class in the Spring implementation JDBC (see section<a href="introduction-to-spring-jdbc.html#refheading1052122082896917"><u><span style="color: #0563c1"> 4.9</span></u></a>) we can see that the Spring library Data JPA greatly simplifies the writing of the [DAO] layer.</p>
+<p><span id="refheading11081935254046" name="refheading11081935254046" class="odt-bookmark-anchor"></span></p>
+<h4 id="6444-the-daoproduit-class">6.4.4.4. <span style="color: #4f81bd">The [DaoProduit] class</span></h4>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000DD000000DB1E8CFA42.png" width="155" height="153" style="display:inline-block; margin:4px;width:4.09cm;height:4.053cm;" class="odt-zoomable" data-zoom-src="images/10000000000000DD000000DB1E8CFA42.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading1076689957112681"></a></p>
-<p>The [DaoProduct] class implements the [IDao&lt;Product&gt;] interface as follows:</p>
+<p><span id="refheading1076689957112681" name="refheading1076689957112681" class="odt-bookmark-anchor"></span></p>
+<p>The [DaoProduit] class implements the [IDao&lt;Produit&gt;] interface as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.dao;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2686,39 +2688,39 @@
 
 <p>The code is similar to that of the [DaoCategorie] class:</p>
 <ul>
-  <li>for the long versions of categories, tests show that the [idCategorie] field of products is not populated. The [<span style="color: #000000">linkLongProduitsToCategories</span>] method in lines 96–105 resolves this issue;
+  <li>for the long versions of the categories, tests show that the [idCategorie] field for products is not populated. The [linkLongProduitsToCategories] method in lines 96–105 resolves this issue;
   </li>
-  <li>the [saveEntities] method in lines 108–121 inserts new products or modifies existing ones. The JPA layer requires that each [Product] entity be linked to a [Category] entity. Since we don’t know if the user has done this, we do it ourselves in lines 110–113. All we need to do is link the [Product] to a [Category] entity whose primary key matches the [idCategory] field of the [Product]. During testing, we find that an error occurs if we set the category version to <i>null</i>. So here we set it to 0, but we can set it to whatever we want. Apart from the primary key, no fields of the [Category] entity are required by the JPA layer to insert or update a [Product] entity;
+  <li>the [saveEntities] method in lines 108–121 inserts new products or modifies existing ones. The JPA layer requires that each [Produit] entity be linked to a [Categorie] entity. Since we do not know if the user has done this, we do it ourselves in lines 110–113. All we need to do is link the [Produit] to a [Categorie] entity whose primary key matches the [idCategorie] field of the [Produit]. During testing, we find that an error occurs if we set the version for the category to<i> null</i>. So here we set it to 0, but you can set it to whatever you want. Apart from the primary key, no field from the [Categorie] entity is required by the JPA layer to insert or modify a [Produit] entity;
   </li>
 </ul>
-<p><a id="refheading10881435254046"></a></p>
+<p><span id="refheading10881435254046" name="refheading10881435254046" class="odt-bookmark-anchor"></span></p>
 <h3 id="645-the-test-layer">6.4.5. <span style="color: #4f81bd">The test layer</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004BB000000EA81E2145A.png" width="606" height="117" style="display:inline-block; margin:4px;width:16.021cm;height:3.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BB000000EA81E2145A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004BB000000EA81E2145A.png" width="606" height="117" style="display:inline-block; margin:4px;width:16.021cm;height:3.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000004BB000000EA81E2145A.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010F000000D6F3BF1063.png" width="190" height="150" style="display:inline-block; margin:4px;width:5.02cm;height:3.963cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000D6F3BF1063.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010F000000D6F3BF1063.png" width="190" height="150" style="display:inline-block; margin:4px;width:5.02cm;height:3.963cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000D6F3BF1063.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The tests above are identical to those in the Spring JDBC implementation. Refer to the following pages if necessary:</p>
+<p>The tests above are identical to those in the Spring implementation JDBC. Please refer to the following pages if necessary:</p>
 <ul>
-  <li>[JUnitTestCheckArguments]: section<a href="#refheading1052502082896917"><u><span style="color: #0563c1"> 4.11.1</span></u></a>;
+  <li>[JUnitTestCheckArguments]: section<a href="introduction-to-spring-jdbc.html#refheading1052502082896917"><u><span style="color: #0563c1"> 4.11.1</span></u></a>;
   </li>
-  <li>[JUnitTestDao]: section<a href="#refheading1052522082896917"><u><span style="color: #0563c1"> 4.11.2</span></u></a>;
+  <li>[JUnitTestDao]: section<a href="introduction-to-spring-jdbc.html#refheading1052522082896917"><u><span style="color: #0563c1"> 4.11.2</span></u></a>;
   </li>
-  <li>[JUnitTestPushTheLimits]: section<a href="#refheading1052702082896917"><u><span style="color: #0563c1"> 4.11.3</span></u></a>;
+  <li>[JUnitTestPushTheLimits]: Section<a href="introduction-to-spring-jdbc.html#refheading1052702082896917"><u><span style="color: #0563c1"> 4.11.3</span></u></a>;
   </li>
 </ul>
 
-<p>We use the following test configurations:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000160000000C80C0F5CDE.png" width="246" height="140" style="display:inline-block; margin:4px;width:6.519cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/1000000000000160000000C80C0F5CDE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015D000000BEA4E1BF1D.png" width="244" height="133" style="display:inline-block; margin:4px;width:6.459cm;height:3.515cm;" class="odt-zoomable" data-zoom-src="images/100000000000015D000000BEA4E1BF1D.png" /></td></tr></table>
+<p>We use the following execution configurations:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000160000000C80C0F5CDE.png" width="246" height="140" style="display:inline-block; margin:4px;width:6.519cm;height:3.704cm;" class="odt-zoomable" data-zoom-src="images/1000000000000160000000C80C0F5CDE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000015D000000BEA4E1BF1D.png" width="244" height="133" style="display:inline-block; margin:4px;width:6.459cm;height:3.515cm;" class="odt-zoomable" data-zoom-src="images/100000000000015D000000BEA4E1BF1D.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019A000000BABD548107.png" width="287" height="130" style="display:inline-block; margin:4px;width:7.59cm;height:3.443cm;" class="odt-zoomable" data-zoom-src="images/100000000000019A000000BABD548107.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014B000000C43558A809.png" width="232" height="137" style="display:inline-block; margin:4px;width:6.13cm;height:3.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000014B000000C43558A809.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019A000000BABD548107.png" width="287" height="130" style="display:inline-block; margin:4px;width:7.59cm;height:3.443cm;" class="odt-zoomable" data-zoom-src="images/100000000000019A000000BABD548107.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000014B000000C43558A809.png" width="232" height="137" style="display:inline-block; margin:4px;width:6.13cm;height:3.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000014B000000C43558A809.png" /></td></tr></table>
 
 <p>The results obtained for the various tests are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AA00000142FDF137D6.png" width="298" height="225" style="display:inline-block; margin:4px;width:7.89cm;height:5.964cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AA00000142FDF137D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B0000015575436CC6.png" width="276" height="239" style="display:inline-block; margin:4px;width:7.31cm;height:6.311cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B0000015575436CC6.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001AA00000142FDF137D6.png" width="298" height="225" style="display:inline-block; margin:4px;width:7.89cm;height:5.964cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AA00000142FDF137D6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000018B0000015575436CC6.png" width="276" height="239" style="display:inline-block; margin:4px;width:7.31cm;height:6.311cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B0000015575436CC6.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FE00000192F6DBFB23.png" width="639" height="201" style="display:inline-block; margin:4px;width:16.907cm;height:5.318cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FE00000192F6DBFB23.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004FE00000192F6DBFB23.png" width="639" height="201" style="display:inline-block; margin:4px;width:16.907cm;height:5.318cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FE00000192F6DBFB23.png" /></td></tr></table>
 
-<p>In [1], the [JUnitTestPushTheLimits] test with the Spring Data JPA Hibernate implementation, and in [2], with the Spring JDBC implementation. We can see that the latter performs better. We therefore reach an initial conclusion: it is significantly easier to develop a [DAO] layer with Spring Data JPA, but it is less performant than a Spring JDBC implementation.</p>
-<p>The [JUnitTestProxies] test is a dummy JUnit test. It is there to demonstrate how each JPA implementation behaves when dealing with proxies, i.e., the short versions of entities:</p>
+<p>In [1], the [JUnitTestPushTheLimits] test with the Spring implementation Data JPA Hibernate and in [2], with the Spring implementation JDBC. We can see that the latter performs better. We therefore arrive at an initial conclusion: it is significantly easier to develop a layer with Spring, but it is less efficient than a Spring implementation.</p>
+<p>The [JUnitTestProxies] test is a dummy test JUnit. It is there to demonstrate the behavior of each JPA implementation when dealing with proxies, i.e., the short versions of the entities:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.data.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2776,7 +2778,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#6a3e3e">categories</span><span style="color:#000000">.add(</span><span style="color:#6a3e3e">categorie</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        }</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// adding the category - by cascading the products will also be</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// category is added - by cascading the products will also be</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// inserted</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000c0">daoCategorie</span><span style="color:#000000">.saveEntities(</span><span style="color:#6a3e3e">categories</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// result</span></span></span>
@@ -2864,7 +2866,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>The results are as follows:</p>
+<p>The results obtained are as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">Vidage de la base de données --------------------------------</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">doNothing</span></span>
@@ -2890,7 +2892,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">categorie[0]</span></span>
 </code></pre></div>
 
-<p>Here we can see that when accessing the [Categorie.produits] field of a PROXY-type category and the [Produit.categorie] field of a PROXY-type product, an [org.hibernate.LazyInitializationException] is thrown in both cases (lines 7 and 17).</p>
+<p>Here we see that when accessing the [Categorie.produits] field of a category of type PROXY and the [Produit.categorie] field of a product of type PROXY, we get an exception of type [org.hibernate.LazyInitializationException] in both cases (lines 7 and 17).</p>
 
 
 

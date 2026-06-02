@@ -18,7 +18,7 @@
         <link rel="prev" href="introduction.html">
       
       
-        <link rel="next" href="introduction-to-the-jdbc-api.html">
+        <link rel="next" href="introduction-to-api-jdbc.html">
       
       
         
@@ -56,6 +56,8 @@
     
     
       <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -390,10 +392,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#21-setting-up-the-development-environment" class="md-nav__link">
+  <a href="#21-setting-up-the-working-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.1. Setting up the development environment
+        2.1. Setting up the working environment
       
     </span>
   </a>
@@ -424,10 +426,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#222-the-person-class" class="md-nav__link">
+  <a href="#222-the-personne-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2.2. The [Person] class
+        2.2.2. The [Personne] class
       
     </span>
   </a>
@@ -435,10 +437,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#223-the-apartment-class" class="md-nav__link">
+  <a href="#223-the-class-appartement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.2.3. The [Apartment] class
+        2.2.3. The class [Appartement]
       
     </span>
   </a>
@@ -612,10 +614,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#244-the-apartment-class" class="md-nav__link">
+  <a href="#244-the-appartement-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.4.4. The [Apartment] class
+        2.4.4. The [Appartement] class
       
     </span>
   </a>
@@ -734,10 +736,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#255-unit-test-junittest" class="md-nav__link">
+  <a href="#255-junittest-unit-test" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2.5.5. Unit test [JUnitTest]
+        2.5.5. [JUnitTest] unit test
       
     </span>
   </a>
@@ -775,14 +777,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -1160,7 +1162,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -1180,14 +1182,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -1234,14 +1236,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -1352,11 +1354,11 @@
 
 
 
-<p><a id="refheading78457838046689"></a></p>
-<h1 id="2-introduction-to-the-spring-framework">2. <span style="color: #365f91">Introduction to the Spring Framework</span></h1>
-<p>Spring first appeared in 2004 as <strong>an object container</strong>. Since then, it has evolved into multiple branches: Spring MVC, Spring Data, Spring Batch, ... [<a href="http://spring.io/"><u><span style="color: #0563c1">http://spring.io</span></u></a>]. In this chapter, we will focus solely on the object container. Here are a few key points:</p>
+<p><span id="refheading78457838046689" name="refheading78457838046689" class="odt-bookmark-anchor"></span></p>
+<h1 id="2-introduction-to-the-spring-framework">2. <span style="color: #365f91"><strong>Introduction to the Spring Framework</strong></span></h1>
+<p>Spring was first released in 2004 as <strong>an object container</strong>. Since then, it has evolved into multiple branches: Spring MVC, Spring Data, Spring Batch, ... [http://spring.io]. In this chapter, we will focus solely on the object container. Here are a few key points:</p>
 <ul>
-<li>An application has multiple classes, and some of them share objects that must be unique (singletons). Spring creates and manages these singletons;</li>
+<li>an application has multiple classes, and some of them share objects that must be unique (singletons). Spring creates and manages these singletons;</li>
 <li>Spring places these singletons in a structure called <strong>a context</strong>;</li>
 <li>classes access the application’s singletons by requesting them from Spring via their name, type, or both;</li>
 <li>Spring creates the singletons and manages any dependencies they may have: a singleton may indeed have references to one or more other singletons. When Spring creates a singleton, it also creates its dependencies;</li>
@@ -1369,87 +1371,87 @@
 </ul>
 <p>Singletons can be declared in three ways, which can be combined:</p>
 <ul>
-<li>within an XML file,</li>
+<li>within a XML file,</li>
 <li>in a special configuration class;</li>
 <li>with any class using annotations;</li>
 </ul>
-<p>Below, we present three configuration examples:</p>
+<p>We present three configuration examples below:</p>
 <ul>
-<li>[example-01]: centralized configuration in a single XML file;</li>
-<li>[example-02]: configuration centralized in a single Java class;</li>
-<li>[example-03]: configuration distributed across multiple Java classes;</li>
+<li>[exemple-01]: centralized configuration in a single XML file;</li>
+<li>[exemple-02]: configuration centralized in a single Java class;</li>
+<li>[exemple-03]: configuration distributed across multiple Java classes;</li>
 </ul>
-<p>The last example [example-04] focuses on the Spring configuration of a layered architecture. This is the most important example. It will be used consistently to configure the architectures in this document.</p>
+<p>The last example, [exemple-04], focuses on the Spring configuration of a layered architecture. This is the most important example. It will be used consistently to configure the architectures described in this document.</p>
 <p>These four examples lay the groundwork for what follows:</p>
 <ul>
 <li>Spring configuration and dependency injection;</li>
 <li>using Maven to manage a project’s dependencies;</li>
 <li>using JUnit to test projects;</li>
 </ul>
-<p><a id="refheading1051262082896917"></a></p>
-<h2 id="21-setting-up-the-development-environment">2.1. <span style="color: #4f81bd">Setting up the development environment</span></h2>
+<p><span id="refheading1051262082896917" name="refheading1051262082896917" class="odt-bookmark-anchor"></span></p>
+<h2 id="21-setting-up-the-working-environment">2.1. <span style="color: #4f81bd"><strong>Setting up the working environment</strong></span></h2>
 <p>You must have:</p>
 <ul>
-<li>a JDK (Java Development Kit) installed (section<a href="#refheading1633352067866943"><u><span style="color: #0563c1"> 23.1</span></u></a>);</li>
-<li>installed the Maven dependency manager (section<a href="#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>);</li>
-<li>installed the Spring Tool Suite (STS) IDE (section<a href="#refheading261311838046689"><u><span style="color: #0563c1"> 23.3</span></u></a>);</li>
-<li>downloaded the code from the document [<a href="http://tahe.developpez.com/java/spring-database"><u><span style="color: #0563c1">http://tahe.developpez.com/java/spring-database</span></u></a>];</li>
+<li>installed JDK (Java Development Kit) (section<a href="appendices.html#refheading1633352067866943"><u><span style="color: #0563c1"> 23.1</span></u></a>);</li>
+<li>installed the Maven dependency manager (section<a href="appendices.html#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>);</li>
+<li>installed the IDE Spring Tool Suite (STS) (section<a href="appendices.html#refheading261311838046689"><u><span style="color: #0563c1"> 23.3</span></u></a>);</li>
+<li>downloaded the code from the [http://tahe.developpez.com/java/spring-database] document;</li>
 </ul>
-<p>Import the runtime configurations from the [eclipse config] folder of the examples into STS. These configurations are particularly important. Some projects require passing arguments to the JVM in order to run, and this type of configuration is generally a headache. Additionally, this document uses Maven projects. When you encounter the warning:</p>
-<p><strong>Note</strong>: Press [Alt-F5] to regenerate all Maven projects.</p>
+<p>Import the runtime configurations from the [eclipse config] examples folder into STS. These configurations are particularly important. Some projects require passing arguments to JVM in order to run, and this type of configuration is generally a headache. Additionally, this document uses Maven projects. When you encounter the warning:</p>
+<p><strong>Note</strong>: Run [Alt-F5] to regenerate all Maven projects.</p>
 <p>It is strongly recommended that you follow this advice. Without this precaution, projects may display incomprehensible errors simply because the Maven dependencies between projects are incorrect.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000071F000003142ABA7073.png" width="680" height="294" style="display:inline-block; margin:4px;width:17.999cm;height:7.781cm;" class="odt-zoomable" data-zoom-src="images/100000000000071F000003142ABA7073.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000071F000003142ABA7073.png" width="680" height="294" style="display:inline-block; margin:4px;width:17.999cm;height:7.781cm;" class="odt-zoomable" data-zoom-src="images/100000000000071F000003142ABA7073.png" /></td></tr></table>
 
 <ul>
-<li>In [1], right-click in [Package Explorer];</li>
+<li>In [1], right-click on [Package Explorer];</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007D8000004B2A41FFF67.png" width="680" height="407" style="display:inline-block; margin:4px;width:17.999cm;height:10.774cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D8000004B2A41FFF67.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007D8000004B2A41FFF67.png" width="680" height="407" style="display:inline-block; margin:4px;width:17.999cm;height:10.774cm;" class="odt-zoomable" data-zoom-src="images/10000000000007D8000004B2A41FFF67.png" /></td></tr></table>
 
 <ul>
-<li>in [4a-4b-4c], select the [eclipse config / launch configurations] folder [4b] from the examples;</li>
-<li>In [5], select the available configurations. Select all of them;</li>
+<li>in [4a-4b-4c], select the [eclipse config / launch configurations] and [4b] example folders;</li>
+<li>In [5], the available configurations. Select all of them;</li>
 <li>in [6], finish the wizard;</li>
-<li>In [7-8], view the imported run configurations;</li>
+<li>in [7-8], view the imported execution configurations;</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000036700000239F874D61C.png" width="436" height="285" style="display:inline-block; margin:4px;width:11.523cm;height:7.528cm;" class="odt-zoomable" data-zoom-src="images/100000000000036700000239F874D61C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000036700000239F874D61C.png" width="436" height="285" style="display:inline-block; margin:4px;width:11.523cm;height:7.528cm;" class="odt-zoomable" data-zoom-src="images/100000000000036700000239F874D61C.png" /></td></tr></table>
 
 <ul>
-<li>In [8-9], uncheck [9] to display configurations for projects not loaded in STS. This is currently the case;</li>
+<li>in [8-9], uncheck [9] to display project configurations not loaded in STS. This is currently the case;</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007110000038750716F1C.png" width="680" height="340" style="display:inline-block; margin:4px;width:17.999cm;height:8.985cm;" class="odt-zoomable" data-zoom-src="images/10000000000007110000038750716F1C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007110000038750716F1C.png" width="680" height="340" style="display:inline-block; margin:4px;width:17.999cm;height:8.985cm;" class="odt-zoomable" data-zoom-src="images/10000000000007110000038750716F1C.png" /></td></tr></table>
 
 <ul>
-<li>in [10], the Java applications, and in [11], the runtime configurations for the first three examples we will examine;</li>
-<li>in [12], the JUnit tests, and in [13], the run configuration for the fourth example in this section;</li>
+<li>in [10], the Java applications, and in [11], the execution configurations for the first three examples we will examine;</li>
+<li>in [12], the tests for JUnit, and in [13], the runtime configuration for the fourth example in this section;</li>
 </ul>
-<p>Now, create an Eclipse variable named [M2_REPO] that will specify the local Maven repository folder (see Section<a href="#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>). This variable is used in several run configurations:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005DD0000046AC047EE50.png" width="680" height="512" style="display:inline-block; margin:4px;width:17.999cm;height:13.55cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DD0000046AC047EE50.png" /></td></tr></table>
+<p>Now, create an Eclipse variable named [M2_REPO] that will specify the local Maven repository folder (see Section<a href="appendices.html#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>). This variable is used in several build configurations:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005DD0000046AC047EE50.png" width="680" height="512" style="display:inline-block; margin:4px;width:17.999cm;height:13.55cm;" class="odt-zoomable" data-zoom-src="images/10000000000005DD0000046AC047EE50.png" /></td></tr></table>
 
 <p>We have assigned the value shown in [6] below to the variable [M2_REPO]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005B30000049E28A42F02.png" width="680" height="551" style="display:inline-block; margin:4px;width:17.999cm;height:14.582cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B30000049E28A42F02.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005B30000049E28A42F02.png" width="680" height="551" style="display:inline-block; margin:4px;width:17.999cm;height:14.582cm;" class="odt-zoomable" data-zoom-src="images/10000000000005B30000049E28A42F02.png" /></td></tr></table>
 
 <p>Now, import the four examples from the [spring-core] folder:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000070400000314298A9B46.png" width="680" height="298" style="display:inline-block; margin:4px;width:17.999cm;height:7.897cm;" class="odt-zoomable" data-zoom-src="images/100000000000070400000314298A9B46.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000070400000314298A9B46.png" width="680" height="298" style="display:inline-block; margin:4px;width:17.999cm;height:7.897cm;" class="odt-zoomable" data-zoom-src="images/100000000000070400000314298A9B46.png" /></td></tr></table>
 
 <ul>
-<li>In [1], right-click in [Package Explorer];</li>
+<li>in [1], right-click in [Package Explorer];</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E400000264C4495C36.png" width="680" height="236" style="display:inline-block; margin:4px;width:17.999cm;height:6.244cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E400000264C4495C36.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006E400000264C4495C36.png" width="680" height="236" style="display:inline-block; margin:4px;width:17.999cm;height:6.244cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E400000264C4495C36.png" /></td></tr></table>
 
 <ul>
-<li>in [4a-4b], select the [spring-core] folder containing the examples;</li>
-<li>in [5], select all projects in the folder and click [Finish];</li>
+<li>to [4a-4b], select the [spring-core] folder containing the examples;</li>
+<li>in [5], select all projects in the folder and create [Finish];</li>
 <li>in [6], the four projects in [Package Explorer];</li>
 </ul>
-<p><a id="refheading78421838046689"></a></p>
-<h2 id="22-example-01">2.2. <span style="color: #4f81bd">Example-01</span></h2>
-<p><a id="refheading78423838046689"></a></p>
+<p><span id="refheading78421838046689" name="refheading78421838046689" class="odt-bookmark-anchor"></span></p>
+<h2 id="22-example-01">2.2. <span style="color: #4f81bd"><strong>Example-01</strong></span></h2>
+<p><span id="refheading78423838046689" name="refheading78423838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="221-the-eclipse-project">2.2.1. <span style="color: #4f81bd">The Eclipse Project</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010B0000010FD8A8CC23.png" width="187" height="190" style="display:inline-block; margin:4px;width:4.941cm;height:5.015cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B0000010FD8A8CC23.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010B0000010FD8A8CC23.png" width="187" height="190" style="display:inline-block; margin:4px;width:4.941cm;height:5.015cm;" class="odt-zoomable" data-zoom-src="images/100000000000010B0000010FD8A8CC23.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading78425838046689"></a></p>
-<h3 id="222-the-person-class">2.2.2. <span style="color: #4f81bd">The [Person] class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000000B266BEDF19.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B266BEDF19.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading78425838046689" name="refheading78425838046689" class="odt-bookmark-anchor"></span></p>
+<h3 id="222-the-personne-class">2.2.2. <span style="color: #4f81bd">The [Personne] class</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F0000000B266BEDF19.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B266BEDF19.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.spring.core;</span></span></span>
@@ -1506,12 +1508,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><strong>Note</strong>: getters and setters can be generated automatically as follows [1-2]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004DE000003350C08912E.png" width="623" height="410" style="display:inline-block; margin:4px;width:16.484cm;height:10.86cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DE000003350C08912E.png" /></td></tr></table>
+<p><strong>Note</strong>: getters and setters can be automatically generated as follows [1-2]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004DE000003350C08912E.png" width="623" height="410" style="display:inline-block; margin:4px;width:16.484cm;height:10.86cm;" class="odt-zoomable" data-zoom-src="images/10000000000004DE000003350C08912E.png" /></td></tr></table>
 
-<p><a id="refheading78427838046689"></a></p>
-<h3 id="223-the-apartment-class">2.2.3. <span style="color: #4f81bd">The [Apartment] class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000000B26DE089CA.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B26DE089CA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading78427838046689" name="refheading78427838046689" class="odt-bookmark-anchor"></span></p>
+<h3 id="223-the-class-appartement">2.2.3. <span style="color: #4f81bd">The class [Appartement]</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F0000000B26DE089CA.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B26DE089CA.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="font-weight:bold;color:#000000"> istia.st.spring.core;</span></span></span>
@@ -1548,13 +1550,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><strong>Note</strong>: This class does not have an explicit constructor. In this case, the default constructor with no parameters—which does nothing—always exists. When you create constructors, this default constructor no longer exists implicitly. You must then define it <strong>explicitly</strong>:</p>
+<p><strong>Note</strong>: This class does not have an explicit constructor. In this case, the default constructor with no parameters—which does nothing—still exists. When you create constructors, this default constructor no longer exists implicitly. You must then define it <strong>explicitly</strong>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>public Appartement(){
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>}
 </code></pre></div>
-<p><a id="refheading78429838046689"></a></p>
+<p><span id="refheading78429838046689" name="refheading78429838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="224-the-spring-configuration-file">2.2.4. <span style="color: #4f81bd">The Spring configuration file</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000000B2C381C588.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B2C381C588.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F0000000B2C381C588.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B2C381C588.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;?</span><span style="color:#3f7f7f">xml</span><span style="color:#000000"> </span><span style="color:#7f007f">version</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">encoding</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;UTF-8&quot;</span><span style="color:#008080">?&gt;</span></span></span>
@@ -1590,21 +1592,21 @@
 <li>lines 2, 27: singletons are defined within a &lt;<strong>beans</strong>&gt; tag;</li>
 <li>lines 6–10: each singleton is defined by a &lt;<strong>bean</strong>&gt; tag;</li>
 <li>line 6: [id] is the singleton’s identifier. [class] is the full name of the class to be instantiated;</li>
-<li>lines 7–9: the three values to pass to the constructor of the [Person] class;</li>
-<li>lines 12–16: the [Person] class is first created using its default constructor [new Person()]. Then, for each [property] tag, a setter method of the class is used. For example, on line 13, the [<strong>setName</strong>(&quot;martin&quot;)] method will be executed. The [<strong>setName</strong>] method must therefore exist. This is an important point to remember;</li>
-<li>lines 18–21: the &lt;util:list&gt; tag is used to define a singleton that is a list;</li>
-<li>line 19: refers to the singleton [person_01] defined on line 6. This is what is known <strong>as dependency injection</strong>. Two attributes can be used to initialize a singleton’s field:<ul>
+<li>lines 7–9: the three values to be passed to the constructor of the [Personne] class;</li>
+<li>Lines 12–16: The class <code>[Personne]</code> is first created using its default constructor <code>[new Personne()]</code>. Then, for each [property] tag, a setter of the class is used. For example, for line 13, the [setNom(&quot;martin&quot;)] method will be executed. Therefore, the [setNom] method must exist. This is an important point to remember;</li>
+<li>lines 18–21: the &lt;util:list&gt; tag allows you to define a singleton that is a list;</li>
+<li>line 19: refers to the singleton [personne_01] defined on line 6. This is what is known <strong>as dependency injection</strong>. Two attributes can be used to initialize a singleton’s field:<ul>
 <li>[value]: to assign a primitive value (string, number, date, etc.) to the field,</li>
-<li>[ref]: to assign the reference of a Spring object to the field;</li>
+<li>[ref]: to assign a Spring object reference to the field;</li>
 </ul>
 </li>
 </ul>
 <p><strong>Note</strong>: The Spring configuration file can be generated as follows [1-4]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007AD000004D1E1A50416.png" width="680" height="427" style="display:inline-block; margin:4px;width:17.999cm;height:11.294cm;" class="odt-zoomable" data-zoom-src="images/10000000000007AD000004D1E1A50416.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000007AD000004D1E1A50416.png" width="680" height="427" style="display:inline-block; margin:4px;width:17.999cm;height:11.294cm;" class="odt-zoomable" data-zoom-src="images/10000000000007AD000004D1E1A50416.png" /></td></tr></table>
 
-<p><a id="refheading78431838046689"></a></p>
+<p><span id="refheading78431838046689" name="refheading78431838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="225-the-executable-class">2.2.5. <span style="color: #4f81bd">The executable class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000000B2DC91E73C.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B2DC91E73C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F0000000B2DC91E73C.png" width="168" height="125" style="display:inline-block; margin:4px;width:4.45cm;height:3.3cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000B2DC91E73C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.spring.core;</span></span></span>
@@ -1646,50 +1648,50 @@
 
 <ul>
 <li>line 14: creates the Spring context. All singletons defined in the [config-01.xml] file are then instantiated;</li>
-<li>line 16: requests a reference to the singleton identified by [person_01] of type [Person]. This second parameter is optional, but if omitted, a reference of type [Object] is returned, which must then be cast to type [Person];</li>
-<li>line 19: we do not use the bean’s name but only its type, since there is only one singleton of type [Apartment];</li>
-<li>line 18: both the identifier and the type of the desired singleton are used. The identifier is redundant since there is only one singleton of type [<strong><span style="color: #7f0055">new </span></strong><span style="color: #000000">ArrayList&lt;Person&gt;().getClass()</span>];</li>
-<li>Lines 32–33: show that if we request the same singleton multiple times, we always get the same reference, thereby demonstrating that we are indeed dealing with a singleton. This point is important to understand;</li>
+<li>line 16: requests a reference to the singleton identified by [personne_01] of type [Personne]. This second parameter is optional, but if omitted, a reference to a type [Object] is returned, which must then be cast to the type [Personne];</li>
+<li>line 19: we do not use the bean’s name but only its type, since there is only one singleton of type [Appartement];</li>
+<li>line 18: both the identifier and the type of the desired singleton were used. The identifier is superfluous since there is only one singleton of type [new ArrayList&lt;Personne&gt;().getClass()];</li>
+<li>Lines 32–33: show that if we request the same singleton multiple times, we always obtain the same reference, thereby demonstrating that we are indeed dealing with a singleton. This point is important to understand;</li>
 </ul>
-<p><strong>Note</strong>: An executable class can be generated as follows [1-6]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003C3000001CBAC52794F.png" width="482" height="230" style="display:inline-block; margin:4px;width:12.741cm;height:6.073cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C3000001CBAC52794F.png" /></td></tr></table>
+<p><strong>Note</strong>: An executable class can be generated as follows: [1-6]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003C3000001CBAC52794F.png" width="482" height="230" style="display:inline-block; margin:4px;width:12.741cm;height:6.073cm;" class="odt-zoomable" data-zoom-src="images/10000000000003C3000001CBAC52794F.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002E200000299A90A0820.png" width="369" height="332" style="display:inline-block; margin:4px;width:9.763cm;height:8.797cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E200000299A90A0820.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002E200000299A90A0820.png" width="369" height="332" style="display:inline-block; margin:4px;width:9.763cm;height:8.797cm;" class="odt-zoomable" data-zoom-src="images/10000000000002E200000299A90A0820.png" /></td></tr></table>
 
 <ul>
-<li>Checking [6] ensures that the generated class will contain a static method [main], making it executable;
-<a id="refheading78433838046689"></a></li>
+<li>checking the box for [6] will cause the generated class to contain a static method [main] that makes it executable;
+<span id="refheading78433838046689" name="refheading78433838046689" class="odt-bookmark-anchor"></span></li>
 </ul>
-<h3 id="226-project-dependencies">2.2.6. <span style="color: #4f81bd">Project dependencies</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011D000001401CAF2AA2.png" width="198" height="222" style="display:inline-block; margin:4px;width:5.241cm;height:5.884cm;" class="odt-zoomable" data-zoom-src="images/100000000000011D000001401CAF2AA2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<h3 id="226-project-dependencies">2.2.6. <span style="color: #4f81bd"><strong>Project dependencies</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011D000001401CAF2AA2.png" width="198" height="222" style="display:inline-block; margin:4px;width:5.241cm;height:5.884cm;" class="odt-zoomable" data-zoom-src="images/100000000000011D000001401CAF2AA2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <ul>
 <li>Spring dependencies: [spring-core, spring-beans, spring-context, spring-expression, commons-logging];</li>
 </ul>
 <p>Dependencies are added to the project as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000030600000246A913BD38.png" width="387" height="291" style="display:inline-block; margin:4px;width:10.239cm;height:7.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000030600000246A913BD38.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000030600000246A913BD38.png" width="387" height="291" style="display:inline-block; margin:4px;width:10.239cm;height:7.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000030600000246A913BD38.png" /></td></tr></table>
 
 <ul>
 <li>in [1]: right-click on the project / [Build Path] / [Configure Build Path];</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002F50000010B8D479EB9.png" width="379" height="133" style="display:inline-block; margin:4px;width:10.015cm;height:3.531cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F50000010B8D479EB9.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002F50000010B8D479EB9.png" width="379" height="133" style="display:inline-block; margin:4px;width:10.015cm;height:3.531cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F50000010B8D479EB9.png" /></td></tr></table>
 
 <ul>
-<li>in [2]: [Add JARs] if the JARs to be added are in a project folder. Otherwise, [Add External JARs];</li>
+<li>In [2]: [Add JARs] if the JARs files to be added are in a project folder. Otherwise, [Add External JARs];</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017E0000016682E9F77A.png" width="191" height="179" style="display:inline-block; margin:4px;width:5.054cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/100000000000017E0000016682E9F77A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000017E0000016682E9F77A.png" width="191" height="179" style="display:inline-block; margin:4px;width:5.054cm;height:4.736cm;" class="odt-zoomable" data-zoom-src="images/100000000000017E0000016682E9F77A.png" /></td></tr></table>
 
 <ul>
-<li>in [3], select the JARs to add to the project&#x27;s ClassPath (here, they are in the [lib] folder within the project);</li>
+<li>In [3], select the JARs files to be added to the project&#x27;s ClassPath (they are located here in the [lib] folder within the project);</li>
 </ul>
-<p><strong>Definition</strong>: A project&#x27;s [ClassPath] is the set of directories that the JVM (Java Virtual Machine) running the project searches to find a class referenced by the project. For an Eclipse project, the [ClassPath] consists of the following:</p>
+<p><strong>Definition</strong>: The [ClassPath] of a project is the set of folders explored by the JVM (Java Virtual Machine) that executes the project, to find a class referenced by it. For an Eclipse project, the [ClassPath] consists of the following elements:</p>
 <ul>
-<li>the project&#x27;s [bin] folder;</li>
-<li>the elements of the project&#x27;s [Build Path];</li>
+<li>the project&#x27;s [bin] directory;</li>
+<li>the elements of the project’s [Build Path];</li>
 </ul>
-<p>The [bin] folder is the folder produced by compiling the [src] folder. Therefore, everything placed in the [src] folder is automatically part of the [ClassPath] (even if it is not a .java file). Thus, in the previous project, the Spring configuration file [config-01.xml], which is in the [src] folder, will be part of the project’s [ClassPath] at runtime.</p>
-<p><a id="refheading78435838046689"></a></p>
-<h3 id="227-results">2.2.7. <span style="color: #4f81bd">Results</span></h3>
+<p>The [bin] folder is the folder produced by compiling the [src] folder. Therefore, everything placed in the [src] folder is automatically included in [ClassPath] (even if it is not a .java file). So in the previous project, the Spring configuration file [config-01.xml], which is in the [src] folder, will be part of the [Classpath] folder of the project at runtime.</p>
+<p><span id="refheading78435838046689" name="refheading78435838046689" class="odt-bookmark-anchor"></span></p>
+<h3 id="227-results">2.2.7. <span style="color: #4f81bd"><strong>Results</strong></span></h3>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content">févr. 21, 2014 1:16:23 PM org.springframework.context.support.AbstractApplicationContext prepareRefresh</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Infos: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3ac67f69: startup date [Fri Feb 21 13:16:23 CET 2014]; root of context hierarchy</span></span>
@@ -1706,13 +1708,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">beans [p01,p01b] identiques ? true</span></span>
 </code></pre></div>
 
-<p><a id="refheading78437838046689"></a></p>
+<p><span id="refheading78437838046689" name="refheading78437838046689" class="odt-bookmark-anchor"></span></p>
 <h2 id="23-example-02">2.3. <span style="color: #4f81bd">Example-02</span></h2>
-<p><a id="refheading78439838046689"></a></p>
+<p><span id="refheading78439838046689" name="refheading78439838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="231-the-eclipse-project">2.3.1. <span style="color: #4f81bd">The Eclipse Project</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D0000000DA1E6B6DC4.png" width="146" height="153" style="display:inline-block; margin:4px;width:3.87cm;height:4.055cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000DA1E6B6DC4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000D0000000DA1E6B6DC4.png" width="146" height="153" style="display:inline-block; margin:4px;width:3.87cm;height:4.055cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000DA1E6B6DC4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading78441838046689"></a></p>
+<p><span id="refheading78441838046689" name="refheading78441838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="232-the-spring-configuration-class">2.3.2. <span style="color: #4f81bd">The Spring configuration class</span></h3>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.spring.core;</span></span></span>
@@ -1755,14 +1757,14 @@
 </code></pre></div>
 
 <ul>
-<li>line 9: the [@Configuration] annotation is a Spring annotation. It indicates that the annotated class defines singletons. These are defined using the [@Bean] annotation. Spring will execute all methods annotated with [@Bean]. These create the application’s singletons;</li>
-<li>lines 12–15: defines a singleton identified by [person_01], i.e., the method name.</li>
-<li>line 23: the parameters [person_01, person_02] bear the names of singletons. Spring will automatically initialize them with the references of these singletons. This is referred to as parameter injection;</li>
+<li>Line 9: The [@Configuration] annotation is a Spring annotation. It indicates that the annotated class defines singletons. These are defined using the [@Bean] annotation. Spring will execute all methods annotated with [@Bean]. These create the application’s singletons;</li>
+<li>lines 12–15: defines a singleton identified by [personne_01], i.e., the method name.</li>
+<li>Line 23: The [personne_01, personne_02] parameters are named after singletons. Spring will automatically initialize them with the references to these singletons. This is known as parameter injection;</li>
 </ul>
-<p>This way of configuring singletons is more explicit than the one using the XML file. In fact, we are reproducing ourselves what Spring did implicitly based on the XML file.</p>
-<p><a id="refheading78443838046689"></a></p>
+<p>This way of configuring singletons is more explicit than the one using the XML file. In fact, we are replicating what Spring did implicitly using the XML file.</p>
+<p><span id="refheading78443838046689" name="refheading78443838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="233-the-executable-class">2.3.3. <span style="color: #4f81bd">The executable class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D0000000DA77333512.png" width="146" height="153" style="display:inline-block; margin:4px;width:3.851cm;height:4.036cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000DA77333512.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000D0000000DA77333512.png" width="146" height="153" style="display:inline-block; margin:4px;width:3.851cm;height:4.036cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000DA77333512.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> istia.st.spring.core;</span></span></span>
@@ -1802,12 +1804,12 @@
 </code></pre></div>
 
 <ul>
-<li>Line 13 causes all beans defined in the [Config] class to be instantiated;</li>
+<li>Line 13 instantiates all beans defined in the [Config] class;</li>
 <li>the rest of the code remains unchanged;
-<a id="refheading78445838046689"></a></li>
+<span id="refheading78445838046689" name="refheading78445838046689" class="odt-bookmark-anchor"></span></li>
 </ul>
-<h3 id="234-project-dependencies">2.3.4. <span style="color: #4f81bd">Project dependencies</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D0000000DACB9D0C84.png" width="146" height="153" style="display:inline-block; margin:4px;width:3.851cm;height:4.036cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000DACB9D0C84.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000118000000FE63D89BAA.png" width="196" height="178" style="display:inline-block; margin:4px;width:5.181cm;height:4.701cm;" class="odt-zoomable" data-zoom-src="images/1000000000000118000000FE63D89BAA.png" /></td></tr></table>
+<h3 id="234-project-dependencies">2.3.4. <span style="color: #4f81bd"><strong>Project dependencies</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000D0000000DACB9D0C84.png" width="146" height="153" style="display:inline-block; margin:4px;width:3.851cm;height:4.036cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D0000000DACB9D0C84.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000118000000FE63D89BAA.png" width="196" height="178" style="display:inline-block; margin:4px;width:5.181cm;height:4.701cm;" class="odt-zoomable" data-zoom-src="images/1000000000000118000000FE63D89BAA.png" /></td></tr></table>
 
 <p>The dependencies are defined by the following [pom.xml] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1855,29 +1857,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>Manually managing a project’s dependencies becomes a headache when using Java libraries whose dependencies are unknown. For example, the [Hibernate] framework, which manages database access, has dozens of dependencies. The [Maven] project solves this problem. You specify the dependency you need. It is automatically searched for in Maven repositories distributed across the internet. If the requested dependency has dependencies of its own, those are automatically downloaded as well. These downloaded dependencies are stored in a local repository on the machine. If another application later needs the same dependency, it will not be downloaded but retrieved from the local repository. A dependency is characterized by the following elements:</p>
+<p>Manually managing a project’s dependencies becomes a headache when using Java libraries whose dependencies are unknown. For example, the [Hibernate] framework, which manages database access, has dozens of dependencies. The [Maven] project solves this problem. You specify the dependency you need. It is automatically searched for in Maven repositories distributed across the net. If the requested dependency itself has dependencies, then those are automatically downloaded as well. These downloaded dependencies are stored in a local repository on the machine. If another application later needs the same dependency, it will not be downloaded but will be searched for in the local repository. A dependency is characterized by the following elements:</p>
 <ul>
 <li>line 17: a &lt;dependency&gt; tag;</li>
 <li>line 18: a [groupId] attribute that generally identifies the company that created the dependency;</li>
-<li>line 19: an [artifactId] attribute that identifies the dependency;</li>
+<li>line 19: a [artifactId] attribute that identifies the dependency;</li>
 <li>line 20: a [version] attribute that identifies the desired version;</li>
 </ul>
-<p>The project generation will itself produce a Maven component defined by lines 4–8:</p>
+<p>The project build will itself generate a Maven component defined by lines 4–8:</p>
 <ul>
-<li>lines 4–6: the [groupId, artifactId, version] attributes we just described;</li>
+<li>lines 4–6: the [ groupId, artifactId,version] attributes we just described;</li>
 <li>lines 7–8: are optional attributes;</li>
 </ul>
 <p>We will return to the role of lines 24–40 a little later. To convert a standard Eclipse project into a Maven project, you need to do two things:</p>
 <ul>
-<li>create the [pom.xml] file shown above;</li>
+<li>create the previous [pom.xml] file;</li>
 <li>declare that the project is now a Maven project [1-4]:</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051900000492A14F9B88.png" width="653" height="585" style="display:inline-block; margin:4px;width:17.265cm;height:15.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000051900000492A14F9B88.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051900000492A14F9B88.png" width="653" height="585" style="display:inline-block; margin:4px;width:17.265cm;height:15.478cm;" class="odt-zoomable" data-zoom-src="images/100000000000051900000492A14F9B88.png" /></td></tr></table>
 
 <p>The icon for a Maven project features an <strong>M</strong> [4]. The <strong>S</strong> indicates that the project contains Spring components. It is not recommended to convert (as we just did) an Eclipse project into a Maven project, as the project will then lack the expected structure for a Maven project, which can sometimes lead to unexpected issues.</p>
-<p><a id="refheading295451838046689"></a></p>
+<p><span id="refheading295451838046689" name="refheading295451838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="235-generating-the-projects-maven-artifact">2.3.5. <span style="color: #4f81bd">Generating the project’s Maven artifact</span></h3>
-<p>We refer to the element defined by lines 4–6 of the [pom.xml] file as the project’s Maven artifact:</p>
+<p>We refer to the element defined by lines 4–6 of the file [pom.xml] as the project’s Maven artifact:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">istia.st.spring.core</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">spring-core-02</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
@@ -1898,47 +1900,47 @@
 </code></pre></div>
 
 <p>These define the Maven plugin capable of generating the project artifact. We then proceed as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000039A00000424194F4054.png" width="461" height="530" style="display:inline-block; margin:4px;width:12.197cm;height:14.023cm;" class="odt-zoomable" data-zoom-src="images/100000000000039A00000424194F4054.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000039A00000424194F4054.png" width="461" height="530" style="display:inline-block; margin:4px;width:12.197cm;height:14.023cm;" class="odt-zoomable" data-zoom-src="images/100000000000039A00000424194F4054.png" /></td></tr></table>
 
 <p>The artifact generated in this way goes into the local Maven repository. Its location can be found in the Eclipse configuration:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000024B00000200824CCAC4.png" width="411" height="358" style="display:inline-block; margin:4px;width:10.871cm;height:9.483cm;" class="odt-zoomable" data-zoom-src="images/100000000000024B00000200824CCAC4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000024B00000200824CCAC4.png" width="411" height="358" style="display:inline-block; margin:4px;width:10.871cm;height:9.483cm;" class="odt-zoomable" data-zoom-src="images/100000000000024B00000200824CCAC4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>You can then verify that the Maven artifact has been installed correctly:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000177000000AFA0C2E283.png" width="262" height="122" style="display:inline-block; margin:4px;width:6.939cm;height:3.239cm;" class="odt-zoomable" data-zoom-src="images/1000000000000177000000AFA0C2E283.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000177000000AFA0C2E283.png" width="262" height="122" style="display:inline-block; margin:4px;width:6.939cm;height:3.239cm;" class="odt-zoomable" data-zoom-src="images/1000000000000177000000AFA0C2E283.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>From now on, another local Maven project can use this archive.</p>
-<p><a id="refheading78447838046689"></a></p>
+<p><span id="refheading78447838046689" name="refheading78447838046689" class="odt-bookmark-anchor"></span></p>
 <h2 id="24-example-03">2.4. <span style="color: #4f81bd">Example-03</span></h2>
-<p><a id="refheading78449838046689"></a></p>
+<p><span id="refheading78449838046689" name="refheading78449838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="241-the-eclipse-project">2.4.1. <span style="color: #4f81bd">The Eclipse Project</span></h3>
-<p>This time, we will create a Maven project [1-8]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003330000012FC904F8A5.png" width="410" height="152" style="display:inline-block; margin:4px;width:10.836cm;height:4.009cm;" class="odt-zoomable" data-zoom-src="images/10000000000003330000012FC904F8A5.png" /></td></tr></table>
+<p>This time, we are creating a Maven project named [1-8]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003330000012FC904F8A5.png" width="410" height="152" style="display:inline-block; margin:4px;width:10.836cm;height:4.009cm;" class="odt-zoomable" data-zoom-src="images/10000000000003330000012FC904F8A5.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000037E000001784FBA8591.png" width="447" height="188" style="display:inline-block; margin:4px;width:11.827cm;height:4.974cm;" class="odt-zoomable" data-zoom-src="images/100000000000037E000001784FBA8591.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000037E000001784FBA8591.png" width="447" height="188" style="display:inline-block; margin:4px;width:11.827cm;height:4.974cm;" class="odt-zoomable" data-zoom-src="images/100000000000037E000001784FBA8591.png" /></td></tr></table>
 
 <ul>
 <li>in [3b]: specify an empty folder where the project will be generated;</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042F0000017EBD2D6280.png" width="536" height="191" style="display:inline-block; margin:4px;width:14.169cm;height:5.054cm;" class="odt-zoomable" data-zoom-src="images/100000000000042F0000017EBD2D6280.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000042F0000017EBD2D6280.png" width="536" height="191" style="display:inline-block; margin:4px;width:14.169cm;height:5.054cm;" class="odt-zoomable" data-zoom-src="images/100000000000042F0000017EBD2D6280.png" /></td></tr></table>
 
 <ul>
 <li>in [4]: the identifier of the Maven group to which the project will belong;</li>
 <li>in [5]: the name of the Maven artifact produced:</li>
 <li>in [6]: its version;</li>
-<li>in [7]: its packaging type (other options include war, ear, apk, etc.);</li>
+<li>in [7]: its packaging mode (there are also war, ear, apk, ...);</li>
 <li>in [8]: the project thus created;</li>
 </ul>
 <p>By default, a Maven project has a specific directory structure:</p>
 <ul>
-<li>[src/main/java]: the project&#x27;s source code. The compiled output from these sources will be placed in the project&#x27;s [target/classes] folder;</li>
-<li>[src/main/resources]: resources that must be in the project&#x27;s classpath but are not Java source files. They will be copied as-is to the project&#x27;s [target/classes] folder;</li>
-<li>[src/test/java]: the source code for the project&#x27;s tests. The compiled output from these sources will go into the project&#x27;s [target/test-classes] folder. These elements are not included in the project&#x27;s Maven archive;</li>
-<li>[src / test / resources]: resources that must be in the project&#x27;s classpath for testing but are not Java source files. They will be copied as-is to the project&#x27;s [target/test-classes] folder;</li>
+<li>[src / main / java]: the project’s source code. The compiled artifacts from these sources will go into the project’s [target/classes] folder;</li>
+<li>[src / main / resources]: resources that must be in the project’s classpath but are not Java source files. They will be copied as-is into the project’s [target/classes] folder;</li>
+<li>[src / test / java]: the source code for the project’s tests. The compiled output from these sources will go into the project’s [target/test-classes] folder. These items are not included in the project’s Maven archive;</li>
+<li>[src / test / resources]: resources that must be in the project’s classpath for testing but are not Java source files. They will be copied as-is into the project’s [target/test-classes] folder;</li>
 </ul>
 <p>We complete the project as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000001354C1F466D.png" width="168" height="217" style="display:inline-block; margin:4px;width:4.45cm;height:5.729cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000001354C1F466D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F0000001354C1F466D.png" width="168" height="217" style="display:inline-block; margin:4px;width:4.45cm;height:5.729cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000001354C1F466D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading295455838046689"></a></p>
+<p><span id="refheading295455838046689" name="refheading295455838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="242-the-maven-configuration">2.4.2. <span style="color: #4f81bd">The Maven configuration</span></h3>
 <p>A [pom.xml] file is generated by default. We modify it as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -2002,16 +2004,16 @@
 </code></pre></div>
 
 <ul>
-<li>line 11: the project is encoded in UTF-8;</li>
+<li>Line 11: The project is encoded in UTF-8;</li>
 <li>line 12: JDK 1.8 is used to compile the project;</li>
-<li>lines 16–20: for projects using Spring libraries, it is convenient to use a parent Maven project called [spring-boot-starter-parent]. This defines the versions of various Spring libraries as well as those of their dependencies. This eliminates the need to define them in the dependencies section. Thus, in lines 24–27, we do not specify the desired version of [spring-context]. It will be the one defined by the parent project [spring-boot-starter-parent]. This technique eliminates the need to worry about potential version incompatibilities between dependencies. Those defined by the parent project are compatible with one another;</li>
+<li>lines 16–20: for projects using Spring libraries, it is convenient to use a parent Maven project named [spring-boot-starter-parent]. This project defines the versions of various Spring libraries as well as their dependencies. This eliminates the need to define them in the dependencies section. Thus, in lines 24–27, we do not specify the desired version or [spring-context]. It will be the one defined by the parent project [spring-boot-starter-parent]. This technique eliminates the need to worry about potential version incompatibilities between dependencies. Those defined by the parent project are compatible with one another;</li>
 <li>lines 29–32: Spring writes a significant amount of information to the console via a logging library. This library is imported here;</li>
 <li>lines 40–47: a Maven plugin, which we will discuss later;</li>
 <li>lines 50–52: the plugin for generating the project’s Maven artifact;
-<a id="refheading78451838046689"></a></li>
+<span id="refheading78451838046689" name="refheading78451838046689" class="odt-bookmark-anchor"></span></li>
 </ul>
 <h3 id="243-the-spring-configuration-class">2.4.3. <span style="color: #4f81bd">The Spring configuration class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C7000000912C7701B6.png" width="139" height="101" style="display:inline-block; margin:4px;width:3.679cm;height:2.681cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C7000000912C7701B6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C7000000912C7701B6.png" width="139" height="101" style="display:inline-block; margin:4px;width:3.679cm;height:2.681cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C7000000912C7701B6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [Config] class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2056,15 +2058,15 @@
 </code></pre></div>
 
 <ul>
-<li>Here we see the previously commented code with two new additions:<ul>
-<li>line 13: indicates that there are other beans to instantiate in the [<span style="color: #2a00ff">spring.core.entities</span>] package,</li>
+<li>Here we see code that has already been commented on, with two new additions:<ul>
+<li>line 13: indicates that there are other beans to instantiate in the [spring.core.entities] package,</li>
 <li>lines 34–37: a [mySurface] bean;
-<a id="refheading78453838046689"></a></li>
+<span id="refheading78453838046689" name="refheading78453838046689" class="odt-bookmark-anchor"></span></li>
 </ul>
 </li>
 </ul>
-<h3 id="244-the-apartment-class">2.4.4. <span style="color: #4f81bd">The [Apartment] class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000CB0000009067F100C7.png" width="142" height="101" style="display:inline-block; margin:4px;width:3.761cm;height:2.669cm;" class="odt-zoomable" data-zoom-src="images/10000000000000CB0000009067F100C7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<h3 id="244-the-appartement-class">2.4.4. <span style="color: #4f81bd">The [Appartement] class</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000CB0000009067F100C7.png" width="142" height="101" style="display:inline-block; margin:4px;width:3.761cm;height:2.669cm;" class="odt-zoomable" data-zoom-src="images/10000000000000CB0000009067F100C7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.core.entities;</span></span></span>
@@ -2111,11 +2113,11 @@
 </code></pre></div>
 
 <ul>
-<li>line 7: the [@Component] annotation tells Spring that the class is a singleton that the framework must instantiate and manage. This singleton will be found because we wrote [<span style="color: #646464">@ComponentScan</span><span style="color: #000000">({ </span><span style="color: #2a00ff">&quot;istia.st.spring.core.entities&quot; </span><span style="color: #000000">})</span>] in the [Config] class;</li>
-<li>line 11: asks Spring to inject the reference of one of the singletons into the field. This can be defined in two ways:<ul>
+<li>line 7: the annotation [@Component] tells Spring that the class is a singleton that the framework must instantiate and manage. It is because we wrote [@ComponentScan({ &quot;istia.st.spring.core.entities&quot; })] in the [Config] class that this singleton will be found;</li>
+<li>Line 11: instructs Spring to inject the reference to one of the singletons into the field. This can be defined in two ways:<ul>
 <li>by its identifier (lines 12, 16),</li>
 <li>by its type if there is only one singleton of that type;
-<a id="refheading1051282082896917"></a></li>
+<span id="refheading1051282082896917" name="refheading1051282082896917" class="odt-bookmark-anchor"></span></li>
 </ul>
 </li>
 </ul>
@@ -2150,14 +2152,14 @@
 <ul>
 <li>Lines 1-3: Spring generates a very large number of logs, several dozen lines. These logs can be very useful for debugging a project that isn&#x27;t working. When it is working, you can reduce the logs as follows:</li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EE000000C927997B07.png" width="167" height="141" style="display:inline-block; margin:4px;width:4.41cm;height:3.724cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C927997B07.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EE000000C927997B07.png" width="167" height="141" style="display:inline-block; margin:4px;width:4.41cm;height:3.724cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EE000000C927997B07.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>In the [src/main/resources] folder, create the following [logback.xml] file:</p>
+<p>In the [src / main / resources] folder, create the following [logback.xml] file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">configuration</span><span style="color:#008080">&gt;</span><span style="color:#000000"> </span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">appender</span><span style="color:#000000"> </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;STDOUT&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">class</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span><span style="color:#008080">&gt;</span><span style="color:#000000"> </span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- encoders are  by default assigned the type</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- encoders are by default assigned the type</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         ch.qos.logback.classic.encoder.PatternLayoutEncoder --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">encoder</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pattern</span><span style="color:#008080">&gt;</span><span style="color:#000000">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pattern</span><span style="color:#008080">&gt;</span></span></span>
@@ -2172,7 +2174,7 @@
 </code></pre></div>
 
 <ul>
-<li>Line 12 sets the log level. [debug] is a very detailed level, [info] much less so;</li>
+<li>Line 12 sets the log level. [debug] is a very detailed level, while [info] is much less so;</li>
 </ul>
 <p>Here are the results with [level=info]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -2196,9 +2198,9 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10"></a>beans [p01,p01b] identiques ? true
 </code></pre></div></td></tr></table></div>
 <p>There is now only one line of logs.</p>
-<p><a id="refheading295453838046689"></a></p>
+<p><span id="refheading295453838046689" name="refheading295453838046689" class="odt-bookmark-anchor"></span></p>
 <h3 id="246-generating-the-project-archive-with-its-dependencies">2.4.6. <span style="color: #4f81bd">Generating the project archive with its dependencies</span></h3>
-<p>The archive created in the previous project can also be used by a non-Maven Eclipse project. Some projects use many libraries, and it can be tricky not to forget any. This is where Maven works wonders, as you only need to name the top-level dependency for the lower-level ones to be automatically added to the project’s Classpath.  When a non-Maven Eclipse project needs to use the archives from a Maven project, it is possible to generate the artifact of the latter with all its dependencies (which was not the case in the previous project). For this generation, the following lines 3–10 must be present in the [pom.xml] file:</p>
+<p>The archive created in the previous project can also be used by a non-Maven Eclipse project. Some projects use many libraries, and it can be tricky to ensure none are left out. This is where Maven really shines, because you only need to specify the top-level dependency, and the lower-level dependencies are automatically added to the project’s classpath.  When a non-Maven Eclipse project needs to use the archives from a Maven project, it is possible to generate the artifact of the latter along with all its dependencies (which was not the case in the previous project). For this generation, the following lines 3–10 must be present in the file [pom.xml]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">plugins</span><span style="color:#008080">&gt;</span></span></span>
@@ -2219,61 +2221,61 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>These define the Maven plugin capable of generating the project artifact along with its dependencies. Next, proceed as follows [1-6]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000351000003BCC034F71C.png" width="425" height="478" style="display:inline-block; margin:4px;width:11.232cm;height:12.649cm;" class="odt-zoomable" data-zoom-src="images/1000000000000351000003BCC034F71C.png" /></td></tr></table>
+<p>These define the Maven plugin capable of generating the project artifact along with its dependencies. Next, proceed as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000351000003BCC034F71C.png" width="425" height="478" style="display:inline-block; margin:4px;width:11.232cm;height:12.649cm;" class="odt-zoomable" data-zoom-src="images/1000000000000351000003BCC034F71C.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002F9000001499C7EB0E2.png" width="381" height="165" style="display:inline-block; margin:4px;width:10.068cm;height:4.353cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F9000001499C7EB0E2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002F9000001499C7EB0E2.png" width="381" height="165" style="display:inline-block; margin:4px;width:10.068cm;height:4.353cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F9000001499C7EB0E2.png" /></td></tr></table>
 
 <ul>
-<li>[4-6] represent a Maven build configuration;</li>
+<li>[4-6] represents a Maven build configuration;</li>
 <li>in [4], enter any name;</li>
-<li>in [5], specify the project folder;</li>
+<li>in [5], specify the project directory;</li>
 <li>in [6], enter the Maven goals:<ul>
-<li>[clean]: the project’s [target] folder is deleted;</li>
-<li>[compile]: the project is compiled. The compilation outputs are placed in a regenerated [target] folder;</li>
-<li>[assembly:single]: the classes of the project and its dependencies are placed in a single JAR archive in the [target] folder;</li>
+<li>[clean]: the project folder [target] is deleted;</li>
+<li>[compile]: the project is compiled. The build artifacts are placed in a regenerated [target] folder;</li>
+<li>[assembly:single]: The classes from the project and its dependencies are placed in a single archive named jar within the [target] folder;</li>
 </ul>
 </li>
 </ul>
 <p>After execution, the following result is obtained:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000045B000003BB8E31B7AA.png" width="558" height="478" style="display:inline-block; margin:4px;width:14.751cm;height:12.635cm;" class="odt-zoomable" data-zoom-src="images/100000000000045B000003BB8E31B7AA.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000045B000003BB8E31B7AA.png" width="558" height="478" style="display:inline-block; margin:4px;width:14.751cm;height:12.635cm;" class="odt-zoomable" data-zoom-src="images/100000000000045B000003BB8E31B7AA.png" /></td></tr></table>
 
-<p>A JAR archive is a zipped file that can be opened with an unzipper. Once the previous archive is unzipped, the following directory structure is obtained:</p>
+<p>A jar archive is a zipped file that can be opened with a decompression tool. Once the previous archive is unzipped, the following directory structure is obtained:</p>
 <ul>
 <li>in [8], the classes of the project’s dependencies;</li>
 <li>in [9], the classes of the project itself;
-<a id="refheading295457838046689"></a></li>
+<span id="refheading295457838046689" name="refheading295457838046689" class="odt-bookmark-anchor"></span></li>
 </ul>
-<h2 id="25-example-04">2.5. <span style="color: #4f81bd">Example-04</span></h2>
-<p><a id="refheading1051302082896917"></a></p>
+<h2 id="25-example-04">2.5. <span style="color: #4f81bd"><strong>Example-04</strong></span></h2>
+<p><span id="refheading1051302082896917" name="refheading1051302082896917" class="odt-bookmark-anchor"></span></p>
 <h3 id="251-objective">2.5.1. <span style="color: #4f81bd">Objective</span></h3>
-<p><span style="color: #000000">This example is based on one presented in the document [</span><a href="http://tahe.developpez.com/java/springioc"><u><span style="color: #0563c1">Introduction to Spring IoC</span></u></a><span style="color: #000000">], which demonstrates Spring’s contribution to configuring multi-layer architectures. In the original document, the example uses a Spring configuration defined in an XML file. Here, we implement the example using a configuration based on Java classes and annotations.</span></p>
+<p><span style="color: #000000">This example is based on one presented in the document [Introduction à Spring IoC], which demonstrates Spring’s contribution to configuring multi-layer architectures. In the original document, the example uses a Spring configuration created with a XML file. Here, we handle the example using a configuration based on Java classes and annotations.</span></p>
 <p><span style="color: #000000">Here, we want to configure a Spring project for the following architecture:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000349000000F541917E0C.png" width="421" height="123" style="display:inline-block; margin:4px;width:11.127cm;height:3.242cm;" class="odt-zoomable" data-zoom-src="images/1000000000000349000000F541917E0C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000349000000F541917E0C.png" width="421" height="123" style="display:inline-block; margin:4px;width:11.127cm;height:3.242cm;" class="odt-zoomable" data-zoom-src="images/1000000000000349000000F541917E0C.png" /></td></tr></table>
 
 <p>Each layer has an interface implemented by two classes. We want to demonstrate that, thanks to Spring, we can change the implementation of a layer with zero impact on the code of the other layers.</p>
-<p><a id="refheading1051322082896917"></a></p>
+<p><span id="refheading1051322082896917" name="refheading1051322082896917" class="odt-bookmark-anchor"></span></p>
 <h3 id="252-the-eclipse-project">2.5.2. <span style="color: #4f81bd">The Eclipse Project</span></h3>
-<p><a id="refheading638751389747594"></a></p>
+<p><span id="refheading638751389747594" name="refheading638751389747594" class="odt-bookmark-anchor"></span></p>
 <h4 id="2521-generation">2.5.2.1. <span style="color: #4f81bd">Generation</span></h4>
 <p><span style="color: #000000">We create a new project type:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003780000015F56014E54.png" width="444" height="176" style="display:inline-block; margin:4px;width:11.748cm;height:4.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000003780000015F56014E54.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003780000015F56014E54.png" width="444" height="176" style="display:inline-block; margin:4px;width:11.748cm;height:4.644cm;" class="odt-zoomable" data-zoom-src="images/10000000000003780000015F56014E54.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000030E000003720EDEB362.png" width="391" height="441" style="display:inline-block; margin:4px;width:10.345cm;height:11.668cm;" class="odt-zoomable" data-zoom-src="images/100000000000030E000003720EDEB362.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000030E000003720EDEB362.png" width="391" height="441" style="display:inline-block; margin:4px;width:10.345cm;height:11.668cm;" class="odt-zoomable" data-zoom-src="images/100000000000030E000003720EDEB362.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">in [4], enter the name of the Eclipse project;</span></li>
+<li><span style="color: #000000">in  [4], enter the name of the Eclipse project;</span></li>
 <li><span style="color: #000000">in [5], select a Maven project;</span></li>
-<li><span style="color: #000000">in [6], select a Java version &gt;=1.7;</span></li>
+<li><span style="color: #000000">in [6], select a version for Java &gt;=1.7;</span></li>
 <li><span style="color: #000000">in [7], select the suggested Spring Boot version;</span></li>
-<li><span style="color: #000000">the information in [8-11] is Maven information;</span></li>
-<li><span style="color: #000000">in [12], you can select one or more of the suggested dependencies. This will add a number of dependencies to the Maven [pom.xml] file;</span></li>
+<li><span style="color: #000000">The [8-11] information is Maven information;</span></li>
+<li><span style="color: #000000">In [12], you can select one or more of the suggested dependencies. This will result in a number of dependencies being added to the Maven file [pom.xml];</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FB00000186EDB3EB67.png" width="638" height="195" style="display:inline-block; margin:4px;width:16.868cm;height:5.159cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FB00000186EDB3EB67.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004FB00000186EDB3EB67.png" width="638" height="195" style="display:inline-block; margin:4px;width:16.868cm;height:5.159cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FB00000186EDB3EB67.png" /></td></tr></table>
 
 <ul>
-<li><span style="color: #000000">In [13], select an existing, empty folder to host the project;</span></li>
-<li><span style="color: #000000">in [14], the generated project. We will break down its components;</span></li>
+<li><span style="color: #000000">In [13], specify an existing, empty folder to house the project;</span></li>
+<li><span style="color: #000000">In [14], the generated project. We will break down its components;</span></li>
 </ul>
 <p><span style="color: #000000">The project is a Maven project configured by the following [pom.xml] file:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -2330,19 +2332,19 @@
 
 <ul>
 <li><span style="color: #000000">lines 6–12: contain the information entered in the project creation wizard;</span></li>
-<li><span style="color: #000000">lines 14–19: the parent Maven project, which defines a number of libraries along with their versions. If any of them are project dependencies, they are listed in the [pom.xml] file without their versions;</span></li>
+<li><span style="color: #000000">lines 14–19: the parent Maven project, which defines a number of libraries along with their versions. If any of them are project dependencies, they are listed in the [pom.xml] file without their version;</span></li>
 <li><span style="color: #000000">line 23: this line is only used if you intend to generate an executable archive of the project. Otherwise, it is unused;</span></li>
-<li><span style="color: #000000">lines 28–31: the minimal dependencies for a Spring Boot project. Note that we did not select any dependencies from the checkbox list;</span></li>
-<li><span style="color: #000000">Lines 33–37: The dependency required to manage JUnit unit tests [</span><a href="http://junit.org/"><u><span style="color: #0563c1">http://junit.org/</span></u></a><span style="color: #000000">] integrated with Spring. Line 36 indicates that the dependency is required only for testing. Consequently, it will not be included in the project archive;</span></li>
-<li><span style="color: #000000">lines 42–45: the plugin that generates the project’s Maven artifact;</span></li>
+<li><span style="color: #000000">lines 28–31: the minimum dependencies for a Spring Boot project. Note that we did not select any dependencies from the checkbox list;</span></li>
+<li><span style="color: #000000">lines 33–37: the dependency required to manage unit tests JUnit [http://junit.org/] integrated with Spring. Line 36 indicates that the dependency is required only for testing. Consequently, it will not be included in the project archive;</span></li>
+<li><span style="color: #000000">lines 42–45: the plugin used to generate the project’s Maven artifact;</span></li>
 </ul>
-<p><span style="color: #000000">The list of dependencies provided by this file is as follows [1]:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001F1000003038BAA6771.png" width="249" height="386" style="display:inline-block; margin:4px;width:6.576cm;height:10.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000001F1000003038BAA6771.png" /></td></tr></table>
+<p><span style="color: #000000">The list of dependencies provided by this file is as follows: [1]:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001F1000003038BAA6771.png" width="249" height="386" style="display:inline-block; margin:4px;width:6.576cm;height:10.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000001F1000003038BAA6771.png" /></td></tr></table>
 
 <p><span style="color: #000000">We will see that these are sufficient for what we want to do here.</span></p>
-<p><a id="refheading1051342082896917"></a></p>
+<p><span id="refheading1051342082896917" name="refheading1051342082896917" class="odt-bookmark-anchor"></span></p>
 <h4 id="2522-the-executable-class">2.5.2.2. <span style="color: #4f81bd">The executable class</span></h4>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010C0000006E9AA449A7.png" width="187" height="77" style="display:inline-block; margin:4px;width:4.96cm;height:2.036cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C0000006E9AA449A7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010C0000006E9AA449A7.png" width="187" height="77" style="display:inline-block; margin:4px;width:4.96cm;height:2.036cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C0000006E9AA449A7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The executable class [SpringCore04Application] [[2] is as follows:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2361,13 +2363,13 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">Line 6: The [@SpringBootApplication] annotation is a shorthand for the three annotations [@Configuration, @EnableAutoConfiguration, @ComponentScan], which means:</span><ul>
+<li><span style="color: #000000">Line 6: The annotation [@SpringBootApplication] is a shorthand for the three annotations [@Configuration, @EnableAutoConfiguration, @ComponentScan], which means:</span><ul>
 <li><span style="color: #000000">that the [SpringCore04Application] class is a Spring configuration class;</span></li>
-<li><span style="color: #000000">that Spring Boot is instructed to perform configurations based on the classes it finds in the project’s classpath, which in this case are the Maven dependencies;</span></li>
-<li><span style="color: #000000">to examine the current directory (that of the [SpringCore04Application] class) to find any other Spring components;</span></li>
+<li><span style="color: #000000">that Spring Boot is instructed to perform configurations based on the classes it finds in the project’s classpath, in this case within the Maven dependencies;</span></li>
+<li><span style="color: #000000">to examine the current directory (that of the [SpringCore04Application] class) to find any other Spring components there;</span></li>
 </ul>
 </li>
-<li><span style="color: #000000">line 10: the static method [SpringApplication.run] is executed. Its first parameter is a Spring configuration class, here the [SpringCore04Application] class. Its second parameter is the list of arguments passed to the [main] method (line 9). The static method [SpringApplication.run] is responsible for creating the Spring context, i.e., creating the various beans found either in the configuration classes or in the directories scanned by the [@ComponentScan] annotation. The [main] method here does nothing else. To give it a little more substance, we will modify it as follows:</span></li>
+<li><span style="color: #000000">Line 10: The static method [SpringApplication.run] is executed. Its first parameter is a Spring configuration class, in this case the class [SpringCore04Application]. Its second parameter is the list of arguments passed to the method [main] (line 9). The static method [SpringApplication.run] is responsible for creating the Spring context, i.e., creating the various beans found either in the configuration classes or in the folders scanned by the [@ComponentScan] annotation. The [main] method here does nothing else. To give it a little more substance, we will transform it as follows:</span></li>
 </ul>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> demo;</span></span></span>
@@ -2397,8 +2399,8 @@
 <li><span style="color: #000000">line 12: the static method [SpringApplication.run] returns the Spring context it has constructed;</span></li>
 <li><span style="color: #000000">lines 15–17: the names of all beans in this context are displayed;</span></li>
 </ul>
-<p><span style="color: #000000">The application can be run as follows [1-3]. The standard method [Run As Java Application] is also valid.</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D10000048344878CCE.png" width="489" height="578" style="display:inline-block; margin:4px;width:12.926cm;height:15.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D10000048344878CCE.png" /></td></tr></table>
+<p><span style="color: #000000">The application can be run as follows: [1-3]. The standard method [Run As Java Application] is also valid.</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003D10000048344878CCE.png" width="489" height="578" style="display:inline-block; margin:4px;width:12.926cm;height:15.281cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D10000048344878CCE.png" /></td></tr></table>
 
 <p><span style="color: #000000">The following result is obtained:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2410,11 +2412,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> =========|_|==============|___/=/_/_/_/</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> :: Spring Boot ::        (v1.2.3.RELEASE)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">2015-04-08 11:18:38.254  INFO 4796 --- [           main] demo.SpringCore04Application             : Starting SpringCore04Application on Gportpers3 with PID 4796 (D:\data\istia-1415\polys\istia\dvp-spring-database\codes\original\intro-spring-core\spring-core-04\target\classes started by ST in D:\data\istia-1415\polys\istia\dvp-spring-database\codes\original\intro-spring-core\spring-core-04)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">2015-04-08 11:18:38.254  INFO 4796 --- [           main] demo.SpringCore04Application             : Starting SpringCore04Application on Gportpers3 with PID 4796 (D:</span><span style="color:#000000">\data\istia-1415\polys\istia\dvp-spring-database\codes\original\intro-spring-core\spring-core-04\target\classes started by ST in D:\data\istia-1415\polys\istia\dvp-spring-database\codes\original\intro-spring-core\spring-core-04)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.295  INFO 4796 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@64485a47: startup date [Wed Apr 08 11:18:38 CEST 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.776  INFO 4796 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.788  INFO 4796 --- [           main] demo.SpringCore04Application             : Started SpringCore04Application in 0.773 seconds (JVM running for 1.335)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">---------------- Liste des beans Spring</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.776  INFO 4796 --- [           main] o.s.j.e.a.AnnotationMBeanExporter: Registering beans for JMX exposure on startup</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.788  INFO 4796 --- [           main] demo.SpringCore04Application : Started SpringCore04Application in 0.773 seconds (JVM running for 1.335)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---------------- List of Spring beans</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">org.springframework.context.annotation.internalConfigurationAnnotationProcessor</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">org.springframework.context.annotation.internalAutowiredAnnotationProcessor</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">org.springframework.context.annotation.internalRequiredAnnotationProcessor</span></span>
@@ -2431,20 +2433,20 @@
 <span class="odt-code-line"><span class="odt-code-line-content">objectNamingStrategy</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">mbeanServer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.789  INFO 4796 --- [           main] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@64485a47: startup date [Wed Apr 08 11:18:38 CEST 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.790  INFO 4796 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2015-04-08 11:18:38.790  INFO 4796 --- [           main] o.s.j.e.a.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown</span></span>
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">lines 14–28: beans from the Spring context. We do not know their role. We find the bean [springCore04Application] on line 18, which, due to its [@SpringBootApplication] annotation, automatically becomes a Spring bean;</span></li>
+<li><span style="color: #000000">lines 14-28: Spring context beans. We do not know their role. We find the bean [springCore04Application] on line 18, which, due to its annotation [@SpringBootApplication], automatically becomes a Spring bean;</span></li>
 <li><span style="color: #000000">the other lines are Spring logs at the [INFO] level. As we have already seen, these logs can be controlled by the [logback.xml] file placed in the project’s classpath:</span></li>
 </ul>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E5000000CED8D6CD16.png" width="160" height="144" style="display:inline-block; margin:4px;width:4.24cm;height:3.814cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E5000000CED8D6CD16.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E5000000CED8D6CD16.png" width="160" height="144" style="display:inline-block; margin:4px;width:4.24cm;height:3.814cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E5000000CED8D6CD16.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">configuration</span><span style="color:#008080">&gt;</span><span style="color:#000000"> </span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">appender</span><span style="color:#000000"> </span><span style="color:#7f007f">name</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;STDOUT&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">class</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span><span style="color:#008080">&gt;</span><span style="color:#000000"> </span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- encoders are  by default assigned the type</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- encoders are by default assigned the type</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">         ch.qos.logback.classic.encoder.PatternLayoutEncoder --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">encoder</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">pattern</span><span style="color:#008080">&gt;</span><span style="color:#000000">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">pattern</span><span style="color:#008080">&gt;</span></span></span>
@@ -2458,7 +2460,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">configuration</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>If, on line 12 above, we set the level to [warn] instead of [info], we get the following result:</p>
+<p>If, on line 12 above, we replace [info] with [warn], we get the following result:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -2490,7 +2492,7 @@
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a> <span class="o">=========|</span><span class="n">_</span><span class="o">|==============|</span><span class="n">___</span><span class="o">/=/</span><span class="n">_</span><span class="o">/</span><span class="n">_</span><span class="o">/</span><span class="n">_</span><span class="o">/</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a> <span class="p">::</span> <span class="n">Spring</span> <span class="n">Boot</span> <span class="p">::</span>        <span class="p">(</span><span class="n">v1</span><span class="mf">.2.3</span><span class="o">.</span><span class="n">RELEASE</span><span class="p">)</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">----------------</span> <span class="n">Liste</span> <span class="n">des</span> <span class="n">beans</span> <span class="n">Spring</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="o">----------------</span> <span class="n">List</span> <span class="n">of</span> <span class="n">Spring</span> <span class="n">beans</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">internalConfigurationAnnotationProcessor</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">internalAutowiredAnnotationProcessor</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">org</span><span class="o">.</span><span class="n">springframework</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">internalRequiredAnnotationProcessor</span>
@@ -2507,13 +2509,13 @@
 <a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="n">objectNamingStrategy</span>
 <a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="n">mbeanServer</span>
 </code></pre></div></td></tr></table></div>
-<p>The logs have disappeared. Only [warn] level messages appear, and there were none here.</p>
-<p><a id="refheading1051362082896917"></a></p>
+<p>The logs have disappeared. Only messages of level [warn] appear, and there were none here.</p>
+<p><span id="refheading1051362082896917" name="refheading1051362082896917" class="odt-bookmark-anchor"></span></p>
 <h3 id="253-implementation-of-the-different-layers-of-the-architecture">2.5.3. <span style="color: #4f81bd">Implementation of the different layers of the architecture</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000329000000FE551D6AEF.png" width="405" height="127" style="display:inline-block; margin:4px;width:10.703cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/1000000000000329000000FE551D6AEF.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000329000000FE551D6AEF.png" width="405" height="127" style="display:inline-block; margin:4px;width:10.703cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/1000000000000329000000FE551D6AEF.png" /></td></tr></table>
 
 <p>We will now implement the three layers of the architecture above:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F1000001B4DEDB64F6.png" width="169" height="305" style="display:inline-block; margin:4px;width:4.461cm;height:8.072cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F1000001B4DEDB64F6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F1000001B4DEDB64F6.png" width="169" height="305" style="display:inline-block; margin:4px;width:4.461cm;height:8.072cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F1000001B4DEDB64F6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The [DAO] layer is implemented by the [spring.core.dao] package. It provides the following [IDao] interface:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2550,7 +2552,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">The [business] layer is implemented by the [spring.core.business] package. It provides the following [IMetier] interface:</span></p>
+<p><span style="color: #000000">The [métier] layer is implemented by the [spring.core.metier] package. It provides the following [IMetier] interface:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.core.metier;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2560,7 +2562,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">This interface has two implementations: [Business1] and [Business2]:</span></p>
+<p><span style="color: #000000">This interface has two implementations: [Metier1] and [Metier2]:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.core.metier;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2660,9 +2662,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p><a id="refheading1051382082896917"></a></p>
-<h3 id="254-spring-project-configuration">2.5.4. <span style="color: #4f81bd">Spring Project Configuration</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E1000000C8B0947CE8.png" width="158" height="140" style="display:inline-block; margin:4px;width:4.17cm;height:3.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E1000000C8B0947CE8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading1051382082896917" name="refheading1051382082896917" class="odt-bookmark-anchor"></span></p>
+<h3 id="254-spring-project-configuration">2.5.4. <span style="color: #4f81bd"><strong>Spring Project Configuration</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E1000000C8B0947CE8.png" width="158" height="140" style="display:inline-block; margin:4px;width:4.17cm;height:3.708cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E1000000C8B0947CE8.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The configuration class [Config] is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2727,17 +2729,17 @@
 </code></pre></div>
 
 <ul>
-<li>Lines 20–23: The bean named [dao1] (method name) is an instance of the class [Dao1] (line 22), which is considered an implementation of the interface [IDao] (line 21). The bean [dao1] is therefore viewed as an instance of an interface (the terminology is incorrect but understandable) and not as an instance of a class. This is an important point to understand. All other beans will also be instances of interfaces;</li>
+<li>lines 20–23: the bean named [dao1] (method name) is an instance of the class [Dao1] (line 22), which is considered an implementation of the interface [IDao] (line 21). The bean [dao1] is therefore viewed as an instance of an interface (the terminology is incorrect but understandable) and not an instance of a class. This is an important point to understand. All other beans will also be instances of interfaces;</li>
 <li>lines 25–30: an instance of the [IMetier] interface implemented by the [Metier1] class;</li>
 <li>lines 32–37: an instance of the [IUi] interface implemented by the [Ui1] class;</li>
-<li>lines 20–37: implement the [UI, Business, DAO] layers with instances [Ui1, Metier1, Dao1];</li>
-<li>lines 40-57: implement the [UI, Business, DAO] layers with instances [Ui2, Business2, Dao2];
-<a id="refheading840651126111057"></a></li>
+<li>lines 20–37: implement the [UI, Metier, DAO] layers with [Ui1, Metier1, Dao1] instances;</li>
+<li>lines 40–57: implement the [UI, Metier, DAO] layers with [Ui2, Metier2, Dao2] instances;
+<span id="refheading840651126111057" name="refheading840651126111057" class="odt-bookmark-anchor"></span></li>
 </ul>
-<h3 id="255-unit-test-junittest">2.5.5. <span style="color: #4f81bd">Unit test [JUnitTest]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E5000000ED0A9D7A57.png" width="160" height="166" style="display:inline-block; margin:4px;width:4.24cm;height:4.389cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E5000000ED0A9D7A57.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<h3 id="255-junittest-unit-test">2.5.5. <span style="color: #4f81bd">[JUnitTest] unit test</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E5000000ED0A9D7A57.png" width="160" height="166" style="display:inline-block; margin:4px;width:4.24cm;height:4.389cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E5000000ED0A9D7A57.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">The [JUnitTest] class is placed in the [src/test/java] branch of the Maven project. The elements in this branch are not included in the final project archive. Its code is as follows:</span></p>
+<p><span style="color: #000000">The [JUnitTest] class is placed in the [src / test / java] branch of the Maven project. The elements of this branch are not included in the final project archive. Its code is as follows:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> spring.core.tests;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2762,7 +2764,7 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">Line 16: The [@SpringApplicationConfiguration] annotation is part of the Spring Boot Test project (line 8). It is introduced by the following dependency in the [pom.xml] file:</span></li>
+<li><span style="color: #000000">line 16: the annotation [@SpringApplicationConfiguration] is an annotation from the Spring Boot Test project (line 8). It is introduced by the following dependency on the file [pom.xml]:</span></li>
 </ul>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
@@ -2771,9 +2773,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">This annotation takes as its parameter the list of configuration classes to be used to build the Spring context required for the test. Here we use the [Config] configuration class already presented;</span></p>
+<p><span style="color: #000000">This annotation takes as a parameter the list of configuration classes to be used to build the Spring context required for the test. Here we use the configuration class [Config], which has already been presented;</span></p>
 <ul>
-<li><span style="color: #000000">line 17: the [@RunWith] annotation is a JUnit annotation (line 5). Its parameter is the class responsible for running the tests instead of the default JUnit framework class. This class is a Spring class (line 9). It will use the Spring annotations present in the test class;</span></li>
+<li><span style="color: #000000">line 17: the [@RunWith] annotation is a JUnit annotation (line 5). Its parameter is the class responsible for running the tests instead of the default class of the JUnit framework. This class is a Spring class (line 9). It will use the Spring annotations present in the test class;</span></li>
 </ul>
 <p><span style="color: #000000">The complete class is as follows</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -2792,7 +2794,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Qualifier</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;ui2&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IUi </span><span style="color:#0000c0">ui2</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// layer [métier]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Autowired</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Qualifier</span><span style="color:#000000">(</span><span style="color:#2a00ff">&quot;metier1&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> IMetier </span><span style="color:#0000c0">metier1</span><span style="color:#000000">;</span></span></span>
@@ -2832,27 +2834,27 @@
 </code></pre></div>
 
 <ul>
-<li><span style="color: #000000">lines 8–10: we inject (line 8) the bean named (line 9) [ui1]. Note that on line 10, we inject an interface instance rather than a class instance;</span></li>
-<li><span style="color: #000000">lines 21–32: the other beans defined in the [Config] class are injected in the same way;</span></li>
-<li><span style="color: #000000">line 34: the [@Test] annotation designates a method to be executed during testing. Other possible annotations are as follows:</span><ul>
+<li><span style="color: #000000">lines 8–10: we inject (line 8) the bean named (line 9) [ui1]. Note on line 10 that we are injecting an interface instance, not a class instance;</span></li>
+<li><span style="color: #000000">lines 21-32: the other beans defined in the [Config] class are injected in the same way;</span></li>
+<li><span style="color: #000000">line 34: the annotation [@Test] designates a method to be executed during testing. The other possible annotations are as follows:</span><ul>
 <li><span style="color: #000000">[@BeforeClass]: method to be executed before starting the tests;</span></li>
 <li><span style="color: #000000">[@AfterClass]: method to be executed once all tests are complete;</span></li>
 <li><span style="color: #000000">[@Before]: method to be executed </span><strong>before each</strong> <span style="color: #000000">test;</span></li>
 <li><span style="color: #000000">[@After]: method to be executed </span><strong>after each</strong> <span style="color: #000000">test;</span></li>
 </ul>
 </li>
-<li><span style="color: #000000">line 36: we verify that the call [dao1.doSomethingInDaoLayer(10, 20)] returns 30. By convention, the first parameter is the expected value and the second is the actual value;</span></li>
-<li><span style="color: #000000">line 36: tests the [dao1] instance of the [IDao] interface;</span></li>
-<li><span style="color: #000000">line 37: tests the [dao2] instance of the [IDao] interface;</span></li>
+<li><span style="color: #000000">line 36: we verify that the call to [dao1.doSomethingInDaoLayer(10, 20)] returns 30. By convention, the first parameter is the expected value and the second is the actual value;</span></li>
+<li><span style="color: #000000">line 36: tests the instance [dao1] of the interface [IDao];</span></li>
+<li><span style="color: #000000">line 37: tests the instance [dao2] of the interface [IDao];</span></li>
 <li><span style="color: #000000">line 42: tests the instance [metier1] of the interface [IMetier];</span></li>
-<li><span style="color: #000000">line 43: tests the instance [business2] of the interface [IBusiness];</span></li>
+<li><span style="color: #000000">line 43: tests the instance [metier2] of the interface [IMetier];</span></li>
 <li><span style="color: #000000">line 48: tests the instance [ui1] of the interface [IUi];</span></li>
 <li><span style="color: #000000">line 36: tests the instance [ui2] of the interface [IUi];</span></li>
 </ul>
 <p><span style="color: #000000">The assertions that can be used in a test method are as follows:</span></p>
 <ul>
-<li><strong>assertEquals(expression1, expression2)</strong>: checks that the values of the two expressions are equal. Many expression types are accepted (int, String, float, double, boolean, char, short). If the two expressions are not equal, then an exception of type [AssertionFailedError] is thrown,</li>
-<li><strong>assertEquals(real1, real2, delta)</strong>: checks that two real numbers are equal to within <strong>delta</strong>, i.e., abs(real1-real2) &lt;= delta. For example, one could write <strong>assertEquals(real1, real2, 1E-6)</strong> to verify that two values are equal to within 10⁻⁶,</li>
+<li><strong>assertEquals(expression1, expression2)</strong>: Checks whether the values of the two expressions are equal. Many expression types are supported (int, String, float, double, boolean, char, short). If the two expressions are not equal, then a [AssertionFailedError ] exception is thrown,</li>
+<li><strong>assertEquals(real1, real2, delta)</strong>: checks that two real numbers are equal to within <strong>delta</strong>, c.a.d abs(real1-real2)&lt;=delta. For example, one could write <strong>assertEquals(real1, real2, 1E-6)</strong> to verify that two values are equal to within 10⁻⁶,</li>
 <li><strong>assertEquals(message, expression1, expression2)</strong> and <strong>assertEquals(message, real1, real2, delta)</strong> are variants that allow you to specify the error message to be associated with the [AssertionFailedError] exception thrown when the [assertEquals] method fails,</li>
 <li><strong>assertNotNull(Object)</strong> and <strong>assertNotNull(message, Object)</strong>: checks that the <strong>Object</strong> reference is not <strong>null,</strong></li>
 <li><strong>assertNull(Object)</strong> and <strong>assertNull(message, Object)</strong>: checks that the <strong>Object</strong> reference is <strong>null,</strong></li>
@@ -2860,23 +2862,23 @@
 <li><strong>assertNotSame(Object1, Object2)</strong> <span style="color: #000000">and </span><strong>assertNotSame(message, Object1, Object2)</strong><span style="color: #000000">: checks that the </span><strong>Object1</strong> <span style="color: #000000">and </span><strong>Object2</strong> <span style="color: #000000">references do not point to the same object;</span></li>
 </ul>
 <p><span style="color: #000000">To run the test, proceed as follows:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A8000004102D4BAB2B.png" width="468" height="520" style="display:inline-block; margin:4px;width:12.383cm;height:13.758cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A8000004102D4BAB2B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003A8000004102D4BAB2B.png" width="468" height="520" style="display:inline-block; margin:4px;width:12.383cm;height:13.758cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A8000004102D4BAB2B.png" /></td></tr></table>
 
 <p><span style="color: #000000">The following result is obtained:</span></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000017400000124C99CC553.png" width="260" height="204" style="display:inline-block; margin:4px;width:6.89cm;height:5.408cm;" class="odt-zoomable" data-zoom-src="images/100000000000017400000124C99CC553.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000017400000124C99CC553.png" width="260" height="204" style="display:inline-block; margin:4px;width:6.89cm;height:5.408cm;" class="odt-zoomable" data-zoom-src="images/100000000000017400000124C99CC553.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><span style="color: #000000">Here, all tests passed. What does this example demonstrate? It demonstrates the flexibility provided by the Spring framework in configuring a layered architecture. You can choose to use the [Ui1, Metier1, Dao1] or [Ui2, Metier2, Dao2] implementation simply by configuring it. Thus, in the previous JUnit test, if you keep only the injection of the [ui1, metier1, dao1] beans, you are working with the first architecture. To change the architecture, simply change the injected beans. This is done without modifying the code of the layers implementing the interfaces. This type of programming is called interface-based programming because we do not use the instances of the classes implementing the layers, but rather the instances of their interfaces.</span></p>
-<p><a id="refheading78455838046689"></a></p>
+<p><span style="color: #000000">Here, all tests passed. What does this example demonstrate? It demonstrates the flexibility provided by the Spring framework in configuring a layered architecture. You can choose to use the [Ui1, Metier1, Dao1] or [Ui2, Metier2, Dao2] implementation simply through configuration. Thus, in the previous JUnit test, if we keep only the injection of the [ui1, metier1, dao1] beans, we are working with the first architecture. To change the architecture, simply change the injected beans. This is done without changing the code of the layers implementing the interfaces. This type of programming is called interface-based programming because we do not use the instances of the classes implementing the layers, but rather the instances of their interfaces.</span></p>
+<p><span id="refheading78455838046689" name="refheading78455838046689" class="odt-bookmark-anchor"></span></p>
 <h2 id="26-conclusion">2.6. <span style="color: #4f81bd">Conclusion</span></h2>
 <ul>
 <li>Spring manages objects that are singletons (a single instance). Spring also manages objects that are instantiated each time an instance is requested from Spring. This case will also be presented in this document;</li>
 <li>these objects can be declared in various ways that can be combined:<ul>
-<li>in an XML file,</li>
+<li>in a XML file,</li>
 <li>in a Java class annotated with [@Configuration],</li>
 <li>with any Java class annotated with [@Component, @Service, ...];</li>
 </ul>
 </li>
-<li>a Spring object can be injected into another Spring object using the [@Autowired] annotation. This is referred to as dependency injection (DI);</li>
+<li>a Spring object can be injected into another Spring object using the [@Autowired] annotation. This is referred to as dependency injection (DI: Dependency Injection);</li>
 <li>Spring is very useful for configuring layered architectures when used in conjunction with the interface-based programming paradigm;</li>
 </ul>
 

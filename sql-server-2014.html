@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -702,7 +704,7 @@
   <a href="#1311-eclipse-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.1.1. Eclipse Environment
+        13.1.1. Eclipse environment
       
     </span>
   </a>
@@ -726,10 +728,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#132-configuring-the-jdbc-layer" class="md-nav__link">
+  <a href="#132-configuration-of-the-jdbc-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.2. Configuring the JDBC Layer
+        13.2. Configuration of the JDBC layer
       
     </span>
   </a>
@@ -737,10 +739,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#133-configuring-the-openjpa-jpa-layer" class="md-nav__link">
+  <a href="#133-configuration-of-the-jpa-layer-openjpa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.3. Configuring the OpenJPA JPA Layer
+        13.3. Configuration of the JPA layer OpenJpa
       
     </span>
   </a>
@@ -748,10 +750,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#134-configuring-the-hibernate-jpa-layer" class="md-nav__link">
+  <a href="#134-configuration-of-the-jpa-hibernate-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.4. Configuring the Hibernate JPA layer
+        13.4. Configuration of the JPA Hibernate layer
       
     </span>
   </a>
@@ -759,10 +761,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#135-configuring-the-eclipselink-jpa-layer" class="md-nav__link">
+  <a href="#135-configuration-of-the-jpa-layer-eclipselink" class="md-nav__link">
     <span class="md-ellipsis">
       
-        13.5. Configuring the EclipseLink JPA layer
+        13.5. Configuration of the JPA layer EclipseLink
       
     </span>
   </a>
@@ -872,7 +874,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -892,14 +894,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -946,14 +948,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -1064,41 +1066,29 @@
 
 
 
-<p><a id="refheading12187047764300712"></a>
-<a id="refheading12187047764300711-copie-1"></a>
-<a id="refheading1218704776430071-copie-1"></a>
-<a id="refheading121870477643007-copie-1"></a>
-<a id="refheading11084335254046-copie-1"></a>
-<a id="refheading11083335254046-copie-1"></a>
-<a id="refheading11082135254046-copie-1"></a>
-<a id="refheading2192422014630537-copie-1"></a>
-<a id="refheading2192282014630537-copie-1"></a>
-<a id="refheading1051982082896917-copie-1"></a>
-<a id="refheading78459838046689-copie-1"></a>
-<a id="refheading78457838046689-copie-1"></a>
-<a id="refheading261305838046689-copie-1"></a></p>
+<p><span id="refheading12187047764300712" name="refheading12187047764300712" class="odt-bookmark-anchor"></span></p>
 <h1 id="13-sql-server-2014">13. <span style="color: #365f91">SQL Server 2014</span></h1>
-<p>We will now discuss porting what was done with MySQL to SQL Server 2014.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000487000000FF764B6EEF.png" width="580" height="128" style="display:inline-block; margin:4px;width:15.333cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/1000000000000487000000FF764B6EEF.png" /></td></tr></table>
+<p>We will now address the porting to SQL Server 2014 of what was done with MySQL.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000487000000FF764B6EEF.png" width="580" height="128" style="display:inline-block; margin:4px;width:15.333cm;height:3.374cm;" class="odt-zoomable" data-zoom-src="images/1000000000000487000000FF764B6EEF.png" /></td></tr></table>
 
-<p><a id="refheading11082535254046112"></a></p>
+<p><span id="refheading11082535254046112" name="refheading11082535254046112" class="odt-bookmark-anchor"></span></p>
 <h2 id="131-setting-up-the-work-environment">13.1. <span style="color: #4f81bd">Setting up the work environment</span></h2>
-<p><a id="refheading12187247764300712"></a></p>
-<h3 id="1311-eclipse-environment">13.1.1. <span style="color: #4f81bd">Eclipse Environment</span></h3>
+<p><span id="refheading12187247764300712" name="refheading12187247764300712" class="odt-bookmark-anchor"></span></p>
+<h3 id="1311-eclipse-environment">13.1.1. <span style="color: #4f81bd">Eclipse environment</span></h3>
 <p>We will be working with the following Eclipse environment:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010C000000F1C17B48F6.png" width="187" height="169" style="display:inline-block; margin:4px;width:4.96cm;height:4.461cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C000000F1C17B48F6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010C000000F1C17B48F6.png" width="187" height="169" style="display:inline-block; margin:4px;width:4.96cm;height:4.461cm;" class="odt-zoomable" data-zoom-src="images/100000000000010C000000F1C17B48F6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The SQL Server projects listed above can be found in the folder [&lt;examples&gt;/spring-database-config\sqlserver\eclipse].</p>
-<p><strong>Note</strong>: Press [Alt-F5] to regenerate all Maven projects.</p>
-<p><a id="refheading1237324776430072"></a></p>
+<p>The SQL Server projects listed above can be found in the [&lt;exemples&gt;/spring-database-config\sqlserver\eclipse] folder.</p>
+<p><strong>Note</strong>: Run [Alt-F5] to regenerate all Maven projects.</p>
+<p><span id="refheading1237324776430072" name="refheading1237324776430072" class="odt-bookmark-anchor"></span></p>
 <h3 id="1312-generating-the-databases">13.1.2. <span style="color: #4f81bd">Generating the databases</span></h3>
-<p>As we did with Oracle and DB2, we will need to install the SQL Server JDBC driver in the local Maven repository.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A400000045648FBA2F.png" width="115" height="48" style="display:inline-block; margin:4px;width:3.039cm;height:1.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A400000045648FBA2F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>As was done with Oracle and DB2, we will need to install the JDBC driver from SQL Server into the local Maven repository.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000A400000045648FBA2F.png" width="115" height="48" style="display:inline-block; margin:4px;width:3.039cm;height:1.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A400000045648FBA2F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [install.bat] file contains the following code:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&quot;%M2_HOME%\bin\mvn.bat&quot; install:install-file -Dfile=sqljdbc4-3.0.jar -Dpackaging=jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0
 </code></pre></div>
-<p>where [%M2-HOME%] is the Maven installation directory (see section<a href="#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>, page<a href="#refheading261309838046689"><u><span style="color: #0563c1"> 466</span></u></a>). After this installation, the SQL Server JDBC driver can be referenced in the [pom.xml] files using the following dependency:</p>
+<p>where [%M2-HOME%] is the Maven installation directory (see section<a href="appendices.html#refheading261309838046689"><u><span style="color: #0563c1"> 23.2</span></u></a>, page<a href="appendices.html#refheading261309838046689"><u><span style="color: #0563c1"> 466</span></u></a>). After this installation, the JDBC driver for SQL Server can be referenced in [pom.xml] files using the following dependency:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">com.microsoft.sqlserver</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
@@ -1107,41 +1097,41 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>Throughout the rest of this guide, connections to SQL Server databases are made using the credentials [sa / msde]. Start SQL Server and its client [MsManager] (see section<a href="#refheading1255281068575470"><u><span style="color: #0563c1"> 23.9</span></u></a>).</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000B8000000F166689E3D.png" width="129" height="169" style="display:inline-block; margin:4px;width:3.41cm;height:4.466cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B8000000F166689E3D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001BA000000EBA8827802.png" width="309" height="164" style="display:inline-block; margin:4px;width:8.179cm;height:4.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BA000000EBA8827802.png" /></td></tr></table>
+<p>Throughout the rest of this guide, connections to the SQL and SERVER databases are made using the [sa / msde] credentials. Launch SQL Server and its client [MsManager] (see section<a href="appendices.html#refheading1255281068575470"><u><span style="color: #0563c1"> 23.9</span></u></a>).</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000B8000000F166689E3D.png" width="129" height="169" style="display:inline-block; margin:4px;width:3.41cm;height:4.466cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B8000000F166689E3D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001BA000000EBA8827802.png" width="309" height="164" style="display:inline-block; margin:4px;width:8.179cm;height:4.35cm;" class="odt-zoomable" data-zoom-src="images/10000000000001BA000000EBA8827802.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AB000000A6E7896C15.png" width="299" height="116" style="display:inline-block; margin:4px;width:7.909cm;height:3.074cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AB000000A6E7896C15.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AC0000015DC5299B26.png" width="300" height="244" style="display:inline-block; margin:4px;width:7.93cm;height:6.466cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AC0000015DC5299B26.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001AB000000A6E7896C15.png" width="299" height="116" style="display:inline-block; margin:4px;width:7.909cm;height:3.074cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AB000000A6E7896C15.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001AC0000015DC5299B26.png" width="300" height="244" style="display:inline-block; margin:4px;width:7.93cm;height:6.466cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AC0000015DC5299B26.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001A10000017F8142882E.png" width="292" height="268" style="display:inline-block; margin:4px;width:7.721cm;height:7.091cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A10000017F8142882E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001830000017ABC0FEA2D.png" width="271" height="264" style="display:inline-block; margin:4px;width:7.16cm;height:6.994cm;" class="odt-zoomable" data-zoom-src="images/10000000000001830000017ABC0FEA2D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001A10000017F8142882E.png" width="292" height="268" style="display:inline-block; margin:4px;width:7.721cm;height:7.091cm;" class="odt-zoomable" data-zoom-src="images/10000000000001A10000017F8142882E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001830000017ABC0FEA2D.png" width="271" height="264" style="display:inline-block; margin:4px;width:7.16cm;height:6.994cm;" class="odt-zoomable" data-zoom-src="images/10000000000001830000017ABC0FEA2D.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000167000001673BA1DBFD.png" width="251" height="251" style="display:inline-block; margin:4px;width:6.65cm;height:6.65cm;" class="odt-zoomable" data-zoom-src="images/1000000000000167000001673BA1DBFD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019C0000015B2E984786.png" width="288" height="243" style="display:inline-block; margin:4px;width:7.631cm;height:6.428cm;" class="odt-zoomable" data-zoom-src="images/100000000000019C0000015B2E984786.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000167000001673BA1DBFD.png" width="251" height="251" style="display:inline-block; margin:4px;width:6.65cm;height:6.65cm;" class="odt-zoomable" data-zoom-src="images/1000000000000167000001673BA1DBFD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019C0000015B2E984786.png" width="288" height="243" style="display:inline-block; margin:4px;width:7.631cm;height:6.428cm;" class="odt-zoomable" data-zoom-src="images/100000000000019C0000015B2E984786.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000244000001E40679C5ED.png" width="394" height="329" style="display:inline-block; margin:4px;width:10.43cm;height:8.705cm;" class="odt-zoomable" data-zoom-src="images/1000000000000244000001E40679C5ED.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015D00000096029EA35F.png" width="237" height="102" style="display:inline-block; margin:4px;width:6.258cm;height:2.69cm;" class="odt-zoomable" data-zoom-src="images/100000000000015D00000096029EA35F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000244000001E40679C5ED.png" width="394" height="329" style="display:inline-block; margin:4px;width:10.43cm;height:8.705cm;" class="odt-zoomable" data-zoom-src="images/1000000000000244000001E40679C5ED.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000015D00000096029EA35F.png" width="237" height="102" style="display:inline-block; margin:4px;width:6.258cm;height:2.69cm;" class="odt-zoomable" data-zoom-src="images/100000000000015D00000096029EA35F.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A200000336CD5A0B72.png" width="593" height="411" style="display:inline-block; margin:4px;width:15.69cm;height:10.874cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A200000336CD5A0B72.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004A200000336CD5A0B72.png" width="593" height="411" style="display:inline-block; margin:4px;width:15.69cm;height:10.874cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A200000336CD5A0B72.png" /></td></tr></table>
 
-<ul>
-  <li>In [1], load the SQL script [&lt;examples&gt;\spring-database-config\sqlserver\databases\dbproduits.sql];
+<ol>
+  <li>In [1], load the script SQL [&lt;exemples&gt;\spring-database-config\sqlserver\databases\dbproduits.sql];
   </li>
-</ul>
+</ol>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002030000018410F2518F.png" width="327" height="246" style="display:inline-block; margin:4px;width:8.641cm;height:6.511cm;" class="odt-zoomable" data-zoom-src="images/10000000000002030000018410F2518F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000016A000000D76238F207.png" width="253" height="150" style="display:inline-block; margin:4px;width:6.699cm;height:3.979cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A000000D76238F207.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002030000018410F2518F.png" width="327" height="246" style="display:inline-block; margin:4px;width:8.641cm;height:6.511cm;" class="odt-zoomable" data-zoom-src="images/10000000000002030000018410F2518F.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000016A000000D76238F207.png" width="253" height="150" style="display:inline-block; margin:4px;width:6.699cm;height:3.979cm;" class="odt-zoomable" data-zoom-src="images/100000000000016A000000D76238F207.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004600000030F132AF4C7.png" width="560" height="392" style="display:inline-block; margin:4px;width:14.817cm;height:10.359cm;" class="odt-zoomable" data-zoom-src="images/10000000000004600000030F132AF4C7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004600000030F132AF4C7.png" width="560" height="392" style="display:inline-block; margin:4px;width:14.817cm;height:10.359cm;" class="odt-zoomable" data-zoom-src="images/10000000000004600000030F132AF4C7.png" /></td></tr></table>
 
 <ul>
-  <li>in [2], it was not possible to use the same [PRODUCTS] table for projects [spring-jdbc-01 to 03]. The reason is that:
+  <li>in [2], it was not possible to use the same table [PRODUITS] for the projects [spring-jdbc-01 à 03]. The reason is that:
     <ul>
-      <li>projects [spring-jdbc-01 and 02] insert rows with their primary keys;
+      <li>the [spring-jdbc-01 et 02] projects insert rows with their primary keys;
       </li>
-      <li>the [spring-jdbc-03] project inserts rows without primary keys and expects the DBMS to generate them. For this to work, the primary key [ID] must be of type [Identity]. However, this type in SQL Server only supports the automatic generation of primary keys and does not allow the insertion of a row with a user-defined primary key. An error is then reported, and I was unable to work around it. The [spring-jdbc-01 and 02] projects use the [PRODUCTS] table without automatic primary key generation. The [spring-jdbc-03] project uses the [PRODUCTS2] table with automatic primary key generation.
+      <li>the [spring-jdbc-03] project inserts rows without primary keys and expects SGBD to generate them. To do this, the primary key [ID] must be of type [Identity]. However, this type in SQL Server only supports automatic generation of primary keys and does not allow the insertion of a row with a user-defined primary key. An error is then reported, and I was unable to work around it. The [spring-jdbc-01 et 02] projects use the [PRODUITS] table without automatic primary key generation. The [spring-jdbc-03] project uses the [PRODUITS2] table with automatic primary key generation.
       </li>
     </ul>
   </li>
 </ul>
 
 <p>Now, run the configurations:</p>
-<ul>
+<ol>
   <li>[spring-jdbc-generic-01.IntroJdbc01];
   </li>
   <li>[spring-jdbc-generic-01.IntroJdbc02];
@@ -1150,11 +1140,11 @@
   </li>
   <li>[spring-jdbc-generic-03.JUnitTestDao2];
   </li>
-</ul>
+</ol>
 
-<p>They should all pass.</p>
-<p>Now let’s generate the [dbproduitscategories] database. Repeat the procedure used to create [dbproduits] for [dbproduitscategories]. The SQL script to load is located at [&lt;examples&gt;\spring-database-config\sqlserver\databases\ dbproduitscategories.sql] ;</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FB000001A5DB70632C.png" width="176" height="295" style="display:inline-block; margin:4px;width:4.65cm;height:7.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000001A5DB70632C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>They all have to succeed.</p>
+<p>Now let’s generate the [dbproduitscategories] database. Repeat the procedure used to create [dbproduits] for [dbproduitscategories]. The SQL script to be loaded is located at [&lt;exemples&gt;\spring-database-config\sqlserver\databases\ dbproduitscategories.sql];</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FB000001A5DB70632C.png" width="176" height="295" style="display:inline-block; margin:4px;width:4.65cm;height:7.798cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000001A5DB70632C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>Now, run the configurations:</p>
 <ul>
@@ -1164,16 +1154,16 @@
   </li>
 </ul>
 
-<p>Both should pass.</p>
-<p><a id="refheading12188047764300712"></a></p>
-<h2 id="132-configuring-the-jdbc-layer">13.2. <span style="color: #4f81bd">Configuring the JDBC Layer</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000107000000E46E9857DC.png" width="184" height="160" style="display:inline-block; margin:4px;width:4.87cm;height:4.223cm;" class="odt-zoomable" data-zoom-src="images/1000000000000107000000E46E9857DC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F90000010F22D4AF8D.png" width="174" height="190" style="display:inline-block; margin:4px;width:4.611cm;height:5.018cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F90000010F22D4AF8D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>Both must succeed.</p>
+<p><span id="refheading12188047764300712" name="refheading12188047764300712" class="odt-bookmark-anchor"></span></p>
+<h2 id="132-configuration-of-the-jdbc-layer">13.2. <span style="color: #4f81bd">Configuration of the JDBC layer</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000107000000E46E9857DC.png" width="184" height="160" style="display:inline-block; margin:4px;width:4.87cm;height:4.223cm;" class="odt-zoomable" data-zoom-src="images/1000000000000107000000E46E9857DC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F90000010F22D4AF8D.png" width="174" height="190" style="display:inline-block; margin:4px;width:4.611cm;height:5.018cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F90000010F22D4AF8D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [sqlserver-config-jdbc] project configures the [JDBC] layer of the following test architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000043E000000EB43B90870.png" width="543" height="118" style="display:inline-block; margin:4px;width:14.367cm;height:3.11cm;" class="odt-zoomable" data-zoom-src="images/100000000000043E000000EB43B90870.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000043E000000EB43B90870.png" width="543" height="118" style="display:inline-block; margin:4px;width:14.367cm;height:3.11cm;" class="odt-zoomable" data-zoom-src="images/100000000000043E000000EB43B90870.png" /></td></tr></table>
 
-<p>The project is similar to the [mysql-config-jdbc] configuration project for the JDBC layer of the MySQL DBMS (see Section<a href="#refheading1051402082896917"><u><span style="color: #0563c1"> 3.3</span></u></a>). We present only the changes:</p>
-<p><span style="color: #000000">The [pom.xml] file imports the SQL Server JDBC driver:</span></p>
+<p>The project is analogous to the configuration project [mysql-config-jdbc] for the JDBC layer of the SGBD MySQL (see section<a href="introduction-to-api-jdbc.html#refheading1051402082896917"><u><span style="color: #0563c1"> 3.3</span></u></a>). We present only the changes:</p>
+<p><span style="color: #000000">The [pom.xml] file imports the JDBC driver from SQL Server:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">project</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0&quot;</span><span style="color:#000000"> </span><span style="color:#7f007f">xmlns:xsi</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#7f007f">xsi:schemaLocation</span><span style="color:#000000">=</span><span style="font-style:italic;color:#2a00ff">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#008080">&gt;</span></span></span>
@@ -1205,13 +1195,13 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">lines 18-22: the SQL Server JDBC driver;</span>
+  <li><span style="color: #000000">lines 18-22: the JDBC driver for SQL Server;</span>
   </li>
 </ul>
 
-<p><span style="color: #000000">The second change is in the [ConfigJdbc] class, which defines the database credentials:</span></p>
+<p><span style="color: #000000">The second change is in the [ConfigJdbc] class, which defines the database access credentials:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// paramètres de connexion</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// connection parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">DRIVER_CLASSNAME</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">URL_DBPRODUITS</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=dbproduits&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">USER_DBPRODUITS</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;sa&quot;</span><span style="color:#000000">;</span></span></span>
@@ -1227,10 +1217,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">int</span><span style="color:#000000"> </span><span style="font-weight:bold;font-style:italic;color:#0000c0">MAX_PREPAREDSTATEMENT_PARAMETERS</span><span style="color:#000000"> = 2000;</span></span></span>
 </code></pre></div>
 
-<p><span style="color: #000000">The [JUnitTestPushTheLimits] test generates SQL statements for 5,000 products, which will generate [PreparedStatement] objects with 5,000 parameters. MySQL supported this value. SQL Server returned an error indicating that this limit was 2,100.</span></p>
-<p>The fourth change is in the table used by the [spring-jdbc-03] project. It is no longer [PRODUCTS] but [PRODUCTS2]:</p>
+<p><span style="color: #000000">The [JUnitTestPushTheLimits] test generates SQL orders for 5,000 products, which will generate [PreparedStatement] files with 5,000 parameters. MySQL was able to handle this value. SQL Server issued an error indicating that this limit was 2,100.</span></p>
+<p>The fourth change is in the table used by the [spring-jdbc-03] project. It is no longer [PRODUITS] but [PRODUITS2]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// ordres SQL [jdbc-03]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// orders SQL [jdbc-03]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">V2_INSERT_PRODUITS</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;INSERT INTO </span><span style="background-color:#ff950e">PRODUITS2</span><span style="color:#2a00ff">(NOM, CATEGORIE, PRIX, DESCRIPTION) VALUES (?, ?, ?, ?)&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">V2_DELETE_ALLPRODUITS</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;DELETE FROM </span><span style="background-color:#ff950e;color:#2a00ff">PRODUITS2</span><span style="color:#2a00ff">&quot;</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">V2_DELETE_PRODUITS</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;DELETE FROM </span><span style="background-color:#ff950e;color:#2a00ff">PRODUITS2</span><span style="color:#2a00ff"> WHERE ID=?&quot;</span><span style="color:#000000">;</span></span></span>
@@ -1240,14 +1230,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">final</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> String </span><span style="font-weight:bold;font-style:italic;color:#0000c0">V2_UPDATE_PRODUITS</span><span style="color:#000000"> = </span><span style="color:#2a00ff">&quot;UPDATE </span><span style="background-color:#ff950e;color:#2a00ff">PRODUITS2</span><span style="color:#2a00ff"> SET NOM=?, PRIX=?, CATEGORIE=?, DESCRIPTION=? WHERE ID=?&quot;</span><span style="color:#000000">;</span></span></span>
 </code></pre></div>
 
-<p><a id="refheading12216647764300712"></a></p>
-<h2 id="133-configuring-the-openjpa-jpa-layer">13.3. <span style="color: #4f81bd">Configuring the OpenJPA JPA Layer</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013500000101CF955304.png" width="212" height="176" style="display:inline-block; margin:4px;width:5.611cm;height:4.667cm;" class="odt-zoomable" data-zoom-src="images/100000000000013500000101CF955304.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012C0000017D8383F611.png" width="212" height="269" style="display:inline-block; margin:4px;width:5.611cm;height:7.126cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C0000017D8383F611.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading12216647764300712" name="refheading12216647764300712" class="odt-bookmark-anchor"></span></p>
+<h2 id="133-configuration-of-the-jpa-layer-openjpa">13.3. <span style="color: #4f81bd"><strong>Configuration of the JPA layer OpenJpa</strong></span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000013500000101CF955304.png" width="212" height="176" style="display:inline-block; margin:4px;width:5.611cm;height:4.667cm;" class="odt-zoomable" data-zoom-src="images/100000000000013500000101CF955304.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012C0000017D8383F611.png" width="212" height="269" style="display:inline-block; margin:4px;width:5.611cm;height:7.126cm;" class="odt-zoomable" data-zoom-src="images/100000000000012C0000017D8383F611.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [sqlserver-config-jpa-openjpa] project configures the [JPA] layer of the test architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C8000000F6198CDEC4.png" width="612" height="123" style="display:inline-block; margin:4px;width:16.193cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C8000000F6198CDEC4.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004C8000000F6198CDEC4.png" width="612" height="123" style="display:inline-block; margin:4px;width:16.193cm;height:3.254cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C8000000F6198CDEC4.png" /></td></tr></table>
 
-<p>The project is analogous to the [mysql-config-jpa-openjpa] configuration project for the OpenJpa JPA layer of the MySQL DBMS (see Section<a href="#refheading105290208289691711"><u><span style="color: #0563c1"> 8.3</span></u></a>). In fact, both DBMSs use the [<span style="color: #646464">@GeneratedValue</span><span style="color: #000000">(strategy = GenerationType.</span><strong><em><span style="color: #0000c0">IDENTITY</span></em></strong><span style="color: #000000">)</span>] annotation to generate primary keys. There are two changes to make. They are <span style="color: #000000">in the definition of the [jpaVendorAdapter] bean in the [ConfigJpa] class:</span></p>
+<p>The project is analogous to the configuration project [mysql-config-jpa-openjpa] of the layer JPA OpenJpa of the SGBD MySQL (see section<a href="spring-data-jpa-openjpa.html#refheading105290208289691711"><u><span style="color: #0563c1"> 8.3</span></u></a>). In fact, both SGBD use the [@GeneratedValue(strategy = GenerationType.IDENTITY)] annotation to generate primary keys. There are two changes to make. It is <span style="color: #000000">in the definition of the [jpaVendorAdapter] bean of the [ConfigJpa] class:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the provider JPA</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span></span>
@@ -1260,15 +1250,15 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<ul>
-  <li>Line 6: We tell the JPA implementation that it will be working with an SQL Server database. The JPA implementation will then adopt both the proprietary data types and the proprietary SQL of this DBMS.
+<ol>
+  <li>Line 6: We instruct the JPA implementation that it will be working with a SQL Server database.  The JPA implementation will then adopt both the proprietary data types and the SQL that owns this SGBD.
   </li>
-</ul>
+</ol>
 
-<p>The second change concerns the JPA entities associated with the [PRODUCTS] and [PRODUCTS2] tables:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000013000000130471E0ECE.png" width="212" height="212" style="display:inline-block; margin:4px;width:5.611cm;height:5.611cm;" class="odt-zoomable" data-zoom-src="images/100000000000013000000130471E0ECE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>The second change concerns the JPA entities associated with the [PRODUITS] and [PRODUITS2] tables:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000013000000130471E0ECE.png" width="212" height="212" style="display:inline-block; margin:4px;width:5.611cm;height:5.611cm;" class="odt-zoomable" data-zoom-src="images/100000000000013000000130471E0ECE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The [Product] entity is associated with the [PRODUCTS] table without automatic generation of primary keys (no [<span style="color: #646464">@GeneratedValue</span>] annotation):</p>
+<p>The [Produit] entity is associated with the [PRODUITS] table without automatic generation of primary keys (no [@GeneratedValue] notation):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@Entity</span><span style="color:#000000">(name = </span><span style="color:#2a00ff">&quot;Produit1&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_PRODUITS</span><span style="color:#000000">)</span></span></span>
@@ -1280,7 +1270,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> Long </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span></span>
 </code></pre></div>
 
-<p>The [Product2] entity is associated with the [PRODUCTS2] table with automatic generation of primary keys:</p>
+<p>The [Produit2] entity is associated with the [PRODUITS2] table with automatic primary key generation:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@Entity</span><span style="color:#000000">(name = </span><span style="color:#2a00ff">&quot;Produit2&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#646464">@Table</span><span style="color:#000000">(name = ConfigJdbc.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">TAB_PRODUITS2</span><span style="color:#000000">)</span></span></span>
@@ -1294,7 +1284,7 @@
 </code></pre></div>
 
 <p>Additionally, the project that generates the [dbproduits] database must be modified to indicate that there are now two JPA entities in the database:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000010F000000FA123840C3.png" width="190" height="175" style="display:inline-block; margin:4px;width:5.02cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000FA123840C3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000010F000000FA123840C3.png" width="190" height="175" style="display:inline-block; margin:4px;width:5.02cm;height:4.63cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000FA123840C3.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [persistence.xml] file changes as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1310,24 +1300,24 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">persistence</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>The [generic-create-dbproduits] project is common to all DBMSs. The JPA layer of those examined previously did not have the [Product2] entity. One might wonder, then, whether referencing a non-existent JPA entity will cause the project to fail for these DBMSs. Tests show that it does not.</p>
+<p>The [generic-create-dbproduits] project is common to all SGBD projects. The JPA layer of the projects examined previously did not have the [Produit2] entity. One might wonder, then, whether referencing a non-existent JPA entity will cause the project to fail for these SGBD projects. Tests show that it does not.</p>
 <p>With these changes made, the execution of the [spring-jpa-generic-JUnitTestDao-openjpa] configuration should succeed.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000125000000B8A3BF793E.png" width="205" height="129" style="display:inline-block; margin:4px;width:5.42cm;height:3.404cm;" class="odt-zoomable" data-zoom-src="images/1000000000000125000000B8A3BF793E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001B80000010A9E59544D.png" width="308" height="186" style="display:inline-block; margin:4px;width:8.149cm;height:4.927cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B80000010A9E59544D.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000125000000B8A3BF793E.png" width="205" height="129" style="display:inline-block; margin:4px;width:5.42cm;height:3.404cm;" class="odt-zoomable" data-zoom-src="images/1000000000000125000000B8A3BF793E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001B80000010A9E59544D.png" width="308" height="186" style="display:inline-block; margin:4px;width:8.149cm;height:4.927cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B80000010A9E59544D.png" /></td></tr></table>
 
-<p><a id="refheading12246647764300712"></a></p>
-<h2 id="134-configuring-the-hibernate-jpa-layer">13.4. <span style="color: #4f81bd">Configuring the Hibernate JPA layer</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FD000000D7CE793066.png" width="177" height="150" style="display:inline-block; margin:4px;width:4.68cm;height:3.978cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD000000D7CE793066.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000126000001129329331D.png" width="206" height="192" style="display:inline-block; margin:4px;width:5.44cm;height:5.069cm;" class="odt-zoomable" data-zoom-src="images/1000000000000126000001129329331D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading12246647764300712" name="refheading12246647764300712" class="odt-bookmark-anchor"></span></p>
+<h2 id="134-configuration-of-the-jpa-hibernate-layer">13.4. <span style="color: #4f81bd">Configuration of the JPA Hibernate layer</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FD000000D7CE793066.png" width="177" height="150" style="display:inline-block; margin:4px;width:4.68cm;height:3.978cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FD000000D7CE793066.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000126000001129329331D.png" width="206" height="192" style="display:inline-block; margin:4px;width:5.44cm;height:5.069cm;" class="odt-zoomable" data-zoom-src="images/1000000000000126000001129329331D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><strong>Note</strong>: Press [Alt-F5] to regenerate all Maven projects.</p>
-<p>The [sqlserver-config-jpa-hibernate] project is analogous to the [mysql-config-jpa-hibernate] project (Section<a href="#refheading1052902082896917"><u><span style="color: #0563c1"> 6.3</span></u></a>) with the same modifications that were used to port the [mysql-config-jpa-openjpa] project to the [sqlserver-config-jpa-openjpa] project (Section<a href="#refheading105290208289691711"><u><span style="color: #0563c1"> 8.3</span></u></a>).</p>
-<p>Once these changes have been made, running the [spring-jpa-generic-JUnitTestDao-hibernate-eclipselink] configuration should succeed.</p>
-<p><a id="refheading12246847764300712"></a></p>
-<h2 id="135-configuring-the-eclipselink-jpa-layer">13.5. <span style="color: #4f81bd">Configuring the EclipseLink JPA layer</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F7000000E84EAC674D.png" width="173" height="162" style="display:inline-block; margin:4px;width:4.57cm;height:4.292cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000E84EAC674D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012F000000FE77B95109.png" width="212" height="178" style="display:inline-block; margin:4px;width:5.611cm;height:4.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000012F000000FE77B95109.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
-
-<p><strong>Note</strong>: Press [Alt-F5] to regenerate all Maven projects.</p>
-<p>The [sqlserver-config-jpa-eclipselink] project is analogous to the [mysql-config-jpa-eclipselink] (Section<a href="#refheading10529020828969171"><u><span style="color: #0563c1"> 7.3</span></u></a>) with the same modifications that were used to port the [mysql-config-jpa-openjpa] project to the [sqlserver-config-jpa-openjpa] project (Section<a href="#refheading105290208289691711"><u><span style="color: #0563c1"> 8.3</span></u></a>).</p>
+<p><strong>Note</strong>: Run [Alt-F5] to regenerate all Maven projects.</p>
+<p>The [sqlserver-config-jpa-hibernate] project is analogous to the [mysql-config-jpa-hibernate] project (section<a href="spring-data-jpa-hibernate.html#refheading1052902082896917"><u><span style="color: #0563c1"> 6.3</span></u></a>) with the same modifications that were used to port [mysql-config-jpa-openjpa] to the [sqlserver-config-jpa-openjpa] project (Section<a href="spring-data-jpa-openjpa.html#refheading105290208289691711"><u><span style="color: #0563c1"> 8.3</span></u></a>).</p>
 <p>With these modifications in place, the execution of the [spring-jpa-generic-JUnitTestDao-hibernate-eclipselink] configuration should succeed.</p>
+<p><span id="refheading12246847764300712" name="refheading12246847764300712" class="odt-bookmark-anchor"></span></p>
+<h2 id="135-configuration-of-the-jpa-layer-eclipselink">13.5. <span style="color: #4f81bd">Configuration of the JPA layer EclipseLink</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F7000000E84EAC674D.png" width="173" height="162" style="display:inline-block; margin:4px;width:4.57cm;height:4.292cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F7000000E84EAC674D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012F000000FE77B95109.png" width="212" height="178" style="display:inline-block; margin:4px;width:5.611cm;height:4.704cm;" class="odt-zoomable" data-zoom-src="images/100000000000012F000000FE77B95109.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><strong>Note</strong>: Run [Alt-F5] to regenerate all Maven projects.</p>
+<p>The [sqlserver-config-jpa-eclipselink] project is analogous to the [mysql-config-jpa-eclipselink] project (Section<a href="spring-data-jpa-eclipselink.html#refheading10529020828969171"><u><span style="color: #0563c1"> 7.3</span></u></a>)  with the same modifications that were used to port [mysql-config-jpa-openjpa] to the [sqlserver-config-jpa-openjpa] project (section<a href="spring-data-jpa-openjpa.html#refheading105290208289691711"><u><span style="color: #0563c1"> 8.3</span></u></a>).</p>
+<p>With these changes made, the execution of the [spring-jpa-generic-JUnitTestDao-hibernate-eclipselink] configuration should succeed.</p>
 
 
 

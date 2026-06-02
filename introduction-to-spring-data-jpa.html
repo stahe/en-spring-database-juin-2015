@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -527,10 +529,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#515-manual-configuration-of-the-spring-data-project" class="md-nav__link">
+  <a href="#515-manual-configuration-of-the-spring-project-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1.5. Manual configuration of the Spring Data project
+        5.1.5. Manual configuration of the Spring project Data
       
     </span>
   </a>
@@ -552,7 +554,7 @@
   <a href="#517-creating-a-spring-data-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5.1.7. Creating a [Spring Data] Project
+        5.1.7. Creating a [Spring Data] project
       
     </span>
   </a>
@@ -883,7 +885,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -903,14 +905,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -957,14 +959,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -1075,13 +1077,13 @@
 
 
 
-<p><a id="refheading2192282014630537"></a></p>
+<p><span id="refheading2192282014630537" name="refheading2192282014630537" class="odt-bookmark-anchor"></span></p>
 <h1 id="5-introduction-to-spring-data-jpa">5. <span style="color: #365f91">Introduction to Spring Data JPA</span></h1>
 <p>In this chapter, we will examine the following architecture:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004A6000000F211E97FF2.png" width="595" height="121" style="display:inline-block; margin:4px;width:15.743cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A6000000F211E97FF2.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004A6000000F211E97FF2.png" width="595" height="121" style="display:inline-block; margin:4px;width:15.743cm;height:3.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000004A6000000F211E97FF2.png" /></td></tr></table>
 
-<p>We insert a [JPA] (Java Persistence API) layer between the [DAO] layer and the DBMS’s JDBC driver. From now on, the JPA layer issues the SQL commands intended for the DBMS. The [DAO] layer no longer handles SQL commands but only objects called JPA entities, which are representations of the various tables in the database being used. The fields of these entities are uniquely associated with table columns via Java annotations. This is what allows the JPA layer to translate the [DAO] layer’s operations on JPA entities into SQL.</p>
-<p>Spring Data is a branch of Spring focused on data access, whether the data is stored in a relational DBMS, a NoSQL database, or other types of storage. Here, we are only concerned with RDBMS and accessing them via JPA. Later on, we will sometimes write [Spring JPA] to actually refer to [Spring Data JPA]. In the architecture above, the [Spring Data] layer provides the [DAO] layer with tools to manage JPA entities.</p>
+<p>We insert a [JPA] layer (Java Persistence API) between the [DAO] layer and the JDBC driver of the SGBD. It is now the JPA layer that issues the SQL commands intended for the SGBD. The [DAO] layer no longer handles SQL commands but only objects called JPA entities, which are representations of the various tables in the database being used. The fields of these entities are uniquely associated with table columns via Java annotations. This is what allows the JPA layer to translate into SQL the operations of the [DAO] layer performed on the JPA entities.</p>
+<p>Spring Data is a branch of Spring focused on data access, whether the data is stored in a SGBDR relational database, a NOSQL database, or other types of repositories. Here, we are concerned only with SGBDR and their access via JPA. Subsequently, we may write [Spring JPA] to actually refer to [Spring Data JPA]. In the architecture above, the [Spring Data] layer provides functionality to the [DAO] layer for managing JPA entities.</p>
 <p>JPA is actually a specification. We will test three of its implementations: </p>
 <ul>
   <li>Hibernate (<a href="http://hibernate.org/"><u><span style="color: #0563c1">http://hibernate.org/</span></u></a>);
@@ -1092,34 +1094,34 @@
   </li>
 </ul>
 
-<p><a id="refheading2192302014630537"></a></p>
+<p><span id="refheading2192302014630537" name="refheading2192302014630537" class="odt-bookmark-anchor"></span></p>
 <h2 id="51-example-01">5.1. <span style="color: #4f81bd">Example-01</span></h2>
-<p>The Spring website offers numerous tutorials to get started with Spring [<a href="http://spring.io/guides"><u><span style="color: #0563c1">http://spring.io/guides</span></u></a>]. We will use one of them to introduce Spring Data. For this, we will use Spring Tool Suite (STS).</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003840000014438DE608A.png" width="450" height="162" style="display:inline-block; margin:4px;width:11.906cm;height:4.286cm;" class="odt-zoomable" data-zoom-src="images/10000000000003840000014438DE608A.png" /></td></tr></table>
+<p>The Spring website offers numerous tutorials to get started with Spring [http://spring.io/guides]. We will use one of them to introduce Spring Data. For this, we use Spring Tool Suite (STS).</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003840000014438DE608A.png" width="450" height="162" style="display:inline-block; margin:4px;width:11.906cm;height:4.286cm;" class="odt-zoomable" data-zoom-src="images/10000000000003840000014438DE608A.png" /></td></tr></table>
 
 <ul>
   <li>In [1], we import one of the tutorials from [spring.io/guides];
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C4000002C96B0B451C.png" width="610" height="357" style="display:inline-block; margin:4px;width:16.14cm;height:9.433cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C4000002C96B0B451C.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004C4000002C96B0B451C.png" width="610" height="357" style="display:inline-block; margin:4px;width:16.14cm;height:9.433cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C4000002C96B0B451C.png" /></td></tr></table>
 
 <ul>
-  <li>In [2], we select the [Accessing Data Jpa] tutorial, which demonstrates how to access a database using Spring Data;
+  <li>In [2], we select the tutorial [Accessing Data Jpa], which demonstrates how to access a database using Spring Data;
   </li>
   <li>In [3], we select a project configured by Maven;
   </li>
-  <li>in [4], the tutorial is available in two forms: [initial], which is an empty version that you fill in by following the tutorial, or [complete], which is the final version of the tutorial. We choose the latter;
+  <li>In [4], the tutorial is available in two forms: [initial], which is an empty version that you fill in by following the tutorial, or [complete], which is the final version of the tutorial. We choose the latter;
   </li>
   <li>In [5], you can choose to view the tutorial in a browser;
   </li>
-  <li>In [6], the final project.
+  <li>in [6], the final project.
   </li>
 </ul>
-<p><a id="refheading2192322014630537"></a></p>
+<p><span id="refheading2192322014630537" name="refheading2192322014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="511-the-projects-maven-configuration">5.1.1. <span style="color: #4f81bd">The project’s Maven configuration</span></h3>
-<p><a id="refheading1622671200878134"></a>The project’s Maven dependencies are configured in the [pom.xml] file:</p>
-<p><a id="refheading569851429907001"></a></p>
+<p><span id="refheading1622671200878134" name="refheading1622671200878134" class="odt-bookmark-anchor"></span>The project’s Maven dependencies are configured in the [pom.xml] file:</p>
+<p><span id="refheading569851429907001" name="refheading569851429907001" class="odt-bookmark-anchor"></span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span><span style="color:#000000">org.springframework</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">groupId</span><span style="color:#008080">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span><span style="color:#000000">gs-accessing-data-jpa</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">artifactId</span><span style="color:#008080">&gt;</span></span></span>
@@ -1155,18 +1157,18 @@
   </li>
   <li>lines 12–15: define a dependency on [spring-boot-starter-data-jpa]. This artifact contains the Spring Data classes;
   </li>
-  <li>Lines 16–19: define a dependency on the H2 DBMS, which allows you to create and manage in-memory databases.
+  <li>Lines 16–19: define a dependency on the SGBD H2 artifact, which allows for the creation and management of in-memory databases.
   </li>
 </ul>
 
 <p>Let’s look at the classes provided by these dependencies:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000014F00000173C684B02E.png" width="212" height="235" style="display:inline-block; margin:4px;width:5.609cm;height:6.212cm;" class="odt-zoomable" data-zoom-src="images/100000000000014F00000173C684B02E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F70000010C4CA71FE9.png" width="173" height="187" style="display:inline-block; margin:4px;width:4.57cm;height:4.958cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000010C4CA71FE9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000114000000BD1D144A05.png" width="193" height="132" style="display:inline-block; margin:4px;width:5.11cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000114000000BD1D144A05.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000014F00000173C684B02E.png" width="212" height="235" style="display:inline-block; margin:4px;width:5.609cm;height:6.212cm;" class="odt-zoomable" data-zoom-src="images/100000000000014F00000173C684B02E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F70000010C4CA71FE9.png" width="173" height="187" style="display:inline-block; margin:4px;width:4.57cm;height:4.958cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F70000010C4CA71FE9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000114000000BD1D144A05.png" width="193" height="132" style="display:inline-block; margin:4px;width:5.11cm;height:3.5cm;" class="odt-zoomable" data-zoom-src="images/1000000000000114000000BD1D144A05.png" /></td></tr></table>
 
-<p>There are many of them:</p>
+<p>There are a great many of them:</p>
 <ul>
-  <li>some belong to the Spring ecosystem (those starting with spring);
+  <li>some belong to the Spring ecosystem (those starting with &quot;spring&quot;);
   </li>
-  <li>others belong to the Hibernate ecosystem (hibernate, jboss), whose JPA implementation we are using here;
+  <li>others belong to the Hibernate ecosystem (hibernate, jboss), of which we use the implementation JPA here;
   </li>
   <li>others are testing libraries (junit, hamcrest);
   </li>
@@ -1174,7 +1176,7 @@
   </li>
 </ul>
 
-<p>We will keep them all. For a production application, only the necessary ones should be kept.</p>
+<p>We will keep them all. For a production application, only those that are necessary should be kept.</p>
 <p>On line 26 of the [pom.xml] file, we find the line:</p>
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">start-class</span><span style="color:#008080">&gt;</span><span style="color:#000000">hello.Application</span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">start-class</span><span style="color:#008080">&gt;</span></span></span>
@@ -1195,16 +1197,16 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">build</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>Lines 6–9: The [spring-boot-maven-plugin] allows you to generate the application’s executable JAR. Line 26 of the [pom.xml] file then specifies the executable class of this JAR.</p>
-<p><a id="refheading2192342014630537"></a></p>
+<p>Lines 6–9: The [spring-boot-maven-plugin] plugin is used to generate the application’s executable file, jar. Line 26 of the [pom.xml] file then specifies the executable class for this jar.</p>
+<p><span id="refheading2192342014630537" name="refheading2192342014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="512-the-jpa-layer">5.1.2. <span style="color: #4f81bd">The [JPA] layer</span></h3>
-<p><a id="refheading1622691200878134"></a>Database access is handled through a [JPA] layer, the Java Persistence API:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042C0000011122622671.png" width="534" height="137" style="display:inline-block; margin:4px;width:14.129cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000042C0000011122622671.png" /></td></tr></table>
+<p><span id="refheading1622691200878134" name="refheading1622691200878134" class="odt-bookmark-anchor"></span>Database access is handled through a [JPA] layer, Java Persistence API:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000042C0000011122622671.png" width="534" height="137" style="display:inline-block; margin:4px;width:14.129cm;height:3.612cm;" class="odt-zoomable" data-zoom-src="images/100000000000042C0000011122622671.png" /></td></tr></table>
 
-<p><a id="refheading569871429907001"></a></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077D50ECFCE.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077D50ECFCE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading569871429907001" name="refheading569871429907001" class="odt-bookmark-anchor"></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EB00000077D50ECFCE.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077D50ECFCE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The application is basic and manages [Customer] entities. The [Customer] class is part of the [JPA] layer and is as follows:</p>
+<p>The application is basic and handles clients and [Customer]. The [Customer] class is part of the [JPA] layer and is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> hello;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1238,29 +1240,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>A customer has an ID [id], a first name [firstName], and a last name [lastName]. Each [Customer] instance represents a row in a database table.</p>
+<p>A customer has an ID [id], a first name [firstName], and a last name [lastName]. Each instance [Customer] represents a row in a database table.</p>
 <ul>
-  <li>line 8: JPA annotation that ensures the persistence of [Customer] instances (Create, Read, Update, Delete) will be managed by a JPA implementation. Based on the Maven dependencies, we can see that the JPA/Hibernate implementation is being used;
+  <li>Line 8: annotation JPA, which ensures that the persistence of instances [Customer] (Create, Read, Update, Delete) will be managed by an implementation JPA. Based on the Maven dependencies, we can see that the JPA / Hibernate implementation is being used;
   </li>
-  <li>Lines 11–12: JPA annotations that associate the [id] field with the primary key of the [Customer] table. Line 12 indicates that the JPA implementation will use the primary key generation method specific to the DBMS being used, in this case H2;
+  <li>Lines 11–12: JPA annotations that associate the [id] field with the primary key of the [Customer] table. Line 12 indicates that the JPA implementation will use the primary key generation method specific to the SGBD being used, in this case H2;
   </li>
 </ul>
 
-<p>There are no other JPA annotations. Default values will therefore be used:</p>
+<p>There are no other annotations for JPA. Default values will therefore be used:</p>
 <ul>
-  <li>the [Customer] table will be named after the class, i.e., [Customer];
+  <li>the [Customer] table will bear the name of the class, i.e., [Customer];
   </li>
-  <li>the columns of this table will be named after the class fields: [id, firstName, lastName], noting that case is not taken into account in table column names;
+  <li>the columns of this table will bear the names of the class fields: [id, firstName, lastName], noting that case is not taken into account in the name of a table column;
   </li>
 </ul>
 
 <p>Note that the JPA implementation used is never named.</p>
-<p><a id="refheading2192362014630537"></a></p>
+<p><span id="refheading2192362014630537" name="refheading2192362014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="513-the-spring-data-layer">5.1.3. <span style="color: #4f81bd">The [Spring Data] layer</span></h3>
-<p><a id="refheading1622711200878134"></a>The [CustomerRepository] class implements the access layer for the [Customer] table. Its code is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004370000010E4AFAC61B.png" width="540" height="135" style="display:inline-block; margin:4px;width:14.275cm;height:3.572cm;" class="odt-zoomable" data-zoom-src="images/10000000000004370000010E4AFAC61B.png" /></td></tr></table>
+<p><span id="refheading1622711200878134" name="refheading1622711200878134" class="odt-bookmark-anchor"></span>The class [CustomerRepository] implements the table access layer [Customer]. Its code is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004370000010E4AFAC61B.png" width="540" height="135" style="display:inline-block; margin:4px;width:14.275cm;height:3.572cm;" class="odt-zoomable" data-zoom-src="images/10000000000004370000010E4AFAC61B.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077BA57F747.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077BA57F747.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EB00000077BA57F747.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077BA57F747.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> hello;</span></span></span>
@@ -1275,14 +1277,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>This is therefore an <strong>interface</strong> and not a class (line 7). It extends the [CrudRepository] interface, a Spring Data interface (line 5). This interface is parameterized by two types: the first is the type of the managed elements, here the [Customer] type; the second is the type of the primary key of the managed elements, here a [Long] type. The [CrudRepository] interface is as follows:</p>
+<p>This is therefore an <strong>interface</strong> and not a class (line 7). It extends the [CrudRepository] interface, a Spring interface (line 5). This interface is parameterized by two types: the first is the type of the managed elements, here the type [Customer]; the second is the type of the primary key of the managed elements, here a type [Long]. The [CrudRepository] interface is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> org.springframework.data.repository;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">import</span><span style="color:#000000"> java.io.Serializable;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">@NoRepositoryBean</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> </span><a id="crudrepository"></a><span style="color:#000000">CrudRepository&lt;T, ID </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> Serializable&gt; </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> Repository&lt;T, ID&gt; {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">interface</span><span style="color:#000000"> </span><span id="crudrepository" name="crudrepository" class="odt-bookmark-anchor"></span><span style="color:#000000">CrudRepository&lt;T, ID </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> Serializable&gt; </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> Repository&lt;T, ID&gt; {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    &lt;S </span><span style="font-weight:bold;color:#7f0055">extends</span><span style="color:#000000"> T&gt; S save(S entity);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1308,17 +1310,17 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>This interface defines the CRUD (Create – Read – Update – Delete) operations that can be performed on a JPA T type:</p>
+<p>This interface defines the CRUD operations (Create – Read – Update – Delete) that can be performed on a type JPA T:</p>
 <ul>
-  <li>line 8: the <b>save</b> method allows an entity T to be persisted to the database. It persists the entity using the primary key assigned to it by the DBMS. It also allows an entity T identified by its primary key <i>id </i>to <b>be updated</b>. The choice between these two actions depends on the value of the primary key <i>id</i>: if it is <b>null</b>, the persistence operation occurs; otherwise, the update operation occurs;
+  <li>line 8: the <b>save</b> method allows an entity T to be persisted in the database. It persists the entity using the primary key assigned to it by SGBD. It also allows an entity T identified by its primary key <i>id </i>to <b>be updated</b>. The choice between these two actions depends on the value of the primary key <i>id</i>: if it is <b>null</b>, the persistence operation occurs; otherwise, the update operation occurs;
   </li>
   <li>line 10: same as above, but for a list of entities;
   </li>
-  <li>line 12: the <b>findOne</b> method retrieves an entity T identified by its primary key <i>id</i>;
+  <li>line 12: the method <b>findOne </b>retrieves an entity T identified by its primary key <i>id</i>;
   </li>
   <li>line 22: the <b>delete</b> method allows you to delete an entity T identified by its primary key <i>id</i>;
   </li>
-  <li>lines 24–28: variations of the [delete] method;
+  <li>lines 24–28: variants of the [delete] method;
   </li>
   <li>line 16: the [findAll] method retrieves all persisted T entities;
   </li>
@@ -1341,11 +1343,11 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 9 allows you to retrieve a [Customer] by its [lastName];
+  <li>Line 9 allows you to retrieve a [Customer] by its name [lastName];
   </li>
 </ul>
 
-<p>And that’s it for the [DAO] layer. There is no implementation class for the previous interface. It is generated at runtime by [Spring Data]. The methods of the [CrudRepository] interface are automatically implemented. For the methods added to the [CustomerRepository] interface, it depends. Let’s go back to the definition of [Customer]:</p>
+<p>And that’s all for the [DAO] layer. There is no implementation class for the previous interface. It is generated at runtime by [Spring Data]. The methods of the [CrudRepository] interface are automatically implemented. For the methods added to the [CustomerRepository] interface, it depends. Let’s go back to the definition of [Customer]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">long</span><span style="color:#000000"> </span><span style="color:#0000c0">id</span><span style="color:#000000">;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">private</span><span style="color:#000000"> String </span><span style="color:#0000c0">firstName</span><span style="color:#000000">;</span></span></span>
@@ -1358,17 +1360,17 @@
 <p>Therefore, the type T must have a field named [something]. Thus, the method</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>List&lt;Customer&gt; findByLastName(String lastName);
 </code></pre></div>
-<p>will be implemented with code similar to the following:</p>
+<p>will be implemented by code similar to the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">return</span><span class="w"> </span><span class="p">[</span><span class="n">em</span><span class="p">].</span><span class="n">createQuery</span><span class="p">(</span><span class="ss">&quot;select c from Customer c where c.lastName=:value&quot;</span><span class="p">).</span><span class="n">setParameter</span><span class="p">(</span><span class="ss">&quot;value&quot;</span><span class="p">,</span><span class="n">lastName</span><span class="p">).</span><span class="n">getResultList</span><span class="p">()</span>
 </code></pre></div>
-<p>where [em] refers to the JPA persistence context. This is only possible if the [Customer] class has a field named [lastName], which is the case.</p>
+<p>where [em] refers to the persistence context JPA. This is only possible if the class [Customer] has a field named [lastName], which is the case.</p>
 <p>In conclusion, in simple cases, Spring Data allows us to implement the [DAO] layer with a simple interface.</p>
-<p><a id="refheading2192382014630537"></a></p>
+<p><span id="refheading2192382014630537" name="refheading2192382014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="514-the-console-layer">5.1.4. <span style="color: #4f81bd">The [console] layer</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004370000010DF24DDE9A.png" width="540" height="135" style="display:inline-block; margin:4px;width:14.275cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000004370000010DF24DDE9A.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004370000010DF24DDE9A.png" width="540" height="135" style="display:inline-block; margin:4px;width:14.275cm;height:3.56cm;" class="odt-zoomable" data-zoom-src="images/10000000000004370000010DF24DDE9A.png" /></td></tr></table>
 
-<p><a id="refheading569911429907001"></a></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB00000077E52D8FD9.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077E52D8FD9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading569911429907001" name="refheading569911429907001" class="odt-bookmark-anchor"></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EB00000077E52D8FD9.png" width="164" height="83" style="display:inline-block; margin:4px;width:4.35cm;height:2.203cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB00000077E52D8FD9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [Application] class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1431,100 +1433,142 @@
     <ul>
       <li><b>@Configuration</b>: indicates that the class is a configuration class;
       </li>
-      <li><b>@EnableAutoConfiguration</b>: instructs [Spring Boot] to automatically create a number of beans based on various properties, particularly the contents of the project’s classpath. Because the Hibernate libraries are in the Classpath, the [entityManagerFactory] bean will be implemented using Hibernate. Because the H2 DBMS library is in the Classpath, the [dataSource] bean will be implemented using H2. In the [dataSource] bean, we must also define the username and password. Here, Spring Boot will use the default H2 administrator, <b>which </b>has no password. Because the [spring-tx] library is in the Classpath, Spring’s transaction manager will be used;
+      <li><b>@EnableAutoConfiguration</b>: instructs [Spring Boot] to create a certain number of beans itself based on various properties, particularly the contents of the project’s Classpath. Because the Hibernate libraries are in the Classpath, the [entityManagerFactory] bean will be implemented with Hibernate. Because the H2 library is in the Classpath, the [dataSource] bean will be implemented with H2. In the [dataSource] bean, you must also define the user and password. Here, Spring Boot will use the default H2 administrator, <b>which </b>has no password. Because the [spring-tx] library is in the classpath, Spring’s transaction manager will be used;
       </li>
-      <li><b>@EnableWebMvc</b>: if the [spring-mvc] library is in the Classpath. In this case, auto-configuration is performed for the web application;
+      <li><b>@EnableWebMvc</b>: if the [spring-mvc] library is in the classpath. In this case, auto-configuration is performed for the web application;
       </li>
-      <li><b>@ComponentScan</b>: which tells Spring where to look for other beans, configurations, and services. Here, they are searched for by default in the package containing the annotated class, i.e., the [hello] package. Thus, the [Customer] and [CustomerRepository] classes will be found. Because the first has the [@Entity] annotation, it will be cataloged as an entity to be managed by Hibernate. Because the second extends the [CrudRepository] interface, it will be registered as a Spring bean;
+      <li><b>@ComponentScan</b>: which tells Spring where to look for other beans, configurations, and services. Here, they are searched for by default in the package containing the tagged class, i.e., the [hello] package. Thus, the classes [Customer] and [CustomerRepository] will be found. Because the first has the [@Entity] annotation, it will be cataloged as an entity to be managed by Hibernate. Because the second extends the [CrudRepository] interface, it will be registered as a Spring bean;
       </li>
     </ul>
   </li>
-  <li>lines 11–12: the [CustomerRepository] bean is injected into the main class’s code;
+  <li>lines 11–12: the [CustomerRepository] bean is injected into the main class code;
   </li>
-  <li>line 15: the static [run] method of the [SpringApplication] class from the Spring Boot project is executed. Its parameter is the class that has a [Configuration] or [EnableAutoConfiguration] annotation. Everything explained previously will then take place. The result is a Spring application context, i.e., a set of beans managed by Spring;
+  <li>line 15: the static method [run] of the [SpringApplication] class in the Spring Boot project is executed. Its parameter is the class that has a [Configuration] or [EnableAutoConfiguration] annotation. Everything explained previously will then take place. The result is a Spring application context, i.e., a set of beans managed by Spring;
   </li>
   <li>lines 19–48: the following operations simply use the methods of the bean implementing the [CustomerRepository] interface;
   </li>
 </ul>
 
 <p>The console output is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
-<span class="odt-code-line"><span class="odt-code-line-content">.   ____          _            __ _ _</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> =========|_|==============|___/=/_/_/_/</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> :: Spring Boot ::        (v1.2.2.RELEASE)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:43.661  INFO 5784 --- [           main] hello.Application                        : Starting Application on Gportpers3 with PID 5784 (started by ST in C:\Users\Serge Tahé\Documents\workspace-sts-3.6.3.RELEASE\gs-accessing-data-jpa-complete)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:43.708  INFO 5784 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.230  INFO 5784 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit &#x27;default&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.254  INFO 5784 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    name: default</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    ...]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.331  INFO 5784 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {4.3.8.Final}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.332  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.334  INFO 5784 --- [           main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.651  INFO 5784 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.754  INFO 5784 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:45.877  INFO 5784 --- [           main] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:46.154  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:46.169  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">2015-03-10 15:35:46.779  INFO 5784 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customers found with findAll():</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">-------------------------------</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=2, firstName=&#x27;Chloe&#x27;, lastName=&#x27;O&#x27;Brian&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=4, firstName=&#x27;David&#x27;, lastName=&#x27;Palmer&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=5, firstName=&#x27;Michelle&#x27;, lastName=&#x27;Dessler&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer found with findOne(1L):</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">--------------------------------</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer found with findByLastName(&#x27;Bauer&#x27;):</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">--------------------------------------------</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=1, firstName=&#x27;Jack&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:47.040  INFO 5784 --- [           main] hello.Application                        : Started Application in 3.623 seconds (JVM running for 4.324)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:47.042  INFO 5784 --- [       Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:47.044  INFO 5784 --- [       Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:47.046  INFO 5784 --- [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit &#x27;default&#x27;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:47.047  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2015-03-10 15:35:47.051  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span>
+<span class="normal"><a href="#__codelineno-3-42">42</a></span>
+<span class="normal"><a href="#__codelineno-3-43">43</a></span>
+<span class="normal"><a href="#__codelineno-3-44">44</a></span>
+<span class="normal"><a href="#__codelineno-3-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">.</span><span class="w">   </span><span class="nx">____</span><span class="w">          </span><span class="nx">_</span><span class="w">            </span><span class="nx">__</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="nx">_</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w"> </span><span class="o">/</span><span class="err">\\</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">___</span><span class="s1">&#39;_ __ _ _(_)_ __  __ _ \ \ \ \</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="s1">( ( )\___ | &#39;</span><span class="nx">_</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;_| | &#39;</span><span class="nx">_</span><span class="w"> </span><span class="err">\</span><span class="o">/</span><span class="w"> </span><span class="nx">_</span><span class="sb">` | \ \ \ \</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="sb"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="sb">  &#39;  |____| .__|_| |_|_| |_\__, | / / / /</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="sb"> =========|_|==============|___/=/_/_/_/</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="sb"> :: Spring Boot ::        (v1.2.2.RELEASE)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="sb">2015-03-10 15:35:43.661  INFO 5784 --- [           main] hello.Application                        : Starting Application on Gportpers3 with PID 5784 (started by ST in C:\Users\Serge Tahé\Documents\workspace-sts-3.6.3.RELEASE\gs-accessing-data-jpa-complete)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="sb">2015-03-10 15:35:43.708  INFO 5784 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="sb">2015-03-10 15:35:45.230  INFO 5784 --- [           main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit &#39;default&#39;</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="sb">2015-03-10 15:35:45.254  INFO 5784 --- [           main] o.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="sb">    name: default</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="sb">    ...]</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="sb">2015-03-10 15:35:45.331  INFO 5784 --- [           main] org.hibernate.Version : HHH000412: Hibernate Core {4.3.8.Final}</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="sb">2015-03-10 15:35:45.332  INFO 5784 --- [           main] org.hibernate.cfg.Environment : HHH000206: hibernate.properties not found</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="sb">2015-03-10 15:35:45.334  INFO 5784 --- [           main] org.hibernate.cfg.Environment : HHH000021: Bytecode provider name : javassist</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="sb">2015-03-10 15:35:45.651  INFO 5784 --- [           main] o.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {4.0.5.Final}</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="sb">2015-03-10 15:35:45.754  INFO 5784 --- [           main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="sb">2015-03-10 15:35:45.877  INFO 5784 --- [           main] o.h.h.i.ast.ASTQueryTranslatorFactory : HHH000397: Using ASTQueryTranslatorFactory</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="sb">2015-03-10 15:35:46.154  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000227: Running hbm2ddl schema export</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="sb">2015-03-10 15:35:46.169  INFO 5784 --- [           main] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000230: Schema export complete</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="sb">2015-03-10 15:35:46.779  INFO 5784 --- [           main] o.s.j.e.a.AnnotationMBeanExporter: Registering beans for JMX exposure on startup</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="sb">Customers found with findAll():</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="sb">-------------------------------</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="sb">Customer[id=1, firstName=&#39;Jack&#39;, lastName=&#39;Bauer&#39;]</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="sb">Customer[id=2, firstName=&#39;Chloe&#39;, lastName=&#39;O&#39;Brian&#39;]</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="sb">Customer[id=3, firstName=&#39;Kim&#39;, lastName=&#39;Bauer&#39;]</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="sb">Customer[id=4, firstName=&#39;David&#39;, lastName=&#39;Palmer&#39;]</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="sb">Customer[id=5, firstName=&#39;Michelle&#39;, lastName=&#39;Dessler&#39;]</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a><span class="sb">Customer found with findOne(1L):</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a><span class="sb">--------------------------------</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="sb">Customer[id=1, firstName=&#39;Jack&#39;, lastName=&#39;Bauer&#39;]</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="sb">Customer found with findByLastName(&#39;Bauer&#39;):</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a><span class="sb">--------------------------------------------</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a><span class="sb">Customer[id=1, firstName=&#39;Jack&#39;, lastName=&#39;Bauer&#39;]</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a><span class="sb">Customer[id=3, firstName=&#39;Kim&#39;, lastName=&#39;Bauer&#39;]</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="sb">2015-03-10 15:35:47.040  INFO 5784 --- [           main] hello.Application : Started Application in 3.623 seconds (JVM running for 4.324)</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="sb">2015-03-10 15:35:47.042  INFO 5784 --- [       Thread-1] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@5d11346a: startup date [Tue Mar 10 15:35:43 CET 2015]; root of context hierarchy</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42"></a><span class="sb">2015-03-10 15:35:47.044  INFO 5784 --- [       Thread-1] o.s.j.e.a.AnnotationMBeanExporter: Unregistering JMX-exposed beans on shutdown</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="sb">2015-03-10 15:35:47.046  INFO 5784 --- [       Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit &#39;default&#39;</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44"></a><span class="sb">2015-03-10 15:35:47.047  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000227: Running hbm2ddl schema export</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45"></a><span class="sb">2015-03-10 15:35:47.051  INFO 5784 --- [       Thread-1] org.hibernate.tool.hbm2ddl.SchemaExport : HHH000230: Schema export complete</span>
+</code></pre></div></td></tr></table></div>
 <ul>
-  <li>Lines 1-8: the Spring Boot project logo;
+  <li>lines 1-8: the Spring Boot project logo;
   </li>
   <li>line 9: the [hello.Application] class is executed;
   </li>
   <li>line 10: [AnnotationConfigApplicationContext] is a class implementing Spring’s [ApplicationContext] interface. It is a bean container;
   </li>
-  <li>line 11: the [entityManagerFactory] bean is implemented with the [LocalContainerEntityManagerFactory] class, a Spring class. It manages the [JPA] layer;
+  <li>line 11: the [entityManagerFactory] bean is implemented using the [LocalContainerEntityManagerFactory] class, a Spring class. It manages the [JPA] layer;
   </li>
-  <li>line 12: [Hibernate] appears. This is the chosen JPA implementation;
+  <li>line 12: [Hibernate] appears. It is this JPA implementation that was chosen;
   </li>
-  <li>line 19: a Hibernate dialect is the SQL variant to be used with the DBMS. Here, the [H2Dialect] dialect indicates that Hibernate will work with the H2 DBMS;
+  <li>line 19: a Hibernate dialect is the variant SQL to be used with SGBD. Here, the [H2Dialect] dialect indicates that Hibernate will work with the SGBD H2;
   </li>
-  <li>lines 21–22: the database is created. The [CUSTOMER] table is created. This means that Hibernate has been configured to generate tables from JPA definitions, in this case the JPA definition of the [Customer] class;
+  <li>Lines 21–22: The database is created. The table [CUSTOMER] is created. This means that Hibernate has been configured to generate tables from the JPA definitions; here, the JPA definition of the [Customer] class;
   </li>
   <li>lines 26–30: result of the [findAll] method of the interface;
   </li>
   <li>line 34: result of the [findOne] method of the interface;
   </li>
-  <li>lines 38–39: results of the [findByLastName] method;
+  <li>lines 38-39: results of the [findByLastName] method;
   </li>
-  <li>lines 41 and following: logs from the Spring context closure.
+  <li>lines 41 and following: logs of the Spring context closure.
   </li>
 </ul>
-<p><a id="refheading5939178138399"></a></p>
-<h3 id="515-manual-configuration-of-the-spring-data-project">5.1.5. <span style="color: #4f81bd">Manual configuration of the Spring Data project</span></h3>
-<p><a id="refheading1622751200878134"></a>We duplicate the previous project into the [gs-accessing-data-jpa-02] project:</p>
-<p><a id="refheading569931429907001"></a></p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F80000015BACE9B961.png" width="173" height="243" style="display:inline-block; margin:4px;width:4.59cm;height:6.422cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F80000015BACE9B961.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading5939178138399" name="refheading5939178138399" class="odt-bookmark-anchor"></span></p>
+<h3 id="515-manual-configuration-of-the-spring-project-data">5.1.5. <span style="color: #4f81bd">Manual configuration of the Spring project Data</span></h3>
+<p><span id="refheading1622751200878134" name="refheading1622751200878134" class="odt-bookmark-anchor"></span>We duplicate the previous project into the [gs-accessing-data-jpa-02] project:</p>
+<p><span id="refheading569931429907001" name="refheading569931429907001" class="odt-bookmark-anchor"></span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F80000015BACE9B961.png" width="173" height="243" style="display:inline-block; margin:4px;width:4.59cm;height:6.422cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F80000015BACE9B961.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>In this new project, we will not rely on the automatic configuration provided by Spring Boot. We will configure it manually. This can be useful if the default configurations do not suit our needs.</p>
 <p>First, we will specify the necessary dependencies in the [pom.xml] file:</p>
@@ -1609,25 +1653,25 @@
 <ul>
   <li>lines 10–14: the parent Maven project whose libraries we will use;
   </li>
-  <li>lines 18–21: Spring Data used to access the database;
+  <li>lines 18-21: Spring Data used to access the database;
   </li>
   <li>lines 23–26: the Hibernate implementation of the JPA specification;
   </li>
-  <li>lines 28–31: the H2 DBMS;
+  <li>lines 28–31: the SGBD H2;
   </li>
-  <li>lines 33–36: Databases are often used with connection pools, which avoid repeatedly opening and closing connections. Here, the implementation used is [tomcat-jdbc];
+  <li>lines 33–36: Databases are often used with open connection pools that avoid repeated connection openings and closings. Here, the implementation used is [tomcat-jdbc];
   </li>
 </ul>
 
 <p>In the new project, the [Customer] entity and the [CustomerRepository] interface remain unchanged. We will modify the [Application] class, which will be split into two classes: </p>
 <ul>
-  <li>[Config], which will be the configuration class;
+  <li>[Config], which will be the configuration class:
   </li>
   <li>[Main], which will be the executable class;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000E80000009FB5A3B942.png" width="163" height="111" style="display:inline-block; margin:4px;width:4.3cm;height:2.947cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E80000009FB5A3B942.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E80000009FB5A3B942.png" width="163" height="111" style="display:inline-block; margin:4px;width:4.3cm;height:2.947cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E80000009FB5A3B942.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The executable class [Application] is now as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1664,15 +1708,15 @@
 <ul>
   <li>line 9: the [Application] class no longer has any configuration annotations;
   </li>
-  <li>lines 3–7: Note that there are no longer any [Spring Boot] package imports;
+  <li>lines 3–7: note that there are no longer any imports of the [Spring Boot] package;
   </li>
-  <li>line 12: We instantiate the Spring beans. We obtain the Spring context, which contains references to the beans created;
+  <li>line 12: Spring beans are instantiated. We obtain the Spring context containing the references to the beans thus created;
   </li>
-  <li>line 13: we request a reference to the [<span style="color: #000000">CustomerRepository</span>] bean;
+  <li>line 13: we request a reference to the bean of type [CustomerRepository];
   </li>
 </ul>
 
-<p>The [<a id="springdataconfig"></a> Config] class that configures the project is as follows:</p>
+<p>The [Config] class<span id="springdataconfig" name="springdataconfig" class="odt-bookmark-anchor"></span> that configures the project is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1745,25 +1789,25 @@
 </code></pre></div>
 
 <ul>
-  <li>line 17: the [@EnableTransactionManagement] annotation indicates that [@Transactional] annotations must be interpreted. The methods of the [CrudRepository] interfaces have these annotations. They therefore execute within a transaction;
+  <li>line 17: the [@EnableTransactionManagement] annotation indicates that the [@Transactional] annotations must be interpreted. The methods of the [CrudRepository] interfaces have these annotations. They therefore execute within a transaction;
   </li>
-  <li>line 18: the [@EnableJpaRepositories] annotation specifies the directories where the Spring Data [CrudRepository] interfaces are located. These interfaces will become Spring components and be available in the Spring context;
+  <li>line 18: the [@EnableJpaRepositories] annotation specifies the directories where the Spring interfaces Data and [CrudRepository] are located. These interfaces will become Spring components and be available in its context;
   </li>
   <li>line 19: the [@Configuration] annotation makes the [Config] class a Spring configuration class;
   </li>
-  <li>line 20: the [@ComponentScan] annotation lists the directories where Spring components should be searched for. Spring components are classes annotated with Spring annotations such as <b>@Service</b>, <b>@Component</b>, <b>@Controller</b>, etc. Here, there are no others besides those defined within the [AppConfig] class, so the annotation has been commented out;
+  <li>line 20: the [@ComponentScan] annotation specifies the directories where Spring components should be searched for. Spring components are classes tagged with Spring annotations such as <b>@Service</b>, <b>@Component</b>, <b>@Controller</b>, etc. Here, there are no others besides those defined within the [AppConfig] class, so the annotation has been commented out;
   </li>
-  <li>Lines 24–37: define the data source, the H2 database. It is the @Bean annotation on line 25 that makes the object created by this method a Spring-managed component. The method name can be anything here. However, it must be named [<b>dataSource</b>] if the EntityManagerFactory on line 51 is absent and defined via auto-configuration;
+  <li>Lines 24–37: define the data source, the H2 database. It is the @Bean annotation on line 25 that makes the object created by this method a Spring-managed component. The method name can be anything here. However, it must be named [dataSource] if EntityManagerFactory on line 51 is absent and defined via autoconfiguration;
   </li>
   <li>line 30: the database will be named [demo] and will be generated in the project folder;
   </li>
-  <li>Lines 40–47: define the JPA implementation used, in this case a Hibernate implementation. The method name can be anything here;
+  <li>lines 40–47: define the JPA implementation used, in this case a Hibernate implementation. The method name can be anything here;
   </li>
-  <li>line 43: no SQL logs;
+  <li>line 43: no logs for SQL;
   </li>
   <li>line 44: the database will be created if it does not exist;
   </li>
-  <li>lines 50–58: define the EntityManagerFactory that will manage JPA persistence. The method must be named [<b>entityManagerFactory</b>];
+  <li>lines 50–58: define the EntityManagerFactory that will manage the persistence of JPA. The method must be named [entityManagerFactory];
   </li>
   <li>line 51: the method receives two parameters of the types of the two beans defined previously. These will then be constructed and injected by Spring as method parameters;
   </li>
@@ -1773,58 +1817,58 @@
   </li>
   <li>line 55: sets the data source to be managed;
   </li>
-  <li>lines 61–66: the transaction manager. The method must be named [<b>transactionManager</b>]. It receives the bean from lines 51–58 as a parameter;
+  <li>lines 61–66: the transaction manager. The method must be named [transactionManager]. It receives the bean from lines 51–58 as a parameter;
   </li>
-  <li>line 64: the transaction manager is associated with the EntityManagerFactory;
+  <li>line 64: the transaction manager is associated with EntityManagerFactory;
   </li>
 </ul>
 
 <p>The preceding methods can be defined in any order.</p>
 <p>Running the project yields the same results. A new file appears in the project folder, the H2 database file:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F1000000D6F0EB16BE.png" width="169" height="150" style="display:inline-block; margin:4px;width:4.461cm;height:3.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F1000000D6F0EB16BE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F1000000D6F0EB16BE.png" width="169" height="150" style="display:inline-block; margin:4px;width:4.461cm;height:3.962cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F1000000D6F0EB16BE.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading2192402014630537"></a></p>
+<p><span id="refheading2192402014630537" name="refheading2192402014630537" class="odt-bookmark-anchor"></span></p>
 <h3 id="516-creating-an-executable-archive">5.1.6. <span style="color: #4f81bd">Creating an executable archive</span></h3>
-<p><a id="refheading1622771200878134"></a>To create an executable archive of the project, proceed as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005250000015D1252AADA.png" width="659" height="175" style="display:inline-block; margin:4px;width:17.424cm;height:4.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000005250000015D1252AADA.png" /></td></tr></table>
+<p><span id="refheading1622771200878134" name="refheading1622771200878134" class="odt-bookmark-anchor"></span>To create an executable archive of the project, proceed as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005250000015D1252AADA.png" width="659" height="175" style="display:inline-block; margin:4px;width:17.424cm;height:4.618cm;" class="odt-zoomable" data-zoom-src="images/10000000000005250000015D1252AADA.png" /></td></tr></table>
 
-<p><a id="refheading569951429907001"></a></p>
+<p><span id="refheading569951429907001" name="refheading569951429907001" class="odt-bookmark-anchor"></span></p>
 <ul>
-  <li>in [1]: create a runtime configuration;
+  <li>in [1]: create an execution configuration;
   </li>
   <li>in [2]: of type [Java Application]
   </li>
-  <li>in [3]: specify the project to run (use the <i>Browse</i> button);
+  <li>In [3]: specify the project to be executed (use the <i>Browse</i> button);
   </li>
-  <li>in [4]: specify the class to run;
+  <li>in [4]: specify the class to execute;
   </li>
-  <li>in [5]: the name of the run configuration—can be anything;
-  </li>
-</ul>
-
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005200000027E5FBF588A.png" width="656" height="319" style="display:inline-block; margin:4px;width:17.357cm;height:8.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000005200000027E5FBF588A.png" /></td></tr></table>
-
-<ul>
-  <li>in [6]: export the project;
-  </li>
-  <li>in [7]: as an executable JAR archive;
-  </li>
-  <li>in [8]: specify the path and name of the executable file to be created;
-  </li>
-  <li>in [9]: the name of the run configuration created in [5];
+  <li>in [5]: the name of the run configuration – can be anything;
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>10</b></div><img src="images/10000000000000F8000000FEA403558A.png" width="173" height="178" style="display:inline-block; margin:4px;width:4.59cm;height:4.701cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F8000000FEA403558A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005200000027E5FBF588A.png" width="656" height="319" style="display:inline-block; margin:4px;width:17.357cm;height:8.44cm;" class="odt-zoomable" data-zoom-src="images/10000000000005200000027E5FBF588A.png" /></td></tr></table>
 
 <ul>
-  <li>in [10], the created archive;
+  <li>in [6]: the project is exported;
+  </li>
+  <li>in [7]: as an executable archive JAR;
+  </li>
+  <li>in [8]: specifies the path and name of the executable file to be created;
+  </li>
+  <li>in [9]: the name of the runtime configuration created in [5];
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>10</b></div><img src="images/10000000000000F8000000FEA403558A.png" width="173" height="178" style="display:inline-block; margin:4px;width:4.59cm;height:4.701cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F8000000FEA403558A.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>in [10], the archive created;
   </li>
 </ul>
 
 <p>Once this is done, open a console in the folder containing the executable archive:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>.....\dist&gt;dir
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>12/06/2014  09:11        15 104 869 gs-accessing-data-jpa-02.jar
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>.....\dist&gt;dir
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>12/06/2014  09:11        15 104 869 gs-accessing-data-jpa-02.jar
 </code></pre></div>
 <p>The archive is executed as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
@@ -1884,28 +1928,28 @@
 <span class="odt-code-line"><span class="odt-code-line-content">Customer[id=3, firstName=&#x27;Kim&#x27;, lastName=&#x27;Bauer&#x27;]</span></span>
 </code></pre></div>
 
-<p><a id="refheading2192462014630537"></a></p>
-<h3 id="517-creating-a-spring-data-project">5.1.7. <span style="color: #4f81bd">Creating a [Spring Data] Project</span></h3>
-<p><a id="refheading1622791200878134"></a>To create a Spring Data project template, follow these steps:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004C70000033133B70DDC.png" width="612" height="409" style="display:inline-block; margin:4px;width:16.18cm;height:10.809cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C70000033133B70DDC.png" /></td></tr></table>
+<p><span id="refheading2192462014630537" name="refheading2192462014630537" class="odt-bookmark-anchor"></span></p>
+<h3 id="517-creating-a-spring-data-project">5.1.7. <span style="color: #4f81bd">Creating a [Spring Data] project</span></h3>
+<p><span id="refheading1622791200878134" name="refheading1622791200878134" class="odt-bookmark-anchor"></span>To create a Spring project template Data, proceed as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004C70000033133B70DDC.png" width="612" height="409" style="display:inline-block; margin:4px;width:16.18cm;height:10.809cm;" class="odt-zoomable" data-zoom-src="images/10000000000004C70000033133B70DDC.png" /></td></tr></table>
 
-<p><a id="refheading569971429907001"></a></p>
+<p><span id="refheading569971429907001" name="refheading569971429907001" class="odt-bookmark-anchor"></span></p>
 <ul>
   <li>In [1], create a new project;
   </li>
-  <li>in [2]: select [Spring Starter Project];
+  <li>In [2]: of type [Spring Starter Project];
   </li>
   <li>The generated project will be a Maven project. In [3], specify the project group name;
   </li>
-  <li>In [4], specify the name of the artifact (a JAR here) that will be created when the project is built;
+  <li>in [4]: specify the name of the artifact (a jar here) that will be created when the project is built;
   </li>
-  <li>in [5]: the Eclipse name of the project—this can be anything (does not have to match [4]);
+  <li>in [5]: the Eclipse name of the project – can be anything (does not have to be identical to [4]);
   </li>
-  <li>in [7]: specify that you are creating a project with a [JPA] layer using the MySQL DBMS. The dependencies required for such a project will then be included in the [pom.xml] file;
+  <li>in [7]: this specifies that a project will be created with a layer named [JPA], containing SGBD and MySQL. The dependencies required for such a project will then be included in the file [pom.xml];
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002F900000314D27B74C7.png" width="381" height="394" style="display:inline-block; margin:4px;width:10.068cm;height:10.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F900000314D27B74C7.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002F900000314D27B74C7.png" width="381" height="394" style="display:inline-block; margin:4px;width:10.068cm;height:10.425cm;" class="odt-zoomable" data-zoom-src="images/10000000000002F900000314D27B74C7.png" /></td></tr></table>
 
 <ul>
   <li>in [8], enter the name of the project folder;
@@ -1914,7 +1958,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000021400000160EFCDCF7B.png" width="266" height="176" style="display:inline-block; margin:4px;width:7.038cm;height:4.657cm;" class="odt-zoomable" data-zoom-src="images/100000000000021400000160EFCDCF7B.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000021400000160EFCDCF7B.png" width="266" height="176" style="display:inline-block; margin:4px;width:7.038cm;height:4.657cm;" class="odt-zoomable" data-zoom-src="images/100000000000021400000160EFCDCF7B.png" /></td></tr></table>
 
 <ul>
   <li>in [10]: the created project;
@@ -1983,13 +2027,13 @@
   </li>
   <li>lines 28–31: the dependency required for JPA – will include [Spring Data];
   </li>
-  <li>lines 32–36: the dependency on the MySQL JDBC driver;
+  <li>lines 32–36: the dependency on the JDBC driver from MySQL;
   </li>
-  <li>lines 37–41: dependencies required for JUnit tests integrated with Spring;
+  <li>lines 37-41: the dependencies required for the JUnit tests integrated with Spring;
   </li>
 </ul>
 
-<p>The executable [Application] class does nothing but is preconfigured:</p>
+<p>The executable class [Application] does nothing but is preconfigured:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> demo;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2006,7 +2050,7 @@
 </code></pre></div>
 
 <ul>
-  <li>The [@SpringBootApplication] annotation makes the class a project auto-configuration class;
+  <li>The annotation [@SpringBootApplication] makes the class a project auto-configuration class;
   </li>
 </ul>
 
@@ -2031,9 +2075,9 @@
 </code></pre></div>
 
 <ul>
-  <li>line 9: the [<span style="color: #646464">@SpringApplicationConfiguration</span>] annotation allows the [<span style="color: #000000">IntroSpringData01Application</span>] configuration file to be used. The test class will thus benefit from all the beans defined by this file;
+  <li>line 9: the [@SpringApplicationConfiguration] annotation allows the [IntroSpringData01Application] configuration file to be used. The test class will thus benefit from all the beans defined by this file;
   </li>
-  <li>line 8: the [<span style="color: #646464">@RunWith</span>] annotation enables the integration of Spring with JUnit: the class will be able to run as a JUnit test. [<span style="color: #646464">@RunWith</span>] is a JUnit annotation (line 4), whereas the [<span style="color: #000000">SpringJUnit4ClassRunner</span>] class is a Spring class (line 6);
+  <li>line 8: the [@RunWith] annotation enables the integration of Spring with JUnit: the class will be able to be executed as a JUnit test. [@RunWith] is a JUnit annotation (line 4), while the [SpringJUnit4ClassRunner] class is a Spring class (line 6);
   </li>
 </ul>
 

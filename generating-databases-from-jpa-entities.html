@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction-to-the-jdbc-api.html" class="md-nav__link">
+      <a href="introduction-to-api-jdbc.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. Introduction to the JDBC API
+    3. Introduction to API JDBC
   
 
     
@@ -684,15 +686,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#93-generating-the-dbproduits-database" class="md-nav__link">
+  <a href="#93-generation-of-the-dbproduits-database" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.3. Generating the [dbproduits] database
+        9.3. Generation of the [dbproduits] database
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="9.3. Generating the [dbproduits] database">
+    <nav class="md-nav" aria-label="9.3. Generation of the [dbproduits] database">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -718,10 +720,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#933-the-jpa-entity-product" class="md-nav__link">
+  <a href="#933-the-entity-jpa-produit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.3.3. The JPA entity [Product]
+        9.3.3. The entity JPA [Produit]
       
     </span>
   </a>
@@ -740,10 +742,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#935-eclipselink-generation" class="md-nav__link">
+  <a href="#935-generation-eclipselink" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.3.5. EclipseLink Generation
+        9.3.5. Generation EclipseLink
       
     </span>
   </a>
@@ -762,10 +764,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#937-openjpa-generation" class="md-nav__link">
+  <a href="#937-generation-openjpa" class="md-nav__link">
     <span class="md-ellipsis">
       
-        9.3.7. OpenJpa Generation
+        9.3.7. Generation OpenJpa
       
     </span>
   </a>
@@ -988,7 +990,7 @@
   <span class="md-ellipsis">
     
   
-    17. Exposing a Database on the Web
+    17. Exposing a database on the web
   
 
     
@@ -1008,14 +1010,14 @@
   
   
     <li class="md-nav__item">
-      <a href="a-client-programmed-for-the-json-web-service.html" class="md-nav__link">
+      <a href="a-client-programmed-for-the-web-service--json.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    18. A client programmed for the /jSON web service
+    18. A client programmed for the web service / jSON
   
 
     
@@ -1062,14 +1064,14 @@
   
   
     <li class="md-nav__item">
-      <a href="securing-the-web-service-for-accessing-the-dbproduitscategories-database.html" class="md-nav__link">
+      <a href="securing-the-web-service-for-database-access-dbproduitscategories.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    20. Securing the web service for accessing the [dbproduitscategories] database
+    20. Securing the web service for database access [dbproduitscategories]
   
 
     
@@ -1180,44 +1182,44 @@
 
 
 
-<p><a id="refheading11084335254046"></a></p>
+<p><span id="refheading11084335254046" name="refheading11084335254046" class="odt-bookmark-anchor"></span></p>
 <h1 id="9-generating-databases-from-jpa-entities">9. <span style="color: #365f91">Generating Databases from JPA Entities</span></h1>
-<p>It is possible to create database tables from JPA entities. We will demonstrate this now. The purpose is to verify that the database generated from the JPA entities is indeed the one we want.</p>
-<p><a id="refheading11084535254046"></a></p>
+<p>It is possible to create database tables from JPA entities. We will now demonstrate this. The purpose is to verify that the database generated from JPA entities is indeed the one we want.</p>
+<p><span id="refheading11084535254046" name="refheading11084535254046" class="odt-bookmark-anchor"></span></p>
 <h2 id="91-setting-up-the-working-environment">9.1. <span style="color: #4f81bd">Setting up the working environment</span></h2>
-<p>We will first work with an EclipseLink JPA implementation [1].</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000015F00000112D303570A.png" width="176" height="137" style="display:inline-block; margin:4px;width:4.644cm;height:3.625cm;" class="odt-zoomable" data-zoom-src="images/100000000000015F00000112D303570A.png" /></td></tr></table>
+<p>We will first work with an implementation of JPA, EclipseLink, and [1].</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000015F00000112D303570A.png" width="176" height="137" style="display:inline-block; margin:4px;width:4.644cm;height:3.625cm;" class="odt-zoomable" data-zoom-src="images/100000000000015F00000112D303570A.png" /></td></tr></table>
 
-<p>Then we delete the tables from the MySQL database [dbproduitscategories] using the client [MyManager] (see Section<a href="#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a>). We start by deleting the tables containing the foreign keys [1-3]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000469000001EBD4B00BA9.png" width="565" height="246" style="display:inline-block; margin:4px;width:14.937cm;height:6.496cm;" class="odt-zoomable" data-zoom-src="images/1000000000000469000001EBD4B00BA9.png" /></td></tr></table>
+<p>Then we delete the tables from the database MySQL [dbproduitscategories] using the client [MyManager] (see section<a href="appendices.html#refheading80991783410321"><u><span style="color: #0563c1"> 23.5</span></u></a>). We start by deleting the tables containing the foreign keys [1-3]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000469000001EBD4B00BA9.png" width="565" height="246" style="display:inline-block; margin:4px;width:14.937cm;height:6.496cm;" class="odt-zoomable" data-zoom-src="images/1000000000000469000001EBD4B00BA9.png" /></td></tr></table>
 
-<p>Then we repeat the process with the three remaining tables [4-6]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000461000001C4A8F553F7.png" width="561" height="226" style="display:inline-block; margin:4px;width:14.831cm;height:5.98cm;" class="odt-zoomable" data-zoom-src="images/1000000000000461000001C4A8F553F7.png" /></td></tr></table>
+<p>Then we start over with the three remaining tables [4-6]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000461000001C4A8F553F7.png" width="561" height="226" style="display:inline-block; margin:4px;width:14.831cm;height:5.98cm;" class="odt-zoomable" data-zoom-src="images/1000000000000461000001C4A8F553F7.png" /></td></tr></table>
 
-<p>We do the same with the [dbproduits] table used by the [spring-jdbc-01 to 03] projects:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001440000010202EC33D1.png" width="227" height="181" style="display:inline-block; margin:4px;width:6.001cm;height:4.778cm;" class="odt-zoomable" data-zoom-src="images/10000000000001440000010202EC33D1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000D3000000BFE379EC44.png" width="148" height="134" style="display:inline-block; margin:4px;width:3.911cm;height:3.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D3000000BFE379EC44.png" /></td></tr></table>
+<p>We do the same with the table [dbproduits] used by the projects [spring-jdbc-01 à 03]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001440000010202EC33D1.png" width="227" height="181" style="display:inline-block; margin:4px;width:6.001cm;height:4.778cm;" class="odt-zoomable" data-zoom-src="images/10000000000001440000010202EC33D1.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000D3000000BFE379EC44.png" width="148" height="134" style="display:inline-block; margin:4px;width:3.911cm;height:3.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000000D3000000BFE379EC44.png" /></td></tr></table>
 
-<p>Additionally, you must import the two database generation projects:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004FE000001BAD94CF18F.png" width="639" height="221" style="display:inline-block; margin:4px;width:16.907cm;height:5.847cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FE000001BAD94CF18F.png" /></td></tr></table>
+<p>Additionally, we need to import the two generation projects for the two databases:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000004FE000001BAD94CF18F.png" width="639" height="221" style="display:inline-block; margin:4px;width:16.907cm;height:5.847cm;" class="odt-zoomable" data-zoom-src="images/10000000000004FE000001BAD94CF18F.png" /></td></tr></table>
 
 <ul>
-  <li>in [1], import the [generic-create-dbproduits] project, which can be found in [&lt;examples&gt;/spring-database-generic/spring-jpa] [2];
+  <li>In [1], import the project [generic-create-dbproduits], which can be found in [&lt;exemples&gt;/spring-database-generic/spring-jpa] and [2];
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000051A000001B77D33E829.png" width="653" height="220" style="display:inline-block; margin:4px;width:17.277cm;height:5.808cm;" class="odt-zoomable" data-zoom-src="images/100000000000051A000001B77D33E829.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000051A000001B77D33E829.png" width="653" height="220" style="display:inline-block; margin:4px;width:17.277cm;height:5.808cm;" class="odt-zoomable" data-zoom-src="images/100000000000051A000001B77D33E829.png" /></td></tr></table>
 
 <ul>
-  <li>in [4], import the [generic-create-dbproduitscategories] project, which can be found in [&lt;examples&gt;/spring-database-generic/spring-jpa] [5];
+  <li>in [4], import the [generic-create-dbproduitscategories] project, which can be found in [&lt;exemples&gt;/spring-database-generic/spring-jpa] and [5];
   </li>
 </ul>
 
 <p><strong>Note</strong>: Press Alt-F5 and regenerate all Maven projects;</p>
-<p><a id="refheading118623630560624"></a></p>
+<p><span id="refheading118623630560624" name="refheading118623630560624" class="odt-bookmark-anchor"></span></p>
 <h2 id="92-generating-the-dbproduitscategories-database">9.2. <span style="color: #4f81bd">Generating the [dbproduitscategories] database</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FF000000E76690E213.png" width="178" height="162" style="display:inline-block; margin:4px;width:4.72cm;height:4.276cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF000000E76690E213.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FF000000E76690E213.png" width="178" height="162" style="display:inline-block; margin:4px;width:4.72cm;height:4.276cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF000000E76690E213.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading118625630560624"></a></p>
+<p><span id="refheading118625630560624" name="refheading118625630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="921-maven-configuration">9.2.1. <span style="color: #4f81bd">Maven configuration</span></h3>
 <p>The project&#x27;s [pom.xml] file is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1275,18 +1277,18 @@
 </code></pre></div>
 
 <ul>
-  <li>lines 22–26: the dependency on the [spring-jpa-generic] project discussed in Section<a href="#refheading107481995711268"><u><span style="color: #0563c1"> 6.4</span></u></a>;
+  <li>lines 22–26: the dependency on the [spring-jpa-generic] project discussed in section<a href="spring-data-jpa-hibernate.html#refheading107481995711268"><u><span style="color: #0563c1"> 6.4</span></u></a>;
   </li>
-  <li>lines 28–32: the dependency on a weaver that will be used to enrich the JPA entities of the EclipseLink and OpenJpa implementations. Its dependency is not required in the [pom.xml] file, but its JAR will be the Java agent used. Including the dependency in the [pom.xml] file ensures that the JAR will be available;
+  <li>lines 28–32: the dependency on a weaver that will be used to enrich the JPA entities of the EclipseLink and OpenJpa implementations. Its dependency is not required in the [pom.xml] file, but its jar will be the Java agent used. Placing the dependency in the [pom.xml] file ensures that jar will indeed be available;
   </li>
 </ul>
 
 <p>In the end, the dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011E00000089360AFC79.png" width="200" height="96" style="display:inline-block; margin:4px;width:5.3cm;height:2.538cm;" class="odt-zoomable" data-zoom-src="images/100000000000011E00000089360AFC79.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011E00000089360AFC79.png" width="200" height="96" style="display:inline-block; margin:4px;width:5.3cm;height:2.538cm;" class="odt-zoomable" data-zoom-src="images/100000000000011E00000089360AFC79.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading118627630560624"></a></p>
+<p><span id="refheading118627630560624" name="refheading118627630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="922-spring-configuration">9.2.2. <span style="color: #4f81bd">Spring Configuration</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F0000000715B11A75D.png" width="168" height="79" style="display:inline-block; margin:4px;width:4.45cm;height:2.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000715B11A75D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F0000000715B11A75D.png" width="168" height="79" style="display:inline-block; margin:4px;width:4.45cm;height:2.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F0000000715B11A75D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [AppConfig] class configures the Spring project:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1307,13 +1309,13 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 10: The class retrieves the beans from the [ConfigJpa] class. Note that this class works with the JPA entities in the [dbproduitscategories] database (see Section<a href="#refheading1052902082896917"><u><span style="color: #0563c1"> 6.3</span></u></a>);
+  <li>line 10: the class retrieves the beans from the [ConfigJpa] class. Note that this class works with the JPA entities from the [dbproduitscategories] database (see section<a href="spring-data-jpa-hibernate.html#refheading1052902082896917"><u><span style="color: #0563c1"> 6.3</span></u></a>);
   </li>
   <li>line 11: we declare that the [console] package must be scanned to find [CrudRepository] instances;
   </li>
 </ul>
 
-<p>In the [ConfigJpa] class, we find the following bean (varies depending on the JPA implementation used):</p>
+<p>In the [ConfigJpa] class, the following bean is found (varies depending on the JPA implementation used):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">// the provider JPA</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#646464">@Bean</span></span></span>
@@ -1327,12 +1329,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>Line 8 is the important one here. It is present in all JPA implementations used. It specifies that if the tables associated with the JPA entities do not exist, they must be created. We will use this property to generate the tables.</p>
-<p><a id="refheading118629630560624"></a></p>
+<p>Line 8 is important here. It is present in all JPA implementations used. It specifies that if the tables associated with the JPA entities do not exist, they must be created. We will rely on this property to generate the tables.</p>
+<p><span id="refheading118629630560624" name="refheading118629630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="923-the-repositories">9.2.3. <span style="color: #4f81bd">The repositories</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F000000071EE86F6A7.png" width="168" height="79" style="display:inline-block; margin:4px;width:4.45cm;height:2.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F000000071EE86F6A7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F000000071EE86F6A7.png" width="168" height="79" style="display:inline-block; margin:4px;width:4.45cm;height:2.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F000000071EE86F6A7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The [ProductsRepository] interface is as follows:</p>
+<p>The [ProduitsRepository] interface is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> console;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1345,10 +1347,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>Instantiating this interface will trigger the instantiation of the JPA layer. Indeed, on line 7, the interface references the JPA entity [Product], which will force the instantiation of the JPA layer. We could have used any interface [CrudRepository] referencing one of the JPA entities. We can see that although the [repository] only references the JPA entity [Product], all tables for all JPA entities are generated.</p>
-<p><a id="refheading118631630560624"></a></p>
-<h3 id="924-the-executable-class">9.2.4. <span style="color: #4f81bd">The executable class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F000000071E7075522.png" width="168" height="79" style="display:inline-block; margin:4px;width:4.45cm;height:2.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F000000071E7075522.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>Instantiating this interface will trigger the instantiation of the JPA layer. In fact, on line 7, the interface references the JPA and [Produit] entities, which will force the instantiation of the JPA layer. We could have used any [CrudRepository] interface referencing one of the JPA entities. In fact, although [repository] references only the JPA and [Produit] entities, all tables for all JPA entities are generated.</p>
+<p><span id="refheading118631630560624" name="refheading118631630560624" class="odt-bookmark-anchor"></span></p>
+<h3 id="924-the-executable-class">9.2.4. <span style="color: #4f81bd"><strong>The executable class</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F000000071E7075522.png" width="168" height="79" style="display:inline-block; margin:4px;width:4.45cm;height:2.096cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F000000071E7075522.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [CreateDatabase] class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1359,7 +1361,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> CreateDataBase {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// simply instantiate the Spring context to create the database tables [dbproduitscategories]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// simply instantiate the Spring context to create the [dbproduitscategories] database tables</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// you also need at least one Spring Data Repository, otherwise nothing happens</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Travail en cours...&quot;</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> AnnotationConfigApplicationContext(AppConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">).close();</span></span></span>
@@ -1370,29 +1372,29 @@
 </code></pre></div>
 
 <ul>
-  <li>Line 11: We instantiate the Spring context and immediately close it. In this context, there is the [ProductsRepository] bean that references the JPA entity [Product]. This is sufficient to instantiate the JPA layer and thus generate the tables in the [productcategories] database. 
+  <li>Line 11: We instantiate the Spring context and close it immediately. In this context, there is the bean [ProduitsRepository], which references the entities JPA and [Produit]. This is sufficient to instantiate the JPA layer and thus generate the tables in the [dbproduitscategories] database. 
   </li>
 </ul>
-<p><a id="refheading11084735254046"></a></p>
+<p><span id="refheading11084735254046" name="refheading11084735254046" class="odt-bookmark-anchor"></span></p>
 <h3 id="925-generating-tables-with-eclipselink">9.2.5. <span style="color: #4f81bd">Generating tables with EclipseLink</span></h3>
 <p>We are in the following configuration:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000103000000EB7F068553.png" width="181" height="165" style="display:inline-block; margin:4px;width:4.8cm;height:4.355cm;" class="odt-zoomable" data-zoom-src="images/1000000000000103000000EB7F068553.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000103000000EB7F068553.png" width="181" height="165" style="display:inline-block; margin:4px;width:4.8cm;height:4.355cm;" class="odt-zoomable" data-zoom-src="images/1000000000000103000000EB7F068553.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <ul>
-  <li>the [JDBC] layer is configured for the MySQL database [dbproduitscategories];
+  <li>The [JDBC] layer is configured for the [dbproduitscategories] database of MySQL;
   </li>
-  <li>the [JPA] layer is implemented with EclipseLink;
+  <li>The layer [JPA] is implemented with EclipseLink;
   </li>
   <li>the [dbproduitscategories] database has no tables;
   </li>
 </ul>
 
 <p><strong>Note</strong>: Press Alt-F5 and regenerate all Maven projects;</p>
-<p>We are using the following run configuration:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000529000001CF508B05D0.png" width="661" height="232" style="display:inline-block; margin:4px;width:17.477cm;height:6.126cm;" class="odt-zoomable" data-zoom-src="images/1000000000000529000001CF508B05D0.png" /></td></tr></table>
+<p>The following run configuration is used:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000529000001CF508B05D0.png" width="661" height="232" style="display:inline-block; margin:4px;width:17.477cm;height:6.126cm;" class="odt-zoomable" data-zoom-src="images/1000000000000529000001CF508B05D0.png" /></td></tr></table>
 
 <ul>
-  <li>In [1-2], this run configuration requires a Java agent for the test to succeed. Depending on the situation, EclipseLink does not always need this agent, but here the execution fails if it is not present. This agent is not an EclipseLink agent but a Spring agent. It is provided by the dependency:
+  <li>In [1-2], this run configuration requires a Java agent for the test to succeed. Depending on the case, EclipseLink does not always need this agent, but here the execution fails if it is not present. This agent is not a EclipseLink agent but a Spring agent. It is provided by the dependency:
   </li>
 </ul>
 
@@ -1404,17 +1406,17 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">dependency</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>included in the project&#x27;s [pom.xml] file. The agent is located at [&lt;m2-repo&gt;/org/springframework/spring-instrument/4.1.6.RELEASE/spring-instrument-4.1.6.RELEASE.jar], where &lt;m2-repo&gt; is the local Maven repository;</p>
+<p>included in the project&#x27;s [pom.xml] file. The agent is found in [&lt;m2-repo&gt;/org/springframework/spring-instrument/4.1.6.RELEASE/spring-instrument-4.1.6.RELEASE.jar], where &lt;m2-repo&gt; is the local Maven repository;</p>
 <p>The execution yields the following result:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000042F0000022944B32767.png" width="536" height="277" style="display:inline-block; margin:4px;width:14.169cm;height:7.317cm;" class="odt-zoomable" data-zoom-src="images/100000000000042F0000022944B32767.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000042F0000022944B32767.png" width="536" height="277" style="display:inline-block; margin:4px;width:14.169cm;height:7.317cm;" class="odt-zoomable" data-zoom-src="images/100000000000042F0000022944B32767.png" /></td></tr></table>
 
-<p>In [3], we can see that the tables have been generated. Now let’s check the database’s DDL (Domain Definition Language):</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000A200000124CAC1D99D.png" width="113" height="204" style="display:inline-block; margin:4px;width:3cm;height:5.406cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A200000124CAC1D99D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002200000018EBF11C9B1.png" width="381" height="278" style="display:inline-block; margin:4px;width:10.07cm;height:7.368cm;" class="odt-zoomable" data-zoom-src="images/10000000000002200000018EBF11C9B1.png" /></td></tr></table>
+<p>In [3], we can see that the tables have been generated. Now let’s check the DDL (Domain Definition Language) of the database:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000A200000124CAC1D99D.png" width="113" height="204" style="display:inline-block; margin:4px;width:3cm;height:5.406cm;" class="odt-zoomable" data-zoom-src="images/10000000000000A200000124CAC1D99D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002200000018EBF11C9B1.png" width="381" height="278" style="display:inline-block; margin:4px;width:10.07cm;height:7.368cm;" class="odt-zoomable" data-zoom-src="images/10000000000002200000018EBF11C9B1.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000052900000232BC1CB006.png" width="661" height="281" style="display:inline-block; margin:4px;width:17.477cm;height:7.435cm;" class="odt-zoomable" data-zoom-src="images/100000000000052900000232BC1CB006.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000052900000232BC1CB006.png" width="661" height="281" style="display:inline-block; margin:4px;width:17.477cm;height:7.435cm;" class="odt-zoomable" data-zoom-src="images/100000000000052900000232BC1CB006.png" /></td></tr></table>
 
-<p>The SQL script for generating the tables can also be saved to a file [1].</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001540000012B9E1C235D.png" width="238" height="209" style="display:inline-block; margin:4px;width:6.301cm;height:5.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000001540000012B9E1C235D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000018B000000B569F310A3.png" width="276" height="126" style="display:inline-block; margin:4px;width:7.292cm;height:3.341cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000B569F310A3.png" /><img src="images/10000000000001C0000000BFC64BECE4.png" width="314" height="134" style="display:inline-block; margin:4px;width:8.301cm;height:3.538cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C0000000BFC64BECE4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>The table generation script SQL can also be saved to a file named [1].</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001540000012B9E1C235D.png" width="238" height="209" style="display:inline-block; margin:4px;width:6.301cm;height:5.54cm;" class="odt-zoomable" data-zoom-src="images/10000000000001540000012B9E1C235D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000018B000000B569F310A3.png" width="276" height="126" style="display:inline-block; margin:4px;width:7.292cm;height:3.341cm;" class="odt-zoomable" data-zoom-src="images/100000000000018B000000B569F310A3.png" /><img src="images/10000000000001C0000000BFC64BECE4.png" width="314" height="134" style="display:inline-block; margin:4px;width:8.301cm;height:3.538cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C0000000BFC64BECE4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The generated SQL script is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
@@ -1467,46 +1469,46 @@
 <span class="odt-code-line"><span class="odt-code-line-content">;</span></span>
 </code></pre></div>
 
-<p>Let&#x27;s look, for example, at the SQL script that generates the [PRODUCTS] table (lines 15–29):</p>
+<p>Let&#x27;s look, for example, at the script SQL, which generates the table [PRODUITS] (lines 15–29):</p>
 <ul>
-  <li>line 16: [ID] is the primary key (line 23) with the [<i>AUTO_INCREMENT</i>] attribute (line 5). This corresponds to the annotations [<i>@Id, @GeneratedValue(strategy = GenerationType.IDENTITY), @Column(name = ConfigJdbc.TAB_JPA_ID)</i>] for the [id] field of the JPA entity;
+  <li>line 16: [ID] is the primary key (line 23) with the attribute [AUTO_INCREMENT] (line 5). This corresponds to the annotations [@Id, @GeneratedValue(strategy = GenerationType.IDENTITY), @Column(name = ConfigJdbc.TAB_JPA_ID)] for the field [id] of the entity JPA;
   </li>
-  <li>line 17: the definition of the [DESCRIPTION] column corresponds to the annotation [<i>@Column(name = ConfigJdbc.TAB_PRODUITS_DESCRIPTION, length = 100)</i>] for the [description] field of the JPA entity;
+  <li>line 17: the definition of the [DESCRIPTION] column corresponds to the annotation [@Column(name = ConfigJdbc.TAB_PRODUITS_DESCRIPTION, length = 100)] of the [description] field in the JPA entity;
   </li>
-  <li>line 18: the [CATEGORIE_ID] column is a foreign key from the [PRODUITS] table on the [CATEGORIES.ID] column (line 26). Furthermore, this foreign key has the [ON DELETE CASCADE] attribute. This corresponds to the annotations [<i>@ManyToOne(fetch = FetchType.LAZY), @JoinColumn(name = ConfigJdbc.TAB_PRODUITS_CATEGORIE_ID)</i>] for the [Produit.categorie] field and to the annotation [<i>@OneToMany(fetch = FetchType.LAZY, mappedBy = &quot;categorie&quot;, cascade = { CascadeType.ALL }), @CascadeOnDelete</i>] of the [Categorie.produits] field;
+  <li>line 18: the column [CATEGORIE_ID] is a foreign key from the table [PRODUITS] on the column [CATEGORIES.ID] (line 26). Furthermore, this foreign key has the attribute [ON DELETE CASCADE]. This corresponds to the annotations [@ManyToOne(fetch = FetchType.LAZY), @JoinColumn(name = ConfigJdbc.TAB_PRODUITS_CATEGORIE_ID)] for the field [Produit.categorie] and the annotation [@OneToMany(fetch = FetchType.LAZY, mappedBy = &quot;categorie&quot;, cascade = { CascadeType.ALL }), @CascadeOnDelete] for the field [Categorie.produits];
   </li>
-  <li>line 19: the definition of the [NAME] column corresponds to the annotation [<i>@Column(name = ConfigJdbc.TAB_PRODUITS_NAME, unique = true, length = 30, nullable = false)</i>] of the [Product.name] field;
+  <li>line 19: the definition of column [NOM] corresponds to annotation [@Column(name = ConfigJdbc.TAB_PRODUITS_NOM, unique = true, length = 30, nullable = false)] of field [Produit.nom];
   </li>
-  <li>line 20: the definition of the [PRICE] column corresponds to the annotation [<i>@Column(name = ConfigJdbc.TAB_PRODUITS_PRIX, nullable = false)</i>] of the [Product.price] field;
+  <li>line 20:  the definition of column [PRIX] corresponds to the annotation [@Column(name = ConfigJdbc.TAB_PRODUITS_PRIX, nullable = false)] of field [Produit.prix];
   </li>
-  <li>lines 24-25: the script creates three indexes for each of the table’s unique columns;
+  <li>lines 24-25: the script creates three indexes for each of the unique columns in the table;
   </li>
 </ul>
 
 <p>The generated tables do not have a default value for the VERSIONING field, whereas the Java code expects one to be present. If this default value is missing, certain tests will fail. We add this attribute as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000024F000000ED81C08391.png" width="413" height="166" style="display:inline-block; margin:4px;width:10.94cm;height:4.387cm;" class="odt-zoomable" data-zoom-src="images/100000000000024F000000ED81C08391.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000024F000000ED81C08391.png" width="413" height="166" style="display:inline-block; margin:4px;width:10.94cm;height:4.387cm;" class="odt-zoomable" data-zoom-src="images/100000000000024F000000ED81C08391.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019A0000019E02220332.png" width="287" height="290" style="display:inline-block; margin:4px;width:7.59cm;height:7.664cm;" class="odt-zoomable" data-zoom-src="images/100000000000019A0000019E02220332.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019A0000019E02220332.png" width="287" height="290" style="display:inline-block; margin:4px;width:7.59cm;height:7.664cm;" class="odt-zoomable" data-zoom-src="images/100000000000019A0000019E02220332.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002ED000000CB946F3BF5.png" width="524" height="142" style="display:inline-block; margin:4px;width:13.869cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/10000000000002ED000000CB946F3BF5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002ED000000CB946F3BF5.png" width="524" height="142" style="display:inline-block; margin:4px;width:13.869cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/10000000000002ED000000CB946F3BF5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>This is done for the five tables that have the [VERSIONING] column. The default value does not matter; it simply needs to exist. Then, it is incremented by 1 each time the row to which it belongs is modified.</p>
-<p>Once this is done, verify that the following test configurations pass:</p>
+<p>Once this is done, verify that the following execution configurations pass:</p>
 <ul>
   <li>[spring-jdbc-generic-04.JUnitTestDao], which tests the JDBC implementation;
   </li>
-  <li>[spring-jpa-generic-JUnitTestDao-hibernate-eclipselink], which tests the Hibernate or EclipseLink JPA implementations (in this case, it will be EclipseLink)
+  <li>[spring-jpa-generic-JUnitTestDao-hibernate-eclipselink], which tests the JPA Hibernate or Eclipselink implementations (here it will be EclipseLink)
   </li>
 </ul>
 
-<p>Both tests must pass.</p>
-<p><a id="refheading11084935254046"></a></p>
+<p>Both runs must succeed.</p>
+<p><span id="refheading11084935254046" name="refheading11084935254046" class="odt-bookmark-anchor"></span></p>
 <h3 id="926-generating-tables-with-hibernate">9.2.6. <span style="color: #4f81bd">Generating tables with Hibernate</span></h3>
 <p>We create the Hibernate tables using the following Eclipse environment:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EF000000DFF2F77464.png" width="167" height="156" style="display:inline-block; margin:4px;width:4.431cm;height:4.135cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000DFF2F77464.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EF000000DFF2F77464.png" width="167" height="156" style="display:inline-block; margin:4px;width:4.431cm;height:4.135cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EF000000DFF2F77464.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>Table generation is performed by the run configuration named [generic-create-dbproduitscategories-hibernate] without a Java agent;</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000146000000FEE4B07F33.png" width="228" height="178" style="display:inline-block; margin:4px;width:6.04cm;height:4.706cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000FEE4B07F33.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000161000001529B214BE9.png" width="247" height="237" style="display:inline-block; margin:4px;width:6.541cm;height:6.264cm;" class="odt-zoomable" data-zoom-src="images/1000000000000161000001529B214BE9.png" /></td></tr></table>
+<p>The tables are generated by the execution configuration named [generic-create-dbproduitscategories-hibernate] without a Java agent;</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000146000000FEE4B07F33.png" width="228" height="178" style="display:inline-block; margin:4px;width:6.04cm;height:4.706cm;" class="odt-zoomable" data-zoom-src="images/1000000000000146000000FEE4B07F33.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000161000001529B214BE9.png" width="247" height="237" style="display:inline-block; margin:4px;width:6.541cm;height:6.264cm;" class="odt-zoomable" data-zoom-src="images/1000000000000161000001529B214BE9.png" /></td></tr></table>
 
 <p>The SQL script for the database generated by Hibernate is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
@@ -1558,35 +1560,35 @@
 <span class="odt-code-line"><span class="odt-code-line-content">;</span></span>
 </code></pre></div>
 
-<p>The generated tables are the same since Hibernate also used JPA annotations. For Hibernate, I couldn’t find the equivalent of the EclipseLink annotation [@OnCascadeDelete], which generated the SQL attribute [ON DELETE CASCADE] on the foreign key [PRODUCTS.CATEGORY_ID] (line 25). This attribute must therefore be generated manually, as it is required for testing:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003D00000009408BA1816.png" width="655" height="99" style="display:inline-block; margin:4px;width:17.33cm;height:2.628cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D00000009408BA1816.png" /></td></tr></table>
+<p>The generated tables are the same since Hibernate also used the annotations JPA. For Hibernate, I did not find the equivalent of the annotation EclipseLink [@OnCascadeDelete], which generated theattribute SQL [ON DELTE CASCADE] on the foreign key [PRODUITS.CATEGORIE_ID] (line 25). This attribute must therefore be generated manually because it is necessary for testing:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003D00000009408BA1816.png" width="655" height="99" style="display:inline-block; margin:4px;width:17.33cm;height:2.628cm;" class="odt-zoomable" data-zoom-src="images/10000000000003D00000009408BA1816.png" /></td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001C100000201C343D4C6.png" width="314" height="359" style="display:inline-block; margin:4px;width:8.31cm;height:9.495cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C100000201C343D4C6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001C100000201C343D4C6.png" width="314" height="359" style="display:inline-block; margin:4px;width:8.31cm;height:9.495cm;" class="odt-zoomable" data-zoom-src="images/10000000000001C100000201C343D4C6.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003CF0000005F4BDACF73.png" width="633" height="62" style="display:inline-block; margin:4px;width:16.76cm;height:1.633cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CF0000005F4BDACF73.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003CF0000005F4BDACF73.png" width="633" height="62" style="display:inline-block; margin:4px;width:16.76cm;height:1.633cm;" class="odt-zoomable" data-zoom-src="images/10000000000003CF0000005F4BDACF73.png" /></td></tr></table>
 
-<p>The same must be done for the two foreign keys in the [USERS_ROLES] table:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003A30000005A7FFC2E9B.png" width="605" height="59" style="display:inline-block; margin:4px;width:16.011cm;height:1.549cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A30000005A7FFC2E9B.png" /></td></tr></table>
+<p>The same must be done with the two foreign keys in the [USERS_ROLES] table:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003A30000005A7FFC2E9B.png" width="605" height="59" style="display:inline-block; margin:4px;width:16.011cm;height:1.549cm;" class="odt-zoomable" data-zoom-src="images/10000000000003A30000005A7FFC2E9B.png" /></td></tr></table>
 
 <p>Finally, as was done with the EclipseLink implementation, the [VERSIONING] columns in the five tables must have a default value:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002ED000000CB946F3BF5.png" width="524" height="142" style="display:inline-block; margin:4px;width:13.869cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/10000000000002ED000000CB946F3BF5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002ED000000CB946F3BF5.png" width="524" height="142" style="display:inline-block; margin:4px;width:13.869cm;height:3.759cm;" class="odt-zoomable" data-zoom-src="images/10000000000002ED000000CB946F3BF5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>Once this is done, verify that the following test configurations pass:</p>
+<p>Once this is done, verify that the following execution configurations pass:</p>
 <ul>
   <li>[spring-jdbc-generic-04.JUnitTestDao], which tests the JDBC implementation;
   </li>
-  <li>[spring-jpa-generic-JUnitTestDao-hibernate-eclipselink], which tests the Hibernate or Eclipselink JPA implementations (in this case, it will be Hibernate)
+  <li>[spring-jpa-generic-JUnitTestDao-hibernate-eclipselink], which tests the JPA implementations (Hibernate or Eclipselink; in this case, it will be Hibernate)
   </li>
 </ul>
 
-<p>Both tests must pass.</p>
-<p><a id="refheading118633630560624"></a></p>
+<p>Both runs must succeed.</p>
+<p><span id="refheading118633630560624" name="refheading118633630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="927-generating-tables-with-openjpa">9.2.7. <span style="color: #4f81bd">Generating tables with OpenJpa</span></h3>
-<p><a id="refheading110849352540461"></a>We repeat the previous procedure with an OpenJpa JPA implementation:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000112000000F5081A34FF.png" width="192" height="171" style="display:inline-block; margin:4px;width:5.069cm;height:4.533cm;" class="odt-zoomable" data-zoom-src="images/1000000000000112000000F5081A34FF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading110849352540461" name="refheading110849352540461" class="odt-bookmark-anchor"></span>We repeat the previous procedure with a JPA OpenJpa implementation:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000112000000F5081A34FF.png" width="192" height="171" style="display:inline-block; margin:4px;width:5.069cm;height:4.533cm;" class="odt-zoomable" data-zoom-src="images/1000000000000112000000F5081A34FF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><strong>Note</strong>: Press Alt-F5 and regenerate all Maven projects;</p>
-<p>We modify the [ConfigJpa] class that configures the [mysql-config-jpa-openjpa] project as follows:</p>
+<p>We modify the [ConfigJpa] class, which configures the [mysql-config-jpa-openjpa] project, as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> generic.jpa.config;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1638,11 +1640,11 @@
 </code></pre></div>
 
 <ul>
-  <li>Lines 40-41: We create a property for OpenJPA that specifies how to generate foreign keys when generating tables. Without this property, foreign keys are not generated. The [<span style="color: #2a00ff">ForeignKeyDeleteAction=cascade</span>] attribute allows the [ON DELETE CASCADE] clause to be generated on these foreign keys;
+  <li>Lines 40-41: A property is created for OpenJPA that specifies how to generate foreign keys when generating tables. Without this property, foreign keys are not generated. The [ForeignKeyDeleteAction=cascade] attribute is used to generate the [ON DELETE CASCADE] attribute on these foreign keys;
   </li>
 </ul>
 
-<p>Table generation is performed by the runtime configuration named [generic-create-dbproduitscategories-openjpa], which has two Java agents;</p>
+<p>Table generation is performed by the execution configuration named [generic-create-dbproduitscategories-openjpa], which has two Java agents;</p>
 <p><img src="images/10000000000002470000013B404E4D1B.png" width="408" height="221" style="width:10.8cm;height:5.835cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002470000013B404E4D1B.png" /></p>
 <ul>
   <li>The first Java agent is the Spring agent already used with EclipseLink;
@@ -1651,7 +1653,7 @@
   </li>
 </ul>
 
-<p>The SQL script for the generated database is then as follows:</p>
+<p>The script SQL for the generated database is then as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content">SET FOREIGN_KEY_CHECKS=0;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1719,29 +1721,29 @@
 <span class="odt-code-line"><span class="odt-code-line-content">;</span></span>
 </code></pre></div>
 
-<p>This is the same as with EclipseLink. We will therefore make the same corrections to the tables. Once this is done, verify that the following test cases pass:</p>
+<p>This is the same as with EclipseLink. We will therefore make the same corrections to the tables. Once this is done, verify that the following execution configurations pass:</p>
 <ul>
-  <li>[spring-jdbc-generic-04.JUnitTestDao], which tests the JDBC implementation;
+  <li>[spring-jdbc-generic-04.JUnitTestDao], which tests the implementation of JDBC;
   </li>
-  <li>[spring-jpa-generic-JUnitTestDao-openjpa], which tests an OpenJPA JPA implementation;
+  <li>[spring-jpa-generic-JUnitTestDao-openjpa], which tests an implementation of JPA and OpenJpa;
   </li>
 </ul>
 
 <p>Both runs must succeed.</p>
-<p><a id="refheading118635630560624"></a></p>
-<h2 id="93-generating-the-dbproduits-database">9.3. <span style="color: #4f81bd">Generating the [dbproduits] database</span></h2>
-<p>The [dbproduits] database is used by the [spring-jdbc-01 to 03] projects. It can also be generated from a JPA entity.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005030000017604B3B873.png" width="642" height="187" style="display:inline-block; margin:4px;width:16.974cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/10000000000005030000017604B3B873.png" /></td></tr></table>
+<p><span id="refheading118635630560624" name="refheading118635630560624" class="odt-bookmark-anchor"></span></p>
+<h2 id="93-generation-of-the-dbproduits-database">9.3. <span style="color: #4f81bd">Generation of the [dbproduits] database</span></h2>
+<p>The [dbproduits] base is used by the [spring-jdbc-01 à 03] projects. It can also be generated from a JPA entity.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000005030000017604B3B873.png" width="642" height="187" style="display:inline-block; margin:4px;width:16.974cm;height:4.948cm;" class="odt-zoomable" data-zoom-src="images/10000000000005030000017604B3B873.png" /></td></tr></table>
 
 <ul>
-  <li>In [1], the Eclipse projects. We will be using a MySQL/EclipseLink configuration. The project for generating the [dbproduits] database is [generic-create-dbproduits];
+  <li>In [1], the Eclipse projects. You will be in a MySQL / EclipseLink configuration. The generation project for the [dbproduits] database is [generic-create-dbproduits];
   </li>
-  <li>in [2], the [PRODUITS] table to be generated;
+  <li>in [2], the table [PRODUITS] to be generated;
   </li>
 </ul>
 
 <p><strong>Note</strong>: Press Alt-F5 and regenerate all Maven projects;</p>
-<p><a id="refheading118637630560624"></a></p>
+<p><span id="refheading118637630560624" name="refheading118637630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="931-maven-configuration">9.3.1. <span style="color: #4f81bd">Maven Configuration</span></h3>
 <p>The Maven configuration for the [generic-create-dbproduits] project is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1792,12 +1794,12 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008080">&lt;/</span><span style="color:#3f7f7f">project</span><span style="color:#008080">&gt;</span></span></span>
 </code></pre></div>
 
-<p>There is only one dependency, lines 22–26, in the project that configures the JPA layer. Ultimately, the dependencies are as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000ED0000007CE3D2B5DD.png" width="166" height="87" style="display:inline-block; margin:4px;width:4.39cm;height:2.297cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED0000007CE3D2B5DD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p>There is only one dependency, lines 22–26, on the project that configures the JPA layer. Ultimately, the dependencies are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000ED0000007CE3D2B5DD.png" width="166" height="87" style="display:inline-block; margin:4px;width:4.39cm;height:2.297cm;" class="odt-zoomable" data-zoom-src="images/10000000000000ED0000007CE3D2B5DD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p><a id="refheading118639630560624"></a></p>
+<p><span id="refheading118639630560624" name="refheading118639630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="932-the-spring-configuration">9.3.2. <span style="color: #4f81bd">The Spring configuration</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F40000009B97015BCF.png" width="171" height="109" style="display:inline-block; margin:4px;width:4.521cm;height:2.872cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F40000009B97015BCF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F40000009B97015BCF.png" width="171" height="109" style="display:inline-block; margin:4px;width:4.521cm;height:2.872cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F40000009B97015BCF.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The Spring configuration class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1852,17 +1854,17 @@
 </code></pre></div>
 
 <ul>
-  <li>line 18: we import the beans from the [ConfigJpa] class (section<a href="#refheading10529020828969171"><u><span style="color: #0563c1"> 7.3</span></u></a>);
+  <li>Line 18: Import the beans from the [ConfigJpa] class (Section<a href="spring-data-jpa-eclipselink.html#refheading10529020828969171"><u><span style="color: #0563c1"> 7.3</span></u></a>);
   </li>
-  <li>lines 22–35: we redefine the data source [dataSource]. In [ConfigJpa], the data source is the database [dbproduitscategories]. Here, it will be the database [dbproduits];
+  <li>Lines 22–35: Redefine the data source [dataSource]. In [ConfigJpa], the data source is the database [dbproduitscategories]. Here, it will be the database [dbproduits];
   </li>
-  <li>lines 38–46: we redefine the [<span style="color: #000000">entityManagerFactory] </span>bean <span style="color: #000000">from the [ConfigJpa] class. In that class, the JPA entities were [Product, Category]. Here, it is only [Product], and it does not have the same definition as in the project that configures the JPA layer;</span>
+  <li>Lines 38–46: Redefine the [entityManagerFactory] bean <span style="color: #000000">of the [ConfigJpa] class. In this class, the entities JPA were [Produit, Categorie]. Here it is only [Produit], and it does not have the same definition as in the project that configures the JPA layer;</span>
   </li>
-  <li><span style="color: #000000">line 42: to define this new JPA entity, we reference the JPA entities defined in the [META-INF/persistence.xml] file:</span>
+  <li><span style="color: #000000">Line 42: To define this new entity JPA, we reference the JPA entities defined in the [META-INF/persistence.xml] file:</span>
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000EB000000CD31EB1A97.png" width="164" height="143" style="display:inline-block; margin:4px;width:4.35cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB000000CD31EB1A97.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000EB000000CD31EB1A97.png" width="164" height="143" style="display:inline-block; margin:4px;width:4.35cm;height:3.794cm;" class="odt-zoomable" data-zoom-src="images/10000000000000EB000000CD31EB1A97.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><span style="color: #000000">The [persistence.xml] file is as follows:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
@@ -1878,16 +1880,16 @@
 </code></pre></div>
 
 <ul>
-  <li><span style="color: #000000">line 6: the single JPA entity;</span>
+  <li><span style="color: #000000">line 6: the single entity JPA;</span>
   </li>
-  <li><span style="color: #000000">line 4: the name of the persistence unit [generic-jpa-entities-dbproduits] referenced in the [entityManagerFactory] bean;</span>
+  <li><span style="color: #000000">line 4: the name of the persistence unit [generic-jpa-entities-dbproduits], which is referenced in the bean [entityManagerFactory];</span>
   </li>
 </ul>
-<p><a id="refheading118641630560624"></a></p>
-<h3 id="933-the-jpa-entity-product">9.3.3. <span style="color: #4f81bd">The JPA entity [Product]</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012F000000900CCA377E.png" width="212" height="101" style="display:inline-block; margin:4px;width:5.609cm;height:2.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000012F000000900CCA377E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading118641630560624" name="refheading118641630560624" class="odt-bookmark-anchor"></span></p>
+<h3 id="933-the-entity-jpa-produit">9.3.3. <span style="color: #4f81bd"><strong>The entity JPA [Produit]</strong></span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012F000000900CCA377E.png" width="212" height="101" style="display:inline-block; margin:4px;width:5.609cm;height:2.665cm;" class="odt-zoomable" data-zoom-src="images/100000000000012F000000900CCA377E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
-<p>The JPA entity is defined in the [mysql-config-jpa-eclipselink] project as follows:</p>
+<p>The entity JPA is defined in the [mysql-config-jpa-eclipselink] project as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">package</span><span style="color:#000000"> generic.jpa.entities.dbproduits;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1938,16 +1940,16 @@
 
 <p>This is a JPA definition that has now become standard. Note the following points:</p>
 <ul>
-  <li>line 12: we have given the entity a name [Product1]. By default, an entity’s name is the class name, in this case [Product]. However, because there is another JPA entity [Product] in the same project, an error was reported before execution even began. We resolved it this way;
+  <li>Line 12: The entity has been given the name [Produit1]. By default, an entity’s name is the class name, in this case [Produit]. However, because there is another entity named JPA [Produit] in the same project, an error was reported before execution even began. We resolved it this way;
   </li>
   <li>line 24: the category here is simply a number;
   </li>
   <li>there are no inter-entity relationships. We therefore have a very simple situation;
   </li>
 </ul>
-<p><a id="refheading118643630560624"></a></p>
+<p><span id="refheading118643630560624" name="refheading118643630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="934-the-executable-class">9.3.4. <span style="color: #4f81bd">The executable class</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011A000000CCEC88ADFC.png" width="197" height="143" style="display:inline-block; margin:4px;width:5.219cm;height:3.775cm;" class="odt-zoomable" data-zoom-src="images/100000000000011A000000CCEC88ADFC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011A000000CCEC88ADFC.png" width="197" height="143" style="display:inline-block; margin:4px;width:5.219cm;height:3.775cm;" class="odt-zoomable" data-zoom-src="images/100000000000011A000000CCEC88ADFC.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p>The [CreateDatabase] class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1958,7 +1960,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000"> CreateDataBase {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">public</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">static</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#7f0055">void</span><span style="color:#000000"> main(String[] </span><span style="color:#6a3e3e">args</span><span style="color:#000000">) {</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// simply instantiate the Spring context to create the database tables [dbproduits]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// simply instantiate the Spring context to create the [dbproduits] database tables</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000">// you also need at least one Spring Data Repository, otherwise nothing happens</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        System.</span><span style="font-weight:bold;font-style:italic;color:#0000c0">out</span><span style="color:#000000">.println(</span><span style="color:#2a00ff">&quot;Travail en cours...&quot;</span><span style="color:#000000">);</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">new</span><span style="color:#000000"> AnnotationConfigApplicationContext(AppConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">).close();</span></span></span>
@@ -1968,11 +1970,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
-<p>This is code we&#x27;ve seen before.</p>
-<p><a id="refheading118645630560624"></a></p>
-<h3 id="935-eclipselink-generation">9.3.5. <span style="color: #4f81bd">EclipseLink Generation</span></h3>
-<p>The [PRODUCTS] table is created with the following runtime configuration:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000180000000EDA91C8454.png" width="269" height="166" style="display:inline-block; margin:4px;width:7.11cm;height:4.389cm;" class="odt-zoomable" data-zoom-src="images/1000000000000180000000EDA91C8454.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002540000011DD1CE4D6F.png" width="375" height="179" style="display:inline-block; margin:4px;width:9.931cm;height:4.748cm;" class="odt-zoomable" data-zoom-src="images/10000000000002540000011DD1CE4D6F.png" /></td></tr></table>
+<p>This is code we have seen before.</p>
+<p><span id="refheading118645630560624" name="refheading118645630560624" class="odt-bookmark-anchor"></span></p>
+<h3 id="935-generation-eclipselink">9.3.5. <span style="color: #4f81bd">Generation EclipseLink</span></h3>
+<p>The table [PRODUITS] is created with the following execution configuration:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000180000000EDA91C8454.png" width="269" height="166" style="display:inline-block; margin:4px;width:7.11cm;height:4.389cm;" class="odt-zoomable" data-zoom-src="images/1000000000000180000000EDA91C8454.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002540000011DD1CE4D6F.png" width="375" height="179" style="display:inline-block; margin:4px;width:9.931cm;height:4.748cm;" class="odt-zoomable" data-zoom-src="images/10000000000002540000011DD1CE4D6F.png" /></td></tr></table>
 
 <p>The console logs are as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -2001,10 +2003,10 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">[</span><span class="n">EL</span> <span class="ne">Warning</span><span class="p">]:</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">02</span> <span class="mi">16</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mf">20.657</span><span class="o">--</span><span class="n">session_manager_no_partition</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">Travail</span> <span class="n">terminé</span><span class="o">...</span>
 </code></pre></div></td></tr></table></div>
-<p>Now, let’s return to the [MyManager] client and refresh the display [1-2]:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F9000000FE7A311692.png" width="509" height="127" style="display:inline-block; margin:4px;width:13.455cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F9000000FE7A311692.png" /></td></tr></table>
+<p>Now, let&#x27;s return to client [MyManager] and refresh the [1-2] view:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003F9000000FE7A311692.png" width="509" height="127" style="display:inline-block; margin:4px;width:13.455cm;height:3.36cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F9000000FE7A311692.png" /></td></tr></table>
 
-<p>In [3], we can see that a table has been generated. Now let’s check the database’s DDL (Domain Definition Language):</p>
+<p>In [3], we can see that a table has been generated. Now let’s check the DDL (Domain Definition Language) of the database:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
 <span class="odt-code-line"><span class="odt-code-line-content">SET FOREIGN_KEY_CHECKS=0;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2024,16 +2026,16 @@
 </code></pre></div>
 
 <p>We do indeed get the expected table. To verify this, we will run the following configuration:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000135000000B5171749B9.png" width="216" height="127" style="display:inline-block; margin:4px;width:5.72cm;height:3.351cm;" class="odt-zoomable" data-zoom-src="images/1000000000000135000000B5171749B9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001180000012F32C6C631.png" width="196" height="212" style="display:inline-block; margin:4px;width:5.181cm;height:5.607cm;" class="odt-zoomable" data-zoom-src="images/10000000000001180000012F32C6C631.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000135000000B5171749B9.png" width="216" height="127" style="display:inline-block; margin:4px;width:5.72cm;height:3.351cm;" class="odt-zoomable" data-zoom-src="images/1000000000000135000000B5171749B9.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001180000012F32C6C631.png" width="196" height="212" style="display:inline-block; margin:4px;width:5.181cm;height:5.607cm;" class="odt-zoomable" data-zoom-src="images/10000000000001180000012F32C6C631.png" /></td></tr></table>
 
 <p>It should succeed.</p>
-<p><a id="refheading118647630560624"></a></p>
+<p><span id="refheading118647630560624" name="refheading118647630560624" class="odt-bookmark-anchor"></span></p>
 <h3 id="936-hibernate-generation">9.3.6. <span style="color: #4f81bd">Hibernate Generation</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000FF000000B278A250A4.png" width="178" height="125" style="display:inline-block; margin:4px;width:4.72cm;height:3.295cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF000000B278A250A4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C5000000DCCF534775.png" width="138" height="154" style="display:inline-block; margin:4px;width:3.649cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C5000000DCCF534775.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FF000000B278A250A4.png" width="178" height="125" style="display:inline-block; margin:4px;width:4.72cm;height:3.295cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FF000000B278A250A4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C5000000DCCF534775.png" width="138" height="154" style="display:inline-block; margin:4px;width:3.649cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C5000000DCCF534775.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><strong>Note</strong>: Press Alt-F5 and regenerate all Maven projects;</p>
 <p>The runtime configuration is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000156000000EDC811D2F4.png" width="239" height="166" style="display:inline-block; margin:4px;width:6.331cm;height:4.387cm;" class="odt-zoomable" data-zoom-src="images/1000000000000156000000EDC811D2F4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001670000010D6D82577F.png" width="251" height="188" style="display:inline-block; margin:4px;width:6.65cm;height:4.983cm;" class="odt-zoomable" data-zoom-src="images/10000000000001670000010D6D82577F.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000156000000EDC811D2F4.png" width="239" height="166" style="display:inline-block; margin:4px;width:6.331cm;height:4.387cm;" class="odt-zoomable" data-zoom-src="images/1000000000000156000000EDC811D2F4.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001670000010D6D82577F.png" width="251" height="188" style="display:inline-block; margin:4px;width:6.65cm;height:4.983cm;" class="odt-zoomable" data-zoom-src="images/10000000000001670000010D6D82577F.png" /></td></tr></table>
 
 <p>The SQL script generated by Hibernate is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
@@ -2052,13 +2054,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">;</span></span>
 </code></pre></div>
 
-<p><a id="refheading118649630560624"></a></p>
-<h3 id="937-openjpa-generation">9.3.7. <span style="color: #4f81bd">OpenJpa Generation</span></h3>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000011F000000F56A35D62E.png" width="201" height="171" style="display:inline-block; margin:4px;width:5.309cm;height:4.531cm;" class="odt-zoomable" data-zoom-src="images/100000000000011F000000F56A35D62E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C5000000DCCF534775.png" width="138" height="154" style="display:inline-block; margin:4px;width:3.649cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C5000000DCCF534775.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+<p><span id="refheading118649630560624" name="refheading118649630560624" class="odt-bookmark-anchor"></span></p>
+<h3 id="937-generation-openjpa">9.3.7. <span style="color: #4f81bd">Generation OpenJpa</span></h3>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000011F000000F56A35D62E.png" width="201" height="171" style="display:inline-block; margin:4px;width:5.309cm;height:4.531cm;" class="odt-zoomable" data-zoom-src="images/100000000000011F000000F56A35D62E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C5000000DCCF534775.png" width="138" height="154" style="display:inline-block; margin:4px;width:3.649cm;height:4.075cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C5000000DCCF534775.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
 
 <p><strong>Note</strong>: Press Alt-F5 and regenerate all Maven projects;</p>
-<p>The runtime configuration is as follows:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000109000000EE6C562D4C.png" width="186" height="167" style="display:inline-block; margin:4px;width:4.911cm;height:4.411cm;" class="odt-zoomable" data-zoom-src="images/1000000000000109000000EE6C562D4C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023300000134151113A7.png" width="394" height="215" style="display:inline-block; margin:4px;width:10.419cm;height:5.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000023300000134151113A7.png" /></td></tr></table>
+<p>The execution configuration is as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000109000000EE6C562D4C.png" width="186" height="167" style="display:inline-block; margin:4px;width:4.911cm;height:4.411cm;" class="odt-zoomable" data-zoom-src="images/1000000000000109000000EE6C562D4C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000023300000134151113A7.png" width="394" height="215" style="display:inline-block; margin:4px;width:10.419cm;height:5.699cm;" class="odt-zoomable" data-zoom-src="images/100000000000023300000134151113A7.png" /></td></tr></table>
 
 <p>The SQL script generated by OpenJpa is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
